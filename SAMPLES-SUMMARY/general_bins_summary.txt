@@ -1,0 +1,7 @@
+bins	taxon	bin_size	num_contigs	N50	GC_content	percent_complete	percent_redundancy
+BetIa_bin	Unknown	3945826	109	54423	70.3292174881	100.0	1.43884892086
+PNC2_BetIa_bin	Unknown	209036	11	38100	63.4280405305	0.0	0.0
+PNC_BetIa_bin	Unknown	26786	5	4197	64.0205569099	0.0	0.0
+PNC_bacIa_vizbin2	Unknown	117787	3	85703	37.7454483118	0.0	0.0
+bacIa_vizbin1	Unknown	3715529	140	45757	45.2732797095	100.0	1.43884892086
+bacIa_vizbin2	Unknown	3434530	26	253522	34.44961878	100.0	0.0
