@@ -1,5 +1,5 @@
 # Limno_CoolingWater
-Repository for the analysis of reconstructed genomes secondary cooling water of the BR2 nuclear test reactor (Mol, Antwerp, Belgium).
+Repository for the analysis of reconstructed genomes from secondary cooling water of the BR2 nuclear test reactor (Mol, Antwerp, Belgium).
 
 # Analysis steps
 
