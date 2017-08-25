@@ -1,0 +1,20 @@
+gene_oid	gene_length	percent_identity	query_start	query_end	subj_start	subj_end	evalue	bit_score	ko_id	ko_name	EC	img_ko_flag
+2727816691	641	89.24	1	641	1	641	0.0e+00	1300	KO:K07787	Cu(I)/Ag(I) efflux system membrane protein CusA/SilA		Yes
+2727816693	454	61.05	74	453	75	454	0.0e+00	545	KO:K07798	membrane fusion protein, Cu(I)/Ag(I) efflux system		Yes
+2727816694	398	73.03	1	393	1	393	0.0e+00	678	KO:K07798	membrane fusion protein, Cu(I)/Ag(I) efflux system		Yes
+2727816695	194	37.43	8	185	11	188	5.2e-36	144	KO:K03088	RNA polymerase sigma-70 factor, ECF subfamily		Yes
+2727816699	415	76.14	1	415	1	415	0.0e+00	766	KO:K01155	type II restriction enzyme [EC:3.1.21.4]	EC:3.1.21.4	Yes
+2727816701	572	44.83	5	553	3	548	0.0e+00	567	KO:K16091	Fe(3+) dicitrate transport protein		Yes
+2727816710	1076	66.39	1	1066	1	1033	0.0e+00	1550	KO:K07239	heavy-metal exporter, HME family		Yes
+2727816719	764	76.08	117	764	36	683	0.0e+00	1100	KO:K01533	Cu2+-exporting ATPase [EC:3.6.3.4]	EC:3.6.3.4	Yes
+2727816723	1457	63.91	1	1456	1	1459	0.0e+00	2060	KO:K15726	cobalt-zinc-cadmium resistance protein CzcA		Yes
+2727816724	404	55.86	3	402	2	383	0.0e+00	465	KO:K15727	membrane fusion protein, cobalt-zinc-cadmium efflux system		Yes
+2727816727	287	67.13	1	286	1	282	0.0e+00	462	KO:K07054	uncharacterized protein		Yes
+2727816729	735	58.89	6	725	3	719	0.0e+00	964	KO:K01673	carbonic anhydrase [EC:4.2.1.1]	EC:4.2.1.1	Yes
+2727816730	156	53.06	2	148	1	146	2.0e-55	197	KO:K07507	putative Mg2+ transporter-C (MgtC) family protein		Yes
+2727816731	299	54.84	8	286	10	288	9.6e-105	350	KO:K16264	cobalt-zinc-cadmium efflux system protein		Yes
+2727816737	666	69.42	48	663	34	649	0.0e+00	974	KO:K01534	Cd2+/Zn2+-exporting ATPase [EC:3.6.3.3 3.6.3.5]	EC:3.6.3.3	Yes
+2727816737	666	69.42	48	663	34	649	0.0e+00	974	KO:K01534	Cd2+/Zn2+-exporting ATPase [EC:3.6.3.3 3.6.3.5]	EC:3.6.3.5	Yes
+2727816743	219	73.27	1	217	1	217	3.9e-118	381	KO:K03709	DtxR family transcriptional regulator, Mn-dependent transcriptional regulator		Yes
+2727816753	132	47.73	1	132	1	130	2.7e-36	140	KO:K03111	single-strand DNA-binding protein		Yes
+2727816771	212	38.64	1	208	1	214	2.3e-39	155	KO:K01356	repressor LexA [EC:3.4.21.88]	EC:3.4.21.88	Yes

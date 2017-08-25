@@ -1,0 +1,34 @@
+##gff-version 3
+Ga0182892_11	img_core_v400	CDS	1	93	.	+	0	ID=2727816774;locus_tag=Ga0182892_111;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	90	233	.	+	0	ID=2727816775;locus_tag=Ga0182892_112;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	414	1073	.	-	0	ID=2727816776;locus_tag=Ga0182892_113;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	1664	2812	.	+	0	ID=2727816777;locus_tag=Ga0182892_114;product=Site-specific recombinase XerD
+Ga0182892_11	img_core_v400	CDS	2829	3059	.	-	0	ID=2727816778;locus_tag=Ga0182892_115;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	3290	4546	.	-	0	ID=2727816779;locus_tag=Ga0182892_116;product=cation diffusion facilitator family transporter
+Ga0182892_11	img_core_v400	CDS	4570	4704	.	+	0	ID=2727816780;locus_tag=Ga0182892_117;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	5264	5647	.	-	0	ID=2727816781;locus_tag=Ga0182892_118;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	5796	6131	.	+	0	ID=2727816782;locus_tag=Ga0182892_119;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	6148	7827	.	+	0	ID=2727816783;locus_tag=Ga0182892_1110;product=NRAMP (natural resistance-associated macrophage protein) metal ion transporters
+Ga0182892_11	img_core_v400	CDS	8254	9483	.	+	0	ID=2727816784;locus_tag=Ga0182892_1111;product=Carbohydrate-selective porin OprB
+Ga0182892_11	img_core_v400	CDS	9529	9909	.	-	0	ID=2727816785;locus_tag=Ga0182892_1112;product=VIT family protein
+Ga0182892_11	img_core_v400	CDS	9906	10145	.	-	0	ID=2727816786;locus_tag=Ga0182892_1113;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	10395	11186	.	+	0	ID=2727816787;locus_tag=Ga0182892_1114;product=putative Mg2+ transporter-C (MgtC) family protein
+Ga0182892_11	img_core_v400	CDS	11183	11326	.	+	0	ID=2727816788;locus_tag=Ga0182892_1115;product=hypothetical protein
+Ga0182892_11	img_core_v400	CDS	11458	12453	.	-	0	ID=2727816789;locus_tag=Ga0182892_1116;product=Transposase IS116/IS110/IS902 family protein
+Ga0182892_12	img_core_v400	CDS	107	1672	.	+	0	ID=2727816790;locus_tag=Ga0182892_121;product=Transposase
+Ga0182892_12	img_core_v400	CDS	1662	2468	.	+	0	ID=2727816791;locus_tag=Ga0182892_122;product=DNA replication protein DnaC
+Ga0182892_13	img_core_v400	CDS	2	622	.	-	0	ID=2727816792;locus_tag=Ga0182892_131;product=hypothetical protein
+Ga0182892_13	img_core_v400	CDS	881	1048	.	+	0	ID=2727816793;locus_tag=Ga0182892_132;product=hypothetical protein
+Ga0182892_13	img_core_v400	CDS	983	1312	.	-	0	ID=2727816794;locus_tag=Ga0182892_133;product=hypothetical protein
+Ga0182892_13	img_core_v400	CDS	1326	1574	.	-	0	ID=2727816795;locus_tag=Ga0182892_134;product=hypothetical protein
+Ga0182892_13	img_core_v400	CDS	1591	2985	.	-	0	ID=2727816796;locus_tag=Ga0182892_135;product=Integrase
+Ga0182892_13	img_core_v400	CDS	3214	3786	.	-	0	ID=2727816797;locus_tag=Ga0182892_136;product=Phage integrase, N-terminal
+Ga0182892_14	img_core_v400	CDS	2	838	.	-	0	ID=2727816798;locus_tag=Ga0182892_141;product=substrate-binding protein
+Ga0182892_14	img_core_v400	CDS	1194	1484	.	-	0	ID=2727816799;locus_tag=Ga0182892_142;product=hypothetical protein
+Ga0182892_14	img_core_v400	CDS	1513	1680	.	+	0	ID=2727816800;locus_tag=Ga0182892_143;product=hypothetical protein
+Ga0182892_14	img_core_v400	CDS	1734	2171	.	-	0	ID=2727816801;locus_tag=Ga0182892_144;product=hypothetical protein
+Ga0182892_14	img_core_v400	CDS	2199	2375	.	+	0	ID=2727816802;locus_tag=Ga0182892_145;product=hypothetical protein
+Ga0182892_14	img_core_v400	CDS	2559	3683	.	-	0	ID=2727816803;locus_tag=Ga0182892_146;product=Site-specific recombinase XerD
+Ga0182892_15	img_core_v400	CDS	3	425	.	-	0	ID=2727816804;locus_tag=Ga0182892_151;product=Transposase
+Ga0182892_15	img_core_v400	CDS	406	696	.	-	0	ID=2727816805;locus_tag=Ga0182892_152;product=hypothetical protein
+Ga0182892_15	img_core_v400	CDS	949	3894	.	-	0	ID=2727816806;locus_tag=Ga0182892_153;product=Transposase and inactivated derivatives, TnpA family

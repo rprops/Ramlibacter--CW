@@ -1,0 +1,41 @@
+gene_oid	gene_length	percent_identity	query_start	query_end	subj_start	subj_end	evalue	bit_score	cog_id	cog_name	cog_length
+2727816662	246	36.07	1	60	2	62	9.0e-10	57.3	COG2608	Copper chaperone CopZ	71
+2727816663	175	27.55	72	166	29	126	9.0e-13	66.8	COG2207	AraC-type DNA-binding domain and AraC-containing proteins	127
+2727816672	1834	18.51	506	996	39	536	2.0e-30	129	COG4646	Adenine-specific DNA methylase, N12 class	637
+2727816675	505	26.7	1	175	1	169	3.0e-15	77.1	COG1961	Site-specific DNA recombinase related to the DNA invertase Pin	222
+2727816684	1164	22.91	403	1144	65	753	9.0e-33	136	COG1112	Superfamily I DNA and/or RNA helicase	767
+2727816691	641	43.78	13	630	422	1025	0.0e+00	617	COG3696	Cu/Ag efflux pump CusA	1027
+2727816692	417	14.49	6	414	18	442	2.0e-16	80.6	COG1538	Outer membrane protein TolC	457
+2727816693	454	21.19	115	453	26	368	2.0e-16	80.9	COG0845	Multidrug efflux pump subunit AcrA (membrane-fusion protein)	372
+2727816694	398	25.45	71	382	32	361	2.0e-23	104	COG0845	Multidrug efflux pump subunit AcrA (membrane-fusion protein)	372
+2727816695	194	24.02	15	187	10	178	5.0e-20	90.9	COG1595	DNA-directed RNA polymerase specialized sigma subunit, sigma24 family	182
+2727816697	354	25.46	38	352	1	302	2.0e-15	76.8	COG3391	DNA-binding beta-propeller fold protein YncE	381
+2727816698	204	30.14	58	203	43	188	5.0e-16	77.8	COG3544	Uncharacterized conserved protein, DUF305 family	190
+2727816703	396	14.67	19	396	38	445	6.0e-17	82.1	COG1538	Outer membrane protein TolC	457
+2727816704	556	18.42	219	550	22	360	3.0e-18	87.1	COG0845	Multidrug efflux pump subunit AcrA (membrane-fusion protein)	372
+2727816705	149	22.7	19	145	4	131	2.0e-04	38.8	COG4319	Ketosteroid isomerase homolog	137
+2727816710	1076	40.15	1	1063	1	1023	0.0e+00	944	COG3696	Cu/Ag efflux pump CusA	1027
+2727816713	216	25.48	29	216	36	238	7.0e-20	90.7	COG2226	Ubiquinone/menaquinone biosynthesis C-methylase UbiE	238
+2727816715	331	19.57	8	142	17	150	2.0e-06	47.2	COG4244	Uncharacterized membrane protein	160
+2727816716	753	25.1	71	562	48	446	1.0e-61	231	COG2132	Multicopper oxidase with three cupredoxin domains (includes cell division protein FtsP and spore coat protein CotA)	451
+2727816719	764	39.76	116	762	74	708	0.0e+00	634	COG2217	Cation transport ATPase	713
+2727816723	1457	45.73	1	1039	1	1027	0.0e+00	1093	COG3696	Cu/Ag efflux pump CusA	1027
+2727816724	404	23.12	66	380	51	372	3.0e-13	70.1	COG0845	Multidrug efflux pump subunit AcrA (membrane-fusion protein)	372
+2727816727	287	50	1	287	1	295	2.0e-94	338	COG2321	Predicted metalloprotease	295
+2727816729	735	28.16	6	508	19	517	1.0e-72	268	COG0659	Sulfate permease or related transporter, MFS superfamily	554
+2727816730	156	36.88	1	156	1	158	2.0e-27	115	COG1285	Uncharacterized membrane protein YhiD, involved in acid resistance	221
+2727816731	299	40.77	1	287	8	291	5.0e-73	267	COG1230	Co/Zn/Cd efflux system component	296
+2727816732	225	37.5	42	223	46	226	2.0e-32	132	COG4291	Uncharacterized membrane protein	228
+2727816736	205	19.5	2	203	55	292	3.0e-03	35.3	COG2215	ABC-type nickel/cobalt efflux system, permease component RcnA	303
+2727816737	666	36.67	30	663	66	709	0.0e+00	567	COG2217	Cation transport ATPase	713
+2727816741	169	20.65	22	161	8	155	4.0e-08	51	COG1225	Peroxiredoxin	157
+2727816742	742	20.5	118	703	51	668	1.0e-20	95.4	COG4771	Outer membrane receptor for ferrienterochelin and colicins	699
+2727816743	219	45.21	5	150	7	150	1.0e-35	142	COG1321	Mn-dependent transcriptional regulator, DtxR family	154
+2727816744	398	32.82	27	398	44	481	1.0e-63	237	COG3488	Uncharacterized conserved protein with two CxxC motifs, DUF1111 family	481
+2727816745	148	26.67	76	145	31	105	2.0e-06	45.3	COG2146	Ferredoxin subunit of nitrite reductase or a ring-hydroxylating dioxygenase	106
+2727816747	125	31.82	21	108	3	90	3.0e-10	57.5	COG0640	DNA-binding transcriptional regulator, ArsR family	110
+2727816748	229	34.29	134	203	2	71	2.0e-10	59.6	COG2608	Copper chaperone CopZ	71
+2727816760	1132	20.28	2	1123	3	1099	4.0e-116	413	COG4913	Uncharacterized protein YPO0396	1104
+2727816761	380	22.31	2	375	5	377	9.0e-26	111	COG4924	Uncharacterized protein	386
+2727816771	212	30.16	21	209	27	199	1.0e-14	73.8	COG1974	SOS-response transcriptional repressor LexA (RecA-mediated autopeptidase)	201
+2727816772	366	32.08	140	293	3	159	1.0e-25	110	COG4804	Predicted nuclease of restriction endonuclease-like (RecB) superfamily,  DUF1016 family	159

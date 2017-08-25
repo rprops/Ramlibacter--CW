@@ -1,0 +1,234 @@
+##gff-version 3
+Ga0182893_101	img_core_v400	CDS	3	2087	.	+	0	ID=2727816807;locus_tag=Ga0182893_1011;product=AcrB/AcrD/AcrF family protein
+Ga0182893_101	img_core_v400	CDS	2192	3001	.	+	0	ID=2727816808;locus_tag=Ga0182893_1012;product=Uncharacterized membrane-anchored protein
+Ga0182893_101	img_core_v400	CDS	3024	3767	.	+	0	ID=2727816809;locus_tag=Ga0182893_1013;product=Putative MetA-pathway of phenol degradation
+Ga0182893_101	img_core_v400	CDS	3883	4455	.	+	0	ID=2727816810;locus_tag=Ga0182893_1014;product=undecaprenyl-diphosphatase
+Ga0182893_101	img_core_v400	CDS	4709	5059	.	+	0	ID=2727816811;locus_tag=Ga0182893_1015;product=Peptidase propeptide and YPEB domain-containing protein
+Ga0182893_101	img_core_v400	CDS	5056	5223	.	+	0	ID=2727816812;locus_tag=Ga0182893_1016;product=Repeat of Unknown Function (DUF347)
+Ga0182893_102	img_core_v400	CDS	94	525	.	-	0	ID=2727816813;locus_tag=Ga0182893_1021;product=short chain dehydrogenase
+Ga0182893_102	img_core_v400	CDS	522	1223	.	-	0	ID=2727816814;locus_tag=Ga0182893_1022;product=GST-like protein
+Ga0182893_102	img_core_v400	CDS	1667	2755	.	-	0	ID=2727816815;locus_tag=Ga0182893_1023;product=hypothetical protein
+Ga0182893_102	img_core_v400	CDS	2752	3237	.	-	0	ID=2727816816;locus_tag=Ga0182893_1024;product=hypothetical protein
+Ga0182893_102	img_core_v400	CDS	3300	3635	.	-	0	ID=2727816817;locus_tag=Ga0182893_1025;product=hypothetical protein
+Ga0182893_102	img_core_v400	CDS	3635	3859	.	-	0	ID=2727816818;locus_tag=Ga0182893_1026;product=hypothetical protein
+Ga0182893_102	img_core_v400	CDS	4114	4857	.	+	0	ID=2727816819;locus_tag=Ga0182893_1027;product=hypothetical protein
+Ga0182893_102	img_core_v400	CDS	4914	5327	.	+	0	ID=2727816820;locus_tag=Ga0182893_1028;product=large conductance mechanosensitive channel
+Ga0182893_102	img_core_v400	CDS	5392	5781	.	+	0	ID=2727816821;locus_tag=Ga0182893_1029;product=hypothetical protein
+Ga0182893_102	img_core_v400	CDS	6256	8136	.	+	0	ID=2727816822;locus_tag=Ga0182893_10210;product=PAS domain S-box-containing protein
+Ga0182893_102	img_core_v400	CDS	8144	8425	.	+	0	ID=2727816823;locus_tag=Ga0182893_10211;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	1	1239	.	-	0	ID=2727816824;locus_tag=Ga0182893_1031;product= amino acid/amide ABC transporter substrate-binding protein, HAAT family
+Ga0182893_103	img_core_v400	CDS	1545	3002	.	+	0	ID=2727816825;locus_tag=Ga0182893_1032;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	3127	3657	.	-	0	ID=2727816826;locus_tag=Ga0182893_1033;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	3697	4530	.	-	0	ID=2727816827;locus_tag=Ga0182893_1034;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	4537	5685	.	-	0	ID=2727816828;locus_tag=Ga0182893_1035;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	5733	6638	.	-	0	ID=2727816829;locus_tag=Ga0182893_1036;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	6836	7762	.	+	0	ID=2727816830;locus_tag=Ga0182893_1037;product=PDDEXK-like protein of unknown function (DUF3799)
+Ga0182893_103	img_core_v400	CDS	7884	8030	.	+	0	ID=2727816831;locus_tag=Ga0182893_1038;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	8505	9317	.	+	0	ID=2727816832;locus_tag=Ga0182893_1039;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	9436	14541	.	-	0	ID=2727816833;locus_tag=Ga0182893_10310;product=Adenine-specific DNA methylase, N12 class
+Ga0182893_103	img_core_v400	CDS	14870	15256	.	-	0	ID=2727816834;locus_tag=Ga0182893_10311;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	15259	15633	.	-	0	ID=2727816835;locus_tag=Ga0182893_10312;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	15664	16734	.	+	0	ID=2727816836;locus_tag=Ga0182893_10313;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	16760	16921	.	-	0	ID=2727816837;locus_tag=Ga0182893_10314;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	17273	17818	.	-	0	ID=2727816838;locus_tag=Ga0182893_10315;product=Outer membrane lipoprotein SlyB
+Ga0182893_103	img_core_v400	CDS	17933	18196	.	-	0	ID=2727816839;locus_tag=Ga0182893_10316;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	18582	19589	.	+	0	ID=2727816840;locus_tag=Ga0182893_10317;product=Uncharacterized conserved protein YkwD, contains CAP (CSP/antigen 5/PR1) domain
+Ga0182893_103	img_core_v400	CDS	19678	20535	.	-	0	ID=2727816841;locus_tag=Ga0182893_10318;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	20555	22000	.	-	0	ID=2727816842;locus_tag=Ga0182893_10319;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	22021	22608	.	-	0	ID=2727816843;locus_tag=Ga0182893_10320;product=PilS N terminal
+Ga0182893_103	img_core_v400	CDS	22649	23764	.	-	0	ID=2727816844;locus_tag=Ga0182893_10321;product=Type II secretory pathway, component PulF
+Ga0182893_103	img_core_v400	CDS	23761	25683	.	-	0	ID=2727816845;locus_tag=Ga0182893_10322;product=Type II secretory pathway ATPase GspE/PulE or T4P pilus assembly pathway ATPase PilB
+Ga0182893_103	img_core_v400	CDS	25688	26284	.	-	0	ID=2727816846;locus_tag=Ga0182893_10323;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	26268	27734	.	-	0	ID=2727816847;locus_tag=Ga0182893_10324;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	27754	29577	.	-	0	ID=2727816848;locus_tag=Ga0182893_10325;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	29601	30152	.	-	0	ID=2727816849;locus_tag=Ga0182893_10326;product=Toxin co-regulated pilus biosynthesis protein Q
+Ga0182893_103	img_core_v400	CDS	30152	31498	.	-	0	ID=2727816850;locus_tag=Ga0182893_10327;product=Conjugal transfer protein
+Ga0182893_103	img_core_v400	CDS	31495	32847	.	-	0	ID=2727816851;locus_tag=Ga0182893_10328;product=type IV secretion system protein VirB10
+Ga0182893_103	img_core_v400	CDS	32852	33697	.	-	0	ID=2727816852;locus_tag=Ga0182893_10329;product=type IV secretion system protein VirB9
+Ga0182893_103	img_core_v400	CDS	33694	34431	.	-	0	ID=2727816853;locus_tag=Ga0182893_10330;product=type IV secretion system protein VirB8
+Ga0182893_103	img_core_v400	CDS	34547	35017	.	-	0	ID=2727816854;locus_tag=Ga0182893_10331;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	35004	35498	.	-	0	ID=2727816855;locus_tag=Ga0182893_10332;product=Transglycosylase SLT domain-containing protein
+Ga0182893_103	img_core_v400	CDS	35747	37714	.	-	0	ID=2727816856;locus_tag=Ga0182893_10333;product=transitional endoplasmic reticulum ATPase
+Ga0182893_103	img_core_v400	CDS	37810	39273	.	-	0	ID=2727816857;locus_tag=Ga0182893_10334;product=TrbL/VirB6 plasmid conjugal transfer protein
+Ga0182893_103	img_core_v400	CDS	39270	40043	.	-	0	ID=2727816858;locus_tag=Ga0182893_10335;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	40123	42663	.	-	0	ID=2727816859;locus_tag=Ga0182893_10336;product=type IV secretion system protein VirB4
+Ga0182893_103	img_core_v400	CDS	42695	42946	.	-	0	ID=2727816860;locus_tag=Ga0182893_10337;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	43002	43370	.	-	0	ID=2727816861;locus_tag=Ga0182893_10338;product=TrbC/VIRB2 family protein
+Ga0182893_103	img_core_v400	CDS	43413	44399	.	-	0	ID=2727816862;locus_tag=Ga0182893_10339;product=pilus assembly protein CpaF
+Ga0182893_103	img_core_v400	CDS	44503	45141	.	-	0	ID=2727816863;locus_tag=Ga0182893_10340;product=protein of unknown function (DUF4400)
+Ga0182893_103	img_core_v400	CDS	45154	45801	.	-	0	ID=2727816864;locus_tag=Ga0182893_10341;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	45822	47759	.	-	0	ID=2727816865;locus_tag=Ga0182893_10342;product=conjugal transfer pilus assembly protein TraD
+Ga0182893_103	img_core_v400	CDS	47762	49573	.	-	0	ID=2727816866;locus_tag=Ga0182893_10343;product=conjugal transfer pilus assembly protein TraI
+Ga0182893_103	img_core_v400	CDS	49650	50336	.	-	0	ID=2727816867;locus_tag=Ga0182893_10344;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	50352	50939	.	-	0	ID=2727816868;locus_tag=Ga0182893_10345;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	51170	51904	.	+	0	ID=2727816869;locus_tag=Ga0182893_10346;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	51943	53013	.	-	0	ID=2727816870;locus_tag=Ga0182893_10347;product=putative DNA primase/helicase
+Ga0182893_103	img_core_v400	CDS	53253	55565	.	-	0	ID=2727816871;locus_tag=Ga0182893_10348;product=von Willebrand factor type A domain-containing protein
+Ga0182893_103	img_core_v400	CDS	55611	56705	.	-	0	ID=2727816872;locus_tag=Ga0182893_10349;product=Protein of unknown function (DUF3150)
+Ga0182893_103	img_core_v400	CDS	57103	57477	.	-	0	ID=2727816873;locus_tag=Ga0182893_10350;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	57723	60290	.	-	0	ID=2727816874;locus_tag=Ga0182893_10351;product= ribonucleoside-diphosphate reductase class II
+Ga0182893_103	img_core_v400	CDS	60686	60916	.	-	0	ID=2727816875;locus_tag=Ga0182893_10352;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	60992	61486	.	-	0	ID=2727816876;locus_tag=Ga0182893_10353;product=Single-stranded DNA-binding protein
+Ga0182893_103	img_core_v400	CDS	61490	62539	.	-	0	ID=2727816877;locus_tag=Ga0182893_10354;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	62555	63286	.	-	0	ID=2727816878;locus_tag=Ga0182893_10355;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	63283	64092	.	-	0	ID=2727816879;locus_tag=Ga0182893_10356;product=cobaltochelatase CobS
+Ga0182893_103	img_core_v400	CDS	64049	64915	.	-	0	ID=2727816880;locus_tag=Ga0182893_10357;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	65229	65360	.	-	0	ID=2727816881;locus_tag=Ga0182893_10358;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	65981	66901	.	+	0	ID=2727816882;locus_tag=Ga0182893_10359;product=hypothetical protein
+Ga0182893_103	img_core_v400	CDS	66953	67549	.	+	0	ID=2727816883;locus_tag=Ga0182893_10360;product=UvrD/REP helicase N-terminal domain-containing protein
+Ga0182893_104	img_core_v400	CDS	952	2025	.	+	0	ID=2727816884;locus_tag=Ga0182893_1041;product= plasmid segregation actin-type ATPase ParM
+Ga0182893_104	img_core_v400	CDS	2022	2324	.	+	0	ID=2727816885;locus_tag=Ga0182893_1042;product=hypothetical protein
+Ga0182893_104	img_core_v400	CDS	2327	2830	.	+	0	ID=2727816886;locus_tag=Ga0182893_1043;product=hypothetical protein
+Ga0182893_104	img_core_v400	CDS	2890	3228	.	+	0	ID=2727816887;locus_tag=Ga0182893_1044;product=hypothetical protein
+Ga0182893_105	img_core_v400	CDS	1	666	.	-	0	ID=2727816888;locus_tag=Ga0182893_1051;product=membrane protein DedA, SNARE-associated domain
+Ga0182893_105	img_core_v400	CDS	1008	2054	.	+	0	ID=2727816889;locus_tag=Ga0182893_1052;product=AcrB/AcrD/AcrF family protein
+Ga0182893_106	img_core_v400	CDS	2	550	.	+	0	ID=2727816890;locus_tag=Ga0182893_1061;product=Tripartite ATP-independent transporter, DctM component
+Ga0182893_106	img_core_v400	CDS	547	1083	.	+	0	ID=2727816891;locus_tag=Ga0182893_1062;product=Cd(II)/Pb(II)-responsive transcriptional regulator
+Ga0182893_106	img_core_v400	CDS	1138	1851	.	+	0	ID=2727816892;locus_tag=Ga0182893_1063;product=cytochrome c
+Ga0182893_106	img_core_v400	CDS	2160	2330	.	-	0	ID=2727816893;locus_tag=Ga0182893_1064;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	2356	2550	.	+	0	ID=2727816894;locus_tag=Ga0182893_1065;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	2613	2960	.	+	0	ID=2727816895;locus_tag=Ga0182893_1066;product=Aldo/keto reductase family protein
+Ga0182893_106	img_core_v400	CDS	2989	3228	.	+	0	ID=2727816896;locus_tag=Ga0182893_1067;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	3235	3516	.	+	0	ID=2727816897;locus_tag=Ga0182893_1068;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	3588	3929	.	-	0	ID=2727816898;locus_tag=Ga0182893_1069;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	3926	4147	.	-	0	ID=2727816899;locus_tag=Ga0182893_10610;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	4151	5020	.	-	0	ID=2727816900;locus_tag=Ga0182893_10611;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	5098	5802	.	-	0	ID=2727816901;locus_tag=Ga0182893_10612;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	6028	6258	.	-	0	ID=2727816902;locus_tag=Ga0182893_10613;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	6258	8243	.	-	0	ID=2727816903;locus_tag=Ga0182893_10614;product=Histidine kinase-, DNA gyrase B-, and HSP90-like ATPase
+Ga0182893_106	img_core_v400	CDS	8440	8775	.	-	0	ID=2727816904;locus_tag=Ga0182893_10615;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	8829	9038	.	-	0	ID=2727816905;locus_tag=Ga0182893_10616;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	9210	9431	.	-	0	ID=2727816906;locus_tag=Ga0182893_10617;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	9743	10126	.	+	0	ID=2727816907;locus_tag=Ga0182893_10618;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	10168	10743	.	+	0	ID=2727816908;locus_tag=Ga0182893_10619;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	10823	10999	.	-	0	ID=2727816909;locus_tag=Ga0182893_10620;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	11030	11422	.	-	0	ID=2727816910;locus_tag=Ga0182893_10621;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	11549	12187	.	-	0	ID=2727816911;locus_tag=Ga0182893_10622;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	12181	12702	.	-	0	ID=2727816912;locus_tag=Ga0182893_10623;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	12699	12995	.	-	0	ID=2727816913;locus_tag=Ga0182893_10624;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	13253	13636	.	+	0	ID=2727816914;locus_tag=Ga0182893_10625;product=Histidine kinase-, DNA gyrase B-, and HSP90-like ATPase
+Ga0182893_106	img_core_v400	CDS	14234	15043	.	+	0	ID=2727816915;locus_tag=Ga0182893_10626;product=Uncharacterized membrane-anchored protein
+Ga0182893_106	img_core_v400	CDS	15062	15802	.	+	0	ID=2727816916;locus_tag=Ga0182893_10627;product=hypothetical protein
+Ga0182893_106	img_core_v400	CDS	16150	16623	.	+	0	ID=2727816917;locus_tag=Ga0182893_10628;product=TonB-dependent Receptor Plug Domain
+Ga0182893_107	img_core_v400	CDS	1	1197	.	+	0	ID=2727816918;locus_tag=Ga0182893_1071;product=UvrD-like helicase C-terminal domain-containing protein
+Ga0182893_107	img_core_v400	CDS	1231	1497	.	-	0	ID=2727816919;locus_tag=Ga0182893_1072;product=hypothetical protein
+Ga0182893_107	img_core_v400	CDS	1537	2688	.	-	0	ID=2727816920;locus_tag=Ga0182893_1073;product=Uncharacterized membrane protein YhaH, DUF805 family
+Ga0182893_107	img_core_v400	CDS	2837	3730	.	-	0	ID=2727816921;locus_tag=Ga0182893_1074;product=PRTRC system ThiF family protein
+Ga0182893_107	img_core_v400	CDS	3727	4362	.	-	0	ID=2727816922;locus_tag=Ga0182893_1075;product=PRTRC system protein A
+Ga0182893_107	img_core_v400	CDS	4362	5132	.	-	0	ID=2727816923;locus_tag=Ga0182893_1076;product=PRTRC system protein B
+Ga0182893_107	img_core_v400	CDS	5129	6232	.	-	0	ID=2727816924;locus_tag=Ga0182893_1077;product=PRTRC system protein F
+Ga0182893_107	img_core_v400	CDS	6473	6763	.	-	0	ID=2727816925;locus_tag=Ga0182893_1078;product=hypothetical protein
+Ga0182893_107	img_core_v400	CDS	7006	7395	.	-	0	ID=2727816926;locus_tag=Ga0182893_1079;product=PRTRC system protein C
+Ga0182893_107	img_core_v400	CDS	7410	7961	.	-	0	ID=2727816927;locus_tag=Ga0182893_10710;product=PRTRC system protein E
+Ga0182893_107	img_core_v400	CDS	8052	9827	.	-	0	ID=2727816928;locus_tag=Ga0182893_10711;product=PRTRC system ParB family protein
+Ga0182893_107	img_core_v400	CDS	9967	11274	.	-	0	ID=2727816929;locus_tag=Ga0182893_10712;product=Apolipoprotein N-acyltransferase
+Ga0182893_107	img_core_v400	CDS	11271	12104	.	-	0	ID=2727816930;locus_tag=Ga0182893_10713;product=hypothetical protein
+Ga0182893_107	img_core_v400	CDS	12101	12565	.	-	0	ID=2727816931;locus_tag=Ga0182893_10714;product=Polymer-forming protein
+Ga0182893_107	img_core_v400	CDS	12558	13649	.	-	0	ID=2727816932;locus_tag=Ga0182893_10715;product=hypothetical protein
+Ga0182893_107	img_core_v400	CDS	13646	14707	.	-	0	ID=2727816933;locus_tag=Ga0182893_10716;product=hypothetical protein
+Ga0182893_107	img_core_v400	CDS	14725	15702	.	-	0	ID=2727816934;locus_tag=Ga0182893_10717;product=hypothetical protein
+Ga0182893_107	img_core_v400	CDS	15794	16570	.	+	0	ID=2727816935;locus_tag=Ga0182893_10718;product=PDDEXK-like protein of unknown function (DUF3799)
+Ga0182893_108	img_core_v400	CDS	121	345	.	+	0	ID=2727816936;locus_tag=Ga0182893_1081;product=Response regulator receiver domain-containing protein
+Ga0182893_108	img_core_v400	CDS	470	700	.	+	0	ID=2727816937;locus_tag=Ga0182893_1082;product=hypothetical protein
+Ga0182893_108	img_core_v400	CDS	837	1133	.	+	0	ID=2727816938;locus_tag=Ga0182893_1083;product=hypothetical protein
+Ga0182893_108	img_core_v400	CDS	1704	2654	.	-	0	ID=2727816939;locus_tag=Ga0182893_1084;product=Predicted dehydrogenase
+Ga0182893_108	img_core_v400	CDS	3422	3574	.	-	0	ID=2727816940;locus_tag=Ga0182893_1085;product=hypothetical protein
+Ga0182893_108	img_core_v400	CDS	3670	4956	.	+	0	ID=2727816941;locus_tag=Ga0182893_1086;product=capsular polysaccharide export protein
+Ga0182893_108	img_core_v400	CDS	5045	6394	.	+	0	ID=2727816942;locus_tag=Ga0182893_1087;product=mannose-1-phosphate guanylyltransferase
+Ga0182893_108	img_core_v400	CDS	6403	7512	.	+	0	ID=2727816943;locus_tag=Ga0182893_1088;product=capsular polysaccharide transport system permease protein
+Ga0182893_108	img_core_v400	CDS	7547	8329	.	+	0	ID=2727816944;locus_tag=Ga0182893_1089;product=capsular polysaccharide transport system permease protein
+Ga0182893_108	img_core_v400	CDS	8326	8979	.	+	0	ID=2727816945;locus_tag=Ga0182893_10810;product=capsular polysaccharide transport system ATP-binding protein
+Ga0182893_108	img_core_v400	CDS	8976	10208	.	+	0	ID=2727816946;locus_tag=Ga0182893_10811;product=Glycosyl transferases group 1
+Ga0182893_108	img_core_v400	CDS	10221	13028	.	+	0	ID=2727816947;locus_tag=Ga0182893_10812;product=methyltransferase, FkbM family
+Ga0182893_108	img_core_v400	CDS	13025	14068	.	+	0	ID=2727816948;locus_tag=Ga0182893_10813;product=Glycosyltransferase involved in cell wall bisynthesis
+Ga0182893_108	img_core_v400	CDS	14069	16504	.	+	0	ID=2727816949;locus_tag=Ga0182893_10814;product=Glycosyltransferase involved in cell wall bisynthesis
+Ga0182893_108	img_core_v400	CDS	16562	17596	.	+	0	ID=2727816950;locus_tag=Ga0182893_10815;product=GDPmannose 4,6-dehydratase
+Ga0182893_108	img_core_v400	CDS	17603	18553	.	+	0	ID=2727816951;locus_tag=Ga0182893_10816;product=Nucleoside-diphosphate-sugar epimerase
+Ga0182893_108	img_core_v400	CDS	18929	19762	.	+	0	ID=2727816952;locus_tag=Ga0182893_10817;product=polysaccharide export outer membrane protein
+Ga0182893_108	img_core_v400	CDS	19843	20886	.	+	0	ID=2727816953;locus_tag=Ga0182893_10818;product=capsular polysaccharide export protein
+Ga0182893_108	img_core_v400	CDS	20886	22058	.	+	0	ID=2727816954;locus_tag=Ga0182893_10819;product=Glycosyltransferase involved in cell wall bisynthesis
+Ga0182893_108	img_core_v400	CDS	22088	23494	.	-	0	ID=2727816955;locus_tag=Ga0182893_10820;product=Dolichyl-phosphate-mannose-protein mannosyltransferase
+Ga0182893_108	img_core_v400	CDS	23819	24028	.	-	0	ID=2727816956;locus_tag=Ga0182893_10821;product=hypothetical protein
+Ga0182893_108	img_core_v400	CDS	24087	24428	.	-	0	ID=2727816957;locus_tag=Ga0182893_10822;product=hypothetical protein
+Ga0182893_108	img_core_v400	CDS	24787	26061	.	+	0	ID=2727816958;locus_tag=Ga0182893_10823;product=putative transposase
+Ga0182893_108	img_core_v400	CDS	27069	27749	.	-	0	ID=2727816959;locus_tag=Ga0182893_10824;product=hypothetical protein
+Ga0182893_108	img_core_v400	CDS	27935	28102	.	-	0	ID=2727816960;locus_tag=Ga0182893_10825;product=hypothetical protein
+Ga0182893_108	img_core_v400	CDS	28398	29897	.	-	0	ID=2727816961;locus_tag=Ga0182893_10826;product=BNR repeat-like domain-containing protein
+Ga0182893_108	img_core_v400	CDS	30054	30176	.	-	0	ID=2727816962;locus_tag=Ga0182893_10827;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	1	714	.	+	0	ID=2727816963;locus_tag=Ga0182893_1091;product=Uncharacterized membrane-anchored protein
+Ga0182893_109	img_core_v400	CDS	739	1149	.	+	0	ID=2727816964;locus_tag=Ga0182893_1092;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	953	1780	.	-	0	ID=2727816965;locus_tag=Ga0182893_1093;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	1920	2708	.	-	0	ID=2727816966;locus_tag=Ga0182893_1094;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	2705	3046	.	-	0	ID=2727816967;locus_tag=Ga0182893_1095;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	3049	3333	.	-	0	ID=2727816968;locus_tag=Ga0182893_1096;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	3456	3683	.	-	0	ID=2727816969;locus_tag=Ga0182893_1097;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	3680	3976	.	-	0	ID=2727816970;locus_tag=Ga0182893_1098;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	4071	4427	.	-	0	ID=2727816971;locus_tag=Ga0182893_1099;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	4659	5138	.	-	0	ID=2727816972;locus_tag=Ga0182893_10910;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	5242	5625	.	-	0	ID=2727816973;locus_tag=Ga0182893_10911;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	5675	6112	.	-	0	ID=2727816974;locus_tag=Ga0182893_10912;product=Helix-turn-helix
+Ga0182893_109	img_core_v400	CDS	6299	7288	.	+	0	ID=2727816975;locus_tag=Ga0182893_10913;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	7308	8162	.	-	0	ID=2727816976;locus_tag=Ga0182893_10914;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	8342	8569	.	+	0	ID=2727816977;locus_tag=Ga0182893_10915;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	8585	9256	.	-	0	ID=2727816978;locus_tag=Ga0182893_10916;product=regulatory protein, luxR family
+Ga0182893_109	img_core_v400	CDS	9295	10221	.	+	0	ID=2727816979;locus_tag=Ga0182893_10917;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	10233	10682	.	-	0	ID=2727816980;locus_tag=Ga0182893_10918;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	10679	11425	.	-	0	ID=2727816981;locus_tag=Ga0182893_10919;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	11422	11679	.	-	0	ID=2727816982;locus_tag=Ga0182893_10920;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	11833	12795	.	-	0	ID=2727816983;locus_tag=Ga0182893_10921;product= transposase, IS4 family
+Ga0182893_109	img_core_v400	CDS	13433	14119	.	+	0	ID=2727816984;locus_tag=Ga0182893_10922;product=Protein of unknown function DUF91
+Ga0182893_109	img_core_v400	CDS	14141	15442	.	-	0	ID=2727816985;locus_tag=Ga0182893_10923;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	15412	16650	.	-	0	ID=2727816986;locus_tag=Ga0182893_10924;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	16986	18023	.	+	0	ID=2727816987;locus_tag=Ga0182893_10925;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	18034	19065	.	+	0	ID=2727816988;locus_tag=Ga0182893_10926;product=hypothetical protein
+Ga0182893_109	img_core_v400	CDS	19231	19398	.	-	0	ID=2727816989;locus_tag=Ga0182893_10927;product=hypothetical protein
+Ga0182893_110	img_core_v400	CDS	3	440	.	+	0	ID=2727816990;locus_tag=Ga0182893_1101;product=Histidine kinase-, DNA gyrase B-, and HSP90-like ATPase
+Ga0182893_110	img_core_v400	CDS	670	1314	.	-	0	ID=2727816991;locus_tag=Ga0182893_1102;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	3	278	.	+	0	ID=2727816992;locus_tag=Ga0182893_1111;product=PDDEXK-like protein of unknown function (DUF3799)
+Ga0182893_111	img_core_v400	CDS	398	1831	.	-	0	ID=2727816993;locus_tag=Ga0182893_1112;product=Initiator Replication protein
+Ga0182893_111	img_core_v400	CDS	2836	2970	.	-	0	ID=2727816994;locus_tag=Ga0182893_1113;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	2980	3942	.	-	0	ID=2727816995;locus_tag=Ga0182893_1114;product=chromosome partitioning protein, ParB family
+Ga0182893_111	img_core_v400	CDS	3939	4616	.	-	0	ID=2727816996;locus_tag=Ga0182893_1115;product=chromosome partitioning protein
+Ga0182893_111	img_core_v400	CDS	5335	5814	.	+	0	ID=2727816997;locus_tag=Ga0182893_1116;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	5904	6377	.	-	0	ID=2727816998;locus_tag=Ga0182893_1117;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	6685	6966	.	+	0	ID=2727816999;locus_tag=Ga0182893_1118;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	7000	7383	.	+	0	ID=2727817000;locus_tag=Ga0182893_1119;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	7694	7834	.	-	0	ID=2727817001;locus_tag=Ga0182893_11110;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	8277	8756	.	-	0	ID=2727817002;locus_tag=Ga0182893_11111;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	9283	10803	.	+	0	ID=2727817003;locus_tag=Ga0182893_11112;product=Initiator Replication protein
+Ga0182893_111	img_core_v400	CDS	10898	12280	.	-	0	ID=2727817004;locus_tag=Ga0182893_11113;product=DnaJ domain-containing protein
+Ga0182893_111	img_core_v400	CDS	12455	14182	.	-	0	ID=2727817005;locus_tag=Ga0182893_11114;product=Phosphoadenosine phosphosulfate reductase family protein
+Ga0182893_111	img_core_v400	CDS	14179	14664	.	-	0	ID=2727817006;locus_tag=Ga0182893_11115;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	14963	15607	.	-	0	ID=2727817007;locus_tag=Ga0182893_11116;product=bifunctional non-homologous end joining protein LigD
+Ga0182893_111	img_core_v400	CDS	15814	15936	.	+	0	ID=2727817008;locus_tag=Ga0182893_11117;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	15956	16075	.	+	0	ID=2727817009;locus_tag=Ga0182893_11118;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	16236	16625	.	-	0	ID=2727817010;locus_tag=Ga0182893_11119;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	17003	17161	.	+	0	ID=2727817011;locus_tag=Ga0182893_11120;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	17235	17861	.	-	0	ID=2727817012;locus_tag=Ga0182893_11121;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	18173	20302	.	+	0	ID=2727817013;locus_tag=Ga0182893_11122;product=ATP-dependent DNA helicase DinG
+Ga0182893_111	img_core_v400	CDS	20308	20589	.	-	0	ID=2727817014;locus_tag=Ga0182893_11123;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	20708	21169	.	-	0	ID=2727817015;locus_tag=Ga0182893_11124;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	21543	21767	.	+	0	ID=2727817016;locus_tag=Ga0182893_11125;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	21977	22834	.	-	0	ID=2727817017;locus_tag=Ga0182893_11126;product=restriction system protein
+Ga0182893_111	img_core_v400	CDS	22950	23363	.	-	0	ID=2727817018;locus_tag=Ga0182893_11127;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	23468	23650	.	-	0	ID=2727817019;locus_tag=Ga0182893_11128;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	23662	24708	.	-	0	ID=2727817020;locus_tag=Ga0182893_11129;product=Phosphoadenosine phosphosulfate reductase family protein
+Ga0182893_111	img_core_v400	CDS	24705	25187	.	-	0	ID=2727817021;locus_tag=Ga0182893_11130;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	25460	25834	.	+	0	ID=2727817022;locus_tag=Ga0182893_11131;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	25886	26446	.	+	0	ID=2727817023;locus_tag=Ga0182893_11132;product=protein of unknown function (DUF4124)
+Ga0182893_111	img_core_v400	CDS	26552	26947	.	-	0	ID=2727817024;locus_tag=Ga0182893_11133;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	26929	27165	.	-	0	ID=2727817025;locus_tag=Ga0182893_11134;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	27177	27332	.	-	0	ID=2727817026;locus_tag=Ga0182893_11135;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	27503	27808	.	-	0	ID=2727817027;locus_tag=Ga0182893_11136;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	27978	28508	.	-	0	ID=2727817028;locus_tag=Ga0182893_11137;product=protein CcmA, bactofilin family
+Ga0182893_111	img_core_v400	CDS	28505	29947	.	-	0	ID=2727817029;locus_tag=Ga0182893_11138;product=Protein of unknown function (DUF1173)
+Ga0182893_111	img_core_v400	CDS	30071	30682	.	-	0	ID=2727817030;locus_tag=Ga0182893_11139;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	30838	31284	.	+	0	ID=2727817031;locus_tag=Ga0182893_11140;product=protein of unknown function (DUF4148)
+Ga0182893_111	img_core_v400	CDS	31636	32244	.	+	0	ID=2727817032;locus_tag=Ga0182893_11141;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	32264	32818	.	+	0	ID=2727817033;locus_tag=Ga0182893_11142;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	32990	34096	.	+	0	ID=2727817034;locus_tag=Ga0182893_11143;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	34202	34906	.	-	0	ID=2727817035;locus_tag=Ga0182893_11144;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	34966	35745	.	-	0	ID=2727817036;locus_tag=Ga0182893_11145;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	35808	36686	.	-	0	ID=2727817037;locus_tag=Ga0182893_11146;product=protein of unknown function (DUF4343)
+Ga0182893_111	img_core_v400	CDS	36887	37138	.	-	0	ID=2727817038;locus_tag=Ga0182893_11147;product=hypothetical protein
+Ga0182893_111	img_core_v400	CDS	37957	38100	.	+	0	ID=2727817039;locus_tag=Ga0182893_11148;product=hypothetical protein
