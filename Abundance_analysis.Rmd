@@ -1,5 +1,5 @@
 ---
-title: "Abundance calculations"
+title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
 date: "August 17 2017"
 output:
@@ -35,7 +35,12 @@ library('dplyr')
 library('ggplot2')
 library("grid")
 library("gridExtra")
+library("easyGgplot2")
 source("functions.R")
+
+col_limno <- "#060670"
+col_bac1 <- "#720000"
+col_bac2 <- "#D46A6A"
 ```
 
 ```{r read-format data, warning = FALSE}
@@ -75,7 +80,7 @@ data_total$upper_rel_abundance_map <- 100*((data_total$coverage+data_total$std_c
 data_total$lower_rel_abundance_map <- 100*((data_total$coverage-data_total$std_coverage)*data_total$bin_size)/(read_length*data_total$Mapped_reads)
 ```
 
-# Plot
+# *1. Investigate MAG- and 16S-based abundances*
 It is clear that there is significant %GC coverage bias present. The estimated relative abundances
 from metagenomics do not quantitatively match with the V3-V4 16S rRNA gene amplicon data.
 $$Relative\ abundance =100*(\frac{mean\ coverage * bin\ size}{read\ length*total\ sample\ reads })$$
@@ -97,7 +102,7 @@ data_total_sb <- data_total[data_total$bins %in% c("Limnohabitans_bin", "Bactero
 
 p_meta <- ggplot(data = data_total_sb, aes(x = bins, y = mean_rel_abundance, fill = bins))+
   geom_point(size = 4, shape = 21, alpha = 0.7)+
-  scale_fill_brewer(palette = "Paired")+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
   theme_bw()+
   geom_errorbar(aes(ymin=lower_rel_abundance, 
                     ymax=upper_rel_abundance, 
@@ -116,7 +121,7 @@ p_meta <- ggplot(data = data_total_sb, aes(x = bins, y = mean_rel_abundance, fil
 # Corrected for mapped N° of reads
 p_meta_mapped <- ggplot(data = data_total_sb, aes(x = bins, y = mean_rel_abundance_map, fill = bins))+
   geom_point(size = 4, shape = 21, alpha = 0.7)+
-  scale_fill_brewer(palette = "Paired")+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
   theme_bw()+
   geom_errorbar(aes(ymin=lower_rel_abundance_map, 
                     ymax=upper_rel_abundance_map, 
@@ -134,7 +139,7 @@ p_meta_mapped <- ggplot(data = data_total_sb, aes(x = bins, y = mean_rel_abundan
 
 p_16S <- ggplot(data = df_16S_long, aes(x = bins, y = relative_abundance_16S, fill = bins))+
   geom_point(size = 4, shape = 21, alpha = 0.7)+
-  scale_fill_brewer(palette = "Paired")+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
   theme_bw()+
   facet_grid(.~Sample_ID)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
@@ -147,4 +152,110 @@ p_16S <- ggplot(data = df_16S_long, aes(x = bins, y = relative_abundance_16S, fi
   ggtitle("V3-V4 16S")
 
 grid_arrange_shared_legend(p_meta, p_meta_mapped, p_16S, ncol = 1, nrow = 3)
+```
+
+# *2. Investigate sequence characteristics within coding DNA sequences (CDS)*
+
+```{r %GC-gene-analysis_v1, warning = FALSE, fig.width = 22.5, fig.height = 7.5,  dpi=500}
+# First we need the files that map the gene ID to the sequence ID (linux cmd: https://github.com/rprops/MetaG_lakeMI/wiki/11.-Genome-annotation)
+# These are stored in the IMG_annotation data for each genome bin
+
+# Next, extract the %GC of each gene from the gff file
+extract_gc_from_gff("./IMG_annotation/IMG_2724679690_Limnohabitans/121950.assembled.gff", outputFolder = "GC_analysis")
+extract_gc_from_gff("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/121951.assembled.gff", outputFolder = "GC_analysis")
+extract_gc_from_gff("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/121960.assembled.gff", outputFolder = "GC_analysis")
+
+# Use these files to make dataframes mapping function (COGs) and %GC
+LIMNO_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
+
+BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1//Annotation/2724679691.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
+
+BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
+
+LIMNO_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
+
+BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1//Annotation/2724679691.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
+
+BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
+```
+
+Motivation: For COGs there exists a hierarchy allowing us to investigate whether there is a conservation of high/low %GC in certain functional gene groups. In order to do this we need to incorporate this hierarchy into the genome dataframes we have now.
+  
+
+```{r %GC-gene-analysis_2, warning = FALSE, fig.width = 22.5, fig.height = 7.5,  dpi=500}
+```
+
+
+# *3. Analysis of gene length distribution*
+Here we use the dataframe made in the previous section to see if there is a significant difference in the gene length of the COGs within these three consensus genomes.  
+
+Observation: They have very small genes: on average < 500bp.
+
+```{r gene-length-analysis_COG, warning = FALSE, fig.width = 10, fig.height = 3.5,  dpi=500}
+# Limnohabitans MAG gene length distribution 
+p_LIMNO_length <- easyGgplot2::ggplot2.histogram(data = LIMNO_gc_cog, xName = 'gene_length',
+                  groupName = 'Genome', alpha = 0.5,
+                  legendPosition = "top", binwidth = 0.15,
+                  groupColors = col_limno,addMeanLine=TRUE, meanLineColor="black",
+                  meanLineType="dashed")+ theme_bw()+ ylim(0,15)+
+  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
+  ggtitle("Limnohabitans MAG")+ xlim(0,2000)
+
+# Bacteroidetes MAG1 gene length distribution 
+p_BAC1_length <- easyGgplot2::ggplot2.histogram(data = BAC1_gc_cog, xName = 'gene_length',
+                  groupName = 'Genome', alpha = 0.5,
+                  legendPosition = "top", binwidth = 0.15, 
+                  groupColors = col_bac1,addMeanLine=TRUE, meanLineColor="black",
+                  meanLineType="dashed")+ theme_bw()+ ylim(0,15)+
+  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
+  ggtitle("Bacteroidetes MAG1")+ xlim(0,2000)
+
+# Bacteroidetes MAG2 gene length distribution 
+p_BAC2_length <- easyGgplot2::ggplot2.histogram(data = BAC2_gc_cog, xName = 'gene_length',
+                  groupName = 'Genome', alpha = 0.5,
+                  legendPosition = "top", binwidth = 0.15,
+                  groupColors = col_bac2,addMeanLine=TRUE, meanLineColor="black",
+                  meanLineType="dashed")+ theme_bw()+ ylim(0,15)+
+  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
+  ggtitle("Bacteroidetes MAG2")+ xlim(0,2000)
+
+grid.arrange(p_LIMNO_length, p_BAC1_length, p_BAC2_length, ncol = 3)
+```
+
+We can do the same for the Pfams.
+```{r gene-length-analysis_Pfam, warning = FALSE, fig.width = 10, fig.height = 3.5,  dpi=500}
+# Limnohabitans MAG gene length distribution 
+p_LIMNO_length <- easyGgplot2::ggplot2.histogram(data = LIMNO_gc_pfam, xName = 'gene_length',
+                  groupName = 'Genome', alpha = 0.5,
+                  legendPosition = "top", binwidth = 0.15,
+                  groupColors = col_limno,addMeanLine=TRUE, meanLineColor="black",
+                  meanLineType="dashed")+ theme_bw()+ ylim(0,25)+
+  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
+  ggtitle("Limnohabitans MAG")+ xlim(0,3000)
+
+# Bacteroidetes MAG1 gene length distribution 
+p_BAC1_length <- easyGgplot2::ggplot2.histogram(data = BAC1_gc_pfam, xName = 'gene_length',
+                  groupName = 'Genome', alpha = 0.5,
+                  legendPosition = "top", binwidth = 0.15, 
+                  groupColors = col_bac1,addMeanLine=TRUE, meanLineColor="black",
+                  meanLineType="dashed")+ theme_bw()+ ylim(0,25)+
+  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
+  ggtitle("Bacteroidetes MAG1")+ xlim(0,3000)
+
+# Bacteroidetes MAG2 gene length distribution 
+p_BAC2_length <- easyGgplot2::ggplot2.histogram(data = BAC2_gc_pfam, xName = 'gene_length',
+                  groupName = 'Genome', alpha = 0.5,
+                  legendPosition = "top", binwidth = 0.15,
+                  groupColors = col_bac2,addMeanLine=TRUE, meanLineColor="black",
+                  meanLineType="dashed")+ theme_bw()+ ylim(0,25)+
+  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
+  ggtitle("Bacteroidetes MAG2")+ xlim(0,3000)
+
+grid.arrange(p_LIMNO_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 ```
