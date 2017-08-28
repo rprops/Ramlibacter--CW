@@ -399,3 +399,88 @@ grid.arrange(p_LIMNO_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 ```
 
 <img src="Figures/cached/gene-length-analysis_Pfam-1.png" style="display: block; margin: auto;" />
+
+# Identify unique functional genes (COG/Pfams)
+
+```r
+# Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG1
+unique_LIMNO_BAC1 <- dplyr::anti_join(LIMNO_gc_cog, BAC1_gc_cog, by = "cog_id")
+cat("There are", paste(nrow(unique_LIMNO_BAC1)), "unique COGs in Limnohabitans MAG vs Bacteroidetes MAG1")
+```
+
+```
+## There are 1178 unique COGs in Limnohabitans MAG vs Bacteroidetes MAG1
+```
+
+```r
+# Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG2
+unique_LIMNO_BAC2 <- dplyr::anti_join(LIMNO_gc_cog, BAC2_gc_cog, by = "cog_id")
+cat("There are", paste(nrow(unique_LIMNO_BAC2)), "unique COGs in Limnohabitans MAG vs Bacteroidetes MAG2")
+```
+
+```
+## There are 1143 unique COGs in Limnohabitans MAG vs Bacteroidetes MAG2
+```
+
+```r
+# Find unique functions in Bacteroidetes MAG1 vs Bacteroidetes MAG2
+unique_BAC1_BAC2 <- dplyr::anti_join(BAC1_gc_cog, BAC2_gc_cog, by = "cog_id")
+cat("There are", paste(nrow(unique_BAC1_BAC2)), "unique COGs in Bacteroidetes MAG1 vs Bacteroidetes MAG2")
+```
+
+```
+## There are 153 unique COGs in Bacteroidetes MAG1 vs Bacteroidetes MAG2
+```
+
+```r
+# Find unique functions in Bacteroidetes MAG1 vs Bacteroidetes MAG2
+unique_BAC2_BAC1 <- dplyr::anti_join(BAC2_gc_cog, BAC1_gc_cog, by = "cog_id")
+cat("There are", paste(nrow(unique_BAC2_BAC1)), "unique COGs in Bacteroidetes MAG2 vs Bacteroidetes MAG1")
+```
+
+```
+## There are 143 unique COGs in Bacteroidetes MAG2 vs Bacteroidetes MAG1
+```
+
+
+```r
+# Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG1
+unique_pfam_LIMNO_BAC1 <- dplyr::anti_join(LIMNO_gc_pfam, BAC1_gc_pfam, by = "pfam_id")
+cat("There are", paste(nrow(unique_pfam_LIMNO_BAC1)), "unique Pfams in Limnohabitans MAG vs Bacteroidetes MAG1")
+```
+
+```
+## There are 1474 unique Pfams in Limnohabitans MAG vs Bacteroidetes MAG1
+```
+
+```r
+# Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG2
+unique_pfam_LIMNO_BAC2 <- dplyr::anti_join(LIMNO_gc_pfam, BAC2_gc_pfam, by = "pfam_id")
+cat("There are", paste(nrow(unique_pfam_LIMNO_BAC2)), "unique Pfams in Limnohabitans MAG vs Bacteroidetes MAG2")
+```
+
+```
+## There are 1424 unique Pfams in Limnohabitans MAG vs Bacteroidetes MAG2
+```
+
+```r
+# Find unique functions in Bacteroidetes MAG1 vs Bacteroidetes MAG2
+unique_pfam_BAC1_BAC2 <- dplyr::anti_join(BAC1_gc_pfam, BAC2_gc_pfam, by = "pfam_id")
+cat("There are", paste(nrow(unique_pfam_BAC1_BAC2)), "unique Pfams in Bacteroidetes MAG1 vs Bacteroidetes MAG2")
+```
+
+```
+## There are 285 unique Pfams in Bacteroidetes MAG1 vs Bacteroidetes MAG2
+```
+
+```r
+# Find unique functions in Bacteroidetes MAG1 vs Bacteroidetes MAG2
+unique_pfam_BAC2_BAC1 <- dplyr::anti_join(BAC2_gc_pfam, BAC1_gc_pfam, by = "pfam_id")
+cat("There are", paste(nrow(unique_pfam_BAC2_BAC1)), "unique Pfams in Bacteroidetes MAG2 vs Bacteroidetes MAG1")
+```
+
+```
+## There are 233 unique Pfams in Bacteroidetes MAG2 vs Bacteroidetes MAG1
+```
+
+

@@ -31,9 +31,10 @@ extract_gc_from_gff <- function(inputgff, outputFolder){
   
   for(i in inputgff){
     d1 <- read.table(i, as.is = TRUE, sep = "\t")
-    d2 <- read.table(text = d1[[9]], sep = ";")
+    d2 <- t(sapply(strsplit(d1[[9]],";"), `[`, c(1:4)))
     d <- cbind(d1[,1], d2[,c(1,3)])
     colnames(d) <- c("contig", "contig_geneID", "GC")
+    d <- data.frame(d)
     
     # Remove unwanted characters
     d$GC <- gsub(d$GC, pattern = "gc_cont=", replacement = "")
