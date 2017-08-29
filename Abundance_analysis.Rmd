@@ -260,7 +260,7 @@ p_BAC2_length <- easyGgplot2::ggplot2.histogram(data = BAC2_gc_pfam, xName = 'ge
 grid.arrange(p_LIMNO_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 ```
 
-# Identify unique functional genes (COG/Pfams)
+# 5. Identify unique functional genes (COG/Pfams)
 ```{r identify-unique-cog}
 # Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG1
 unique_LIMNO_BAC1 <- dplyr::anti_join(LIMNO_gc_cog, BAC1_gc_cog, by = "cog_id")
@@ -297,4 +297,59 @@ unique_pfam_BAC2_BAC1 <- dplyr::anti_join(BAC2_gc_pfam, BAC1_gc_pfam, by = "pfam
 cat("There are", paste(nrow(unique_pfam_BAC2_BAC1)), "unique Pfams in Bacteroidetes MAG2 vs Bacteroidetes MAG1")
 ```
 
+
+# 6. COG functional categories
+Get COG ID to COG functional category mapping file here: ftp://ftp.ncbi.nih.gov/pub/wolf/COGs/COG0303/cogs.csv    
+
+The exact statistical analysis to compare genomes based on these profiles should be performed in STAMP.
+
+```{r COG functional categories, dpi = 300, warning = FALSE, fig.width = 5, fig.height = 15}
+# Import COG mapping file
+cogid_2_cogcat <- read.csv("./Mapping_files/cogid_2_cogcat.csv", sep = ",", header = FALSE, fill = TRUE,col.names = c("COG_ID", "COG_class", "function"))[, 1:2]
+cogid_2_cogcat <- cogid_2_cogcat[(cogid_2_cogcat$COG_class)!="", ]
+cogid_2_cogcat <- droplevels(cogid_2_cogcat)
+
+# Read COG category file
+cog_categories <- read.table("./Mapping_files/cog_categories.tsv", header = TRUE, sep = "\t")
+
+# Merge COG metadata
+cog_meta <- dplyr::left_join(cog_categories, cogid_2_cogcat, by = c("COG_class" = "COG_class"))
+cog_meta <- droplevels(cog_meta)
+
+# Merge genome information of all genome bins
+merged_gc_cog <- rbind(LIMNO_gc_cog, BAC1_gc_cog, BAC2_gc_cog)
+merged_gc_cog <- data.frame(merged_gc_cog, genome_id = c(rep("Limnohabitans MAG", nrow(LIMNO_gc_cog)), 
+                                             rep("Bacteroidetes MAG1", nrow(BAC1_gc_cog)),
+                                             rep("Bacteroidetes MAG2", nrow(BAC2_gc_cog)))
+                            )
+
+# Merge this metadata with the genome data from before
+# COGs with multiple classifications are currently still NA - work on this.
+merged_gc_cog <- dplyr::left_join(merged_gc_cog, cog_meta, by = c("cog_id" = "COG_ID"))
+merged_gc_cog <- merged_gc_cog[!is.na(merged_gc_cog$COG_functional_category),]
+
+# Visualize distribution across major metabolism functional COG groups per genome.
+p_cog_func_group <- ggplot(data = merged_gc_cog, aes(x=COG_functional_category, fill = COG_functional_cluster))+
+  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+  theme_bw()+
+  facet_grid(genome_id~.)+
+  scale_fill_brewer(palette = "Accent")+
+  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="bottom", axis.text.x = element_text(angle = 90, hjust = 1),
+                                                   legend.text = element_text(size = 7))+
+  guides(fill=guide_legend(nrow=2,byrow=TRUE))
+
+print(p_cog_func_group)
+
+p_cog_func_clust <- ggplot(data = merged_gc_cog, aes(x=COG_functional_cluster, fill = COG_functional_cluster))+
+  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+  theme_bw()+
+  facet_grid(genome_id~.)+
+  scale_fill_brewer(palette = "Accent")+
+  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="bottom",axis.text.x = element_text(angle = 90, hjust = 1),
+                                                   legend.text = element_text(size = 7))+
+  guides(fill=guide_legend(nrow=2,byrow=TRUE))
+
+print(p_cog_func_clust)
+
+```
 
