@@ -1,6 +1,6 @@
 # Metagenomic analysis of secondary cooling water microbial communities
 Ruben Props  
-August 17 2017  
+`r format(Sys.time(), '%d %B, %Y')`  
 
 
 
@@ -43,7 +43,14 @@ data_total$upper_rel_abundance_map <- 100*((data_total$coverage+data_total$std_c
 data_total$lower_rel_abundance_map <- 100*((data_total$coverage-data_total$std_coverage)*data_total$bin_size)/(read_length*data_total$Mapped_reads)
 ```
 
-# *1. Investigate MAG- and 16S-based abundances*
+# 1. Phylogenetic tree
+## Limnohabitans
+![RAxML tree for Limnohabitans MAG](./Tree/PhyloTree_Limno.png)  
+
+
+## Bacteroidetes
+
+# *2. Investigate MAG- and 16S-based abundances*
 It is clear that there is significant %GC coverage bias present. The estimated relative abundances
 from metagenomics do not quantitatively match with the V3-V4 16S rRNA gene amplicon data.
 $$Relative\ abundance =100*(\frac{mean\ coverage * bin\ size}{read\ length*total\ sample\ reads })$$
@@ -121,7 +128,7 @@ grid_arrange_shared_legend(p_meta, p_meta_mapped, p_16S, ncol = 1, nrow = 3)
 
 <img src="Figures/cached/plot-data-1.png" style="display: block; margin: auto;" />
 
-# *2. Investigate sequence characteristics within coding DNA sequences (CDS)*
+# *3. Investigate sequence characteristics within coding DNA sequences (CDS)*
 
 
 ```r
@@ -326,7 +333,7 @@ Motivation: For COGs there exists a hierarchy allowing us to investigate whether
 
 
 
-# *3. Analysis of gene length distribution*
+# *4. Analysis of gene length distribution*
 Here we use the dataframe made in the previous section to see if there is a significant difference in the gene length of the COGs within these three consensus genomes.  
 
 Observation: They have very small genes: on average < 500bp.
@@ -522,7 +529,7 @@ p_cog_func_group <- ggplot(data = merged_gc_cog, aes(x=COG_functional_category, 
   facet_grid(genome_id~.)+
   scale_fill_brewer(palette = "Accent")+
   labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="bottom", axis.text.x = element_text(angle = 90, hjust = 1),
-                                                   legend.text = element_text(size = 7))+
+                                                   legend.text = element_text(size = 5))+
   guides(fill=guide_legend(nrow=2,byrow=TRUE))
 
 print(p_cog_func_group)
@@ -537,7 +544,7 @@ p_cog_func_clust <- ggplot(data = merged_gc_cog, aes(x=COG_functional_cluster, f
   facet_grid(genome_id~.)+
   scale_fill_brewer(palette = "Accent")+
   labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="bottom",axis.text.x = element_text(angle = 90, hjust = 1),
-                                                   legend.text = element_text(size = 7))+
+                                                   legend.text = element_text(size = 5))+
   guides(fill=guide_legend(nrow=2,byrow=TRUE))
 
 print(p_cog_func_clust)
