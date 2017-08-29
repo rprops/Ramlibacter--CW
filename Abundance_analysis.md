@@ -552,3 +552,15 @@ print(p_cog_func_clust)
 
 <img src="Figures/cached/COG functional categories-2.png" style="display: block; margin: auto;" />
 
+# 7.  Codon bias analysis using CodonO
+
+* Get CodonO for linux here: http://sysbio.cvm.msstate.edu/software/CodonO/download
+
+* Run `CU.linux input.fasta`  
+* Output from CodonO:  
+  inputfile.ok  ---- the SCUO units for each input sequences based on their order  
+	inputfile.fik ---- the composition ratio of the i-th amino acid in the k-th sequence  
+	inputfile.hijk ---- the frequency of the j-th degenerate codon for amino acid i in each sequence  
+
+
+

@@ -357,6 +357,20 @@ p_cog_func_clust <- ggplot(data = merged_gc_cog, aes(x=COG_functional_cluster, f
   guides(fill=guide_legend(nrow=2,byrow=TRUE))
 
 print(p_cog_func_clust)
-
 ```
 
+# 7.  Synonymous Codon Usage Bias analysis using CodonO
+
+* Get CodonO for linux here: http://sysbio.cvm.msstate.edu/software/CodonO/download
+
+* Run `CU.linux input.fasta`  
+* Output from CodonO:  
+  inputfile.ok  ---- the SCUO units for each input sequence based on its order  
+	inputfile.fik ---- the composition ratio of the i-th amino acid in the k-th sequence  
+	inputfile.hijk ---- the frequency of the j-th degenerate codon for amino acid i in each sequence  
+
+
+```{r Codon bias, dpi = 300, warning = FALSE, fig.width = 5, fig.height = 15}
+
+
+```
