@@ -363,14 +363,78 @@ print(p_cog_func_clust)
 
 * Get CodonO for linux here: http://sysbio.cvm.msstate.edu/software/CodonO/download
 
-* Run `CU.linux input.fasta`  
+* Run `CU.linux input.genes.fna`  
 * Output from CodonO:  
   inputfile.ok  ---- the SCUO units for each input sequence based on its order  
 	inputfile.fik ---- the composition ratio of the i-th amino acid in the k-th sequence  
 	inputfile.hijk ---- the frequency of the j-th degenerate codon for amino acid i in each sequence  
 
+* This output was not sufficient to perform any analysis. Therefore I used the web browser to calculate the synonymous codon bias in the genes of the three genomes. 
 
-```{r Codon bias, dpi = 300, warning = FALSE, fig.width = 5, fig.height = 15}
+** Codon bias is proportional to mRNA production! (Wan et al 2004)  
+
+** However, strong correlation between SCUO and %GC has been reported, thereby
+confounding possible "biological" effects.. Beware..
 
 
+```{r Codon bias, dpi = 300, warning = FALSE, fig.width = 12, fig.height = 13}
+# Import and format data for Limnohabitans MAG
+SCUO_LIMNO <- read.table("./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690.genes.fna.codonO.output",
+                         sep = ",", blank.lines.skip = TRUE, allowEscapes = FALSE, skipNul = TRUE)
+SCUO_LIMNO$V1 <- gsub(SCUO_LIMNO$V1, pattern = "\t", replacement = "")
+SCUO_LIMNO$V1 <- gsub(SCUO_LIMNO$V1, pattern = " ", replacement = "")
+SCUO_LIMNO <- data.frame(GC = SCUO_LIMNO$V1[grep(x = SCUO_LIMNO$V1, pattern = "GC*.*=")], 
+                         SCUO = rep(SCUO_LIMNO$V1[grep(x = SCUO_LIMNO$V1, pattern = "SCUO*")], each = 4)
+                         )
+SCUO_LIMNO$GC <- as.numeric(gsub(SCUO_LIMNO$GC, pattern = ".*=", replacement = ""))
+SCUO_LIMNO$SCUO <- as.numeric(gsub(SCUO_LIMNO$SCUO, pattern = ".*=", replacement = ""))
+
+# Import and format data for Bacteroidetes MAG1
+SCUO_BAC1 <- read.table("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.genes.fna.codonO.output",
+                         sep = ",", blank.lines.skip = TRUE, allowEscapes = FALSE, skipNul = TRUE)
+SCUO_BAC1$V1 <- gsub(SCUO_BAC1$V1, pattern = "\t", replacement = "")
+SCUO_BAC1$V1 <- gsub(SCUO_BAC1$V1, pattern = " ", replacement = "")
+SCUO_BAC1 <- data.frame(GC = SCUO_BAC1$V1[grep(x = SCUO_BAC1$V1, pattern = "GC*.*=")], 
+                         SCUO = rep(SCUO_BAC1$V1[grep(x = SCUO_BAC1$V1, pattern = "SCUO*")], each = 4)
+                         )
+SCUO_BAC1$GC <- as.numeric(gsub(SCUO_BAC1$GC, pattern = ".*=", replacement = ""))
+SCUO_BAC1$SCUO <- as.numeric(gsub(SCUO_BAC1$SCUO, pattern = ".*=", replacement = ""))
+
+
+# Import and format data for Bacteroidetes MAG2
+SCUO_BAC2 <- read.table("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.genes.fna.codonO.output",
+                         sep = ",", blank.lines.skip = TRUE, allowEscapes = FALSE, skipNul = TRUE)
+SCUO_BAC2$V1 <- gsub(SCUO_BAC2$V1, pattern = "\t", replacement = "")
+SCUO_BAC2$V1 <- gsub(SCUO_BAC2$V1, pattern = " ", replacement = "")
+SCUO_BAC2 <- data.frame(GC = SCUO_BAC2$V1[grep(x = SCUO_BAC2$V1, pattern = "GC*.*=")], 
+                         SCUO = rep(SCUO_BAC2$V1[grep(x = SCUO_BAC2$V1, pattern = "SCUO*")], each = 4)
+                         )
+SCUO_BAC2$GC <- as.numeric(gsub(SCUO_BAC2$GC, pattern = ".*=", replacement = ""))
+SCUO_BAC2$SCUO <- as.numeric(gsub(SCUO_BAC2$SCUO, pattern = ".*=", replacement = ""))
+
+# Merge data to one dataframe
+SCUO_merged <- data.frame(rbind(SCUO_LIMNO, SCUO_BAC1, SCUO_BAC2),
+           Genome_ID = c(rep("Limnohabitans MAG", nrow(SCUO_LIMNO)), rep("Bacteroidetes MAG1", nrow(SCUO_BAC1)), 
+           rep("Bacteroidetes MAG2", nrow(SCUO_BAC2))),
+            GCx = rep(c("GC_mean", "GC1", "GC2", "GC3"), 
+                     (nrow(SCUO_LIMNO) + nrow(SCUO_BAC1) + nrow(SCUO_BAC2))/4
+            )
+)
+          
+# Visualize differences in codon bias
+p_SCUO <- ggplot(data = SCUO_merged, aes (x = 100*GC, y = SCUO, fill = Genome_ID))+
+  geom_point(size = 4, shape = 21, alpha = 0.7)+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
+  theme_bw()+
+  facet_wrap(~GCx, ncol = 2)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 0, hjust = 1),
+        strip.text.x=element_text(size=18))+
+  ylab("SCUO")+
+  xlab("%GC")+
+  ylim(0,1)
+
+print(p_SCUO)
 ```
