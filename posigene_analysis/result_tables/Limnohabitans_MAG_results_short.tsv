@@ -1,4 +1,4 @@
-Gene	Transcript	FDR	P-Value	Number of species included	Number of Sites under positive Selection	Jalview protein alignment	Protein Alignment (interleaved)
+Gene	Transcript	FDR	P-Value	Number_of_species_included	Number_of_Sites_under_positive_Selection	Jalview_protein_alignment	Protein_Alignment_(interleaved)
 2727791807	2727791807	8.828326e-12	9.659e-15	8	80	"/scratch/vdenef_fluxm/rprops/metaG_SCK/Limno_CoolingWater/posigene_analysis/individual_results/2727791807/Limnohabitans_MAG/2727791807_codeml/prank/prank.best.fas.translation.view"	"LibGD or perl module GD not installed"	
 2727791696	2727791696	3.342955e-09	7.315e-12	9	50	"/scratch/vdenef_fluxm/rprops/metaG_SCK/Limno_CoolingWater/posigene_analysis/individual_results/2727791696/Limnohabitans_MAG/2727791696_codeml/prank/prank.best.fas.translation.view"	"LibGD or perl module GD not installed"	
 2727791060	2727791060	4.672825e-07	1.919e-09	9	46	"/scratch/vdenef_fluxm/rprops/metaG_SCK/Limno_CoolingWater/posigene_analysis/individual_results/2727791060/Limnohabitans_MAG/2727791060_codeml/prank/prank.best.fas.translation.view"	"LibGD or perl module GD not installed"	
