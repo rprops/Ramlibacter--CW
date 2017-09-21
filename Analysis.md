@@ -880,6 +880,8 @@ write.table(tmp2, file = "All_KO.tsv", quote = FALSE,
 
 # 9.  PosiGene analysis for identifying genes under positive selection in the Limnohabitans MAG
 
+Phylogenetic tree used in PosiGene analysis. Red branch indicates the genome for which PSG were tested.
+![Phylogenetic tree used in PosiGene analysis](./posigene_analysis/CodeML_tree_anchor_species=Limnohabitans_MAG.png) 
 
 
 ```r
