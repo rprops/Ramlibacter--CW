@@ -5,6 +5,201 @@ Ruben Props
 
 
 
+# A. 16S analysis
+## Network analysis on relative abundances  
+
+In the first analysis we utilize the raw counts. As such this network will be built using relative abundance data.
+
+```r
+# Set seed
+set.seed(777)
+
+# Import data
+otus <- as.matrix(read.csv2("16S_data/OTU_table_raw.csv", fill = TRUE, header = TRUE,
+                    row.names = 1))
+
+taxa <- tax_table(as.matrix(read.csv2("16S_data/tax_table_raw.csv", fill = TRUE, header = TRUE,
+                    row.names = 1))
+)
+
+phy_df <- phyloseq(otu_table(otus, taxa_are_rows = FALSE), taxa)
+
+# filterobj <- filterTaxonMatrix(otus, minocc = 20,
+#                               keepSum = TRUE, return.filtered.indices = TRUE)
+# otus.f <- filterobj$mat
+# taxa.f <- taxa[setdiff(1:nrow(taxa), filterobj$filtered.indices),]
+# dummyTaxonomy <- colnames(tax_df); dummyTaxonomy[1] <- "Kingdom_dummy"
+# taxa.f <- rbind(taxa.f, dummyTaxonomy)
+# rownames(taxa.f)[nrow(taxa.f)] <- "0"
+# rownames(otus.f)[nrow(otus.f)] <- "0"
+# 
+# # Next, we assemble a new phyloseq object with the filtered OTU and taxonomy tables.
+# updatedotus <- otu_table(otus.f, taxa_are_rows = TRUE)
+# updatedtaxa <- tax_table(taxa.f)
+# phyloseqobj.f <- phyloseq(updatedotus, updatedtaxa)
+
+# Prevalence filtering
+phy_df_filtered <- filter_taxa(phy_df, function(x) sum(x > 30) > (0.25*length(x)), TRUE)
+
+sp_easi <- spiec.easi(phy_df_filtered, method='mb', lambda.min.ratio=1e-2,
+                           nlambda=20, icov.select.params=list(rep.num=50))
+```
+
+```
+## Normalizing/clr transformation of data with pseudocount ...
+```
+
+```
+## Inverse Covariance Estimation with mb ...
+```
+
+```
+## Model selection with stars ...
+```
+
+```
+## Done!
+```
+
+```r
+ig.mb <- adj2igraph(sp_easi$refit,  vertex.attr = list(name=taxa_names(phy_df_filtered)))
+vsize <- Biobase::rowMax(clr(otu_table(phy_df_filtered), 1))+15
+Lineage_rel <- tax_table(phy_df_filtered)[,"Lineage"]
+Lineage_rel <- factor(Lineage_rel, levels = unique(Lineage_rel))
+vweights <- summary(symBeta(getOptBeta(sp_easi), mode='maxabs'))
+MAGs <- c(); MAGs[taxa_names(phy_df_filtered)=="Otu00001"]  <- "Limnohabitans MAG"
+MAGs[taxa_names(phy_df_filtered)=="Otu00002"]  <- "Bacteroidetes MAG1"
+MAGs[taxa_names(phy_df_filtered)=="Otu00003"]  <- "Bacteroidetes MAG2"
+MAGs[is.na(MAGs)] <-""
+
+# png(file = "./Figures/Figures_network/NETWORK-REL-CX-C30-A25.png", width = 9, height = 9, res = 500, units = "in")
+plot_network_custom(ig.mb, phy_df_filtered, type='taxa',
+             line_weight = 2, hjust = 0.5,
+             point_size = 0.1, alpha = 0.01, label_size = 3.95)+
+  scale_fill_brewer(palette = "Paired")+
+  scale_color_brewer(palette = "Paired")+
+  geom_point(aes(size = vsize, fill = Lineage_rel), alpha = 0.5,
+             colour="black", shape=21)+
+  guides(size = FALSE,
+    fill  = guide_legend(title = "Lineage", override.aes = list(size = 5),
+                         nrow = 4),
+    color = FALSE)+
+  theme(legend.position="bottom", legend.text=element_text(size=12),
+        text = element_text(size = 12),
+        plot.margin = unit(c(1,1,1,1), "cm"))+
+  scale_size(range = c(5, 15))+
+  geom_label_repel(aes(label = MAGs), fontface = 'bold', color = 'black',
+                   box.padding = 0.35, point.padding = 0.5,
+                   segment.color = 'grey50',
+                   size = 4,
+                       # Width of the line segments.
+                   segment.size = 1.5,
+                   # Draw an arrow from the label to the data point.
+                   arrow = arrow(length = unit(0.01, 'npc')),
+                   nudge_x = -0.1,
+                   nudge_y = 0.6
+  )
+```
+
+<img src="Figures/cached/network-analysis-relative-1.png" style="display: block; margin: auto;" />
+
+```r
+# dev.off()
+```
+## Network analysis on absolute abundances  
+
+The second network will be built using absolute abundance data by multiplying the relative taxon abundances by the total cell density. The final obtained counts will expressed as nr. of cells measured in 50 µL samples. We also only consider the OTUs that were left after the prevalence filtering conducted in the network construction with relative abundance data.
+
+```r
+# Import cell count data
+cell_counts <- read.csv("16S_data/cell_counts.csv")
+cell_counts$sample_title <- as.factor(cell_counts$sample_title)
+# Calculate proportions
+phy_df_rel <- transform_sample_counts(phy_df, function(x) x/sum(x))
+
+# Select samples for which corresponding counts are available
+cell_counts <- cell_counts[cell_counts$sample_title %in% sample_names(phy_df_rel), ]
+cell_counts <- droplevels(cell_counts)
+phy_df_rel <- prune_samples(sample_names(phy_df_rel) %in% cell_counts$sample_title, phy_df_rel)
+
+# Multiply with cell counts in 50 µL of sample
+otu_table(phy_df_rel) <- otu_table(phy_df_rel) * cell_counts$Number_of_cells
+
+# Select taxa that were selected based on prevalence in previous chunk
+phy_df_abs <- prune_taxa(taxa_names(phy_df_filtered), phy_df_rel)
+
+# Round absolute abundances to integers
+otu_table(phy_df_abs) <- round(otu_table(phy_df_abs), 0)
+
+# Construct network
+sp_easi_abs <- spiec.easi(phy_df_abs, method='mb', lambda.min.ratio=1e-2,
+                           nlambda=20, icov.select.params=list(rep.num=50))
+```
+
+```
+## Normalizing/clr transformation of data with pseudocount ...
+```
+
+```
+## Inverse Covariance Estimation with mb ...
+```
+
+```
+## Model selection with stars ...
+```
+
+```
+## Done!
+```
+
+```r
+ig.mb_abs <- adj2igraph(sp_easi_abs$refit,  vertex.attr = list(name=taxa_names(phy_df_abs)))
+vsize_abs <- Biobase::rowMax(clr(otu_table(phy_df_abs), 1))+15
+Lineage_abs <- tax_table(phy_df_abs)[,"Lineage"]
+Lineage_abs <- factor(Lineage_abs, levels = unique(Lineage_abs))
+vweights_abs <- summary(symBeta(getOptBeta(sp_easi_abs), mode='maxabs'))
+MAGs <- c(); MAGs[taxa_names(phy_df_abs)=="Otu00001"]  <- "Limnohabitans MAG"
+MAGs[taxa_names(phy_df_abs)=="Otu00002"]  <- "Bacteroidetes MAG1"
+MAGs[taxa_names(phy_df_abs)=="Otu00003"]  <- "Bacteroidetes MAG2"
+MAGs[is.na(MAGs)] <-""
+
+# Plot network inferred from absolute abundances
+# png(file = "./Figures/Figures_network/NETWORK-ABS-CX-C30-A25.png", width = 9, height = 9, res = 500, units = "in")
+plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
+             line_weight = 2, hjust = 0.5,
+             point_size = 0.1, alpha = 0.01, label_size = 3.95)+
+  scale_fill_brewer(palette = "Paired")+
+  scale_color_brewer(palette = "Paired")+
+  geom_point(aes(size = vsize_abs, fill = Lineage_abs), alpha = 0.5,
+             colour="black", shape=21)+
+  guides(size = FALSE,
+    fill  = guide_legend(title = "Lineage", override.aes = list(size = 5),
+                         nrow = 4),
+    color = FALSE)+
+  theme(legend.position="bottom", legend.text=element_text(size=12),
+        text = element_text(size = 12),
+        plot.margin = unit(c(1,1,1,1), "cm"))+
+  scale_size(range = c(5, 15))+
+  geom_label_repel(aes(label = MAGs), fontface = 'bold', color = 'black',
+                   box.padding = 0.35, point.padding = 0.5,
+                   segment.color = 'grey50',
+                   size = 4,
+                       # Width of the line segments.
+                   segment.size = 1.5,
+                   # Draw an arrow from the label to the data point.
+                   arrow = arrow(length = unit(0.01, 'npc')),
+                   nudge_x = -0.1,
+                   nudge_y = 0.6
+  )
+```
+
+<img src="Figures/cached/network-analysis-absolute-1.png" style="display: block; margin: auto;" />
+
+```r
+# dev.off()
+```
+
+# B. MetaG analysis
 
 ```r
 # Read data
@@ -189,9 +384,9 @@ LIMNO_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Wed Sep 20 13:59:22 2017  --- There are 2830 genes with > 0.1 %
-## Wed Sep 20 13:59:22 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:22 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 2830 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -222,9 +417,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Wed Sep 20 13:59:23 2017  --- There are 1889 genes with > 0.1 %
-## Wed Sep 20 13:59:23 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:23 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 1889 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -266,9 +461,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Wed Sep 20 13:59:23 2017  --- There are 1797 genes with > 0.1 %
-## Wed Sep 20 13:59:23 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:23 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 1797 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -310,9 +505,9 @@ LIMNO_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Wed Sep 20 13:59:23 2017  --- There are 4954 genes with > 0.1 %
-## Wed Sep 20 13:59:23 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:23 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 4954 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -332,9 +527,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Wed Sep 20 13:59:23 2017  --- There are 3929 genes with > 0.1 %
-## Wed Sep 20 13:59:23 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:23 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 3929 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -354,9 +549,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Wed Sep 20 13:59:23 2017  --- There are 3573 genes with > 0.1 %
-## Wed Sep 20 13:59:23 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:23 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 3573 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -376,9 +571,9 @@ LIMNO_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Wed Sep 20 13:59:24 2017  --- There are 2164 genes with > 0.1 %
-## Wed Sep 20 13:59:24 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:24 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 2164 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -409,9 +604,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Wed Sep 20 13:59:24 2017  --- There are 1384 genes with > 0.1 %
-## Wed Sep 20 13:59:24 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:24 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 1384 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -431,9 +626,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Wed Sep 20 13:59:24 2017  --- There are 1342 genes with > 0.1 %
-## Wed Sep 20 13:59:24 2017  --- This is 100 % of all genes
-## Wed Sep 20 13:59:24 2017  --- The 10 genes with the highest GC% are:
+## Tue Oct 10 15:46:54 2017  --- There are 1342 genes with > 0.1 %
+## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
+## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -934,19 +1129,68 @@ data_posi_KO[, c(1:6, 9:12, 20:29)]
 </div>
 
 ```r
-# Quick summary graph
-ggplot(data = data_posi_KO, aes(x = level_A))+
+# Focus on C-metabolism
+data_posi_KO[data_posi_KO$ko_id %in% data_posi_KO$ko_id[data_posi_KO$level_B == "Carbohydrate metabolism"], ] %>% 
+ ggplot(aes(x = ko_id, fill = level_C))+
   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
   theme_bw()+
   # facet_wrap(~level_B, ncol = 2)+
-  scale_fill_brewer(palette = "Accent")+
+  scale_fill_brewer(palette = "Paired")+
   labs(x = "", y = "Count")+ 
   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
                                                    legend.text = element_text(size = 5))+
-  guides(fill=guide_legend(nrow=2,byrow=TRUE))
+  guides(fill=guide_legend(nrow=6,byrow=TRUE))
 ```
 
 <img src="Figures/cached/posigene-selection-1.png" style="display: block; margin: auto;" />
+
+```r
+# Focus on energy metabolism
+data_posi_KO %>% dplyr::filter(level_B == "Energy metabolism") %>% 
+ ggplot(aes(x = ko_id, fill = level_C))+
+  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+  theme_bw()+
+  # facet_wrap(~level_B, ncol = 2)+
+  scale_fill_brewer(palette = "Paired")+
+  labs(x = "", y = "Count")+ 
+  theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
+                                                   legend.text = element_text(size = 5))+
+  guides(fill=guide_legend(nrow=6,byrow=TRUE))
+```
+
+<img src="Figures/cached/posigene-selection-2.png" style="display: block; margin: auto;" />
+
+```r
+# Focus on translation
+data_posi_KO %>% dplyr::filter(level_B == "Translation") %>% 
+ ggplot(aes(x = ko_id, fill = level_C))+
+  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+  theme_bw()+
+  # facet_wrap(~level_B, ncol = 2)+
+  scale_fill_brewer(palette = "Paired")+
+  labs(x = "", y = "Count")+ 
+  theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
+                                                   legend.text = element_text(size = 5))+
+  guides(fill=guide_legend(nrow=6,byrow=TRUE))
+```
+
+<img src="Figures/cached/posigene-selection-3.png" style="display: block; margin: auto;" />
+
+```r
+# Focus on secondary metabolite production
+data_posi_KO %>% dplyr::filter(level_B == "Metabolism of cofactors and vitamins") %>% 
+ ggplot(aes(x = ko_id, fill = level_C))+
+  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+  theme_bw()+
+  # facet_wrap(~level_B, ncol = 2)+
+  scale_fill_brewer(palette = "Paired")+
+  labs(x = "", y = "Count")+ 
+  theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
+                                                   legend.text = element_text(size = 5))+
+  guides(fill=guide_legend(nrow=6,byrow=TRUE))
+```
+
+<img src="Figures/cached/posigene-selection-4.png" style="display: block; margin: auto;" />
 
 ```r
 # Count number of unique genes involved in biosynthesis
