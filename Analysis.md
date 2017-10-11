@@ -90,12 +90,12 @@ plot_network_custom(ig.mb, phy_df_filtered, type='taxa',
   scale_size(range = c(5, 15))+
   geom_label_repel(aes(label = MAGs), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
-                   segment.color = 'grey50',
+                   segment.color = 'black',
                    size = 4,
                        # Width of the line segments.
                    segment.size = 1.5,
                    # Draw an arrow from the label to the data point.
-                   arrow = arrow(length = unit(0.01, 'npc')),
+                   arrow = arrow(length = unit(0.015, 'npc')),
                    nudge_x = -0.1,
                    nudge_y = 0.6
   )
@@ -182,12 +182,12 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
   scale_size(range = c(5, 15))+
   geom_label_repel(aes(label = MAGs), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
-                   segment.color = 'grey50',
+                   segment.color = 'black',
                    size = 4,
                        # Width of the line segments.
                    segment.size = 1.5,
                    # Draw an arrow from the label to the data point.
-                   arrow = arrow(length = unit(0.01, 'npc')),
+                   arrow = arrow(length = unit(0.015, 'npc')),
                    nudge_x = -0.1,
                    nudge_y = 0.6
   )
@@ -1195,3 +1195,63 @@ data_posi_KO %>% dplyr::filter(level_B == "Metabolism of cofactors and vitamins"
 ```r
 # Count number of unique genes involved in biosynthesis
 ```
+
+
+```r
+# Correlate genes under positive selection with their GC content
+data_SCUO_posi <- SCUO_merged_gen_gcmean %>% filter(Genome_ID == "Limnohabitans MAG")
+data_SCUO_posi <- droplevels(data_SCUO_posi)
+data_SCUO_posi$posi_select <- data_SCUO_posi$Gene %in% data_posi$IMG_geneID
+data_SCUO_posi$posi_select <- factor(data_SCUO_posi$posi_select, levels = c("FALSE", "TRUE"))
+
+# Evaluate correlation between codon bias and selection pressure
+p_SCUO_posi <- ggplot(data = data_SCUO_posi, aes (x = GC, y = SCUO))+
+  geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
+  geom_point(shape = 21, size = 4, fill = "red",
+             data = subset(data_SCUO_posi, posi_select == TRUE))+
+  # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
+  # scale_fill_brewer(palette = "Accent")+
+  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text.x=element_text(size=18))+
+  ylab("Codon bias - SCUO")+ 
+  xlab("%GC")+
+  ylim(0,1)+ 
+  guides(fill=FALSE, size = FALSE)
+
+p_SCUO_posi
+```
+
+<img src="Figures/cached/posigene-scuo-1.png" style="display: block; margin: auto;" />
+
+```r
+p_SCUO_posi2 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = SCUO,
+                                                   fill = posi_select))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+  geom_boxplot(alpha=0.5, size =1.5, color = "black", width = 0.4)+
+  # scale_fill_brewer(palette = "Accent")+
+  scale_fill_manual(values = adjustcolor(c("blue", "red"), 0.5))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text.x=element_text(size=18))+
+  ylab("Codon bias - SCUO")+ 
+  xlab("")+
+  ylim(0,1)+ 
+  guides(size = FALSE)
+
+p_SCUO_posi2
+```
+
+<img src="Figures/cached/posigene-scuo-2.png" style="display: block; margin: auto;" />
