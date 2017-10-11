@@ -874,9 +874,9 @@ p_SCUO_posi2 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = SCUO,
                                                    fill = posi_select))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
-  geom_boxplot(alpha=0.5, size =1.5, color = "black", width = 0.4)+
+  geom_boxplot(alpha=0.5, size =1.5, color = "darkgrey", width = 0.35)+
   # scale_fill_brewer(palette = "Accent")+
-  scale_fill_manual(values = adjustcolor(c("blue", "red"), 0.5))+
+  scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
   # scale_size_manual(values = c(2.5,4))+
   theme_bw()+
   # facet_wrap(Genome_ID~GCx)+
@@ -891,4 +891,26 @@ p_SCUO_posi2 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = SCUO,
   guides(size = FALSE)
 
 p_SCUO_posi2
+
+p_SCUO_posi3 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = GC,
+                                                   fill = posi_select))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+  geom_boxplot(alpha=0.5, size =1.5, color = "darkgrey", width = 0.35)+
+  # scale_fill_brewer(palette = "Accent")+
+  scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text.x=element_text(size=18))+
+  ylab("%GC")+ 
+  xlab("")+
+  ylim(0.5,0.9)+ 
+  guides(size = FALSE)
+
+p_SCUO_posi3
 ```
