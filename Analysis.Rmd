@@ -853,6 +853,20 @@ data_SCUO_posi <- left_join(data_SCUO_posi,
                             data_posi, by = c("Gene" = "IMG_geneID"))
 data_SCUO_posi_only <- data_SCUO_posi %>% filter(posi_select == "TRUE")
 
+# Selected annotation level (KO)
+selected_KOlevels <- c("Signal transduction",
+"Amino acid metabolism",
+"Metabolism of other amino acids",
+"Metabolism of cofactors and vitamins",
+"Carbohydrate metabolism",
+"Energy metabolism",
+"Translation",
+"Membrane transport",
+"Biosynthesis of other secondary metabolites",
+"Lipid metabolism",
+"Membrane transport",
+"Unknown"
+)
 # Evaluate correlation between codon bias and selection pressure
 p_SCUO_posi <- ggplot(data = data_SCUO_posi, aes (x = GC, y = SCUO))+
   geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
@@ -968,4 +982,130 @@ p_SCUO_posi5 <- ggplot(data = data_SCUO_posi_only, aes (x = 100*GC, y = sqrt(HA.
   guides(fill=FALSE, size = FALSE)
 
 p_SCUO_posi5
+
+p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = sqrt(HA.foreground.omega),
+                                                   fill = level_A))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+  geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
+               outlier.shape = NA)+
+  scale_fill_brewer(palette = "Accent")+
+  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  xlab("")+ 
+  ylab(expression(sqrt(dN/dS)))+
+  # ylim(0.5,0.9)+ 
+  guides(size = FALSE, fill = FALSE)
+
+p_SCUO_posi6
+
+# Extract level_C labels of genes in top 5 dN/ds ratio
+top <- 5
+thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
+selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$level_C
+selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
+
+# Remove everything between brackets ([*])
+selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
+                                 replacement = "", selected_KOlevels_labels)
+# Remove everything before first space
+selected_KOlevels_labels <- sub(".*? (.+)", "\\1", selected_KOlevels_labels)
+
+p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
+  ggplot(aes(x = level_B, y = sqrt(HA.foreground.omega),
+                                                   fill = level_B))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+  geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
+               outlier.shape = NA)+
+  scale_fill_brewer(palette = "Set3")+
+  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  xlab("")+ 
+  ylab(expression(sqrt(dN/dS)))+
+  # ylim(0.5,0.9)+ 
+  guides(size = FALSE, fill = FALSE)+
+  geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
+                   box.padding = 0.35, point.padding = 0.5,
+                   segment.color = "#3F4656",
+                   size = 3,
+                       # Width of the line segments.
+                   segment.size = 1.5,
+                   # Draw an arrow from the label to the data point.
+                   arrow = arrow(length = unit(0.02, 'npc')),
+                   nudge_x = -0.1,
+                   nudge_y = 0.6,
+                   force = 10
+                   
+  )+
+  ylim(0,13)
+
+p_SCUO_posi7
+
+
+# Extract level_C labels of genes in top 5 dN/ds ratio
+top <- 5
+thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
+selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$ko_name
+selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
+
+# Remove everything between brackets ([*])
+selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
+                                 replacement = "", selected_KOlevels_labels)
+
+p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
+  ggplot(aes(x = level_B, y = sqrt(HA.foreground.omega),
+                                                   fill = level_B))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+  geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
+               outlier.shape = NA)+
+  scale_fill_brewer(palette = "Set3")+
+  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  xlab("")+ 
+  ylab(expression(sqrt(dN/dS)))+
+  # ylim(0.5,0.9)+ 
+  guides(size = FALSE, fill = FALSE)+
+  geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
+                   box.padding = 0.35, point.padding = 0.5,
+                   segment.color = "#3F4656",
+                   size = 3,
+                       # Width of the line segments.
+                   segment.size = 1.5,
+                   # Draw an arrow from the label to the data point.
+                   arrow = arrow(length = unit(0.02, 'npc')),
+                   nudge_x = -0.1,
+                   nudge_y = 0.6,
+                   force = 10
+                   
+  )+
+  ylim(0,15)
+
+p_SCUO_posi8
+
 ```
