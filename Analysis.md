@@ -1412,9 +1412,9 @@ p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    segment.color = "#3F4656",
                    size = 3,
                        # Width of the line segments.
-                   segment.size = 1.5,
+                   segment.size = 1,
                    # Draw an arrow from the label to the data point.
-                   arrow = arrow(length = unit(0.02, 'npc')),
+                   arrow = arrow(length = unit(0.02, 'npc'), type = "closed"),
                    nudge_x = -0.1,
                    nudge_y = 0.6,
                    force = 10
@@ -1465,9 +1465,9 @@ p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    segment.color = "#3F4656",
                    size = 3,
                        # Width of the line segments.
-                   segment.size = 1.5,
+                   segment.size = 1,
                    # Draw an arrow from the label to the data point.
-                   arrow = arrow(length = unit(0.02, 'npc')),
+                   arrow = arrow(length = unit(0.02, 'npc'), type = "closed"),
                    nudge_x = -0.1,
                    nudge_y = 0.6,
                    force = 10
@@ -1479,3 +1479,38 @@ p_SCUO_posi8
 ```
 
 <img src="Figures/cached/posigene-scuo-8.png" style="display: block; margin: auto;" />
+
+# 10. Plasmid reconstruction using `Recycler`
+
+
+```r
+files <- list.files("./recycler_plasmid/", pattern="*_length_cov")
+files <- paste0("./recycler_plasmid/", files)
+df_plasm_16 <- read.table(files[1], header = FALSE)
+df_plasm_17 <- read.table(files[2], header = FALSE)
+df_plasm_64 <- read.table(files[3], header = FALSE)
+df_plasm_65 <- read.table(files[4], header = FALSE)
+df_plasm <- rbind(df_plasm_16, df_plasm_17, df_plasm_64, df_plasm_65)
+
+df_plasm <- as.character(df_plasm$V1); tmp <- df_plasm
+df_plasm <- do.call(rbind, strsplit(df_plasm, "_"))
+df_plasm <- df_plasm[, -c(1,3,5,7,8)]
+colnames(df_plasm) <- c("NODE_ID", "Length", "avg_coverage")
+df_plasm <- apply(df_plasm, 2, function(x) as.integer(x))
+df_plasm <- data.frame(df_plasm, node_IDs = tmp)
+
+# Filter out plasmid scaffolds lower than 1000 bp
+p_plasm1 <- df_plasm %>% filter(Length > 1000) %>% 
+  ggplot(aes(x = Length/1000, y = sqrt(avg_coverage), fill = Length))+
+  geom_point(shape = 21, size = 4)+ theme_bw()+
+  # scale_x_log10()+
+  # scale_y_log10()+
+  scale_fill_continuous()+
+  ylab(expression(sqrt(Average_coverage)))+
+  xlab("Length (kbp)")+
+  ggtitle("Coverage-Length distribution of reconstructed plasmid fragments")
+
+p_plasm1
+```
+
+<img src="Figures/cached/plasmid-reconstruction-1.png" style="display: block; margin: auto;" />
