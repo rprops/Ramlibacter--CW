@@ -384,9 +384,9 @@ LIMNO_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 2830 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:02 2017  --- There are 2830 genes with > 0.1 %
+## Thu Oct 19 13:13:02 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:02 2017  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -417,9 +417,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 1889 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:02 2017  --- There are 1889 genes with > 0.1 %
+## Thu Oct 19 13:13:02 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:02 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -461,9 +461,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 1797 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:02 2017  --- There are 1797 genes with > 0.1 %
+## Thu Oct 19 13:13:02 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:02 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -505,9 +505,9 @@ LIMNO_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 4954 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:02 2017  --- There are 4954 genes with > 0.1 %
+## Thu Oct 19 13:13:02 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:02 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -527,9 +527,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 3929 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:02 2017  --- There are 3929 genes with > 0.1 %
+## Thu Oct 19 13:13:02 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:02 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -549,9 +549,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 3573 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:03 2017  --- There are 3573 genes with > 0.1 %
+## Thu Oct 19 13:13:03 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:03 2017  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -571,9 +571,9 @@ LIMNO_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 2164 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:03 2017  --- There are 2164 genes with > 0.1 %
+## Thu Oct 19 13:13:03 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:03 2017  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -604,9 +604,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 1384 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:03 2017  --- There are 1384 genes with > 0.1 %
+## Thu Oct 19 13:13:03 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:03 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -626,9 +626,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Tue Oct 10 15:46:54 2017  --- There are 1342 genes with > 0.1 %
-## Tue Oct 10 15:46:54 2017  --- This is 100 % of all genes
-## Tue Oct 10 15:46:54 2017  --- The 10 genes with the highest GC% are:
+## Thu Oct 19 13:13:03 2017  --- There are 1342 genes with > 0.1 %
+## Thu Oct 19 13:13:03 2017  --- This is 100 % of all genes
+## Thu Oct 19 13:13:03 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -1093,15 +1093,16 @@ map_posi$posi_geneID <- as.character(map_posi$posi_geneID)
 
 # Filter out the genes that are under positive selection
 # Taking threshold of adjusted p.value of 0.05 and FDR < 0.05
+# Also remove dN/dS ratios of less than 15.
 data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05)
+                                    FDR < 0.05 & HA.foreground.omega < 15)
 # Report summary
 cat(paste("There are ", nrow(data_posi), " genes under positive selection in this MAG (P<0.05). This is ",round(100*nrow(data_posi)/nrow(map_posi),1), "% of all genes",  sep = "")
 )
 ```
 
 ```
-## There are 292 genes under positive selection in this MAG (P<0.05). This is 7.6% of all genes
+## There are 215 genes under positive selection in this MAG (P<0.05). This is 5.6% of all genes
 ```
 
 ```r
@@ -1190,7 +1191,6 @@ data_SCUO_posi <- SCUO_merged_gen_gcmean %>% filter(Genome_ID == "Limnohabitans 
 data_SCUO_posi <- droplevels(data_SCUO_posi)
 data_SCUO_posi$posi_select <- data_SCUO_posi$Gene %in% data_posi$IMG_geneID
 data_SCUO_posi$posi_select <- factor(data_SCUO_posi$posi_select, levels = c("FALSE", "TRUE"))
-
 # merge with dN/dS ratio data
 data_SCUO_posi <- left_join(data_SCUO_posi,
                             data_posi, by = c("Gene" = "IMG_geneID"))
@@ -1345,7 +1345,7 @@ p_SCUO_posi5
 <img src="Figures/cached/posigene-scuo-5.png" style="display: block; margin: auto;" />
 
 ```r
-p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = sqrt(HA.foreground.omega),
+p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = HA.foreground.omega,
                                                    fill = level_A))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
@@ -1363,7 +1363,7 @@ p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = sqrt(HA.foregr
         strip.text.x=element_text(size=18),
         legend.position = "bottom")+
   xlab("")+ 
-  ylab(expression(sqrt(dN/dS)))+
+  ylab(expression(dN/dS))+
   # ylim(0.5,0.9)+ 
   guides(size = FALSE, fill = FALSE)
 
@@ -1374,7 +1374,7 @@ p_SCUO_posi6
 
 ```r
 # Extract level_C labels of genes in top 5 dN/ds ratio
-top <- 5
+top <- 10
 thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
 selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$level_C
 selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
@@ -1386,7 +1386,7 @@ selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *",
 selected_KOlevels_labels <- sub(".*? (.+)", "\\1", selected_KOlevels_labels)
 
 p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
-  ggplot(aes(x = level_B, y = sqrt(HA.foreground.omega),
+  ggplot(aes(x = level_B, y = HA.foreground.omega,
                                                    fill = level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
@@ -1404,7 +1404,7 @@ p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
         strip.text.x=element_text(size=18),
         legend.position = "bottom")+
   xlab("")+ 
-  ylab(expression(sqrt(dN/dS)))+
+  ylab(expression(dN/dS))+
   # ylim(0.5,0.9)+ 
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
@@ -1420,7 +1420,7 @@ p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    force = 10
                    
   )+
-  ylim(0,13)
+  ylim(0,20)
 
 p_SCUO_posi7
 ```
@@ -1429,7 +1429,7 @@ p_SCUO_posi7
 
 ```r
 # Extract level_C labels of genes in top 5 dN/ds ratio
-top <- 5
+top <- 10
 thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
 selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$ko_name
 selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
@@ -1439,7 +1439,7 @@ selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *",
                                  replacement = "", selected_KOlevels_labels)
 
 p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
-  ggplot(aes(x = level_B, y = sqrt(HA.foreground.omega),
+  ggplot(aes(x = level_B, y = HA.foreground.omega,
                                                    fill = level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
@@ -1457,7 +1457,7 @@ p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
         strip.text.x=element_text(size=18),
         legend.position = "bottom")+
   xlab("")+ 
-  ylab(expression(sqrt(dN/dS)))+
+  ylab(expression(dN/dS))+
   # ylim(0.5,0.9)+ 
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
@@ -1473,7 +1473,7 @@ p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    force = 10
                    
   )+
-  ylim(0,15)
+  ylim(0,20)
 
 p_SCUO_posi8
 ```

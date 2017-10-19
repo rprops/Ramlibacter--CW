@@ -772,8 +772,9 @@ map_posi$posi_geneID <- as.character(map_posi$posi_geneID)
 
 # Filter out the genes that are under positive selection
 # Taking threshold of adjusted p.value of 0.05 and FDR < 0.05
+# Also remove dN/dS ratios of less than 15.
 data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05)
+                                    FDR < 0.05 & HA.foreground.omega < 15)
 # Report summary
 cat(paste("There are ", nrow(data_posi), " genes under positive selection in this MAG (P<0.05). This is ",round(100*nrow(data_posi)/nrow(map_posi),1), "% of all genes",  sep = "")
 )
@@ -847,7 +848,6 @@ data_SCUO_posi <- SCUO_merged_gen_gcmean %>% filter(Genome_ID == "Limnohabitans 
 data_SCUO_posi <- droplevels(data_SCUO_posi)
 data_SCUO_posi$posi_select <- data_SCUO_posi$Gene %in% data_posi$IMG_geneID
 data_SCUO_posi$posi_select <- factor(data_SCUO_posi$posi_select, levels = c("FALSE", "TRUE"))
-
 # merge with dN/dS ratio data
 data_SCUO_posi <- left_join(data_SCUO_posi,
                             data_posi, by = c("Gene" = "IMG_geneID"))
@@ -983,7 +983,7 @@ p_SCUO_posi5 <- ggplot(data = data_SCUO_posi_only, aes (x = 100*GC, y = sqrt(HA.
 
 p_SCUO_posi5
 
-p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = sqrt(HA.foreground.omega),
+p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = HA.foreground.omega,
                                                    fill = level_A))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
@@ -1001,14 +1001,14 @@ p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = sqrt(HA.foregr
         strip.text.x=element_text(size=18),
         legend.position = "bottom")+
   xlab("")+ 
-  ylab(expression(sqrt(dN/dS)))+
+  ylab(expression(dN/dS))+
   # ylim(0.5,0.9)+ 
   guides(size = FALSE, fill = FALSE)
 
 p_SCUO_posi6
 
 # Extract level_C labels of genes in top 5 dN/ds ratio
-top <- 5
+top <- 10
 thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
 selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$level_C
 selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
@@ -1020,7 +1020,7 @@ selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *",
 selected_KOlevels_labels <- sub(".*? (.+)", "\\1", selected_KOlevels_labels)
 
 p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
-  ggplot(aes(x = level_B, y = sqrt(HA.foreground.omega),
+  ggplot(aes(x = level_B, y = HA.foreground.omega,
                                                    fill = level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
@@ -1038,7 +1038,7 @@ p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
         strip.text.x=element_text(size=18),
         legend.position = "bottom")+
   xlab("")+ 
-  ylab(expression(sqrt(dN/dS)))+
+  ylab(expression(dN/dS))+
   # ylim(0.5,0.9)+ 
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
@@ -1054,13 +1054,13 @@ p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    force = 10
                    
   )+
-  ylim(0,13)
+  ylim(0,20)
 
 p_SCUO_posi7
 
 
 # Extract level_C labels of genes in top 5 dN/ds ratio
-top <- 5
+top <- 10
 thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
 selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$ko_name
 selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
@@ -1070,7 +1070,7 @@ selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *",
                                  replacement = "", selected_KOlevels_labels)
 
 p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
-  ggplot(aes(x = level_B, y = sqrt(HA.foreground.omega),
+  ggplot(aes(x = level_B, y = HA.foreground.omega,
                                                    fill = level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
@@ -1088,7 +1088,7 @@ p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
         strip.text.x=element_text(size=18),
         legend.position = "bottom")+
   xlab("")+ 
-  ylab(expression(sqrt(dN/dS)))+
+  ylab(expression(dN/dS))+
   # ylim(0.5,0.9)+ 
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
@@ -1104,7 +1104,7 @@ p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    force = 10
                    
   )+
-  ylim(0,15)
+  ylim(0,20)
 
 p_SCUO_posi8
 
@@ -1140,4 +1140,5 @@ p_plasm1 <- df_plasm %>% filter(Length > 1000) %>%
   ggtitle("Coverage-Length distribution of reconstructed plasmid fragments")
 
 p_plasm1
+
 ```
