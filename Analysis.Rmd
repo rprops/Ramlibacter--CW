@@ -1008,6 +1008,11 @@ p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = HA.foreground.
 p_SCUO_posi6
 
 # Extract level_C labels of genes in top 5 dN/ds ratio
+# First filter out the genes with multiple annotations by
+# selecting the annotation with the highest identity.
+# data_posi_KO_unique <- data_posi_KO %>% group_by(Gene) %>%
+  # filter(percent_identity == max(percent_identity))
+  
 top <- 10
 thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
 selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$level_C
@@ -1054,7 +1059,7 @@ p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    force = 10
                    
   )+
-  ylim(0,20)
+  ylim(0,25)
 
 p_SCUO_posi7
 
@@ -1104,7 +1109,7 @@ p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    force = 10
                    
   )+
-  ylim(0,20)
+  ylim(0,25)
 
 p_SCUO_posi8
 
