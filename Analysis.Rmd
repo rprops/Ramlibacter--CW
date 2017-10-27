@@ -36,6 +36,7 @@ library('dplyr')
 library('ggplot2')
 library("grid")
 library("gridExtra")
+library("reshape2")
 library("easyGgplot2")
 library("KEGGREST")
 source("functions.R")
@@ -272,7 +273,7 @@ data_total[data_total$bins %in% c("Bacteroidetes_bin1",
 
 # 1. Phylogenetic tree
 ## Limnohabitans
-![RAxML tree for Limnohabitans MAG](./Tree/PhyloTree_Limno.png)  
+<!-- ![RAxML tree for Limnohabitans MAG](./Tree/PhyloTree_Limno.png)   -->
 
 
 ## Bacteroidetes
@@ -706,7 +707,8 @@ p_SCUO.1 <- ggplot(data = SCUO_merged, aes (x = 100*GC, y = SCUO, fill = Genome_
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         axis.text.x = element_text(angle = 0, hjust = 1),
-        strip.text.x=element_text(size=18))+
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
   ylab("SCUO")+
   xlab("%GC")+
   ylim(0,1)
@@ -752,6 +754,74 @@ tmp2 <- cbind(SCUO_merged_sb$ko_id,
 write.table(tmp2, file = "All_KO.tsv", quote = FALSE,
             col.names = FALSE, row.names = FALSE)
 ```
+
+```{r compare-limno-CB, dpi = 500, warning = FALSE, fig.width = 10, fig.height = 8}
+# Import codonO results of reference genomes
+ref_SCUO <- codonO_2_df(pathx = "./IMG_annotation/References/codonO_output/")
+
+# reimport codonO results of Limno genome
+Limno_SCUO <- codonO_2_df(pathx = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/",
+                          patternx = "codonO")
+
+# Merge dataframes
+ref_limno_SCUO <- rbind(ref_SCUO, Limno_SCUO)
+
+# Replace genome names by better annotated names
+map_scuo <- read.delim("./Mapping_files/codonO_ref_names.tsv", stringsAsFactors = FALSE)
+ref_limno_SCUO$Genome <- as.character(ref_limno_SCUO$Genome)
+for(i in 1:nrow(map_scuo)){
+  ref_limno_SCUO$Genome[ref_limno_SCUO$Genome %in% map_scuo$codon_file[i]] <- map_scuo$ref_name[i]
+}
+ref_limno_SCUO$Genome[ref_limno_SCUO$Genome %in% "2724679690.genes.fna.codonO.output"] <- "Lim. MAG (2724679690)"
+
+# order data according to mean SCUO
+sum_scuo <- ref_limno_SCUO %>% group_by(Genome) %>% summarize(mean_scuo = mean(SCUO))
+ref_limno_SCUO$Genome <- factor(ref_limno_SCUO$Genome, levels = sum_scuo$Genome[order(sum_scuo$mean_scuo)])
+# ref_limno_SCUO$new <- ref_limno_SCUO$Genome=="Lim. MAG (2724679690)"
+
+# Plot SCUO profiles
+
+p_limno_SCUO <- ref_limno_SCUO  %>% 
+  ggplot(aes(x = Genome, y = SCUO, fill = Genome))+
+  theme_bw()+
+    # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
+            # ymin = -Inf,ymax = Inf, alpha = 0.005, show.legend =FALSE, inherit.aes = FALSE)+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  scale_fill_brewer(palette = "Paired")+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom")+
+  guides(fill=FALSE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+  xlab("")+
+  ylab("Codon bias - SCUO")+
+  geom_vline(xintercept = 9.5, col = 'black', lwd = 2, linetype = 1, alpha = 0.6)+
+  ylim(0,1)
+
+p_limno_SCUO
+
+# Plot SCUO-GC profiles
+# p_limno_SCUO_GC <- ref_limno_SCUO  %>% 
+#   ggplot(aes(x = GC, y = SCUO, fill = Genome))+
+#   theme_bw()+
+#   geom_point(size = 4, shape = 21, color = "black", alpha = 0.4)+
+#   scale_fill_brewer(palette = "Paired")+
+#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1))+
+#   guides(fill=FALSE)+
+#   ggtitle("Codon bias - SCUO")+
+#   facet_grid(GCx~Genome)+
+#   geom_smooth(color = "black", method = "loess")
+# 
+# p_limno_SCUO_GC
+
+# Format file for annotation of phylogenetic tree
+
+```
+
 
 # 9.  PosiGene analysis for identifying genes under positive selection in the Limnohabitans MAG
 
@@ -1115,7 +1185,65 @@ p_SCUO_posi8
 
 ```
 
-# 10. Plasmid reconstruction using `Recycler`
+# 10. ANI analysis using `pyani`
+
+```{r ani-analysis, dpi = 500, fig.width = 8, fig.height = 9, warning = FALSE}
+# read file
+data.ANI <- read.table("./ANI/ANIb_percentage_identity.tab")
+
+# Replace genome names by better annotated names
+map_ani <- read.delim("./Mapping_files/pyani_ref_names.tsv", stringsAsFactors = FALSE)
+for(i in 1:nrow(map_ani)){
+ colnames(data.ANI)[colnames(data.ANI) %in% map_ani$ani_file[i]] <- map_ani$ref_name[i]
+ rownames(data.ANI)[rownames(data.ANI) %in% map_ani$ani_file[i]] <- map_ani$ref_name[i]
+}
+
+# Order y-axis according to phylogenetic tree order
+ord_list_bin <- c("Lim sp. Rim11","Lim. sp. 103DPR2",
+                  "Lim. MAG", "Lim. sp. DM1",
+                  "Lim. planktonicus II-D5", "Lim. sp. 2KL-3", 
+                  "Lim. sp. Rim28",  "Lim sp. Rim47",
+                  "Lim. sp. 2KL-27", "Lim. sp. 63ED37-2")
+
+# order rows and columns
+data.ANI <- data.ANI[, order(match(colnames(data.ANI), ord_list_bin))]
+data.ANI <- data.ANI[order(match(rownames(data.ANI), ord_list_bin)), ]
+
+data.ANI <- get_upper_tri(data.ANI)
+
+# melt to dataframe
+df_pyani <- melt(as.matrix(data.ANI), na.rm = TRUE) # reshape into dataframe
+names(df_pyani)[c(1:3)] <- c("bin1", "bin2", "ANI")
+df_pyani[, 1] <- as.character(df_pyani[, 1]); df_pyani[, 2] <- as.character(df_pyani[, 2])
+df_pyani$bin2 <- factor(df_pyani$bin2, levels = ord_list_bin)
+df_pyani$bin1 <- factor(df_pyani$bin1, levels = rev(ord_list_bin))
+
+# make plot
+p_ani <- ggplot(data = df_pyani,
+       aes(x = bin2, y = bin1, fill = ANI)) + 
+  geom_raster()+
+  scale_fill_distiller(palette = "RdBu", name = "ANI\n") +
+  geom_text(aes(label = round(ANI, 2)), size = 4.5)+
+  theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
+        legend.title=element_text(size=15), legend.text=element_text(size=14),
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(size=20, angle = 55, hjust = 0),
+        title=element_text(size=20),
+        plot.margin = unit(c(1.1,1.1,1.1,1.1), "cm"),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "transparent",colour = NA),
+        plot.background = element_rect(fill = "transparent",colour = NA)
+  )+
+  xlab("")+
+  ylab("")+
+  scale_x_discrete(position = "top") 
+
+print(p_ani)
+```
+
+
+# Plasmid reconstruction using `Recycler`
 
 ```{r plasmid-reconstruction, dpi = 500, fig.width = 8, fig.height = 7, warning = FALSE}
 files <- list.files("./recycler_plasmid/", pattern="*_length_cov")
@@ -1146,4 +1274,11 @@ p_plasm1 <- df_plasm %>% filter(Length > 1000) %>%
 
 p_plasm1
 
+```
+
+# 11. Gene set enrichment analysis  
+
+
+```{r Gene-set-enrichment-analysis, dpi = 500, fig.width = 8, fig.height = 7, warning = FALSE}
+library("GSAR")
 ```
