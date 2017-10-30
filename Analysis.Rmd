@@ -1189,7 +1189,9 @@ p_SCUO_posi8
 
 ```{r ani-analysis, dpi = 500, fig.width = 8, fig.height = 9, warning = FALSE}
 # read file
-data.ANI <- read.table("./ANI/ANIb_percentage_identity.tab")
+# data.ANI <- read.table("./ANI/ANIb_percentage_identity.tab")
+data.ANI <- read.table("./ANI/ANIb_wRhodo_percentage_identity.tab")
+
 
 # Replace genome names by better annotated names
 map_ani <- read.delim("./Mapping_files/pyani_ref_names.tsv", stringsAsFactors = FALSE)
@@ -1203,7 +1205,9 @@ ord_list_bin <- c("Lim sp. Rim11","Lim. sp. 103DPR2",
                   "Lim. MAG", "Lim. sp. DM1",
                   "Lim. planktonicus II-D5", "Lim. sp. 2KL-3", 
                   "Lim. sp. Rim28",  "Lim sp. Rim47",
-                  "Lim. sp. 2KL-27", "Lim. sp. 63ED37-2")
+                  "Lim. sp. 2KL-27", "Lim. sp. 63ED37-2",
+                  "Rhodo. ferrireducens T118",
+                  "Rhodo. saidenbachensis ED16")
 
 # order rows and columns
 data.ANI <- data.ANI[, order(match(colnames(data.ANI), ord_list_bin))]
@@ -1222,7 +1226,7 @@ df_pyani$bin1 <- factor(df_pyani$bin1, levels = rev(ord_list_bin))
 p_ani <- ggplot(data = df_pyani,
        aes(x = bin2, y = bin1, fill = ANI)) + 
   geom_raster()+
-  scale_fill_distiller(palette = "RdBu", name = "ANI\n") +
+  scale_fill_distiller(palette = "RdBu", name = "Average\nNucleotide\nIdentity\n") +
   geom_text(aes(label = round(ANI, 2)), size = 4.5)+
   theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
         legend.title=element_text(size=15), legend.text=element_text(size=14),

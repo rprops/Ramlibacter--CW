@@ -1596,7 +1596,7 @@ df_pyani$bin1 <- factor(df_pyani$bin1, levels = rev(ord_list_bin))
 p_ani <- ggplot(data = df_pyani,
        aes(x = bin2, y = bin1, fill = ANI)) + 
   geom_raster()+
-  scale_fill_distiller(palette = "RdBu", name = "ANI\n") +
+  scale_fill_distiller(palette = "RdBu", name = "Average\nNucleotide\nIdentity\n") +
   geom_text(aes(label = round(ANI, 2)), size = 4.5)+
   theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
         legend.title=element_text(size=15), legend.text=element_text(size=14),
