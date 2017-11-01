@@ -154,3 +154,46 @@ plot_network_custom <- function (g, physeq = NULL, type = "samples", color = NUL
   }
   return(p)
 }
+
+
+# This function will read in codonO output for multiple genome CDS fasta files
+# and merge them in to a single dataframe.
+
+codonO_2_df <- function(pathx, patternx = "codonO", patterngene = "gene|Ga"){
+  result_list <- list()
+  files <- list.files(pathx, pattern = patternx)
+  for(i in 1:length(files)){
+    input_file <- read.table(paste(pathx, files[i], sep = ""), sep = ",", blank.lines.skip = TRUE, 
+                             allowEscapes = FALSE, skipNul = TRUE)
+    input_file$V1 <- gsub(input_file$V1, pattern = "\t", replacement = "")
+    Genes <- do.call(rbind, strsplit(input_file$V1[grep(patterngene, input_file$V1)], " "))[,1]
+    input_file$V1 <- gsub(input_file$V1, pattern = " ", replacement = "")
+    input_file <- data.frame(GC = input_file$V1[grep(x = input_file$V1, pattern = "GC*.*=")], 
+                             SCUO = rep(input_file$V1[grep(x = input_file$V1, pattern = "SCUO*")], each = 4),
+                             Gene = rep(Genes, each = 4),
+                             GCx = rep(c("GC_mean", "GC1", "GC2", "GC3"), length(Genes)),
+                             Genome = rep(files[i], (length(Genes)*4))
+    )
+    input_file$Gene <- gsub(".*>", "",input_file$Gene)
+    input_file$GC <- as.numeric(gsub(input_file$GC, pattern = ".*=", replacement = "")) 
+    input_file$SCUO <- as.numeric(gsub(input_file$SCUO, pattern = ".*=", replacement = ""))
+    result_list[[i]] <- input_file
+  }
+  
+  # Reformat list into long format dataframe
+  result_df <- do.call("rbind", result_list)
+  
+  # Return dataframe
+  return(result_df)
+}
+
+# Get lower triangle of the correlation matrix
+get_lower_tri <- function(cormat){
+  cormat[upper.tri(cormat)] <- NA
+  return(cormat)
+}
+# Get upper triangle of the correlation matrix
+get_upper_tri <- function(cormat){
+  cormat[lower.tri(cormat)]<- NA
+  return(cormat)
+}

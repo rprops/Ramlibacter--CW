@@ -1,0 +1,51 @@
+LABELS
+#use this template to change the leaf labels, or define/change the internal node names (displayed in mouseover popups)
+
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file (except in the SEPARATOR line, which uses space).
+
+#SEPARATOR TAB
+#SEPARATOR SPACE
+SEPARATOR COMMA
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+#NODE_ID,LABEL
+
+#Examples
+#define a name for an internal node
+#9031|9606,Metazoa
+
+#change the label for leaf node 9606
+#9606,Homo sapiens
+Chitinophaga_niabensis_2636416022.fa,Chitinophaga niabensis (2636416022)
+Limnohabitans_Bin_CoolingWater_2724679690.fa,Limnohabitans sp. MAG (2724679690)
+Limnohabitans_planktonicus_II-D5_NZ.LFYT00000000,Limnohabitans sp. II-D5 (NZ.LFYT00000000.1)
+Limnohabitans_sp_103DPR2_NZ.CP011834,Limnohabitans sp. 103DPR2 (NZ.CP011834.1)
+Limnohabitans_sp_2KL-27_NZ.CXOP00000000,Limnohabitans sp. 2KL-27 (NZ.CXOP00000000.1)
+Limnohabitans_sp_2KL-3_NZ.CXON00000000,Limnohabitans sp. 2KL-3 (NZ.CXON00000000.1)
+Limnohabitans_sp_63ED37-2_NZ.CP011774,Limnohabitans sp. 63ED37-2 (NZ.CP011774.1)
+Limnohabitans_sp_DM1_NZ.CXOO00000000,Limnohabitans sp. DM1 (NZ.CXOO00000000.1)
+Limnohabitans_sp_Rim11_CXOM00000000,Limnohabitans sp. Rim11 (CXOM00000000.1)
+Limnohabitans_sp_Rim28_NZ.ALKN00000000,Limnohabitans sp. Rim28 (NZ.ALKN00000000.1)
+Limnohabitans_sp_Rim47_2684622883.fa,Limnohabitans sp. Rim47 (2684622883)
+Polynucleobacter_necessarius_STIR1_2503982034.fa,Polynucleobacter sp. STIR1 (2503982034)
+Polynucleobacter_sp_AP-Melu-1000-B4_2710724120.fa,Polynucleobacter sp. AP-Melu-1000-B4 (2710724120)
+Polynucleobacter_sp_QWL-P1DMWA-1_640427129.fa,Polynucleobacter sp. QWL-P1DMWA-1 (640427129)
+Polynucleobacter_sp_UB-Domo-W1_2710724123.fa,Polynucleobacter sp. UB-Domo-W1 (2710724123)
+Polynucleobacter_sp_VK13_2708742530.fa,Polynucleobacter sp. VK13 (2708742530)
+Rhodoferax_ferrireducens_T118_CP0002671.fa,Rhodoferax ferrireducens T118 (CP000267.1)
+Rhodoferax_saidenbachensis_ED16_AWQR010000011.fa,Rhodoferax saidenbachensis ED16 (AWQR01000001.1)
+Ramlibacter_sp_Leaf400.fa,Ramlibacter sp. Leaf400 (NZ.LMQL01000001.1)
+Ramlibacter_tataouinensis_5_10.fa,Ramlibacter tataouinensis 5-10 (NZ.CP010951.1)
+Ramlibacter_tataouinensis_TTB310.fa,Ramlibacter tataouinensis TTB310 (NC.015677.1)
+121950.assembled.fa,Ramlibacter sp. MAG (2724679690)
+
+

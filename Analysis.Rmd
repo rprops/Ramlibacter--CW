@@ -44,6 +44,7 @@ library("phyloseq")
 library("SpiecEasi")
 library("seqtime")
 library("ggrepel")
+library("scales")
 
 col_limno <- "#060670"
 col_bac1 <- "#720000"
@@ -1187,10 +1188,10 @@ p_SCUO_posi8
 
 # 10. ANI analysis using `pyani`
 
-```{r ani-analysis, dpi = 500, fig.width = 8, fig.height = 9, warning = FALSE}
+```{r ani-analysis, dpi = 500, fig.width = 8.5, fig.height = 9, warning = FALSE}
 # read file
 # data.ANI <- read.table("./ANI/ANIb_percentage_identity.tab")
-data.ANI <- read.table("./ANI/ANIb_wRhodo_percentage_identity.tab")
+data.ANI <- read.table("./ANI/ANIb_percentage_identity.tab")
 
 
 # Replace genome names by better annotated names
@@ -1201,13 +1202,16 @@ for(i in 1:nrow(map_ani)){
 }
 
 # Order y-axis according to phylogenetic tree order
-ord_list_bin <- c("Lim sp. Rim11","Lim. sp. 103DPR2",
-                  "Lim. MAG", "Lim. sp. DM1",
-                  "Lim. planktonicus II-D5", "Lim. sp. 2KL-3", 
+ord_list_bin <- c("Lim. sp. 103DPR2","Lim sp. Rim11",
+                  "Ramli. MAG", 
+                  "Ramli. tataouinensis 5-10",
+                  "Ramli. sp. Leaf400",
+                  "Ramli. tataouinensis TTB310",
+                  "Lim. sp. DM1",
+                  "Lim. sp. II-D5", "Lim. sp. 2KL-3", 
                   "Lim. sp. Rim28",  "Lim sp. Rim47",
-                  "Lim. sp. 2KL-27", "Lim. sp. 63ED37-2",
-                  "Rhodo. ferrireducens T118",
-                  "Rhodo. saidenbachensis ED16")
+                  "Lim. sp. 63ED37-2","Lim. sp. 2KL-27"
+                  )
 
 # order rows and columns
 data.ANI <- data.ANI[, order(match(colnames(data.ANI), ord_list_bin))]
@@ -1226,12 +1230,13 @@ df_pyani$bin1 <- factor(df_pyani$bin1, levels = rev(ord_list_bin))
 p_ani <- ggplot(data = df_pyani,
        aes(x = bin2, y = bin1, fill = ANI)) + 
   geom_raster()+
-  scale_fill_distiller(palette = "RdBu", name = "Average\nNucleotide\nIdentity\n") +
+  scale_fill_distiller(palette = "RdBu", name = "Average\nNucleotide\nIdentity\n",
+                       limits = c(0.75,1.0), oob=squish) +
   geom_text(aes(label = round(ANI, 2)), size = 4.5)+
   theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
         legend.title=element_text(size=15), legend.text=element_text(size=14),
         axis.text.y = element_blank(),
-        axis.text.x = element_text(size=20, angle = 55, hjust = 0),
+        axis.text.x = element_text(size=16, angle = 55, hjust = 0),
         title=element_text(size=20),
         plot.margin = unit(c(1.1,1.1,1.1,1.1), "cm"),
         panel.grid.major = element_blank(), 
