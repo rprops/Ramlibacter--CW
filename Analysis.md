@@ -1576,10 +1576,10 @@ for(i in 1:nrow(map_ani)){
 
 # Order y-axis according to phylogenetic tree order
 ord_list_bin <- c("Lim. sp. 103DPR2","Lim sp. Rim11",
-                  "Ramli. MAG", 
-                  "Ramli. tataouinensis 5-10",
+                  "Ramli. sp. MAG", 
+                  "Ramli. sp. 5-10",
                   "Ramli. sp. Leaf400",
-                  "Ramli. tataouinensis TTB310",
+                  "Ramli. sp. TTB310",
                   "Lim. sp. DM1",
                   "Lim. sp. II-D5", "Lim. sp. 2KL-3", 
                   "Lim. sp. Rim28",  "Lim sp. Rim47",

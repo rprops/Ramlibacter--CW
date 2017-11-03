@@ -1202,15 +1202,15 @@ for(i in 1:nrow(map_ani)){
 }
 
 # Order y-axis according to phylogenetic tree order
-ord_list_bin <- c("Lim. sp. 103DPR2","Lim sp. Rim11",
-                  "Ramli. MAG", 
-                  "Ramli. tataouinensis 5-10",
-                  "Ramli. sp. Leaf400",
-                  "Ramli. tataouinensis TTB310",
-                  "Lim. sp. DM1",
-                  "Lim. sp. II-D5", "Lim. sp. 2KL-3", 
-                  "Lim. sp. Rim28",  "Lim sp. Rim47",
-                  "Lim. sp. 63ED37-2","Lim. sp. 2KL-27"
+ord_list_bin <- c("Lim. sp. Rim11", "Lim. sp. 103DPR2",
+                  "Lim. sp. 2KL-27", "Lim. sp. Rim47",
+                  "Lim. sp. II-D5", "Lim. sp. 2KL-3",
+                  "Rhodo. sp. ED16","Rhodo. sp. T118",
+                  "Curvi. sp. ATCC", "Curvi. sp. PAE-UM",
+                  "Vario. sp. 110B", "Vario. sp. EPS",
+                  "Ramli. sp. Leaf400", "Ramli. sp. TTB310",
+                  "Ramli. sp. MAG", 
+                  "Ramli. sp. 5-10"
                   )
 
 # order rows and columns
@@ -1228,11 +1228,7 @@ df_pyani$bin1 <- factor(df_pyani$bin1, levels = rev(ord_list_bin))
 
 # make plot
 p_ani <- ggplot(data = df_pyani,
-       aes(x = bin2, y = bin1, fill = ANI)) + 
-  geom_raster()+
-  scale_fill_distiller(palette = "RdBu", name = "Average\nNucleotide\nIdentity\n",
-                       limits = c(0.75,1.0), oob=squish) +
-  geom_text(aes(label = round(ANI, 2)), size = 4.5)+
+       aes(x = bin2, y = bin1, fill = ANI))+
   theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
         legend.title=element_text(size=15), legend.text=element_text(size=14),
         axis.text.y = element_blank(),
@@ -1243,7 +1239,11 @@ p_ani <- ggplot(data = df_pyani,
         panel.grid.minor = element_blank(),
         panel.background = element_rect(fill = "transparent",colour = NA),
         plot.background = element_rect(fill = "transparent",colour = NA)
-  )+
+  )+ 
+  geom_raster()+
+  scale_fill_distiller(palette = "RdBu", name = "Average\nNucleotide\nIdentity\n",
+                       limits = c(0.75,1.0), oob=squish) +
+  geom_text(aes(label = round(ANI, 2)), size = 4.5)+
   xlab("")+
   ylab("")+
   scale_x_discrete(position = "top") 

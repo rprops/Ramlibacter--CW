@@ -200,3 +200,8 @@ gi_60117039_gb_AY7809051_,range,#b9b9b9,normal,2
 gi_343206349_ref_NR_0449411_,range,#b9b9b9,normal,2
 gi_151536_gb_M112241_PSERGDA,range,#b9b9b9,normal,2
 5_Bctrm474_Prior=1.000000_Length=1481_NormPrior=1.000000,#fc8b8a,normal,2
+AJ811014.1,range,#b9b9b9,normal,2
+NR_074689.1,range,#b9b9b9,normal,2
+MF872602.1,range,#b9b9b9,normal,2
+AB599823.1,range,#b9b9b9,normal,2
+NR_125545.1,range,#b9b9b9,normal,2

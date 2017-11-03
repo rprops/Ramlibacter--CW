@@ -1,9 +1,9 @@
 ani_file	long_name	ref_name
 Limnohabitans_sp_63ED37-2_NZ.CP011774.1	Limnohabitans sp. 63ED37-2	Lim. sp. 63ED37-2
 Limnohabitans_sp_DM1_NZ.CXOO00000000.1	Limnohabitans sp. DM1	Lim. sp. DM1
-Limnohabitans_sp_Rim11_CXOM00000000.1	Limnohabitans sp. Rim11	Lim sp. Rim11
+Limnohabitans_sp_Rim11_CXOM00000000.1	Limnohabitans sp. Rim11	Lim. sp. Rim11
 Limnohabitans_sp_Rim28_NZ.ALKN00000000.1	Limnohabitans sp. Rim28	Lim. sp. Rim28
-Limnohabitans_sp_Rim47_2684622883	Limnohabitans sp. Rim47	Lim sp. Rim47
+Limnohabitans_sp_Rim47_2684622883	Limnohabitans sp. Rim47	Lim. sp. Rim47
 Limnohabitans_planktonicus_II.D5_NZ.LFYT00000000.1	Limnohabitans sp. II-D5	Lim. sp. II-D5
 Limnohabitans_sp_2KL.3_NZ.CXON00000000.1	Limnohabitans sp. 2KL-3	Lim. sp. 2KL-3
 Limnohabitans_sp_63ED37.2_NZ.CP011774.1	Limnohabitans sp. 63ED37-2	Lim. sp. 63ED37-2
@@ -12,8 +12,14 @@ Limnohabitans_planktonicus_II-D5_NZ.LFYT00000000.1	Limnohabitans sp. II-D5	Lim. 
 Limnohabitans_sp_2KL-27_NZ.CXOP00000000.1	Limnohabitans sp. 2KL-27	Lim. sp. 2KL-27
 Limnohabitans_sp_2KL-3_NZ.CXON00000000.1	Limnohabitans sp. 2KL-3	Lim. sp. 2KL-3
 Limnohabitans_sp_103DPR2_NZ.CP011834.1	Limnohabitans sp. 103DPR2	Lim. sp. 103DPR2
-121950.assembled	Ramli. MAG (2724679690)	Ramli. MAG
-X121950.assembled	Ramli. MAG (2724679690)	Ramli. MAG
+121950.assembled	Ramli. sp. MAG (2724679690)	Ramli. sp. MAG
+X121950.assembled	Ramli. sp. MAG (2724679690)	Ramli. sp. MAG
 Ramlibacter_sp_Leaf400	Ramli. sp. Leaf400 (NZ_LMQL01000001.1)	Ramli. sp. Leaf400
-Ramlibacter_tataouinensis_5_10	Ramli. tataouinensis 5-10 (NZ_CP010951.1)	Ramli. tataouinensis 5-10
-Ramlibacter_tataouinensis_TTB310	Ramli. tataouinensis TTB310 (NC_015677.1)	Ramli. tataouinensis TTB310
+Ramlibacter_tataouinensis_5_10	Ramli. tataouinensis 5-10 (NZ_CP010951.1)	Ramli. sp. 5-10
+Ramlibacter_tataouinensis_TTB310	Ramli. sp. TTB310 (NC_015677.1)	Ramli. sp. TTB310
+Curvibacter_lanceolatus_ATCC_NZ_KB9062531	Curvi. sp. ATCC	Curvi. sp. ATCC
+Variovorax_paradoxus_EPS_NC_0149311	Vario. sp. EPS	Vario. sp. EPS
+Rhodoferax_saidenbachensis_ED16_AWQR010000011	Rhodo. sp. ED16	Rhodo. sp. ED16
+Curvibacter_sp_PAE_UM_NZ_KQ4833581	Curvi. sp. PAE-UM	Curvi. sp. PAE-UM
+Rhodoferax_ferrireducens_T118_CP0002671	Rhodo. sp. T118	Rhodo. sp. T118
+Variovorax_paradoxus_110B_NZ_KB9074501	Vario. sp. 110B	Vario. sp. 110B
