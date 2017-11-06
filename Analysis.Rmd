@@ -638,7 +638,7 @@ merged_gc_ko$level_C[is.na(merged_gc_ko$level_C)] <- "Unknown"
 
 * This output was not sufficient to perform any analysis. Therefore I used the web browser to calculate the synonymous codon bias in the genes of the three genomes.
 
-** Codon bias is proportional to mRNA production! (Wan et al 2004)  
+** Codon bias is proportional to mRNA production (Wan et al 2004)  
 
 ** However, strong correlation between SCUO and %GC has been reported, thereby
 confounding possible "biological" effects.. Beware..
@@ -756,16 +756,16 @@ write.table(tmp2, file = "All_KO.tsv", quote = FALSE,
             col.names = FALSE, row.names = FALSE)
 ```
 
-```{r compare-limno-CB, dpi = 500, warning = FALSE, fig.width = 10, fig.height = 8}
+```{r compare-ramli-CB, dpi = 500, warning = FALSE, fig.width = 10, fig.height = 4}
 # Import codonO results of reference genomes
 ref_SCUO <- codonO_2_df(pathx = "./IMG_annotation/References/codonO_output/")
 
 # reimport codonO results of Limno genome
-Limno_SCUO <- codonO_2_df(pathx = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/",
+Ramli_SCUO <- codonO_2_df(pathx = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/",
                           patternx = "codonO")
 
 # Merge dataframes
-ref_limno_SCUO <- rbind(ref_SCUO, Limno_SCUO)
+ref_limno_SCUO <- rbind(ref_SCUO, Ramli_SCUO)
 
 # Replace genome names by better annotated names
 map_scuo <- read.delim("./Mapping_files/codonO_ref_names.tsv", stringsAsFactors = FALSE)
@@ -773,51 +773,87 @@ ref_limno_SCUO$Genome <- as.character(ref_limno_SCUO$Genome)
 for(i in 1:nrow(map_scuo)){
   ref_limno_SCUO$Genome[ref_limno_SCUO$Genome %in% map_scuo$codon_file[i]] <- map_scuo$ref_name[i]
 }
-ref_limno_SCUO$Genome[ref_limno_SCUO$Genome %in% "2724679690.genes.fna.codonO.output"] <- "Lim. MAG (2724679690)"
+ref_limno_SCUO$Genome[ref_limno_SCUO$Genome %in% "2724679690.genes.fna.codonO.output"] <- "Ramli. sp. MAG"
 
 # order data according to mean SCUO
-sum_scuo <- ref_limno_SCUO %>% group_by(Genome) %>% summarize(mean_scuo = mean(SCUO))
-ref_limno_SCUO$Genome <- factor(ref_limno_SCUO$Genome, levels = sum_scuo$Genome[order(sum_scuo$mean_scuo)])
+# sum_scuo <- ref_limno_SCUO %>% group_by(Genome) %>% summarize(mean_scuo = mean(SCUO))
+# ref_limno_SCUO$Genome <- factor(ref_limno_SCUO$Genome, levels = sum_scuo$Genome[order(sum_scuo$mean_scuo)])
+
+ord_list_bin <- c("Lim. sp. Rim11", "Lim. sp. 103DPR2",
+                  "Lim. sp. 2KL-27", "Lim. sp. Rim47",
+                  "Lim. sp. II-D5", "Lim. sp. 2KL-3",
+                  "Rhodo. sp. ED16","Rhodo. sp. T118",
+                  "Curvi. sp. ATCC", "Curvi. sp. PAE-UM",
+                  "Vario. sp. 110B", "Vario. sp. EPS",
+                  "Ramli. sp. Leaf400", "Ramli. sp. TTB310",
+                  "Ramli. sp. MAG", 
+                  "Ramli. sp. 5-10"
+                  )
+
+# order rows and columns
+ref_limno_SCUO$Genome <- factor(ref_limno_SCUO$Genome, levels = ord_list_bin)
+
+
 # ref_limno_SCUO$new <- ref_limno_SCUO$Genome=="Lim. MAG (2724679690)"
 
 # Plot SCUO profiles
-
-p_limno_SCUO <- ref_limno_SCUO  %>% 
+p_ramli_SCUO <- ref_limno_SCUO %>% dplyr::filter(GCx == "GC_mean") %>% 
   ggplot(aes(x = Genome, y = SCUO, fill = Genome))+
   theme_bw()+
     # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
             # ymin = -Inf,ymax = Inf, alpha = 0.005, show.legend =FALSE, inherit.aes = FALSE)+
   geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
-  scale_fill_brewer(palette = "Paired")+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4)))+
   theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 65, hjust = 1),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size=18),
-        legend.position="bottom")+
+        legend.position="bottom",
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+
   guides(fill=FALSE)+
   stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
                  geom="pointrange", color="black")+
   xlab("")+
-  ylab("Codon bias - SCUO")+
-  geom_vline(xintercept = 9.5, col = 'black', lwd = 2, linetype = 1, alpha = 0.6)+
+  ylab("")+
+  # geom_vline(xintercept = 9.5, col = 'black', lwd = 2, linetype = 1, alpha = 0.6)+
   ylim(0,1)
 
-p_limno_SCUO
+p_ramli_SCUO
 
-# Plot SCUO-GC profiles
-# p_limno_SCUO_GC <- ref_limno_SCUO  %>% 
-#   ggplot(aes(x = GC, y = SCUO, fill = Genome))+
-#   theme_bw()+
-#   geom_point(size = 4, shape = 21, color = "black", alpha = 0.4)+
-#   scale_fill_brewer(palette = "Paired")+
-#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1))+
-#   guides(fill=FALSE)+
-#   ggtitle("Codon bias - SCUO")+
-#   facet_grid(GCx~Genome)+
-#   geom_smooth(color = "black", method = "loess")
-# 
-# p_limno_SCUO_GC
+p_ramli_GC <- ref_limno_SCUO  %>% dplyr::filter(GCx == "GC_mean") %>% 
+  ggplot(aes(x = Genome, y = GC, fill = Genome))+
+  theme_bw()+
+  geom_hline(yintercept = 0.7, col = 'black', lwd = 1, linetype = 2, alpha = 0.6)+
+    # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
+            # ymin = -Inf,ymax = Inf, alpha = 0.005, show.legend =FALSE, inherit.aes = FALSE)+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4)))+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom",
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+
+  guides(fill=FALSE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+  xlab("")+
+  ylab("")+
+  scale_y_continuous(labels = function(x) sprintf("%.2f", x), breaks = seq(0.20,0.90,0.10),
+                     limits = c(0.2,0.9))
+  # scale_y_continuous(breaks = seq(0.20,0.90,0.10), limits = c(0.2,0.9))
+
+p_ramli_GC
 
 # Format file for annotation of phylogenetic tree
 

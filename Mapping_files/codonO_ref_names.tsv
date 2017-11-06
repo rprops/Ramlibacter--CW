@@ -1,10 +1,19 @@
 codon_file	long_name	ref_name
-Limnohabitans_planktonicus_II_D5_NZ_LFYT00000000_1_CDS.codonO.output	Limnohabitans planktonicus II-D5	Lim. planktonicus II-D5 (NZ.LFYT00000000.1)
-Limnohabitans_sp_103DPR2_NZ_CP011834_1_CDS.codonO.output	Limnohabitans sp. 103DPR2	Lim. sp. 103DPR2 (NZ.CP011834.1)
-Limnohabitans_sp_2KL_27_NZ_CXOP00000000_1_CDS.codonO.output	Limnohabitans sp. 2KL-27	Lim. sp. 2KL-27 (NZ.CXOP00000000.1)
-Limnohabitans_sp_2KL_3_NZ_CXON00000000_1_CDS.codonO.output	Limnohabitans sp. 2KL-3	Lim. sp. 2KL-3 (CXON00000000.1)
-Limnohabitans_sp_63ED37_2_NZ_CP011774_1_CD.codonO.output	Limnohabitans sp. 63ED37-2	Lim. sp. 63ED37-2 (NZ.CP011774.1)
-Limnohabitans_sp_DM1_NZ_CXOO00000000_1_CDS.codonO.output	Limnohabitans sp. DM1	Lim. sp. DM1 (CXOO00000000.1)
-Limnohabitans_sp_Rim11_CXOM00000000_1_CDS.codonO.output	Limnohabitans sp. Rim11	Lim sp. Rim11 (CXOM00000000.1)
-Limnohabitans_sp_Rim28_NZ.ALKN00000000.1_CDS.codonO.output	Limnohabitans sp. Rim28	Lim. sp. Rim28 (NZ.ALKN00000000.1)
-Limnohabitans_sp_Rim47_(2684622883)_CDS.codonO.output	Limnohabitans sp. Rim47	Lim sp. Rim47 (2684622883)
+Limnohabitans_planktonicus_II_D5_NZ_LFYT00000000_1_CDS.codonO.output	Limnohabitans planktonicus II-D5	Lim. sp. II-D5
+Limnohabitans_sp_103DPR2_NZ_CP011834_1_CDS.codonO.output	Limnohabitans sp. 103DPR2	Lim. sp. 103DPR2
+Limnohabitans_sp_2KL_27_NZ_CXOP00000000_1_CDS.codonO.output	Limnohabitans sp. 2KL-27	Lim. sp. 2KL-27
+Limnohabitans_sp_2KL_3_NZ_CXON00000000_1_CDS.codonO.output	Limnohabitans sp. 2KL-3	Lim. sp. 2KL-3
+Limnohabitans_sp_63ED37_2_NZ_CP011774_1_CD.codonO.output	Limnohabitans sp. 63ED37-2	Lim. sp. 63ED37-2
+Limnohabitans_sp_DM1_NZ_CXOO00000000_1_CDS.codonO.output	Limnohabitans sp. DM1	Lim. sp. DM1
+Limnohabitans_sp_Rim11_CXOM00000000_1_CDS.codonO.output	Limnohabitans sp. Rim11	Lim. sp. Rim11
+Limnohabitans_sp_Rim28_NZ.ALKN00000000.1_CDS.codonO.output	Limnohabitans sp. Rim28	Lim. sp. Rim28
+Limnohabitans_sp_Rim47_(2684622883)_CDS.codonO.output	Limnohabitans sp. Rim47	Lim. sp. Rim47
+Ramlibacter_sp_Leaf400_CDS.codonO.output	Ramli. sp. Leaf400	Ramli. sp. Leaf400
+Ramlibacter_tataouinensis_5_10_CDS.codonO.output	Ramli. sp. 5-10	Ramli. sp. 5-10
+Ramlibacter_tataouinensis_TTB310_CDS.codonO.output	Ramli. sp. TTB310	Ramli. sp. TTB310
+Curvibacter_lanceolatus_ATCC_NZ_KB9062531_CDS.codonO.output	Curvi. sp. ATCC	Curvi. sp. ATCC
+Variovorax_paradoxus_EPS_NC_0149311_CDS.codonO.output	Vario. sp. EPS	Vario. sp. EPS
+Rhodoferax_saidenbachensis_ED16_AWQR010000011_CDS.codonO.output	Rhodo. sp. ED16	Rhodo. sp. ED16
+Curvibacter_sp_PAE_UM_NZ_KQ4833581_CDS.codonO.output	Curvi. sp. PAE-UM	Curvi. sp. PAE-UM
+Rhodoferax_ferrireducens_T118_CP0002671_CDS.codonO.output	Rhodo. sp. T118	Rhodo. sp. T118
+Variovorax_paradoxus_110B_NZ_KB9074501_CDS.codonO.output	Vario. sp. 110B	Vario. sp. 110B
