@@ -45,6 +45,7 @@ library("SpiecEasi")
 library("seqtime")
 library("ggrepel")
 library("scales")
+library("RColorBrewer")
 
 col_limno <- "#060670"
 col_bac1 <- "#720000"
@@ -90,21 +91,22 @@ sp_easi <- spiec.easi(phy_df_filtered, method='mb', lambda.min.ratio=1e-2,
                            nlambda=20, icov.select.params=list(rep.num=50))
 
 ig.mb <- adj2igraph(sp_easi$refit,  vertex.attr = list(name=taxa_names(phy_df_filtered)))
-vsize <- Biobase::rowMax(clr(otu_table(phy_df_filtered), 1))+15
+vsize <- Biobase::rowMedians(clr(otu_table(phy_df_filtered), 1))+15
 Lineage_rel <- tax_table(phy_df_filtered)[,"Lineage"]
 Lineage_rel <- factor(Lineage_rel, levels = unique(Lineage_rel))
 vweights <- summary(symBeta(getOptBeta(sp_easi), mode='maxabs'))
-MAGs <- c(); MAGs[taxa_names(phy_df_filtered)=="Otu00001"]  <- "Limnohabitans MAG"
-MAGs[taxa_names(phy_df_filtered)=="Otu00002"]  <- "Bacteroidetes MAG1"
-MAGs[taxa_names(phy_df_filtered)=="Otu00003"]  <- "Bacteroidetes MAG2"
-MAGs[is.na(MAGs)] <-""
+MAGs <- c(); MAGs[taxa_names(phy_df_filtered)=="Otu00001"]  <- "Ramlibacter MAG"
+MAGs[taxa_names(phy_df_filtered)=="Otu00002"]  <- "Bacteroidetes sp. MAG1"
+MAGs[taxa_names(phy_df_filtered)=="Otu00003"]  <- "Bacteroidetes sp. MAG2"
+MAGs[is.na(MAGs)] <- ""
 
 # png(file = "./Figures/Figures_network/NETWORK-REL-CX-C30-A25.png", width = 9, height = 9, res = 500, units = "in")
 plot_network_custom(ig.mb, phy_df_filtered, type='taxa',
              line_weight = 2, hjust = 0.5,
              point_size = 0.1, alpha = 0.01, label_size = 3.95)+
-  scale_fill_brewer(palette = "Paired")+
-  scale_color_brewer(palette = "Paired")+
+  # scale_fill_brewer(palette = "Paired")+
+  # scale_color_brewer(palette = "Paired")+
+  scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
   geom_point(aes(size = vsize, fill = Lineage_rel), alpha = 0.5,
              colour="black", shape=21)+
   guides(size = FALSE,
@@ -135,8 +137,15 @@ The second network will be built using absolute abundance data by multiplying th
 # Import cell count data
 cell_counts <- read.csv("16S_data/cell_counts.csv")
 cell_counts$sample_title <- as.factor(cell_counts$sample_title)
+
+# Import metadata
+meta_16S <- read.csv("16s_data/Metadata.csv")[1:77,]; rownames(meta_16S) <- meta_16S$sample_title
+
 # Calculate proportions
 phy_df_rel <- transform_sample_counts(phy_df, function(x) x/sum(x))
+
+# Add metadata
+sample_data(phy_df_rel) <- sample_data(meta_16S)
 
 # Select samples for which corresponding counts are available
 cell_counts <- cell_counts[cell_counts$sample_title %in% sample_names(phy_df_rel), ]
@@ -157,13 +166,13 @@ sp_easi_abs <- spiec.easi(phy_df_abs, method='mb', lambda.min.ratio=1e-2,
                            nlambda=20, icov.select.params=list(rep.num=50))
 
 ig.mb_abs <- adj2igraph(sp_easi_abs$refit,  vertex.attr = list(name=taxa_names(phy_df_abs)))
-vsize_abs <- Biobase::rowMax(clr(otu_table(phy_df_abs), 1))+15
+vsize_abs <- Biobase::rowMedians(clr(otu_table(phy_df_abs), 1))+15
 Lineage_abs <- tax_table(phy_df_abs)[,"Lineage"]
 Lineage_abs <- factor(Lineage_abs, levels = unique(Lineage_abs))
 vweights_abs <- summary(symBeta(getOptBeta(sp_easi_abs), mode='maxabs'))
-MAGs <- c(); MAGs[taxa_names(phy_df_abs)=="Otu00001"]  <- "Limnohabitans MAG"
-MAGs[taxa_names(phy_df_abs)=="Otu00002"]  <- "Bacteroidetes MAG1"
-MAGs[taxa_names(phy_df_abs)=="Otu00003"]  <- "Bacteroidetes MAG2"
+MAGs <- c(); MAGs[taxa_names(phy_df_abs)=="Otu00001"]  <- "Ramlibacter sp. MAG"
+MAGs[taxa_names(phy_df_abs)=="Otu00002"]  <- "Bacteroidetes sp. MAG1"
+MAGs[taxa_names(phy_df_abs)=="Otu00003"]  <- "Bacteroidetes sp. MAG2"
 MAGs[is.na(MAGs)] <-""
 
 # Plot network inferred from absolute abundances
@@ -171,8 +180,9 @@ MAGs[is.na(MAGs)] <-""
 plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
              line_weight = 2, hjust = 0.5,
              point_size = 0.1, alpha = 0.01, label_size = 3.95)+
-  scale_fill_brewer(palette = "Paired")+
-  scale_color_brewer(palette = "Paired")+
+  # scale_fill_brewer(palette = "Paired")+
+  # scale_color_brewer(palette = "Paired")+
+  scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
   geom_point(aes(size = vsize_abs, fill = Lineage_abs), alpha = 0.5,
              colour="black", shape=21)+
   guides(size = FALSE,
@@ -195,6 +205,31 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
                    nudge_y = 0.6
   )
 # dev.off()
+```
+
+```{r OTU1-dynamics, warning = FALSE, dpi = 500, fig.width = 9, fig.height = 5.5}
+# Plot absolute OTU dynamics of OTU1
+df_abs <- psmelt(phy_df_abs)
+
+p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>% 
+  ggplot(aes(x = Timepoint, y = Abundance))+
+  facet_grid(.~Reactor.cycle)+
+  scale_shape_manual(values = c(21,24))+
+  geom_line(size = 1.5, linetype = 2, color = adjustcolor("#000000", 0.5))+
+  geom_point(size = 4, fill = "#e2a2fd", aes(shape = Reactor_status), alpha = 0.8,
+             color = "black")+
+  theme_bw()+
+  ylab(expression("Otu00001 abundance - cells mL"^"-1"))+
+  xlab("Time relative to reactor start - days")+
+  scale_y_continuous(breaks = seq(0,50e3,5e3), limits = c(0,30e3))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "top")+
+  guides(shape = guide_legend(title="Reactor status", ncol =1))
+
+print(p_abs_otu1)
 ```
 
 # B. MetaG analysis

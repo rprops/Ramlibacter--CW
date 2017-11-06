@@ -63,21 +63,22 @@ sp_easi <- spiec.easi(phy_df_filtered, method='mb', lambda.min.ratio=1e-2,
 
 ```r
 ig.mb <- adj2igraph(sp_easi$refit,  vertex.attr = list(name=taxa_names(phy_df_filtered)))
-vsize <- Biobase::rowMax(clr(otu_table(phy_df_filtered), 1))+15
+vsize <- Biobase::rowMedians(clr(otu_table(phy_df_filtered), 1))+15
 Lineage_rel <- tax_table(phy_df_filtered)[,"Lineage"]
 Lineage_rel <- factor(Lineage_rel, levels = unique(Lineage_rel))
 vweights <- summary(symBeta(getOptBeta(sp_easi), mode='maxabs'))
-MAGs <- c(); MAGs[taxa_names(phy_df_filtered)=="Otu00001"]  <- "Limnohabitans MAG"
-MAGs[taxa_names(phy_df_filtered)=="Otu00002"]  <- "Bacteroidetes MAG1"
-MAGs[taxa_names(phy_df_filtered)=="Otu00003"]  <- "Bacteroidetes MAG2"
-MAGs[is.na(MAGs)] <-""
+MAGs <- c(); MAGs[taxa_names(phy_df_filtered)=="Otu00001"]  <- "Ramlibacter MAG"
+MAGs[taxa_names(phy_df_filtered)=="Otu00002"]  <- "Bacteroidetes sp. MAG1"
+MAGs[taxa_names(phy_df_filtered)=="Otu00003"]  <- "Bacteroidetes sp. MAG2"
+MAGs[is.na(MAGs)] <- ""
 
 # png(file = "./Figures/Figures_network/NETWORK-REL-CX-C30-A25.png", width = 9, height = 9, res = 500, units = "in")
 plot_network_custom(ig.mb, phy_df_filtered, type='taxa',
              line_weight = 2, hjust = 0.5,
              point_size = 0.1, alpha = 0.01, label_size = 3.95)+
-  scale_fill_brewer(palette = "Paired")+
-  scale_color_brewer(palette = "Paired")+
+  # scale_fill_brewer(palette = "Paired")+
+  # scale_color_brewer(palette = "Paired")+
+  scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
   geom_point(aes(size = vsize, fill = Lineage_rel), alpha = 0.5,
              colour="black", shape=21)+
   guides(size = FALSE,
@@ -114,8 +115,15 @@ The second network will be built using absolute abundance data by multiplying th
 # Import cell count data
 cell_counts <- read.csv("16S_data/cell_counts.csv")
 cell_counts$sample_title <- as.factor(cell_counts$sample_title)
+
+# Import metadata
+meta_16S <- read.csv("16s_data/Metadata.csv")[1:77,]; rownames(meta_16S) <- meta_16S$sample_title
+
 # Calculate proportions
 phy_df_rel <- transform_sample_counts(phy_df, function(x) x/sum(x))
+
+# Add metadata
+sample_data(phy_df_rel) <- sample_data(meta_16S)
 
 # Select samples for which corresponding counts are available
 cell_counts <- cell_counts[cell_counts$sample_title %in% sample_names(phy_df_rel), ]
@@ -154,13 +162,13 @@ sp_easi_abs <- spiec.easi(phy_df_abs, method='mb', lambda.min.ratio=1e-2,
 
 ```r
 ig.mb_abs <- adj2igraph(sp_easi_abs$refit,  vertex.attr = list(name=taxa_names(phy_df_abs)))
-vsize_abs <- Biobase::rowMax(clr(otu_table(phy_df_abs), 1))+15
+vsize_abs <- Biobase::rowMedians(clr(otu_table(phy_df_abs), 1))+15
 Lineage_abs <- tax_table(phy_df_abs)[,"Lineage"]
 Lineage_abs <- factor(Lineage_abs, levels = unique(Lineage_abs))
 vweights_abs <- summary(symBeta(getOptBeta(sp_easi_abs), mode='maxabs'))
-MAGs <- c(); MAGs[taxa_names(phy_df_abs)=="Otu00001"]  <- "Limnohabitans MAG"
-MAGs[taxa_names(phy_df_abs)=="Otu00002"]  <- "Bacteroidetes MAG1"
-MAGs[taxa_names(phy_df_abs)=="Otu00003"]  <- "Bacteroidetes MAG2"
+MAGs <- c(); MAGs[taxa_names(phy_df_abs)=="Otu00001"]  <- "Ramlibacter sp. MAG"
+MAGs[taxa_names(phy_df_abs)=="Otu00002"]  <- "Bacteroidetes sp. MAG1"
+MAGs[taxa_names(phy_df_abs)=="Otu00003"]  <- "Bacteroidetes sp. MAG2"
 MAGs[is.na(MAGs)] <-""
 
 # Plot network inferred from absolute abundances
@@ -168,8 +176,9 @@ MAGs[is.na(MAGs)] <-""
 plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
              line_weight = 2, hjust = 0.5,
              point_size = 0.1, alpha = 0.01, label_size = 3.95)+
-  scale_fill_brewer(palette = "Paired")+
-  scale_color_brewer(palette = "Paired")+
+  # scale_fill_brewer(palette = "Paired")+
+  # scale_color_brewer(palette = "Paired")+
+  scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
   geom_point(aes(size = vsize_abs, fill = Lineage_abs), alpha = 0.5,
              colour="black", shape=21)+
   guides(size = FALSE,
@@ -198,6 +207,34 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
 ```r
 # dev.off()
 ```
+
+
+```r
+# Plot absolute OTU dynamics of OTU1
+df_abs <- psmelt(phy_df_abs)
+
+p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>% 
+  ggplot(aes(x = Timepoint, y = Abundance))+
+  facet_grid(.~Reactor.cycle)+
+  scale_shape_manual(values = c(21,24))+
+  geom_line(size = 1.5, linetype = 2, color = adjustcolor("#000000", 0.5))+
+  geom_point(size = 4, fill = "#e2a2fd", aes(shape = Reactor_status), alpha = 0.8,
+             color = "black")+
+  theme_bw()+
+  ylab(expression("Otu00001 abundance - cells mL"^"-1"))+
+  xlab("Time relative to reactor start - days")+
+  scale_y_continuous(breaks = seq(0,50e3,5e3), limits = c(0,30e3))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "top")+
+  guides(shape = guide_legend(title="Reactor status", ncol =1))
+
+print(p_abs_otu1)
+```
+
+<img src="Figures/cached/OTU1-dynamics-1.png" style="display: block; margin: auto;" />
 
 # B. MetaG analysis
 
@@ -384,9 +421,9 @@ LIMNO_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Fri Oct 27 16:35:55 2017  --- There are 2830 genes with > 0.1 %
-## Fri Oct 27 16:35:55 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:55 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:00 2017  --- There are 2830 genes with > 0.1 %
+## Mon Nov 06 15:54:00 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:00 2017  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -417,9 +454,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Fri Oct 27 16:35:55 2017  --- There are 1889 genes with > 0.1 %
-## Fri Oct 27 16:35:55 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:55 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:00 2017  --- There are 1889 genes with > 0.1 %
+## Mon Nov 06 15:54:00 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:00 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -461,9 +498,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Fri Oct 27 16:35:56 2017  --- There are 1797 genes with > 0.1 %
-## Fri Oct 27 16:35:56 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:56 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:01 2017  --- There are 1797 genes with > 0.1 %
+## Mon Nov 06 15:54:01 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:01 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -505,9 +542,9 @@ LIMNO_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Fri Oct 27 16:35:56 2017  --- There are 4954 genes with > 0.1 %
-## Fri Oct 27 16:35:56 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:56 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:01 2017  --- There are 4954 genes with > 0.1 %
+## Mon Nov 06 15:54:01 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:01 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -527,9 +564,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Fri Oct 27 16:35:56 2017  --- There are 3929 genes with > 0.1 %
-## Fri Oct 27 16:35:56 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:56 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:01 2017  --- There are 3929 genes with > 0.1 %
+## Mon Nov 06 15:54:01 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:01 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -549,9 +586,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Fri Oct 27 16:35:56 2017  --- There are 3573 genes with > 0.1 %
-## Fri Oct 27 16:35:56 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:56 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:01 2017  --- There are 3573 genes with > 0.1 %
+## Mon Nov 06 15:54:01 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:01 2017  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -571,9 +608,9 @@ LIMNO_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Fri Oct 27 16:35:56 2017  --- There are 2164 genes with > 0.1 %
-## Fri Oct 27 16:35:56 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:56 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:02 2017  --- There are 2164 genes with > 0.1 %
+## Mon Nov 06 15:54:02 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:02 2017  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -604,9 +641,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Fri Oct 27 16:35:56 2017  --- There are 1384 genes with > 0.1 %
-## Fri Oct 27 16:35:56 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:56 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:02 2017  --- There are 1384 genes with > 0.1 %
+## Mon Nov 06 15:54:02 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:02 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -626,9 +663,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Fri Oct 27 16:35:56 2017  --- There are 1342 genes with > 0.1 %
-## Fri Oct 27 16:35:56 2017  --- This is 100 % of all genes
-## Fri Oct 27 16:35:56 2017  --- The 10 genes with the highest GC% are:
+## Mon Nov 06 15:54:02 2017  --- There are 1342 genes with > 0.1 %
+## Mon Nov 06 15:54:02 2017  --- This is 100 % of all genes
+## Mon Nov 06 15:54:02 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -1116,8 +1153,7 @@ ref_limno_SCUO$Genome <- factor(ref_limno_SCUO$Genome, levels = ord_list_bin)
 # ref_limno_SCUO$new <- ref_limno_SCUO$Genome=="Lim. MAG (2724679690)"
 
 # Plot SCUO profiles
-
-p_ramli_SCUO <- ref_limno_SCUO %>% 
+p_ramli_SCUO <- ref_limno_SCUO %>% dplyr::filter(GCx == "GC_mean") %>% 
   ggplot(aes(x = Genome, y = SCUO, fill = Genome))+
   theme_bw()+
     # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
