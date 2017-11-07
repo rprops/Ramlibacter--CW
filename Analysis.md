@@ -1225,7 +1225,8 @@ p_ramli_GC
 
 # 9.  PosiGene analysis for identifying genes under positive selection in the Limnohabitans MAG
 
-Unrooted phylogenomic tree used in codeML analysis. Green branch indicates the genome for which PSG were tested.
+Unrooted phylogenomic tree used in codeML analysis. Green branch indicates the genome for which PSG were tested.  
+
 ![Phylogenetic tree used in PosiGene analysis](./posigene_analysis/CodeML_tree_anchor_species=Ramlibacter_MAG.png)
 Alternatively, the entire Ramlibacter clade can be tested for PSGs:
 Green branch indicates the clade for which the LCA was tested for PSGs.
@@ -1252,15 +1253,17 @@ map_posi$posi_geneID <- as.character(map_posi$posi_geneID)
 # Taking threshold of adjusted p.value of 0.05 and FDR < 0.05
 # Also remove dN/dS ratios of less than 15.
 data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05 & HA.foreground.omega < 10 &
-                                    Number.of.Sites.under.positive.Selection > 10)
+                                    FDR < 0.05)
+# data_posi <- data_posi %>% filter(P.Value < 0.05 & 
+#                                     FDR < 0.05 & HA.foreground.omega < 10 &
+#                                     Number.of.Sites.under.positive.Selection > 10)
 # Report summary
 cat(paste("There are ", nrow(data_posi), " genes under positive selection in this MAG (P<0.05). This is ",round(100*nrow(data_posi)/nrow(map_posi),1), "% of all genes",  sep = "")
 )
 ```
 
 ```
-## There are 199 genes under positive selection in this MAG (P<0.05). This is 5.2% of all genes
+## There are 568 genes under positive selection in this MAG (P<0.05). This is 14.8% of all genes
 ```
 
 ```r
@@ -1269,76 +1272,65 @@ data_posi <- left_join(data_posi, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
 
 # Optional: write tabel for quick view in iPath v2
-# write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
-            # row.names = FALSE, col.names = FALSE)
-# cat("Genes under positive selection with KO annotation")
-# data_posi_KO[, c(1:6, 9:12, 20:29)]
+write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
+            row.names = FALSE, col.names = FALSE)
+cat("Genes under positive selection with KO annotation")
+```
 
+```
+## Genes under positive selection with KO annotation
+```
 
+```r
 # Focus on C-metabolism
-data_posi_KO[data_posi_KO$ko_id %in% data_posi_KO$ko_id[data_posi_KO$level_B == "Carbohydrate metabolism"], ] %>% 
- ggplot(aes(x = ko_id, fill = level_C))+
-  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-  theme_bw()+
-  # facet_wrap(~level_B, ncol = 2)+
-  scale_fill_brewer(palette = "Paired")+
-  labs(x = "", y = "Count")+ 
-  theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
-                                                   legend.text = element_text(size = 5))+
-  guides(fill=guide_legend(nrow=6,byrow=TRUE))
-```
+# data_posi_KO[data_posi_KO$ko_id %in% data_posi_KO$ko_id[data_posi_KO$level_B == "Carbohydrate metabolism"], ] %>% 
+#  ggplot(aes(x = ko_id, fill = level_C))+
+#   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+#   theme_bw()+
+#   # facet_wrap(~level_B, ncol = 2)+
+#   scale_fill_brewer(palette = "Paired")+
+#   labs(x = "", y = "Count")+ 
+#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
+#                                                    legend.text = element_text(size = 5))+
+#   guides(fill=guide_legend(nrow=6,byrow=TRUE))
+# 
+# # Focus on energy metabolism
+# data_posi_KO %>% dplyr::filter(level_B == "Energy metabolism") %>% 
+#  ggplot(aes(x = ko_id, fill = level_C))+
+#   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+#   theme_bw()+
+#   # facet_wrap(~level_B, ncol = 2)+
+#   scale_fill_brewer(palette = "Paired")+
+#   labs(x = "", y = "Count")+ 
+#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
+#                                                    legend.text = element_text(size = 5))+
+#   guides(fill=guide_legend(nrow=6,byrow=TRUE))
+# 
+# 
+# # Focus on translation
+# data_posi_KO %>% dplyr::filter(level_B == "Translation") %>% 
+#  ggplot(aes(x = ko_id, fill = level_C))+
+#   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+#   theme_bw()+
+#   # facet_wrap(~level_B, ncol = 2)+
+#   scale_fill_brewer(palette = "Paired")+
+#   labs(x = "", y = "Count")+ 
+#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
+#                                                    legend.text = element_text(size = 5))+
+#   guides(fill=guide_legend(nrow=6,byrow=TRUE))
+# 
+# # Focus on secondary metabolite production
+# data_posi_KO %>% dplyr::filter(level_B == "Metabolism of cofactors and vitamins") %>% 
+#  ggplot(aes(x = ko_id, fill = level_C))+
+#   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
+#   theme_bw()+
+#   # facet_wrap(~level_B, ncol = 2)+
+#   scale_fill_brewer(palette = "Paired")+
+#   labs(x = "", y = "Count")+ 
+#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
+#                                                    legend.text = element_text(size = 5))+
+#   guides(fill=guide_legend(nrow=6,byrow=TRUE))
 
-<img src="Figures/cached/posigene-selection-1.png" style="display: block; margin: auto;" />
-
-```r
-# Focus on energy metabolism
-data_posi_KO %>% dplyr::filter(level_B == "Energy metabolism") %>% 
- ggplot(aes(x = ko_id, fill = level_C))+
-  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-  theme_bw()+
-  # facet_wrap(~level_B, ncol = 2)+
-  scale_fill_brewer(palette = "Paired")+
-  labs(x = "", y = "Count")+ 
-  theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
-                                                   legend.text = element_text(size = 5))+
-  guides(fill=guide_legend(nrow=6,byrow=TRUE))
-```
-
-<img src="Figures/cached/posigene-selection-2.png" style="display: block; margin: auto;" />
-
-```r
-# Focus on translation
-data_posi_KO %>% dplyr::filter(level_B == "Translation") %>% 
- ggplot(aes(x = ko_id, fill = level_C))+
-  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-  theme_bw()+
-  # facet_wrap(~level_B, ncol = 2)+
-  scale_fill_brewer(palette = "Paired")+
-  labs(x = "", y = "Count")+ 
-  theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
-                                                   legend.text = element_text(size = 5))+
-  guides(fill=guide_legend(nrow=6,byrow=TRUE))
-```
-
-<img src="Figures/cached/posigene-selection-3.png" style="display: block; margin: auto;" />
-
-```r
-# Focus on secondary metabolite production
-data_posi_KO %>% dplyr::filter(level_B == "Metabolism of cofactors and vitamins") %>% 
- ggplot(aes(x = ko_id, fill = level_C))+
-  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-  theme_bw()+
-  # facet_wrap(~level_B, ncol = 2)+
-  scale_fill_brewer(palette = "Paired")+
-  labs(x = "", y = "Count")+ 
-  theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
-                                                   legend.text = element_text(size = 5))+
-  guides(fill=guide_legend(nrow=6,byrow=TRUE))
-```
-
-<img src="Figures/cached/posigene-selection-4.png" style="display: block; margin: auto;" />
-
-```r
 # Count number of unique genes involved in biosynthesis
 ```
 
@@ -1368,169 +1360,146 @@ selected_KOlevels <- c("Signal transduction",
 "Membrane transport",
 "Unknown"
 )
-# Evaluate correlation between codon bias and selection pressure
-p_SCUO_posi <- ggplot(data = data_SCUO_posi, aes (x = GC, y = SCUO))+
-  geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
-  geom_point(shape = 21, size = 4, fill = "red",
-             data = subset(data_SCUO_posi, posi_select == TRUE))+
-  # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
-  # scale_fill_brewer(palette = "Accent")+
-  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
-  # scale_size_manual(values = c(2.5,4))+
-  theme_bw()+
-  # facet_wrap(Genome_ID~GCx)+
-  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text.x=element_text(size=18))+
-  ylab("Codon bias - SCUO")+ 
-  xlab("%GC")+
-  ylim(0,1)+ 
-  guides(fill=FALSE, size = FALSE)
+# # Evaluate correlation between codon bias and selection pressure
+# p_SCUO_posi <- ggplot(data = data_SCUO_posi, aes (x = GC, y = SCUO))+
+#   geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
+#   geom_point(shape = 21, size = 4, fill = "red",
+#              data = subset(data_SCUO_posi, posi_select == TRUE))+
+#   # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
+#   # scale_fill_brewer(palette = "Accent")+
+#   # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
+#   # scale_size_manual(values = c(2.5,4))+
+#   theme_bw()+
+#   # facet_wrap(Genome_ID~GCx)+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+#         title=element_text(size=20), legend.text=element_text(size=14),
+#         legend.background = element_rect(fill="transparent"),
+#         axis.text.x = element_text(angle = 45, hjust = 1),
+#         strip.text.x=element_text(size=18))+
+#   ylab("Codon bias - SCUO")+ 
+#   xlab("%GC")+
+#   ylim(0,1)+ 
+#   guides(fill=FALSE, size = FALSE)
+# 
+# p_SCUO_posi
+# 
+# p_SCUO_posi2 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = SCUO,
+#                                                    fill = posi_select))+
+#   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+#   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+#   geom_boxplot(alpha=0.5, size =1.5, color = "darkgrey", width = 0.35,
+#                outlier.shape = NA)+
+#   # scale_fill_brewer(palette = "Accent")+
+#   scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+#   # scale_size_manual(values = c(2.5,4))+
+#   theme_bw()+
+#   # facet_wrap(Genome_ID~GCx)+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+#         title=element_text(size=20), legend.text=element_text(size=14),
+#         legend.background = element_rect(fill="transparent"),
+#         axis.text.x = element_text(angle = 45, hjust = 1),
+#         strip.text.x=element_text(size=18))+
+#   ylab("Codon bias - SCUO")+ 
+#   xlab("")+
+#   ylim(0,1)+ 
+#   guides(size = FALSE)
+# 
+# p_SCUO_posi2
+# 
+# p_SCUO_posi3 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = GC,
+#                                                    fill = posi_select))+
+#   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+#   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+#   geom_boxplot(alpha=0.5, size =1.5, color = "darkgrey", width = 0.35,
+#                outlier.shape = NA)+
+#   # scale_fill_brewer(palette = "Accent")+
+#   scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+#   # scale_size_manual(values = c(2.5,4))+
+#   theme_bw()+
+#   # facet_wrap(Genome_ID~GCx)+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+#         title=element_text(size=20), legend.text=element_text(size=14),
+#         legend.background = element_rect(fill="transparent"),
+#         axis.text.x = element_text(angle = 45, hjust = 1),
+#         strip.text.x=element_text(size=18))+
+#   ylab("%GC")+ 
+#   xlab("")+
+#   ylim(0.5,0.9)+ 
+#   guides(size = FALSE)
+# 
+# p_SCUO_posi3
+# 
+# 
+# p_SCUO_posi4 <- ggplot(data = data_SCUO_posi_only, aes (x = SCUO, y = sqrt(HA.foreground.omega)))+
+#   geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
+#   # geom_point(shape = 21, size = 4, fill = "red",
+#              # data = subset(data_SCUO_posi, posi_select == TRUE))+
+#   # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
+#   # scale_fill_brewer(palette = "Accent")+
+#   # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
+#   # scale_size_manual(values = c(2.5,4))+
+#   theme_bw()+
+#   # facet_wrap(Genome_ID~GCx)+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+#         title=element_text(size=20), legend.text=element_text(size=14),
+#         legend.background = element_rect(fill="transparent"),
+#         axis.text.x = element_text(angle = 45, hjust = 1),
+#         strip.text.x=element_text(size=18))+
+#   xlab("Codon bias - SCUO")+ 
+#   ylab(expression(sqrt(dN/dS)))+
+#   # ylim(0,1)+ 
+#   geom_hline(yintercept = sqrt(1), color = "darkgreen", size = 2, linetype = 2)+
+#   guides(fill=FALSE, size = FALSE)
+# 
+# p_SCUO_posi4
+# 
+# p_SCUO_posi5 <- ggplot(data = data_SCUO_posi_only, aes (x = 100*GC, y = sqrt(HA.foreground.omega)))+
+#   geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
+#   # geom_point(shape = 21, size = 4, fill = "red",
+#              # data = subset(data_SCUO_posi, posi_select == TRUE))+
+#   # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
+#   # scale_fill_brewer(palette = "Accent")+
+#   # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
+#   # scale_size_manual(values = c(2.5,4))+
+#   theme_bw()+
+#   # facet_wrap(Genome_ID~GCx)+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+#         title=element_text(size=20), legend.text=element_text(size=14),
+#         legend.background = element_rect(fill="transparent"),
+#         axis.text.x = element_text(angle = 45, hjust = 1),
+#         strip.text.x=element_text(size=18))+
+#   xlab("%GC")+ 
+#   ylab(expression(sqrt(dN/dS)))+
+#   # ylim(0,1)+ 
+#   geom_hline(yintercept = sqrt(1), color = "darkgreen", size = 2, linetype = 2)+
+#   guides(fill=FALSE, size = FALSE)
+# 
+# p_SCUO_posi5
+# 
+# p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = HA.foreground.omega,
+#                                                    fill = level_A))+
+#   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+#   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+#   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
+#                outlier.shape = NA)+
+#   scale_fill_brewer(palette = "Accent")+
+#   # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+#   # scale_size_manual(values = c(2.5,4))+
+#   theme_bw()+
+#   # facet_wrap(Genome_ID~GCx)+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+#         title=element_text(size=20), legend.text=element_text(size=14),
+#         legend.background = element_rect(fill="transparent"),
+#         axis.text.x = element_text(angle = 60, hjust = 1),
+#         strip.text.x=element_text(size=18),
+#         legend.position = "bottom")+
+#   xlab("")+ 
+#   ylab(expression(dN/dS))+
+#   # ylim(0.5,0.9)+ 
+#   guides(size = FALSE, fill = FALSE)
+# 
+# p_SCUO_posi6
 
-p_SCUO_posi
-```
-
-<img src="Figures/cached/posigene-scuo-1.png" style="display: block; margin: auto;" />
-
-```r
-p_SCUO_posi2 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = SCUO,
-                                                   fill = posi_select))+
-  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
-  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
-  geom_boxplot(alpha=0.5, size =1.5, color = "darkgrey", width = 0.35,
-               outlier.shape = NA)+
-  # scale_fill_brewer(palette = "Accent")+
-  scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
-  # scale_size_manual(values = c(2.5,4))+
-  theme_bw()+
-  # facet_wrap(Genome_ID~GCx)+
-  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text.x=element_text(size=18))+
-  ylab("Codon bias - SCUO")+ 
-  xlab("")+
-  ylim(0,1)+ 
-  guides(size = FALSE)
-
-p_SCUO_posi2
-```
-
-<img src="Figures/cached/posigene-scuo-2.png" style="display: block; margin: auto;" />
-
-```r
-p_SCUO_posi3 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = GC,
-                                                   fill = posi_select))+
-  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
-  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
-  geom_boxplot(alpha=0.5, size =1.5, color = "darkgrey", width = 0.35,
-               outlier.shape = NA)+
-  # scale_fill_brewer(palette = "Accent")+
-  scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
-  # scale_size_manual(values = c(2.5,4))+
-  theme_bw()+
-  # facet_wrap(Genome_ID~GCx)+
-  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text.x=element_text(size=18))+
-  ylab("%GC")+ 
-  xlab("")+
-  ylim(0.5,0.9)+ 
-  guides(size = FALSE)
-
-p_SCUO_posi3
-```
-
-<img src="Figures/cached/posigene-scuo-3.png" style="display: block; margin: auto;" />
-
-```r
-p_SCUO_posi4 <- ggplot(data = data_SCUO_posi_only, aes (x = SCUO, y = sqrt(HA.foreground.omega)))+
-  geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
-  # geom_point(shape = 21, size = 4, fill = "red",
-             # data = subset(data_SCUO_posi, posi_select == TRUE))+
-  # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
-  # scale_fill_brewer(palette = "Accent")+
-  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
-  # scale_size_manual(values = c(2.5,4))+
-  theme_bw()+
-  # facet_wrap(Genome_ID~GCx)+
-  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text.x=element_text(size=18))+
-  xlab("Codon bias - SCUO")+ 
-  ylab(expression(sqrt(dN/dS)))+
-  # ylim(0,1)+ 
-  geom_hline(yintercept = sqrt(1), color = "darkgreen", size = 2, linetype = 2)+
-  guides(fill=FALSE, size = FALSE)
-
-p_SCUO_posi4
-```
-
-<img src="Figures/cached/posigene-scuo-4.png" style="display: block; margin: auto;" />
-
-```r
-p_SCUO_posi5 <- ggplot(data = data_SCUO_posi_only, aes (x = 100*GC, y = sqrt(HA.foreground.omega)))+
-  geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
-  # geom_point(shape = 21, size = 4, fill = "red",
-             # data = subset(data_SCUO_posi, posi_select == TRUE))+
-  # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
-  # scale_fill_brewer(palette = "Accent")+
-  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
-  # scale_size_manual(values = c(2.5,4))+
-  theme_bw()+
-  # facet_wrap(Genome_ID~GCx)+
-  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text.x=element_text(size=18))+
-  xlab("%GC")+ 
-  ylab(expression(sqrt(dN/dS)))+
-  # ylim(0,1)+ 
-  geom_hline(yintercept = sqrt(1), color = "darkgreen", size = 2, linetype = 2)+
-  guides(fill=FALSE, size = FALSE)
-
-p_SCUO_posi5
-```
-
-<img src="Figures/cached/posigene-scuo-5.png" style="display: block; margin: auto;" />
-
-```r
-p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = HA.foreground.omega,
-                                                   fill = level_A))+
-  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
-  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
-  geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
-               outlier.shape = NA)+
-  scale_fill_brewer(palette = "Accent")+
-  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
-  # scale_size_manual(values = c(2.5,4))+
-  theme_bw()+
-  # facet_wrap(Genome_ID~GCx)+
-  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 60, hjust = 1),
-        strip.text.x=element_text(size=18),
-        legend.position = "bottom")+
-  xlab("")+ 
-  ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
-  guides(size = FALSE, fill = FALSE)
-
-p_SCUO_posi6
-```
-
-<img src="Figures/cached/posigene-scuo-6.png" style="display: block; margin: auto;" />
-
-```r
 # Extract level_C labels of genes in top 5 dN/ds ratio
 # First filter out the genes with multiple annotations by
 # selecting the annotation with the highest identity.
@@ -1582,13 +1551,12 @@ p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    nudge_y = 0.6,
                    force = 10
                    
-  )+
-  ylim(0,25)
+  )
 
 p_SCUO_posi7
 ```
 
-<img src="Figures/cached/posigene-scuo-7.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/posigene-scuo-1.png" style="display: block; margin: auto;" />
 
 ```r
 # Extract level_C labels of genes in top 5 dN/ds ratio
@@ -1635,13 +1603,12 @@ p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    nudge_y = 0.6,
                    force = 10
                    
-  )+
-  ylim(0,25)
+  )
 
 p_SCUO_posi8
 ```
 
-<img src="Figures/cached/posigene-scuo-8.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/posigene-scuo-2.png" style="display: block; margin: auto;" />
 
 # 10. ANI analysis using `pyani`
 

@@ -1,0 +1,13 @@
+﻿EssentialGeneScore,ID,SequenceQualityScore,Source,Source_ID,Source_Name,TotalScore,phylum,rRNAScore,tRNAScore
+1,58976,0.97,genbank,GCA_001517545,Limnohabitans sp. Rim47,0.74,Proteobacteria,0,1
+1,21098,0.57,genbank,GCA_000292865,Limnohabitans sp. Rim47,0.87,Proteobacteria,0.9,1
+1,75693,0.57,kbase,kb|g.24193,Limnohabitans sp. Rim47,0.87,Unkown,0.9,1
+1,74899,0.83,kbase,kb|g.24192,Limnohabitans sp. Rim28,0.93,Unkown,0.9,1
+1,21097,0.86,genbank,GCA_000293865,Limnohabitans sp. Rim28,0.71,Proteobacteria,1,0
+1,45045,0.98,genbank,GCA_001269365,Limnohabitans sp. Rim11,0.97,Unkown,0.9,1
+1,45046,0.84,genbank,GCA_001269385,Limnohabitans sp. DM1,0.79,Unkown,0.4,0.9
+1,52450,1,genbank,GCA_001412535,Limnohabitans sp. 63ED37-2,0.97,Proteobacteria,0.9,1
+0.99,45047,0.89,genbank,GCA_001269405,Limnohabitans sp. 2KL-3,0.8,Unkown,0.4,0.9
+1,45044,1,genbank,GCA_001269345,Limnohabitans sp. 2KL-27,0.97,Unkown,0.9,1
+1,52451,1,genbank,GCA_001412575,Limnohabitans sp. 103DPR2,0.97,Proteobacteria,0.9,1
+1,45089,0.8,genbank,GCA_001270065,Limnohabitans planktonicus II-D5,0.95,Proteobacteria,1,1
