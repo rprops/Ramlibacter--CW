@@ -1225,13 +1225,20 @@ p_ramli_GC
 
 # 9.  PosiGene analysis for identifying genes under positive selection in the Limnohabitans MAG
 
-Phylogenetic tree used in PosiGene analysis. Red branch indicates the genome for which PSG were tested.
-![Phylogenetic tree used in PosiGene analysis](./posigene_analysis/CodeML_tree_anchor_species=Limnohabitans_MAG.png) 
+Unrooted phylogenomic tree used in codeML analysis. Green branch indicates the genome for which PSG were tested.
+![Phylogenetic tree used in PosiGene analysis](./posigene_analysis/CodeML_tree_anchor_species=Ramlibacter_MAG.png)
+Alternatively, the entire Ramlibacter clade can be tested for PSGs:
+Green branch indicates the clade for which the LCA was tested for PSGs.
+
+PosiGene also tries to minimize false positives/negatives through additional filtering:  
+
+**This filtering step can also be seen as an instrument to reduce false negatives. Few badly conserved sequences can force the first mentioned filter to delete large parts of the MSA reducing the power of the test and potentially removing positively selected sites. Third, entire MSAs can be discarded if they are considered unreliable for the following reasons, if: (i) a small absolute number or a small percentage of alignment columns or anchor species codons remain after the first filtering step, (ii) few sequences remain after the second filtering step, (iii) disproportional dN/dS ratios (e.g. ≥100 in foreground branch) were calculated by CODEML or (iv) an implausibly high fraction of positively selected sites was inferred. Additionally, MSAs will only be considered if at least one species from the sister taxon (i.e. the most closely-related species/clade) of the examined branch is represented in it. Without this condition it is not possible to say whether potentially observed selective pressure worked on the branch of interest or before in evolution .**
 
 
 ```r
 # Import results_short file
-data_posi <- read.table("./posigene_analysis/result_tables/Limnohabitans_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega")]
+data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", 
+                                                                                                                                     "Number.of.Sites.under.positive.Selection")]
 colnames(data_posi)[1] <- "Gene"
 data_posi$Gene <- as.character(data_posi$Gene)
 
@@ -1245,14 +1252,15 @@ map_posi$posi_geneID <- as.character(map_posi$posi_geneID)
 # Taking threshold of adjusted p.value of 0.05 and FDR < 0.05
 # Also remove dN/dS ratios of less than 15.
 data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05 & HA.foreground.omega < 15)
+                                    FDR < 0.05 & HA.foreground.omega < 10 &
+                                    Number.of.Sites.under.positive.Selection > 10)
 # Report summary
 cat(paste("There are ", nrow(data_posi), " genes under positive selection in this MAG (P<0.05). This is ",round(100*nrow(data_posi)/nrow(map_posi),1), "% of all genes",  sep = "")
 )
 ```
 
 ```
-## There are 215 genes under positive selection in this MAG (P<0.05). This is 5.6% of all genes
+## There are 199 genes under positive selection in this MAG (P<0.05). This is 5.2% of all genes
 ```
 
 ```r

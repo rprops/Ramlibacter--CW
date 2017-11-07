@@ -162,10 +162,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.2391803"
-     inkscape:cx="378.82214"
-     inkscape:cy="711.08387"
+     inkscape:cx="319.31903"
+     inkscape:cy="339.63169"
      inkscape:document-units="px"
-     inkscape:current-layer="g12624"
+     inkscape:current-layer="g9291"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
@@ -190,7 +190,7 @@
      id="layer1">
     <g
        id="g9758"
-       transform="translate(-14.83624,111.84242)">
+       transform="translate(-14.83624,-14.15758)">
       <image
          y="660.81714"
          x="350.53595"
@@ -9093,13 +9093,13 @@ gg==
              x="89.174644"
              y="499.33862" />
           <rect
-             ry="0.30569735"
-             y="499.29074"
-             x="98.119225"
-             height="217.44199"
-             width="257.76224"
+             ry="0.28287446"
+             y="515.53906"
+             x="98.104759"
+             height="201.20811"
+             width="257.79117"
              id="rect6074"
-             style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:0.69850751;fill-rule:evenodd;stroke:#000000;stroke-width:0.76140112;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3.04560446, 3.04560446;stroke-dashoffset:0;stroke-opacity:0.71343282;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+             style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:0.69850751;fill-rule:evenodd;stroke:#000000;stroke-width:0.73246849;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.92987383, 2.92987383;stroke-dashoffset:0;stroke-opacity:0.71343282;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
           <rect
              ry="0.22641619"
              y="450.92859"
@@ -12289,7 +12289,7 @@ RK5CYII=
                height="207.15671"
                width="338.98373"
                clip-path="url(#clipPath9243)"
-               transform="translate(23.561444,-32.083668)" />
+               transform="matrix(1.1723938,0,0,1.1723938,-118.62682,-185.0947)" />
           </g>
           <text
              inkscape:export-filename="C:\Users\rprops\Documents\Limno_CoolingWater\Tree\marker_annotation\marker_tree-lowres.png"
@@ -12313,14 +12313,14 @@ RK5CYII=
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:12.07249928px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              x="183.32446"
-             y="493.78372"
+             y="509.78372"
              id="text4461-9-0-0-7-1-1"
              sodipodi:linespacing="125%"
              inkscape:export-xdpi="400"
              inkscape:export-ydpi="400"><tspan
                sodipodi:role="line"
                x="183.32446"
-               y="493.78372"
+               y="509.78372"
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:georgia;-inkscape-font-specification:georgia;text-align:center;text-anchor:middle"
                id="tspan5000-9-1">SpiecEasi community network analysis</tspan></text>
           <path
