@@ -421,9 +421,9 @@ LIMNO_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Mon Nov 06 15:54:00 2017  --- There are 2830 genes with > 0.1 %
-## Mon Nov 06 15:54:00 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:00 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:13 2017  --- There are 2830 genes with > 0.1 %
+## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -454,9 +454,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Mon Nov 06 15:54:00 2017  --- There are 1889 genes with > 0.1 %
-## Mon Nov 06 15:54:00 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:00 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:13 2017  --- There are 1889 genes with > 0.1 %
+## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -498,9 +498,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Mon Nov 06 15:54:01 2017  --- There are 1797 genes with > 0.1 %
-## Mon Nov 06 15:54:01 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:01 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:13 2017  --- There are 1797 genes with > 0.1 %
+## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -542,9 +542,9 @@ LIMNO_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Mon Nov 06 15:54:01 2017  --- There are 4954 genes with > 0.1 %
-## Mon Nov 06 15:54:01 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:01 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:13 2017  --- There are 4954 genes with > 0.1 %
+## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -564,9 +564,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Mon Nov 06 15:54:01 2017  --- There are 3929 genes with > 0.1 %
-## Mon Nov 06 15:54:01 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:01 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:13 2017  --- There are 3929 genes with > 0.1 %
+## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -586,9 +586,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Mon Nov 06 15:54:01 2017  --- There are 3573 genes with > 0.1 %
-## Mon Nov 06 15:54:01 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:01 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:13 2017  --- There are 3573 genes with > 0.1 %
+## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -608,9 +608,9 @@ LIMNO_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Mon Nov 06 15:54:02 2017  --- There are 2164 genes with > 0.1 %
-## Mon Nov 06 15:54:02 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:02 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:13 2017  --- There are 2164 genes with > 0.1 %
+## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -641,9 +641,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Mon Nov 06 15:54:02 2017  --- There are 1384 genes with > 0.1 %
-## Mon Nov 06 15:54:02 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:02 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:14 2017  --- There are 1384 genes with > 0.1 %
+## Wed Nov 08 13:34:14 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:14 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -663,9 +663,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Mon Nov 06 15:54:02 2017  --- There are 1342 genes with > 0.1 %
-## Mon Nov 06 15:54:02 2017  --- This is 100 % of all genes
-## Mon Nov 06 15:54:02 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 08 13:34:14 2017  --- There are 1342 genes with > 0.1 %
+## Wed Nov 08 13:34:14 2017  --- This is 100 % of all genes
+## Wed Nov 08 13:34:14 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -1237,11 +1237,17 @@ PosiGene also tries to minimize false positives/negatives through additional fil
 
 
 ```r
-# Import results_short file
+# Import results file of genome-specific PSGs
 data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", 
                                                                                                                                      "Number.of.Sites.under.positive.Selection")]
-colnames(data_posi)[1] <- "Gene"
+# Import results file of Ramlibacter clade-specific PSGs
+data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", 
+                                                                                                                                     "Number.of.Sites.under.positive.Selection")]
+
+
+colnames(data_posi)[1] <- "Gene"; colnames(data_posi_clade)[1] <- "Gene"
 data_posi$Gene <- as.character(data_posi$Gene)
+data_posi_clade$Gene <- as.character(data_posi_clade$Gene)
 
 # Import mapping file to link gene IDs from PosiGene to 
 # those used by the IMG annotation (both are in headers from .genes.fna)
@@ -1253,7 +1259,9 @@ map_posi$posi_geneID <- as.character(map_posi$posi_geneID)
 # Taking threshold of adjusted p.value of 0.05 and FDR < 0.05
 # Also remove dN/dS ratios of less than 15.
 data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05)
+                                    FDR < 0.05 & HA.foreground.omega < 10)
+data_posi_clade <- data_posi_clade %>% filter(P.Value < 0.05 & 
+                                    FDR < 0.05 & HA.foreground.omega < 10)
 # data_posi <- data_posi %>% filter(P.Value < 0.05 & 
 #                                     FDR < 0.05 & HA.foreground.omega < 10 &
 #                                     Number.of.Sites.under.positive.Selection > 10)
@@ -1263,75 +1271,31 @@ cat(paste("There are ", nrow(data_posi), " genes under positive selection in thi
 ```
 
 ```
-## There are 568 genes under positive selection in this MAG (P<0.05). This is 14.8% of all genes
+## There are 415 genes under positive selection in this MAG (P<0.05). This is 10.8% of all genes
+```
+
+```r
+cat(paste("There are ", nrow(data_posi_clade), " genes under positive selection in the Ramlibacter clade (P<0.05). This is ", round(100*nrow(data_posi_clade)/nrow(map_posi),1), "% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species",  sep = "")
+)
+```
+
+```
+## There are 184 genes under positive selection in the Ramlibacter clade (P<0.05). This is 4.8% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species
 ```
 
 ```r
 # Merge this data with the functional annotation (e.g. KO) of these genes
 data_posi <- left_join(data_posi, map_posi, by = c("Gene" = "posi_geneID"))
+data_posi_clade <- left_join(data_posi_clade, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
 
-# Optional: write tabel for quick view in iPath v2
+# Optional: write table for quick view in iPath v2
 write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
             row.names = FALSE, col.names = FALSE)
-cat("Genes under positive selection with KO annotation")
-```
-
-```
-## Genes under positive selection with KO annotation
-```
-
-```r
-# Focus on C-metabolism
-# data_posi_KO[data_posi_KO$ko_id %in% data_posi_KO$ko_id[data_posi_KO$level_B == "Carbohydrate metabolism"], ] %>% 
-#  ggplot(aes(x = ko_id, fill = level_C))+
-#   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-#   theme_bw()+
-#   # facet_wrap(~level_B, ncol = 2)+
-#   scale_fill_brewer(palette = "Paired")+
-#   labs(x = "", y = "Count")+ 
-#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
-#                                                    legend.text = element_text(size = 5))+
-#   guides(fill=guide_legend(nrow=6,byrow=TRUE))
-# 
-# # Focus on energy metabolism
-# data_posi_KO %>% dplyr::filter(level_B == "Energy metabolism") %>% 
-#  ggplot(aes(x = ko_id, fill = level_C))+
-#   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-#   theme_bw()+
-#   # facet_wrap(~level_B, ncol = 2)+
-#   scale_fill_brewer(palette = "Paired")+
-#   labs(x = "", y = "Count")+ 
-#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
-#                                                    legend.text = element_text(size = 5))+
-#   guides(fill=guide_legend(nrow=6,byrow=TRUE))
-# 
-# 
-# # Focus on translation
-# data_posi_KO %>% dplyr::filter(level_B == "Translation") %>% 
-#  ggplot(aes(x = ko_id, fill = level_C))+
-#   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-#   theme_bw()+
-#   # facet_wrap(~level_B, ncol = 2)+
-#   scale_fill_brewer(palette = "Paired")+
-#   labs(x = "", y = "Count")+ 
-#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
-#                                                    legend.text = element_text(size = 5))+
-#   guides(fill=guide_legend(nrow=6,byrow=TRUE))
-# 
-# # Focus on secondary metabolite production
-# data_posi_KO %>% dplyr::filter(level_B == "Metabolism of cofactors and vitamins") %>% 
-#  ggplot(aes(x = ko_id, fill = level_C))+
-#   geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-#   theme_bw()+
-#   # facet_wrap(~level_B, ncol = 2)+
-#   scale_fill_brewer(palette = "Paired")+
-#   labs(x = "", y = "Count")+ 
-#   theme(legend.position="bottom", axis.text.x = element_text(angle = 60, hjust = 1),
-#                                                    legend.text = element_text(size = 5))+
-#   guides(fill=guide_legend(nrow=6,byrow=TRUE))
-
-# Count number of unique genes involved in biosynthesis
+write.table(file = "KO_posiG_clade.tsv", unique(data_posi_clade_KO$ko_id), quote = FALSE,
+            row.names = FALSE, col.names = FALSE)
+# cat("Genes under positive selection with KO annotation")
 ```
 
 
@@ -1360,145 +1324,6 @@ selected_KOlevels <- c("Signal transduction",
 "Membrane transport",
 "Unknown"
 )
-# # Evaluate correlation between codon bias and selection pressure
-# p_SCUO_posi <- ggplot(data = data_SCUO_posi, aes (x = GC, y = SCUO))+
-#   geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
-#   geom_point(shape = 21, size = 4, fill = "red",
-#              data = subset(data_SCUO_posi, posi_select == TRUE))+
-#   # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
-#   # scale_fill_brewer(palette = "Accent")+
-#   # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
-#   # scale_size_manual(values = c(2.5,4))+
-#   theme_bw()+
-#   # facet_wrap(Genome_ID~GCx)+
-#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-#         title=element_text(size=20), legend.text=element_text(size=14),
-#         legend.background = element_rect(fill="transparent"),
-#         axis.text.x = element_text(angle = 45, hjust = 1),
-#         strip.text.x=element_text(size=18))+
-#   ylab("Codon bias - SCUO")+ 
-#   xlab("%GC")+
-#   ylim(0,1)+ 
-#   guides(fill=FALSE, size = FALSE)
-# 
-# p_SCUO_posi
-# 
-# p_SCUO_posi2 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = SCUO,
-#                                                    fill = posi_select))+
-#   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
-#   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
-#   geom_boxplot(alpha=0.5, size =1.5, color = "darkgrey", width = 0.35,
-#                outlier.shape = NA)+
-#   # scale_fill_brewer(palette = "Accent")+
-#   scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
-#   # scale_size_manual(values = c(2.5,4))+
-#   theme_bw()+
-#   # facet_wrap(Genome_ID~GCx)+
-#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-#         title=element_text(size=20), legend.text=element_text(size=14),
-#         legend.background = element_rect(fill="transparent"),
-#         axis.text.x = element_text(angle = 45, hjust = 1),
-#         strip.text.x=element_text(size=18))+
-#   ylab("Codon bias - SCUO")+ 
-#   xlab("")+
-#   ylim(0,1)+ 
-#   guides(size = FALSE)
-# 
-# p_SCUO_posi2
-# 
-# p_SCUO_posi3 <- ggplot(data = data_SCUO_posi, aes (x = posi_select, y = GC,
-#                                                    fill = posi_select))+
-#   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
-#   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
-#   geom_boxplot(alpha=0.5, size =1.5, color = "darkgrey", width = 0.35,
-#                outlier.shape = NA)+
-#   # scale_fill_brewer(palette = "Accent")+
-#   scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
-#   # scale_size_manual(values = c(2.5,4))+
-#   theme_bw()+
-#   # facet_wrap(Genome_ID~GCx)+
-#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-#         title=element_text(size=20), legend.text=element_text(size=14),
-#         legend.background = element_rect(fill="transparent"),
-#         axis.text.x = element_text(angle = 45, hjust = 1),
-#         strip.text.x=element_text(size=18))+
-#   ylab("%GC")+ 
-#   xlab("")+
-#   ylim(0.5,0.9)+ 
-#   guides(size = FALSE)
-# 
-# p_SCUO_posi3
-# 
-# 
-# p_SCUO_posi4 <- ggplot(data = data_SCUO_posi_only, aes (x = SCUO, y = sqrt(HA.foreground.omega)))+
-#   geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
-#   # geom_point(shape = 21, size = 4, fill = "red",
-#              # data = subset(data_SCUO_posi, posi_select == TRUE))+
-#   # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
-#   # scale_fill_brewer(palette = "Accent")+
-#   # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
-#   # scale_size_manual(values = c(2.5,4))+
-#   theme_bw()+
-#   # facet_wrap(Genome_ID~GCx)+
-#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-#         title=element_text(size=20), legend.text=element_text(size=14),
-#         legend.background = element_rect(fill="transparent"),
-#         axis.text.x = element_text(angle = 45, hjust = 1),
-#         strip.text.x=element_text(size=18))+
-#   xlab("Codon bias - SCUO")+ 
-#   ylab(expression(sqrt(dN/dS)))+
-#   # ylim(0,1)+ 
-#   geom_hline(yintercept = sqrt(1), color = "darkgreen", size = 2, linetype = 2)+
-#   guides(fill=FALSE, size = FALSE)
-# 
-# p_SCUO_posi4
-# 
-# p_SCUO_posi5 <- ggplot(data = data_SCUO_posi_only, aes (x = 100*GC, y = sqrt(HA.foreground.omega)))+
-#   geom_point(shape = 21, size = 3, fill = adjustcolor(col_limno, 0.1))+
-#   # geom_point(shape = 21, size = 4, fill = "red",
-#              # data = subset(data_SCUO_posi, posi_select == TRUE))+
-#   # geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
-#   # scale_fill_brewer(palette = "Accent")+
-#   # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1),  "darkorange"))+
-#   # scale_size_manual(values = c(2.5,4))+
-#   theme_bw()+
-#   # facet_wrap(Genome_ID~GCx)+
-#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-#         title=element_text(size=20), legend.text=element_text(size=14),
-#         legend.background = element_rect(fill="transparent"),
-#         axis.text.x = element_text(angle = 45, hjust = 1),
-#         strip.text.x=element_text(size=18))+
-#   xlab("%GC")+ 
-#   ylab(expression(sqrt(dN/dS)))+
-#   # ylim(0,1)+ 
-#   geom_hline(yintercept = sqrt(1), color = "darkgreen", size = 2, linetype = 2)+
-#   guides(fill=FALSE, size = FALSE)
-# 
-# p_SCUO_posi5
-# 
-# p_SCUO_posi6 <- ggplot(data = data_posi_KO, aes (x = level_A, y = HA.foreground.omega,
-#                                                    fill = level_A))+
-#   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
-#   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
-#   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
-#                outlier.shape = NA)+
-#   scale_fill_brewer(palette = "Accent")+
-#   # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
-#   # scale_size_manual(values = c(2.5,4))+
-#   theme_bw()+
-#   # facet_wrap(Genome_ID~GCx)+
-#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-#         title=element_text(size=20), legend.text=element_text(size=14),
-#         legend.background = element_rect(fill="transparent"),
-#         axis.text.x = element_text(angle = 60, hjust = 1),
-#         strip.text.x=element_text(size=18),
-#         legend.position = "bottom")+
-#   xlab("")+ 
-#   ylab(expression(dN/dS))+
-#   # ylim(0.5,0.9)+ 
-#   guides(size = FALSE, fill = FALSE)
-# 
-# p_SCUO_posi6
 
 # Extract level_C labels of genes in top 5 dN/ds ratio
 # First filter out the genes with multiple annotations by
@@ -1517,7 +1342,7 @@ selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *",
 # Remove everything before first space
 selected_KOlevels_labels <- sub(".*? (.+)", "\\1", selected_KOlevels_labels)
 
-p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
+p_SCUO_posi1 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
   ggplot(aes(x = level_B, y = HA.foreground.omega,
                                                    fill = level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
@@ -1553,7 +1378,7 @@ p_SCUO_posi7 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    
   )
 
-p_SCUO_posi7
+p_SCUO_posi1
 ```
 
 <img src="Figures/cached/posigene-scuo-1.png" style="display: block; margin: auto;" />
@@ -1569,7 +1394,7 @@ selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevel
 selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
                                  replacement = "", selected_KOlevels_labels)
 
-p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
+p_SCUO_posi2 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
   ggplot(aes(x = level_B, y = HA.foreground.omega,
                                                    fill = level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
@@ -1605,10 +1430,116 @@ p_SCUO_posi8 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
                    
   )
 
-p_SCUO_posi8
+p_SCUO_posi2
 ```
 
 <img src="Figures/cached/posigene-scuo-2.png" style="display: block; margin: auto;" />
+
+```r
+# Do the same thing for the Ramlibacter clade-level PSGs
+top <- 10
+thresh <- sort(data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
+selected_KOlevels_labels <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$level_C
+selected_KOlevels_labels[data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
+
+# Remove everything between brackets ([*])
+selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
+                                 replacement = "", selected_KOlevels_labels)
+# Remove everything before first space
+selected_KOlevels_labels <- sub(".*? (.+)", "\\1", selected_KOlevels_labels)
+
+p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ] %>% 
+  ggplot(aes(x = level_B, y = HA.foreground.omega,
+                                                   fill = level_B))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+  geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
+               outlier.shape = NA)+
+  scale_fill_brewer(palette = "Set3")+
+  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  xlab("")+ 
+  ylab(expression(dN/dS))+
+  # ylim(0.5,0.9)+ 
+  guides(size = FALSE, fill = FALSE)+
+  geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
+                   box.padding = 0.35, point.padding = 0.5,
+                   segment.color = "#3F4656",
+                   size = 3,
+                       # Width of the line segments.
+                   segment.size = 1,
+                   # Draw an arrow from the label to the data point.
+                   arrow = arrow(length = unit(0.02, 'npc'), type = "closed"),
+                   nudge_x = -0.1,
+                   nudge_y = 0.6,
+                   force = 10
+                   
+  )
+
+p_SCUO_posi3
+```
+
+<img src="Figures/cached/posigene-scuo-3.png" style="display: block; margin: auto;" />
+
+```r
+# Extract level_C labels of genes in top 5 dN/ds ratio
+top <- 10
+thresh <- sort(data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
+selected_KOlevels_labels <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$ko_name
+selected_KOlevels_labels[data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
+
+# Remove everything between brackets ([*])
+selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
+                                 replacement = "", selected_KOlevels_labels)
+
+p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ] %>% 
+  ggplot(aes(x = level_B, y = HA.foreground.omega,
+                                                   fill = level_B))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
+  geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
+               outlier.shape = NA)+
+  scale_fill_brewer(palette = "Set3")+
+  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  xlab("")+ 
+  ylab(expression(dN/dS))+
+  # ylim(0.5,0.9)+ 
+  guides(size = FALSE, fill = FALSE)+
+  geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
+                   box.padding = 0.35, point.padding = 0.5,
+                   segment.color = "#3F4656",
+                   size = 3,
+                       # Width of the line segments.
+                   segment.size = 1,
+                   # Draw an arrow from the label to the data point.
+                   arrow = arrow(length = unit(0.02, 'npc'), type = "closed"),
+                   nudge_x = -0.1,
+                   nudge_y = 0.6,
+                   force = 10
+                   
+  )
+
+p_SCUO_posi4
+```
+
+<img src="Figures/cached/posigene-scuo-4.png" style="display: block; margin: auto;" />
 
 # 10. ANI analysis using `pyani`
 
