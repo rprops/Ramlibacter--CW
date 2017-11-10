@@ -914,14 +914,16 @@ print(p_cog_func_clust)
 
 ```r
 # Import data
-ko_path_df <- read.table("./Mapping_files/ko00001.keg", header = FALSE, sep = ";",
-                      skip = 8, quote = "", fill = TRUE, 
+ko_path_df <- read.table("./Mapping_files/ko00000.keg", header = FALSE, sep = ";",
+                      skip = 3, quote = "", fill = TRUE, 
                       col.names = c("Level", "KO", "Function_abbrev", "Function_spec"))
 ko_path_df <- ko_path_df[1:(nrow(ko_path_df)-1), ] # remove tailing "!" at the end of file
 
 # Remove empty rows
+ko_path_df$KO <- as.character(ko_path_df$KO);  ko_path_df$Level <- as.character( ko_path_df$Level)
+ko_path_df$KO[grep("A",ko_path_df$Level)] <- ko_path_df$Level[grep("A",ko_path_df$Level)]
+ko_path_df$Level[grep("A",ko_path_df$Level)] <- "A"
 ko_path_df <- ko_path_df[!ko_path_df$KO == "", ]
-
 # Extract pathways from dataframe and add them as new factor column
 # pathw_hier <- data.frame(Level = ko_path_df$Level[ko_path_df$Level %in% c("A","B","C")], 
 #                     Name = ko_path_df$KO[ko_path_df$Level %in% c("A","B","C")]
@@ -950,7 +952,7 @@ for(i in 1:(length(pos_C)-1)){
 }
 
 # Remove all rows with level A, B, C - and level column
-ko_path_df <- ko_path_df[!ko_path_df$Level %in% c("A", "B", "C"), ]
+ko_path_df <- ko_path_df[!ko_path_df$Level %in% c("A","B", "C"), ]
 ko_path_df$level_A <- gsub(ko_path_df$level_A, pattern = "<b>|</b>", replacement = "")
 ko_path_df$level_B <- gsub(ko_path_df$level_B, pattern = "<b>|</b>", replacement = "")
 ko_path_df <- ko_path_df[, -1]
@@ -1540,6 +1542,110 @@ p_SCUO_posi4
 ```
 
 <img src="Figures/cached/posigene-scuo-4.png" style="display: block; margin: auto;" />
+
+# Pangenome analysis  
+
+* Genomes were annotated with COG ids through `anvi-run-ncbi-cogs` by `blast` searches.  
+* Pangenome was made using the `--use-ncbi-blast` flag as recommended by the developers.  
+* Summary of panG protein clusters were manually selected in the interactive interface.  
+* The amino acid sequences in the protein cluster of the *Ramlibacter* MAG were further annotated with the KEGG orthology.  
+
+``` 
+for gene in `cat gene_list_pan.tsv`; do
+	anvi-get-dna-sequences-for-gene-calls -c 121950_assembled.db --gene-caller-ids $gene -o genes_tmp.fa
+	cat genes_tmp.fa >> genes_pan.fa
+done
+```
+
+![Pangenome visualized in anvio](./panG/image4144.png)
+
+
+```r
+panG <- read.table("./panG/SUMMARY_Ramli_PCs/panG-ramli_protein_clusters_summary.txt", header = TRUE, fill = TRUE, sep = "\t")[ , c("bin_name",	"genome_name",	"gene_callers_id",	"COG_CATEGORY_ACC",	"COG_CATEGORY",	"COG_FUNCTION_ACC", "COG_FUNCTION", "aa_sequence")]
+panG$aa_sequence <- gsub("-", "", panG$aa_sequence)
+panG_MAG <- panG %>% filter(bin_name == "MAG_PC")
+
+write.table(paste(unique(panG_MAG$COG_FUNCTION_ACC), "W10", "#e2a2fd", sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
+            quote = FALSE, col.names = FALSE)
+
+write.table(paste(">", panG_MAG$gene_callers_id,
+                  "\n", panG_MAG$aa_sequence, sep = ""), 
+            "./panG/aaSeq_panG.fa", row.names = FALSE,
+            quote = FALSE, col.names = FALSE)
+
+write.table(unique(panG_ko_cog$gene_callers_id), 
+            "./panG/gene_ids_pan.tsv", row.names = FALSE,
+            quote = FALSE, col.names = FALSE)
+```
+
+```
+## Error in unique(panG_ko_cog$gene_callers_id): object 'panG_ko_cog' not found
+```
+
+```r
+# Import KEGG annotation through KAAS (http://www.genome.jp/tools/kaas/) of amino
+# acid sequences
+panG_ko <- read.delim("./panG/panG_PC_MAG_KO-annotation.tsv")
+panG_ko <- panG_ko[panG_ko$ko_id != "",]
+panG_ko$ko_id <- gsub(" ","", panG_ko$ko_id)
+
+# Annotate KO_IDs with hierarchy
+panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = c("ko_id" = "KO"))
+
+# join with corresponding COG ids
+panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, by = c("gene_callers_id" = "gene_id"))
+panG_ko_cog$level_B <- substring(panG_ko_cog$level_B, 7)
+panG_ko_cog$level_C <- substring(panG_ko_cog$level_C, 7)
+panG_ko_cog$level_C <- gsub("\\[[^\\]]*\\]", "", panG_ko_cog$level_C , perl=TRUE)
+# Shorten/change level_B annotation a bit
+panG_ko_cog$level_B[panG_ko_cog$level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
+panG_ko_cog$level_B[panG_ko_cog$level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation"
+panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
+panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation"
+
+# Remove levels without 10 genes
+panG_p_df  <- table(panG_ko_cog$level_C)[table(panG_ko_cog$level_C)>5]
+panG_p_df <- data.frame(panG_p_df); panG_p_df$Var1 <- as.character(panG_p_df$Var1)
+# Merge with level B annotation
+panG_p_df <- left_join(panG_p_df, panG_ko_cog[, c("level_B","level_C")],
+                       by = c("Var1" = "level_C")) %>% distinct()
+panG_p_df <- panG_p_df[rev(order(panG_p_df$Freq)),]
+panG_p_df$Var1 <- factor(panG_p_df$Var1[rev(order(panG_p_df$Freq))], 
+                         levels = panG_p_df$Var1[rev(order(panG_p_df$Freq))])
+panG_p_df$Freq <- panG_p_df$Freq/length(unique(panG_ko_cog$gene_callers_id))
+
+
+  
+# Plot distribution of panG annotation
+p_panG1 <- ggplot(panG_p_df, aes(x = Var1, y = 100*Freq, fill = level_B))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  ggtitle("Proportion of genes in pangenome (%)")+
+  ylab("") + xlab("")+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text.x=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        # ,legend.position = c(0.87, 0.85)
+        )
+
+print(p_panG1)
+```
+
+<img src="Figures/cached/panG-analysis-1.png" style="display: block; margin: auto;" />
+
+```r
+# Now select the genes that are PSGs
+blast_panG <- read.delim("./panG/genes_pan.blast", header = FALSE)
+colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
+                          "gapopen", "qstart", "qend", "sstart", "send", 
+                          "evalue", "bitscore")
+
+blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), split = "|", fixed = TRUE))[,1]
+```
 
 # 10. ANI analysis using `pyani`
 
