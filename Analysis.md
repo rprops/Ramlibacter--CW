@@ -421,9 +421,9 @@ LIMNO_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Wed Nov 08 13:34:13 2017  --- There are 2830 genes with > 0.1 %
-## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:29 2017  --- There are 2830 genes with > 0.1 %
+## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -454,9 +454,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Wed Nov 08 13:34:13 2017  --- There are 1889 genes with > 0.1 %
-## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:29 2017  --- There are 1889 genes with > 0.1 %
+## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -498,9 +498,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Wed Nov 08 13:34:13 2017  --- There are 1797 genes with > 0.1 %
-## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:29 2017  --- There are 1797 genes with > 0.1 %
+## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -542,9 +542,9 @@ LIMNO_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Wed Nov 08 13:34:13 2017  --- There are 4954 genes with > 0.1 %
-## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:29 2017  --- There are 4954 genes with > 0.1 %
+## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -564,9 +564,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Wed Nov 08 13:34:13 2017  --- There are 3929 genes with > 0.1 %
-## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:29 2017  --- There are 3929 genes with > 0.1 %
+## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -586,9 +586,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Wed Nov 08 13:34:13 2017  --- There are 3573 genes with > 0.1 %
-## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:29 2017  --- There are 3573 genes with > 0.1 %
+## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -608,9 +608,9 @@ LIMNO_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Wed Nov 08 13:34:13 2017  --- There are 2164 genes with > 0.1 %
-## Wed Nov 08 13:34:13 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:13 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:30 2017  --- There are 2164 genes with > 0.1 %
+## Wed Nov 15 12:08:30 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:30 2017  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -641,9 +641,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Wed Nov 08 13:34:14 2017  --- There are 1384 genes with > 0.1 %
-## Wed Nov 08 13:34:14 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:14 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:30 2017  --- There are 1384 genes with > 0.1 %
+## Wed Nov 15 12:08:30 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:30 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -663,9 +663,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Wed Nov 08 13:34:14 2017  --- There are 1342 genes with > 0.1 %
-## Wed Nov 08 13:34:14 2017  --- This is 100 % of all genes
-## Wed Nov 08 13:34:14 2017  --- The 10 genes with the highest GC% are:
+## Wed Nov 15 12:08:30 2017  --- There are 1342 genes with > 0.1 %
+## Wed Nov 15 12:08:30 2017  --- This is 100 % of all genes
+## Wed Nov 15 12:08:30 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -1364,7 +1364,7 @@ p_SCUO_posi1 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
         legend.position = "bottom")+
   xlab("")+ 
   ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
+  ylim(0,20)+
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
@@ -1416,7 +1416,7 @@ p_SCUO_posi2 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
         legend.position = "bottom")+
   xlab("")+ 
   ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
+  ylim(0,20)+
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
@@ -1470,7 +1470,7 @@ p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
         legend.position = "bottom")+
   xlab("")+ 
   ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
+  ylim(0,20)+
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
@@ -1522,7 +1522,7 @@ p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
         legend.position = "bottom")+
   xlab("")+ 
   ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
+  ylim(0,20)+
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,

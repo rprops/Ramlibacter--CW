@@ -1021,7 +1021,7 @@ p_SCUO_posi1 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
         legend.position = "bottom")+
   xlab("")+ 
   ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
+  ylim(0,20)+
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
@@ -1070,7 +1070,7 @@ p_SCUO_posi2 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
         legend.position = "bottom")+
   xlab("")+ 
   ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
+  ylim(0,20)+
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
@@ -1120,7 +1120,7 @@ p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
         legend.position = "bottom")+
   xlab("")+ 
   ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
+  ylim(0,20)+
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
@@ -1168,7 +1168,7 @@ p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
         legend.position = "bottom")+
   xlab("")+ 
   ylab(expression(dN/dS))+
-  # ylim(0.5,0.9)+ 
+  ylim(0,20)+
   guides(size = FALSE, fill = FALSE)+
   geom_label_repel(aes(label = selected_KOlevels_labels), fontface = 'bold', color = 'black',
                    box.padding = 0.35, point.padding = 0.5,
@@ -1190,7 +1190,7 @@ p_SCUO_posi4
 # Pangenome analysis  
 
 * Genomes were annotated with COG ids through `anvi-run-ncbi-cogs` by `blast` searches.  
-* Pangenome was made using the `--use-ncbi-blast` flag as recommended by the developers.  
+* Pangenome was made using the `--use-ncbif-blast` flag as recommended by the developers.  
 * Summary of panG protein clusters were manually selected in the interactive interface.  
 * The amino acid sequences in the protein cluster of the *Ramlibacter* MAG were further annotated with the KEGG orthology.  
 
