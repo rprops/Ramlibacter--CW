@@ -1295,8 +1295,10 @@ data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneI
 # Retain clade or MAG only genes in the respective dataframes
 pos <- !data_posi_KO$Gene %in% data_posi_clade_KO$Gene
 pos2 <- !data_posi_clade_KO$Gene %in% data_posi_KO$Gene
+pos3 <- data_posi_clade_KO$Gene %in% data_posi_KO$Gene
 data_posi_KO <- data_posi_KO[pos, ]
 data_posi_clade_KO <- data_posi_clade_KO[pos2, ]
+data_posi_clade_MAG_KO <- data_posi_clade_KO[pos3, ]
 
 # Optional: write table for quick view in iPath v2
 write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
@@ -1316,11 +1318,19 @@ n_level <- round(0.01*sum(table(data_posi_KO$level_C)),0)
 posiG_p_df_MAG  <- table(data_posi_KO$level_C)[table(data_posi_KO$level_C)>n_level]
 posiG_p_df_MAG <- data.frame(posiG_p_df_MAG); posiG_p_df_MAG$Var1 <- as.character(posiG_p_df_MAG$Var1)
 
+n_level <- round(0.01*sum(table(data_posi_clade_MAG_KO$level_C)),0)
+posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$level_C)[table(data_posi_clade_MAG_KO$level_C)>n_level]
+posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$Var1 <- as.character(posiG_p_df_MAG_clade$Var1)
+
 # Merge dataframes
-posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG),
-                                branch = c(rep("clade", nrow(posiG_p_df_clade)), 
-                                           rep("MAG", nrow(posiG_p_df_MAG))))
-data_posi_KO_merge <- rbind(data_posi_KO, data_posi_clade_KO)
+posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG, 
+                                      posiG_p_df_MAG_clade),
+                                branch = factor(c(rep("clade", nrow(posiG_p_df_clade)), 
+                                           rep("MAG", nrow(posiG_p_df_MAG)),
+                                           rep("clade+MAG", nrow(posiG_p_df_MAG_clade))),
+                                levels = c("MAG", "clade", "clade+MAG"))
+)
+data_posi_KO_merge <- rbind(data_posi_KO, data_posi_clade_KO, data_posi_clade_MAG_KO)
 
 # Merge with level B annotation
 posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_KO_merge[, c("level_A","level_B","level_C")],
@@ -1613,7 +1623,7 @@ p_SCUO_posi4
 # Pangenome analysis  
 
 * Genomes were annotated with COG ids through `anvi-run-ncbi-cogs` by `blast` searches.  
-* Pangenome was made using the `--use-ncbif-blast` flag as recommended by the developers.  
+* Pangenome was made using the `--use-ncbi-blast` flag as recommended by the developers.  
 * Summary of panG protein clusters were manually selected in the interactive interface.  
 * The amino acid sequences in the protein cluster of the *Ramlibacter* MAG were further annotated with the KEGG orthology.  
 
@@ -1630,29 +1640,18 @@ done
 ```r
 panG <- read.table("./panG/SUMMARY_Ramli_PCs/panG-ramli_protein_clusters_summary.txt", header = TRUE, fill = TRUE, sep = "\t")[ , c("bin_name",	"genome_name",	"gene_callers_id",	"COG_CATEGORY_ACC",	"COG_CATEGORY",	"COG_FUNCTION_ACC", "COG_FUNCTION", "aa_sequence")]
 panG$aa_sequence <- gsub("-", "", panG$aa_sequence)
-# panG_MAG <- panG %>% filter(bin_name %in% c("MAG_PC", "Ramli_5-10_PC", 
-#                                           "Ramli_Leaf400_PC", "Ramli_TTB310_PC"))
+panG_MAG <- panG %>% filter(bin_name %in% c("MAG_PC", "Ramli_5-10_PC",
+                                          "Ramli_Leaf400_PC", "Ramli_TTB310_PC"))
+panG_MAG$gene_callers_id <- as.character(panG_MAG$gene_callers_id)
 
 write.table(paste(unique(panG_MAG$COG_FUNCTION_ACC), "W10", "#e2a2fd", sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
             quote = FALSE, col.names = FALSE)
-```
 
-```
-## Error in unique(panG_MAG$COG_FUNCTION_ACC): object 'panG_MAG' not found
-```
-
-```r
 write.table(paste(">", panG_MAG$gene_callers_id,
                   "\n", panG_MAG$aa_sequence, sep = ""), 
             "./panG/aaSeq_panG.fa", row.names = FALSE,
             quote = FALSE, col.names = FALSE)
-```
 
-```
-## Error in paste(">", panG_MAG$gene_callers_id, "\n", panG_MAG$aa_sequence, : object 'panG_MAG' not found
-```
-
-```r
 write.table(unique(panG_ko_cog$gene_callers_id), 
             "./panG/gene_ids_pan.tsv", row.names = FALSE,
             quote = FALSE, col.names = FALSE)
@@ -1665,7 +1664,17 @@ write.table(unique(panG_ko_cog$gene_callers_id),
 ```r
 # Import KEGG annotation through KAAS (http://www.genome.jp/tools/kaas/) of amino
 # acid sequences
-panG_ko <- read.delim("./panG/panG_PC_MAG_KO-annotation.tsv")
+ko_files <- list.files(".", pattern = "KO-annotation.tsv",
+                       recursive = TRUE)
+panG_ko <- data.frame()
+for(ko_file in ko_files){
+  tmp <- read.delim(ko_file, header = FALSE)
+  tmp <- data.frame(tmp, Genome = do.call(rbind, strsplit(ko_file, "_"))[,2])
+  if(ko_file == ko_files[1]) panG_ko <- tmp else{
+    panG_ko <- rbind(panG_ko, tmp)
+  }
+}
+colnames(panG_ko)[1:2] <- c("gene_id", "ko_id")
 panG_ko <- panG_ko[panG_ko$ko_id != "",]
 panG_ko$ko_id <- gsub(" ","", panG_ko$ko_id)
 
@@ -1674,154 +1683,39 @@ panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = c("ko_id" = "KO"))
 
 # join with corresponding COG ids
 panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, by = c("gene_callers_id" = "gene_id"))
-```
-
-```
-## Error in dplyr::left_join(panG_MAG, panG_ko, by = c(gene_callers_id = "gene_id")): object 'panG_MAG' not found
-```
-
-```r
 panG_ko_cog$level_B <- substring(panG_ko_cog$level_B, 7)
-```
-
-```
-## Error in substring(panG_ko_cog$level_B, 7): object 'panG_ko_cog' not found
-```
-
-```r
 panG_ko_cog$level_C <- substring(panG_ko_cog$level_C, 7)
-```
-
-```
-## Error in substring(panG_ko_cog$level_C, 7): object 'panG_ko_cog' not found
-```
-
-```r
+panG_ko_cog$level_A <- substring(panG_ko_cog$level_A, 7)
 panG_ko_cog$level_C <- gsub("\\[[^\\]]*\\]", "", panG_ko_cog$level_C , perl=TRUE)
-```
-
-```
-## Error in gsub("\\[[^\\]]*\\]", "", panG_ko_cog$level_C, perl = TRUE): object 'panG_ko_cog' not found
-```
-
-```r
 # Shorten/change level_B annotation a bit
 panG_ko_cog$level_B[panG_ko_cog$level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
-```
-
-```
-## Error in panG_ko_cog$level_B[panG_ko_cog$level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing": object 'panG_ko_cog' not found
-```
-
-```r
 panG_ko_cog$level_B[panG_ko_cog$level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation"
-```
-
-```
-## Error in panG_ko_cog$level_B[panG_ko_cog$level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation": object 'panG_ko_cog' not found
-```
-
-```r
 panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
-```
-
-```
-## Error in panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation": object 'panG_ko_cog' not found
-```
-
-```r
 panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation"
-```
 
-```
-## Error in panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation": object 'panG_ko_cog' not found
-```
+tmp_names <- names(table(panG_ko_cog$level_B)[rev(order(table(panG_ko_cog$level_B)))][1:10])
 
-```r
-# Remove levels without 10 genes
-panG_p_df  <- table(panG_ko_cog$level_C)[table(panG_ko_cog$level_C)>5]
-```
-
-```
-## Error in table(panG_ko_cog$level_C): object 'panG_ko_cog' not found
-```
-
-```r
-panG_p_df <- data.frame(panG_p_df); panG_p_df$Var1 <- as.character(panG_p_df$Var1)
-```
-
-```
-## Error in data.frame(panG_p_df): object 'panG_p_df' not found
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'panG_p_df' not found
-```
-
-```r
-# Merge with level B annotation
-panG_p_df <- left_join(panG_p_df, panG_ko_cog[, c("level_B","level_C")],
-                       by = c("Var1" = "level_C")) %>% distinct()
-```
-
-```
-## Error in left_join(panG_p_df, panG_ko_cog[, c("level_B", "level_C")], : object 'panG_p_df' not found
-```
-
-```r
-panG_p_df <- panG_p_df[rev(order(panG_p_df$Freq)),]
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'panG_p_df' not found
-```
-
-```r
-panG_p_df$Var1 <- factor(panG_p_df$Var1[rev(order(panG_p_df$Freq))], 
-                         levels = panG_p_df$Var1[rev(order(panG_p_df$Freq))])
-```
-
-```
-## Error in factor(panG_p_df$Var1[rev(order(panG_p_df$Freq))], levels = panG_p_df$Var1[rev(order(panG_p_df$Freq))]): object 'panG_p_df' not found
-```
-
-```r
-panG_p_df$Freq <- panG_p_df$Freq/length(unique(panG_ko_cog$gene_callers_id))
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'panG_p_df' not found
-```
-
-```r
 # Plot distribution of panG annotation
-p_panG1 <- ggplot(panG_p_df, aes(x = Var1, y = 100*Freq, fill = level_B))+
-  geom_bar(stat="identity", color = "black")+
+p_panG1 <- panG_ko_cog %>% filter(level_B %in% tmp_names) %>% 
+  ggplot(aes(x = level_A, fill = level_B))+
+  geom_bar(color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
-  ggtitle("Proportion of genes in pangenome (%)")+
+  ggtitle("Number of genes")+
   ylab("") + xlab("")+
+  facet_grid(genome_name~.)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text.x=element_text(size=18),
+        strip.text=element_text(size=18),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         # ,legend.position = c(0.87, 0.85)
         )
-```
-
-```
-## Error in ggplot(panG_p_df, aes(x = Var1, y = 100 * Freq, fill = level_B)): object 'panG_p_df' not found
-```
-
-```r
 print(p_panG1)
 ```
 
-```
-## Error in print(p_panG1): object 'p_panG1' not found
-```
+<img src="Figures/cached/panG-analysis-1.png" style="display: block; margin: auto;" />
 
 ```r
 # Now select the genes that are PSGs
