@@ -1,4 +1,5 @@
-# Limno_CoolingWater
+# Metagenomic analysis of low-conductivity cooling water
+
 Repository for the analysis of *Ramlibacter sp.* and *Bacteroidetes sp.* metagenome assembled genomes (MAGs) from secondary cooling water of the BR2 nuclear test reactor (Mol, Antwerp, Belgium).
 
 # Analysis steps
