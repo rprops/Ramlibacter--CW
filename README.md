@@ -2,9 +2,10 @@
 
 Repository for the analysis of *Ramlibacter sp.* and *Bacteroidetes sp.* metagenome assembled genomes (MAGs) from secondary cooling water of the BR2 nuclear test reactor (Mol, Antwerp, Belgium).
 
-# Analysis steps
+## 1. QC and assembly  
 
-## 1. QC and assembly
+### Quality control and adapter trimming
+`Sickle` was used for removing erronous and low-quality reads from the raw data. `Scythe` was used for removing adapter sequences.
 
 ### Co-assembly with IDBA-ID with on interleaved fasta with following parameters
 
