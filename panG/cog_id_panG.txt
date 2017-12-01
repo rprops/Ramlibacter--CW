@@ -1,323 +1,2576 @@
- W10 #e2a2fd
-COG1961 W10 #e2a2fd
-COG0840 W10 #e2a2fd
-COG2041 W10 #e2a2fd
-COG3293 W10 #e2a2fd
-COG1359 W10 #e2a2fd
-COG0390 W10 #e2a2fd
-COG0784|COG2205|COG2770 W10 #e2a2fd
-COG2963 W10 #e2a2fd
-COG0784 W10 #e2a2fd
-COG0745|COG3706 W10 #e2a2fd
-COG0745|COG2202|COG2203|COG2205|COG3290 W10 #e2a2fd
-COG0683 W10 #e2a2fd
-COG4969 W10 #e2a2fd
-COG0443 W10 #e2a2fd
-COG2010 W10 #e2a2fd
-COG3279 W10 #e2a2fd
-COG4705 W10 #e2a2fd
-COG2267 W10 #e2a2fd
-COG0596 W10 #e2a2fd
-COG1538 W10 #e2a2fd
-COG4977 W10 #e2a2fd
-COG1344|COG1344 W10 #e2a2fd
-COG0583 W10 #e2a2fd
-COG1638 W10 #e2a2fd
-COG4633 W10 #e2a2fd
-COG3087 W10 #e2a2fd
-COG0428 W10 #e2a2fd
-COG3511 W10 #e2a2fd
-COG2207 W10 #e2a2fd
-COG1012 W10 #e2a2fd
-COG2197 W10 #e2a2fd
-COG0845 W10 #e2a2fd
-COG1807 W10 #e2a2fd
-COG1136 W10 #e2a2fd
-COG3176 W10 #e2a2fd
-COG0189 W10 #e2a2fd
-COG3706 W10 #e2a2fd
-COG1871 W10 #e2a2fd
-COG3177 W10 #e2a2fd
-COG2885|COG3637 W10 #e2a2fd
-COG1450|COG4796 W10 #e2a2fd
-COG2133 W10 #e2a2fd
-COG2116 W10 #e2a2fd
-COG0439|COG0511|COG1984|COG2049 W10 #e2a2fd
-COG2199 W10 #e2a2fd
-COG4961 W10 #e2a2fd
-COG3002 W10 #e2a2fd
-COG1360 W10 #e2a2fd
-COG0027 W10 #e2a2fd
-COG1917 W10 #e2a2fd
-COG1846 W10 #e2a2fd
-COG3696 W10 #e2a2fd
-COG3133 W10 #e2a2fd
-COG1767 W10 #e2a2fd
-COG0410 W10 #e2a2fd
-COG1024 W10 #e2a2fd
-COG0053 W10 #e2a2fd
-COG1116 W10 #e2a2fd
-COG1622|COG2010 W10 #e2a2fd
-COG3637 W10 #e2a2fd
-COG5527 W10 #e2a2fd
-COG0697|COG2371 W10 #e2a2fd
-COG2149 W10 #e2a2fd
-COG4251 W10 #e2a2fd
-COG2433 W10 #e2a2fd
-COG3917 W10 #e2a2fd
-COG1802 W10 #e2a2fd
-COG4597|COG4597 W10 #e2a2fd
-COG2194 W10 #e2a2fd
-COG5285 W10 #e2a2fd
-COG2350 W10 #e2a2fd
-COG4122 W10 #e2a2fd
-COG0784|COG2202|COG2205 W10 #e2a2fd
-COG2165 W10 #e2a2fd
-COG2205 W10 #e2a2fd
-COG1335 W10 #e2a2fd
-COG1459 W10 #e2a2fd
-COG1192 W10 #e2a2fd
-COG2814 W10 #e2a2fd
-COG0582 W10 #e2a2fd
-COG1132 W10 #e2a2fd
-COG3391|COG3391 W10 #e2a2fd
-COG0835 W10 #e2a2fd
-COG0628 W10 #e2a2fd
-COG1914 W10 #e2a2fd
-COG0664 W10 #e2a2fd
-COG5455 W10 #e2a2fd
-COG2202|COG2203|COG5002 W10 #e2a2fd
-COG0457|COG0859 W10 #e2a2fd
-COG0411 W10 #e2a2fd
-COG1309 W10 #e2a2fd
-COG4966 W10 #e2a2fd
-COG3210 W10 #e2a2fd
-COG5573 W10 #e2a2fd
-COG1879 W10 #e2a2fd
-COG0388 W10 #e2a2fd
-COG0665|COG4121 W10 #e2a2fd
-COG2202|COG2202|COG3614|COG4251 W10 #e2a2fd
-COG0745 W10 #e2a2fd
-COG3307 W10 #e2a2fd
-COG3144 W10 #e2a2fd
-COG0784|COG5002 W10 #e2a2fd
-COG3861 W10 #e2a2fd
-COG0318 W10 #e2a2fd
-COG5499 W10 #e2a2fd
-COG1764 W10 #e2a2fd
-COG1595 W10 #e2a2fd
-COG0841 W10 #e2a2fd
-COG4177 W10 #e2a2fd
-COG3609 W10 #e2a2fd
-COG2831 W10 #e2a2fd
-COG3666 W10 #e2a2fd
-COG2274 W10 #e2a2fd
-COG0732|COG0732 W10 #e2a2fd
-COG0507 W10 #e2a2fd
-COG0457 W10 #e2a2fd
-COG1028 W10 #e2a2fd
-COG0697 W10 #e2a2fd
-COG3164 W10 #e2a2fd
-COG0467|COG0467 W10 #e2a2fd
-COG4603 W10 #e2a2fd
-COG0671 W10 #e2a2fd
-COG0840|COG3829 W10 #e2a2fd
-COG3190 W10 #e2a2fd
-COG1191 W10 #e2a2fd
-COG0715 W10 #e2a2fd
-COG5569 W10 #e2a2fd
-COG2378 W10 #e2a2fd
-COG0789|COG5012 W10 #e2a2fd
-COG0559 W10 #e2a2fd
-COG1416 W10 #e2a2fd
-COG3791 W10 #e2a2fd
-COG0789 W10 #e2a2fd
-COG2128 W10 #e2a2fd
-COG5487 W10 #e2a2fd
-COG3344 W10 #e2a2fd
-COG0515 W10 #e2a2fd
-COG3394 W10 #e2a2fd
-COG1319 W10 #e2a2fd
-COG1167 W10 #e2a2fd
-COG2021 W10 #e2a2fd
-COG1609 W10 #e2a2fd
-COG0840|COG3850 W10 #e2a2fd
-COG0645|COG2187 W10 #e2a2fd
-COG3213 W10 #e2a2fd
-COG2159 W10 #e2a2fd
-COG3152 W10 #e2a2fd
-COG1352 W10 #e2a2fd
-COG5654 W10 #e2a2fd
-COG0474 W10 #e2a2fd
-COG1061|COG4951 W10 #e2a2fd
-COG1516 W10 #e2a2fd
-COG2863|COG2863 W10 #e2a2fd
-COG1902 W10 #e2a2fd
-COG0605|COG0607 W10 #e2a2fd
-COG3665 W10 #e2a2fd
-COG5620 W10 #e2a2fd
-COG0030 W10 #e2a2fd
-COG0745|COG2202|COG5002 W10 #e2a2fd
-COG3596 W10 #e2a2fd
-COG2608 W10 #e2a2fd
-COG1975 W10 #e2a2fd
-COG0810 W10 #e2a2fd
-COG0784|COG2205|COG5000 W10 #e2a2fd
-COG1639 W10 #e2a2fd
-COG3181 W10 #e2a2fd
-COG4566 W10 #e2a2fd
-COG2059|COG2059 W10 #e2a2fd
-COG2200|COG2203 W10 #e2a2fd
-COG0174 W10 #e2a2fd
-COG3652 W10 #e2a2fd
-COG1301 W10 #e2a2fd
-COG0778 W10 #e2a2fd
-COG0526 W10 #e2a2fd
-COG0463 W10 #e2a2fd
-COG2114|COG3437 W10 #e2a2fd
-COG0038|COG0517 W10 #e2a2fd
-COG4993|COG4993 W10 #e2a2fd
-COG0038 W10 #e2a2fd
-COG3090 W10 #e2a2fd
-COG1226|COG3273 W10 #e2a2fd
-COG2326|COG2326 W10 #e2a2fd
-COG2217 W10 #e2a2fd
-COG5424 W10 #e2a2fd
-COG0784|COG4191 W10 #e2a2fd
-COG2718 W10 #e2a2fd
-COG1987 W10 #e2a2fd
-COG3340 W10 #e2a2fd
-COG3544 W10 #e2a2fd
-COG1558 W10 #e2a2fd
-COG2259 W10 #e2a2fd
-COG0823|COG0823|COG1506 W10 #e2a2fd
-COG2161 W10 #e2a2fd
-COG0183 W10 #e2a2fd
-COG5430 W10 #e2a2fd
-COG4786 W10 #e2a2fd
-COG3712 W10 #e2a2fd
-COG1215|COG1216 W10 #e2a2fd
-COG5474 W10 #e2a2fd
-COG2882 W10 #e2a2fd
-COG1529|COG1529 W10 #e2a2fd
-COG0672|COG2010 W10 #e2a2fd
-COG4291 W10 #e2a2fd
-COG1252 W10 #e2a2fd
-COG3047 W10 #e2a2fd
-COG0864 W10 #e2a2fd
-COG1670 W10 #e2a2fd
-COG0300 W10 #e2a2fd
-COG1989 W10 #e2a2fd
-COG1289 W10 #e2a2fd
-COG2226 W10 #e2a2fd
-COG2146 W10 #e2a2fd
-COG1960 W10 #e2a2fd
-COG0667 W10 #e2a2fd
-COG0796 W10 #e2a2fd
-COG1403 W10 #e2a2fd
-COG1018|COG2124 W10 #e2a2fd
-COG4948 W10 #e2a2fd
-COG1345 W10 #e2a2fd
-COG0286 W10 #e2a2fd
-COG0600 W10 #e2a2fd
-COG1134 W10 #e2a2fd
-COG4597 W10 #e2a2fd
-COG0695 W10 #e2a2fd
-COG4118 W10 #e2a2fd
-COG0654 W10 #e2a2fd
-COG3153 W10 #e2a2fd
-COG0165 W10 #e2a2fd
-COG4341 W10 #e2a2fd
-COG0784|COG2202|COG2202|COG2202|COG2203|COG2203|COG2205|COG2205|COG3829 W10 #e2a2fd
-COG4965 W10 #e2a2fd
-COG3267 W10 #e2a2fd
-COG0154 W10 #e2a2fd
-COG0834 W10 #e2a2fd
-COG0784|COG2198|COG2202|COG2205 W10 #e2a2fd
-COG0491 W10 #e2a2fd
-COG2911 W10 #e2a2fd
-COG1376 W10 #e2a2fd
-COG2072 W10 #e2a2fd
-COG4970 W10 #e2a2fd
-COG0784|COG4585 W10 #e2a2fd
-COG0346 W10 #e2a2fd
-COG2823 W10 #e2a2fd
-COG2202|COG2202|COG2203|COG4191|COG4251|COG5000 W10 #e2a2fd
-COG3613 W10 #e2a2fd
-COG2203|COG2205|COG3437 W10 #e2a2fd
-COG1256 W10 #e2a2fd
-COG3462 W10 #e2a2fd
-COG3258 W10 #e2a2fd
-COG4206 W10 #e2a2fd
-COG4389 W10 #e2a2fd
-COG4106 W10 #e2a2fd
-COG0283 W10 #e2a2fd
-COG0310|COG2202|COG2202|COG3829|COG4251 W10 #e2a2fd
-COG0784|COG0784|COG2198|COG2205|COG5002 W10 #e2a2fd
-COG4974 W10 #e2a2fd
-COG0640 W10 #e2a2fd
-COG3143 W10 #e2a2fd
-COG3134 W10 #e2a2fd
-COG1073 W10 #e2a2fd
-COG1706 W10 #e2a2fd
-COG3798|COG3861|COG3861 W10 #e2a2fd
-COG3170 W10 #e2a2fd
-COG2236 W10 #e2a2fd
-COG3025|COG5607 W10 #e2a2fd
-COG4584 W10 #e2a2fd
-COG1629|COG4771 W10 #e2a2fd
-COG5393 W10 #e2a2fd
-COG0684 W10 #e2a2fd
-COG0730 W10 #e2a2fd
-COG4395 W10 #e2a2fd
-COG0604 W10 #e2a2fd
-COG0438 W10 #e2a2fd
-COG2804 W10 #e2a2fd
-COG3794 W10 #e2a2fd
-COG3837 W10 #e2a2fd
-COG0720 W10 #e2a2fd
-COG2905 W10 #e2a2fd
-COG4191 W10 #e2a2fd
-COG4726 W10 #e2a2fd
-COG0784|COG2198|COG4251 W10 #e2a2fd
-COG0456 W10 #e2a2fd
-COG4185 W10 #e2a2fd
-COG0702 W10 #e2a2fd
-COG0811 W10 #e2a2fd
-COG0411|COG4177 W10 #e2a2fd
-COG1251 W10 #e2a2fd
-COG0666 W10 #e2a2fd
-COG1063 W10 #e2a2fd
-COG3654 W10 #e2a2fd
-COG1409 W10 #e2a2fd
-COG1705|COG3951 W10 #e2a2fd
-COG4625 W10 #e2a2fd
-COG1208 W10 #e2a2fd
-COG0171 W10 #e2a2fd
-COG3203 W10 #e2a2fd
-COG1018 W10 #e2a2fd
-COG3210|COG3210 W10 #e2a2fd
-COG2063 W10 #e2a2fd
-COG1672 W10 #e2a2fd
-COG1697 W10 #e2a2fd
-COG0726 W10 #e2a2fd
-COG0785|COG1225 W10 #e2a2fd
-COG3017 W10 #e2a2fd
-COG1079 W10 #e2a2fd
-COG1473 W10 #e2a2fd
-COG0028 W10 #e2a2fd
-COG0703|COG1396 W10 #e2a2fd
-COG3386 W10 #e2a2fd
-COG3162 W10 #e2a2fd
-COG1766 W10 #e2a2fd
-COG0840|COG4564 W10 #e2a2fd
-COG0625 W10 #e2a2fd
-COG2516 W10 #e2a2fd
-COG0179 W10 #e2a2fd
-COG1231 W10 #e2a2fd
-COG1239 W10 #e2a2fd
-COG2855 W10 #e2a2fd
-COG3744 W10 #e2a2fd
-COG1562 W10 #e2a2fd
-COG0745|COG0745 W10 #e2a2fd
-COG0279 W10 #e2a2fd
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1033|COG1033 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1033|COG1033 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1033|COG1033 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1033|COG1033 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1033|COG1033 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2132|COG2132 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2132|COG2132 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2132|COG2132 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2132|COG2132 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1404|COG3291 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2723 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2723 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1999|COG2010 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1999|COG2010 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1999 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1999 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0741 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3290|COG4191 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4191 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4191 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3203 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3203 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3203 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG1961 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG1804 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1804 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1804 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745|COG2202|COG2205 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745|COG2202|COG2205 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2202|COG2202|COG2205|COG3437 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4447 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4447 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4447 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1022 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1022 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1022 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2909 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2909 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2909 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG0840 W10 #e2a2fd Ramlibacter_MAG
+COG0840 W10 #e2a2fd Ramlibacter_MAG
+COG0853 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0853 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1116 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1116 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4913 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3064 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5361|COG5361 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5361 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0028 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0028 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2041 W10 #e2a2fd Ramlibacter_MAG
+COG2041 W10 #e2a2fd Ramlibacter_MAG
+COG3055 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3055 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1228 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1228 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2764 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2764 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG3293 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4618 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4618 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1028 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1028 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1359 W10 #e2a2fd Ramlibacter_MAG
+COG1359 W10 #e2a2fd Ramlibacter_MAG
+COG1638 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1638 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0183 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0183 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0390 W10 #e2a2fd Ramlibacter_MAG
+COG0390 W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3386|COG3386 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3386|COG3386 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0589|COG0589 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0589|COG0589 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784|COG2205|COG2770 W10 #e2a2fd Ramlibacter_MAG
+COG0784|COG2205|COG2770 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG2272 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2272 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3209 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3209 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4386 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2080 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2080 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0411 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0411 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5361 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5361 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4188 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4188 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0405 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0405 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2963 W10 #e2a2fd Ramlibacter_MAG
+COG2963 W10 #e2a2fd Ramlibacter_MAG
+COG1131 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1131 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4263 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4263 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3209|COG3209 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784 W10 #e2a2fd Ramlibacter_MAG
+COG0745|COG3706 W10 #e2a2fd Ramlibacter_MAG
+COG2916 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2916 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4948 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4948 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0715 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0715 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2326 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2326 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1277 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1277 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG5563 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5563 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0845 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0845 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3181 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0235 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0235 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1472 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1472 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG0745|COG2202|COG2203|COG2205|COG3290 W10 #e2a2fd Ramlibacter_MAG
+COG1404 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1404 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0683 W10 #e2a2fd Ramlibacter_MAG
+COG0683 W10 #e2a2fd Ramlibacter_MAG
+COG4969 W10 #e2a2fd Ramlibacter_MAG
+COG4969 W10 #e2a2fd Ramlibacter_MAG
+COG3119 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3119 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0443 W10 #e2a2fd Ramlibacter_MAG
+COG0443 W10 #e2a2fd Ramlibacter_MAG
+COG0683 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0683 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2010 W10 #e2a2fd Ramlibacter_MAG
+COG2010 W10 #e2a2fd Ramlibacter_MAG
+COG0559 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0559 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4771 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1629 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4177 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4177 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG3279 W10 #e2a2fd Ramlibacter_MAG
+COG3279 W10 #e2a2fd Ramlibacter_MAG
+COG4314 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4314 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4705 W10 #e2a2fd Ramlibacter_MAG
+COG4705 W10 #e2a2fd Ramlibacter_MAG
+COG0129 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0129 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3405 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3405 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0491 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0491 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4786 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4786 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3211 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3211 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2267 W10 #e2a2fd Ramlibacter_MAG
+COG0596 W10 #e2a2fd Ramlibacter_MAG
+COG1215 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1215 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0600 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0600 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0715 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0715 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0667 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0667 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0348|COG3901 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0348|COG3901 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0596 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0596 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1633 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1633 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1538 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG3209|COG3209 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3209|COG3209 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4977 W10 #e2a2fd Ramlibacter_MAG
+COG4977 W10 #e2a2fd Ramlibacter_MAG
+COG3420 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3420 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1344|COG1344 W10 #e2a2fd Ramlibacter_MAG
+COG1344|COG1344 W10 #e2a2fd Ramlibacter_MAG
+COG2197 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2197 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_MAG
+COG0840 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0840 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2197 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1228 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2207 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1638 W10 #e2a2fd Ramlibacter_MAG
+COG3842 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0370 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0719 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1396 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2002 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4633 W10 #e2a2fd Ramlibacter_MAG
+COG1802 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3087 W10 #e2a2fd Ramlibacter_MAG
+COG3900 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0428 W10 #e2a2fd Ramlibacter_MAG
+COG4585 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1595 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG4456 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3307 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3511 W10 #e2a2fd Ramlibacter_MAG
+COG2207 W10 #e2a2fd Ramlibacter_MAG
+COG0537 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0428 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3291 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0745 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0346 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1343 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2197 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0475|COG1226 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2124 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0066 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1289 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3240 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2350 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1087|COG1215 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1012 W10 #e2a2fd Ramlibacter_MAG
+COG2746|COG4251 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2207 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0726 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2197 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2030 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4791 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0845 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG2133 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1538 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4447 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1807 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0492|COG0664 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0456 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1136 W10 #e2a2fd Ramlibacter_MAG
+COG0531 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3176 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG5588 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4420 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0189 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0612 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2931|COG3087 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0596 W10 #e2a2fd Ramlibacter_MAG
+COG3706 W10 #e2a2fd Ramlibacter_MAG
+COG0753 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1871 W10 #e2a2fd Ramlibacter_MAG
+COG1505 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745|COG2202|COG2203|COG4191 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0845 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1209 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3177 W10 #e2a2fd Ramlibacter_MAG
+COG2885|COG3637 W10 #e2a2fd Ramlibacter_MAG
+COG3861 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0745 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1450|COG4796 W10 #e2a2fd Ramlibacter_MAG
+COG0859 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1524 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4341 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0251 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0640 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1282 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4948 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1917 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1858 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2197 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1881 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2133 W10 #e2a2fd Ramlibacter_MAG
+COG0845 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2116 W10 #e2a2fd Ramlibacter_MAG
+COG0439|COG0511|COG1984|COG2049 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5266 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2194 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2829 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0674 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2367 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2151 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2199 W10 #e2a2fd Ramlibacter_MAG
+COG0435 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1363 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG3386 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1225 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0664 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4961 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2771 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3002 W10 #e2a2fd Ramlibacter_MAG
+COG1360 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0027 W10 #e2a2fd Ramlibacter_MAG
+COG3487 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1917 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0300 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1846 W10 #e2a2fd Ramlibacter_MAG
+COG0388 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3696 W10 #e2a2fd Ramlibacter_MAG
+COG1690 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3631 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0444 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1848 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2005|COG3585 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4641 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2202|COG2202|COG2202|COG2203|COG4191|COG4251 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1396|COG1917 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3133 W10 #e2a2fd Ramlibacter_MAG
+COG3090 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1767 W10 #e2a2fd Ramlibacter_MAG
+COG0410 W10 #e2a2fd Ramlibacter_MAG
+COG1024 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0053 W10 #e2a2fd Ramlibacter_MAG
+COG1148|COG1290|COG1908 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0346 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784|COG2202|COG2205|COG3829 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1116 W10 #e2a2fd Ramlibacter_MAG
+COG3836 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1622|COG2010 W10 #e2a2fd Ramlibacter_MAG
+COG3637 W10 #e2a2fd Ramlibacter_MAG
+COG2068 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5563 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1538 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0698 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2128 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0745|COG2205 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1401 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0796 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0346 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3307 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1014|COG4231 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG5527 W10 #e2a2fd Ramlibacter_MAG
+COG3627 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2175 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0697|COG2371 W10 #e2a2fd Ramlibacter_MAG
+COG1403 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2084 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2149 W10 #e2a2fd Ramlibacter_MAG
+COG4251 W10 #e2a2fd Ramlibacter_MAG
+COG3417 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2433 W10 #e2a2fd Ramlibacter_MAG
+COG2091 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3917 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1802 W10 #e2a2fd Ramlibacter_MAG
+COG4597|COG4597 W10 #e2a2fd Ramlibacter_MAG
+COG3593 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1802 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2963 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0747 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3861 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4395 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4258 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2332 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0329 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1680 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2194 W10 #e2a2fd Ramlibacter_MAG
+COG0845 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG5285 W10 #e2a2fd Ramlibacter_MAG
+COG0395 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2350 W10 #e2a2fd Ramlibacter_MAG
+COG4122 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0784|COG2202|COG2205 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1246 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1835 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2771 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2814 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3971 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3753 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3090 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1476 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1804 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2165 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG0715 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG4638 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1396 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0243 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4968 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG2274 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2205 W10 #e2a2fd Ramlibacter_MAG
+COG1180 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2931|COG2931|COG2931|COG2931 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0154 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2913 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1335 W10 #e2a2fd Ramlibacter_MAG
+COG2148 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1459 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1192 W10 #e2a2fd Ramlibacter_MAG
+COG2814 W10 #e2a2fd Ramlibacter_MAG
+COG0582 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1132 W10 #e2a2fd Ramlibacter_MAG
+COG4096 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3391|COG3391 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0835 W10 #e2a2fd Ramlibacter_MAG
+COG0628 W10 #e2a2fd Ramlibacter_MAG
+COG2010 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2301 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1538 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1995 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1609 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3136 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0745|COG0784|COG2202|COG2205|COG5002 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1914 W10 #e2a2fd Ramlibacter_MAG
+COG0664 W10 #e2a2fd Ramlibacter_MAG
+COG0600 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3865 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2885 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0583 W10 #e2a2fd Ramlibacter_MAG
+COG3741 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1266 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5455 W10 #e2a2fd Ramlibacter_MAG
+COG2197 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1819 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0387 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG0745 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4977 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG0784|COG4191 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4625 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2271 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2202|COG2203|COG5002 W10 #e2a2fd Ramlibacter_MAG
+COG3230 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1271 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4312 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1960 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG2828 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1558 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0457|COG0859 W10 #e2a2fd Ramlibacter_MAG
+COG1846 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1254 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0411 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0640 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5455 W10 #e2a2fd Ramlibacter_MAG
+COG2267 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3637 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0702 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG1968 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0845 W10 #e2a2fd Ramlibacter_MAG
+COG1309 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2242 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4966 W10 #e2a2fd Ramlibacter_MAG
+COG3210 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2855 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3271 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0456 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4447 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4774 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2114 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG5573 W10 #e2a2fd Ramlibacter_MAG
+COG0745|COG0745|COG0745|COG2205 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3384 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2207 W10 #e2a2fd Ramlibacter_MAG
+COG0683 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG2050 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1879 W10 #e2a2fd Ramlibacter_MAG
+COG0388 W10 #e2a2fd Ramlibacter_MAG
+COG5013 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0583 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0671|COG2931 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3945 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0824 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0665|COG4121 W10 #e2a2fd Ramlibacter_MAG
+COG1171 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0431 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0640|COG3860 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1012 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0163 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2202|COG2202|COG3614|COG4251 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2197 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3652 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745 W10 #e2a2fd Ramlibacter_MAG
+COG2271 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1396|COG3837 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1522 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3307 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3090 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784|COG2202|COG5002 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG4251 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1022 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2202|COG3829|COG4191 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745 W10 #e2a2fd Ramlibacter_MAG
+COG3144 W10 #e2a2fd Ramlibacter_MAG
+COG0515 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1647 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784|COG5002 W10 #e2a2fd Ramlibacter_MAG
+COG3861 W10 #e2a2fd Ramlibacter_MAG
+COG1720 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2267 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3907 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0318 W10 #e2a2fd Ramlibacter_MAG
+COG0596 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1079 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1797 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG5499 W10 #e2a2fd Ramlibacter_MAG
+COG4638 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0845 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3621 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3572 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0252 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0252 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1764 W10 #e2a2fd Ramlibacter_MAG
+COG0664 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4221 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1028 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2855 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0695 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1595 W10 #e2a2fd Ramlibacter_MAG
+COG3239 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0589|COG0589 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0784|COG1653|COG2202|COG2202|COG2203|COG2205|COG3852 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0841 W10 #e2a2fd Ramlibacter_MAG
+COG1918 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2201 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG4177 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1593 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0730 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0684 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1396 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1506|COG3247 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1201 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2807 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0492 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2226 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1028 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0583 W10 #e2a2fd Ramlibacter_MAG
+COG1694 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1172 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4447 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3609 W10 #e2a2fd Ramlibacter_MAG
+COG1835 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0235 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2831 W10 #e2a2fd Ramlibacter_MAG
+COG3133 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0075 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1974 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1087 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3666 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0745 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2936 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2366 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2274 W10 #e2a2fd Ramlibacter_MAG
+COG1309 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0732|COG0732 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4226 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0066 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3832 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4770 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0507 W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0457 W10 #e2a2fd Ramlibacter_MAG
+COG3126|COG3187 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1317 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1028 W10 #e2a2fd Ramlibacter_MAG
+COG5285 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2197 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1871 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0697 W10 #e2a2fd Ramlibacter_MAG
+COG3134 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1192 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0584 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0745|COG0745|COG2205|COG2770 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2017 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0382|COG0560 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0628 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4967 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3164 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4608 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1846 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2185 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0467|COG0467 W10 #e2a2fd Ramlibacter_MAG
+COG0318 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1024 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2755 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2226 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4977 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0500 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4603 W10 #e2a2fd Ramlibacter_MAG
+COG0456 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3637 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0671 W10 #e2a2fd Ramlibacter_MAG
+COG1086 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0840|COG3829 W10 #e2a2fd Ramlibacter_MAG
+COG3190 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0438 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0288 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0251 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2015 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1191 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0399 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0715 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2227 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0715 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1132 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5569 W10 #e2a2fd Ramlibacter_MAG
+COG1522 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2148 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0725 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0300 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2911 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2378 W10 #e2a2fd Ramlibacter_MAG
+COG0388 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0662 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1506 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0671 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0492 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4221 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3000 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0446|COG1902 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0476|COG1944 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3791 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0693 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4970 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3576|COG3576 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1680 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0789|COG5012 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0559 W10 #e2a2fd Ramlibacter_MAG
+COG1416 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3791 W10 #e2a2fd Ramlibacter_MAG
+COG0789 W10 #e2a2fd Ramlibacter_MAG
+COG2128 W10 #e2a2fd Ramlibacter_MAG
+COG1262 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2010 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0043 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2272 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1598 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1284 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1434 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1960 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1562 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1529 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4663 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3254 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5487 W10 #e2a2fd Ramlibacter_MAG
+COG1063 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2076 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0683 W10 #e2a2fd Ramlibacter_MAG
+COG2386 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2962 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1131|COG3950 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3550 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3344 W10 #e2a2fd Ramlibacter_MAG
+COG2188 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0515 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0599|COG0599 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG5450 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4430 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1191 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3247 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3000 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3861 W10 #e2a2fd Ramlibacter_MAG
+COG0789 W10 #e2a2fd Ramlibacter_MAG
+COG0784 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0645|COG2187 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2227 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1278|COG3326 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG2202|COG2202|COG3614|COG4251 W10 #e2a2fd Ramlibacter_MAG
+COG0845 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0472 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0141 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0583 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2272 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0491 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1846 W10 #e2a2fd Ramlibacter_MAG
+COG3394 W10 #e2a2fd Ramlibacter_MAG
+COG1319 W10 #e2a2fd Ramlibacter_MAG
+COG0784|COG2205|COG3829 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0457|COG0457 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3832 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4618 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1309 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0748 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1814 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2340 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0402 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1961 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1167 W10 #e2a2fd Ramlibacter_MAG
+COG2021 W10 #e2a2fd Ramlibacter_MAG
+COG1714 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4733 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1073|COG1073|COG2244 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1820 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5592 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1609 W10 #e2a2fd Ramlibacter_MAG
+COG4566 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2128 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1216 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0730 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0840|COG3850 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2084 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0741 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2931|COG2931 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3386 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2199 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0645|COG2187 W10 #e2a2fd Ramlibacter_MAG
+COG1012 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5361 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0251 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1309 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1173 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3794 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG0079 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3213 W10 #e2a2fd Ramlibacter_MAG
+COG3152 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3791 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1593 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1595 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2030 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0463 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG0845 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG2175 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2831 W10 #e2a2fd Ramlibacter_MAG
+COG0784|COG2202|COG5002 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2159 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3614|COG5002 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3152 W10 #e2a2fd Ramlibacter_MAG
+COG1917 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0583 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1203 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0066 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4256 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0654 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1024|COG1250|COG1250 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3333 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1028 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1352 W10 #e2a2fd Ramlibacter_MAG
+COG5654 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2079 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1442 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0474 W10 #e2a2fd Ramlibacter_MAG
+COG2041 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3491 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5403 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0583 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1977 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1061|COG4951 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1516 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5588 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0651 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3188 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1960 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0300 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0262 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0189 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2863|COG2863 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1902 W10 #e2a2fd Ramlibacter_MAG
+COG3971 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1063 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0438 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1804 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0559 W10 #e2a2fd Ramlibacter_MAG
+COG1237 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1063 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2834 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3913 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0605|COG0607 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3665 W10 #e2a2fd Ramlibacter_MAG
+COG0515 W10 #e2a2fd Ramlibacter_MAG
+COG2433 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG2197 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1052 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1595 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2267 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2203|COG4191|COG4251 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0526 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3547 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG5620 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0030 W10 #e2a2fd Ramlibacter_MAG
+COG2203 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0583 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1309 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1807 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2815|COG3291 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0411 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2202|COG2202|COG2203|COG4585 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0745|COG2202|COG5002 W10 #e2a2fd Ramlibacter_MAG
+COG2214 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0402|COG2374 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3596 W10 #e2a2fd Ramlibacter_MAG
+COG2114 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1426 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0225 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1638 W10 #e2a2fd Ramlibacter_MAG
+COG2931 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2307 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0628 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2199 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0075 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3090 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2207 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0456 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1752 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2199 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2230 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0725 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0277 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG0582 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4191 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1959 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0025 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0643|COG2198 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2608 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2271 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4726 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1637 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2944 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1975 W10 #e2a2fd Ramlibacter_MAG
+COG0388 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1664 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0810 W10 #e2a2fd Ramlibacter_MAG
+COG1525 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4664 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG5653 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2207 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1252 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0784|COG2205|COG5000 W10 #e2a2fd Ramlibacter_MAG
+COG0111 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0747 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0583 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1639 W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0457|COG3710|COG5616 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1638 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3172 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2114 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG2510 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0753 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0339 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0543|COG0633 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0410 W10 #e2a2fd Ramlibacter_MAG
+COG4566 W10 #e2a2fd Ramlibacter_MAG
+COG0071 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0596 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1028 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG0515 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0500 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0819 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2887 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2059|COG2059 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG4948 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2304|COG2931 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3653 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1846 W10 #e2a2fd Ramlibacter_MAG
+COG4794 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4177 W10 #e2a2fd Ramlibacter_MAG
+COG0346 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1178 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2200|COG2203 W10 #e2a2fd Ramlibacter_MAG
+COG1317 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5285 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0664 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4966 W10 #e2a2fd Ramlibacter_MAG
+COG3638 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2197 W10 #e2a2fd Ramlibacter_MAG
+COG0784|COG2205 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3474 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG1024 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0297 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1476|COG1917 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3188 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5455 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0457 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1680 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2010|COG4733 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0443 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1742 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1477 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1074 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2885 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2931 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2706|COG2706|COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3636 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG0236 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0845 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0546 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2827 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1848 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2226 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1525 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1959 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2188 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG1638 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0251|COG0667 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2200|COG2203 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2114|COG4252 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3240 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1572 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1309 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0841 W10 #e2a2fd Ramlibacter_MAG
+COG0174 W10 #e2a2fd Ramlibacter_MAG
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1886 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG3861 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1524 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0524 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2866 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0451 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2161 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4447 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3652 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1724 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2201 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5652 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2040 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2931 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0484 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2814 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1301 W10 #e2a2fd Ramlibacter_MAG
+COG4177 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0262 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1846 W10 #e2a2fd Ramlibacter_MAG
+COG2226 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4134 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0778 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2814 W10 #e2a2fd Ramlibacter_MAG
+COG1902 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784|COG2205 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0845 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0526 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0697 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1635 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4786 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5525 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2246 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0484 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4262|COG4262 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG5517 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0463 W10 #e2a2fd Ramlibacter_MAG
+COG5476 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0457 W10 #e2a2fd Ramlibacter_MAG
+COG3534 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2204 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2133 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2114|COG3437 W10 #e2a2fd Ramlibacter_MAG
+COG0741 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1886 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0463 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0038|COG0517 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG0596 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1136 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0590 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0726 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1835 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2755 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1863 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2197 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1804 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0515|COG1262|COG2909 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4993|COG4993 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG2226 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG3706 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745 W10 #e2a2fd Ramlibacter_MAG
+COG1305 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2267 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3791 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3791 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0697 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0038 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1309 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4737 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3090 W10 #e2a2fd Ramlibacter_MAG
+COG1051|COG4111 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1622 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0474 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4190 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1028 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2079 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4447 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0526 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0074 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0438 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0642 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3326 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1086|COG2148 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2267 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3206 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1359 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4447 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2262 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1403 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4960 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1226|COG3273 W10 #e2a2fd Ramlibacter_MAG
+COG1022 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2199|COG2202 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG5473 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2080 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2326|COG2326 W10 #e2a2fd Ramlibacter_MAG
+COG3540 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3090 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1414 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2217 W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2267 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1877 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2030 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1116 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG2267 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5424 W10 #e2a2fd Ramlibacter_MAG
+COG2267 W10 #e2a2fd Ramlibacter_MAG
+COG1476|COG1917 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0829 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0438 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1116 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2151 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0789|COG5012 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0073 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1633 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3203 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2373 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3637 W10 #e2a2fd Ramlibacter_MAG
+COG3419 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0655 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1794 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4221 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0784|COG4191 W10 #e2a2fd Ramlibacter_MAG
+COG2718 W10 #e2a2fd Ramlibacter_MAG
+COG1704 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2220 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2207 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3958 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3654 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0318 W10 #e2a2fd Ramlibacter_MAG
+COG1987 W10 #e2a2fd Ramlibacter_MAG
+COG2271 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1917 W10 #e2a2fd Ramlibacter_MAG
+COG2340 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0439 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG4206 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1487 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0318 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3340 W10 #e2a2fd Ramlibacter_MAG
+COG0745|COG2202|COG5002 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3544 W10 #e2a2fd Ramlibacter_MAG
+COG1055 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3637 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3971 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1558 W10 #e2a2fd Ramlibacter_MAG
+COG4634 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4711 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2271 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5653 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2259 W10 #e2a2fd Ramlibacter_MAG
+COG0823|COG0823|COG1506 W10 #e2a2fd Ramlibacter_MAG
+COG1028 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0683 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0715 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0784|COG0784|COG2198|COG2205 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG3043 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1231 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1878 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2161 W10 #e2a2fd Ramlibacter_MAG
+COG4461 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0183 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG1075 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3549 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1840 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1042 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4648 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1846 W10 #e2a2fd Ramlibacter_MAG
+COG1175 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4948 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4102 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2931|COG2931 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2067 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5430 W10 #e2a2fd Ramlibacter_MAG
+COG1835 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2181 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1216 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG3266 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0109 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5455 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0676 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0616 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0520 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0339 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0515|COG1262|COG2909 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3379 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4638 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2348 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1432 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4235 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0662|COG0836 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1541 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0835 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4786 W10 #e2a2fd Ramlibacter_MAG
+COG4643 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0296 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG3712 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG1684 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1012 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1294 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1215|COG1216 W10 #e2a2fd Ramlibacter_MAG
+COG5474 W10 #e2a2fd Ramlibacter_MAG
+COG2882 W10 #e2a2fd Ramlibacter_MAG
+COG1529|COG1529 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0672|COG2010 W10 #e2a2fd Ramlibacter_MAG
+COG0584 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2909 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2911 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0739 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG4254 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0834 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG1430 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3170|COG3170 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1262 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4291 W10 #e2a2fd Ramlibacter_MAG
+COG2982 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3904 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1252 W10 #e2a2fd Ramlibacter_MAG
+COG0393 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3047 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0546 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0864 W10 #e2a2fd Ramlibacter_MAG
+COG0438|COG0707 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0457|COG2114|COG5616 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1670 W10 #e2a2fd Ramlibacter_MAG
+COG4805 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG4974 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0683 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4251 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2201 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1754 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1951 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0667 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0697 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0745 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4770 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5338 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1300 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3832 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3181 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3491 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745|COG5002 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1262 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2197 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3177 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4122 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3945 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0515 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0484 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2814 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3173 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0220 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0789|COG5012 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG2361 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1309 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG1802 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0520 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0511 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0300 W10 #e2a2fd Ramlibacter_MAG
+COG0500 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1402 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3795 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG0426 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745|COG4191 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2055 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2165 W10 #e2a2fd Ramlibacter_MAG
+COG1989 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG4789 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0451 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1917 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0654 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4784 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1924 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2244 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1289 W10 #e2a2fd Ramlibacter_MAG
+COG0840|COG3829 W10 #e2a2fd Ramlibacter_MAG
+COG1765 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0560 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2226 W10 #e2a2fd Ramlibacter_MAG
+COG0745 W10 #e2a2fd Ramlibacter_MAG
+COG2175 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1802|COG1802 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2146 W10 #e2a2fd Ramlibacter_MAG
+COG0491 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4177 W10 #e2a2fd Ramlibacter_MAG
+COG2985|COG2985 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1479 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0719 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG1960 W10 #e2a2fd Ramlibacter_MAG
+COG0683 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0667 W10 #e2a2fd Ramlibacter_MAG
+COG1846 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4566 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2807 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG1310 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3384 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0744 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0796 W10 #e2a2fd Ramlibacter_MAG
+COG1178 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1403 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2222 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1018|COG2124 W10 #e2a2fd Ramlibacter_MAG
+COG1609 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0841 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4948 W10 #e2a2fd Ramlibacter_MAG
+COG5486 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1345 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4638 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0286 W10 #e2a2fd Ramlibacter_MAG
+COG0600 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1134 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4597 W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG2931|COG2931 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0695 W10 #e2a2fd Ramlibacter_MAG
+COG1502 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2928 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2890 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_MAG
+COG3147 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1116 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1595 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1011 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4118 W10 #e2a2fd Ramlibacter_MAG
+COG1073 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_MAG
+COG0654 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784|COG2203|COG2204|COG4191 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2944 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1846 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1914 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1640|COG3280 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3153 W10 #e2a2fd Ramlibacter_MAG
+COG0165 W10 #e2a2fd Ramlibacter_MAG
+COG1028 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2267 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0318 W10 #e2a2fd Ramlibacter_MAG
+COG1804 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3278 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4341 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3378 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0823|COG0823 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784|COG2202|COG2202|COG2202|COG2203|COG2203|COG2205|COG2205|COG3829 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0596 W10 #e2a2fd Ramlibacter_MAG
+COG4185 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4965 W10 #e2a2fd Ramlibacter_MAG
+COG2267|COG2303|COG3540 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG3267 W10 #e2a2fd Ramlibacter_MAG
+COG2021 W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0265 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0154 W10 #e2a2fd Ramlibacter_MAG
+COG0834 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0308 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4576 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0784|COG2198|COG2202|COG2205 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0596 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3134 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1802 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0840 W10 #e2a2fd Ramlibacter_MAG
+COG2175 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1231 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4970 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0454 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0457 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0491 W10 #e2a2fd Ramlibacter_MAG
+COG4405 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0463 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2184 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1716|COG3456 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0797 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2242 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2911 W10 #e2a2fd Ramlibacter_MAG
+COG4705 W10 #e2a2fd Ramlibacter_MAG
+COG3170 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2020 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2205 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0697 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1376 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3696 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0811 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5361 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2212 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0208 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0456 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0642 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2267 W10 #e2a2fd Ramlibacter_MAG
+COG4577 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1754 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2072 W10 #e2a2fd Ramlibacter_MAG
+COG3209 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4970 W10 #e2a2fd Ramlibacter_MAG
+COG0784 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0501 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0457|COG2197|COG3899 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2189 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_MAG
+COG2165 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1514 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0784|COG4585 W10 #e2a2fd Ramlibacter_MAG
+COG0346 W10 #e2a2fd Ramlibacter_MAG
+COG3090 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3376 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4849 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG0329 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0845 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2246 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1680 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0784|COG5002 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2823 W10 #e2a2fd Ramlibacter_MAG
+COG2180 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1305 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3547 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2202|COG2202|COG2203|COG4191|COG4251|COG5000 W10 #e2a2fd Ramlibacter_MAG
+COG3203 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2706 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1178 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1192 W10 #e2a2fd Ramlibacter_MAG
+COG3459 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1396 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0755 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4828 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3613 W10 #e2a2fd Ramlibacter_MAG
+COG4257 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2433 W10 #e2a2fd Ramlibacter_MAG
+COG0835 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1277 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1134 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4096 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2203|COG2205|COG3437 W10 #e2a2fd Ramlibacter_MAG
+COG0631 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3791 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1256 W10 #e2a2fd Ramlibacter_MAG
+COG3462 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0346 W10 #e2a2fd Ramlibacter_MAG
+COG0745 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1520 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0675 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0346|COG0456 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1013 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG3062 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3258 W10 #e2a2fd Ramlibacter_MAG
+COG0543|COG1018|COG1290 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4585 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3170 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0235 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0840|COG5278 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0110 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2730 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0346 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4206 W10 #e2a2fd Ramlibacter_MAG
+COG0524 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1396 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0667 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0515|COG1262 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2135 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2372 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1320 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4389 W10 #e2a2fd Ramlibacter_MAG
+COG4637 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0559 W10 #e2a2fd Ramlibacter_MAG
+COG0451 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3829 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG3971 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784 W10 #e2a2fd Ramlibacter_MAG
+COG4566 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0607 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0297 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2931 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4106 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3842 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3173 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2130 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2191 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0286 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2109 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG3209|COG3209 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2188 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0283 W10 #e2a2fd Ramlibacter_MAG
+COG2271 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0687 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1262|COG4249 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2350 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0310|COG2202|COG2202|COG3829|COG4251 W10 #e2a2fd Ramlibacter_MAG
+COG0318 W10 #e2a2fd Ramlibacter_MAG
+COG2303 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1157 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3637 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0784|COG0784|COG2198|COG2205|COG5002 W10 #e2a2fd Ramlibacter_MAG
+COG1209 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3636 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2197 W10 #e2a2fd Ramlibacter_MAG
+COG1682 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0411 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4974 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0784|COG2205|COG3829 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0640 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3001 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3842 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0732 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1472 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1021 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0845 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3143 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0845 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1653 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1670 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0142 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2079 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2930 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3134 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2010 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3832 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2863|COG2863 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG0346 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1073 W10 #e2a2fd Ramlibacter_MAG
+COG1028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0411 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG5373 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1706 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2963 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3798|COG3861|COG3861 W10 #e2a2fd Ramlibacter_MAG
+COG1454 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3170 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2236 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG0582 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0683 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0697 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0484 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4191 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0457|COG0457|COG1729 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2010 W10 #e2a2fd Ramlibacter_MAG
+COG3188 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0601 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3336 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2885 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3025|COG5607 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4584 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4941 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0810 W10 #e2a2fd Ramlibacter_MAG
+COG1629|COG4771 W10 #e2a2fd Ramlibacter_MAG
+COG0183 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4974 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1028 W10 #e2a2fd Ramlibacter_sp_5_10
+COG5393 W10 #e2a2fd Ramlibacter_MAG
+COG3639 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3307 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1287 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1752 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3177 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0684 W10 #e2a2fd Ramlibacter_MAG
+COG0730 W10 #e2a2fd Ramlibacter_MAG
+COG2072 W10 #e2a2fd Ramlibacter_MAG
+COG0365 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1262 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0392|COG2334 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2050 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2226 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4970 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3454 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0457|COG4076 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3707 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1638 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG5016 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0457 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2270 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2361 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2197|COG2267 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4395 W10 #e2a2fd Ramlibacter_MAG
+COG0604 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG4177 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4177 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1075 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2186 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1468 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1304 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0484 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2030 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1073 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG2010|COG3474 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0438 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0406 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0633|COG2114 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2804 W10 #e2a2fd Ramlibacter_MAG
+COG3794 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG0001 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0625 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0411 W10 #e2a2fd Ramlibacter_MAG
+COG1051|COG1056 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2149 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4191 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2804 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3391 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1175 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3836 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1562 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3837 W10 #e2a2fd Ramlibacter_MAG
+COG0720 W10 #e2a2fd Ramlibacter_MAG
+COG4967 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2161 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4447 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1917 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2905 W10 #e2a2fd Ramlibacter_MAG
+COG1545 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4191 W10 #e2a2fd Ramlibacter_MAG
+COG3218 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3945 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2197 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1196 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2050 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1999 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG1024 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0826 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4726 W10 #e2a2fd Ramlibacter_MAG
+COG0714 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0431 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1488 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0784|COG2198|COG4251 W10 #e2a2fd Ramlibacter_MAG
+COG0456 W10 #e2a2fd Ramlibacter_MAG
+COG4941 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4185 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0784|COG2202|COG2205 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1304 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1487 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3188 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1802 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3070 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1273 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG4319 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1260 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0457|COG3629|COG3899 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0822 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1794 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG0491 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0702 W10 #e2a2fd Ramlibacter_MAG
+COG3618 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4774 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0811 W10 #e2a2fd Ramlibacter_MAG
+COG0346 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1960 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3832 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0411|COG4177 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG0784|COG5002 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG3729 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3221 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG1682 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1251 W10 #e2a2fd Ramlibacter_MAG
+COG3333 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1529 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2367 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0782 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1638 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0683 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0793 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1457 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4706 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0666 W10 #e2a2fd Ramlibacter_MAG
+COG1442 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1063 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0745 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2755 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3795 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4786 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG3654 W10 #e2a2fd Ramlibacter_MAG
+COG1409 W10 #e2a2fd Ramlibacter_MAG
+COG0346 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG1705|COG3951 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4625 W10 #e2a2fd Ramlibacter_MAG
+COG2021 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0845|COG1994 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG2267 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1208 W10 #e2a2fd Ramlibacter_MAG
+COG0265|COG0265 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2823 W10 #e2a2fd Ramlibacter_MAG
+COG1413 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0171 W10 #e2a2fd Ramlibacter_MAG
+COG1335 W10 #e2a2fd Ramlibacter_MAG
+COG0148 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1718 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG2212 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2050 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0582 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0583 W10 #e2a2fd Ramlibacter_MAG
+COG3752 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0683 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1404 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1024 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4664|COG4664 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0463 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4251 W10 #e2a2fd Ramlibacter_MAG
+COG1360|COG3455 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0715 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4970 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4113 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1142 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2371 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3203 W10 #e2a2fd Ramlibacter_MAG
+COG0526 W10 #e2a2fd Ramlibacter_MAG
+COG0329 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG1018 W10 #e2a2fd Ramlibacter_MAG
+COG1028 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4726 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG1802 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG4772 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3290 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1414 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2831 W10 #e2a2fd Ramlibacter_MAG
+COG2982 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1063 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3210|COG3210 W10 #e2a2fd Ramlibacter_MAG
+COG2267 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0697 W10 #e2a2fd Ramlibacter_MAG
+COG0457 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1766 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1479 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2963 W10 #e2a2fd Ramlibacter_MAG
+COG0654 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2132 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2063 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1401 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2863|COG2863 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1522 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0457 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1672 W10 #e2a2fd Ramlibacter_MAG
+COG1697 W10 #e2a2fd Ramlibacter_MAG
+COG2442 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG5281 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1914 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0697 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4271 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0823|COG1506 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2814 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0726 W10 #e2a2fd Ramlibacter_MAG
+COG0785|COG1225 W10 #e2a2fd Ramlibacter_MAG
+COG2843 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4311 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1670 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3181 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0286 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0508 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG3017 W10 #e2a2fd Ramlibacter_MAG
+COG1752 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1622|COG2010 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0656 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0296 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1079 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG4771 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3631 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0456 W10 #e2a2fd Ramlibacter_MAG
+COG0789 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG0845 W10 #e2a2fd Ramlibacter_MAG
+COG1473 W10 #e2a2fd Ramlibacter_MAG
+COG0028 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG1541 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG2267 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0381 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0730 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0716 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1529 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3307 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0703|COG1396 W10 #e2a2fd Ramlibacter_MAG
+COG0840 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3386 W10 #e2a2fd Ramlibacter_MAG
+COG1987 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4206 W10 #e2a2fd Ramlibacter_MAG
+COG3162 W10 #e2a2fd Ramlibacter_MAG
+COG0765 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0332 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG2199 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0583 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0783 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG5635 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1523 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG1794 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1766 W10 #e2a2fd Ramlibacter_MAG
+COG0840|COG4564 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG0583 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4970 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3307 W10 #e2a2fd Ramlibacter_MAG
+COG0784 W10 #e2a2fd Ramlibacter_MAG
+COG3179 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0002 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0625 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1247 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3243 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG2814 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0834 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3386 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1715 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2516 W10 #e2a2fd Ramlibacter_MAG
+COG2972 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3473 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3240 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0601 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0395 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0179 W10 #e2a2fd Ramlibacter_MAG
+COG0526 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1231 W10 #e2a2fd Ramlibacter_MAG
+COG2931 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3805 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2165 W10 #e2a2fd Ramlibacter_MAG
+COG2199 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0683 W10 #e2a2fd Ramlibacter_MAG
+COG2226 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1018|COG1018 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1138 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3218 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1338 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2373 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG4395 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3090 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0667 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+COG0346 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3861 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0582 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG0625 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0456 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1309 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0764 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0323 W10 #e2a2fd Ramlibacter_sp_5_10
+COG1804 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG4966 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+COG1239 W10 #e2a2fd Ramlibacter_MAG
+COG1012 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2855 W10 #e2a2fd Ramlibacter_MAG
+COG1450|COG4796 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3744 W10 #e2a2fd Ramlibacter_MAG
+COG2814 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1893 W10 #e2a2fd Ramlibacter_sp_5_10
+COG0793 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1167 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG3181 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3917 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG1562 W10 #e2a2fd Ramlibacter_MAG
+COG0745|COG0745 W10 #e2a2fd Ramlibacter_MAG
+COG2146 W10 #e2a2fd Ramlibacter_sp_5_10
+COG2194 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG3488 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0279 W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0031 W10 #e2a2fd Ramlibacter_sp_5_10
+COG3678 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4177 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG0515 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0546 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG1487 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0784|COG2202|COG2205 W10 #e2a2fd Ramlibacter_sp_TTB310
+ W10 #e2a2fd Ramlibacter_MAG
+COG3181 W10 #e2a2fd Ramlibacter_sp_5_10
+COG4126 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG0028 W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2207 W10 #e2a2fd Ramlibacter_sp_TTB310
+COG0154 W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_sp_5_10
+COG0683 W10 #e2a2fd Ramlibacter_sp_5_10
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_MAG
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+ W10 #e2a2fd Ramlibacter_sp_Leaf400
+COG2050 W10 #e2a2fd Ramlibacter_sp_TTB310
