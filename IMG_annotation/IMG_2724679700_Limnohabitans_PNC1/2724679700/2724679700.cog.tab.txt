@@ -1,9 +1,0 @@
-gene_oid	gene_length	percent_identity	query_start	query_end	subj_start	subj_end	evalue	bit_score	cog_id	cog_name	cog_length
-2727816777	382	25.88	35	364	4	288	4.0e-24	106	COG4974	Site-specific recombinase XerD	300
-2727816783	559	29.88	40	458	1	414	1.0e-67	251	COG1914	Mn2+ and Fe2+ transporters of the NRAMP family	416
-2727816784	409	19.68	46	400	98	431	1.0e-08	54.6	COG3659	Carbohydrate-selective porin OprB	439
-2727816787	263	38.33	37	259	7	221	9.0e-41	160	COG1285	Uncharacterized membrane protein YhiD, involved in acid resistance	221
-2727816790	521	26.49	8	274	7	256	3.0e-17	83.6	COG4584	Transposase	278
-2727816791	268	34.43	13	251	13	254	2.0e-41	163	COG1484	DNA replication protein DnaC	254
-2727816803	374	25.23	29	356	1	283	2.0e-22	100	COG4974	Site-specific recombinase XerD	300
-2727816806	981	27.05	612	934	2	323	2.0e-31	131	COG4644	Transposase and inactivated derivatives, TnpA family	323

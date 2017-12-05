@@ -1,0 +1,2 @@
+gene_oid	gene_length	percent_identity	query_start	query_end	subj_start	subj_end	evalue	bit_score	ko_id	ko_name	EC	img_ko_flag
+2727816787	263	74.79	26	263	1	238	1.6e-120	392	KO:K07507	putative Mg2+ transporter-C (MgtC) family protein		Yes

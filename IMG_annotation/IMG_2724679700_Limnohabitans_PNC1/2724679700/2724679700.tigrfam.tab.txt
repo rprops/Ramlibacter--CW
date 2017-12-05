@@ -1,3 +1,0 @@
-gene_oid	gene_length	query_start	query_end	evalue	bit_score	tigrfam_id	tigrfam_name
-2727816779	418	20	418	7.1e-71	224.7	TIGR01297	cation diffusion facilitator family transporter
-2727816783	559	53	273	1.0e-19	57	TIGR01197	NRAMP (natural resistance-associated macrophage protein) metal ion transporters

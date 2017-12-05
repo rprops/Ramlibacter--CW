@@ -1,0 +1,45 @@
+gene_oid	gene_length	percent_identity	query_start	query_end	subj_start	subj_end	evalue	bit_score	cog_id	cog_name	cog_length
+2727816807	694	38.73	1	674	336	1009	0.0e+00	575	COG0841	Multidrug efflux pump subunit AcrB	1009
+2727816808	269	52.1	18	255	10	243	4.0e-58	218	COG4705	Uncharacterized membrane-anchored protein	258
+2727816814	233	34.47	1	200	1	203	1.0e-29	123	COG0625	Glutathione S-transferase	211
+2727816820	137	51.06	1	137	1	130	3.0e-33	134	COG1970	Large-conductance mechanosensitive channel	130
+2727816824	413	26.17	56	413	2	350	1.0e-34	140	COG0683	ABC-type branched-chain amino acid transport system, periplasmic component	366
+2727816825	485	24.77	17	444	1	380	1.0e-40	161	COG1373	Predicted ATPase, AAA+ superfamily	398
+2727816833	1701	26.87	422	947	1	545	3.0e-62	234	COG4646	Adenine-specific DNA methylase, N12 class	637
+2727816838	181	24.84	24	175	8	153	2.0e-05	42.6	COG3133	Outer membrane lipoprotein SlyB	154
+2727816840	335	26.4	28	197	27	195	3.0e-06	46.3	COG2340	Uncharacterized conserved protein YkwD, contains CAP (CSP/antigen 5/PR1) domain	207
+2727816844	371	21.88	81	353	107	384	5.0e-07	49.1	COG1459	Type II secretory pathway, component PulF	397
+2727816845	640	21.51	120	621	60	497	2.0e-26	114	COG2804	Type II secretory pathway ATPase GspE/PulE or T4P pilus assembly pathway ATPase PilB	500
+2727816851	450	31.54	179	449	87	360	6.0e-34	138	COG2948	Type IV secretory pathway, VirB10 components	360
+2727816852	281	30.95	12	259	9	239	2.0e-23	103	COG3504	Type IV secretory pathway, VirB9 components	265
+2727816853	245	24.64	29	234	16	217	2.0e-11	63.1	COG3701	Type IV secretory pathway, TrbF components	228
+2727816856	655	32.19	196	646	20	477	2.0e-52	200	COG0464	AAA+-type ATPase, SpoVK/Ycf46/Vps4 family	494
+2727816859	846	25.44	5	790	4	735	3.0e-78	287	COG3451	Type IV secretory pathway, VirB4 component	796
+2727816862	328	37.95	21	316	40	336	2.0e-58	220	COG4962	Pilus assembly protein, ATPase of CpaF family	355
+2727816874	855	27.09	19	628	94	650	9.0e-93	335	COG0209	Ribonucleotide reductase alpha subunit	696
+2727816876	164	20.78	9	154	10	163	5.0e-07	47.4	COG0629	Single-stranded DNA-binding protein	167
+2727816888	222	36.07	1	181	19	201	6.0e-25	107	COG0586	Uncharacterized membrane protein DedA, SNARE-associated domain	208
+2727816891	178	37.74	38	142	1	106	6.0e-21	94	COG0789	DNA-binding transcriptional regulator, MerR family	124
+2727816892	237	43.41	8	133	8	135	2.0e-27	116	COG3474	Cytochrome c2	135
+2727816915	269	53.14	19	257	11	245	2.0e-58	219	COG4705	Uncharacterized membrane-anchored protein	258
+2727816920	383	29.66	3	117	12	119	3.0e-10	59.9	COG3152	Uncharacterized membrane protein YhaH, DUF805 family	125
+2727816929	435	18.22	3	403	13	449	1.0e-04	41.9	COG0815	Apolipoprotein N-acyltransferase	518
+2727816939	316	25.76	1	315	3	330	4.0e-27	115	COG0673	Predicted dehydrogenase	342
+2727816941	428	33.51	42	412	16	393	5.0e-58	218	COG3562	Capsule polysaccharide modification protein KpsS	403
+2727816942	449	43.75	1	312	22	333	2.0e-105	376	COG0836	Mannose-1-phosphate guanylyltransferase	333
+2727816943	369	43.91	19	368	22	371	2.0e-85	309	COG3524	Capsule polysaccharide export protein KpsE/RkpR	372
+2727816944	260	25.4	13	260	18	262	1.0e-26	113	COG1682	ABC-type polysaccharide/polyol phosphate export permease	263
+2727816945	217	34.4	1	214	24	240	4.0e-57	214	COG1134	ABC-type polysaccharide/polyol phosphate transport system, ATPase component	249
+2727816948	347	23.32	1	344	1	371	3.0e-22	99.7	COG0438	Glycosyltransferase involved in cell wall bisynthesis	381
+2727816949	811	22.03	1	387	1	370	8.0e-20	92.8	COG0438	Glycosyltransferase involved in cell wall bisynthesis	381
+2727816950	344	60.47	1	341	2	345	0.0e+00	514	COG1089	GDP-D-mannose dehydratase	345
+2727816951	316	28.85	4	302	3	310	3.0e-35	142	COG0451	Nucleoside-diphosphate-sugar epimerase	314
+2727816952	277	38.55	2	180	67	239	1.0e-27	116	COG1596	Periplasmic protein involved in polysaccharide export, contains SLBB domain of the beta-grasp fold	239
+2727816954	390	23.49	101	389	86	377	8.0e-16	78.5	COG0438	Glycosyltransferase involved in cell wall bisynthesis	381
+2727816958	424	34.89	31	393	1	354	1.0e-74	274	COG3328	Transposase (or an inactivated derivative)	379
+2727816963	237	50.88	1	225	22	247	5.0e-59	220	COG4705	Uncharacterized membrane-anchored protein	258
+2727816972	159	34.18	2	159	15	166	2.0e-26	112	COG4333	Uncharacterized protein	167
+2727816983	320	27.63	63	316	1	229	1.0e-17	84	COG3039	Transposase and inactivated derivatives, IS5 family	230
+2727816996	225	20.93	1	218	2	258	4.0e-17	81.8	COG1192	Cellulose biosynthesis protein BcsQ	259
+2727817013	709	29.3	25	704	12	638	1.0e-91	331	COG1199	Rad3-related DNA helicase	654
+2727817028	176	20.63	6	131	13	126	3.0e-04	38.4	COG1664	Cytoskeletal protein CcmA, bactofilin family	146

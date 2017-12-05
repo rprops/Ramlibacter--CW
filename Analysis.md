@@ -1,6 +1,21 @@
-# Metagenomic analysis of secondary cooling water microbial communities
-Ruben Props  
-`r format(Sys.time(), '%d %B, %Y')`  
+---
+title: "Metagenomic analysis of secondary cooling water microbial communities"
+author: "Ruben Props"
+date: "05 December, 2017"
+output:
+  html_document:
+    code_folding: show
+    highlight: haddock
+    keep_md: yes
+    theme: united
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+      toc_depth: 2
+    css: report_styles.css
+    df_print: paged
+---
 
 
 
@@ -67,7 +82,7 @@ vsize <- Biobase::rowMedians(clr(otu_table(phy_df_filtered), 1))+15
 Lineage_rel <- tax_table(phy_df_filtered)[,"Lineage"]
 Lineage_rel <- factor(Lineage_rel, levels = unique(Lineage_rel))
 vweights <- summary(symBeta(getOptBeta(sp_easi), mode='maxabs'))
-MAGs <- c(); MAGs[taxa_names(phy_df_filtered)=="Otu00001"]  <- "Ramlibacter MAG"
+MAGs <- c(); MAGs[taxa_names(phy_df_filtered)=="Otu00001"]  <- "Ramlibacter sp. MAG"
 MAGs[taxa_names(phy_df_filtered)=="Otu00002"]  <- "Bacteroidetes sp. MAG1"
 MAGs[taxa_names(phy_df_filtered)=="Otu00003"]  <- "Bacteroidetes sp. MAG2"
 MAGs[is.na(MAGs)] <- ""
@@ -107,9 +122,11 @@ plot_network_custom(ig.mb, phy_df_filtered, type='taxa',
 ```r
 # dev.off()
 ```
+
 ## Network analysis on absolute abundances  
 
-The second network will be built using absolute abundance data by multiplying the relative taxon abundances by the total cell density. The final obtained counts will expressed as nr. of cells measured in 50 µL samples. We also only consider the OTUs that were left after the prevalence filtering conducted in the network construction with relative abundance data.
+The second network will be built using absolute abundance data by multiplying the relative taxon abundances by the total cell density. The final obtained counts will expressed as nr. of cells measured in 50 µL samples. We also only consider the OTUs that were left after the prevalence filtering conducted in the network construction with relative abundance data.  
+
 
 ```r
 # Import cell count data
@@ -263,8 +280,9 @@ coverage_data <- data.frame(mean_coverage_long,
 data_total <- left_join(coverage_data, total_reads, by = "Sample_ID")
 data_total <- left_join(data_total, bin_size, by = "bins")
 # data_total <- left_join(data_total, meta, by =  "Sample_ID")
-data_total$bins <- plyr::revalue(data_total$bins, c("BetIa_bin"="Limnohabitans_bin", "bacIa_vizbin1"="Bacteroidetes_bin1",
-                                              "bacIa_vizbin2"="Bacteroidetes_bin2"))
+data_total$bins <- plyr::revalue(data_total$bins, c("BetIa_bin"="Ramlibacter sp. MAG",
+                                                    "bacIa_vizbin1"="Bacteroidetes sp. MAG1",
+                                                    "bacIa_vizbin2"="Bacteroidetes sp. MAG2"))
 # Calculate relative abundance of the bins
 data_total$mean_rel_abundance <- 100*(data_total$coverage*data_total$bin_size)/(read_length*data_total$Total_reads)
 data_total$upper_rel_abundance <- 100*((data_total$coverage+data_total$std_coverage)*data_total$bin_size)/(read_length*data_total$Total_reads)
@@ -275,16 +293,16 @@ data_total$upper_rel_abundance_map <- 100*((data_total$coverage+data_total$std_c
 data_total$lower_rel_abundance_map <- 100*((data_total$coverage-data_total$std_coverage)*data_total$bin_size)/(read_length*data_total$Mapped_reads)
 
 # Add additional column that assigns PNCs to correct MAG
-data_total$Genome_id <- factor(rep(c("Limnohabitans", "Limnohabitans", "Limnohabitans", "Bacteroidetes MAG2", "Bacteroidetes MAG1", "Bacteroidetes MAG2"), 4))
+data_total$Genome_id <- factor(rep(c("Ramlibacter sp. MAG", "Ramlibacter sp. MAG", "Ramlibacter sp. MAG", "Bacteroidetes sp. MAG2", "Bacteroidetes sp. MAG1", "Bacteroidetes sp. MAG2"), 4))
 
 # Plot genome size for all three genomes
-data_total[data_total$bins %in% c("Bacteroidetes_bin1",
-                                "Bacteroidetes_bin2","Limnohabitans_bin"), ] %>% 
+data_total[data_total$bins %in% c("Bacteroidetes sp. MAG1",
+                                "Bacteroidetes sp. MAG2","Ramlibacter sp. MAG"), ] %>% 
   ggplot(aes(x = bins, y = bin_size/(4*1e6), fill = Genome_id))+
   theme_bw()+
   geom_bar(width = 0.5, stat="identity", alpha = 0.7)+
   coord_flip()+
-  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_RAMLI))+
   theme(axis.text.x = element_text(angle = 0, size = 16),
         axis.text.y = element_text(size = 16),
         axis.title.x = element_text(size = 18),
@@ -299,13 +317,13 @@ data_total[data_total$bins %in% c("Bacteroidetes_bin1",
 
 ```r
 # Plot irep for all 3 genomes
-data_total[data_total$bins %in% c("Bacteroidetes_bin1",
-                                "Bacteroidetes_bin2","Limnohabitans_bin"), ] %>% 
+data_total[data_total$bins %in% c("Bacteroidetes sp. MAG1",
+                                "Bacteroidetes sp. MAG2","Ramlibacter sp. MAG"), ] %>% 
   ggplot(aes(x = bins, y = mean_irep/4, fill = Genome_id))+
   theme_bw()+
   geom_bar(width = 0.5, stat="identity", alpha = 0.7)+
   coord_flip()+
-  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_RAMLI))+
   theme(axis.text.x = element_text(angle = 0, size = 16),
         axis.text.y = element_text(size = 16),
         axis.title.x = element_text(size = 18),
@@ -319,11 +337,8 @@ data_total[data_total$bins %in% c("Bacteroidetes_bin1",
 <img src="Figures/cached/read-format data-2.png" style="display: block; margin: auto;" />
 
 # 1. Phylogenetic tree
-## Limnohabitans
-<!-- ![RAxML tree for Limnohabitans MAG](./Tree/PhyloTree_Limno.png)   -->
-
-
-## Bacteroidetes
+## Ramlibacter sp.
+![RAxML tree for Ramlibacter sp. MAG](./Tree/ANI_tree_concat-lowres.png)
 
 # *2. Investigate MAG- and 16S-based abundances*
 It is clear that there is significant %GC coverage bias present. The estimated relative abundances
@@ -336,7 +351,7 @@ $$Relative\ abundance =100*(\frac{mean\ coverage * bin\ size}{read\ length*total
 Import reference relative abundances from 16S data set in order to directly compare with metagenomic data set.
 
 ```r
-df_16S <- read.table("relative_abundance_16S.tsv", header = TRUE)
+df_16S <- read.delim("relative_abundance_16S.tsv", header = TRUE, sep = "\t")
 df_16S_long <- gather(df_16S, Sample_ID, relative_abundance_16S, 
                              SAMPLE_16:SAMPLE_65, factor_key=TRUE)
 ```
@@ -345,11 +360,11 @@ df_16S_long <- gather(df_16S, Sample_ID, relative_abundance_16S,
 
 ```r
 # Subset for only the three complete genomes (not PNCs).
-data_total_sb <- data_total[data_total$bins %in% c("Limnohabitans_bin", "Bacteroidetes_bin1", "Bacteroidetes_bin2"),]
+data_total_sb <- data_total[data_total$bins %in% c("Ramlibacter sp. MAG", "Bacteroidetes sp. MAG1", "Bacteroidetes sp. MAG2"),]
 
 p_meta <- ggplot(data = data_total_sb, aes(x = bins, y = mean_rel_abundance, fill = bins))+
   geom_point(size = 4, shape = 21, alpha = 0.7)+
-  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_RAMLI))+
   theme_bw()+
   geom_errorbar(aes(ymin=lower_rel_abundance, 
                     ymax=upper_rel_abundance, 
@@ -368,7 +383,7 @@ p_meta <- ggplot(data = data_total_sb, aes(x = bins, y = mean_rel_abundance, fil
 # Corrected for mapped N° of reads
 p_meta_mapped <- ggplot(data = data_total_sb, aes(x = bins, y = mean_rel_abundance_map, fill = bins))+
   geom_point(size = 4, shape = 21, alpha = 0.7)+
-  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_RAMLI))+
   theme_bw()+
   geom_errorbar(aes(ymin=lower_rel_abundance_map, 
                     ymax=upper_rel_abundance_map, 
@@ -386,7 +401,7 @@ p_meta_mapped <- ggplot(data = data_total_sb, aes(x = bins, y = mean_rel_abundan
 
 p_16S <- ggplot(data = df_16S_long, aes(x = bins, y = relative_abundance_16S, fill = bins))+
   geom_point(size = 4, shape = 21, alpha = 0.7)+
-  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_RAMLI))+
   theme_bw()+
   facet_grid(.~Sample_ID)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
@@ -411,19 +426,19 @@ grid_arrange_shared_legend(p_meta, p_meta_mapped, p_16S, ncol = 1, nrow = 3)
 # These are stored in the IMG_annotation data for each genome bin
 
 # Next, extract the %GC of each gene from the gff file
-extract_gc_from_gff("./IMG_annotation/IMG_2724679690_Limnohabitans/121950.assembled.gff", outputFolder = "GC_analysis")
+extract_gc_from_gff("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/121950.assembled.gff", outputFolder = "GC_analysis")
 extract_gc_from_gff("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/121951.assembled.gff", outputFolder = "GC_analysis")
 extract_gc_from_gff("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/121960.assembled.gff", outputFolder = "GC_analysis")
 
 # Use these files to make dataframes mapping function (COGs/Pfams/KO) and %GC
-LIMNO_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
+RAMLI_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
 ```
 
 ```
-## Wed Nov 15 12:08:29 2017  --- There are 2830 genes with > 0.1 %
-## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 2830 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -450,13 +465,13 @@ LIMNO_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 
 ```r
 BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1//Annotation/2724679691.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
+                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
 ```
 
 ```
-## Wed Nov 15 12:08:29 2017  --- There are 1889 genes with > 0.1 %
-## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 1889 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -498,9 +513,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Wed Nov 15 12:08:29 2017  --- There are 1797 genes with > 0.1 %
-## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 1797 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -537,14 +552,14 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```r
-LIMNO_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
+RAMLI_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
 ```
 
 ```
-## Wed Nov 15 12:08:29 2017  --- There are 4954 genes with > 0.1 %
-## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 4954 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -560,13 +575,13 @@ LIMNO_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 
 ```r
 BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1//Annotation/2724679691.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
+                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
 ```
 
 ```
-## Wed Nov 15 12:08:29 2017  --- There are 3929 genes with > 0.1 %
-## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 3929 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -586,9 +601,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Wed Nov 15 12:08:29 2017  --- There are 3573 genes with > 0.1 %
-## Wed Nov 15 12:08:29 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:29 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 3573 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -603,14 +618,14 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```r
-LIMNO_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690.ko.tab.txt", gc_thresh = 0.1, output = FALSE)
+RAMLI_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690_gene_oid_2_seq_id.txt", 
+                             functions = "./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.ko.tab.txt", gc_thresh = 0.1, output = FALSE)
 ```
 
 ```
-## Wed Nov 15 12:08:30 2017  --- There are 2164 genes with > 0.1 %
-## Wed Nov 15 12:08:30 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:30 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 2164 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -637,13 +652,13 @@ LIMNO_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 
 ```r
 BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1//Annotation/2724679691.ko.tab.txt", gc_thresh = 0.1, output = FALSE)
+                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.ko.tab.txt", gc_thresh = 0.1, output = FALSE)
 ```
 
 ```
-## Wed Nov 15 12:08:30 2017  --- There are 1384 genes with > 0.1 %
-## Wed Nov 15 12:08:30 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:30 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 1384 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -663,9 +678,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Wed Nov 15 12:08:30 2017  --- There are 1342 genes with > 0.1 %
-## Wed Nov 15 12:08:30 2017  --- This is 100 % of all genes
-## Wed Nov 15 12:08:30 2017  --- The 10 genes with the highest GC% are:
+## Mon Dec 04 16:37:19 2017  --- There are 1342 genes with > 0.1 %
+## Mon Dec 04 16:37:19 2017  --- This is 100 % of all genes
+## Mon Dec 04 16:37:19 2017  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -691,14 +706,14 @@ Observation: They have very small genes: on average < 500bp.
 
 
 ```r
-# Limnohabitans MAG gene length distribution 
-p_LIMNO_length <- easyGgplot2::ggplot2.histogram(data = LIMNO_gc_cog, xName = 'gene_length',
+# Ramlibacter sp. MAG gene length distribution 
+p_RAMLI_length <- easyGgplot2::ggplot2.histogram(data = RAMLI_gc_cog, xName = 'gene_length',
                   groupName = 'Genome', alpha = 0.5,
                   legendPosition = "top", binwidth = 0.15,
-                  groupColors = col_limno,addMeanLine=TRUE, meanLineColor="black",
+                  groupColors = col_RAMLI,addMeanLine=TRUE, meanLineColor="black",
                   meanLineType="dashed")+ theme_bw()+ ylim(0,15)+
   labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
-  ggtitle("Limnohabitans MAG")+ xlim(0,2000)
+  ggtitle("Ramlibacter sp. MAG")+ xlim(0,2000)
 
 # Bacteroidetes MAG1 gene length distribution 
 p_BAC1_length <- easyGgplot2::ggplot2.histogram(data = BAC1_gc_cog, xName = 'gene_length',
@@ -718,7 +733,7 @@ p_BAC2_length <- easyGgplot2::ggplot2.histogram(data = BAC2_gc_cog, xName = 'gen
   labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
   ggtitle("Bacteroidetes MAG2")+ xlim(0,2000)
 
-grid.arrange(p_LIMNO_length, p_BAC1_length, p_BAC2_length, ncol = 3)
+grid.arrange(p_RAMLI_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 ```
 
 <img src="Figures/cached/gene-length-analysis_COG-1.png" style="display: block; margin: auto;" />
@@ -726,14 +741,14 @@ grid.arrange(p_LIMNO_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 We can do the same for the Pfams.
 
 ```r
-# Limnohabitans MAG gene length distribution 
-p_LIMNO_length <- easyGgplot2::ggplot2.histogram(data = LIMNO_gc_pfam, xName = 'gene_length',
+# Ramlibacter sp. MAG gene length distribution 
+p_RAMLI_length <- easyGgplot2::ggplot2.histogram(data = RAMLI_gc_pfam, xName = 'gene_length',
                   groupName = 'Genome', alpha = 0.5,
                   legendPosition = "top", binwidth = 0.15,
-                  groupColors = col_limno,addMeanLine=TRUE, meanLineColor="black",
+                  groupColors = col_RAMLI,addMeanLine=TRUE, meanLineColor="black",
                   meanLineType="dashed")+ theme_bw()+ ylim(0,25)+
   labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
-  ggtitle("Limnohabitans MAG")+ xlim(0,3000)
+  ggtitle("Ramlibacter sp. MAG")+ xlim(0,3000)
 
 # Bacteroidetes MAG1 gene length distribution 
 p_BAC1_length <- easyGgplot2::ggplot2.histogram(data = BAC1_gc_pfam, xName = 'gene_length',
@@ -753,7 +768,7 @@ p_BAC2_length <- easyGgplot2::ggplot2.histogram(data = BAC2_gc_pfam, xName = 'ge
   labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
   ggtitle("Bacteroidetes MAG2")+ xlim(0,3000)
 
-grid.arrange(p_LIMNO_length, p_BAC1_length, p_BAC2_length, ncol = 3)
+grid.arrange(p_RAMLI_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 ```
 
 <img src="Figures/cached/gene-length-analysis_Pfam-1.png" style="display: block; margin: auto;" />
@@ -761,23 +776,23 @@ grid.arrange(p_LIMNO_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 # 5. Identify unique functional genes (COG/Pfams)
 
 ```r
-# Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG1
-unique_LIMNO_BAC1 <- dplyr::anti_join(LIMNO_gc_cog, BAC1_gc_cog, by = "cog_id")
-cat("There are", paste(nrow(unique_LIMNO_BAC1)), "unique COGs in Limnohabitans MAG vs Bacteroidetes MAG1")
+# Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG1
+unique_RAMLI_BAC1 <- dplyr::anti_join(RAMLI_gc_cog, BAC1_gc_cog, by = "cog_id")
+cat("There are", paste(nrow(unique_RAMLI_BAC1)), "unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG1")
 ```
 
 ```
-## There are 1178 unique COGs in Limnohabitans MAG vs Bacteroidetes MAG1
+## There are 1178 unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG1
 ```
 
 ```r
-# Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG2
-unique_LIMNO_BAC2 <- dplyr::anti_join(LIMNO_gc_cog, BAC2_gc_cog, by = "cog_id")
-cat("There are", paste(nrow(unique_LIMNO_BAC2)), "unique COGs in Limnohabitans MAG vs Bacteroidetes MAG2")
+# Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG2
+unique_RAMLI_BAC2 <- dplyr::anti_join(RAMLI_gc_cog, BAC2_gc_cog, by = "cog_id")
+cat("There are", paste(nrow(unique_RAMLI_BAC2)), "unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG2")
 ```
 
 ```
-## There are 1143 unique COGs in Limnohabitans MAG vs Bacteroidetes MAG2
+## There are 1143 unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG2
 ```
 
 ```r
@@ -802,23 +817,23 @@ cat("There are", paste(nrow(unique_BAC2_BAC1)), "unique COGs in Bacteroidetes MA
 
 
 ```r
-# Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG1
-unique_pfam_LIMNO_BAC1 <- dplyr::anti_join(LIMNO_gc_pfam, BAC1_gc_pfam, by = "pfam_id")
-cat("There are", paste(nrow(unique_pfam_LIMNO_BAC1)), "unique Pfams in Limnohabitans MAG vs Bacteroidetes MAG1")
+# Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG1
+unique_pfam_RAMLI_BAC1 <- dplyr::anti_join(RAMLI_gc_pfam, BAC1_gc_pfam, by = "pfam_id")
+cat("There are", paste(nrow(unique_pfam_RAMLI_BAC1)), "unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG1")
 ```
 
 ```
-## There are 1474 unique Pfams in Limnohabitans MAG vs Bacteroidetes MAG1
+## There are 1474 unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG1
 ```
 
 ```r
-# Find unique functions in Limnohabitans MAG vs Bacteroidetes MAG2
-unique_pfam_LIMNO_BAC2 <- dplyr::anti_join(LIMNO_gc_pfam, BAC2_gc_pfam, by = "pfam_id")
-cat("There are", paste(nrow(unique_pfam_LIMNO_BAC2)), "unique Pfams in Limnohabitans MAG vs Bacteroidetes MAG2")
+# Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG2
+unique_pfam_RAMLI_BAC2 <- dplyr::anti_join(RAMLI_gc_pfam, BAC2_gc_pfam, by = "pfam_id")
+cat("There are", paste(nrow(unique_pfam_RAMLI_BAC2)), "unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG2")
 ```
 
 ```
-## There are 1424 unique Pfams in Limnohabitans MAG vs Bacteroidetes MAG2
+## There are 1424 unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG2
 ```
 
 ```r
@@ -862,8 +877,8 @@ cog_meta <- dplyr::left_join(cog_categories, cogid_2_cogcat, by = c("COG_class" 
 cog_meta <- droplevels(cog_meta)
 
 # Merge genome information of all genome bins
-merged_gc_cog <- rbind(LIMNO_gc_cog, BAC1_gc_cog, BAC2_gc_cog)
-merged_gc_cog <- data.frame(merged_gc_cog, genome_id = c(rep("Limnohabitans MAG", nrow(LIMNO_gc_cog)), 
+merged_gc_cog <- rbind(RAMLI_gc_cog, BAC1_gc_cog, BAC2_gc_cog)
+merged_gc_cog <- data.frame(merged_gc_cog, genome_id = c(rep("Ramlibacter sp. MAG", nrow(RAMLI_gc_cog)), 
                                              rep("Bacteroidetes MAG1", nrow(BAC1_gc_cog)),
                                              rep("Bacteroidetes MAG2", nrow(BAC2_gc_cog)))
                             )
@@ -958,9 +973,9 @@ ko_path_df$level_B <- gsub(ko_path_df$level_B, pattern = "<b>|</b>", replacement
 ko_path_df <- ko_path_df[, -1]
 
 # Annotate merged ko file
-merged_gc_ko <- rbind(LIMNO_gc_KO, BAC1_gc_KO, BAC2_gc_KO)
+merged_gc_ko <- rbind(RAMLI_gc_KO, BAC1_gc_KO, BAC2_gc_KO)
 merged_gc_ko <- data.frame(merged_gc_ko, 
-                           genome_id = c(rep("Limnohabitans MAG", nrow(LIMNO_gc_KO)),
+                           genome_id = c(rep("Ramlibacter sp. MAG", nrow(RAMLI_gc_KO)),
                                          rep("Bacteroidetes MAG1", nrow(BAC1_gc_KO)),
                                          rep("Bacteroidetes MAG2", nrow(BAC2_gc_KO)))
                             )
@@ -993,19 +1008,19 @@ confounding possible "biological" effects.. Beware..
 
 
 ```r
-# Import and format data for Limnohabitans MAG
-SCUO_LIMNO <- read.table("./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/2724679690.genes.fna.codonO.output",
+# Import and format data for Ramlibacter sp. MAG
+SCUO_RAMLI <- read.table("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.genes.fna.codonO.output",
                          sep = ",", blank.lines.skip = TRUE, allowEscapes = FALSE, skipNul = TRUE
                          )
-SCUO_LIMNO$V1 <- gsub(SCUO_LIMNO$V1, pattern = "\t", replacement = "")
-Gene_LIMNO <- do.call(rbind, strsplit(SCUO_LIMNO$V1[grep("Ga0*", SCUO_LIMNO$V1)], " "))[,2]
-SCUO_LIMNO$V1 <- gsub(SCUO_LIMNO$V1, pattern = " ", replacement = "")
-SCUO_LIMNO <- data.frame(GC = SCUO_LIMNO$V1[grep(x = SCUO_LIMNO$V1, pattern = "GC*.*=")], 
-                         SCUO = rep(SCUO_LIMNO$V1[grep(x = SCUO_LIMNO$V1, pattern = "SCUO*")], each = 4),
-                         Gene = rep(Gene_LIMNO, each = 4)
+SCUO_RAMLI$V1 <- gsub(SCUO_RAMLI$V1, pattern = "\t", replacement = "")
+Gene_RAMLI <- do.call(rbind, strsplit(SCUO_RAMLI$V1[grep("Ga0*", SCUO_RAMLI$V1)], " "))[,2]
+SCUO_RAMLI$V1 <- gsub(SCUO_RAMLI$V1, pattern = " ", replacement = "")
+SCUO_RAMLI <- data.frame(GC = SCUO_RAMLI$V1[grep(x = SCUO_RAMLI$V1, pattern = "GC*.*=")], 
+                         SCUO = rep(SCUO_RAMLI$V1[grep(x = SCUO_RAMLI$V1, pattern = "SCUO*")], each = 4),
+                         Gene = rep(Gene_RAMLI, each = 4)
 )
-SCUO_LIMNO$GC <- as.numeric(gsub(SCUO_LIMNO$GC, pattern = ".*=", replacement = ""))
-SCUO_LIMNO$SCUO <- as.numeric(gsub(SCUO_LIMNO$SCUO, pattern = ".*=", replacement = ""))
+SCUO_RAMLI$GC <- as.numeric(gsub(SCUO_RAMLI$GC, pattern = ".*=", replacement = ""))
+SCUO_RAMLI$SCUO <- as.numeric(gsub(SCUO_RAMLI$SCUO, pattern = ".*=", replacement = ""))
 
 # Import and format data for Bacteroidetes MAG1
 SCUO_BAC1 <- read.table("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.genes.fna.codonO.output",
@@ -1035,11 +1050,11 @@ SCUO_BAC2$GC <- as.numeric(gsub(SCUO_BAC2$GC, pattern = ".*=", replacement = "")
 SCUO_BAC2$SCUO <- as.numeric(gsub(SCUO_BAC2$SCUO, pattern = ".*=", replacement = ""))
 
 # Merge data to one dataframe
-SCUO_merged_gen <- data.frame(rbind(SCUO_LIMNO, SCUO_BAC1, SCUO_BAC2),
-           Genome_ID = c(rep("Limnohabitans MAG", nrow(SCUO_LIMNO)), rep("Bacteroidetes MAG1", nrow(SCUO_BAC1)), 
+SCUO_merged_gen <- data.frame(rbind(SCUO_RAMLI, SCUO_BAC1, SCUO_BAC2),
+           Genome_ID = c(rep("Ramlibacter sp. MAG", nrow(SCUO_RAMLI)), rep("Bacteroidetes MAG1", nrow(SCUO_BAC1)), 
            rep("Bacteroidetes MAG2", nrow(SCUO_BAC2))),
             GCx = rep(c("GC_mean", "GC1", "GC2", "GC3"), 
-                     (nrow(SCUO_LIMNO) + nrow(SCUO_BAC1) + nrow(SCUO_BAC2))/4
+                     (nrow(SCUO_RAMLI) + nrow(SCUO_BAC1) + nrow(SCUO_BAC2))/4
             )
 )
 
@@ -1049,7 +1064,7 @@ SCUO_merged <- dplyr::left_join(SCUO_merged_gen, merged_gc_ko[, c(1:2,4 ,14:21)]
 # Visualize differences in codon bias
 p_SCUO.1 <- ggplot(data = SCUO_merged, aes (x = 100*GC, y = SCUO, fill = Genome_ID))+
   geom_point(size = 4, shape = 21, alpha = 0.7)+
-  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_RAMLI))+
   theme_bw()+
   facet_wrap(~GCx, ncol = 2)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
@@ -1081,7 +1096,7 @@ p_SCUO.2 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))
   geom_jitter(size = 3, alpha = 0.3, shape = 21, aes(fill = Genome_ID))+
   geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
   # scale_fill_brewer(palette = "Accent")+
-  scale_fill_manual(values = c(col_bac1, col_bac2, col_limno))+
+  scale_fill_manual(values = c(col_bac1, col_bac2, col_RAMLI))+
   theme_bw()+
   # facet_wrap(Genome_ID~GCx)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
@@ -1095,7 +1110,7 @@ p_SCUO.2 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))
   guides(fill=FALSE)+ 
   scale_x_discrete(labels=c("Bacteroidetes MAG1" = paste("Bacteroidetes MAG1 (n=",table(SCUO_merged_gen_gcmean$Genome_ID)[1],")", sep = ""),
                             "Bacteroidetes MAG2" = paste("Bacteroidetes MAG2 (n=",table(SCUO_merged_gen_gcmean$Genome_ID)[2],")", sep = ""),
-                            "Limnohabitans MAG" = paste("Limnohabitans MAG (n=",table(SCUO_merged_gen_gcmean$Genome_ID)[3],")", sep = ""))
+                            "Ramlibacter sp. MAG" = paste("Ramlibacter sp. MAG (n=",table(SCUO_merged_gen_gcmean$Genome_ID)[3],")", sep = ""))
   )
 # 
 print(p_SCUO.2)
@@ -1106,7 +1121,7 @@ print(p_SCUO.2)
 ```r
 tmp <- SCUO_merged_sb$genome_id
 tmp2 <- cbind(SCUO_merged_sb$ko_id, 
-      c(rep(col_limno, table(tmp)[3]), rep(col_bac1, table(tmp)[1]), rep(col_bac2, table(tmp)[2]))
+      c(rep(col_RAMLI, table(tmp)[3]), rep(col_bac1, table(tmp)[1]), rep(col_bac2, table(tmp)[2]))
 )
 
 write.table(tmp2, file = "All_KO.tsv", quote = FALSE,
@@ -1118,24 +1133,24 @@ write.table(tmp2, file = "All_KO.tsv", quote = FALSE,
 # Import codonO results of reference genomes
 ref_SCUO <- codonO_2_df(pathx = "./IMG_annotation/References/codonO_output/")
 
-# reimport codonO results of Limno genome
-Ramli_SCUO <- codonO_2_df(pathx = "./IMG_annotation/IMG_2724679690_Limnohabitans/Annotation/",
+# reimport codonO results of RAMLI genome
+Ramli_SCUO <- codonO_2_df(pathx = "./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/",
                           patternx = "codonO")
 
 # Merge dataframes
-ref_limno_SCUO <- rbind(ref_SCUO, Ramli_SCUO)
+ref_RAMLI_SCUO <- rbind(ref_SCUO, Ramli_SCUO)
 
 # Replace genome names by better annotated names
 map_scuo <- read.delim("./Mapping_files/codonO_ref_names.tsv", stringsAsFactors = FALSE)
-ref_limno_SCUO$Genome <- as.character(ref_limno_SCUO$Genome)
+ref_RAMLI_SCUO$Genome <- as.character(ref_RAMLI_SCUO$Genome)
 for(i in 1:nrow(map_scuo)){
-  ref_limno_SCUO$Genome[ref_limno_SCUO$Genome %in% map_scuo$codon_file[i]] <- map_scuo$ref_name[i]
+  ref_RAMLI_SCUO$Genome[ref_RAMLI_SCUO$Genome %in% map_scuo$codon_file[i]] <- map_scuo$ref_name[i]
 }
-ref_limno_SCUO$Genome[ref_limno_SCUO$Genome %in% "2724679690.genes.fna.codonO.output"] <- "Ramli. sp. MAG"
+ref_RAMLI_SCUO$Genome[ref_RAMLI_SCUO$Genome %in% "2724679690.genes.fna.codonO.output"] <- "Ramli. sp. MAG"
 
 # order data according to mean SCUO
-# sum_scuo <- ref_limno_SCUO %>% group_by(Genome) %>% summarize(mean_scuo = mean(SCUO))
-# ref_limno_SCUO$Genome <- factor(ref_limno_SCUO$Genome, levels = sum_scuo$Genome[order(sum_scuo$mean_scuo)])
+# sum_scuo <- ref_RAMLI_SCUO %>% group_by(Genome) %>% summarize(mean_scuo = mean(SCUO))
+# ref_RAMLI_SCUO$Genome <- factor(ref_RAMLI_SCUO$Genome, levels = sum_scuo$Genome[order(sum_scuo$mean_scuo)])
 
 ord_list_bin <- c("Lim. sp. Rim11", "Lim. sp. 103DPR2",
                   "Lim. sp. 2KL-27", "Lim. sp. Rim47",
@@ -1149,13 +1164,13 @@ ord_list_bin <- c("Lim. sp. Rim11", "Lim. sp. 103DPR2",
                   )
 
 # order rows and columns
-ref_limno_SCUO$Genome <- factor(ref_limno_SCUO$Genome, levels = ord_list_bin)
+ref_RAMLI_SCUO$Genome <- factor(ref_RAMLI_SCUO$Genome, levels = ord_list_bin)
 
 
-# ref_limno_SCUO$new <- ref_limno_SCUO$Genome=="Lim. MAG (2724679690)"
+# ref_RAMLI_SCUO$new <- ref_RAMLI_SCUO$Genome=="Lim. MAG (2724679690)"
 
 # Plot SCUO profiles
-p_ramli_SCUO <- ref_limno_SCUO %>% dplyr::filter(GCx == "GC_mean") %>% 
+p_ramli_SCUO <- ref_RAMLI_SCUO %>% dplyr::filter(GCx == "GC_mean") %>% 
   ggplot(aes(x = Genome, y = SCUO, fill = Genome))+
   theme_bw()+
     # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
@@ -1187,7 +1202,7 @@ p_ramli_SCUO
 <img src="Figures/cached/compare-ramli-CB-1.png" style="display: block; margin: auto;" />
 
 ```r
-p_ramli_GC <- ref_limno_SCUO  %>% dplyr::filter(GCx == "GC_mean") %>% 
+p_ramli_GC <- ref_RAMLI_SCUO  %>% dplyr::filter(GCx == "GC_mean") %>% 
   ggplot(aes(x = Genome, y = GC, fill = Genome))+
   theme_bw()+
   geom_hline(yintercept = 0.7, col = 'black', lwd = 1, linetype = 2, alpha = 0.6)+
@@ -1225,7 +1240,7 @@ p_ramli_GC
 ```
 
 
-# 9.  PosiGene analysis for identifying genes under positive selection in the Limnohabitans MAG
+# 9.  PosiGene analysis for identifying genes under positive selection in the Ramlibacter sp. MAG
 
 Unrooted phylogenomic tree used in codeML analysis. Green branch indicates the genome for which PSG were tested.  
 
@@ -1267,7 +1282,7 @@ data_posi_clade <- data_posi_clade %>% filter(P.Value < 0.05 &
 # data_posi <- data_posi %>% filter(P.Value < 0.05 & 
 #                                     FDR < 0.05 & HA.foreground.omega < 10 &
 #                                     Number.of.Sites.under.positive.Selection > 10)
-# Report summary
+# Report summaries
 cat(paste("There are ", nrow(data_posi), " genes under positive selection in this MAG (P<0.05). This is ",round(100*nrow(data_posi)/nrow(map_posi),1), "% of all genes",  sep = "")
 )
 ```
@@ -1283,6 +1298,15 @@ cat(paste("There are ", nrow(data_posi_clade), " genes under positive selection 
 
 ```
 ## There are 184 genes under positive selection in the Ramlibacter clade (P<0.05). This is 4.8% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species
+```
+
+```r
+cat(paste("There are ", sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene)), " genes under positive selection in this MAG (P<0.05). This is ",round(100*sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene))/nrow(map_posi),1), "% of all genes in this MAG",  sep = "")
+)
+```
+
+```
+## There are 332 genes under positive selection in this MAG (P<0.05). This is 8.6% of all genes in this MAG
 ```
 
 ```r
@@ -1380,10 +1404,11 @@ print(p_KO_posi)
 
 ```r
 # Correlate genes under positive selection with their GC content
-data_SCUO_posi <- SCUO_merged_gen_gcmean %>% filter(Genome_ID == "Limnohabitans MAG")
+data_SCUO_posi <- SCUO_merged_gen_gcmean %>% filter(Genome_ID == "Ramlibacter sp. MAG")
 data_SCUO_posi <- droplevels(data_SCUO_posi)
 data_SCUO_posi$posi_select <- data_SCUO_posi$Gene %in% data_posi$IMG_geneID
 data_SCUO_posi$posi_select <- factor(data_SCUO_posi$posi_select, levels = c("FALSE", "TRUE"))
+
 # merge with dN/dS ratio data
 data_SCUO_posi <- left_join(data_SCUO_posi,
                             data_posi, by = c("Gene" = "IMG_geneID"))
@@ -1409,17 +1434,20 @@ selected_KOlevels <- c("Signal transduction",
 # selecting the annotation with the highest identity.
 # data_posi_KO_unique <- data_posi_KO %>% group_by(Gene) %>%
   # filter(percent_identity == max(percent_identity))
-  
+
+
+# Remove everything before first space
+data_posi_KO[, 24:26] <- apply(data_posi_KO[, 24:26], 2 ,  
+                               function(x) sub(".*? (.+)", "\\1", x))
+# Remove everything between brackets ([*])
+data_posi_KO[, 24:26] <- apply(data_posi_KO[, 24:26], 2 ,  
+                               function(x) gsub(pattern = " *\\[.*?\\] *", 
+                                 replacement = "", x))
+
 top <- 10
 thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
 selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$level_C
 selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
-
-# Remove everything between brackets ([*])
-selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
-                                 replacement = "", selected_KOlevels_labels)
-# Remove everything before first space
-selected_KOlevels_labels <- sub(".*? (.+)", "\\1", selected_KOlevels_labels)
 
 p_SCUO_posi1 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
   ggplot(aes(x = level_B, y = HA.foreground.omega,
@@ -1429,7 +1457,7 @@ p_SCUO_posi1 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
                outlier.shape = NA)+
   scale_fill_brewer(palette = "Set3")+
-  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_fill_manual(values = c(adjustcolor(col_RAMLI, 0.1), adjustcolor("red", 0.5)))+
   # scale_size_manual(values = c(2.5,4))+
   theme_bw()+
   # facet_wrap(Genome_ID~GCx)+
@@ -1469,10 +1497,6 @@ thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.fo
 selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$ko_name
 selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
 
-# Remove everything between brackets ([*])
-selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
-                                 replacement = "", selected_KOlevels_labels)
-
 p_SCUO_posi2 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
   ggplot(aes(x = level_B, y = HA.foreground.omega,
                                                    fill = level_B))+
@@ -1481,7 +1505,7 @@ p_SCUO_posi2 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
                outlier.shape = NA)+
   scale_fill_brewer(palette = "Set3")+
-  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_fill_manual(values = c(adjustcolor(col_RAMLI, 0.1), adjustcolor("red", 0.5)))+
   # scale_size_manual(values = c(2.5,4))+
   theme_bw()+
   # facet_wrap(Genome_ID~GCx)+
@@ -1515,17 +1539,81 @@ p_SCUO_posi2
 <img src="Figures/cached/posigene-scuo-2.png" style="display: block; margin: auto;" />
 
 ```r
+# Test to see if there is correlation %GC and dN/dS
+p_posi_test_GC <- ggplot(data_posi_KO, aes(x = GC, y = HA.foreground.omega))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_point(shape = 21, size = 3, alpha = 1, fill = "black")+
+  scale_fill_brewer(palette = "Set3")+
+  # scale_fill_manual(values = c(adjustcolor(col_RAMLI, 0.1), adjustcolor("red", 0.5)))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  xlab("%GC")+ 
+  ylab(expression(dN/dS))+
+  # ylim(0,20)+
+  guides(size = FALSE, fill = FALSE)+
+  geom_smooth(color = "black", size = 2)
+
+p_posi_test_GC
+```
+
+```
+## `geom_smooth()` using method = 'loess'
+```
+
+<img src="Figures/cached/posigene-scuo-3.png" style="display: block; margin: auto;" />
+
+```r
 # Do the same thing for the Ramlibacter clade-level PSGs
+# Remove everything before first space
+data_posi_clade_KO[, 24:26] <- apply(data_posi_clade_KO[, 24:26], 2 ,  
+                               function(x) sub(".*? (.+)", "\\1", x))
+# Remove everything between brackets ([*])
+data_posi_clade_KO[, 24:26] <- apply(data_posi_clade_KO[, 24:26], 2 ,  
+                               function(x) gsub(pattern = " *\\[.*?\\] *", 
+                                 replacement = "", x))
+
+# Test to see if there is correlation %GC and dN/dS
+p_posi_test_GC_clade <- ggplot(data_posi_clade_KO, aes(x = GC, y = HA.foreground.omega))+
+  # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
+  geom_point(shape = 21, size = 3, alpha = 1, fill = "black")+
+  scale_fill_brewer(palette = "Set3")+
+  # scale_fill_manual(values = c(adjustcolor(col_RAMLI, 0.1), adjustcolor("red", 0.5)))+
+  # scale_size_manual(values = c(2.5,4))+
+  theme_bw()+
+  # facet_wrap(Genome_ID~GCx)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  xlab("%GC")+ 
+  ylab(expression(dN/dS))+
+  # ylim(0,20)+
+  guides(size = FALSE, fill = FALSE)+
+  geom_smooth(color = "black", size = 2)
+
+print(p_posi_test_GC_clade)
+```
+
+```
+## `geom_smooth()` using method = 'loess'
+```
+
+<img src="Figures/cached/posigene-scuo-4.png" style="display: block; margin: auto;" />
+
+```r
 top <- 10
 thresh <- sort(data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
 selected_KOlevels_labels <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$level_C
 selected_KOlevels_labels[data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
-
-# Remove everything between brackets ([*])
-selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
-                                 replacement = "", selected_KOlevels_labels)
-# Remove everything before first space
-selected_KOlevels_labels <- sub(".*? (.+)", "\\1", selected_KOlevels_labels)
 
 p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ] %>% 
   ggplot(aes(x = level_B, y = HA.foreground.omega,
@@ -1535,7 +1623,7 @@ p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
                outlier.shape = NA)+
   scale_fill_brewer(palette = "Set3")+
-  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_fill_manual(values = c(adjustcolor(col_RAMLI, 0.1), adjustcolor("red", 0.5)))+
   # scale_size_manual(values = c(2.5,4))+
   theme_bw()+
   # facet_wrap(Genome_ID~GCx)+
@@ -1566,7 +1654,7 @@ p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
 p_SCUO_posi3
 ```
 
-<img src="Figures/cached/posigene-scuo-3.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/posigene-scuo-5.png" style="display: block; margin: auto;" />
 
 ```r
 # Extract level_C labels of genes in top 5 dN/ds ratio
@@ -1574,10 +1662,6 @@ top <- 10
 thresh <- sort(data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
 selected_KOlevels_labels <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$ko_name
 selected_KOlevels_labels[data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
-
-# Remove everything between brackets ([*])
-selected_KOlevels_labels <- gsub(pattern = " *\\[.*?\\] *", 
-                                 replacement = "", selected_KOlevels_labels)
 
 p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ] %>% 
   ggplot(aes(x = level_B, y = HA.foreground.omega,
@@ -1587,7 +1671,7 @@ p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
                outlier.shape = NA)+
   scale_fill_brewer(palette = "Set3")+
-  # scale_fill_manual(values = c(adjustcolor(col_limno, 0.1), adjustcolor("red", 0.5)))+
+  # scale_fill_manual(values = c(adjustcolor(col_RAMLI, 0.1), adjustcolor("red", 0.5)))+
   # scale_size_manual(values = c(2.5,4))+
   theme_bw()+
   # facet_wrap(Genome_ID~GCx)+
@@ -1618,7 +1702,7 @@ p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
 p_SCUO_posi4
 ```
 
-<img src="Figures/cached/posigene-scuo-4.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/posigene-scuo-6.png" style="display: block; margin: auto;" />
 
 # Pangenome analysis  
 
@@ -1638,13 +1722,17 @@ done
 
 
 ```r
+# Import and format panG data
 panG <- read.table("./panG/SUMMARY_Ramli_PCs/panG-ramli_protein_clusters_summary.txt", header = TRUE, fill = TRUE, sep = "\t")[ , c("bin_name",	"genome_name",	"gene_callers_id",	"COG_CATEGORY_ACC",	"COG_CATEGORY",	"COG_FUNCTION_ACC", "COG_FUNCTION", "aa_sequence")]
 panG$aa_sequence <- gsub("-", "", panG$aa_sequence)
 panG_MAG <- panG %>% filter(bin_name %in% c("MAG_PC", "Ramli_5-10_PC",
                                           "Ramli_Leaf400_PC", "Ramli_TTB310_PC"))
 panG_MAG$gene_callers_id <- as.character(panG_MAG$gene_callers_id)
 
-write.table(paste(unique(panG_MAG$COG_FUNCTION_ACC), "W10", "#e2a2fd", sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
+# Export Ramlibacter sp. auxillary genome COGF annotation 
+# for visualization in ipath2
+write.table(paste(panG_MAG$COG_FUNCTION_ACC, "W10", "#e2a2fd", panG_MAG$genome_name,
+                  sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
             quote = FALSE, col.names = FALSE)
 
 write.table(paste(">", panG_MAG$gene_callers_id,
@@ -1652,16 +1740,6 @@ write.table(paste(">", panG_MAG$gene_callers_id,
             "./panG/aaSeq_panG.fa", row.names = FALSE,
             quote = FALSE, col.names = FALSE)
 
-write.table(unique(panG_ko_cog$gene_callers_id), 
-            "./panG/gene_ids_pan.tsv", row.names = FALSE,
-            quote = FALSE, col.names = FALSE)
-```
-
-```
-## Error in unique(panG_ko_cog$gene_callers_id): object 'panG_ko_cog' not found
-```
-
-```r
 # Import KEGG annotation through KAAS (http://www.genome.jp/tools/kaas/) of amino
 # acid sequences
 ko_files <- list.files(".", pattern = "KO-annotation.tsv",
@@ -1687,37 +1765,124 @@ panG_ko_cog$level_B <- substring(panG_ko_cog$level_B, 7)
 panG_ko_cog$level_C <- substring(panG_ko_cog$level_C, 7)
 panG_ko_cog$level_A <- substring(panG_ko_cog$level_A, 7)
 panG_ko_cog$level_C <- gsub("\\[[^\\]]*\\]", "", panG_ko_cog$level_C , perl=TRUE)
+
 # Shorten/change level_B annotation a bit
 panG_ko_cog$level_B[panG_ko_cog$level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
 panG_ko_cog$level_B[panG_ko_cog$level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation"
 panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
 panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation"
 
+# Select some annotation levels of interest to visualize
 tmp_names <- names(table(panG_ko_cog$level_B)[rev(order(table(panG_ko_cog$level_B)))][1:10])
 
-# Plot distribution of panG annotation
+write.table(unique(panG_ko_cog$gene_callers_id), 
+            "./panG/gene_ids_pan.tsv", row.names = FALSE,
+            quote = FALSE, col.names = FALSE)
+
+# Plot distribution of panG annotation 
+## Expressed as number of genes
 p_panG1 <- panG_ko_cog %>% filter(level_B %in% tmp_names) %>% 
-  ggplot(aes(x = level_A, fill = level_B))+
+  ggplot(aes(x = genome_name, fill = level_B))+
   geom_bar(color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
-  facet_grid(genome_name~.)+
+  facet_grid(.~level_A)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         axis.text.x = element_text(angle = 45, hjust = 1),
         strip.text=element_text(size=18),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
-        # ,legend.position = c(0.87, 0.85)
-        )
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
+        legend.position = "bottom"
+        )+
+  guides(fill = guide_legend(nrow = 4))
 print(p_panG1)
 ```
 
 <img src="Figures/cached/panG-analysis-1.png" style="display: block; margin: auto;" />
 
 ```r
+# Get sizes of each protein cluster bin
+sizes_panG <- data.frame(panG %>% group_by(bin_name) %>% 
+  count(bin_name))
+sizes_panG <- left_join(sizes_panG, distinct(panG[, 1:2]), by = "bin_name")
+
+# Format table to include level_A annotation
+# as well as the protein cluster sizes so that we can normalize to 
+# CORE genome as well as each accessory genome
+panG_ko_table <- data.frame(panG_ko_cog %>% filter(level_B %in% tmp_names) %>% 
+  group_by(genome_name, level_B) %>% 
+  summarise(abund_ko = n()))
+panG_ko_table <- left_join(panG_ko_table, sizes_panG, by = "genome_name")
+panG_ko_table <- panG_ko_table %>% group_by(genome_name) %>% 
+  mutate(abund_ko_prop = abund_ko/n)
+panG_ko_table <- left_join(panG_ko_table, 
+                           distinct(panG_ko_cog[, c("level_A", "level_B")]),
+                           by = c("level_B"))
+
+# Plot distribution of panG annotation 
+## Expressed as % of core genome gene set
+p_panG2 <- panG_ko_table %>% 
+  filter(bin_name %in% c("CORE_PC")) %>% 
+  ggplot(aes(x = genome_name, y = 100*abund_ko_prop,  fill = level_B))+
+  geom_bar(color = "black", stat = "identity")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  ggtitle("Relative abundance (% - normalized vs. core genome)")+
+  ylab("") + xlab("")+
+  facet_grid(.~level_A)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
+        legend.position = "bottom"
+        )+
+  guides(fill = guide_legend(nrow = 4))
+
+print(p_panG2)
+```
+
+<img src="Figures/cached/panG-analysis-2.png" style="display: block; margin: auto;" />
+
+```r
+# Plot distribution of panG annotation 
+## Expressed as % of individual unique gene pool
+p_panG3 <- panG_ko_table %>% 
+  filter(bin_name %in% c("MAG_PC", 
+                         "Ramli_5-10_PC",
+                         "Ramli_Leaf400_PC", 
+                         "Ramli_TTB310_PC")) %>% 
+  ggplot(aes(x = genome_name, fill = level_B, y = 100*abund_ko_prop))+
+  geom_bar(color = "black", stat = "identity")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  ggtitle("Relative abundance (% - normalized vs. accessory genomes)")+
+  ylab("") + xlab("")+
+  facet_grid(.~level_A)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
+        legend.position = "bottom"
+        )+
+  guides(fill = guide_legend(nrow = 4))
+
+print(p_panG3)
+```
+
+<img src="Figures/cached/panG-analysis-3.png" style="display: block; margin: auto;" />
+
+```r
+# Plot distribution of panG annotation 
+## Expressed as % of individual genome gene pool
+
+
 # Now select the genes that are PSGs
 blast_panG <- read.delim("./panG/genes_pan.blast", header = FALSE)
 colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
@@ -1725,6 +1890,9 @@ colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
                           "evalue", "bitscore")
 
 blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), split = "|", fixed = TRUE))[,1]
+
+
+# Plot genes in pangenome that were under positive selection
 ```
 
 # 10. ANI analysis using `pyani`
@@ -1831,10 +1999,84 @@ p_plasm1
 
 <img src="Figures/cached/plasmid-reconstruction-1.png" style="display: block; margin: auto;" />
 
+# Sequence discrete population analysis 
+
+This analysis was run in order to evaluate if there were different populations in the different operational cycles. A peak at <95 % nucleotide identity may indicate the presence of a second Ramlibacter population that is concealed in the current MAG.  
+
+
+```r
+# Import contig_ids of each bin
+contig_ids <- rbind(
+  cbind(read.table("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/121950.assembled.names_map", stringsAsFactors = FALSE)[,1], "Ramlibacter sp. MAG"),
+  cbind(read.table("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/121951.assembled.names_map", stringsAsFactors = FALSE)[,1], "Bacteroidetes sp. MAG1"),
+  cbind(read.table("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/121960.assembled.names_map", stringsAsFactors = FALSE)[,1], "Bacteroidetes sp. MAG2")
+)
+contig_ids <- data.frame(contig_ids)
+colnames(contig_ids) <- c("contig_id", "bin")
+
+# Import blast results
+blast_df <- read.table("./SEQ_discrete/merged_blast.tsv", header = FALSE)
+colnames(blast_df) <- c("Sample", "Contig", "Identity")
+
+# Filter out blast hits not to MAGs of interest
+blast_df <- blast_df %>% dplyr::filter(Contig %in% contig_ids$contig_id)
+blast_df <- dplyr::left_join(blast_df, contig_ids, by = c("Contig" = "contig_id"))
+
+# Bin into proportions
+blast_df$Identity <- round(blast_df$Identity, 0)
+blast_df_sum <- blast_df %>% group_by(Sample, bin) %>% dplyr::count(Identity)
+blast_df_sum$Sample <- gsub("_blast.tsv", "", blast_df_sum$Sample)
+
+# Normalize mapped reads per sample based on genome size
+bin_sizes <- read.table("./SAMPLES-SUMMARY/general_bins_summary.txt", header = TRUE)[, c(1, 3)]
+bin_sizes$bins <- plyr::revalue(bin_sizes$bins , 
+                                c("BetIa_bin"="Ramlibacter sp. MAG",
+                                  "bacIa_vizbin1"="Bacteroidetes sp. MAG1",
+                                  "bacIa_vizbin2"="Bacteroidetes sp. MAG2")
+                                )
+blast_df_sum <- left_join(blast_df_sum, bin_sizes, by = c("bin" = "bins"))
+blast_df_sum <- blast_df_sum %>% group_by(bin) %>%
+  mutate(n_norm = 1e6*n/bin_size)
+
+# Rename sample IDs
+blast_df_sum$Sample <- plyr::revalue(blast_df_sum$Sample,
+                                     c("DNA-Pieter-16"="Sample-16",
+                                       "DNA-Pieter-17"="Sample-17",
+                                       "DNA-Pieter-64"="Sample-64",
+                                       "DNA-Pieter-65"="Sample-65")
+)
+
+# Plot sequence discrete populations
+p_blast_sdisc <- blast_df_sum %>% 
+     ggplot(aes(x = Identity, y = n_norm, color = bin))+
+      theme_bw()+
+      scale_color_manual(values = c(col_bac1, col_bac2, col_RAMLI))+
+      facet_grid(bin~Sample)+
+      geom_line(size = 1.5)+
+      guides(color = FALSE)+
+      theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text=element_text(size=12))+
+      ylab("Reads per Mbp")+
+      xlab("Nucleotide identity (%)")+
+    xlim(75,100)+
+  coord_trans(y = "sqrt")
+
+print(p_blast_sdisc)
+```
+
+<img src="Figures/cached/seq-discrete-1-1.png" style="display: block; margin: auto;" />
+
 # 11. Gene set enrichment analysis  
 
 
 
 ```r
 library("GSAR")
+```
+
+```
+## Error in library("GSAR"): there is no package called 'GSAR'
 ```
