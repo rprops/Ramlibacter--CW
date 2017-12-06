@@ -1,0 +1,3030 @@
+This is SINA v1.2.12 for ARB SVN (revision 21565).
+ARB: no FastLoad File '/bioinf/home/slvjbmgr/data/seeds/ssu_seed_50_29_09_16_cut_t_opt.ARM' found => loading entire DB
+Loading names map...
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+extreme weight 'inf'for column 34478 clamped to 20
+alignment stats for subset Pos_Var_102_f4_Euk
+weighted/unweighted columns = 1834/48166
+average weight = 5.16048
+minimum weight = 1.8714
+maximum weight = 20
+ntaxa = 6413
+base frequencies: na=0.256083 nc=0.213602 ng=0.269028 nu=0.261287
+mutation frequencies: any=0.027723 transversions=0.0129329
+ first/last weighted column=1006/43269
+alignment stats for subset Pos_Var_102_f4_Bac
+weighted/unweighted columns = 1547/48453
+average weight = 5.4897
+minimum weight = 2.01874
+maximum weight = 8.59088
+ntaxa = 42471
+base frequencies: na=0.251453 nc=0.229202 ng=0.316076 nu=0.20327
+mutation frequencies: any=0.017488 transversions=0.00771812
+ first/last weighted column=1006/43260
+extreme weight 'inf'for column 5294 clamped to 20
+extreme weight 'inf'for column 6393 clamped to 20
+extreme weight 'inf'for column 22573 clamped to 20
+extreme weight 'inf'for column 29682 clamped to 20
+extreme weight 'inf'for column 40154 clamped to 20
+extreme weight 'inf'for column 42540 clamped to 20
+extreme weight 'inf'for column 43159 clamped to 20
+extreme weight 'inf'for column 43226 clamped to 20
+extreme weight 'inf'for column 43233 clamped to 20
+alignment stats for subset Pos_Var_102_f4_Arch
+weighted/unweighted columns = 1457/48543
+average weight = 4.95506
+minimum weight = 2.03307
+maximum weight = 20
+ntaxa = 1800
+base frequencies: na=0.238301 nc=0.245531 ng=0.327182 nu=0.188985
+mutation frequencies: any=0.0255132 transversions=0.00979411
+ first/last weighted column=1006/43235
+alignment stats for subset pos_var_seed:all
+weighted/unweighted columns = 1899/48101
+average weight = 5.24827
+minimum weight = 2.05404
+maximum weight = 8.07043
+ntaxa = 69997
+base frequencies: na=0.254289 nc=0.222803 ng=0.300533 nu=0.222375
+mutation frequencies: any=0.0182508 transversions=0.00828266
+ first/last weighted column=1006/43268
+alignment stats for subset pos_var_seed:bacteria
+weighted/unweighted columns = 1548/48452
+average weight = 5.40797
+minimum weight = 2.00568
+maximum weight = 8.57479
+ntaxa = 49305
+base frequencies: na=0.251964 nc=0.228855 ng=0.314945 nu=0.204236
+mutation frequencies: any=0.0195363 transversions=0.00904067
+ first/last weighted column=1006/43260
+extreme weight 'inf'for column 5294 clamped to 20
+extreme weight 'inf'for column 6393 clamped to 20
+extreme weight 'inf'for column 22573 clamped to 20
+extreme weight 'inf'for column 29682 clamped to 20
+extreme weight 'inf'for column 39354 clamped to 20
+extreme weight 'inf'for column 40154 clamped to 20
+extreme weight 'inf'for column 42529 clamped to 20
+extreme weight 'inf'for column 42536 clamped to 20
+extreme weight 'inf'for column 42540 clamped to 20
+alignment stats for subset pos_var_seed:archaea
+weighted/unweighted columns = 1464/48536
+average weight = 5.06412
+minimum weight = 2.36708
+maximum weight = 20
+ntaxa = 2338
+base frequencies: na=0.238941 nc=0.246442 ng=0.325343 nu=0.189275
+mutation frequencies: any=0.022396 transversions=0.00923448
+ first/last weighted column=1006/43236
+alignment stats for subset pos_var_seed:eukarya
+weighted/unweighted columns = 1807/48193
+average weight = 5.62407
+minimum weight = 2.46568
+maximum weight = 9.21095
+ntaxa = 18352
+base frequencies: na=0.261027 nc=0.206851 ng=0.265607 nu=0.266514
+mutation frequencies: any=0.0148065 transversions=0.0063946
+ first/last weighted column=1007/43269
+Found TERMINI filter: 1000 - 43283
+Range of gene within alignment: 1000 - 43283
+sequence_number: 1
+sequence_identifier: gi_15054822_gb_AF2891551_
+sequence_score: 0
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:1 AF289161.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AF289170.1:0.98 AB154313.1:0.97 AY550031.1:0.97 AB183858.1:0.97 AJ009470.1:0.97 AF289169.1:0.97 AF534428.1:0.97 AJ290026.1:0.97 AY662012.1:0.97 AY212631.1:0.97 AB120965.1:0.97 AY218607.1:0.97 AJ440986.1:0.97 AB074944.1:0.97 AB120964.1:0.97 AF523063.1:0.97 AY212612.1:0.97 AY212678.1:0.96 AB120966.1:0.96 AF236004.1:0.96 AY212616.1:0.96 AY050600.1:0.96 AY315181.1:0.96 AY050604.1:0.96 AJ421938.1:0.96 AY315173.1:0.96 AB074945.1:0.96 AY212624.1:0.96 AF523069.1:0.96 AF236005.1:0.96 AY145570.1:0.96 AB120967.1:0.96 Z93957.1:0.96 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: copied alignment from identical template sequence AF289155:1; 
+align_quality_slv: 100
+align_startpos_slv: 1007
+align_stoppos_slv: 43236
+aligned_slv: 2017-12-06 10:24:52
+nuc: 1496
+nuc_gene_slv: 1496
+turn_slv: none
+
+sequence_number: 2
+sequence_identifier: gi_15054828_gb_AF2891611_
+sequence_score: 0
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289161.1:1 AF289155.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.97 AY550031.1:0.97 AB154313.1:0.97 AY662012.1:0.97 AY315181.1:0.97 AF534428.1:0.97 AY212612.1:0.97 AF289169.1:0.97 AB120965.1:0.97 AJ290026.1:0.97 AB183858.1:0.97 AY212631.1:0.97 AB120964.1:0.97 AJ009470.1:0.96 Z93957.1:0.96 X95837.1:0.96 AF523063.1:0.96 AJ421938.1:0.96 AB120966.1:0.96 AY315173.1:0.96 AY212624.1:0.96 AY212678.1:0.96 AY212640.1:0.96 AF523069.1:0.96 AB074944.1:0.96 AY212616.1:0.96 AF236004.1:0.96 AY050600.1:0.96 AB120967.1:0.96 AF538929.1:0.96 AY662013.1:0.96 AF236005.1:0.96 AY218607.1:0.96 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: copied alignment from identical template sequence AF289161:1; 
+align_quality_slv: 100
+align_startpos_slv: 1007
+align_stoppos_slv: 43236
+aligned_slv: 2017-12-06 10:24:53
+nuc: 1496
+nuc_gene_slv: 1496
+turn_slv: none
+
+sequence_number: 3
+sequence_identifier: gi_29692363_gb_AF5344291_
+sequence_score: 0
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AF289164.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AY662012.1:0.97 AY550031.1:0.97 AF289162.1:0.97 AB154313.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AF236005.1:0.97 AB120965.1:0.97 AB183858.1:0.97 AJ009470.1:0.97 AB120964.1:0.97 AF534428.1:0.97 AF236004.1:0.97 AY662013.1:0.97 AY315181.1:0.97 AY145570.1:0.97 AB120966.1:0.97 AB074945.1:0.97 AF289169.1:0.97 AY218607.1:0.97 Z93957.1:0.97 X95837.1:0.97 AY345550.1:0.97 AJ440986.1:0.97 AY212640.1:0.97 AY212678.1:0.97 AY212616.1:0.97 AY050600.1:0.97 AY050604.1:0.97 AY145569.1:0.97 AY212631.1:0.96 AY212681.1:0.96 AY250104.1:0.96 AY315173.1:0.96 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: copied alignment from identical template sequence AF534429:1; 
+align_quality_slv: 100
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:24:53
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 4
+sequence_identifier: gi_11544820_emb_AJ2899991_
+sequence_score: 0.987746
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:0.99 AF289161.1:0.97 AF289155.1:0.97 AY212668.1:0.97 AF289164.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AY550031.1:0.97 AJ290026.1:0.97 AY662014.1:0.97 AB154313.1:0.97 AY212612.1:0.96 AF534428.1:0.96 AB120965.1:0.96 AB074945.1:0.96 AJ009470.1:0.96 AY145570.1:0.96 AF236004.1:0.96 AF236005.1:0.96 AB120964.1:0.96 AY662013.1:0.96 AY212678.1:0.96 AF523063.1:0.96 AY212640.1:0.96 AB183858.1:0.96 AF289169.1:0.96 AB120966.1:0.96 AY315181.1:0.96 AY212616.1:0.96 AF523069.1:0.96 AY218607.1:0.96 AB051690.1:0.96 Z93957.1:0.96 X95837.1:0.96 AY212631.1:0.96 AJ421938.1:0.96 AB098595.1:0.96 AY218703.1:0.96 AY328727.1:0.96 AB120967.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.3131866
+align_log_slv: total inserted bases=3;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4186.25, weight=-4238.18, query-len=1491, aligned-bases=1491, score=0.987746; 
+align_quality_slv: 98
+align_startpos_slv: 1006
+align_stoppos_slv: 43229
+aligned_slv: 2017-12-06 10:24:54
+nuc: 1491
+nuc_gene_slv: 1491
+turn_slv: none
+
+sequence_number: 5
+sequence_identifier: gi_83308014_emb_AJ8679111_
+sequence_score: 0.998295
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 12
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AY212668.1:0.98 AF289164.1:0.97 AY550031.1:0.97 AJ290026.1:0.97 AY662012.1:0.97 AB154313.1:0.97 AF289162.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AB074945.1:0.97 AB183858.1:0.97 AF236005.1:0.97 AF534428.1:0.97 AY145570.1:0.97 AF236004.1:0.97 AF523063.1:0.97 AY050600.1:0.97 AY315181.1:0.97 AJ009470.1:0.97 AB120965.1:0.97 AF523069.1:0.97 AY345550.1:0.97 AY212640.1:0.97 AB120964.1:0.97 AY662013.1:0.97 AY050575.1:0.97 AY050604.1:0.97 AJ440986.1:0.97 AF289169.1:0.97 AY218607.1:0.97 AY145569.1:0.96 AB120966.1:0.96 AY315173.1:0.96 Z93957.1:0.96 X95837.1:0.96 AJ421938.1:0.96 AY212678.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.9311752
+align_log_slv: scoring: raw=-4275.85, weight=-4283.15, query-len=1523, aligned-bases=1511, score=0.998295; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43281
+aligned_slv: 2017-12-06 10:24:55
+nuc: 1523
+nuc_gene_slv: 1523
+turn_slv: none
+
+sequence_number: 6
+sequence_identifier: gi_83308025_emb_AJ8679221_
+sequence_score: 0.996557
+align_bp_score_slv: 117
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AB154313.1:0.99 AY212668.1:0.99 AF534428.1:0.99 AY212631.1:0.98 AF289169.1:0.98 AY550031.1:0.97 AJ290026.1:0.97 AF534429.1:0.97 AF289155.1:0.97 AF289161.1:0.97 AY145570.1:0.97 AF289164.1:0.97 AF361202.1:0.97 AY662012.1:0.97 AB074945.1:0.97 AF289162.1:0.97 AY218703.1:0.97 AY212612.1:0.97 AY145569.1:0.96 AF361193.1:0.96 AY050600.1:0.96 AY315181.1:0.96 AB120965.1:0.96 AB120964.1:0.96 AY212616.1:0.96 AY662014.1:0.96 AY188310.1:0.96 AJ440986.1:0.96 AY315173.1:0.96 AJ421938.1:0.96 AB030614.1:0.96 AJ575699.1:0.96 AB183858.1:0.96 AY212678.1:0.96 AB120966.1:0.96 AY050575.1:0.96 AJ622889.1:0.96 AB051690.1:0.96 AJ422160.1:0.96 AJ009470.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.5182419
+align_log_slv: scoring: raw=-4213.94, weight=-4228.5, query-len=1483, aligned-bases=1483, score=0.996557; 
+align_quality_slv: 99
+align_startpos_slv: 1045
+align_stoppos_slv: 43257
+aligned_slv: 2017-12-06 10:24:56
+nuc: 1483
+nuc_gene_slv: 1483
+turn_slv: none
+
+sequence_number: 7
+sequence_identifier: gi_157101045_emb_AM8494331_
+sequence_score: 0.995096
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AY212668.1:0.98 AF289164.1:0.97 AY550031.1:0.97 AY662012.1:0.97 AJ290026.1:0.97 AF289162.1:0.97 AB154313.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AB183858.1:0.97 AB074945.1:0.97 AF236005.1:0.97 AF534428.1:0.97 AY212640.1:0.97 AJ009470.1:0.97 AY315181.1:0.97 AY145570.1:0.97 AB120965.1:0.97 AY662013.1:0.97 AF236004.1:0.97 AF523063.1:0.97 AB120964.1:0.97 AF289169.1:0.97 Z93957.1:0.96 X95837.1:0.96 AB120966.1:0.96 AY050600.1:0.96 AF523069.1:0.96 AY218607.1:0.96 AY050604.1:0.96 AY212678.1:0.96 AY345550.1:0.96 AY145569.1:0.96 AJ622889.1:0.96 AJ440986.1:0.96 AY218703.1:0.96 AY315173.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.9311752
+align_log_slv: total inserted bases=1;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4213.77, weight=-4234.54, query-len=1491, aligned-bases=1491, score=0.995096; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43233
+aligned_slv: 2017-12-06 10:24:57
+nuc: 1491
+nuc_gene_slv: 1491
+turn_slv: none
+
+sequence_number: 8
+sequence_identifier: gi_157101046_emb_AM8494341_
+sequence_score: 0.995421
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AB154313.1:1 AY212668.1:0.99 AF534428.1:0.99 AF289169.1:0.98 AY212631.1:0.98 AF534429.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AF289155.1:0.97 AF289161.1:0.97 AF361202.1:0.97 AF289164.1:0.97 AY145570.1:0.97 AF289162.1:0.97 AY662012.1:0.97 AB074945.1:0.97 AY218703.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AF361193.1:0.97 AB120965.1:0.96 AY145569.1:0.96 AY188310.1:0.96 AY315181.1:0.96 AY315173.1:0.96 AB120964.1:0.96 AY050600.1:0.96 AB030614.1:0.96 AJ575699.1:0.96 AJ421938.1:0.96 AB120966.1:0.96 AJ440986.1:0.96 AY212616.1:0.96 AB051690.1:0.96 AB183858.1:0.96 AY218607.1:0.96 AY212678.1:0.96 AJ622889.1:0.96 AJ422160.1:0.96 AB051691.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.8624496
+align_log_slv: total inserted bases=2;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4228.94, weight=-4248.4, query-len=1492, aligned-bases=1492, score=0.995421; 
+align_quality_slv: 99
+align_startpos_slv: 1007
+align_stoppos_slv: 43233
+aligned_slv: 2017-12-06 10:24:57
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 9
+sequence_identifier: gi_157101048_emb_AM8494361_
+sequence_score: 0.997334
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AY212668.1:0.98 AF289164.1:0.98 AY662012.1:0.98 AY550031.1:0.97 AJ290026.1:0.97 AY212612.1:0.97 AF289162.1:0.97 AB154313.1:0.97 AY662014.1:0.97 AJ009470.1:0.97 AB074945.1:0.97 AY662013.1:0.97 AB120965.1:0.97 AB183858.1:0.97 AF236005.1:0.97 AF236004.1:0.97 AY315181.1:0.97 AB120964.1:0.97 Z93957.1:0.97 X95837.1:0.97 AJ440986.1:0.97 AY218607.1:0.97 AY050600.1:0.97 AF523063.1:0.97 AB120966.1:0.97 AY212678.1:0.97 AY212616.1:0.97 AF534428.1:0.97 AY212631.1:0.97 AF289169.1:0.97 AF523069.1:0.97 AY212681.1:0.97 AY345550.1:0.97 AY050604.1:0.97 AY212735.1:0.97 AY050575.1:0.96 AY145570.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.9305573
+align_log_slv: scoring: raw=-4173.29, weight=-4184.45, query-len=1458, aligned-bases=1458, score=0.997334; 
+align_quality_slv: 99
+align_startpos_slv: 1073
+align_stoppos_slv: 43233
+aligned_slv: 2017-12-06 10:24:58
+nuc: 1458
+nuc_gene_slv: 1458
+turn_slv: none
+
+sequence_number: 10
+sequence_identifier: gi_37787067_gb_AY2126681_
+sequence_score: 0.999377
+align_bp_score_slv: 121
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 6
+align_family_slv: AY212668.1:1 AB154313.1:0.99 AF534428.1:0.99 AY212631.1:0.98 AF289169.1:0.98 AF289155.1:0.98 AF534429.1:0.98 AF289161.1:0.98 AJ290026.1:0.97 AY550031.1:0.97 AF289164.1:0.97 AF361202.1:0.97 AF289162.1:0.97 AY145570.1:0.97 AY662014.1:0.97 AY662012.1:0.97 AB074945.1:0.97 AB120965.1:0.97 AY212612.1:0.97 AY218703.1:0.97 AY050600.1:0.97 AB120964.1:0.96 AY145569.1:0.96 AY315181.1:0.96 AY315173.1:0.96 AY212579.1:0.96 AY218607.1:0.96 AB030614.1:0.96 AJ440986.1:0.96 AB120966.1:0.96 AJ575699.1:0.96 AJ421938.1:0.96 AJ622889.1:0.96 AY050575.1:0.96 AY212678.1:0.96 AY212616.1:0.96 AJ422160.1:0.96 AB183858.1:0.96 AF361193.1:0.96 AY188310.1:0.96 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: scoring: raw=-4273.14, weight=-4275.81, query-len=1517, aligned-bases=1511, score=0.999377; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43275
+aligned_slv: 2017-12-06 10:24:59
+nuc: 1517
+nuc_gene_slv: 1517
+turn_slv: none
+
+sequence_number: 11
+sequence_identifier: gi_33392076_gb_AY3455421_
+sequence_score: 0.988769
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:0.99 AF289161.1:0.98 AF289155.1:0.97 AF289164.1:0.97 AY550031.1:0.97 AY212668.1:0.97 AF289162.1:0.97 AB154313.1:0.97 AY662012.1:0.97 AJ290026.1:0.97 AY662014.1:0.97 AB074945.1:0.96 AF534428.1:0.96 AF236004.1:0.96 AY145570.1:0.96 AY315181.1:0.96 AY212612.1:0.96 AB120965.1:0.96 AB120964.1:0.96 AB183858.1:0.96 AF236005.1:0.96 AJ421938.1:0.96 AY218703.1:0.96 AF523063.1:0.96 AY212640.1:0.96 AB120966.1:0.96 AJ422160.1:0.96 AY315173.1:0.96 AF523069.1:0.96 AY662013.1:0.96 AJ575699.1:0.96 AY250104.1:0.96 AY188310.1:0.96 AB051690.1:0.96 AY212678.1:0.96 X95837.1:0.96 Z93957.1:0.96 AY050600.1:0.96 AJ009470.1:0.96 AF423075.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2450256
+align_log_slv: total inserted bases=4;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4169.72, weight=-4217.08, query-len=1498, aligned-bases=1498, score=0.988769; 
+align_quality_slv: 98
+align_startpos_slv: 1006
+align_stoppos_slv: 43244
+aligned_slv: 2017-12-06 10:25:00
+nuc: 1498
+nuc_gene_slv: 1498
+turn_slv: none
+
+sequence_number: 12
+sequence_identifier: gi_62959354_gb_AY9479761_
+sequence_score: 0.99703
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY212668.1:0.99 AB154313.1:0.99 AF289169.1:0.98 AF534428.1:0.98 AF289155.1:0.98 AF289161.1:0.98 AY212631.1:0.98 AF289164.1:0.98 AF534429.1:0.97 AF289162.1:0.97 AY662014.1:0.97 AJ290026.1:0.97 AY550031.1:0.97 AB183858.1:0.97 AJ009470.1:0.97 AY212612.1:0.97 AB120965.1:0.97 AF289170.1:0.97 AF236004.1:0.96 AY662012.1:0.96 AB120964.1:0.96 AF236005.1:0.96 AB120966.1:0.96 AB030614.1:0.96 AY315173.1:0.96 AY212616.1:0.96 AY345550.1:0.96 AJ575699.1:0.96 AB074945.1:0.96 AY050604.1:0.96 AY145570.1:0.96 AJ440986.1:0.96 AY050594.1:0.96 AF361202.1:0.96 AY315181.1:0.96 AY212678.1:0.96 AF509578.1:0.96 CP000267.4118280:0.96 AY218607.1:0.96 AJ421938.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1077576
+align_log_slv: scoring: raw=-4208.75, weight=-4221.28, query-len=1457, aligned-bases=1457, score=0.99703; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:01
+nuc: 1457
+nuc_gene_slv: 1457
+turn_slv: none
+
+sequence_number: 13
+sequence_identifier: gi_62959391_gb_AY9480131_
+sequence_score: 0.998094
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY212668.1:0.99 AB154313.1:0.99 AF534428.1:0.99 AF289169.1:0.99 AY212631.1:0.98 AF534429.1:0.98 AY550031.1:0.97 AF289155.1:0.97 AJ290026.1:0.97 AF361202.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY145570.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AB120965.1:0.97 AY212612.1:0.97 AB120964.1:0.97 AF361193.1:0.97 AB120966.1:0.96 AB074945.1:0.96 AY662014.1:0.96 AY218703.1:0.96 AY212616.1:0.96 AY145569.1:0.96 AY218607.1:0.96 AJ440986.1:0.96 AB183858.1:0.96 AY315181.1:0.96 AY212678.1:0.96 AY315173.1:0.96 AY188310.1:0.96 AY050600.1:0.96 AJ421938.1:0.96 AJ009470.1:0.96 AJ622889.1:0.96 AB051690.1:0.96 AB120967.1:0.96 AY662013.1:0.96 AJ422160.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.5873413
+align_log_slv: scoring: raw=-4166.44, weight=-4174.4, query-len=1453, aligned-bases=1453, score=0.998094; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:02
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 14
+sequence_identifier: gi_84322277_gb_DQ2341352_
+sequence_score: 0.997808
+align_bp_score_slv: 121
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 23
+align_family_slv: AY145570.1:0.99 AY550031.1:0.98 AY145569.1:0.98 AJ290026.1:0.97 AY212668.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AF534428.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AY212678.1:0.97 AF289155.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AB051690.1:0.97 AB074945.1:0.97 AF289161.1:0.97 AF236005.1:0.97 AY662012.1:0.97 AB120965.1:0.97 AF336363.1:0.97 AF289164.1:0.97 AY622262.1:0.97 AB120964.1:0.97 AY315181.1:0.97 AY212616.1:0.97 AY050600.1:0.97 AJ421938.1:0.97 AB051688.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AJ622889.1:0.96 AB051687.1:0.96 AJ440995.1:0.96 AB051691.1:0.96 AB120967.1:0.96 AF523062.1:0.96 AF523068.1:0.96 AY218703.1:0.96 AB051689.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.0391159
+align_log_slv: scoring: raw=-4169.49, weight=-4178.65, query-len=1534, aligned-bases=1511, score=0.997808; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43292
+aligned_slv: 2017-12-06 10:25:02
+nuc: 1534
+nuc_gene_slv: 1523
+turn_slv: none
+
+sequence_number: 15
+sequence_identifier: gi_95115263_gb_DQ5013051_
+sequence_score: 0.997633
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AF289164.1:0.98 AY212668.1:0.97 AY662012.1:0.97 AY550031.1:0.97 AF289162.1:0.97 AB154313.1:0.97 AJ290026.1:0.97 AY662014.1:0.97 AY212612.1:0.97 AB074945.1:0.97 AB120965.1:0.97 AF534428.1:0.97 AB120964.1:0.97 AF236004.1:0.97 AY145570.1:0.97 AB183858.1:0.97 AJ009470.1:0.97 AY212678.1:0.97 AF523063.1:0.97 AY315181.1:0.96 AY212616.1:0.96 AY662013.1:0.96 AF236005.1:0.96 AB120966.1:0.96 AY212640.1:0.96 AF289169.1:0.96 AF523069.1:0.96 AJ421938.1:0.96 AY050600.1:0.96 AB120967.1:0.96 AY218703.1:0.96 AY218607.1:0.96 Z93957.1:0.96 AJ440986.1:0.96 X95837.1:0.96 AJ422160.1:0.96 AY315173.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7936707
+align_log_slv: scoring: raw=-4221.17, weight=-4231.19, query-len=1490, aligned-bases=1490, score=0.997633; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43229
+aligned_slv: 2017-12-06 10:25:03
+nuc: 1490
+nuc_gene_slv: 1490
+turn_slv: none
+
+sequence_number: 16
+sequence_identifier: gi_95115286_gb_DQ5013281_
+sequence_score: 0.997607
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AB154313.1:0.99 AY212668.1:0.99 AF534428.1:0.99 AF289169.1:0.98 AY212631.1:0.98 AJ290026.1:0.98 AF534429.1:0.97 AY550031.1:0.97 AF289155.1:0.97 AF289161.1:0.97 AY145570.1:0.97 AF361202.1:0.97 AF289164.1:0.97 AB074945.1:0.97 AY218703.1:0.97 AY662014.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AF361193.1:0.96 AY145569.1:0.96 AY188310.1:0.96 AY315173.1:0.96 AB120965.1:0.96 AB120964.1:0.96 AY050600.1:0.96 AB030614.1:0.96 AY212612.1:0.96 AJ421938.1:0.96 AY212616.1:0.96 AJ622889.1:0.96 AB120966.1:0.96 AJ422160.1:0.96 AY212678.1:0.96 AY315181.1:0.96 AF523063.1:0.96 AY050575.1:0.96 AB074944.1:0.96 AF523069.1:0.96 AF336363.1:0.96 AY622248.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7248917
+align_log_slv: scoring: raw=-4180.85, weight=-4190.88, query-len=1489, aligned-bases=1489, score=0.997607; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43229
+aligned_slv: 2017-12-06 10:25:04
+nuc: 1489
+nuc_gene_slv: 1489
+turn_slv: none
+
+sequence_number: 17
+sequence_identifier: gi_148723883_gb_EF5204681_
+sequence_score: 0.998049
+align_bp_score_slv: 111
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AF289164.1:0.98 AY212668.1:0.98 AJ290026.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AY550031.1:0.97 AB154313.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AY662013.1:0.97 AB120965.1:0.97 AF236005.1:0.97 AY212640.1:0.97 AJ009470.1:0.97 AB183858.1:0.97 AB120964.1:0.97 AY315181.1:0.97 AY145570.1:0.97 AF534428.1:0.97 X95837.1:0.97 AF418942.1:0.97 Z93957.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AF289169.1:0.97 AY218607.1:0.97 AY212678.1:0.96 AY345550.1:0.96 AY145569.1:0.96 AB120967.1:0.96 AY315173.1:0.96 AY212579.1:0.96 AJ421938.1:0.96 AY212616.1:0.96 AY250104.1:0.96 AY212681.1:0.96 AF509578.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.9291763
+align_log_slv: scoring: raw=-4140.34, weight=-4148.44, query-len=1430, aligned-bases=1430, score=0.998049; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 42775
+aligned_slv: 2017-12-06 10:25:05
+nuc: 1430
+nuc_gene_slv: 1430
+turn_slv: none
+
+sequence_number: 18
+sequence_identifier: gi_154125367_gb_EF6679271_
+sequence_score: 0.996686
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AJ290026.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AY145569.1:0.98 AY550031.1:0.98 AB154313.1:0.97 AF289155.1:0.97 AF534428.1:0.97 AB074945.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AF336363.1:0.97 AY212678.1:0.97 AY315173.1:0.97 AF289162.1:0.97 AY212579.1:0.97 AY662014.1:0.97 AF236004.1:0.97 AY050600.1:0.97 AF523063.1:0.97 AY662012.1:0.97 AY622248.1:0.97 AY212616.1:0.97 AB120965.1:0.97 AF523069.1:0.97 AJ421938.1:0.97 AY212631.1:0.96 AF361193.1:0.96 AJ440995.1:0.96 AF523038.1:0.96 AB120964.1:0.96 AB120966.1:0.96 AY050575.1:0.96 CP000267.4118280:0.96 AY622262.1:0.96 AY218703.1:0.96 AY212612.1:0.96 AB120967.1:0.96 AY315172.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.834816
+align_log_slv: scoring: raw=-4218.67, weight=-4232.69, query-len=1495, aligned-bases=1495, score=0.996686; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43244
+aligned_slv: 2017-12-06 10:25:06
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 19
+sequence_identifier: gi_197359881_gb_EU7034361_
+sequence_score: 0.997537
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AJ290026.1:0.98 AY212668.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AY212579.1:0.97 AF523069.1:0.97 AF523063.1:0.97 AB074945.1:0.97 AF534428.1:0.97 AF289155.1:0.97 AB120965.1:0.97 AB051690.1:0.97 AY218703.1:0.96 AY212678.1:0.96 AJ622889.1:0.96 AY315173.1:0.96 AF523062.1:0.96 AB120964.1:0.96 AF523068.1:0.96 AB120966.1:0.96 AF289161.1:0.96 AJ421938.1:0.96 AF289164.1:0.96 AB051688.1:0.96 AY662014.1:0.96 AB120967.1:0.96 AF236005.1:0.96 AF236004.1:0.96 AY212681.1:0.96 AJ292627.1:0.96 AB051687.1:0.96 AY212616.1:0.96 AF336363.1:0.96 AB051689.1:0.96 AY689053.1:0.96 AJ422160.1:0.96 AY188310.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.6301346
+align_log_slv: scoring: raw=-4135.26, weight=-4145.47, query-len=1498, aligned-bases=1498, score=0.997537; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:06
+nuc: 1498
+nuc_gene_slv: 1498
+turn_slv: none
+
+sequence_number: 20
+sequence_identifier: gi_190705448_gb_EU8005231_
+sequence_score: 0.99857
+align_bp_score_slv: 119
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AY662014.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.97 AB154313.1:0.97 AB120965.1:0.97 AJ290026.1:0.97 AB120964.1:0.97 AF289169.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AY662012.1:0.97 AB183858.1:0.97 AY212678.1:0.97 AF534428.1:0.97 AY550031.1:0.97 AY212616.1:0.97 AF523063.1:0.97 AJ009470.1:0.97 AB120967.1:0.97 AB074944.1:0.97 AY050600.1:0.97 AJ421938.1:0.97 AY212631.1:0.97 AY315173.1:0.97 AB074945.1:0.97 AY212612.1:0.97 AJ622889.1:0.97 AF523069.1:0.97 AY145570.1:0.97 AJ422160.1:0.97 AY218607.1:0.97 AF236005.1:0.96 AB030614.1:0.96 AY050575.1:0.96 AY315181.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.930481
+align_log_slv: scoring: raw=-4242.27, weight=-4248.34, query-len=1499, aligned-bases=1498, score=0.99857; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:07
+nuc: 1499
+nuc_gene_slv: 1499
+turn_slv: none
+
+sequence_number: 21
+sequence_identifier: gi_190705491_gb_EU8005661_
+sequence_score: 0.999349
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY212668.1:1 AB154313.1:0.99 AF534428.1:0.99 AY212631.1:0.98 AF289169.1:0.98 AJ290026.1:0.98 AF289155.1:0.98 AY550031.1:0.98 AF289161.1:0.98 AF534429.1:0.98 AF289164.1:0.97 AF361202.1:0.97 AF289162.1:0.97 AY662014.1:0.97 AY662012.1:0.97 AY145570.1:0.97 AB074945.1:0.97 AY212612.1:0.97 AY218703.1:0.97 AB120965.1:0.97 AB120964.1:0.96 AY050600.1:0.96 AY145569.1:0.96 AY315181.1:0.96 AY315173.1:0.96 AY212616.1:0.96 AY212678.1:0.96 AY188310.1:0.96 AY218607.1:0.96 AB030614.1:0.96 AJ440986.1:0.96 AJ009470.1:0.96 AB120966.1:0.96 AJ575699.1:0.96 AF289170.1:0.96 AF361193.1:0.96 AJ421938.1:0.96 AY212579.1:0.96 AB051690.1:0.96 CP000267.4118280:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7993317
+align_log_slv: scoring: raw=-4249.33, weight=-4252.1, query-len=1495, aligned-bases=1495, score=0.999349; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:08
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 22
+sequence_identifier: gi_190705513_gb_EU8005881_
+sequence_score: 0.998874
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AB154313.1:0.97 AF534428.1:0.97 AJ290026.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AY212678.1:0.97 AF289155.1:0.97 AB120965.1:0.97 AF236004.1:0.97 AF289161.1:0.97 AY212616.1:0.97 AY315181.1:0.97 AY662012.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AB051690.1:0.97 AF289164.1:0.97 AJ622889.1:0.97 AF523063.1:0.97 AB074945.1:0.97 AY050600.1:0.97 AB120967.1:0.97 AB051688.1:0.97 AB183858.1:0.97 AF523069.1:0.97 AB051687.1:0.97 AB051691.1:0.97 AF289170.1:0.97 AF236005.1:0.97 AB051689.1:0.97 AF336363.1:0.97 AY212612.1:0.97 AY212681.1:0.97 AY345550.1:0.97 AY050604.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.3136597
+align_log_slv: scoring: raw=-4217.54, weight=-4222.29, query-len=1495, aligned-bases=1494, score=0.998874; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:09
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 23
+sequence_identifier: gi_190705773_gb_EU8008481_
+sequence_score: 0.999342
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AY212668.1:0.98 AF289164.1:0.98 AY550031.1:0.97 AY662012.1:0.97 AJ290026.1:0.97 AB154313.1:0.97 AF289162.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AF236005.1:0.97 AB074945.1:0.97 AB183858.1:0.97 AF534428.1:0.97 AY315181.1:0.97 AY145570.1:0.97 AB120965.1:0.97 AJ009470.1:0.97 AF236004.1:0.97 AY662013.1:0.97 AY212640.1:0.97 AF523063.1:0.97 AB120964.1:0.97 AY345550.1:0.97 Z93957.1:0.97 X95837.1:0.97 AB120966.1:0.97 AY050600.1:0.97 AF523069.1:0.97 AF289169.1:0.97 AY050604.1:0.97 AY218607.1:0.97 AY218703.1:0.96 AY145569.1:0.96 AJ440986.1:0.96 AY212678.1:0.96 AY315173.1:0.96 AJ421938.1:0.96 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: scoring: raw=-4237.1, weight=-4239.89, query-len=1495, aligned-bases=1494, score=0.999342; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:09
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 24
+sequence_identifier: gi_190705895_gb_EU8009701_
+sequence_score: 0.999491
+align_bp_score_slv: 119
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:1 AF289161.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.99 AY212668.1:0.98 AF534429.1:0.98 AF289170.1:0.98 AB154313.1:0.97 AB183858.1:0.97 AJ290026.1:0.97 AY550031.1:0.97 AF289169.1:0.97 AY212631.1:0.97 AJ009470.1:0.97 AF534428.1:0.97 AY662012.1:0.97 AB120965.1:0.97 AJ440986.1:0.97 AY218607.1:0.97 AB120964.1:0.97 AY212612.1:0.97 AY050600.1:0.97 AY212678.1:0.97 AB120966.1:0.97 AB074944.1:0.97 AF236004.1:0.97 AF523063.1:0.97 AY212616.1:0.97 AY315181.1:0.97 AJ421938.1:0.97 AY050604.1:0.97 AY315173.1:0.97 AY212624.1:0.97 AF236005.1:0.96 AB120967.1:0.96 Z93957.1:0.96 X95837.1:0.96 AF523069.1:0.96 AY345550.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.799469
+align_log_slv: scoring: raw=-4257.63, weight=-4259.8, query-len=1499, aligned-bases=1498, score=0.999491; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:10
+nuc: 1499
+nuc_gene_slv: 1499
+turn_slv: none
+
+sequence_number: 25
+sequence_identifier: gi_190705927_gb_EU8010021_
+sequence_score: 0.998316
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:1 AF289161.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.97 AB154313.1:0.97 AB183858.1:0.97 AF534428.1:0.97 AY550031.1:0.97 AJ290026.1:0.97 AY212631.1:0.97 AF289169.1:0.97 AB120965.1:0.97 AJ009470.1:0.97 AJ440986.1:0.97 AY662012.1:0.97 AF236004.1:0.97 AB120964.1:0.97 AY218607.1:0.97 AB120966.1:0.96 AF236005.1:0.96 AY315181.1:0.96 AB074944.1:0.96 AY050604.1:0.96 AJ421938.1:0.96 AY315173.1:0.96 AY212612.1:0.96 AY050600.1:0.96 AY345550.1:0.96 AY212616.1:0.96 AY212624.1:0.96 AY212678.1:0.96 AF523063.1:0.96 AB120967.1:0.96 AY145570.1:0.96 AB074945.1:0.96 AY250104.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.5989304
+align_log_slv: scoring: raw=-4251.68, weight=-4258.85, query-len=1498, aligned-bases=1497, score=0.998316; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:11
+nuc: 1498
+nuc_gene_slv: 1498
+turn_slv: none
+
+sequence_number: 26
+sequence_identifier: gi_190705953_gb_EU8010281_
+sequence_score: 0.998873
+align_bp_score_slv: 119
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:0.99 AY212668.1:0.98 AB154313.1:0.98 AF289161.1:0.98 AF534428.1:0.98 AF289155.1:0.98 AY550031.1:0.98 AY662012.1:0.98 AF289164.1:0.97 AJ290026.1:0.97 AB074945.1:0.97 AY212612.1:0.97 AJ009470.1:0.97 AF289162.1:0.97 AF236005.1:0.97 AY212640.1:0.97 AB183858.1:0.97 AB120965.1:0.97 AY328771.1:0.97 AY315181.1:0.97 AY328727.1:0.97 AY662013.1:0.97 AB120964.1:0.97 AY218703.1:0.97 AF523063.1:0.97 AY145570.1:0.97 AY328734.1:0.97 AY662014.1:0.97 AY328737.1:0.97 AY328721.1:0.97 AY328716.1:0.97 AY328741.1:0.97 AY050600.1:0.97 AY328780.1:0.97 AY328793.1:0.97 AY328782.1:0.97 AY328776.1:0.97 AY328735.1:0.97 X95837.1:0.97 Z93957.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.7611847
+align_log_slv: scoring: raw=-4267.24, weight=-4272.05, query-len=1495, aligned-bases=1494, score=0.998873; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:12
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 27
+sequence_identifier: gi_190705958_gb_EU8010331_
+sequence_score: 0.999492
+align_bp_score_slv: 119
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AF289164.1:0.99 AY662014.1:0.98 AF289162.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AB154313.1:0.97 AF289170.1:0.97 AF236004.1:0.97 AB074945.1:0.97 AB120965.1:0.97 AJ290026.1:0.97 AY050600.1:0.97 AB120964.1:0.97 AB183858.1:0.97 AY550031.1:0.97 AJ421938.1:0.97 AF289169.1:0.97 AF534428.1:0.97 AY662012.1:0.97 AY212631.1:0.97 AY315173.1:0.97 AB120966.1:0.97 AJ009470.1:0.97 AJ622889.1:0.97 AB030614.1:0.97 AY212616.1:0.97 AY050575.1:0.97 AY212678.1:0.97 AY145570.1:0.97 CP000267.4118280:0.97 AJ422160.1:0.97 AF236005.1:0.97 AY212612.1:0.97 AY315181.1:0.97 AF523063.1:0.97 AJ440986.1:0.97 AF509578.1:0.97 AB120967.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.7967911
+align_log_slv: scoring: raw=-4284.49, weight=-4286.66, query-len=1499, aligned-bases=1498, score=0.999492; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:13
+nuc: 1499
+nuc_gene_slv: 1499
+turn_slv: none
+
+sequence_number: 28
+sequence_identifier: gi_190706032_gb_EU8011071_
+sequence_score: 0.99766
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AJ290026.1:0.98 AF534429.1:0.98 AY550031.1:0.98 AB154313.1:0.98 AY145569.1:0.98 AY212668.1:0.98 AF534428.1:0.98 AF289155.1:0.97 AB074945.1:0.97 AF289161.1:0.97 AF336363.1:0.97 AF289164.1:0.97 AF361193.1:0.97 AY315173.1:0.97 AY662012.1:0.97 AY212579.1:0.97 AY212678.1:0.97 AY622248.1:0.97 AF289162.1:0.97 AJ421938.1:0.97 AF236004.1:0.97 AY050600.1:0.97 AF289169.1:0.97 AY212612.1:0.97 AB120965.1:0.97 AY622262.1:0.97 AJ440995.1:0.97 AY212616.1:0.97 AB051690.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AF236005.1:0.97 AY662013.1:0.97 AY315172.1:0.96 AJ440986.1:0.96 AF523063.1:0.96 AY315181.1:0.96 AJ622889.1:0.96 AY050575.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.9719009
+align_log_slv: scoring: raw=-4242.51, weight=-4252.46, query-len=1497, aligned-bases=1496, score=0.99766; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:13
+nuc: 1497
+nuc_gene_slv: 1497
+turn_slv: none
+
+sequence_number: 29
+sequence_identifier: gi_190706048_gb_EU8011231_
+sequence_score: 0.997629
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AF289164.1:0.98 AY550031.1:0.97 AY662012.1:0.97 AY212668.1:0.97 AF289162.1:0.97 AJ290026.1:0.97 AB154313.1:0.97 AF236004.1:0.97 AY212612.1:0.97 AB120965.1:0.97 AY662014.1:0.97 AF236005.1:0.97 AB120964.1:0.97 AB183858.1:0.97 AB074945.1:0.97 AY315181.1:0.97 AJ009470.1:0.97 AB120966.1:0.97 Z93957.1:0.97 X95837.1:0.97 AY212678.1:0.97 AY662013.1:0.97 AF534428.1:0.97 AY212616.1:0.96 AY145570.1:0.96 AY250104.1:0.96 AJ421938.1:0.96 AY345550.1:0.96 AF523063.1:0.96 AB120967.1:0.96 AB051690.1:0.96 AY212640.1:0.96 AY050604.1:0.96 AY315173.1:0.96 AY050600.1:0.96 AJ440986.1:0.96 AY218607.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7248917
+align_log_slv: total inserted bases=1;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4253.64, weight=-4263.75, query-len=1494, aligned-bases=1494, score=0.997629; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43236
+aligned_slv: 2017-12-06 10:25:14
+nuc: 1494
+nuc_gene_slv: 1494
+turn_slv: none
+
+sequence_number: 30
+sequence_identifier: gi_190706113_gb_EU8011881_
+sequence_score: 0.99936
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AB154313.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AF534428.1:0.98 AF289155.1:0.98 AF289161.1:0.98 AF289164.1:0.97 AY662012.1:0.97 AY212678.1:0.97 AB074945.1:0.97 AY212579.1:0.97 AF289162.1:0.97 AY315173.1:0.97 AF336363.1:0.97 AY212612.1:0.97 AY662013.1:0.97 AY050600.1:0.97 AY212616.1:0.97 AY662014.1:0.97 AF289169.1:0.97 AB120965.1:0.97 AF361193.1:0.97 AF236004.1:0.97 AB120964.1:0.97 AF523038.1:0.97 AY050575.1:0.97 AB120966.1:0.97 AY212631.1:0.97 AB120967.1:0.97 AY315181.1:0.97 AJ622889.1:0.97 AJ440995.1:0.97 AB183858.1:0.97 AF523063.1:0.97 AJ575699.1:0.97 AY250104.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.1077576
+align_log_slv: scoring: raw=-4266.53, weight=-4269.26, query-len=1495, aligned-bases=1494, score=0.99936; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:15
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 31
+sequence_identifier: gi_190706268_gb_EU8013431_
+sequence_score: 0.998226
+align_bp_score_slv: 119
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AF534428.1:0.98 AF289155.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AY212579.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AY212678.1:0.97 AY315173.1:0.97 AB120965.1:0.97 AJ421938.1:0.97 AY622262.1:0.97 AY622248.1:0.97 AY212612.1:0.97 AB120964.1:0.97 AY050600.1:0.97 AJ440995.1:0.97 AY662013.1:0.97 AY212616.1:0.97 AB120966.1:0.97 AY662014.1:0.97 AF289169.1:0.97 AF236004.1:0.97 AB051690.1:0.97 AB120967.1:0.97 AJ422160.1:0.97 AJ440986.1:0.97 AF236005.1:0.97 AB183858.1:0.96 AJ622889.1:0.96 AY315172.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.7662811
+align_log_slv: scoring: raw=-4263.82, weight=-4271.4, query-len=1495, aligned-bases=1494, score=0.998226; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43236
+aligned_slv: 2017-12-06 10:25:16
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 32
+sequence_identifier: gi_190706288_gb_EU8013631_
+sequence_score: 0.99936
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AJ290026.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AY145569.1:0.98 AY550031.1:0.98 AB154313.1:0.98 AF289155.1:0.97 AF534428.1:0.97 AB074945.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AF336363.1:0.97 AY212678.1:0.97 AY315173.1:0.97 AY212579.1:0.97 AY662014.1:0.97 AF289162.1:0.97 AY050600.1:0.97 AY662012.1:0.97 AF236004.1:0.97 AY622248.1:0.97 AY212616.1:0.97 AF523063.1:0.97 AJ421938.1:0.97 AB120965.1:0.97 AF523069.1:0.97 AJ440995.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AY050575.1:0.97 AF361193.1:0.97 AF523038.1:0.97 CP000267.4118280:0.97 AY212631.1:0.97 AY212612.1:0.97 AY315172.1:0.97 AJ622889.1:0.97 AB120967.1:0.97 AJ422160.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.9719009
+align_log_slv: scoring: raw=-4243.34, weight=-4246.05, query-len=1497, aligned-bases=1496, score=0.99936; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:17
+nuc: 1497
+nuc_gene_slv: 1497
+turn_slv: none
+
+sequence_number: 33
+sequence_identifier: gi_190706329_gb_EU8014041_
+sequence_score: 0.998672
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AF534429.1:0.98 AB154313.1:0.98 AY145569.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AF534428.1:0.98 AF289155.1:0.98 AF289161.1:0.97 AF289164.1:0.97 AB074945.1:0.97 AY315173.1:0.97 AY212579.1:0.97 AY662012.1:0.97 AY212678.1:0.97 AF336363.1:0.97 AF289162.1:0.97 AF236004.1:0.97 AY050600.1:0.97 AY212612.1:0.97 AF361193.1:0.97 AB120965.1:0.97 AY212616.1:0.97 AY662013.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AF289169.1:0.97 AY315181.1:0.97 AY662014.1:0.97 AJ622889.1:0.97 AF523038.1:0.97 AY050575.1:0.97 AB183858.1:0.97 AB120967.1:0.97 AY212631.1:0.97 AY250104.1:0.97 AJ421938.1:0.97 AY622262.1:0.97 AY622248.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.1763916
+align_log_slv: scoring: raw=-4282.74, weight=-4288.43, query-len=1495, aligned-bases=1494, score=0.998672; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:17
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 34
+sequence_identifier: gi_190706341_gb_EU8014161_
+sequence_score: 0.996215
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY212668.1:0.98 AY145570.1:0.98 AF534429.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AB154313.1:0.98 AY145569.1:0.98 AF289155.1:0.98 AF534428.1:0.98 AF289161.1:0.97 AF289164.1:0.97 AY662012.1:0.97 AY212678.1:0.97 AF289162.1:0.97 AY212579.1:0.97 AB074945.1:0.97 AY315173.1:0.97 AY662014.1:0.97 AY212612.1:0.97 AF336363.1:0.97 AY212631.1:0.97 AY050600.1:0.97 AY212616.1:0.97 AY662013.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AF236004.1:0.97 AB120966.1:0.97 AF523038.1:0.97 AY050575.1:0.97 AB120967.1:0.97 AF289169.1:0.97 AB183858.1:0.97 AJ622889.1:0.97 AJ440995.1:0.97 AY315181.1:0.97 AY622262.1:0.96 AB051690.1:0.96 AJ009470.1:0.96 AY250104.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.7645874
+align_log_slv: scoring: raw=-4265.74, weight=-4281.95, query-len=1495, aligned-bases=1494, score=0.996215; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:18
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 35
+sequence_identifier: gi_190706597_gb_EU8016721_
+sequence_score: 0.99918
+align_bp_score_slv: 117
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY212668.1:1 AB154313.1:0.99 AF534428.1:0.99 AY212631.1:0.99 AF289169.1:0.98 AF289155.1:0.98 AF289161.1:0.98 AF534429.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AF289164.1:0.98 AF289162.1:0.97 AY662014.1:0.97 AF361202.1:0.97 AY145570.1:0.97 AY662012.1:0.97 AY212612.1:0.97 AB074945.1:0.97 AY218703.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AJ440986.1:0.97 AY315181.1:0.97 AY315173.1:0.97 AY050600.1:0.96 AF361193.1:0.96 AY212616.1:0.96 AB030614.1:0.96 AJ575699.1:0.96 AY145569.1:0.96 AB120966.1:0.96 AJ421938.1:0.96 AY218607.1:0.96 AY188310.1:0.96 AY212678.1:0.96 AY050594.1:0.96 AJ009470.1:0.96 AB183858.1:0.96 AF289170.1:0.96 AJ622889.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7959213
+align_log_slv: scoring: raw=-4216.29, weight=-4219.75, query-len=1470, aligned-bases=1470, score=0.99918; 
+align_quality_slv: 99
+align_startpos_slv: 1055
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:19
+nuc: 1470
+nuc_gene_slv: 1470
+turn_slv: none
+
+sequence_number: 36
+sequence_identifier: gi_190706752_gb_EU8018271_
+sequence_score: 0.99936
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AB154313.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AF534428.1:0.97 AJ290026.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AF289155.1:0.97 AY212678.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AB120965.1:0.97 AF236004.1:0.97 AY212616.1:0.97 AY315181.1:0.97 AY662012.1:0.97 AB120964.1:0.97 AB051690.1:0.97 AB120966.1:0.97 AJ622889.1:0.97 AF523063.1:0.97 AB074945.1:0.97 AY050600.1:0.97 AB051688.1:0.97 AB183858.1:0.97 AB120967.1:0.97 AF523069.1:0.97 AF361193.1:0.97 AB051687.1:0.97 AB051691.1:0.97 AF289170.1:0.97 AF236005.1:0.97 AB051689.1:0.97 AF336363.1:0.97 AY212612.1:0.97 AY212681.1:0.97 AY345550.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.4509277
+align_log_slv: scoring: raw=-4221.94, weight=-4224.65, query-len=1495, aligned-bases=1494, score=0.99936; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:20
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 37
+sequence_identifier: gi_190706770_gb_EU8018451_
+sequence_score: 0.998638
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AF534429.1:0.98 AJ290026.1:0.98 AB154313.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AY212668.1:0.98 AF534428.1:0.98 AF289155.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY212579.1:0.97 AB074945.1:0.97 AY315173.1:0.97 AY662012.1:0.97 AF361193.1:0.97 AF336363.1:0.97 AF289162.1:0.97 AY212678.1:0.97 AF236004.1:0.97 AY662014.1:0.97 AY050600.1:0.97 AY250104.1:0.97 AB120965.1:0.97 AY212612.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AY662013.1:0.97 AY212616.1:0.97 AF289169.1:0.97 AY315181.1:0.97 AY050575.1:0.97 AJ421938.1:0.97 AJ622889.1:0.97 AF523038.1:0.97 AB183858.1:0.97 AB120967.1:0.97 AY218703.1:0.97 AY622248.1:0.96 AJ575699.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.0391159
+align_log_slv: scoring: raw=-4258.36, weight=-4264.17, query-len=1492, aligned-bases=1491, score=0.998638; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:21
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 38
+sequence_identifier: gi_190707104_gb_EU8021791_
+sequence_score: 0.997517
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AF534429.1:0.98 AF289155.1:0.97 AB154313.1:0.97 AF289161.1:0.97 AB074945.1:0.97 AF289164.1:0.97 AF534428.1:0.97 AY212678.1:0.97 AY315173.1:0.97 AY212631.1:0.97 AF523038.1:0.97 AY662012.1:0.97 AF336363.1:0.97 AY212616.1:0.97 AY050600.1:0.97 AB120965.1:0.97 AF236004.1:0.97 AB120964.1:0.97 AY212612.1:0.97 AB120966.1:0.97 AF289162.1:0.97 AY662014.1:0.97 AY050575.1:0.97 AY212579.1:0.97 AB120967.1:0.97 AY662013.1:0.97 AJ622889.1:0.97 AJ440995.1:0.97 AY212681.1:0.97 AF523063.1:0.97 AY622248.1:0.97 CP000267.4118280:0.97 AF523069.1:0.97 AB030614.1:0.97 AY050594.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.883461
+align_log_slv: scoring: raw=-4153.21, weight=-4163.55, query-len=1454, aligned-bases=1454, score=0.997517; 
+align_quality_slv: 99
+align_startpos_slv: 1100
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:21
+nuc: 1454
+nuc_gene_slv: 1454
+turn_slv: none
+
+sequence_number: 39
+sequence_identifier: gi_190707162_gb_EU8022371_
+sequence_score: 0.99793
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AF534429.1:0.98 AJ290026.1:0.98 AB154313.1:0.98 AY145569.1:0.98 AY212668.1:0.98 AY550031.1:0.98 AF534428.1:0.98 AF289155.1:0.97 AB074945.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY212579.1:0.97 AY662014.1:0.97 AY315173.1:0.97 AJ622889.1:0.97 AB120965.1:0.97 AY662012.1:0.97 AB120964.1:0.97 AF336363.1:0.97 AB120966.1:0.97 AF289162.1:0.97 AY212678.1:0.97 AJ421938.1:0.97 AB120967.1:0.97 AF361193.1:0.97 AB030614.1:0.97 AF236004.1:0.97 AY212612.1:0.97 AY622248.1:0.97 AY212640.1:0.97 AF289169.1:0.97 AY050600.1:0.97 AY315181.1:0.97 AY662013.1:0.97 AY315172.1:0.97 AJ422160.1:0.97 AY212616.1:0.97 AY218703.1:0.97 AF523063.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.8332214
+align_log_slv: scoring: raw=-4226.79, weight=-4235.55, query-len=1495, aligned-bases=1494, score=0.99793; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:22
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 40
+sequence_identifier: gi_190708498_gb_EU8035731_
+sequence_score: 0.997999
+align_bp_score_slv: 118
+align_cutoff_head_slv: 1
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:0.99 AF289161.1:0.98 AY212668.1:0.98 AF289155.1:0.97 AF289164.1:0.97 AY550031.1:0.97 AJ290026.1:0.97 AY662012.1:0.97 AB154313.1:0.97 AF289162.1:0.97 AY212612.1:0.97 AB074945.1:0.97 AY315181.1:0.97 AF534428.1:0.97 AF236005.1:0.97 AB183858.1:0.97 AY662014.1:0.97 AJ009470.1:0.97 AB120965.1:0.97 AY218607.1:0.97 AY662013.1:0.97 AY145570.1:0.97 AF289169.1:0.97 AY212640.1:0.97 X95837.1:0.97 Z93957.1:0.97 AB120964.1:0.97 AF523063.1:0.97 AY050600.1:0.96 AJ575699.1:0.96 AF236004.1:0.96 AY315173.1:0.96 AY218703.1:0.96 AB120966.1:0.96 AJ440986.1:0.96 AF523069.1:0.96 AF173821.1:0.96 AY212681.1:0.96 AJ622889.1:0.96 CP000267.4118280:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2429428
+align_log_slv: scoring: raw=-4223.77, weight=-4232.24, query-len=1495, aligned-bases=1494, score=0.997999; 
+align_quality_slv: 99
+align_startpos_slv: 1005
+align_stoppos_slv: 43241
+aligned_slv: 2017-12-06 10:25:23
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 41
+sequence_identifier: gi_255739756_gb_FJ6121191_
+sequence_score: 0.99785
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AY212579.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AF289155.1:0.97 AY212678.1:0.97 AF534428.1:0.97 AY315173.1:0.97 AF289161.1:0.97 AB120965.1:0.97 AF523063.1:0.97 AF289164.1:0.97 AB120964.1:0.97 AF523069.1:0.97 AF289170.1:0.97 AB120966.1:0.97 AB074945.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AF336363.1:0.97 AJ622889.1:0.97 AF236004.1:0.97 AJ421938.1:0.97 AF236005.1:0.96 AB051690.1:0.96 AY662012.1:0.96 AF523062.1:0.96 AF289162.1:0.96 AY212681.1:0.96 AY218703.1:0.96 AY622262.1:0.96 AF523068.1:0.96 AY050600.1:0.96 AJ422160.1:0.96 AY662014.1:0.96 AJ440995.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.0391159
+align_log_slv: scoring: raw=-4158.24, weight=-4167.2, query-len=1492, aligned-bases=1492, score=0.99785; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:24
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 42
+sequence_identifier: gi_255740061_gb_FJ6124241_
+sequence_score: 0.998894
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AF534429.1:0.97 AB154313.1:0.97 AF289155.1:0.97 AY212579.1:0.97 AF534428.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY212678.1:0.97 AY315173.1:0.97 AB051690.1:0.97 AF236005.1:0.97 AF289170.1:0.97 AB120965.1:0.97 AB074945.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AY622262.1:0.97 AB120964.1:0.97 AY212616.1:0.97 AF336363.1:0.97 AB120966.1:0.97 AF523063.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AF236004.1:0.97 AJ421938.1:0.97 AF523069.1:0.97 AB120967.1:0.97 AB051687.1:0.97 AB051691.1:0.97 AB183858.1:0.96 AJ622889.1:0.96 AB051689.1:0.96 AJ440995.1:0.96 AF289169.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1077576
+align_log_slv: scoring: raw=-4208.64, weight=-4213.3, query-len=1492, aligned-bases=1492, score=0.998894; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:24
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 43
+sequence_identifier: gi_255740072_gb_FJ6124351_
+sequence_score: 0.997833
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY212668.1:1 AB154313.1:0.99 AF534428.1:0.99 AY212631.1:0.98 AF289169.1:0.98 AY550031.1:0.98 AF289155.1:0.98 AF289161.1:0.97 AF534429.1:0.97 AJ290026.1:0.97 AF289164.1:0.97 AF289162.1:0.97 AF361202.1:0.97 AY662012.1:0.97 AY662014.1:0.97 AB074945.1:0.97 AY145570.1:0.97 AB120965.1:0.97 AY218703.1:0.97 AY212612.1:0.97 AB120964.1:0.97 AY212579.1:0.96 AY212678.1:0.96 AB120966.1:0.96 AY212616.1:0.96 AJ009470.1:0.96 AY188310.1:0.96 AY218607.1:0.96 AB183858.1:0.96 AJ575699.1:0.96 AY315181.1:0.96 AY315173.1:0.96 AJ622889.1:0.96 AY145569.1:0.96 AY050600.1:0.96 AB120967.1:0.96 AB030614.1:0.96 AF361193.1:0.96 AJ440986.1:0.96 AJ421938.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.5978546
+align_log_slv: scoring: raw=-4244.19, weight=-4253.41, query-len=1492, aligned-bases=1492, score=0.997833; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:25
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 44
+sequence_identifier: gi_268308512_gb_FJ8203681_
+sequence_score: 0.996939
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:1 AF289161.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.98 AB154313.1:0.97 AY550031.1:0.97 AB183858.1:0.97 AF289169.1:0.97 AJ009470.1:0.97 AJ290026.1:0.97 AF534428.1:0.97 AY662012.1:0.97 AB120965.1:0.97 AY218607.1:0.97 AY212631.1:0.97 AB120964.1:0.97 AJ440986.1:0.96 AY212624.1:0.96 AY050604.1:0.96 AB074944.1:0.96 AF236004.1:0.96 AY212612.1:0.96 AB120966.1:0.96 AY212678.1:0.96 AY212616.1:0.96 AY315181.1:0.96 AJ421938.1:0.96 AY315173.1:0.96 AY050600.1:0.96 AF523063.1:0.96 AF236005.1:0.96 Z93957.1:0.96 X95837.1:0.96 AB074945.1:0.96 AB120967.1:0.96 AY345550.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.5986633
+align_log_slv: scoring: raw=-4249.85, weight=-4262.9, query-len=1496, aligned-bases=1496, score=0.996939; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:26
+nuc: 1496
+nuc_gene_slv: 1496
+turn_slv: none
+
+sequence_number: 45
+sequence_identifier: gi_268308554_gb_FJ8204101_
+sequence_score: 0.995215
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.98 AF534429.1:0.97 AB154313.1:0.97 AF534428.1:0.97 AY212678.1:0.97 AY212579.1:0.97 AF289155.1:0.97 AY315173.1:0.97 AF289161.1:0.97 AB120965.1:0.97 AF289164.1:0.97 AB120966.1:0.97 AB120964.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AJ622889.1:0.97 AF523063.1:0.96 AF236004.1:0.96 AF523069.1:0.96 AB074945.1:0.96 AY662012.1:0.96 AF336363.1:0.96 AY212681.1:0.96 AY662014.1:0.96 AY706429.1:0.96 AY218703.1:0.96 AF289170.1:0.96 AF523062.1:0.96 AB183858.1:0.96 AF289162.1:0.96 AB051690.1:0.96 AY050600.1:0.96 AY212568.1:0.96 AJ421938.1:0.96 AF236005.1:0.96 AF523068.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1763916
+align_log_slv: scoring: raw=-4147.02, weight=-4166.95, query-len=1491, aligned-bases=1491, score=0.995215; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:27
+nuc: 1491
+nuc_gene_slv: 1491
+turn_slv: none
+
+sequence_number: 46
+sequence_identifier: gi_268308592_gb_FJ8204481_
+sequence_score: 0.995612
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AY212668.1:0.97 AJ290026.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AF534428.1:0.97 AY212579.1:0.97 AF289155.1:0.97 AY212678.1:0.97 AY315173.1:0.97 AF289161.1:0.97 AF289170.1:0.97 AF289164.1:0.97 AF236005.1:0.97 AB051690.1:0.96 AB120965.1:0.96 AY622262.1:0.96 AB120964.1:0.96 AB074945.1:0.96 AY662012.1:0.96 AY212616.1:0.96 AF336363.1:0.96 AB120966.1:0.96 AB051688.1:0.96 AY315181.1:0.96 AF236004.1:0.96 AB120967.1:0.96 AJ421938.1:0.96 AB051691.1:0.96 AB051687.1:0.96 AF523063.1:0.96 AB183858.1:0.96 AB051689.1:0.96 AJ622889.1:0.96 AF523069.1:0.96 AJ440995.1:0.96 AF289162.1:0.96 AY050600.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1095886
+align_log_slv: total inserted bases=2;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4199.19, weight=-4217.69, query-len=1495, aligned-bases=1495, score=0.995612; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:28
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 47
+sequence_identifier: gi_268308629_gb_FJ8204851_
+sequence_score: 0.998894
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AF534429.1:0.97 AB154313.1:0.97 AY212579.1:0.97 AF534428.1:0.97 AF289155.1:0.97 AY212678.1:0.97 AY315173.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AB051690.1:0.97 AF236005.1:0.97 AB120965.1:0.97 AB074945.1:0.97 AY662012.1:0.97 AY622262.1:0.97 AB120964.1:0.97 AY212616.1:0.97 AF336363.1:0.97 AF289170.1:0.97 AB120966.1:0.97 AF523063.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AF236004.1:0.97 AJ421938.1:0.97 AF523069.1:0.97 AB120967.1:0.97 AB051687.1:0.97 AB051691.1:0.97 AB183858.1:0.96 AJ622889.1:0.96 AB051689.1:0.96 AF289162.1:0.96 AJ440995.1:0.96 AF289169.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2450256
+align_log_slv: scoring: raw=-4207.44, weight=-4212.1, query-len=1492, aligned-bases=1492, score=0.998894; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:28
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 48
+sequence_identifier: gi_237637594_gb_FJ9160991_
+sequence_score: 0.999365
+align_bp_score_slv: 121
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 13
+align_family_slv: AY212668.1:0.99 AB154313.1:0.99 AF534428.1:0.99 AF289169.1:0.99 AY212631.1:0.98 AF534429.1:0.98 AF361202.1:0.98 AY550031.1:0.98 AJ290026.1:0.97 AF289155.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY145570.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AB074945.1:0.97 AY218703.1:0.97 AY212612.1:0.97 AB120965.1:0.97 AY662014.1:0.97 AB120964.1:0.97 AY050600.1:0.97 AY145569.1:0.96 AY218607.1:0.96 AF361193.1:0.96 AB120966.1:0.96 AY188310.1:0.96 AY315181.1:0.96 AY315173.1:0.96 AY212678.1:0.96 AY212616.1:0.96 AY212579.1:0.96 AF523063.1:0.96 AJ440986.1:0.96 AB183858.1:0.96 AJ421938.1:0.96 AJ009470.1:0.96 AJ622889.1:0.96 AF523069.1:0.96 AY050575.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.6561203
+align_log_slv: scoring: raw=-4238.64, weight=-4241.34, query-len=1524, aligned-bases=1511, score=0.999365; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43282
+aligned_slv: 2017-12-06 10:25:29
+nuc: 1524
+nuc_gene_slv: 1523
+turn_slv: none
+
+sequence_number: 49
+sequence_identifier: gi_296171786_emb_FN6680132_
+sequence_score: 0.996433
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AB154313.1:1 AY212668.1:0.99 AF534428.1:0.99 AF289169.1:0.98 AY212631.1:0.98 AJ290026.1:0.97 AF534429.1:0.97 AY550031.1:0.97 AF289155.1:0.97 AF289161.1:0.97 AF361202.1:0.97 AF289164.1:0.97 AY145570.1:0.97 AF289162.1:0.97 AY662012.1:0.97 AF361193.1:0.97 AB074945.1:0.96 AY662014.1:0.96 AY218703.1:0.96 AY212612.1:0.96 AB120965.1:0.96 AY145569.1:0.96 AY315181.1:0.96 AB120964.1:0.96 AY315173.1:0.96 AY050600.1:0.96 AY188310.1:0.96 AB030614.1:0.96 AJ575699.1:0.96 AY212616.1:0.96 AJ421938.1:0.96 AB120966.1:0.96 AJ440986.1:0.96 AY218607.1:0.96 AY212678.1:0.96 AB051690.1:0.96 AB183858.1:0.96 AJ622889.1:0.96 AJ009470.1:0.96 AB051691.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7250824
+align_log_slv: total inserted bases=1;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4232.95, weight=-4248.1, query-len=1490, aligned-bases=1490, score=0.996433; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43229
+aligned_slv: 2017-12-06 10:25:30
+nuc: 1490
+nuc_gene_slv: 1490
+turn_slv: none
+
+sequence_number: 50
+sequence_identifier: gi_254971472_gb_GQ3400781_
+sequence_score: 0.999468
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AF289164.1:0.98 AY212668.1:0.98 AY550031.1:0.97 AJ290026.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AF418942.1:0.97 AY212640.1:0.97 AB154313.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AY145570.1:0.97 AB120965.1:0.97 AY662013.1:0.97 AF236005.1:0.97 AJ009470.1:0.97 AB183858.1:0.97 AB120964.1:0.97 AF534428.1:0.97 X95837.1:0.97 Z93957.1:0.97 AY218607.1:0.96 AF236004.1:0.96 AB120966.1:0.96 AF289169.1:0.96 AY145569.1:0.96 AY212579.1:0.96 AY212616.1:0.96 AY212678.1:0.96 AY315181.1:0.96 AY345550.1:0.96 AB120967.1:0.96 AY250104.1:0.96 AF173821.1:0.96 AY212681.1:0.96 AB098595.1:0.96 AJ421938.1:0.96 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: scoring: raw=-4029.14, weight=-4031.29, query-len=1389, aligned-bases=1389, score=0.999468; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 42547
+aligned_slv: 2017-12-06 10:25:31
+nuc: 1389
+nuc_gene_slv: 1389
+turn_slv: none
+
+sequence_number: 51
+sequence_identifier: gi_295879500_gb_HM1284341_
+sequence_score: 0.999235
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AY212668.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AY212579.1:0.97 AF534428.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AF289155.1:0.97 AJ421938.1:0.97 AB120966.1:0.97 AY218703.1:0.97 AB074945.1:0.97 AF523063.1:0.97 AY315173.1:0.97 AY212678.1:0.97 AJ622889.1:0.97 AF523069.1:0.97 AF289161.1:0.97 AY662014.1:0.97 AY188310.1:0.96 AB051690.1:0.96 AF289164.1:0.96 AB120967.1:0.96 AY689053.1:0.96 AF361193.1:0.96 AF407396.1:0.96 AF236004.1:0.96 AJ422160.1:0.96 AY212616.1:0.96 AF407412.1:0.96 AY212681.1:0.96 AY315181.1:0.96 AF236005.1:0.96 AJ292627.1:0.96 AF336363.1:0.96 AB051688.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1059113
+align_log_slv: scoring: raw=-4104.99, weight=-4108.13, query-len=1455, aligned-bases=1455, score=0.999235; 
+align_quality_slv: 99
+align_startpos_slv: 1045
+align_stoppos_slv: 43159
+aligned_slv: 2017-12-06 10:25:32
+nuc: 1455
+nuc_gene_slv: 1455
+turn_slv: none
+
+sequence_number: 52
+sequence_identifier: gi_295879822_gb_HM1287561_
+sequence_score: 0.999214
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.97 AB154313.1:0.97 AF534429.1:0.97 AF534428.1:0.97 AY212579.1:0.97 AF289155.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AB074945.1:0.97 AF289161.1:0.97 AY315173.1:0.97 AJ622889.1:0.97 AY212678.1:0.97 AF361193.1:0.97 AJ421938.1:0.97 AF289164.1:0.97 AB051690.1:0.97 AB120967.1:0.97 AY689053.1:0.97 AF407396.1:0.96 AF289169.1:0.96 AF523063.1:0.96 AF236004.1:0.96 AJ422160.1:0.96 AF407412.1:0.96 AY212616.1:0.96 AY662014.1:0.96 AY218703.1:0.96 AY212681.1:0.96 AF236005.1:0.96 AJ292627.1:0.96 AB051688.1:0.96 AY315181.1:0.96 AF523069.1:0.96 AY662012.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.0371399
+align_log_slv: scoring: raw=-4124.94, weight=-4128.19, query-len=1455, aligned-bases=1455, score=0.999214; 
+align_quality_slv: 99
+align_startpos_slv: 1045
+align_stoppos_slv: 43159
+aligned_slv: 2017-12-06 10:25:32
+nuc: 1455
+nuc_gene_slv: 1455
+turn_slv: none
+
+sequence_number: 53
+sequence_identifier: gi_295880084_gb_HM1290181_
+sequence_score: 0.997268
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.98 AF534429.1:0.97 AB154313.1:0.97 AF534428.1:0.97 AF289155.1:0.97 AY212678.1:0.97 AB120965.1:0.97 AY212579.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AY315173.1:0.97 AF289161.1:0.97 AF236004.1:0.97 AF289164.1:0.97 AY212616.1:0.97 AF236005.1:0.97 AF336363.1:0.97 AB074945.1:0.97 AB120967.1:0.97 AB051690.1:0.97 AJ622889.1:0.97 AJ421938.1:0.96 AY622262.1:0.96 AJ440995.1:0.96 AY212681.1:0.96 AF289162.1:0.96 AF523063.1:0.96 AB183858.1:0.96 AY689053.1:0.96 AY662012.1:0.96 AY218703.1:0.96 AF523069.1:0.96 AJ422160.1:0.96 AF523038.1:0.96 AF289170.1:0.96 AY050600.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1741257
+align_log_slv: total inserted bases=1;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4124.69, weight=-4135.99, query-len=1454, aligned-bases=1454, score=0.997268; 
+align_quality_slv: 99
+align_startpos_slv: 1045
+align_stoppos_slv: 43159
+aligned_slv: 2017-12-06 10:25:33
+nuc: 1454
+nuc_gene_slv: 1454
+turn_slv: none
+
+sequence_number: 54
+sequence_identifier: gi_295880716_gb_HM1296501_
+sequence_score: 0.999166
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AJ290026.1:0.98 AY145570.1:0.98 AF534429.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AY212668.1:0.98 AB154313.1:0.97 AF534428.1:0.97 AB074945.1:0.97 AF289155.1:0.97 AF289161.1:0.97 AY662014.1:0.97 AF289164.1:0.97 AY212579.1:0.97 AB120965.1:0.97 AY662012.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AF336363.1:0.97 AY212678.1:0.97 AJ421938.1:0.97 AJ440995.1:0.97 AY212612.1:0.97 AJ622889.1:0.97 CP000267.4118280:0.97 AY622248.1:0.97 AF289169.1:0.97 AF361193.1:0.97 AY218703.1:0.97 AF236004.1:0.97 AY662013.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AY315173.1:0.97 AF523063.1:0.97 AF435948.1:0.97 AF289162.1:0.97 AY315172.1:0.97 AF523038.1:0.96 AF523069.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.6932602
+align_log_slv: scoring: raw=-4137.24, weight=-4140.69, query-len=1455, aligned-bases=1455, score=0.999166; 
+align_quality_slv: 99
+align_startpos_slv: 1045
+align_stoppos_slv: 43159
+aligned_slv: 2017-12-06 10:25:34
+nuc: 1455
+nuc_gene_slv: 1455
+turn_slv: none
+
+sequence_number: 55
+sequence_identifier: gi_324096625_gb_HM5614312_
+sequence_score: 0.997907
+align_bp_score_slv: 113
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AF534429.1:0.97 AY212678.1:0.97 AB154313.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AF534428.1:0.97 AB120966.1:0.97 AY212616.1:0.97 AY315173.1:0.97 AF289155.1:0.97 AF236004.1:0.97 AB120967.1:0.97 AF289161.1:0.97 AJ622889.1:0.97 AB074945.1:0.97 AY212579.1:0.97 AF289164.1:0.97 AY050600.1:0.97 AY212681.1:0.97 AF523063.1:0.97 AY662012.1:0.97 AF523069.1:0.97 AF336363.1:0.97 AF523038.1:0.97 AY212631.1:0.97 AB051690.1:0.97 AY706429.1:0.97 AY218703.1:0.97 AY212612.1:0.97 AY050575.1:0.97 AY689053.1:0.97 AB183858.1:0.97 AJ009470.1:0.96 AF289162.1:0.96 AY315181.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2280731
+align_log_slv: scoring: raw=-4100.04, weight=-4108.64, query-len=1443, aligned-bases=1443, score=0.997907; 
+align_quality_slv: 99
+align_startpos_slv: 1119
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:35
+nuc: 1443
+nuc_gene_slv: 1443
+turn_slv: none
+
+sequence_number: 56
+sequence_identifier: gi_324096632_gb_HM5614452_
+sequence_score: 0.996545
+align_bp_score_slv: 113
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY550031.1:0.98 AY145569.1:0.98 AJ290026.1:0.98 AY212668.1:0.97 AY212678.1:0.97 AB154313.1:0.97 AY212616.1:0.97 AF534429.1:0.97 AB120965.1:0.97 AF236004.1:0.97 AF534428.1:0.97 AF289155.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AB074945.1:0.97 AY315173.1:0.97 AB051690.1:0.97 AF523063.1:0.97 AF289161.1:0.97 AF523069.1:0.97 AB120967.1:0.97 AF289164.1:0.97 AF336363.1:0.97 AY662012.1:0.97 AY218703.1:0.97 AY689053.1:0.97 AJ421938.1:0.96 AJ292627.1:0.96 AY050600.1:0.96 AB051688.1:0.96 AY212681.1:0.96 AF523062.1:0.96 AF523068.1:0.96 AF289162.1:0.96 AY706429.1:0.96 AY212579.1:0.96 AY212631.1:0.96 AB051687.1:0.96 AB051689.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2291489
+align_log_slv: scoring: raw=-4049.21, weight=-4063.25, query-len=1445, aligned-bases=1445, score=0.996545; 
+align_quality_slv: 99
+align_startpos_slv: 1119
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:35
+nuc: 1445
+nuc_gene_slv: 1445
+turn_slv: none
+
+sequence_number: 57
+sequence_identifier: gi_312860423_gb_HM8564641_
+sequence_score: 0.997001
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF534429.1:1 AF289161.1:0.98 AF289155.1:0.98 AF289164.1:0.98 AY212668.1:0.98 AJ290026.1:0.97 AF289162.1:0.97 AY662012.1:0.97 AY550031.1:0.97 AB154313.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AF534428.1:0.97 AB183858.1:0.97 AF236005.1:0.97 AB120965.1:0.97 AY145570.1:0.97 AF236004.1:0.97 AJ009470.1:0.97 AF289169.1:0.97 AB120964.1:0.97 AB074945.1:0.97 AY315181.1:0.97 AB120966.1:0.97 AY662013.1:0.97 AY218607.1:0.97 AY345550.1:0.97 Z93957.1:0.96 X95837.1:0.96 AJ440986.1:0.96 AY145569.1:0.96 AY212616.1:0.96 AY212631.1:0.96 AY212678.1:0.96 AY050600.1:0.96 AY050604.1:0.96 AY250104.1:0.96 AY315173.1:0.96 AY212640.1:0.96 AJ421938.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.8623581
+align_log_slv: scoring: raw=-4199.75, weight=-4212.38, query-len=1453, aligned-bases=1453, score=0.997001; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:36
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 58
+sequence_identifier: gi_312860463_gb_HM8565041_
+sequence_score: 0.998108
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AB154313.1:1 AY212668.1:1 AF534428.1:0.99 AF289169.1:0.98 AY212631.1:0.98 AJ290026.1:0.98 AF534429.1:0.98 AF289155.1:0.97 AY550031.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AF361202.1:0.97 AY145570.1:0.97 AF289162.1:0.97 AY662012.1:0.97 AF361193.1:0.97 AB120965.1:0.97 AY212612.1:0.97 AY662014.1:0.97 AB074945.1:0.97 AB120964.1:0.97 AY218703.1:0.97 AB120966.1:0.96 AJ440986.1:0.96 AY315181.1:0.96 AY188310.1:0.96 AY315173.1:0.96 AY212616.1:0.96 AY218607.1:0.96 AY145569.1:0.96 AY050600.1:0.96 AB030614.1:0.96 AB183858.1:0.96 AY212678.1:0.96 AJ575699.1:0.96 AJ421938.1:0.96 AY050594.1:0.96 AJ009470.1:0.96 AJ622889.1:0.96 Z93957.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7936707
+align_log_slv: scoring: raw=-4174.19, weight=-4182.11, query-len=1453, aligned-bases=1453, score=0.998108; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:37
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 59
+sequence_identifier: gi_304422261_gb_HQ0085651_
+sequence_score: 0.996323
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 15
+align_family_slv: AF289161.1:0.99 AF289155.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.97 AY550031.1:0.97 AB154313.1:0.97 AY662012.1:0.97 AJ290026.1:0.97 AF523063.1:0.97 AY212631.1:0.97 AY212612.1:0.97 AF534428.1:0.97 AY315181.1:0.97 AF289169.1:0.97 AF523069.1:0.97 AB120965.1:0.97 AB120964.1:0.96 AB183858.1:0.96 Z93957.1:0.96 X95837.1:0.96 AJ009470.1:0.96 AF523068.1:0.96 AB074944.1:0.96 AY050600.1:0.96 AF523062.1:0.96 AB120966.1:0.96 AJ421938.1:0.96 AF236004.1:0.96 AY315173.1:0.96 AY218607.1:0.96 AF538929.1:0.96 AY212678.1:0.96 AJ440986.1:0.96 AY212616.1:0.96 AB074945.1:0.96 AF236005.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.5989304
+align_log_slv: scoring: raw=-4231.87, weight=-4247.49, query-len=1529, aligned-bases=1514, score=0.996323; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43284
+aligned_slv: 2017-12-06 10:25:38
+nuc: 1529
+nuc_gene_slv: 1526
+turn_slv: none
+
+sequence_number: 60
+sequence_identifier: gi_304422274_gb_HQ0085781_
+sequence_score: 0.998313
+align_bp_score_slv: 121
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 15
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AF534429.1:0.98 AB154313.1:0.97 AF289155.1:0.97 AF534428.1:0.97 AY212579.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY212678.1:0.97 AY315173.1:0.97 AB120965.1:0.97 AF289162.1:0.97 AY662012.1:0.97 AB120964.1:0.97 AB120966.1:0.97 AY212616.1:0.97 AF523063.1:0.97 AB120967.1:0.97 AB051690.1:0.97 AF289170.1:0.97 AF236004.1:0.97 AB074945.1:0.97 AY315181.1:0.97 AB183858.1:0.97 AJ622889.1:0.97 AF523069.1:0.97 AY662014.1:0.97 AY050600.1:0.97 AY212631.1:0.97 AF336363.1:0.96 AJ295499.1:0.96 AF236005.1:0.96 AB051688.1:0.96 AY212681.1:0.96 AJ009470.1:0.96 AF361193.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1763916
+align_log_slv: scoring: raw=-4248.37, weight=-4255.55, query-len=1526, aligned-bases=1511, score=0.998313; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43284
+aligned_slv: 2017-12-06 10:25:38
+nuc: 1526
+nuc_gene_slv: 1523
+turn_slv: none
+
+sequence_number: 61
+sequence_identifier: gi_303831_dbj_D162111_RHYFR2D
+sequence_score: 0.999297
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: D16212.1:1 AY609198.1:0.98 AF407413.1:0.98 AY686732.1:0.98 AF407412.1:0.98 CP000267.4118280:0.98 AF407396.1:0.97 AF407381.1:0.97 AY050594.1:0.97 AY214181.1:0.97 AB030614.1:0.97 AY315173.1:0.97 AY214176.1:0.97 AJ422168.1:0.97 AF407397.1:0.97 AY214173.1:0.97 AY662012.1:0.97 AF435948.1:0.97 AY250098.1:0.97 AF523038.1:0.97 AY622248.1:0.97 AY214178.1:0.97 AF529357.1:0.97 AY212612.1:0.97 AF468446.1:0.97 AY212616.1:0.97 AY214177.1:0.97 AY315172.1:0.97 AB074945.1:0.97 AJ440986.1:0.97 AY218607.1:0.97 AY250111.1:0.97 AY212681.1:0.97 AB120965.1:0.97 AF336363.1:0.97 AJ421912.1:0.97 AY315181.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AF523003.1:0.97 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: scoring: raw=-4250.84, weight=-4253.84, query-len=1457, aligned-bases=1457, score=0.999297; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:39
+nuc: 1457
+nuc_gene_slv: 1457
+turn_slv: none
+
+sequence_number: 62
+sequence_identifier: gi_4432993_dbj_D880061_
+sequence_score: 0
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: D88006.1:1 AY599732.1:0.99 AY599725.1:0.99 AY444994.1:0.99 D30793.1:0.99 AF532868.1:0.99 AY444973.1:0.99 AB008000.1:0.99 AY599733.1:0.99 AB098595.1:0.99 AY512828.1:0.99 AY599724.1:0.99 AJ555474.1:0.99 AJ313017.1:0.99 AY127900.1:0.99 AF534203.1:0.99 AB187018.1:0.99 AF423075.1:0.99 AY689027.1:0.99 AF250030.1:0.99 AB051691.1:0.99 AF209469.1:0.99 AB003627.1:0.99 AY689053.1:0.99 AY162034.1:0.99 AF532867.1:0.99 AY550031.1:0.99 AB051689.1:0.99 AY169432.1:0.99 AB051687.1:0.99 AB051688.1:0.99 AY162061.1:0.99 AY549551.1:0.99 AY177772.1:0.99 AY179863.1:0.98 AJ292627.1:0.98 AY177770.1:0.98 AB051685.1:0.98 AB051686.1:0.98 AF423073.1:0.98 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: copied alignment from identical template sequence D88006:1; 
+align_quality_slv: 100
+align_startpos_slv: 1055
+align_stoppos_slv: 43228
+aligned_slv: 2017-12-06 10:25:40
+nuc: 1467
+nuc_gene_slv: 1467
+turn_slv: none
+
+sequence_number: 63
+sequence_identifier: gi_70610322_gb_DQ0941831_
+sequence_score: 0.994831
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY250097.1:0.99 AY250106.1:0.99 AY250101.1:0.99 AY250102.1:0.99 AY250095.1:0.99 AY250108.1:0.99 AY250099.1:0.99 AY250090.1:0.99 AF468326.1:0.99 AF336361.1:0.98 AF407405.1:0.98 AY188320.1:0.98 AF407386.1:0.98 AY218767.1:0.98 AF523026.1:0.97 AF523046.1:0.97 AF468328.1:0.97 AF407417.1:0.97 AJ224987.1:0.97 AF408397.1:0.97 AF523040.1:0.97 AF523032.1:0.97 AF523045.1:0.97 AF407400.1:0.97 AF523028.1:0.97 AJ575698.1:0.97 AY315174.1:0.97 AF523014.1:0.97 AF523018.1:0.97 AF523015.1:0.97 AY250105.1:0.97 AF523012.1:0.97 AY218703.1:0.97 AY188310.1:0.97 AY315178.1:0.97 AY315176.1:0.97 AF523002.1:0.97 AF523039.1:0.97 AF523041.1:0.97 AF523031.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.5604401
+align_log_slv: scoring: raw=-3999.45, weight=-4020.23, query-len=1384, aligned-bases=1384, score=0.994831; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 42545
+aligned_slv: 2017-12-06 10:25:41
+nuc: 1384
+nuc_gene_slv: 1384
+turn_slv: none
+
+sequence_number: 64
+sequence_identifier: gi_74423019_gb_DQ1789781_
+sequence_score: 0.990606
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF423075.1:0.98 AF538929.1:0.98 AY444994.1:0.98 AF532868.1:0.97 AY162061.1:0.97 AF250030.1:0.97 AB008000.1:0.97 AY444973.1:0.97 AY127900.1:0.97 AJ555474.1:0.97 AB098595.1:0.97 AY599725.1:0.97 AY512828.1:0.97 AY599724.1:0.97 AJ292627.1:0.97 AB003627.1:0.97 AY162034.1:0.97 AY360350.1:0.97 AY689027.1:0.97 D89026.1:0.97 AY689053.1:0.97 AB114620.1:0.97 AY599732.1:0.97 AF523063.1:0.97 AF209469.1:0.97 AB187018.1:0.97 AJ313017.1:0.97 AY179863.1:0.97 AY238498.1:0.97 D30793.1:0.97 AB051691.1:0.97 AY599728.1:0.97 AF532867.1:0.97 AF523069.1:0.97 AY599733.1:0.97 AB074944.1:0.97 D88006.1:0.97 AJ565430.1:0.97 AY599731.1:0.97 AY549551.1:0.97 
+align_filter_slv: 
+align_ident_slv: 97.444519
+align_log_slv: scoring: raw=-4213.05, weight=-4253, query-len=1486, aligned-bases=1486, score=0.990606; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43260
+aligned_slv: 2017-12-06 10:25:41
+nuc: 1486
+nuc_gene_slv: 1486
+turn_slv: none
+
+sequence_number: 65
+sequence_identifier: gi_90025013_gb_DQ4320531_
+sequence_score: 0.996715
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF538929.1:0.99 AB114620.1:0.99 D89026.1:0.99 AY238498.1:0.99 AF423075.1:0.99 AB098595.1:0.98 AY162034.1:0.98 AY162061.1:0.98 AY599727.1:0.98 AY599728.1:0.98 AY599732.1:0.98 AY444994.1:0.98 AB003627.1:0.98 AF532868.1:0.98 AB008000.1:0.98 AY689027.1:0.98 AY550031.1:0.98 AY599731.1:0.98 AF209469.1:0.98 AJ555474.1:0.98 AY599725.1:0.98 AY444973.1:0.98 AY127900.1:0.98 AJ313017.1:0.98 AY599733.1:0.98 AY179863.1:0.98 AB187018.1:0.98 D30793.1:0.98 AY599724.1:0.98 AY599730.1:0.98 AY599726.1:0.98 AF250030.1:0.98 AF534203.1:0.98 AB051691.1:0.98 AY169432.1:0.98 AY599729.1:0.98 AF532867.1:0.98 AJ292627.1:0.98 AY689053.1:0.98 AB051689.1:0.98 
+align_filter_slv: 
+align_ident_slv: 98.783783
+align_log_slv: scoring: raw=-4311.13, weight=-4325.34, query-len=1478, aligned-bases=1478, score=0.996715; 
+align_quality_slv: 99
+align_startpos_slv: 1025
+align_stoppos_slv: 43223
+aligned_slv: 2017-12-06 10:25:42
+nuc: 1478
+nuc_gene_slv: 1478
+turn_slv: none
+
+sequence_number: 66
+sequence_identifier: gi_193876561_gb_EU8257001_
+sequence_score: 0.997406
+align_bp_score_slv: 122
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 14
+align_family_slv: Y11465.1:0.98 AB120966.1:0.97 AB120967.1:0.97 AJ622889.1:0.97 AB120965.1:0.97 AY315173.1:0.97 AF236004.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AY212612.1:0.97 AY662012.1:0.97 AY212681.1:0.97 AB183858.1:0.97 AF509578.1:0.97 AY360350.1:0.97 AJ009470.1:0.97 AY050604.1:0.97 CP000267.4118280:0.97 AY212616.1:0.97 AF509579.1:0.97 AF435948.1:0.97 AF407413.1:0.97 AB030614.1:0.96 AY050594.1:0.96 AF523038.1:0.96 AY345550.1:0.96 AJ565430.1:0.96 AY609198.1:0.96 AY622248.1:0.96 AY706429.1:0.96 AJ387862.1:0.96 AF407412.1:0.96 AF468446.1:0.96 AF407381.1:0.96 AF529357.1:0.96 D89026.1:0.96 AF407396.1:0.96 Z93955.1:0.96 AY250098.1:0.96 AB074945.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.0797653
+align_log_slv: scoring: raw=-4274.65, weight=-4285.77, query-len=1524, aligned-bases=1510, score=0.997406; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43283
+aligned_slv: 2017-12-06 10:25:43
+nuc: 1524
+nuc_gene_slv: 1522
+turn_slv: none
+
+sequence_number: 67
+sequence_identifier: gi_975738_gb_U145851_UAU14585
+sequence_score: 0.987578
+align_bp_score_slv: 117
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY218703.1:0.97 AF468328.1:0.97 AY188310.1:0.97 AF523026.1:0.97 AF523046.1:0.97 AY250101.1:0.97 AF468326.1:0.97 AF523028.1:0.97 AF407400.1:0.97 AF336361.1:0.97 AF523013.1:0.97 AF408397.1:0.97 AF523032.1:0.97 AF523040.1:0.97 AY250097.1:0.97 AF523015.1:0.97 AF523045.1:0.97 AF523012.1:0.97 AJ575698.1:0.97 AY250106.1:0.97 AF523014.1:0.97 AF523018.1:0.97 AY315174.1:0.97 AY250102.1:0.97 AY250095.1:0.97 AJ224987.1:0.97 AF523031.1:0.97 AY250099.1:0.97 AF523019.1:0.97 AY188320.1:0.97 AF523002.1:0.97 AF523039.1:0.97 AF523041.1:0.97 AY218767.1:0.97 AF407386.1:0.97 AF407405.1:0.97 AF523051.1:0.97 AF407417.1:0.97 AY315175.1:0.97 AF523007.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.2006912
+align_log_slv: total inserted bases=1;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4209.97, weight=-4262.92, query-len=1454, aligned-bases=1454, score=0.987578; 
+align_quality_slv: 98
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:44
+nuc: 1454
+nuc_gene_slv: 1454
+turn_slv: none
+
+sequence_number: 68
+sequence_identifier: gi_3550691_emb_AJ2249871_
+sequence_score: 0.999477
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 13
+align_family_slv: AJ224987.1:1 AY315174.1:0.99 AY315177.1:0.99 AF336361.1:0.98 AJ575698.1:0.98 AY315175.1:0.98 AF408397.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AY250097.1:0.98 AY250101.1:0.98 AF523045.1:0.98 AY250106.1:0.98 AY315176.1:0.98 AF523018.1:0.98 AF523014.1:0.98 AF468328.1:0.98 AY315178.1:0.98 AF468326.1:0.98 AF523002.1:0.98 AF407386.1:0.98 AF523041.1:0.98 AY250095.1:0.98 AY218703.1:0.98 AF407405.1:0.98 AF523051.1:0.97 AY250102.1:0.97 AY250099.1:0.97 AF523013.1:0.97 AF523007.1:0.97 AY250108.1:0.97 AF407400.1:0.97 AY188310.1:0.97 AF523046.1:0.97 AF523026.1:0.97 AF407417.1:0.97 AY188320.1:0.97 AY250090.1:0.97 AF523028.1:0.97 AY218767.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.6029129
+align_log_slv: scoring: raw=-4335.55, weight=-4337.82, query-len=1522, aligned-bases=1509, score=0.999477; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43282
+aligned_slv: 2017-12-06 10:25:45
+nuc: 1522
+nuc_gene_slv: 1521
+turn_slv: none
+
+sequence_number: 69
+sequence_identifier: gi_56713219_emb_AJ8677491_
+sequence_score: 0.995333
+align_bp_score_slv: 121
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 12
+align_family_slv: AY250097.1:0.98 AY250101.1:0.98 AY315174.1:0.98 AY250106.1:0.98 AY315177.1:0.98 AF336361.1:0.98 AJ224987.1:0.98 AY250095.1:0.98 AF468326.1:0.98 AF468328.1:0.98 AY250102.1:0.98 AY218703.1:0.98 AY250099.1:0.98 AY250108.1:0.98 AF407386.1:0.98 AY188310.1:0.98 AY250090.1:0.98 AF407405.1:0.98 AY315176.1:0.98 AF523046.1:0.98 AF523026.1:0.98 AJ575698.1:0.98 AY315178.1:0.98 AF407400.1:0.98 AF523040.1:0.98 AF523032.1:0.98 AF523045.1:0.98 AF523028.1:0.98 AY315175.1:0.98 AY188320.1:0.98 AF523018.1:0.98 AF523014.1:0.98 AF523015.1:0.98 AF523012.1:0.97 AF408397.1:0.97 AF407417.1:0.97 AY218767.1:0.97 AF523002.1:0.97 AF523013.1:0.97 AF523041.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.4158401
+align_log_slv: scoring: raw=-4338.73, weight=-4359.07, query-len=1527, aligned-bases=1515, score=0.995333; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43281
+aligned_slv: 2017-12-06 10:25:45
+nuc: 1527
+nuc_gene_slv: 1527
+turn_slv: none
+
+sequence_number: 70
+sequence_identifier: gi_83308022_emb_AJ8679191_
+sequence_score: 0.991023
+align_bp_score_slv: 116
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315174.1:0.99 AJ224987.1:0.99 AY315177.1:0.99 AF336361.1:0.98 AY218703.1:0.98 AY315176.1:0.98 AY315175.1:0.98 AY315178.1:0.98 AJ575698.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF408397.1:0.98 AF468328.1:0.98 AY188310.1:0.98 AF523045.1:0.97 AF523018.1:0.97 AF523014.1:0.97 AF407386.1:0.97 AF468326.1:0.97 AF523002.1:0.97 AY250097.1:0.97 AF523041.1:0.97 AY250101.1:0.97 AF407400.1:0.97 AF523051.1:0.97 AY250106.1:0.97 AF523013.1:0.97 AF407405.1:0.97 AF523046.1:0.97 AF523026.1:0.97 AF523007.1:0.97 AY250095.1:0.97 AF523028.1:0.97 AY250099.1:0.97 AY250102.1:0.97 AY188320.1:0.97 AF523015.1:0.97 AY250108.1:0.97 AF523012.1:0.97 AF407417.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.2826385
+align_log_slv: scoring: raw=-4258.6, weight=-4297.18, query-len=1478, aligned-bases=1478, score=0.991023; 
+align_quality_slv: 99
+align_startpos_slv: 1050
+align_stoppos_slv: 43255
+aligned_slv: 2017-12-06 10:25:46
+nuc: 1478
+nuc_gene_slv: 1478
+turn_slv: none
+
+sequence_number: 71
+sequence_identifier: gi_157101042_emb_AM8494301_
+sequence_score: 0.997374
+align_bp_score_slv: 120
+align_cutoff_head_slv: 7
+align_cutoff_tail_slv: 0
+align_family_slv: AJ224987.1:0.99 AY315174.1:0.99 AY315177.1:0.99 AF336361.1:0.98 AJ575698.1:0.98 AF408397.1:0.98 AF468328.1:0.98 AY315176.1:0.98 AY315175.1:0.98 AF523040.1:0.98 AF523032.1:0.98 AF523045.1:0.98 AY315178.1:0.98 AF468326.1:0.98 AF523014.1:0.98 AF523018.1:0.98 AY250097.1:0.98 AY250101.1:0.98 AY218703.1:0.98 AF523002.1:0.98 AF523041.1:0.98 AY250106.1:0.98 AF523051.1:0.98 AF407386.1:0.97 AY250095.1:0.97 AF407400.1:0.97 AF523007.1:0.97 AF407405.1:0.97 AY188310.1:0.97 AY250102.1:0.97 AF523013.1:0.97 AY250099.1:0.97 AY188320.1:0.97 AY250108.1:0.97 AF523046.1:0.97 AF523026.1:0.97 AY218767.1:0.97 AF407417.1:0.97 AF523028.1:0.97 AY250090.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.2826385
+align_log_slv: scoring: raw=-4280.65, weight=-4291.92, query-len=1489, aligned-bases=1482, score=0.997374; 
+align_quality_slv: 99
+align_startpos_slv: 999
+align_stoppos_slv: 43222
+aligned_slv: 2017-12-06 10:25:47
+nuc: 1489
+nuc_gene_slv: 1489
+turn_slv: none
+
+sequence_number: 72
+sequence_identifier: gi_78058273_gb_DQ2284031_
+sequence_score: 0.997239
+align_bp_score_slv: 117
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315174.1:0.99 AY315177.1:0.99 AJ224987.1:0.99 AF336361.1:0.98 AY315176.1:0.97 AJ575698.1:0.97 AY250097.1:0.97 AF468328.1:0.97 AF523040.1:0.97 AF523032.1:0.97 AY315175.1:0.97 AF408397.1:0.97 AY250101.1:0.97 AY315178.1:0.97 AY250106.1:0.97 AF523045.1:0.97 AF407405.1:0.97 AY218703.1:0.97 AF523014.1:0.97 AF523018.1:0.97 AY250095.1:0.97 AF468326.1:0.97 AF523002.1:0.97 AF407386.1:0.97 AF523041.1:0.97 AF523013.1:0.97 AY250102.1:0.97 AF523051.1:0.97 AF523046.1:0.97 AF523026.1:0.97 AY250099.1:0.97 AY250108.1:0.97 AF523007.1:0.97 AY188310.1:0.97 AF407400.1:0.97 AF523028.1:0.97 AY188320.1:0.97 AY218767.1:0.97 AF407417.1:0.97 AF523015.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.4232178
+align_log_slv: scoring: raw=-4272.9, weight=-4284.73, query-len=1473, aligned-bases=1473, score=0.997239; 
+align_quality_slv: 99
+align_startpos_slv: 1040
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:48
+nuc: 1473
+nuc_gene_slv: 1473
+turn_slv: none
+
+sequence_number: 73
+sequence_identifier: gi_102415988_gb_DQ5215471_
+sequence_score: 0.998145
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AJ224987.1:0.99 AY315174.1:0.99 AY315177.1:0.99 AF336361.1:0.99 AJ575698.1:0.98 AY315176.1:0.98 AY315178.1:0.98 AY250097.1:0.98 AY250101.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF408397.1:0.98 AY250106.1:0.98 AY315175.1:0.98 AF523045.1:0.98 AF523018.1:0.98 AF523014.1:0.98 AF468328.1:0.98 AF468326.1:0.98 AF407405.1:0.98 AY250095.1:0.98 AF523002.1:0.98 AF407386.1:0.98 AF523041.1:0.98 AY250099.1:0.98 AF523026.1:0.98 AF523046.1:0.98 AY218703.1:0.98 AY250102.1:0.98 AF523013.1:0.98 AF523051.1:0.98 AF407400.1:0.98 AY250108.1:0.98 AF523028.1:0.98 AY188310.1:0.98 AF523007.1:0.98 AY188320.1:0.97 AF523015.1:0.97 AF523012.1:0.97 AY218767.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.4494171
+align_log_slv: scoring: raw=-4237.95, weight=-4245.83, query-len=1453, aligned-bases=1453, score=0.998145; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:48
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 74
+sequence_identifier: gi_281187216_gb_FJ8491471_
+sequence_score: 0.99681
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AJ224987.1:0.99 AY315174.1:0.99 AY315177.1:0.99 AF336361.1:0.98 AJ575698.1:0.98 AF468328.1:0.98 AF523040.1:0.98 AF523032.1:0.98 AF408397.1:0.98 AF523045.1:0.98 AY250106.1:0.98 AF523014.1:0.98 AF523018.1:0.98 AY250097.1:0.98 AY250101.1:0.98 AY315175.1:0.98 AF523002.1:0.98 AY315176.1:0.98 AF523041.1:0.98 AY315178.1:0.98 AF407405.1:0.98 AF468326.1:0.98 AF523051.1:0.98 AY250095.1:0.98 AF407386.1:0.98 AF523013.1:0.98 AY250099.1:0.98 AY250102.1:0.98 AF523007.1:0.98 AY218703.1:0.98 AF407400.1:0.98 AY250108.1:0.97 AF523026.1:0.97 AF523046.1:0.97 AY188310.1:0.97 AY188320.1:0.97 AF523028.1:0.97 AY218767.1:0.97 AY250090.1:0.97 AF407417.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.2790222
+align_log_slv: scoring: raw=-4227.05, weight=-4240.58, query-len=1451, aligned-bases=1451, score=0.99681; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:49
+nuc: 1451
+nuc_gene_slv: 1451
+turn_slv: none
+
+sequence_number: 75
+sequence_identifier: gi_281187310_gb_FJ8492411_
+sequence_score: 0.998385
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315177.1:0.99 AJ224987.1:0.99 AY315174.1:0.99 AF336361.1:0.98 AY315176.1:0.98 AJ575698.1:0.98 AY315175.1:0.98 AY315178.1:0.98 AF468328.1:0.98 AY250097.1:0.98 AY250101.1:0.98 AF523040.1:0.98 AF523032.1:0.98 AF408397.1:0.98 AY250106.1:0.98 AF523045.1:0.98 AF523018.1:0.98 AF523014.1:0.98 AF468326.1:0.98 AY218703.1:0.98 AF407405.1:0.98 AY250095.1:0.98 AF407386.1:0.98 AF523002.1:0.98 AF523041.1:0.98 AY250099.1:0.98 AF523013.1:0.98 AF523046.1:0.98 AF523026.1:0.98 AY188310.1:0.98 AY250102.1:0.98 AF407400.1:0.98 AF523051.1:0.98 AF523007.1:0.97 AF407417.1:0.97 AY250108.1:0.97 AY188320.1:0.97 AF523028.1:0.97 AY218767.1:0.97 AF523015.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.7130585
+align_log_slv: scoring: raw=-4236.52, weight=-4243.38, query-len=1453, aligned-bases=1453, score=0.998385; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:50
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 76
+sequence_identifier: gi_281187336_gb_FJ8492671_
+sequence_score: 0.997165
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315177.1:0.99 AJ224987.1:0.99 AY315174.1:0.99 AF336361.1:0.98 AY315176.1:0.98 AJ575698.1:0.98 AY315175.1:0.98 AY315178.1:0.98 AY250101.1:0.98 AY250097.1:0.98 AF468328.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AY218703.1:0.98 AF408397.1:0.98 AY250106.1:0.98 AF523045.1:0.98 AF523014.1:0.98 AF523018.1:0.98 AY188310.1:0.98 AY250099.1:0.98 AF468326.1:0.98 AF407405.1:0.98 AY250095.1:0.97 AF523002.1:0.97 AF407386.1:0.97 AF523041.1:0.97 AF523026.1:0.97 AF523013.1:0.97 AF523046.1:0.97 AY250102.1:0.97 AF523051.1:0.97 AF407400.1:0.97 AF523007.1:0.97 AY250108.1:0.97 AY188320.1:0.97 AF523028.1:0.97 AF407417.1:0.97 AY250090.1:0.97 AY218767.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.5695801
+align_log_slv: scoring: raw=-4230.4, weight=-4242.42, query-len=1453, aligned-bases=1453, score=0.997165; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:51
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 77
+sequence_identifier: gi_281187341_gb_FJ8492721_
+sequence_score: 0.997324
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315177.1:0.99 AJ224987.1:0.99 AY315174.1:0.99 AF336361.1:0.98 AY315176.1:0.98 AJ575698.1:0.98 AY315175.1:0.98 AF468328.1:0.98 AY315178.1:0.98 AY250101.1:0.98 AY250097.1:0.98 AY250106.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF408397.1:0.98 AF523045.1:0.98 AF468326.1:0.98 AF523018.1:0.98 AF523014.1:0.98 AY218703.1:0.98 AY250095.1:0.98 AF407405.1:0.98 AF407386.1:0.98 AF523002.1:0.98 AY250099.1:0.98 AF523041.1:0.98 AF523046.1:0.98 AF523026.1:0.98 AY250102.1:0.98 AY188310.1:0.98 AF523013.1:0.98 AF407400.1:0.97 AF523051.1:0.97 AF523007.1:0.97 AY188320.1:0.97 AY250108.1:0.97 AF523028.1:0.97 AF407417.1:0.97 AY218767.1:0.97 AF523015.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.6413193
+align_log_slv: scoring: raw=-4231.97, weight=-4243.33, query-len=1453, aligned-bases=1453, score=0.997324; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:51
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 78
+sequence_identifier: gi_281187355_gb_FJ8492861_
+sequence_score: 0.997294
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AJ224987.1:0.99 AY315174.1:0.99 AY315177.1:0.99 AF336361.1:0.98 AJ575698.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF408397.1:0.98 AF468328.1:0.98 AF523045.1:0.98 AY250097.1:0.98 AY315176.1:0.98 AF523014.1:0.98 AF523018.1:0.98 AY250101.1:0.98 AY315175.1:0.98 AY250106.1:0.98 AF523002.1:0.98 AF523041.1:0.98 AY315178.1:0.98 AF407405.1:0.98 AF468326.1:0.98 AF523051.1:0.98 AF407386.1:0.98 AY250095.1:0.98 AF523013.1:0.98 AY250099.1:0.98 AF523007.1:0.98 AF407400.1:0.98 AY250102.1:0.98 AY218703.1:0.98 AF523046.1:0.98 AF523026.1:0.98 AY250108.1:0.97 AY188310.1:0.97 AF523028.1:0.97 AY188320.1:0.97 AY218767.1:0.97 AF523015.1:0.97 AY250090.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.3543777
+align_log_slv: scoring: raw=-4229.7, weight=-4241.18, query-len=1451, aligned-bases=1451, score=0.997294; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:52
+nuc: 1451
+nuc_gene_slv: 1451
+turn_slv: none
+
+sequence_number: 79
+sequence_identifier: gi_281187371_gb_FJ8493021_
+sequence_score: 0.999216
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AJ224987.1:0.99 AY315177.1:0.99 AY315174.1:0.99 AF336361.1:0.98 AJ575698.1:0.98 AY315176.1:0.98 AY315175.1:0.98 AY250101.1:0.98 AY250097.1:0.98 AF468328.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF408397.1:0.98 AY250106.1:0.98 AF523045.1:0.98 AY315178.1:0.98 AF523014.1:0.98 AF523018.1:0.98 AF407405.1:0.98 AF468326.1:0.98 AY218703.1:0.98 AY250095.1:0.98 AF523002.1:0.98 AF407386.1:0.98 AF523041.1:0.98 AF407400.1:0.98 AY250099.1:0.98 AF523013.1:0.98 AY250102.1:0.98 AY188310.1:0.98 AF523051.1:0.98 AF523007.1:0.98 AF523026.1:0.97 AF523046.1:0.97 AY188320.1:0.97 AY250108.1:0.97 AF407417.1:0.97 AY218767.1:0.97 AF523028.1:0.97 AY250090.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.6413193
+align_log_slv: scoring: raw=-4239.4, weight=-4242.73, query-len=1453, aligned-bases=1453, score=0.999216; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:53
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 80
+sequence_identifier: gi_281187378_gb_FJ8493091_
+sequence_score: 0.997324
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315177.1:0.99 AJ224987.1:0.99 AY315174.1:0.99 AF336361.1:0.98 AY315176.1:0.98 AJ575698.1:0.98 AY315175.1:0.98 AY315178.1:0.98 AF468328.1:0.98 AY250097.1:0.98 AY250101.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF408397.1:0.98 AY250106.1:0.98 AF523045.1:0.98 AF523018.1:0.98 AF523014.1:0.98 AF468326.1:0.98 AF407405.1:0.98 AY218703.1:0.98 AF407386.1:0.98 AY250095.1:0.98 AF523002.1:0.98 AF523041.1:0.97 AY250099.1:0.97 AF523013.1:0.97 AF523046.1:0.97 AF523026.1:0.97 AY250102.1:0.97 AF407400.1:0.97 AY188310.1:0.97 AF523051.1:0.97 AF523007.1:0.97 AY250108.1:0.97 AF407417.1:0.97 AY188320.1:0.97 AF523028.1:0.97 AY218767.1:0.97 AF523015.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.6413193
+align_log_slv: scoring: raw=-4232.02, weight=-4243.38, query-len=1453, aligned-bases=1453, score=0.997324; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:25:54
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 81
+sequence_identifier: gi_311335280_gb_HQ3271591_
+sequence_score: 0.995428
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315174.1:0.99 AJ224987.1:0.98 AF336361.1:0.98 AY315177.1:0.98 AJ575698.1:0.98 AY315175.1:0.98 AY315176.1:0.98 AF468328.1:0.98 AF468326.1:0.98 AY315178.1:0.98 AF408397.1:0.98 AY250101.1:0.98 AY250097.1:0.98 AF523040.1:0.98 AF523032.1:0.98 AF407405.1:0.98 AY250106.1:0.98 AF523013.1:0.98 AF523014.1:0.98 AF523045.1:0.98 AF523018.1:0.98 AY250095.1:0.97 AF523002.1:0.97 AY218703.1:0.97 AF523041.1:0.97 AF523051.1:0.97 AF407386.1:0.97 AY250102.1:0.97 AY250099.1:0.97 AF407400.1:0.97 AY250108.1:0.97 AF407417.1:0.97 AF523007.1:0.97 AY188310.1:0.97 AY250090.1:0.97 AY188320.1:0.97 AF523026.1:0.97 AF523046.1:0.97 AY218767.1:0.97 AF523028.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.9193115
+align_log_slv: scoring: raw=-4298.68, weight=-4318.42, query-len=1493, aligned-bases=1493, score=0.995428; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:54
+nuc: 1493
+nuc_gene_slv: 1493
+turn_slv: none
+
+sequence_number: 82
+sequence_identifier: gi_311335295_gb_HQ3271741_
+sequence_score: 0.993493
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315177.1:0.99 AY315174.1:0.99 AJ224987.1:0.99 AY315176.1:0.98 AF336361.1:0.98 AF468328.1:0.98 AY315178.1:0.98 AY315175.1:0.98 AJ575698.1:0.97 AF408397.1:0.97 AY250097.1:0.97 AY250101.1:0.97 AY250106.1:0.97 AY218703.1:0.97 AF407405.1:0.97 AF523040.1:0.97 AF523032.1:0.97 AF468326.1:0.97 AF407400.1:0.97 AY250095.1:0.97 AF523045.1:0.97 AF523046.1:0.97 AF523026.1:0.97 AY250102.1:0.97 AF523018.1:0.97 AF523014.1:0.97 AF523013.1:0.97 AY250099.1:0.97 AF407386.1:0.97 AY188310.1:0.97 AF523002.1:0.97 AF523028.1:0.97 AF523041.1:0.97 AY250108.1:0.97 AY188320.1:0.97 AF407417.1:0.97 AF523015.1:0.97 AF523051.1:0.97 AF523012.1:0.97 AF523007.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.4265289
+align_log_slv: total inserted bases=1;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4286.8, weight=-4314.88, query-len=1493, aligned-bases=1493, score=0.993493; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:55
+nuc: 1493
+nuc_gene_slv: 1493
+turn_slv: none
+
+sequence_number: 83
+sequence_identifier: gi_311335335_gb_HQ3272141_
+sequence_score: 0.991839
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315174.1:0.99 AJ224987.1:0.98 AF336361.1:0.98 AY315177.1:0.98 AF468326.1:0.98 AY315176.1:0.98 AJ575698.1:0.98 AF468328.1:0.98 AF408397.1:0.98 AY315175.1:0.98 AY315178.1:0.98 AY250101.1:0.98 AY250097.1:0.98 AY250106.1:0.98 AF407405.1:0.98 AF523013.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF523014.1:0.97 AF523018.1:0.97 AF523045.1:0.97 AY250095.1:0.97 AF523041.1:0.97 AF523002.1:0.97 AF407386.1:0.97 AY250102.1:0.97 AY250099.1:0.97 AY218703.1:0.97 AF407400.1:0.97 AF523051.1:0.97 AY250108.1:0.97 AF407417.1:0.97 AF523007.1:0.97 AY188320.1:0.97 AY250090.1:0.97 AY188310.1:0.97 AF523046.1:0.97 AF523026.1:0.97 AY218767.1:0.97 AF523028.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.9928055
+align_log_slv: total inserted bases=3;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4286.35, weight=-4321.62, query-len=1495, aligned-bases=1495, score=0.991839; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:56
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 84
+sequence_identifier: gi_311335336_gb_HQ3272151_
+sequence_score: 0.996899
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315174.1:0.99 AJ224987.1:0.98 AY315177.1:0.98 AF336361.1:0.98 AY315176.1:0.98 AY315175.1:0.98 AY315178.1:0.98 AF468326.1:0.98 AJ575698.1:0.98 AF408397.1:0.98 AF468328.1:0.98 AF523013.1:0.98 AY250101.1:0.98 AY250097.1:0.98 AF407405.1:0.98 AY250106.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF523045.1:0.97 AF523018.1:0.97 AF523014.1:0.97 AY250095.1:0.97 AF523002.1:0.97 AF523041.1:0.97 AF407400.1:0.97 AF407386.1:0.97 AY250102.1:0.97 AY250099.1:0.97 AF523051.1:0.97 AY218703.1:0.97 AY250108.1:0.97 AF407417.1:0.97 AF523007.1:0.97 AF523026.1:0.97 AF523046.1:0.97 AY188320.1:0.97 AY250090.1:0.97 AY188310.1:0.97 AF523028.1:0.97 AY218767.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.134819
+align_log_slv: scoring: raw=-4298.05, weight=-4311.42, query-len=1492, aligned-bases=1492, score=0.996899; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:57
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 85
+sequence_identifier: gi_311335351_gb_HQ3272301_
+sequence_score: 0.997702
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315174.1:0.99 AF336361.1:0.99 AJ224987.1:0.99 AY315177.1:0.98 AY315175.1:0.98 AY315176.1:0.98 AF468328.1:0.98 AJ575698.1:0.98 AY250101.1:0.98 AY315178.1:0.98 AF468326.1:0.98 AF408397.1:0.98 AY250097.1:0.98 AF523040.1:0.98 AF523032.1:0.98 AY250106.1:0.98 AF407405.1:0.98 AF523018.1:0.98 AF523045.1:0.98 AF523014.1:0.98 AF523013.1:0.98 AY250095.1:0.98 AF523002.1:0.98 AF523041.1:0.98 AY218703.1:0.98 AF407386.1:0.98 AF407417.1:0.98 AY250102.1:0.98 AF407400.1:0.98 AY250099.1:0.98 AF523051.1:0.98 AY250108.1:0.98 AF523007.1:0.97 AY188310.1:0.97 AF523026.1:0.97 AF523046.1:0.97 AY188320.1:0.97 AY250090.1:0.97 AF523028.1:0.97 AY218767.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.2790222
+align_log_slv: scoring: raw=-4307.15, weight=-4317.07, query-len=1492, aligned-bases=1492, score=0.997702; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:57
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 86
+sequence_identifier: gi_315190011_gb_HQ5952021_
+sequence_score: 0.998516
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315177.1:0.99 AY315174.1:0.99 AJ224987.1:0.99 AY315176.1:0.98 AF336361.1:0.98 AY315178.1:0.98 AF468328.1:0.98 AY315175.1:0.98 AY250097.1:0.98 AF408397.1:0.98 AY250101.1:0.98 AJ575698.1:0.98 AY250106.1:0.98 AF468326.1:0.98 AY218703.1:0.98 AF407405.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AY250095.1:0.98 AF523045.1:0.98 AF523014.1:0.97 AF523018.1:0.97 AF407400.1:0.97 AY250102.1:0.97 AY250099.1:0.97 AF523046.1:0.97 AF523026.1:0.97 AF407386.1:0.97 AY188310.1:0.97 AF523002.1:0.97 AF523041.1:0.97 AF523013.1:0.97 AY250108.1:0.97 AY188320.1:0.97 AF523028.1:0.97 AF523051.1:0.97 AF523007.1:0.97 AF407417.1:0.97 AY218767.1:0.97 AF523015.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.78479
+align_log_slv: scoring: raw=-4306.07, weight=-4312.47, query-len=1492, aligned-bases=1492, score=0.998516; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:58
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 87
+sequence_identifier: gi_315190505_gb_HQ6227451_
+sequence_score: 0.991795
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY315174.1:0.99 AF336361.1:0.99 AJ224987.1:0.98 AY315177.1:0.98 AY315176.1:0.98 AF468328.1:0.98 AF468326.1:0.98 AY250101.1:0.98 AY315175.1:0.98 AY315178.1:0.98 AJ575698.1:0.98 AF408397.1:0.98 AY250097.1:0.98 AY250106.1:0.98 AF523032.1:0.98 AF523040.1:0.98 AF407405.1:0.98 AY250095.1:0.98 AF523014.1:0.98 AF523045.1:0.98 AF523018.1:0.98 AF523013.1:0.97 AF523002.1:0.97 AY250102.1:0.97 AY250099.1:0.97 AF523041.1:0.97 AY218703.1:0.97 AF407386.1:0.97 AY250108.1:0.97 AF523051.1:0.97 AF407417.1:0.97 AY188310.1:0.97 AF407400.1:0.97 AF523007.1:0.97 AY188320.1:0.97 AY250090.1:0.97 AY550031.1:0.97 AY218767.1:0.97 AF523026.1:0.97 AF523046.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.9906235
+align_log_slv: scoring: raw=-4259.77, weight=-4295.02, query-len=1492, aligned-bases=1492, score=0.991795; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:25:59
+nuc: 1492
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 88
+sequence_identifier: gi_4165396_dbj_AB0213901_
+sequence_score: 0.999319
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 3
+align_family_slv: AY050604.1:0.99 AJ387862.1:0.99 AY345550.1:0.99 AB183858.1:0.98 AY622262.1:0.98 AF236005.1:0.98 AJ009470.1:0.98 AY662013.1:0.97 AF236004.1:0.97 AB120966.1:0.97 AY212678.1:0.97 AB120967.1:0.97 AF509578.1:0.97 AJ622889.1:0.97 AB120965.1:0.97 AY360350.1:0.97 AB120964.1:0.97 AY212616.1:0.97 AY212681.1:0.97 AY133071.1:0.97 AF509579.1:0.97 AY133093.1:0.97 AY550031.1:0.97 AF078758.1:0.97 AY706429.1:0.97 AF523032.1:0.97 AF523045.1:0.97 AF523040.1:0.97 AY050592.1:0.97 AF523014.1:0.97 AF408397.1:0.97 AY212735.1:0.97 Y18617.1:0.97 AJ009457.1:0.97 AF523018.1:0.97 AY212612.1:0.97 AJ555476.1:0.97 AY250104.1:0.97 AF523002.1:0.96 U51101.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.8645935
+align_log_slv: scoring: raw=-4309.04, weight=-4311.98, query-len=1508, aligned-bases=1505, score=0.999319; 
+align_quality_slv: 99
+align_startpos_slv: 1013
+align_stoppos_slv: 43272
+aligned_slv: 2017-12-06 10:26:00
+nuc: 1508
+nuc_gene_slv: 1508
+turn_slv: none
+
+sequence_number: 89
+sequence_identifier: gi_39652273_dbj_AB1098891_
+sequence_score: 0.99778
+align_bp_score_slv: 121
+align_cutoff_head_slv: 3
+align_cutoff_tail_slv: 0
+align_family_slv: AY050604.1:1 AJ387862.1:0.99 AY345550.1:0.99 AB183858.1:0.98 AJ009470.1:0.98 AF236005.1:0.98 AY622262.1:0.98 AF236004.1:0.98 AF509578.1:0.98 AY662013.1:0.98 AY212678.1:0.98 AB120966.1:0.98 AB120965.1:0.98 AF509579.1:0.97 AB120967.1:0.97 AY212616.1:0.97 AY212681.1:0.97 AB120964.1:0.97 AJ622889.1:0.97 AY133071.1:0.97 AY550031.1:0.97 AY360350.1:0.97 AF078758.1:0.97 AF408397.1:0.97 AY133093.1:0.97 AY706429.1:0.97 AY212612.1:0.97 AY212735.1:0.97 AF523032.1:0.97 AF523045.1:0.97 AF523040.1:0.97 AY212568.1:0.97 Y18617.1:0.97 D89026.1:0.97 AB098595.1:0.97 AF523014.1:0.97 AJ292623.1:0.97 AY250104.1:0.97 AY662012.1:0.97 AF523018.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.7123642
+align_log_slv: scoring: raw=-4265.14, weight=-4274.63, query-len=1484, aligned-bases=1481, score=0.99778; 
+align_quality_slv: 99
+align_startpos_slv: 1003
+align_stoppos_slv: 43215
+aligned_slv: 2017-12-06 10:26:01
+nuc: 1484
+nuc_gene_slv: 1484
+turn_slv: none
+
+sequence_number: 90
+sequence_identifier: gi_158259706_dbj_AB3005971_
+sequence_score: 0.998276
+align_bp_score_slv: 118
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 1
+align_family_slv: AB051691.1:1 AB051689.1:1 AY689053.1:1 AF532867.1:1 AB051687.1:1 AB051688.1:1 AY550031.1:1 AB051685.1:0.99 AB051686.1:0.99 AB098595.1:0.99 AY599724.1:0.99 AJ292627.1:0.99 AY599725.1:0.99 AY689027.1:0.99 AB003627.1:0.99 AY179863.1:0.99 AF209469.1:0.99 AY599732.1:0.99 AB051690.1:0.99 AY169432.1:0.99 AY444994.1:0.99 AY444973.1:0.99 AF532868.1:0.99 AB008000.1:0.99 AF423075.1:0.99 AF534203.1:0.99 AY599733.1:0.99 AJ555474.1:0.99 AY127900.1:0.99 D30793.1:0.99 AF250030.1:0.99 AY512828.1:0.99 AJ313017.1:0.99 D88006.1:0.99 AY177770.1:0.99 AY162034.1:0.99 AY162061.1:0.99 AB187018.1:0.98 AF526937.1:0.98 AY549551.1:0.98 
+align_filter_slv: 
+align_ident_slv: 99.9311295
+align_log_slv: scoring: raw=-4315.53, weight=-4322.98, query-len=1475, aligned-bases=1474, score=0.998276; 
+align_quality_slv: 99
+align_startpos_slv: 1047
+align_stoppos_slv: 43235
+aligned_slv: 2017-12-06 10:26:01
+nuc: 1475
+nuc_gene_slv: 1475
+turn_slv: none
+
+sequence_number: 91
+sequence_identifier: gi_5230420_gb_AF0849471_
+sequence_score: 0.999453
+align_bp_score_slv: 116
+align_cutoff_head_slv: 7
+align_cutoff_tail_slv: 0
+align_family_slv: AF084947.1:0.98 AY609198.1:0.97 AF407381.1:0.97 AJ422168.1:0.97 AF529357.1:0.97 AF407413.1:0.97 AF407412.1:0.96 AF407396.1:0.96 AF435948.1:0.96 CP000267.4118280:0.96 AY622248.1:0.96 AY686732.1:0.96 AY250098.1:0.96 AY145615.1:0.96 AY315172.1:0.96 AY214181.1:0.96 AF468446.1:0.96 AF336363.1:0.96 AB074945.1:0.96 AF407397.1:0.96 AB030614.1:0.96 AY214178.1:0.96 AF523038.1:0.96 AJ421912.1:0.96 Y12375.1:0.96 AY315173.1:0.96 AY706423.1:0.96 AY214176.1:0.96 AJ421940.1:0.96 AY250111.1:0.96 D16212.1:0.96 AY050594.1:0.96 AY214177.1:0.96 AY214173.1:0.95 AF529106.1:0.95 AF523003.1:0.95 AY212681.1:0.95 AY212622.1:0.95 AY214175.1:0.95 AY218607.1:0.95 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: scoring: raw=-4287.69, weight=-4290.04, query-len=1484, aligned-bases=1477, score=0.999453; 
+align_quality_slv: 99
+align_startpos_slv: 999
+align_stoppos_slv: 43112
+aligned_slv: 2017-12-06 10:26:02
+nuc: 1484
+nuc_gene_slv: 1484
+turn_slv: none
+
+sequence_number: 92
+sequence_identifier: gi_32292927_gb_AF4359482_
+sequence_score: 0
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF435948.1:1 CP000267.4118280:1 AY250098.1:0.99 AY622248.1:0.99 AF468446.1:0.99 AB074945.1:0.99 AF336363.1:0.99 AY315172.1:0.99 AF407413.1:0.99 AY706423.1:0.99 AY250111.1:0.99 AJ440986.1:0.99 AF407381.1:0.98 AY218607.1:0.98 AJ421940.1:0.98 AJ421912.1:0.98 AB030614.1:0.98 AF523038.1:0.98 AY609198.1:0.98 AF529106.1:0.98 AF523003.1:0.98 AY050594.1:0.98 AY315181.1:0.98 AF407412.1:0.98 AY315173.1:0.98 AF529357.1:0.98 AY212612.1:0.98 AF407396.1:0.98 AY686732.1:0.98 AF289168.1:0.98 AJ575699.1:0.98 AY662012.1:0.98 AJ422168.1:0.98 AY218648.1:0.98 AY218635.1:0.98 AY218550.1:0.98 AY050600.1:0.98 AY218642.1:0.98 AY212681.1:0.98 AY218587.1:0.98 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: copied alignment from identical template sequence AF435948:1; 
+align_quality_slv: 100
+align_startpos_slv: 1006
+align_stoppos_slv: 43099
+aligned_slv: 2017-12-06 10:26:03
+nuc: 1470
+nuc_gene_slv: 1470
+turn_slv: none
+
+sequence_number: 93
+sequence_identifier: gi_40641615_emb_AJ6063331_
+sequence_score: 0.997264
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: Y11465.1:0.98 AF509578.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AY360350.1:0.97 AJ622889.1:0.97 AB120965.1:0.97 AY212612.1:0.97 AF509579.1:0.97 AB120967.1:0.97 AY212678.1:0.97 AY212616.1:0.97 AB120964.1:0.97 CP000267.4118280:0.97 AY212681.1:0.97 AY315173.1:0.97 AJ009470.1:0.97 AF407413.1:0.97 AY050604.1:0.97 AY662012.1:0.97 AB183858.1:0.97 AY345550.1:0.97 AY050594.1:0.97 AB030614.1:0.97 AY609198.1:0.97 AF214644.1:0.97 AF523038.1:0.97 AF435948.1:0.96 AJ565430.1:0.96 AF468446.1:0.96 AF407412.1:0.96 AB074945.1:0.96 AY686732.1:0.96 AB114619.1:0.96 AY212735.1:0.96 AY622248.1:0.96 AB074944.1:0.96 AF407381.1:0.96 AF529357.1:0.96 AF407396.1:0.96 
+align_filter_slv: 
+align_ident_slv: 97.7843399
+align_log_slv: scoring: raw=-4181.49, weight=-4192.97, query-len=1453, aligned-bases=1453, score=0.997264; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:26:04
+nuc: 1453
+nuc_gene_slv: 1453
+turn_slv: none
+
+sequence_number: 94
+sequence_identifier: gi_68051130_emb_AM0398301_
+sequence_score: 0.993964
+align_bp_score_slv: 108
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF523040.1:0.99 AF523032.1:0.99 AF523014.1:0.99 AF523018.1:0.99 AF523045.1:0.99 AF523002.1:0.99 AF523041.1:0.99 AF523051.1:0.99 AF408397.1:0.99 AF336361.1:0.98 AF523007.1:0.98 AJ575698.1:0.98 AF407386.1:0.98 AF523046.1:0.98 AF523026.1:0.98 AF468326.1:0.98 AF523013.1:0.98 AF407400.1:0.98 AF523028.1:0.98 AY186082.1:0.98 AY250097.1:0.98 AY250101.1:0.98 AY250106.1:0.98 AF523015.1:0.98 AF523012.1:0.98 AY218703.1:0.98 AY188310.1:0.98 AY315174.1:0.97 AF407405.1:0.97 AY250095.1:0.97 AY315175.1:0.97 AF468328.1:0.97 AY315177.1:0.97 AJ224987.1:0.97 AY315176.1:0.97 AF523031.1:0.97 AF523039.1:0.97 AY315178.1:0.97 AF407417.1:0.97 AY250102.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.7926102
+align_log_slv: scoring: raw=-4100.87, weight=-4125.78, query-len=1406, aligned-bases=1406, score=0.993964; 
+align_quality_slv: 99
+align_startpos_slv: 1111
+align_stoppos_slv: 43020
+aligned_slv: 2017-12-06 10:26:04
+nuc: 1406
+nuc_gene_slv: 1406
+turn_slv: none
+
+sequence_number: 95
+sequence_identifier: gi_353742083_emb_HE6006791_
+sequence_score: 0.999156
+align_bp_score_slv: 116
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 754
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AF289164.1:0.99 AY662014.1:0.99 AF289162.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AB154313.1:0.97 AF523063.1:0.97 AF289170.1:0.97 AY050600.1:0.97 AY550031.1:0.97 AY212631.1:0.97 AB074944.1:0.97 AJ421938.1:0.97 AF523069.1:0.97 AY315173.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AJ290026.1:0.97 AB074945.1:0.97 AF523068.1:0.97 AY050575.1:0.97 AF523062.1:0.97 AB183858.1:0.97 AF534428.1:0.97 AF236004.1:0.97 AB120966.1:0.97 AB030614.1:0.97 AY315181.1:0.97 AY662012.1:0.97 AJ422160.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AF289169.1:0.96 AY212678.1:0.96 AJ622889.1:0.96 AY050594.1:0.96 AJ421927.1:0.96 AJ440986.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2429428
+align_log_slv: scoring: raw=-4129.7, weight=-4133.19, query-len=2225, aligned-bases=1471, score=0.999156; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44023
+aligned_slv: 2017-12-06 10:26:05
+nuc: 2225
+nuc_gene_slv: 1483
+turn_slv: none
+
+sequence_number: 96
+sequence_identifier: gi_353742085_emb_HE6006811_
+sequence_score: 0.998658
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 795
+align_family_slv: AY212668.1:0.99 AB154313.1:0.99 AF534428.1:0.99 AY212631.1:0.98 AF289169.1:0.98 AY550031.1:0.98 AF289155.1:0.98 AF534429.1:0.98 AF289161.1:0.97 AF289164.1:0.97 AJ290026.1:0.97 AF289162.1:0.97 AB074945.1:0.97 AY662012.1:0.97 AY218703.1:0.97 AF361202.1:0.97 AY145570.1:0.97 AY050600.1:0.97 AY662014.1:0.97 AY315181.1:0.97 AY315173.1:0.97 AY212612.1:0.97 AJ575699.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AB030614.1:0.97 AJ421938.1:0.97 AY050575.1:0.97 AY188310.1:0.97 AJ440986.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AB183858.1:0.97 AY050594.1:0.96 AB051690.1:0.96 AJ422160.1:0.96 AJ622889.1:0.96 AB120966.1:0.96 AF336363.1:0.96 AY212616.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7955017
+align_log_slv: scoring: raw=-4136.47, weight=-4142.03, query-len=2262, aligned-bases=1467, score=0.998658; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44064
+aligned_slv: 2017-12-06 10:26:06
+nuc: 2262
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 97
+sequence_identifier: gi_353742086_emb_HE6006821_
+sequence_score: 0.996622
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 862
+align_family_slv: AY145570.1:0.99 AY550031.1:0.98 AY145569.1:0.98 AB154313.1:0.97 AF534429.1:0.97 AY212668.1:0.97 AF534428.1:0.97 AJ290026.1:0.97 AY212579.1:0.97 AF523063.1:0.97 AY315173.1:0.97 AF523069.1:0.97 AJ622889.1:0.97 AB074945.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY315181.1:0.97 AF523062.1:0.97 AB120966.1:0.97 AF523068.1:0.97 AB120967.1:0.97 AB051690.1:0.97 AJ421938.1:0.97 AY218703.1:0.97 AY212678.1:0.97 AY050600.1:0.97 AB051688.1:0.97 AF289155.1:0.97 AB051687.1:0.97 AY706429.1:0.97 AB051689.1:0.97 AJ422160.1:0.97 AB051691.1:0.97 AY662012.1:0.97 AY689053.1:0.97 AB183858.1:0.97 AF336363.1:0.97 AF289161.1:0.97 AY050575.1:0.97 AY212616.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.090271
+align_log_slv: scoring: raw=-4075.79, weight=-4089.6, query-len=2330, aligned-bases=1468, score=0.996622; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44181
+aligned_slv: 2017-12-06 10:26:07
+nuc: 2330
+nuc_gene_slv: 1467
+turn_slv: none
+
+sequence_number: 98
+sequence_identifier: gi_353742092_emb_HE6006881_
+sequence_score: 0.992825
+align_bp_score_slv: 116
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 739
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AF289164.1:0.98 AF289162.1:0.98 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.97 AF523063.1:0.97 AY050600.1:0.97 AB154313.1:0.97 AF289170.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY550031.1:0.97 AB183858.1:0.97 AF523069.1:0.97 AB074944.1:0.97 AY662012.1:0.97 AY315173.1:0.97 AY212631.1:0.97 AY315181.1:0.97 AB074945.1:0.97 AF236004.1:0.96 AB120966.1:0.96 AY050575.1:0.96 AF523068.1:0.96 AF523062.1:0.96 AJ421938.1:0.96 AY212616.1:0.96 AY212612.1:0.96 AF289169.1:0.96 AB120967.1:0.96 AJ009470.1:0.96 AY212678.1:0.96 AF534428.1:0.96 AJ622889.1:0.96 AJ440986.1:0.96 AY706429.1:0.96 AJ290026.1:0.96 AB030614.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.8300095
+align_log_slv: scoring: raw=-4104.72, weight=-4134.39, query-len=2211, aligned-bases=1472, score=0.992825; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44103
+aligned_slv: 2017-12-06 10:26:08
+nuc: 2211
+nuc_gene_slv: 1471
+turn_slv: none
+
+sequence_number: 99
+sequence_identifier: gi_353742068_emb_HE6006641_
+sequence_score: 0.999182
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 821
+align_family_slv: AB154313.1:0.99 AY212668.1:0.99 AF534428.1:0.99 AY212631.1:0.98 AF289169.1:0.98 AY550031.1:0.98 AF534429.1:0.97 AJ290026.1:0.97 AF289155.1:0.97 AY145570.1:0.97 AF289161.1:0.97 AB074945.1:0.97 AY218703.1:0.97 AF289164.1:0.97 AF361202.1:0.97 AY050600.1:0.97 AY662012.1:0.97 AY315181.1:0.97 AY188310.1:0.97 AY315173.1:0.97 AJ421938.1:0.97 AF289162.1:0.97 AB120964.1:0.97 AF523063.1:0.97 AF361193.1:0.97 AB120965.1:0.97 AY212612.1:0.97 AY145569.1:0.97 AY050575.1:0.97 AJ575699.1:0.97 AB030614.1:0.97 AF523069.1:0.97 AB051690.1:0.97 AJ440986.1:0.96 AJ422160.1:0.96 AJ622889.1:0.96 AB183858.1:0.96 AB120966.1:0.96 AY050594.1:0.96 AB051687.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7202835
+align_log_slv: scoring: raw=-4136.85, weight=-4140.23, query-len=2288, aligned-bases=1467, score=0.999182; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44090
+aligned_slv: 2017-12-06 10:26:09
+nuc: 2288
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 100
+sequence_identifier: gi_353742080_emb_HE6006761_
+sequence_score: 0.999182
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 820
+align_family_slv: AY212668.1:0.99 AB154313.1:0.99 AF534428.1:0.99 AY212631.1:0.98 AF289169.1:0.98 AY550031.1:0.98 AF534429.1:0.98 AF289155.1:0.98 AF289161.1:0.97 AJ290026.1:0.97 AF289164.1:0.97 AF361202.1:0.97 AF289162.1:0.97 AB074945.1:0.97 AY145570.1:0.97 AY662012.1:0.97 AY218703.1:0.97 AY050600.1:0.97 AY662014.1:0.97 AY315181.1:0.97 AY315173.1:0.97 AY212612.1:0.97 AJ575699.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AB030614.1:0.97 AJ421938.1:0.97 AY050575.1:0.97 AY188310.1:0.97 AJ440986.1:0.97 AF523063.1:0.97 AF523069.1:0.96 AY050594.1:0.96 AB183858.1:0.96 AJ422160.1:0.96 AJ622889.1:0.96 AB120966.1:0.96 AB051690.1:0.96 AY145569.1:0.96 AF336363.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.8636627
+align_log_slv: scoring: raw=-4137.44, weight=-4140.83, query-len=2287, aligned-bases=1467, score=0.999182; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44089
+aligned_slv: 2017-12-06 10:26:10
+nuc: 2287
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 101
+sequence_identifier: gi_353742087_emb_HE6006831_
+sequence_score: 0.998821
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 839
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AB154313.1:0.97 AF534429.1:0.97 AY212668.1:0.97 AF534428.1:0.97 AF523063.1:0.97 AY315173.1:0.97 AF523069.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AY212678.1:0.97 AY212579.1:0.97 AB051690.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AY218703.1:0.97 AB120964.1:0.97 AJ622889.1:0.97 AB120965.1:0.97 AJ421938.1:0.97 AY050600.1:0.97 AB120966.1:0.97 AF289155.1:0.97 AB120967.1:0.97 AY212616.1:0.97 AF236004.1:0.97 AY050575.1:0.97 AJ422160.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AY706429.1:0.97 AY188310.1:0.97 AF289161.1:0.97 AY622248.1:0.96 AB051687.1:0.96 AY315172.1:0.96 AB051691.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.3710709
+align_log_slv: scoring: raw=-4075.51, weight=-4080.32, query-len=2308, aligned-bases=1469, score=0.998821; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44108
+aligned_slv: 2017-12-06 10:26:11
+nuc: 2308
+nuc_gene_slv: 1481
+turn_slv: none
+
+sequence_number: 102
+sequence_identifier: gi_353742072_emb_HE6006681_
+sequence_score: 0.999163
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 830
+align_family_slv: AY145570.1:0.98 AF534429.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AJ290026.1:0.98 AY212668.1:0.98 AF534428.1:0.97 AF289155.1:0.97 AB074945.1:0.97 AY315173.1:0.97 AY050600.1:0.97 AF336363.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY662012.1:0.97 AY050575.1:0.97 AY212678.1:0.97 AF523038.1:0.97 AY212612.1:0.97 AY212579.1:0.97 AY315181.1:0.97 AF523063.1:0.97 AB120964.1:0.97 AJ622889.1:0.97 AY212616.1:0.97 AB120965.1:0.97 AF523069.1:0.97 AJ575699.1:0.97 AF236004.1:0.97 AJ440995.1:0.97 AY662013.1:0.97 AY212631.1:0.97 AF289162.1:0.97 AB120966.1:0.97 AJ421938.1:0.97 AB183858.1:0.97 AB120967.1:0.97 AF523062.1:0.96 AB051690.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.300209
+align_log_slv: scoring: raw=-4140.74, weight=-4144.2, query-len=2297, aligned-bases=1467, score=0.999163; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44099
+aligned_slv: 2017-12-06 10:26:12
+nuc: 2297
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 103
+sequence_identifier: gi_353742064_emb_HE6006601_
+sequence_score: 0.998711
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 841
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AJ290026.1:0.97 AB154313.1:0.97 AY315173.1:0.97 AY212668.1:0.97 AF534428.1:0.97 AF534429.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AB074945.1:0.97 AY212579.1:0.97 AF336363.1:0.97 AB051690.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AF523068.1:0.97 AY218703.1:0.97 AF289155.1:0.97 AJ622889.1:0.97 AB120965.1:0.97 AF523062.1:0.97 AJ421938.1:0.97 AY050600.1:0.97 AY212616.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AY706429.1:0.97 AF236004.1:0.97 AY315181.1:0.97 AF289161.1:0.97 AY315172.1:0.96 AB051688.1:0.96 AY050575.1:0.96 AY188310.1:0.96 AY622248.1:0.96 AB051687.1:0.96 AF289164.1:0.96 AB051691.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1614304
+align_log_slv: scoring: raw=-4075.26, weight=-4080.52, query-len=2310, aligned-bases=1469, score=0.998711; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44110
+aligned_slv: 2017-12-06 10:26:13
+nuc: 2310
+nuc_gene_slv: 1481
+turn_slv: none
+
+sequence_number: 104
+sequence_identifier: gi_353742069_emb_HE6006651_
+sequence_score: 0.999192
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 859
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AB154313.1:0.97 AJ290026.1:0.97 AF534429.1:0.97 AY212668.1:0.97 AF534428.1:0.97 AY315173.1:0.97 AF523063.1:0.97 AB051690.1:0.97 AF523069.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AF289155.1:0.97 AY212678.1:0.97 AY212579.1:0.97 AF361193.1:0.97 AB120964.1:0.97 AB051688.1:0.97 AY218703.1:0.97 AY315181.1:0.97 AJ622889.1:0.97 AF523062.1:0.97 AJ421938.1:0.97 AF523068.1:0.97 AB120965.1:0.97 AF289161.1:0.97 AY050600.1:0.97 AB051687.1:0.97 AB051689.1:0.97 AB051691.1:0.97 AB120966.1:0.97 AB183858.1:0.97 AB120967.1:0.97 AF289164.1:0.97 AY622262.1:0.97 AY662012.1:0.97 AY212616.1:0.97 AF236004.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.231308
+align_log_slv: scoring: raw=-4095.44, weight=-4098.75, query-len=2328, aligned-bases=1469, score=0.999192; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44128
+aligned_slv: 2017-12-06 10:26:14
+nuc: 2328
+nuc_gene_slv: 1481
+turn_slv: none
+
+sequence_number: 105
+sequence_identifier: gi_353742070_emb_HE6006661_
+sequence_score: 0.998802
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 832
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY145569.1:0.98 AF534429.1:0.98 AB074945.1:0.97 AY315173.1:0.97 AY212668.1:0.97 AF336363.1:0.97 AB154313.1:0.97 AY050600.1:0.97 AF534428.1:0.97 AY212579.1:0.97 AY050575.1:0.97 AF289155.1:0.97 AJ421938.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AY315172.1:0.97 AY212678.1:0.97 AY622248.1:0.97 AF289161.1:0.97 AJ440995.1:0.97 AB120964.1:0.97 AF523038.1:0.97 AJ440986.1:0.97 AY315181.1:0.97 AY662012.1:0.97 AB120965.1:0.97 AY212616.1:0.97 AY706423.1:0.97 AJ622889.1:0.97 AF523068.1:0.97 AJ421927.1:0.97 AF289164.1:0.97 AJ422160.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AF523062.1:0.97 AB051690.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.881897
+align_log_slv: scoring: raw=-4109.96, weight=-4114.89, query-len=2302, aligned-bases=1470, score=0.998802; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44149
+aligned_slv: 2017-12-06 10:26:14
+nuc: 2302
+nuc_gene_slv: 1469
+turn_slv: none
+
+sequence_number: 106
+sequence_identifier: gi_353742071_emb_HE6006671_
+sequence_score: 0.997023
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 846
+align_family_slv: AY145570.1:0.99 AY550031.1:0.98 AY145569.1:0.98 AF534429.1:0.97 AB154313.1:0.97 AY212668.1:0.97 AJ290026.1:0.97 AJ622889.1:0.97 AF523063.1:0.97 AF534428.1:0.97 AF523069.1:0.97 AY212579.1:0.97 AB074945.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY315173.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AY212678.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AB051690.1:0.97 AY218703.1:0.97 AY706429.1:0.97 AY662012.1:0.97 AY315181.1:0.97 AB183858.1:0.97 AJ421938.1:0.97 AY212616.1:0.97 AY212681.1:0.97 AF289155.1:0.97 AY050600.1:0.97 AF236004.1:0.97 AB051688.1:0.97 AY050604.1:0.97 AF336363.1:0.97 AB051687.1:0.97 AJ422160.1:0.97 AB051689.1:0.97 AB051691.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.1602554
+align_log_slv: scoring: raw=-4074.49, weight=-4086.65, query-len=2313, aligned-bases=1467, score=0.997023; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44115
+aligned_slv: 2017-12-06 10:26:15
+nuc: 2313
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 107
+sequence_identifier: gi_353742065_emb_HE6006611_
+sequence_score: 0.999194
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 852
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AF534428.1:0.97 AY315173.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AY212579.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AB051690.1:0.97 AB120965.1:0.97 AJ622889.1:0.97 AY218703.1:0.97 AY050600.1:0.97 AJ421938.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AF289155.1:0.97 AY212616.1:0.97 AY622262.1:0.97 AJ440995.1:0.97 AF236004.1:0.97 AJ422160.1:0.97 AY706429.1:0.97 AY050575.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AF289161.1:0.97 AY188310.1:0.96 AB183858.1:0.96 AB051687.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2302322
+align_log_slv: scoring: raw=-4075.73, weight=-4079.02, query-len=2319, aligned-bases=1467, score=0.999194; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44121
+aligned_slv: 2017-12-06 10:26:16
+nuc: 2319
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 108
+sequence_identifier: gi_353742066_emb_HE6006621_
+sequence_score: 0.998509
+align_bp_score_slv: 114
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 841
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AF534429.1:0.98 AJ290026.1:0.98 AB154313.1:0.98 AY145569.1:0.98 AF534428.1:0.98 AY212668.1:0.98 AF289155.1:0.97 AB074945.1:0.97 AY315173.1:0.97 AF289161.1:0.97 AY050600.1:0.97 AF336363.1:0.97 AF289164.1:0.97 AY050575.1:0.97 AY212579.1:0.97 AY662012.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AY315181.1:0.97 AY212678.1:0.97 AY218703.1:0.97 AJ421938.1:0.97 AB120964.1:0.97 AJ622889.1:0.97 AJ575699.1:0.97 AJ440995.1:0.97 AF523038.1:0.97 AF289162.1:0.97 AB120965.1:0.97 AF236004.1:0.97 AY212612.1:0.97 AB120966.1:0.97 AY250104.1:0.97 AB183858.1:0.97 AB120967.1:0.97 AF361193.1:0.97 AY212616.1:0.97 AY212631.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.0202942
+align_log_slv: scoring: raw=-4151.79, weight=-4157.99, query-len=2308, aligned-bases=1467, score=0.998509; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44110
+aligned_slv: 2017-12-06 10:26:17
+nuc: 2308
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 109
+sequence_identifier: gi_353742067_emb_HE6006631_
+sequence_score: 0.997932
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 2034
+align_family_slv: AY145570.1:1 AY550031.1:1 AF523063.1:1 AF523069.1:1 AY145569.1:1 AF523062.1:1 AF523068.1:1 AB074945.1:1 AY218703.1:1 AB154313.1:1 AY212668.1:1 AF534429.1:1 AY212678.1:1 AB074944.1:1 AB051690.1:1 AY315173.1:1 AF534428.1:1 AY188310.1:1 AF236004.1:1 AJ290026.1:1 AY212616.1:1 AY050600.1:1 AF336363.1:1 AY050494.1:1 AF289155.1:1 AB051688.1:1 AB120964.1:1 AB120965.1:1 AY050575.1:1 AB051686.1:1 AF523038.1:1 AB051687.1:1 AB051691.1:1 AY212631.1:1 AB051689.1:1 AY662012.1:1 AB120966.1:1 AY689053.1:1 AY179863.1:1 AF289161.1:1 
+align_filter_slv: 
+align_ident_slv: 99.5101471
+align_log_slv: scoring: raw=-4065.82, weight=-4074.25, query-len=3501, aligned-bases=1467, score=0.997932; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 45303
+aligned_slv: 2017-12-06 10:26:19
+nuc: 3501
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 110
+sequence_identifier: gi_353742088_emb_HE6006841_
+sequence_score: 0.999169
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 828
+align_family_slv: AY145570.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AB074945.1:0.98 AF336363.1:0.97 AB154313.1:0.97 AY315173.1:0.97 AY050600.1:0.97 AF534428.1:0.97 AF289155.1:0.97 AJ421938.1:0.97 AY050575.1:0.97 AF289161.1:0.97 AY212678.1:0.97 AY622248.1:0.97 AF289164.1:0.97 AY315172.1:0.97 AF523038.1:0.97 AF523063.1:0.97 AY662012.1:0.97 AY218703.1:0.97 AF523069.1:0.97 AJ422160.1:0.97 AY212616.1:0.97 AF236004.1:0.97 AJ440995.1:0.97 AY212579.1:0.97 AB030614.1:0.97 AB120964.1:0.97 AY212612.1:0.97 AJ440986.1:0.97 AY315181.1:0.97 AF289162.1:0.97 AB120965.1:0.97 AY706423.1:0.97 AY212631.1:0.97 AJ622889.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.8120193
+align_log_slv: scoring: raw=-4153.89, weight=-4157.34, query-len=2297, aligned-bases=1469, score=0.999169; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44097
+aligned_slv: 2017-12-06 10:26:19
+nuc: 2297
+nuc_gene_slv: 1481
+turn_slv: none
+
+sequence_number: 111
+sequence_identifier: gi_353742089_emb_HE6006851_
+sequence_score: 0.99879
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 753
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.97 AB154313.1:0.97 AY550031.1:0.97 AB183858.1:0.97 AY212631.1:0.97 AF523063.1:0.97 AY050600.1:0.97 AJ440986.1:0.97 AF534428.1:0.97 AB074944.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY315173.1:0.97 AY315181.1:0.97 AJ421938.1:0.97 AY662012.1:0.97 AY050604.1:0.97 AF523069.1:0.97 AJ009470.1:0.97 AJ290026.1:0.97 AY050575.1:0.97 AY218607.1:0.97 AF289169.1:0.97 AF523068.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AB074945.1:0.97 AF523062.1:0.97 AY212612.1:0.97 AJ575699.1:0.96 AY212616.1:0.96 AB120967.1:0.96 AJ422160.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.9311752
+align_log_slv: scoring: raw=-4140.52, weight=-4145.54, query-len=2225, aligned-bases=1472, score=0.99879; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44072
+aligned_slv: 2017-12-06 10:26:20
+nuc: 2225
+nuc_gene_slv: 1471
+turn_slv: none
+
+sequence_number: 112
+sequence_identifier: gi_353742090_emb_HE6006861_
+sequence_score: 0.999156
+align_bp_score_slv: 116
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 748
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AF289164.1:0.99 AY662014.1:0.99 AF289162.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AB154313.1:0.97 AF523063.1:0.97 AF289170.1:0.97 AY050600.1:0.97 AY550031.1:0.97 AY212631.1:0.97 AB074944.1:0.97 AJ421938.1:0.97 AF523069.1:0.97 AY315173.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AJ290026.1:0.97 AB074945.1:0.97 AF523068.1:0.97 AY050575.1:0.97 AF523062.1:0.97 AB183858.1:0.97 AF534428.1:0.97 AF236004.1:0.97 AB120966.1:0.97 AB030614.1:0.97 AY315181.1:0.97 AY662012.1:0.97 AJ422160.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AF289169.1:0.96 AY212678.1:0.96 AJ622889.1:0.96 AY050594.1:0.96 AJ421927.1:0.96 AJ440986.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2429428
+align_log_slv: scoring: raw=-4129.55, weight=-4133.04, query-len=2219, aligned-bases=1471, score=0.999156; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44017
+aligned_slv: 2017-12-06 10:26:21
+nuc: 2219
+nuc_gene_slv: 1483
+turn_slv: none
+
+sequence_number: 113
+sequence_identifier: gi_353742091_emb_HE6006871_
+sequence_score: 0.999194
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 835
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AF534428.1:0.97 AY315173.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AY212579.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AB051690.1:0.97 AB120965.1:0.97 AJ622889.1:0.97 AY218703.1:0.97 AY050600.1:0.97 AJ421938.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AF289155.1:0.97 AY212616.1:0.97 AY622262.1:0.97 AJ440995.1:0.97 AF236004.1:0.97 AJ422160.1:0.97 AY706429.1:0.97 AY050575.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AF289161.1:0.97 AY188310.1:0.96 AB183858.1:0.96 AB051687.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2302322
+align_log_slv: scoring: raw=-4075.83, weight=-4079.12, query-len=2302, aligned-bases=1467, score=0.999194; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44104
+aligned_slv: 2017-12-06 10:26:22
+nuc: 2302
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 114
+sequence_identifier: gi_353742094_emb_HE6006901_
+sequence_score: 0.999195
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 843
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AF523063.1:0.97 AY315173.1:0.97 AF523069.1:0.97 AF534428.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AY212579.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AB051690.1:0.97 AB120965.1:0.97 AJ622889.1:0.97 AY218703.1:0.97 AJ421938.1:0.97 AB120966.1:0.97 AY050600.1:0.97 AB120967.1:0.97 AF289155.1:0.97 AY212616.1:0.97 AF236004.1:0.97 AY706429.1:0.97 AY050575.1:0.97 AJ422160.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AY622248.1:0.97 AF289161.1:0.97 AY188310.1:0.96 AB183858.1:0.96 AY622262.1:0.96 AB051687.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.3011856
+align_log_slv: scoring: raw=-4080.28, weight=-4083.57, query-len=2312, aligned-bases=1469, score=0.999195; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44112
+aligned_slv: 2017-12-06 10:26:23
+nuc: 2312
+nuc_gene_slv: 1481
+turn_slv: none
+
+sequence_number: 115
+sequence_identifier: gi_353742093_emb_HE6006891_
+sequence_score: 0.999157
+align_bp_score_slv: 114
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 845
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AB154313.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF534428.1:0.98 AY145569.1:0.98 AJ290026.1:0.98 AB074945.1:0.97 AF289155.1:0.97 AY315173.1:0.97 AY050600.1:0.97 AF336363.1:0.97 AY662012.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY050575.1:0.97 AY212678.1:0.97 AY212579.1:0.97 AF523063.1:0.97 AF523038.1:0.97 AY315181.1:0.97 AY212612.1:0.97 AF523069.1:0.97 AB120964.1:0.97 AJ622889.1:0.97 AY212616.1:0.97 AY212631.1:0.97 AB120965.1:0.97 AJ575699.1:0.97 AF236004.1:0.97 AJ440995.1:0.97 AY662013.1:0.97 AB183858.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AB051690.1:0.97 AF289162.1:0.97 AY622262.1:0.97 AY622248.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.7421417
+align_log_slv: scoring: raw=-4160.39, weight=-4163.9, query-len=2312, aligned-bases=1467, score=0.999157; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44114
+aligned_slv: 2017-12-06 10:26:24
+nuc: 2312
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 116
+sequence_identifier: gi_353742095_emb_HE6006911_
+sequence_score: 0.99813
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 856
+align_family_slv: AY145570.1:0.98 AF534429.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AF534428.1:0.98 AF289155.1:0.98 AF289161.1:0.97 AF289164.1:0.97 AB074945.1:0.97 AY662012.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AY050600.1:0.97 AF336363.1:0.97 AF289162.1:0.97 AY212678.1:0.97 AY212612.1:0.97 AB120964.1:0.97 AY050575.1:0.97 AB120965.1:0.97 AF523063.1:0.97 AF523038.1:0.97 AJ440995.1:0.97 AJ622889.1:0.97 AY315181.1:0.97 AB120966.1:0.97 AB183858.1:0.97 AF523069.1:0.97 AB120967.1:0.97 AY212631.1:0.97 AY212616.1:0.97 AY662014.1:0.97 AY662013.1:0.97 AY250104.1:0.97 AJ575699.1:0.97 AF236004.1:0.97 AY622262.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.6941605
+align_log_slv: scoring: raw=-4224.69, weight=-4232.6, query-len=2347, aligned-bases=1491, score=0.99813; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 44125
+aligned_slv: 2017-12-06 10:26:25
+nuc: 2347
+nuc_gene_slv: 1503
+turn_slv: none
+
+sequence_number: 117
+sequence_identifier: gi_353742096_emb_HE6006921_
+sequence_score: 0.999194
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 855
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AF534428.1:0.97 AY315173.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AY212579.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AB051690.1:0.97 AB120965.1:0.97 AJ622889.1:0.97 AY218703.1:0.97 AY050600.1:0.97 AJ421938.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AF289155.1:0.97 AY212616.1:0.97 AY622262.1:0.97 AJ440995.1:0.97 AF236004.1:0.97 AJ422160.1:0.97 AY706429.1:0.97 AY050575.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AF289161.1:0.97 AY188310.1:0.96 AB183858.1:0.96 AB051687.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2302322
+align_log_slv: scoring: raw=-4075.78, weight=-4079.07, query-len=2322, aligned-bases=1467, score=0.999194; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44124
+aligned_slv: 2017-12-06 10:26:26
+nuc: 2322
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 118
+sequence_identifier: gi_350921988_emb_FM1782262_
+sequence_score: 0.99919
+align_bp_score_slv: 117
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 709
+align_family_slv: AF289155.1:0.98 AF289161.1:0.98 AF289164.1:0.98 AF534429.1:0.98 AF289162.1:0.98 AY662014.1:0.97 AY212668.1:0.97 AF289170.1:0.97 AB154313.1:0.97 AY550031.1:0.97 AB183858.1:0.97 AY145570.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY050604.1:0.97 AF236004.1:0.97 AF289169.1:0.97 AB120966.1:0.97 AF534428.1:0.97 AJ009470.1:0.97 AY345550.1:0.97 AB120967.1:0.97 AF236005.1:0.97 AY315181.1:0.96 AJ421938.1:0.96 AY315173.1:0.96 AJ622889.1:0.96 AY145569.1:0.96 AY212631.1:0.96 AF523063.1:0.96 AY218703.1:0.96 AY212616.1:0.96 AY050600.1:0.96 AJ422160.1:0.96 AY662012.1:0.96 AY212678.1:0.96 AB074944.1:0.96 AY706429.1:0.96 AF523069.1:0.96 AY050494.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.5694809
+align_log_slv: scoring: raw=-4177.15, weight=-4180.53, query-len=2194, aligned-bases=1485, score=0.99919; 
+align_quality_slv: 99
+align_startpos_slv: 1064
+align_stoppos_slv: 43978
+aligned_slv: 2017-12-06 10:26:27
+nuc: 2194
+nuc_gene_slv: 1497
+turn_slv: none
+
+sequence_number: 119
+sequence_identifier: gi_350921983_emb_AJ9380262_
+sequence_score: 0.99925
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 703
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AF289164.1:0.99 AY662014.1:0.99 AF289162.1:0.99 AF534429.1:0.98 AY212668.1:0.98 AB154313.1:0.97 AF289170.1:0.97 AF523063.1:0.97 AF534428.1:0.97 AJ290026.1:0.97 AY050600.1:0.97 AY550031.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AJ421938.1:0.97 AF523069.1:0.97 AB074944.1:0.97 AY315173.1:0.97 AF289169.1:0.97 AY212631.1:0.97 AB183858.1:0.97 AB074945.1:0.97 AF523068.1:0.97 AF236004.1:0.97 AB120966.1:0.97 AY050575.1:0.97 AF523062.1:0.97 AY662012.1:0.97 AB030614.1:0.97 AY212616.1:0.97 AY315181.1:0.97 AB120967.1:0.97 AY145570.1:0.97 AJ422160.1:0.97 AY212678.1:0.97 AJ622889.1:0.97 AJ440986.1:0.97 AY050594.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1864395
+align_log_slv: scoring: raw=-4182.15, weight=-4185.29, query-len=2196, aligned-bases=1493, score=0.99925; 
+align_quality_slv: 99
+align_startpos_slv: 1047
+align_stoppos_slv: 43972
+aligned_slv: 2017-12-06 10:26:28
+nuc: 2196
+nuc_gene_slv: 1505
+turn_slv: none
+
+sequence_number: 120
+sequence_identifier: gi_350921987_emb_FM1655362_
+sequence_score: 0.998102
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 855
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AF534429.1:0.98 AJ290026.1:0.98 AY212668.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AF534428.1:0.97 AF289155.1:0.97 AB074945.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY315173.1:0.97 AY662012.1:0.97 AY050600.1:0.97 AF336363.1:0.97 AY212579.1:0.97 AY050575.1:0.97 AY212678.1:0.97 AF523063.1:0.97 AB120964.1:0.97 AY212612.1:0.97 AY315181.1:0.97 AJ622889.1:0.97 AF523069.1:0.97 AB120965.1:0.97 AY212631.1:0.97 AF523038.1:0.97 AF289162.1:0.97 AJ440995.1:0.97 AJ575699.1:0.97 AB120966.1:0.97 AB183858.1:0.97 AB120967.1:0.97 AJ421938.1:0.97 AY212616.1:0.97 AY662013.1:0.97 AB051690.1:0.97 AF236004.1:0.97 AY622262.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.6741104
+align_log_slv: scoring: raw=-4159.74, weight=-4167.65, query-len=2324, aligned-bases=1469, score=0.998102; 
+align_quality_slv: 99
+align_startpos_slv: 1105
+align_stoppos_slv: 44124
+aligned_slv: 2017-12-06 10:26:29
+nuc: 2324
+nuc_gene_slv: 1481
+turn_slv: none
+
+sequence_number: 121
+sequence_identifier: gi_350921986_emb_FM1655352_
+sequence_score: 0.999197
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 858
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AB154313.1:0.98 AF534429.1:0.97 AY212668.1:0.97 AF534428.1:0.97 AF523063.1:0.97 AY315173.1:0.97 AF523069.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AY212678.1:0.97 AY212579.1:0.97 AB120964.1:0.97 AB051690.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AJ622889.1:0.97 AJ421938.1:0.97 AY218703.1:0.97 AB120965.1:0.97 AY050600.1:0.97 AB120966.1:0.97 AF289155.1:0.97 AB120967.1:0.97 AY212616.1:0.97 AF236004.1:0.97 AJ422160.1:0.97 AY050575.1:0.97 AY622248.1:0.97 AB051688.1:0.97 AF289161.1:0.97 AY188310.1:0.97 AY315181.1:0.97 AY706429.1:0.97 AJ440995.1:0.96 AB051691.1:0.96 AF289164.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.3723907
+align_log_slv: scoring: raw=-4088.88, weight=-4092.17, query-len=2330, aligned-bases=1472, score=0.999197; 
+align_quality_slv: 99
+align_startpos_slv: 1102
+align_stoppos_slv: 44127
+aligned_slv: 2017-12-06 10:26:30
+nuc: 2330
+nuc_gene_slv: 1484
+turn_slv: none
+
+sequence_number: 122
+sequence_identifier: gi_169659096_dbj_AB4265831_
+sequence_score: 0.997989
+align_bp_score_slv: 113
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289161.1:1 AF289155.1:1 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.99 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.97 AY550031.1:0.97 AB154313.1:0.97 AJ290026.1:0.97 AB120965.1:0.97 AY212631.1:0.97 AY315181.1:0.97 AY662012.1:0.97 AY212612.1:0.97 AF289169.1:0.97 AB120964.1:0.97 AF534428.1:0.97 AB183858.1:0.97 AB120966.1:0.97 X95837.1:0.97 Z93957.1:0.97 AF236004.1:0.97 AJ009470.1:0.97 AJ421938.1:0.97 AB120967.1:0.97 AY315173.1:0.96 AF236005.1:0.96 AY212616.1:0.96 AY212624.1:0.96 AF538929.1:0.96 AY145570.1:0.96 AJ440986.1:0.96 AY218607.1:0.96 AY212678.1:0.96 AB051690.1:0.96 AY250104.1:0.96 AY050600.1:0.96 D89026.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.8605347
+align_log_slv: scoring: raw=-4146.18, weight=-4154.54, query-len=1433, aligned-bases=1433, score=0.997989; 
+align_quality_slv: 99
+align_startpos_slv: 1040
+align_stoppos_slv: 43019
+aligned_slv: 2017-12-06 10:26:30
+nuc: 1433
+nuc_gene_slv: 1433
+turn_slv: none
+
+sequence_number: 123
+sequence_identifier: gi_169659086_dbj_AB4265731_
+sequence_score: 0.997923
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AF289164.1:0.99 AY662014.1:0.99 AF289162.1:0.99 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.97 AB154313.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AJ290026.1:0.97 AY212631.1:0.97 AY550031.1:0.97 AF534428.1:0.97 AF289169.1:0.97 AB120966.1:0.97 AJ421938.1:0.97 AF236004.1:0.97 AB120967.1:0.97 AY315173.1:0.97 AB183858.1:0.97 AY212616.1:0.96 AY145570.1:0.96 AJ422160.1:0.96 AY662012.1:0.96 AY212678.1:0.96 AY050600.1:0.96 AY315181.1:0.96 AJ009470.1:0.96 AY212612.1:0.96 AJ622889.1:0.96 AJ421927.1:0.96 AY706429.1:0.96 AF236005.1:0.96 AB030614.1:0.96 AJ440986.1:0.96 AY145569.1:0.96 AB074944.1:0.96 AY250104.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.1584854
+align_log_slv: scoring: raw=-4125.2, weight=-4133.78, query-len=1425, aligned-bases=1425, score=0.997923; 
+align_quality_slv: 99
+align_startpos_slv: 1059
+align_stoppos_slv: 43020
+aligned_slv: 2017-12-06 10:26:31
+nuc: 1425
+nuc_gene_slv: 1425
+turn_slv: none
+
+sequence_number: 124
+sequence_identifier: gi_169659091_dbj_AB4265781_
+sequence_score: 0.999205
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:1 AF289161.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.99 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.98 AB154313.1:0.97 AB183858.1:0.97 AJ290026.1:0.97 AB120965.1:0.97 AY212631.1:0.97 AF289169.1:0.97 AB120964.1:0.97 AF534428.1:0.97 AY550031.1:0.97 AJ009470.1:0.97 AB120966.1:0.97 AY218607.1:0.97 AY662012.1:0.97 AJ440986.1:0.97 AF236004.1:0.97 AY212612.1:0.97 AB120967.1:0.97 AF236005.1:0.97 AY212616.1:0.97 AY145570.1:0.97 AY050604.1:0.97 AY345550.1:0.97 AY212678.1:0.97 AY315181.1:0.97 AJ421938.1:0.97 AY315173.1:0.97 AY212624.1:0.96 AY050600.1:0.96 AJ422160.1:0.96 AF538929.1:0.96 AY250104.1:0.96 AY218635.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.8601379
+align_log_slv: scoring: raw=-4151.68, weight=-4154.99, query-len=1430, aligned-bases=1430, score=0.999205; 
+align_quality_slv: 99
+align_startpos_slv: 1035
+align_stoppos_slv: 42992
+aligned_slv: 2017-12-06 10:26:32
+nuc: 1430
+nuc_gene_slv: 1430
+turn_slv: none
+
+sequence_number: 125
+sequence_identifier: gi_169659092_dbj_AB4265791_
+sequence_score: 0.997364
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:0.99 AF289161.1:0.99 AF289164.1:0.99 AY662014.1:0.99 AF289162.1:0.99 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.97 AB154313.1:0.97 AJ290026.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY212631.1:0.97 AF534428.1:0.97 AF289169.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AB183858.1:0.97 AY550031.1:0.97 AB120967.1:0.97 AY662012.1:0.97 AJ421938.1:0.96 AY212616.1:0.96 AY212612.1:0.96 AY315173.1:0.96 AY145570.1:0.96 AF445694.1:0.96 AY050600.1:0.96 AJ009470.1:0.96 AY212678.1:0.96 AJ422160.1:0.96 AY315181.1:0.96 AF236005.1:0.96 AJ440986.1:0.96 AB030614.1:0.96 AJ622889.1:0.96 AY218607.1:0.96 AY250104.1:0.96 AY050575.1:0.96 CP000267.4118280:0.96 
+align_filter_slv: 
+align_ident_slv: 98.8795547
+align_log_slv: scoring: raw=-4140.4, weight=-4151.34, query-len=1427, aligned-bases=1427, score=0.997364; 
+align_quality_slv: 99
+align_startpos_slv: 1055
+align_stoppos_slv: 43020
+aligned_slv: 2017-12-06 10:26:33
+nuc: 1427
+nuc_gene_slv: 1427
+turn_slv: none
+
+sequence_number: 126
+sequence_identifier: gi_312190230_dbj_AB5997901_
+sequence_score: 0.997844
+align_bp_score_slv: 109
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:1 AF289161.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.98 AB154313.1:0.97 AB183858.1:0.97 AY212631.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AY550031.1:0.97 AJ290026.1:0.97 AJ009470.1:0.97 AF289169.1:0.97 AJ440986.1:0.97 AB120966.1:0.97 AF534428.1:0.97 AY218607.1:0.97 AY662012.1:0.97 AF236004.1:0.97 AY212612.1:0.97 AB120967.1:0.97 AY050604.1:0.97 AY212616.1:0.97 AY315181.1:0.97 AY315173.1:0.97 AY050600.1:0.97 AY345550.1:0.96 AJ421938.1:0.96 AY212678.1:0.96 AJ422160.1:0.96 AF236005.1:0.96 AY706429.1:0.96 Z93957.1:0.96 X95837.1:0.96 AY133071.1:0.96 AF538929.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.8584595
+align_log_slv: scoring: raw=-4115.3, weight=-4124.19, query-len=1412, aligned-bases=1412, score=0.997844; 
+align_quality_slv: 99
+align_startpos_slv: 1119
+align_stoppos_slv: 43052
+aligned_slv: 2017-12-06 10:26:34
+nuc: 1412
+nuc_gene_slv: 1412
+turn_slv: none
+
+sequence_number: 127
+sequence_identifier: gi_312190240_dbj_AB5998001_
+sequence_score: 0.997851
+align_bp_score_slv: 109
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289161.1:1 AF289155.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AY550031.1:0.97 AF289170.1:0.97 AB154313.1:0.97 AY212631.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AY662012.1:0.97 AY212612.1:0.97 AY315181.1:0.97 AJ290026.1:0.97 AB183858.1:0.97 AF289169.1:0.97 AF534428.1:0.97 AB120966.1:0.97 AF236004.1:0.97 X95837.1:0.97 Z93957.1:0.97 AJ009470.1:0.97 AB120967.1:0.97 AY212616.1:0.96 AY315173.1:0.96 AF538929.1:0.96 AY050600.1:0.96 AJ421938.1:0.96 AJ440986.1:0.96 AY218607.1:0.96 AY212678.1:0.96 AJ422160.1:0.96 AF236005.1:0.96 AB051690.1:0.96 AY706429.1:0.96 AY662013.1:0.96 AY212735.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.8583527
+align_log_slv: scoring: raw=-4104.5, weight=-4113.34, query-len=1411, aligned-bases=1411, score=0.997851; 
+align_quality_slv: 99
+align_startpos_slv: 1119
+align_stoppos_slv: 43050
+aligned_slv: 2017-12-06 10:26:34
+nuc: 1411
+nuc_gene_slv: 1411
+turn_slv: none
+
+sequence_number: 128
+sequence_identifier: gi_312190329_dbj_AB5998891_
+sequence_score: 0.997869
+align_bp_score_slv: 109
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF289155.1:1 AF289161.1:0.99 AF289164.1:0.99 AF289162.1:0.99 AY662014.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF289170.1:0.98 AB154313.1:0.97 AB183858.1:0.97 AY212631.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY550031.1:0.97 AJ290026.1:0.97 AJ009470.1:0.97 AB120966.1:0.97 AJ440986.1:0.97 AF289169.1:0.97 AF534428.1:0.97 AY218607.1:0.97 AY662012.1:0.97 AF236004.1:0.97 AB120967.1:0.97 AY212612.1:0.97 AY050604.1:0.97 AY212616.1:0.97 AY315181.1:0.97 AY050600.1:0.97 AY315173.1:0.97 AY345550.1:0.96 AY212678.1:0.96 AJ421938.1:0.96 AJ422160.1:0.96 AF236005.1:0.96 AY706429.1:0.96 AY133071.1:0.96 X95837.1:0.96 Z93957.1:0.96 AY145570.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7879868
+align_log_slv: scoring: raw=-4117.29, weight=-4126.09, query-len=1413, aligned-bases=1413, score=0.997869; 
+align_quality_slv: 99
+align_startpos_slv: 1084
+align_stoppos_slv: 43020
+aligned_slv: 2017-12-06 10:26:35
+nuc: 1413
+nuc_gene_slv: 1413
+turn_slv: none
+
+sequence_number: 129
+sequence_identifier: gi_169659094_dbj_AB4265811_
+sequence_score: 0.997902
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AB154313.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AF534428.1:0.98 AJ290026.1:0.98 AF289155.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AY212678.1:0.97 AF361193.1:0.97 AB120966.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AF236004.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AB183858.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AB051690.1:0.97 AF289169.1:0.97 AJ622889.1:0.97 AF289170.1:0.97 AY315181.1:0.97 AY212631.1:0.97 AF236005.1:0.97 AY345550.1:0.97 AY662013.1:0.97 AY212612.1:0.97 AY212681.1:0.97 AJ295499.1:0.97 AY050604.1:0.97 AY250104.1:0.96 AY622262.1:0.96 AY212568.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2997131
+align_log_slv: scoring: raw=-4133.85, weight=-4142.54, query-len=1427, aligned-bases=1427, score=0.997902; 
+align_quality_slv: 99
+align_startpos_slv: 1045
+align_stoppos_slv: 43020
+aligned_slv: 2017-12-06 10:26:36
+nuc: 1427
+nuc_gene_slv: 1427
+turn_slv: none
+
+sequence_number: 130
+sequence_identifier: gi_169659095_dbj_AB4265821_
+sequence_score: 0.999224
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AF534429.1:0.97 AY212668.1:0.97 AB154313.1:0.97 AF534428.1:0.97 AF289155.1:0.97 AF289161.1:0.97 AB120965.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AF236005.1:0.97 AB120966.1:0.97 AF289164.1:0.97 AB051690.1:0.97 AF361193.1:0.97 AY622262.1:0.97 AF236004.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AF289170.1:0.97 AY662012.1:0.97 AB183858.1:0.97 AY315181.1:0.97 AF289169.1:0.97 AJ421938.1:0.97 AB051691.1:0.96 AJ622889.1:0.96 AY689053.1:0.96 AY662013.1:0.96 AY212612.1:0.96 AY345550.1:0.96 AJ422160.1:0.96 AF289162.1:0.96 AF336363.1:0.96 AB051688.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.086441
+align_log_slv: scoring: raw=-4120.54, weight=-4123.74, query-len=1423, aligned-bases=1423, score=0.999224; 
+align_quality_slv: 99
+align_startpos_slv: 1040
+align_stoppos_slv: 42989
+aligned_slv: 2017-12-06 10:26:37
+nuc: 1423
+nuc_gene_slv: 1423
+turn_slv: none
+
+sequence_number: 131
+sequence_identifier: gi_169659097_dbj_AB4265841_
+sequence_score: 0.997922
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AF534429.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AF289155.1:0.98 AY550031.1:0.98 AF534428.1:0.98 AF289161.1:0.98 AF289164.1:0.98 AY212678.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY315173.1:0.97 AF289162.1:0.97 AB120966.1:0.97 AY212579.1:0.97 AF236004.1:0.97 AY212616.1:0.97 AY662014.1:0.97 AY662012.1:0.97 AB120967.1:0.97 AY212631.1:0.97 AY050600.1:0.97 AF523038.1:0.97 AF336363.1:0.97 AB074945.1:0.97 AY212612.1:0.97 AY622248.1:0.97 AY662013.1:0.97 AY050575.1:0.97 AJ622889.1:0.97 AY212568.1:0.97 AB183858.1:0.97 AF361193.1:0.97 AF289169.1:0.97 AY250104.1:0.97 AY212681.1:0.97 AB030614.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.9473724
+align_log_slv: scoring: raw=-4126.44, weight=-4135.03, query-len=1424, aligned-bases=1424, score=0.997922; 
+align_quality_slv: 99
+align_startpos_slv: 1052
+align_stoppos_slv: 43020
+aligned_slv: 2017-12-06 10:26:38
+nuc: 1424
+nuc_gene_slv: 1424
+turn_slv: none
+
+sequence_number: 132
+sequence_identifier: gi_169659099_dbj_AB4265861_
+sequence_score: 0.997459
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.98 AY212668.1:0.98 AJ290026.1:0.98 AF534429.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AY550031.1:0.98 AF289155.1:0.98 AF534428.1:0.98 AF289161.1:0.98 AF289164.1:0.97 AY212678.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AY315173.1:0.97 AB120966.1:0.97 AY212579.1:0.97 AF236004.1:0.97 AY212616.1:0.97 AY662012.1:0.97 AF289162.1:0.97 AY050600.1:0.97 AB120967.1:0.97 AF523038.1:0.97 AF336363.1:0.97 AY662014.1:0.97 AY212631.1:0.97 AB074945.1:0.97 AY212612.1:0.97 AY050575.1:0.97 AY662013.1:0.97 AY622248.1:0.97 AJ622889.1:0.97 AY212568.1:0.97 AB183858.1:0.97 AF289169.1:0.97 AY706429.1:0.97 AJ440995.1:0.97 AY212681.1:0.97 CP000267.4118280:0.97 
+align_filter_slv: 
+align_ident_slv: 98.9458923
+align_log_slv: scoring: raw=-4118.29, weight=-4128.78, query-len=1422, aligned-bases=1422, score=0.997459; 
+align_quality_slv: 99
+align_startpos_slv: 1057
+align_stoppos_slv: 43020
+aligned_slv: 2017-12-06 10:26:38
+nuc: 1422
+nuc_gene_slv: 1422
+turn_slv: none
+
+sequence_number: 133
+sequence_identifier: gi_332144605_dbj_AB6268121_
+sequence_score: 0.993983
+align_bp_score_slv: 111
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY550031.1:0.98 AY145569.1:0.98 AJ290026.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AY212668.1:0.97 AF534428.1:0.97 AF289155.1:0.97 AF289161.1:0.97 AY315173.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AY212678.1:0.97 AB051690.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AF289164.1:0.97 AY212579.1:0.97 AF336363.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AB183858.1:0.97 AF361193.1:0.97 AB051688.1:0.96 AF289169.1:0.96 AB051691.1:0.96 AY622262.1:0.96 AF236005.1:0.96 AY315181.1:0.96 AB051687.1:0.96 AB051689.1:0.96 AJ421938.1:0.96 AY662012.1:0.96 AF289170.1:0.96 AF289162.1:0.96 AJ422160.1:0.96 AB074945.1:0.96 AY689053.1:0.96 AY345550.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.8120193
+align_log_slv: total inserted bases=1;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-4110.21, weight=-4135.1, query-len=1431, aligned-bases=1431, score=0.993983; 
+align_quality_slv: 99
+align_startpos_slv: 1080
+align_stoppos_slv: 43060
+aligned_slv: 2017-12-06 10:26:39
+nuc: 1431
+nuc_gene_slv: 1431
+turn_slv: none
+
+sequence_number: 134
+sequence_identifier: gi_332144604_dbj_AB6268111_
+sequence_score: 0.996818
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AF534429.1:0.97 AB154313.1:0.97 AY212668.1:0.97 AF534428.1:0.97 AF289155.1:0.97 AY315173.1:0.97 AF289161.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AY212678.1:0.97 AB120966.1:0.97 AB051690.1:0.97 AY212579.1:0.97 AF236004.1:0.97 AF289164.1:0.97 AF361193.1:0.97 AY212616.1:0.97 AB120967.1:0.97 AB183858.1:0.97 AF336363.1:0.97 AB051688.1:0.96 AY315181.1:0.96 AJ421938.1:0.96 AY622262.1:0.96 AF236005.1:0.96 AB051691.1:0.96 AB051687.1:0.96 AY662012.1:0.96 AB051689.1:0.96 AJ622889.1:0.96 AF289169.1:0.96 AF289170.1:0.96 AY689053.1:0.96 AJ422160.1:0.96 AY345550.1:0.96 AY050604.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.0972214
+align_log_slv: scoring: raw=-4157.21, weight=-4170.49, query-len=1440, aligned-bases=1440, score=0.996818; 
+align_quality_slv: 99
+align_startpos_slv: 1055
+align_stoppos_slv: 43060
+aligned_slv: 2017-12-06 10:26:40
+nuc: 1440
+nuc_gene_slv: 1440
+turn_slv: none
+
+sequence_number: 135
+sequence_identifier: gi_169659087_dbj_AB4265741_
+sequence_score: 0.999138
+align_bp_score_slv: 110
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AJ290026.1:0.98 AY145569.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AB154313.1:0.98 AY550031.1:0.98 AF534428.1:0.98 AF289155.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY315173.1:0.97 AB120966.1:0.97 AF236004.1:0.97 AY212616.1:0.97 AY662012.1:0.97 AY212579.1:0.97 AY050600.1:0.97 AB120967.1:0.97 AF523038.1:0.97 AF336363.1:0.97 AY212612.1:0.97 AY662013.1:0.97 AY050575.1:0.97 AY622248.1:0.97 AB074945.1:0.97 AF289162.1:0.97 AF361193.1:0.97 AJ622889.1:0.97 AY662014.1:0.97 AY212631.1:0.97 AY212568.1:0.97 AF289169.1:0.97 AB183858.1:0.97 AB030614.1:0.97 AJ440995.1:0.97 AY212681.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.2226105
+align_log_slv: scoring: raw=-4103.59, weight=-4107.13, query-len=1415, aligned-bases=1415, score=0.999138; 
+align_quality_slv: 99
+align_startpos_slv: 1059
+align_stoppos_slv: 42992
+aligned_slv: 2017-12-06 10:26:41
+nuc: 1415
+nuc_gene_slv: 1415
+turn_slv: none
+
+sequence_number: 136
+sequence_identifier: gi_169659088_dbj_AB4265751_
+sequence_score: 0.99792
+align_bp_score_slv: 111
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AB154313.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AF534428.1:0.98 AJ290026.1:0.98 AF289155.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AB120965.1:0.97 AB120964.1:0.97 AY212678.1:0.97 AF361193.1:0.97 AB120966.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AB120967.1:0.97 AF236004.1:0.97 AY212616.1:0.97 AB183858.1:0.97 AY662012.1:0.97 AB051690.1:0.97 AF289162.1:0.97 AY212631.1:0.97 AF289169.1:0.97 AJ622889.1:0.97 AF289170.1:0.97 AY315181.1:0.97 AF236005.1:0.97 AY662013.1:0.97 AY212612.1:0.97 AY345550.1:0.97 AY050604.1:0.97 AY212681.1:0.97 AB051691.1:0.97 AY050600.1:0.96 AY212568.1:0.96 AY250104.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2972641
+align_log_slv: scoring: raw=-4123.89, weight=-4132.48, query-len=1422, aligned-bases=1422, score=0.99792; 
+align_quality_slv: 99
+align_startpos_slv: 1057
+align_stoppos_slv: 43020
+aligned_slv: 2017-12-06 10:26:42
+nuc: 1422
+nuc_gene_slv: 1422
+turn_slv: none
+
+sequence_number: 137
+sequence_identifier: gi_169659089_dbj_AB4265761_
+sequence_score: 0.980406
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 144
+align_family_slv: AY145570.1:0.99 AY550031.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AF534429.1:0.97 AF534428.1:0.97 AY212668.1:0.97 AJ290026.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AB051690.1:0.97 AJ622889.1:0.97 AF289155.1:0.97 AY315181.1:0.97 AF289161.1:0.97 AB120964.1:0.97 AB120967.1:0.97 AJ295499.1:0.97 AB120965.1:0.97 AB183858.1:0.96 AF336363.1:0.96 AB051688.1:0.96 AF289164.1:0.96 AB120966.1:0.96 AJ421938.1:0.96 AY050604.1:0.96 AB051687.1:0.96 AY706429.1:0.96 AF361193.1:0.96 AB051689.1:0.96 AB074945.1:0.96 AB051691.1:0.96 AY622262.1:0.96 AY212678.1:0.96 AF236004.1:0.96 AF209469.1:0.96 AY250104.1:0.96 AJ422160.1:0.96 AY212568.1:0.96 AY050494.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.2722855
+align_log_slv: total inserted bases=2;longest insertion=2;total inserted bases before shifting=2;scoring: raw=-4096.44, weight=-4178.31, query-len=1624, aligned-bases=1480, score=0.980406; 
+align_quality_slv: 98
+align_startpos_slv: 1057
+align_stoppos_slv: 43413
+aligned_slv: 2017-12-06 10:26:42
+nuc: 1624
+nuc_gene_slv: 1492
+turn_slv: none
+
+sequence_number: 138
+sequence_identifier: gi_353742074_emb_HE6006701_
+sequence_score: 0.99914
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 812
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AJ290026.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AF534428.1:0.97 AB074945.1:0.97 AY315173.1:0.97 AF289155.1:0.97 AY050600.1:0.97 AF336363.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY050575.1:0.97 AY212678.1:0.97 AY212579.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AF523038.1:0.97 AB120964.1:0.97 AY662012.1:0.97 AB120965.1:0.97 AJ622889.1:0.97 AY212616.1:0.97 AY212631.1:0.97 AF236004.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AJ440995.1:0.97 AF289162.1:0.97 AY622248.1:0.97 AB030614.1:0.97 AY662014.1:0.97 AY212612.1:0.97 AF523062.1:0.97 AJ421938.1:0.97 AY315172.1:0.97 AY706429.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.0202942
+align_log_slv: scoring: raw=-4150.89, weight=-4154.46, query-len=2279, aligned-bases=1467, score=0.99914; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44081
+aligned_slv: 2017-12-06 10:26:43
+nuc: 2279
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 139
+sequence_identifier: gi_353742075_emb_HE6006711_
+sequence_score: 0.997793
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 828
+align_family_slv: AF534429.1:0.98 AF289155.1:0.98 AF289161.1:0.98 AF289164.1:0.97 AY662014.1:0.97 AF289162.1:0.97 AY212668.1:0.97 AY662012.1:0.97 AB074945.1:0.97 AY550031.1:0.97 AY315173.1:0.97 AF523063.1:0.97 AY050600.1:0.97 AY315181.1:0.97 AY145570.1:0.97 AJ421938.1:0.97 AB154313.1:0.97 AJ290026.1:0.97 AF523069.1:0.97 AF236004.1:0.97 AY050575.1:0.97 AY218703.1:0.97 AY212616.1:0.97 AB120964.1:0.97 AB074944.1:0.97 AB120965.1:0.96 AY212612.1:0.96 AF523068.1:0.96 AY212678.1:0.96 AY360350.1:0.96 AY188326.1:0.96 AF523062.1:0.96 AJ440995.1:0.96 AJ440986.1:0.96 AB183858.1:0.96 AY328771.1:0.96 AJ009470.1:0.96 AJ422160.1:0.96 AB120966.1:0.96 AF534428.1:0.96 
+align_filter_slv: 
+align_ident_slv: 97.4807587
+align_log_slv: scoring: raw=-4077.19, weight=-4086.21, query-len=2296, aligned-bases=1468, score=0.997793; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44145
+aligned_slv: 2017-12-06 10:26:44
+nuc: 2296
+nuc_gene_slv: 1467
+turn_slv: none
+
+sequence_number: 140
+sequence_identifier: gi_353742073_emb_HE6006691_
+sequence_score: 0.998124
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 747
+align_family_slv: AF534429.1:0.98 AF289155.1:0.98 AF289161.1:0.98 AF289164.1:0.97 AY662014.1:0.97 AF289162.1:0.97 AY212668.1:0.97 AY662012.1:0.97 AB074945.1:0.97 AY050600.1:0.97 AY550031.1:0.97 AY315173.1:0.97 AB154313.1:0.97 AJ290026.1:0.97 AY315181.1:0.97 AY050575.1:0.97 AY218703.1:0.97 AF236004.1:0.97 AB074944.1:0.97 AJ421938.1:0.97 AY212616.1:0.97 AF523063.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY212612.1:0.97 AY145570.1:0.97 AY188326.1:0.97 AY212678.1:0.97 AJ440986.1:0.97 AB183858.1:0.96 AY328771.1:0.96 AJ009470.1:0.96 AY360350.1:0.96 AF523069.1:0.96 AB120966.1:0.96 AY188310.1:0.96 AF534428.1:0.96 AB030614.1:0.96 AJ422160.1:0.96 AY050604.1:0.96 
+align_filter_slv: 
+align_ident_slv: 97.5507355
+align_log_slv: scoring: raw=-4104.49, weight=-4112.21, query-len=2214, aligned-bases=1467, score=0.998124; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44016
+aligned_slv: 2017-12-06 10:26:45
+nuc: 2214
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 141
+sequence_identifier: gi_353742076_emb_HE6006721_
+sequence_score: 0.999157
+align_bp_score_slv: 114
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 837
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AB154313.1:0.98 AF534429.1:0.98 AY212668.1:0.98 AF534428.1:0.98 AY145569.1:0.98 AJ290026.1:0.98 AB074945.1:0.97 AF289155.1:0.97 AY315173.1:0.97 AY050600.1:0.97 AF336363.1:0.97 AY662012.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY050575.1:0.97 AY212678.1:0.97 AY212579.1:0.97 AF523063.1:0.97 AF523038.1:0.97 AY315181.1:0.97 AY212612.1:0.97 AF523069.1:0.97 AB120964.1:0.97 AJ622889.1:0.97 AY212616.1:0.97 AY212631.1:0.97 AB120965.1:0.97 AJ575699.1:0.97 AF236004.1:0.97 AJ440995.1:0.97 AY662013.1:0.97 AB183858.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AB051690.1:0.97 AF289162.1:0.97 AY622262.1:0.97 AY622248.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.7421417
+align_log_slv: scoring: raw=-4160.44, weight=-4163.95, query-len=2304, aligned-bases=1467, score=0.999157; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44106
+aligned_slv: 2017-12-06 10:26:46
+nuc: 2304
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 142
+sequence_identifier: gi_353742077_emb_HE6006731_
+sequence_score: 0.999173
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 856
+align_family_slv: AY145570.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AF534429.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AB074945.1:0.97 AY212668.1:0.97 AF534428.1:0.97 AF336363.1:0.97 AY315173.1:0.97 AY050600.1:0.97 AF289155.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AY050575.1:0.97 AJ421938.1:0.97 AY212678.1:0.97 AF289161.1:0.97 AY622248.1:0.97 AF289164.1:0.97 AJ440995.1:0.97 AY212579.1:0.97 AF523038.1:0.97 AY662012.1:0.97 AY315172.1:0.97 AB120964.1:0.97 AY218703.1:0.97 AF361193.1:0.97 AF523062.1:0.97 AJ622889.1:0.97 AF523068.1:0.97 AY212616.1:0.97 AJ422160.1:0.97 AB120965.1:0.97 AF236004.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AY706423.1:0.97 AJ421927.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.0216599
+align_log_slv: scoring: raw=-4109.08, weight=-4112.49, query-len=2325, aligned-bases=1469, score=0.999173; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44125
+aligned_slv: 2017-12-06 10:26:47
+nuc: 2325
+nuc_gene_slv: 1481
+turn_slv: none
+
+sequence_number: 143
+sequence_identifier: gi_353742078_emb_HE6006741_
+sequence_score: 0.999194
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 859
+align_family_slv: AY145570.1:0.99 AY145569.1:0.98 AY550031.1:0.98 AJ290026.1:0.98 AY212668.1:0.97 AF534429.1:0.97 AB154313.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AF534428.1:0.97 AY315173.1:0.97 AB074945.1:0.97 AF336363.1:0.97 AY212579.1:0.97 AY212678.1:0.97 AB120964.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AB051690.1:0.97 AB120965.1:0.97 AJ622889.1:0.97 AY218703.1:0.97 AY050600.1:0.97 AJ421938.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AF289155.1:0.97 AY212616.1:0.97 AY622262.1:0.97 AJ440995.1:0.97 AF236004.1:0.97 AJ422160.1:0.97 AY706429.1:0.97 AY050575.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AF289161.1:0.97 AY188310.1:0.96 AB183858.1:0.96 AB051687.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.2302322
+align_log_slv: scoring: raw=-4075.83, weight=-4079.12, query-len=2326, aligned-bases=1467, score=0.999194; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44128
+aligned_slv: 2017-12-06 10:26:48
+nuc: 2326
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 144
+sequence_identifier: gi_353742079_emb_HE6006751_
+sequence_score: 0.99914
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 840
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AF534429.1:0.98 AJ290026.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AF534428.1:0.97 AB074945.1:0.97 AY315173.1:0.97 AF289155.1:0.97 AY050600.1:0.97 AF336363.1:0.97 AF289161.1:0.97 AF289164.1:0.97 AY050575.1:0.97 AY212678.1:0.97 AY212579.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AF523038.1:0.97 AB120964.1:0.97 AY662012.1:0.97 AB120965.1:0.97 AJ622889.1:0.97 AY212616.1:0.97 AY212631.1:0.97 AF236004.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AJ440995.1:0.97 AF289162.1:0.97 AY622248.1:0.97 AB030614.1:0.97 AY662014.1:0.97 AY212612.1:0.97 AF523062.1:0.97 AJ421938.1:0.97 AY315172.1:0.97 AY706429.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.0202942
+align_log_slv: scoring: raw=-4150.79, weight=-4154.36, query-len=2307, aligned-bases=1467, score=0.99914; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44109
+aligned_slv: 2017-12-06 10:26:49
+nuc: 2307
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 145
+sequence_identifier: gi_353742081_emb_HE6006771_
+sequence_score: 0.997023
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 842
+align_family_slv: AY145570.1:0.99 AY550031.1:0.98 AY145569.1:0.98 AF534429.1:0.97 AB154313.1:0.97 AY212668.1:0.97 AJ290026.1:0.97 AJ622889.1:0.97 AF534428.1:0.97 AF523063.1:0.97 AF523069.1:0.97 AY212579.1:0.97 AB074945.1:0.97 AB120964.1:0.97 AB120965.1:0.97 AY315173.1:0.97 AB120966.1:0.97 AB120967.1:0.97 AY212678.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AB051690.1:0.97 AY218703.1:0.97 AY706429.1:0.97 AY662012.1:0.97 AY315181.1:0.97 AB183858.1:0.97 AJ421938.1:0.97 AY212616.1:0.97 AY212681.1:0.97 AF289155.1:0.97 AY050600.1:0.97 AF236004.1:0.97 AB051688.1:0.97 AY050604.1:0.97 AF336363.1:0.97 AB051687.1:0.97 AJ422160.1:0.97 AB051689.1:0.97 AB051691.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.1602554
+align_log_slv: scoring: raw=-4074.49, weight=-4086.65, query-len=2309, aligned-bases=1467, score=0.997023; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44111
+aligned_slv: 2017-12-06 10:26:50
+nuc: 2309
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 146
+sequence_identifier: gi_353742082_emb_HE6006781_
+sequence_score: 0.998707
+align_bp_score_slv: 115
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 846
+align_family_slv: AY145570.1:0.98 AY550031.1:0.98 AY145569.1:0.98 AY212668.1:0.97 AF534429.1:0.97 AJ290026.1:0.97 AB154313.1:0.97 AY315173.1:0.97 AF534428.1:0.97 AF523063.1:0.97 AB051690.1:0.97 AF523069.1:0.97 AF289155.1:0.97 AB074945.1:0.97 AY212579.1:0.97 AF336363.1:0.97 AB051688.1:0.97 AY315181.1:0.97 AY622262.1:0.97 AY212678.1:0.97 AY050600.1:0.97 AF289161.1:0.97 AJ421938.1:0.97 AB051687.1:0.97 AB120964.1:0.97 AB051689.1:0.97 AB051691.1:0.97 AF289164.1:0.97 AB120965.1:0.97 AJ622889.1:0.97 AF523062.1:0.97 AF523068.1:0.97 AY218703.1:0.97 AB120966.1:0.97 AJ440995.1:0.97 AB183858.1:0.97 AB120967.1:0.97 AJ422160.1:0.97 AB051686.1:0.97 AY050575.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.090271
+align_log_slv: scoring: raw=-4085.16, weight=-4090.45, query-len=2313, aligned-bases=1467, score=0.998707; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 44115
+aligned_slv: 2017-12-06 10:26:51
+nuc: 2313
+nuc_gene_slv: 1479
+turn_slv: none
+
+sequence_number: 147
+sequence_identifier: gi_350921985_emb_AJ9648922_
+sequence_score: 0.997067
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 817
+align_family_slv: AY145570.1:0.98 AF534429.1:0.98 AJ290026.1:0.98 AY550031.1:0.98 AY212668.1:0.98 AY145569.1:0.98 AB154313.1:0.98 AF534428.1:0.98 AF289155.1:0.98 AF289161.1:0.97 AF289164.1:0.97 AB074945.1:0.97 AY662012.1:0.97 AY212579.1:0.97 AY315173.1:0.97 AF336363.1:0.97 AY050600.1:0.97 AF289162.1:0.97 AY212678.1:0.97 AY212612.1:0.97 AJ622889.1:0.97 AB120964.1:0.97 AY050575.1:0.97 AF523038.1:0.97 AB120965.1:0.97 AJ440995.1:0.97 AB120967.1:0.97 AB120966.1:0.97 AY315181.1:0.97 AB183858.1:0.97 AF523063.1:0.97 AY212631.1:0.97 AY212616.1:0.97 AY662014.1:0.97 AY662013.1:0.97 AF523069.1:0.97 AY250104.1:0.97 AF236004.1:0.97 AJ575699.1:0.97 AY622262.1:0.97 
+align_filter_slv: 
+align_ident_slv: 98.6254272
+align_log_slv: scoring: raw=-4220.14, weight=-4232.55, query-len=2308, aligned-bases=1491, score=0.997067; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 44086
+aligned_slv: 2017-12-06 10:26:52
+nuc: 2308
+nuc_gene_slv: 1503
+turn_slv: none
+
+sequence_number: 148
+sequence_identifier: gi_353742084_emb_HE6006801_
+sequence_score: 0.998516
+align_bp_score_slv: 100
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF361193.1:0.99 AY145570.1:0.98 AJ290026.1:0.98 AY145569.1:0.98 AY212668.1:0.97 AB154313.1:0.97 AF534428.1:0.97 AF534429.1:0.97 AY212579.1:0.97 AF361202.1:0.97 AJ622889.1:0.96 AB120964.1:0.96 AB120966.1:0.96 AB120967.1:0.96 AB120965.1:0.96 AF289155.1:0.96 AF289161.1:0.96 AF289164.1:0.96 AY662014.1:0.96 AF236005.1:0.96 AJ421913.1:0.96 AF468446.1:0.96 AY622262.1:0.96 AJ387862.1:0.96 AB183858.1:0.96 AY212681.1:0.96 AJ421938.1:0.96 AY622248.1:0.96 AY662012.1:0.96 AY315181.1:0.96 AF407413.1:0.96 CP000267.4118280:0.96 AF407392.1:0.96 AY345550.1:0.96 AJ440995.1:0.96 AF407396.1:0.96 AF435948.1:0.96 AY212640.1:0.96 AY050604.1:0.96 AY218748.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.0109863
+align_log_slv: scoring: raw=-2656.8, weight=-2660.75, query-len=910, aligned-bases=910, score=0.998516; 
+align_quality_slv: 99
+align_startpos_slv: 1108
+align_stoppos_slv: 31145
+aligned_slv: 2017-12-06 10:26:52
+nuc: 910
+nuc_gene_slv: 910
+turn_slv: none
+
+sequence_number: 149
+sequence_identifier: gi_33328318_gb_AF5304761_
+sequence_score: 0.996369
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY691543.1:0.99 AB114268.1:0.99 AY345576.1:0.98 AY186083.1:0.98 AF423250.1:0.98 AJ583836.1:0.98 AF534207.1:0.98 AF130960.1:0.98 AF417870.1:0.98 AF423262.1:0.98 AF534193.1:0.98 AB114621.1:0.98 AF423223.1:0.98 AB049108.1:0.98 AB053117.1:0.98 AY691545.1:0.98 AF371852.1:0.98 AB004691.1:0.98 AF157695.1:0.98 AF534213.1:0.98 AY395009.1:0.98 Y17665.1:0.98 Y17660.1:0.98 AF290495.1:0.98 AY376697.1:0.98 AB004754.1:0.98 AF371851.1:0.98 AJ276393.1:0.98 AB111105.1:0.98 AF157688.1:0.98 AJ277978.1:0.98 AF423229.1:0.98 Y17667.1:0.98 AY601679.1:0.98 AY150697.1:0.98 AJ302154.1:0.98 AF543283.1:0.98 AY315450.1:0.98 AF395913.1:0.98 AF543296.1:0.98 
+align_filter_slv: 
+align_ident_slv: 98.9711914
+align_log_slv: scoring: raw=-4263.88, weight=-4279.42, query-len=1468, aligned-bases=1468, score=0.996369; 
+align_quality_slv: 99
+align_startpos_slv: 1052
+align_stoppos_slv: 43219
+aligned_slv: 2017-12-06 10:26:53
+nuc: 1468
+nuc_gene_slv: 1468
+turn_slv: none
+
+sequence_number: 150
+sequence_identifier: gi_2584741_emb_Z960781_
+sequence_score: 0.999258
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AB049108.1:0.99 AF534213.1:0.99 AY376697.1:0.99 AB114621.1:0.99 AF395913.1:0.99 AY376696.1:0.99 AY376698.1:0.99 AF417870.1:0.99 AF534193.1:0.99 AY376700.1:0.99 AY186083.1:0.99 AY345576.1:0.99 AY376707.1:0.99 AY376709.1:0.99 AY376706.1:0.99 AF157688.1:0.99 AF371852.1:0.99 AB004691.1:0.99 AB114268.1:0.99 AJ002811.1:0.99 AY376708.1:0.99 AY376695.1:0.99 AY376705.1:0.99 AY376699.1:0.99 AY376692.1:0.99 AF534207.1:0.99 AY691543.1:0.99 AY376702.1:0.99 AJ302154.1:0.99 AY395009.1:0.99 AY376693.1:0.99 AF157695.1:0.99 AY376704.1:0.99 AY376701.1:0.99 AF371851.1:0.99 AF394539.1:0.99 AF047174.1:0.99 AF130960.1:0.99 AY376703.1:0.99 AY376694.1:0.99 
+align_filter_slv: 
+align_ident_slv: 99.863205
+align_log_slv: scoring: raw=-4301.16, weight=-4304.35, query-len=1495, aligned-bases=1495, score=0.999258; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43260
+aligned_slv: 2017-12-06 10:26:54
+nuc: 1495
+nuc_gene_slv: 1495
+turn_slv: none
+
+sequence_number: 151
+sequence_identifier: NR_133837.1
+sequence_score: 0.991879
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY102310.1:0.98 AJ252598.1:0.97 AY212579.1:0.97 AF236005.1:0.97 AJ252597.1:0.97 AY212624.1:0.96 AY550031.1:0.96 AF445694.1:0.96 AY444994.1:0.96 AJ313017.1:0.96 AF236004.1:0.96 AB008000.1:0.96 AF538929.1:0.96 AF532868.1:0.96 AJ555474.1:0.96 AY444973.1:0.96 AY238498.1:0.96 AY599724.1:0.96 AY102324.1:0.96 AB114620.1:0.96 AB074945.1:0.96 AF250030.1:0.96 AY622262.1:0.96 AY212678.1:0.96 AY651926.1:0.96 AJ292623.1:0.96 AY127900.1:0.96 AF078758.1:0.96 AJ009470.1:0.96 Z93968.1:0.96 AB098595.1:0.96 Z93969.1:0.96 AF523063.1:0.96 AY212616.1:0.96 AY599732.1:0.96 D30793.1:0.96 AY250104.1:0.96 AY360350.1:0.96 AY179863.1:0.96 AB183858.1:0.96 
+align_filter_slv: 
+align_ident_slv: 96.8720398
+align_log_slv: scoring: raw=-4068.39, weight=-4101.7, query-len=1457, aligned-bases=1457, score=0.991879; 
+align_quality_slv: 99
+align_startpos_slv: 1043
+align_stoppos_slv: 43115
+aligned_slv: 2017-12-06 10:26:55
+nuc: 1457
+nuc_gene_slv: 1457
+turn_slv: none
+
+sequence_number: 152
+sequence_identifier: NR_074643.1
+sequence_score: 0.995745
+align_bp_score_slv: 123
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 12
+align_family_slv: AF443568.1:0.97 AJ252598.1:0.97 AF236005.1:0.97 AY622262.1:0.97 AY360350.1:0.97 AJ252597.1:0.97 AF445694.1:0.97 AY212624.1:0.97 AY651926.1:0.97 AY512827.1:0.97 AF538929.1:0.97 AJ292623.1:0.97 AY050604.1:0.97 AF078758.1:0.97 AY345550.1:0.97 AY102310.1:0.97 AJ292624.1:0.97 AY212579.1:0.97 AF523063.1:0.97 AY238498.1:0.97 AB076843.1:0.97 AF523069.1:0.96 AY093698.1:0.96 AB074944.1:0.96 AB114620.1:0.96 AY550031.1:0.96 D89026.1:0.96 AB098595.1:0.96 AF137507.1:0.96 AF523062.1:0.96 AF523068.1:0.96 AF078759.1:0.96 AY599728.1:0.96 AF423075.1:0.96 EU024165.1:0.96 AY444994.1:0.96 AJ555474.1:0.96 AB008000.1:0.96 AY179863.1:0.96 AF532868.1:0.96 
+align_filter_slv: 
+align_ident_slv: 97.2622452
+align_log_slv: scoring: raw=-4092.09, weight=-4109.58, query-len=1523, aligned-bases=1511, score=0.995745; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43281
+aligned_slv: 2017-12-06 10:26:55
+nuc: 1523
+nuc_gene_slv: 1523
+turn_slv: none
+
+sequence_number: 153
+sequence_identifier: EU423304.1
+sequence_score: 0.993263
+align_bp_score_slv: 119
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF443568.1:0.98 AF236005.1:0.97 AF445694.1:0.97 AY345550.1:0.96 AF078758.1:0.96 AY050604.1:0.96 AJ252598.1:0.96 AY622262.1:0.96 AY212624.1:0.96 AY212579.1:0.96 AF236004.1:0.96 AF509579.1:0.96 AJ292623.1:0.96 AF509578.1:0.96 AJ252597.1:0.96 AB120966.1:0.96 AJ292624.1:0.96 AY212678.1:0.96 AB120965.1:0.96 AY360350.1:0.96 AY212616.1:0.96 AJ622889.1:0.96 AB120964.1:0.96 AF538929.1:0.96 AB120967.1:0.96 AY250104.1:0.96 AY102310.1:0.96 D89026.1:0.96 AY662014.1:0.96 AY093698.1:0.96 AF523063.1:0.96 AY651926.1:0.96 AJ009470.1:0.96 AB183858.1:0.96 AF289155.1:0.95 AJ565430.1:0.95 AB114620.1:0.95 AY599728.1:0.95 AY512827.1:0.95 AY238498.1:0.95 
+align_filter_slv: 
+align_ident_slv: 97.8909073
+align_log_slv: scoring: raw=-4116.11, weight=-4144.02, query-len=1465, aligned-bases=1465, score=0.993263; 
+align_quality_slv: 99
+align_startpos_slv: 1030
+align_stoppos_slv: 43186
+aligned_slv: 2017-12-06 10:26:56
+nuc: 1465
+nuc_gene_slv: 1465
+turn_slv: none
+
+sequence_number: 154
+sequence_identifier: NR_025203.1
+sequence_score: 0.995075
+align_bp_score_slv: 108
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF236005.1:0.97 AY622262.1:0.97 AY050604.1:0.97 AY360350.1:0.97 AY345550.1:0.97 AY651926.1:0.97 AF445694.1:0.97 AJ252597.1:0.97 AJ292623.1:0.97 AJ292624.1:0.97 AF078758.1:0.96 AF443568.1:0.96 AY512827.1:0.96 AY093698.1:0.96 AB076843.1:0.96 U51101.1:0.96 AB120966.1:0.96 AF538929.1:0.96 Y18617.1:0.96 AF236004.1:0.96 AJ555476.1:0.96 AY102310.1:0.96 AJ009457.1:0.96 AY050592.1:0.96 AF137507.1:0.96 U51104.1:0.96 X86071.1:0.96 AB008000.1:0.96 AY444994.1:0.96 AF532868.1:0.96 AJ555474.1:0.96 AB120964.1:0.96 AB120965.1:0.96 AJ313017.1:0.96 AB183858.1:0.96 AB008429.1:0.96 AY625151.1:0.96 AF235013.1:0.96 AB021344.1:0.96 AY250104.1:0.96 
+align_filter_slv: 
+align_ident_slv: 97.4261932
+align_log_slv: scoring: raw=-3985.71, weight=-4005.44, query-len=1393, aligned-bases=1393, score=0.995075; 
+align_quality_slv: 99
+align_startpos_slv: 1171
+align_stoppos_slv: 43057
+aligned_slv: 2017-12-06 10:26:57
+nuc: 1393
+nuc_gene_slv: 1393
+turn_slv: none
+
+sequence_number: 155
+sequence_identifier: KX395636.1
+sequence_score: 0.993554
+align_bp_score_slv: 121
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF443568.1:0.97 AY360350.1:0.97 AJ252598.1:0.97 AF236005.1:0.97 AY651926.1:0.97 AJ252597.1:0.97 AF445694.1:0.97 AY212624.1:0.97 AJ292623.1:0.97 AY622262.1:0.97 AY093698.1:0.96 AY512827.1:0.96 AB076843.1:0.96 AJ292624.1:0.96 AF137507.1:0.96 AY212579.1:0.96 AB076842.1:0.96 AF364862.1:0.96 U51101.1:0.96 AF078758.1:0.96 AY050604.1:0.96 AY345550.1:0.96 EU024165.1:0.96 AF078759.1:0.96 U51104.1:0.96 AB008429.1:0.96 AF214644.1:0.96 AB021344.1:0.96 AY662014.1:0.96 AF538929.1:0.96 AF078762.1:0.96 AF312020.1:0.96 AB074944.1:0.96 AF236004.1:0.96 AF078761.1:0.96 AJ565423.1:0.96 AJ565425.1:0.96 HQ438086.1:0.96 AJ565426.1:0.96 AB076864.1:0.96 
+align_filter_slv: 
+align_ident_slv: 97.084549
+align_log_slv: scoring: raw=-4118.61, weight=-4145.33, query-len=1468, aligned-bases=1468, score=0.993554; 
+align_quality_slv: 99
+align_startpos_slv: 1035
+align_stoppos_slv: 43222
+aligned_slv: 2017-12-06 10:26:58
+nuc: 1468
+nuc_gene_slv: 1468
+turn_slv: none
+
+sequence_number: 156
+sequence_identifier: JX443550.1
+sequence_score: 0.993405
+align_bp_score_slv: 112
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AF443568.1:0.98 AF236005.1:0.97 AF445694.1:0.97 AJ252598.1:0.97 AY212624.1:0.97 AY360350.1:0.96 AJ252597.1:0.96 AF509578.1:0.96 AY622262.1:0.96 AY212579.1:0.96 AJ292623.1:0.96 AY651926.1:0.96 AF509579.1:0.96 AY345550.1:0.96 AF214644.1:0.96 AY050604.1:0.96 AF078758.1:0.96 AB120966.1:0.96 AY093698.1:0.96 AB114619.1:0.96 AF137507.1:0.96 AY512827.1:0.96 AB076843.1:0.96 AB120965.1:0.96 AB076856.1:0.96 AB076866.1:0.96 AF458096.1:0.96 AB076855.1:0.96 AJ292624.1:0.96 HQ438086.1:0.96 AF236004.1:0.96 AY250104.1:0.96 AB120967.1:0.96 AF364862.1:0.96 AY662014.1:0.96 AB120964.1:0.96 AF078759.1:0.96 AF312020.1:0.96 EU024165.1:0.96 AJ622889.1:0.96 
+align_filter_slv: 
+align_ident_slv: 98.3260574
+align_log_slv: scoring: raw=-3979.56, weight=-4005.98, query-len=1409, aligned-bases=1409, score=0.993405; 
+align_quality_slv: 99
+align_startpos_slv: 1032
+align_stoppos_slv: 42621
+aligned_slv: 2017-12-06 10:26:59
+nuc: 1409
+nuc_gene_slv: 1409
+turn_slv: none
+
+sequence_number: 157
+sequence_identifier: AJ811014.1
+sequence_score: 0
+align_bp_score_slv: 116
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AJ811014.1:1 X93019.1:1 AJ550665.1:0.99 AJ550670.1:0.99 AJ550666.1:0.99 AJ550671.1:0.99 AJ550664.1:0.99 AJ550657.1:0.99 AY212686.1:0.99 AJ289997.1:0.99 AJ550654.1:0.99 AF534427.1:0.98 AY212739.1:0.98 AJ811013.1:0.98 AJ550673.1:0.98 AF289154.1:0.98 AJ290013.1:0.98 U85124.1:0.98 U85122.1:0.97 AB154312.1:0.97 AY212701.1:0.97 AY345578.1:0.97 AY212691.1:0.96 AY145606.1:0.96 AF361194.1:0.96 AJ550655.1:0.96 Z99998.1:0.96 AJ550662.1:0.96 AJ550650.1:0.96 AJ550656.1:0.96 AJ550658.1:0.96 AF534432.1:0.96 AJ550669.1:0.96 AJ550663.1:0.96 AJ550660.1:0.96 AJ550661.1:0.96 AJ550668.1:0.96 AJ550652.1:0.96 AJ550649.1:0.96 AJ550653.1:0.96 
+align_filter_slv: 
+align_ident_slv: 100
+align_log_slv: copied alignment from identical template sequence AJ811014:1; 
+align_quality_slv: 100
+align_startpos_slv: 1059
+align_stoppos_slv: 43245
+aligned_slv: 2017-12-06 10:26:59
+nuc: 1474
+nuc_gene_slv: 1474
+turn_slv: none
+
+sequence_number: 158
+sequence_identifier: NR_074689.1
+sequence_score: 0.999426
+align_bp_score_slv: 122
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 13
+align_family_slv: AJ550657.1:1 AJ550665.1:1 AJ550671.1:1 AJ550666.1:1 AJ550664.1:1 AJ550670.1:1 AJ289997.1:1 AJ550654.1:0.99 AY212686.1:0.99 AF534427.1:0.99 AY212739.1:0.99 AJ550673.1:0.99 AF289154.1:0.99 AJ811013.1:0.99 AJ811014.1:0.99 AJ290013.1:0.99 X93019.1:0.98 U85124.1:0.98 U85122.1:0.98 AY145606.1:0.97 AY345578.1:0.97 AB154312.1:0.97 AY212691.1:0.97 AY212701.1:0.97 AF361194.1:0.97 AJ550652.1:0.97 AJ550649.1:0.97 AJ550653.1:0.97 AJ550655.1:0.97 Z99998.1:0.97 AJ550662.1:0.97 AJ550656.1:0.97 AJ550650.1:0.97 AF534432.1:0.97 AJ550658.1:0.97 AJ550669.1:0.97 AJ550663.1:0.97 AJ550660.1:0.97 AJ550661.1:0.97 AJ550651.1:0.97 
+align_filter_slv: 
+align_ident_slv: 99.9310379
+align_log_slv: scoring: raw=-4362.04, weight=-4364.55, query-len=1526, aligned-bases=1513, score=0.999426; 
+align_quality_slv: 99
+align_startpos_slv: 1006
+align_stoppos_slv: 43282
+aligned_slv: 2017-12-06 10:27:00
+nuc: 1526
+nuc_gene_slv: 1525
+turn_slv: none
+
+sequence_number: 159
+sequence_identifier: MF872602.1
+sequence_score: 0.990273
+align_bp_score_slv: 113
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AJ550654.1:0.99 AJ550657.1:0.99 AJ550665.1:0.99 AJ550670.1:0.99 AJ550671.1:0.99 AJ550666.1:0.99 AJ550664.1:0.99 AJ289997.1:0.99 AJ550673.1:0.99 AY212686.1:0.99 AJ290013.1:0.99 AF534427.1:0.99 AF289154.1:0.99 AJ811014.1:0.98 AJ811013.1:0.98 AY212739.1:0.98 X93019.1:0.98 U85124.1:0.98 U85122.1:0.97 AY345578.1:0.97 AY212701.1:0.97 AB154312.1:0.97 AY212691.1:0.97 AY145606.1:0.97 AJ550669.1:0.96 AJ550663.1:0.96 AF534432.1:0.96 AJ550660.1:0.96 AJ550652.1:0.96 AJ550649.1:0.96 Z99998.1:0.96 AJ550653.1:0.96 AJ550661.1:0.96 AJ550656.1:0.96 AJ550662.1:0.96 AJ550650.1:0.96 AJ550658.1:0.96 AJ550651.1:0.96 AJ550668.1:0.96 AJ550659.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.0223465
+align_log_slv: total inserted bases=5;longest insertion=5;total inserted bases before shifting=5;scoring: raw=-4173.65, weight=-4214.65, query-len=1431, aligned-bases=1431, score=0.990273; 
+align_quality_slv: 99
+align_startpos_slv: 1080
+align_stoppos_slv: 43058
+aligned_slv: 2017-12-06 10:27:01
+nuc: 1431
+nuc_gene_slv: 1431
+turn_slv: none
+
+sequence_number: 160
+sequence_identifier: AB599823.1
+sequence_score: 0.998001
+align_bp_score_slv: 110
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AJ550650.1:1 AJ550662.1:1 AJ550656.1:1 AJ550649.1:1 AJ550652.1:1 AJ550653.1:1 AJ550658.1:1 AJ550655.1:1 AJ550669.1:1 AJ550663.1:1 AJ550660.1:1 AJ550661.1:1 AJ550651.1:1 AJ550659.1:1 AJ550668.1:0.99 AY212662.1:0.99 AJ550667.1:0.99 AF361194.1:0.98 AJ550671.1:0.97 AJ550666.1:0.97 AJ550664.1:0.97 AJ550670.1:0.97 AJ550654.1:0.97 AY212686.1:0.97 AJ550665.1:0.97 AJ550657.1:0.97 AF534432.1:0.97 AY345578.1:0.97 AJ289997.1:0.97 AF534427.1:0.97 AY145606.1:0.97 AB154312.1:0.96 AJ550673.1:0.96 AJ811014.1:0.96 AY212701.1:0.96 AJ811013.1:0.96 AY212691.1:0.96 AJ290013.1:0.96 AF289154.1:0.96 Z99998.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.9291763
+align_log_slv: scoring: raw=-4169.69, weight=-4178.05, query-len=1412, aligned-bases=1412, score=0.998001; 
+align_quality_slv: 99
+align_startpos_slv: 1119
+align_stoppos_slv: 43054
+aligned_slv: 2017-12-06 10:27:01
+nuc: 1412
+nuc_gene_slv: 1412
+turn_slv: none
+
+sequence_number: 161
+sequence_identifier: NR_125545.1
+sequence_score: 0.999063
+align_bp_score_slv: 117
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 13
+align_family_slv: AY345578.1:1 AB154312.1:0.99 AY212701.1:0.99 AY212691.1:0.99 Z99998.1:0.99 AJ550670.1:0.97 AJ550671.1:0.97 AJ550666.1:0.97 AJ550664.1:0.97 AJ550657.1:0.97 AY212686.1:0.97 AJ550654.1:0.97 AJ550665.1:0.97 AY145606.1:0.97 AY212739.1:0.97 AF534427.1:0.97 AJ289997.1:0.97 AJ550673.1:0.97 AJ811014.1:0.97 AJ550655.1:0.97 AJ550662.1:0.97 AJ550650.1:0.97 AJ550656.1:0.97 AJ550658.1:0.96 AJ811013.1:0.96 AF361194.1:0.96 AJ550652.1:0.96 AJ550649.1:0.96 AJ550653.1:0.96 AF534432.1:0.96 X93019.1:0.96 AJ290013.1:0.96 AJ550668.1:0.96 AJ550669.1:0.96 AJ550663.1:0.96 AJ550660.1:0.96 AJ550661.1:0.96 AJ550651.1:0.96 AJ550659.1:0.96 AF289154.1:0.96 
+align_filter_slv: 
+align_ident_slv: 99.7915192
+align_log_slv: scoring: raw=-4277.59, weight=-4281.6, query-len=1491, aligned-bases=1478, score=0.999063; 
+align_quality_slv: 99
+align_startpos_slv: 1078
+align_stoppos_slv: 43282
+aligned_slv: 2017-12-06 10:27:02
+nuc: 1491
+nuc_gene_slv: 1490
+turn_slv: none
+
+sequence_number: 162
+sequence_identifier: 5_Bctrm474_Prior=1.000000_Length=1481_NormPrior=1.000000
+sequence_score: 0.990737
+align_bp_score_slv: 120
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY212579.1:0.98 AJ252598.1:0.98 AY212624.1:0.98 AJ252597.1:0.97 AF236005.1:0.97 AF445694.1:0.97 AJ292623.1:0.97 AY102310.1:0.97 AF509578.1:0.97 AF509579.1:0.97 AB183858.1:0.97 AY238498.1:0.97 AF236004.1:0.97 AY622262.1:0.97 D89026.1:0.97 AF538929.1:0.97 AY250104.1:0.97 AY212678.1:0.97 AJ292624.1:0.97 AF523063.1:0.97 AJ009470.1:0.97 AJ622889.1:0.96 AY050604.1:0.96 AY550031.1:0.96 AB120965.1:0.96 AY345550.1:0.96 AB098595.1:0.96 AF078758.1:0.96 AY599728.1:0.96 AF523069.1:0.96 AY212616.1:0.96 AF150719.1:0.96 AB120966.1:0.96 AJ387862.1:0.96 AF423075.1:0.96 AY360350.1:0.96 AB114620.1:0.96 AB074944.1:0.96 AF214644.1:0.96 AF289155.1:0.96 
+align_filter_slv: 
+align_ident_slv: 97.7235794
+align_log_slv: scoring: raw=-4061.07, weight=-4099.04, query-len=1481, aligned-bases=1481, score=0.990737; 
+align_quality_slv: 99
+align_startpos_slv: 1010
+align_stoppos_slv: 43222
+aligned_slv: 2017-12-06 10:27:03
+nuc: 1481
+nuc_gene_slv: 1481
+turn_slv: none
+
+sequence_number: 163
+sequence_identifier: Contig_2
+sequence_score: 0.976573
+align_bp_score_slv: 107
+align_cutoff_head_slv: 0
+align_cutoff_tail_slv: 0
+align_family_slv: AY212579.1:0.97 AF445694.1:0.96 AJ292624.1:0.96 AF236005.1:0.96 AY622262.1:0.96 AB183858.1:0.96 AF236004.1:0.96 AJ292623.1:0.96 AF078758.1:0.96 AJ252597.1:0.96 AF509578.1:0.96 AY102310.1:0.96 AF538929.1:0.96 AF214644.1:0.96 AY238498.1:0.96 AF509579.1:0.96 AB098595.1:0.96 AF423075.1:0.96 AY250104.1:0.96 AF422662.1:0.96 AY532568.1:0.96 AY212678.1:0.96 AJ505857.1:0.96 AJ505858.1:0.96 AB114619.1:0.96 AY212616.1:0.96 AY050604.1:0.96 AJ009470.1:0.96 AY345550.1:0.96 AY162034.1:0.96 AY162061.1:0.96 AY212568.1:0.96 AY133071.1:0.96 AB120965.1:0.96 AB120964.1:0.96 D89026.1:0.96 AY532540.1:0.96 AJ622889.1:0.96 AB120966.1:0.96 AB076848.1:0.96 
+align_filter_slv: 
+align_ident_slv: 97.2505112
+align_log_slv: total inserted bases=8;longest insertion=1;total inserted bases before shifting=1;scoring: raw=-3375.91, weight=-3456.9, query-len=1183, aligned-bases=1183, score=0.976573; 
+align_quality_slv: 97
+align_startpos_slv: 1814
+align_stoppos_slv: 40862
+aligned_slv: 2017-12-06 10:27:04
+nuc: 1183
+nuc_gene_slv: 1183
+turn_slv: none
+
+Time for alignment phase: 132.071762s
+FASTA output: 
+        excluded: 0
+        exported: 163
+SINA finished.

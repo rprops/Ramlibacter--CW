@@ -45,6 +45,7 @@ library("SpiecEasi")
 library("seqtime")
 library("ggrepel")
 library("scales")
+library("MetQy")
 library("RColorBrewer")
 
 col_RAMLI <- "#060670"
@@ -1034,6 +1035,10 @@ p_KO_posi <- ggplot(posiG_p_df_merged, aes(x = level_B, y = Freq, fill = level_C
 print(p_KO_posi)
 ```
 
+As we had significant concerns related that there was a %GC dependency of dN/dS (`HA.foreground.omega`) and the associated `P.value` for the branch-site codon model we also checked this specifically for the branch- and clade-tests.   
+**Conclusions: There was no strong pattern/correlation to be observed between** 
+**%GC and dN/dS and the P-value** 
+
 ```{r posigene-scuo, dpi = 500, fig.width = 8, fig.height = 7, warning = FALSE}
 # Correlate genes under positive selection with their GC content
 data_SCUO_posi <- SCUO_merged_gen_gcmean %>% filter(Genome_ID == "Ramlibacter sp. MAG")
@@ -1487,6 +1492,30 @@ blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), sp
 
 ```
 
+
+# Module completeness analysis
+
+**Using the R-package [MetQy](https://github.com/OSS-Lab/MetQy) we will assess**
+**the Kegg Orthology module completeness across all Ramlibacter genomes**  
+
+* This will require the KO annotation of the reference Ramlibacter sp. genomes
+* We will do this based on the gene calling conducted in `anvi'o` and annotation of those genes using the `KAAS` webserver
+
+***  
+
+Citation:  
+Andrea Martinez-Vernon, Fred Farrell, Orkun Soyer. _MetQy: an R package to query metabolic functions of genes and genomes._ bioRxiv 215525; doi:https://doi.org/10.1101/215525  
+
+***  
+
+
+```{r m-completeness, dpi = 300, fig.width = 13, fig.height = 10, warning = FALSE}
+
+
+
+```
+
+
 # 10. ANI analysis using `pyani`
 
 ```{r ani-analysis, dpi = 500, fig.width = 8.5, fig.height = 9, warning = FALSE}
@@ -1652,6 +1681,7 @@ p_blast_sdisc <- blast_df_sum %>%
 
 print(p_blast_sdisc)
 ```
+
 
 # 11. Gene set enrichment analysis  
 

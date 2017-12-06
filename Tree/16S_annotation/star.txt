@@ -72,5 +72,5 @@ DATA
 #node 9606 will have a filled circle, empty left triangle, nothing in the 3rd column and an empty rectangle
 
 5_Bctrm474_Prior=1.000000_Length=1481_NormPrior=1.000000,1
-
+Contig_2,1
 

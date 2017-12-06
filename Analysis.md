@@ -1239,6 +1239,22 @@ p_ramli_GC
 # Format file for annotation of phylogenetic tree
 ```
 
+# Module completeness analysis
+
+**Using the R-package [MetQy](https://github.com/OSS-Lab/MetQy) we will assess**
+**the Kegg Orthology module completeness across all Ramlibacter genomes**  
+
+* This will require the KO annotation of the reference Ramlibacter sp. genomes
+* We will do this based on the NCBI gene-calling.  
+
+***  
+
+Citation:  
+Andrea Martinez-Vernon, Fred Farrell, Orkun Soyer. _MetQy: an R package to query metabolic functions of genes and genomes._ bioRxiv 215525; doi:https://doi.org/10.1101/215525  
+
+***  
+
+
 
 # 9.  PosiGene analysis for identifying genes under positive selection in the Ramlibacter sp. MAG
 
@@ -1400,6 +1416,10 @@ print(p_KO_posi)
 ```
 
 <img src="Figures/cached/posigene-selection-1.png" style="display: block; margin: auto;" />
+
+As we had significant concerns related that there was a %GC dependency of dN/dS (`HA.foreground.omega`) and the associated `P.value` for the branch-site codon model we also checked this specifically for the branch- and clade-tests.   
+**Conclusions: There was no strong pattern/correlation to be observed between** 
+**%GC and dN/dS and the P-value** 
 
 
 ```r
@@ -2068,6 +2088,7 @@ print(p_blast_sdisc)
 ```
 
 <img src="Figures/cached/seq-discrete-1-1.png" style="display: block; margin: auto;" />
+
 
 # 11. Gene set enrichment analysis  
 
