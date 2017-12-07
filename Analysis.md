@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "05 December, 2017"
+date: "07 December, 2017"
 output:
   html_document:
     code_folding: show
@@ -342,7 +342,8 @@ data_total[data_total$bins %in% c("Bacteroidetes sp. MAG1",
 
 # *2. Investigate MAG- and 16S-based abundances*
 It is clear that there is significant %GC coverage bias present. The estimated relative abundances
-from metagenomics do not quantitatively match with the V3-V4 16S rRNA gene amplicon data.
+from metagenomics do not quantitatively match with the V3-V4 16S rRNA gene amplicon data. This is probably due to the significant %GC bias that is associate with the MAG-based assessment.  
+
 $$Relative\ abundance =100*(\frac{mean\ coverage * bin\ size}{read\ length*total\ sample\ reads })$$
 Another option is to calculate relative to mapped number of reads:
 $$Relative\ abundance =100*(\frac{mean\ coverage * bin\ size}{read\ length*total\ sample\ reads * \%mapped\ reads})$$
@@ -1239,22 +1240,6 @@ p_ramli_GC
 # Format file for annotation of phylogenetic tree
 ```
 
-# Module completeness analysis
-
-**Using the R-package [MetQy](https://github.com/OSS-Lab/MetQy) we will assess**
-**the Kegg Orthology module completeness across all Ramlibacter genomes**  
-
-* This will require the KO annotation of the reference Ramlibacter sp. genomes
-* We will do this based on the NCBI gene-calling.  
-
-***  
-
-Citation:  
-Andrea Martinez-Vernon, Fred Farrell, Orkun Soyer. _MetQy: an R package to query metabolic functions of genes and genomes._ bioRxiv 215525; doi:https://doi.org/10.1101/215525  
-
-***  
-
-
 
 # 9.  PosiGene analysis for identifying genes under positive selection in the Ramlibacter sp. MAG
 
@@ -1914,6 +1899,110 @@ blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), sp
 
 # Plot genes in pangenome that were under positive selection
 ```
+
+
+# Module completeness analysis
+
+**Using the R-package [MetQy](https://github.com/OSS-Lab/MetQy) we will assess**
+**the Kegg Orthology module completeness across all Ramlibacter genomes**  
+
+* This will require the KO annotation of the reference Ramlibacter sp. genomes
+* We will do this based on the gene calling conducted in `anvi'o` and annotation of those genes using the `KAAS` webserver
+
+***  
+
+Citation:  
+Andrea Martinez-Vernon, Fred Farrell, Orkun Soyer. _MetQy: an R package to query metabolic functions of genes and genomes._ bioRxiv 215525; doi:https://doi.org/10.1101/215525  
+
+***  
+
+
+
+```r
+# Get list of all KO annotated genes
+KO_ramli <- merged_gc_ko %>% dplyr::filter(genome_id == "Ramlibacter sp. MAG")
+KO_ramli <- KO_ramli[, c("genome_id", "ko_id", "EC")]
+KO_ramli <- droplevels(KO_ramli)
+KO_ramli_metqy <- data.frame(genome_id = levels(KO_ramli$genome_id),
+                             KOs = paste(KO_ramli$ko_id, collapse = ";"),
+                             ECs = paste(KO_ramli$EC, collapse = ";"),
+                             stringsAsFactors = FALSE
+)
+
+# Run MetQy (takes a few minutes)
+query_output <- MetQy::query_genomes_to_modules(KO_ramli_metqy, splitBy='[;]',
+                                GENOME_ID_COL = 1, GENES_COL = 2, 
+                                META_OUT = TRUE)
+
+modules_table = cbind(t(query_output$MATRIX), query_output$METADATA)
+modules_table <- modules_table[, -c(8, 9)]
+colnames(modules_table)[1] <- "module_completeness"
+
+# Remove absent modules
+# modules_table <- modules_table %>% dplyr::filter(module_completeness > 0)
+
+# Specific modules
+mod_spec1 <- c("Cell signaling", "Two-component regulatory system",
+               "Bacterial secretion system", "Phosphotransferase system (PTS)",
+               "Metallic cation, iron-siderophore and vitamin B12 transport system", "ABC-2 type and other transport systems", "Mineral and organic ion transport system", "Sulfur metabolism", "Nitrogen metabolism", 
+               "Carbon fixation", "Cofactor and vitamin biosynthesis",
+               "Biosynthesis of secondary metabolites",
+               "Other carbohydrate metabolism",
+               "Central carbohydrate metabolism")
+
+# Visualize output statistics
+p_mod1 <- modules_table %>% dplyr::filter(module_completeness > 0) %>% 
+  ggplot(aes(x = CLASS_II, y = module_completeness, fill = CLASS_II))+
+  geom_jitter(shape = 21, size = 4, width = 0.3)+ theme_bw()+
+  geom_boxplot(alpha = 0.4)+
+  scale_fill_brewer(palette = "Accent")+
+  xlab("")+
+  ylab("Module completeness")+
+  ylim(0,1)+
+    theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
+        legend.title=element_text(size=15), legend.text=element_text(size=14),
+        axis.text.y = element_text(size=16),
+        axis.text.x = element_text(size=16, angle = 300, hjust = 0),
+        title=element_text(size=20),
+        panel.background = element_rect(fill = "transparent",colour = NA),
+        plot.background = element_rect(fill = "transparent",colour = NA)
+  )
+
+print(p_mod1)
+```
+
+<img src="Figures/cached/m-completeness-1.png" style="display: block; margin: auto;" />
+
+```r
+p_mod2 <- modules_table %>% dplyr::filter(CLASS_III %in% mod_spec1, 
+                                          module_completeness > 0 & 
+                                            module_completeness < 1) %>% 
+  ggplot(aes(x = CLASS_III, y = module_completeness, fill = CLASS_II))+
+  geom_jitter(shape = 21, size = 4, width = 0.3)+
+  theme_bw()+
+  geom_boxplot(alpha = 0.4)+
+  scale_fill_brewer(palette = "Accent")+
+  xlab("")+
+  ylab("Module completeness")+
+  ylim(0,1)+
+    theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
+        legend.title=element_text(size=15), legend.text=element_text(size=14),
+        axis.text.y = element_text(size=16),
+        axis.text.x = element_text(size=16, angle = 300, hjust = 0),
+        title=element_text(size=20),
+        panel.background = element_rect(fill = "transparent",colour = NA),
+        plot.background = element_rect(fill = "transparent",colour = NA)
+  )
+
+print(p_mod2)
+```
+
+<img src="Figures/cached/m-completeness-2.png" style="display: block; margin: auto;" />
+
+```r
+# 
+```
+
 
 # 10. ANI analysis using `pyani`
 
