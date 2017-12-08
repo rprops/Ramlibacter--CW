@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "07 December, 2017"
+date: "08 December, 2017"
 output:
   html_document:
     code_folding: show
@@ -1929,7 +1929,8 @@ KO_ramli_metqy <- data.frame(genome_id = levels(KO_ramli$genome_id),
                              stringsAsFactors = FALSE
 )
 
-# Run MetQy (takes a few minutes)
+
+# Run MetQy (takes a few seconds)
 query_output <- MetQy::query_genomes_to_modules(KO_ramli_metqy, splitBy='[;]',
                                 GENOME_ID_COL = 1, GENES_COL = 2, 
                                 META_OUT = TRUE)
@@ -1943,10 +1944,8 @@ colnames(modules_table)[1] <- "module_completeness"
 
 # Specific modules
 mod_spec1 <- c("Cell signaling", "Two-component regulatory system",
-               "Bacterial secretion system", "Phosphotransferase system (PTS)",
-               "Metallic cation, iron-siderophore and vitamin B12 transport system", "ABC-2 type and other transport systems", "Mineral and organic ion transport system", "Sulfur metabolism", "Nitrogen metabolism", 
+               "Mineral and organic ion transport system", "Nitrogen metabolism", 
                "Carbon fixation", "Cofactor and vitamin biosynthesis",
-               "Biosynthesis of secondary metabolites",
                "Other carbohydrate metabolism",
                "Central carbohydrate metabolism")
 
@@ -1971,7 +1970,7 @@ p_mod1 <- modules_table %>% dplyr::filter(module_completeness > 0) %>%
 print(p_mod1)
 ```
 
-<img src="Figures/cached/m-completeness-1.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/m-genome-completeness-1.png" style="display: block; margin: auto;" />
 
 ```r
 p_mod2 <- modules_table %>% dplyr::filter(CLASS_III %in% mod_spec1, 
@@ -1997,12 +1996,132 @@ p_mod2 <- modules_table %>% dplyr::filter(CLASS_III %in% mod_spec1,
 print(p_mod2)
 ```
 
-<img src="Figures/cached/m-completeness-2.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/m-genome-completeness-2.png" style="display: block; margin: auto;" />
 
 ```r
 # 
 ```
 
+### panG module completeness
+
+```r
+# Import KO annotated accessory genome for all other Ramlibacter genomes
+panG_annot_files <- list.files("./panG/", pattern = "_KO-annotation.tsv")
+for(i in 1:length(panG_annot_files)){
+  tmp <- read.table(paste("./panG/", panG_annot_files[[i]], sep = ""), sep = "\t",
+             fill = TRUE, header = FALSE, stringsAsFactors = FALSE)
+  tmp <- cbind(tmp[,2], panG_annot_files[i])
+  colnames(tmp) <- c("ko_id", "panG_genome_id")
+  
+  cat(paste("KO annotated", round(100*sum(tmp[,1] != "")/nrow(tmp),0),"% of accessory genome", panG_annot_files[i],"\n", sep = " "))
+  
+  if(i == 1) {panG_annot <- tmp } else{
+                                          panG_annot <- rbind(panG_annot, tmp)
+  }
+}
+```
+
+```
+## KO annotated 37 % of accessory genome panG_Ramli-5-10_KO-annotation.tsv 
+## KO annotated 28 % of accessory genome panG_Ramli-Leaf400_KO-annotation.tsv 
+## KO annotated 34 % of accessory genome panG_Ramli-MAG_KO-annotation.tsv 
+## KO annotated 32 % of accessory genome panG_Ramli-TTB310_KO-annotation.tsv
+```
+
+```r
+panG_annot <- data.frame(panG_annot)
+panG_annot$panG_genome_id <- gsub("_KO-annotation.tsv", "",
+                                  panG_annot$panG_genome_id)
+panG_annot <- panG_annot[panG_annot$ko_id !="" , ]
+panG_annot <- panG_annot %>% dplyr::filter(ko_id != "ko_id")
+
+# Format imported data for MetQy
+for(i in unique(panG_annot$panG_genome_id)){
+  KO_tmp <- panG_annot %>% dplyr::filter(panG_genome_id == i)
+  KO_tmp <- droplevels(KO_tmp)
+  KO_tmp_metqy <- data.frame(genome_id = unique(KO_tmp$panG_genome_id),
+                             KOs = paste(KO_tmp$ko_id, collapse = ";"),
+                             stringsAsFactors = FALSE
+  )
+  if(i == unique(panG_annot$panG_genome_id)[1]){
+    KO_panG_metqy <- KO_tmp_metqy
+  } else{ KO_panG_metqy <- rbind(KO_panG_metqy, KO_tmp_metqy)
+  }
+  KO_panG_metqy$KOs <- gsub(" ", "", KO_panG_metqy$KOs)
+}
+remove(KO_tmp)
+
+# Run query
+query_output_panG <- MetQy::query_genomes_to_modules(KO_panG_metqy, splitBy='[;]',
+                                GENOME_ID_COL = 1, GENES_COL = 2, 
+                                META_OUT = TRUE)
+
+# Visualize differences in module completeness across accessory genomes
+panG_modules_table <- data.frame(genome_id = rownames(query_output_panG$MATRIX),
+                                 query_output_panG$MATRIX)
+
+# now reshape so that panG id is also a column
+panG_modules_table <- tidyr::gather(panG_modules_table, module, module_completeness, M00001:M00822, factor_key=TRUE)
+panG_modules_table <- left_join(panG_modules_table, query_output_panG$METADATA,
+                                by = c("module" = "MODULE_ID"))
+panG_modules_table <- panG_modules_table[, -c(9, 10)]
+
+# Visualize.. 
+p_mod3 <- panG_modules_table %>% dplyr::filter(CLASS_III %in% mod_spec1, 
+                                          module_completeness > 0) %>% 
+  ggplot(aes(x = CLASS_III, y = module_completeness, fill = CLASS_II))+
+  geom_jitter(shape = 21, size = 4, width = 0.3)+
+  theme_bw()+
+  # geom_boxplot(alpha = 0.4)+
+  scale_fill_brewer(palette = "Accent")+
+  xlab("")+
+  ylab("Module completeness")+
+  ylim(0,1)+
+  facet_grid(~genome_id)+
+    theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
+        legend.title=element_text(size=15), legend.text=element_text(size=14),
+        axis.text.y = element_text(size=16),
+        axis.text.x = element_text(size=16, angle = 300, hjust = 0),
+        title=element_text(size=20),
+        panel.background = element_rect(fill = "transparent",colour = NA),
+        plot.background = element_rect(fill = "transparent",colour = NA)
+  )
+
+print(p_mod3)
+```
+
+<img src="Figures/cached/m-panG-completeness-1.png" style="display: block; margin: auto;" />
+
+```r
+# Lets focus on the two-component regulatory systems (which are highly abundant
+# in all Ramlibacter genome annotations)
+
+p_mod4 <- panG_modules_table %>% dplyr::filter(CLASS_III == "Two-component regulatory system" &
+                                                 module_completeness >0) %>% 
+  ggplot(aes(x = NAME_SHORT, y = module_completeness))+
+  # geom_jitter(shape = 21, size = 4, width = 0.3)+
+  theme_bw()+
+  geom_bar(alpha = 1, stat = "identity", color = "black", fill = brewer.pal(n = 8, "Accent")[1])+
+  xlab("")+
+  ylab("Module completeness")+
+  ylim(0,1)+
+  facet_grid(genome_id~.)+
+    theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
+        legend.title=element_text(size=15),
+        axis.text.y = element_text(size=16),
+        axis.text.x = element_text(size=16, angle = 65, hjust = 1),
+        title=element_text(size=20),
+        panel.background = element_rect(fill = "transparent",colour = NA),
+        plot.background = element_rect(fill = "transparent",colour = NA),
+        strip.text = element_text(size = 14)
+  )+
+  ggtitle("Two-component regulatory system")+
+  guides(fill = FALSE)
+
+print(p_mod4)
+```
+
+<img src="Figures/cached/m-panG-completeness-2.png" style="display: block; margin: auto;" />
 
 # 10. ANI analysis using `pyani`
 

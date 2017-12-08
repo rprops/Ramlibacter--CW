@@ -1,0 +1,109 @@
+{
+    "metadata": [
+        [
+            39, 
+            "Bacteroidetes_bin1.MM", 
+            "KBaseFBA.FBAModel-11.0", 
+            "2017-11-24T14:13:50+0000", 
+            1, 
+            "rprops2", 
+            23639, 
+            "rprops2:narrative_1503490156422", 
+            "8ae83b8451b1e636dcfdc17e81fe6f97", 
+            1121844, 
+            {
+                "Genome": "23639/28/1", 
+                "Name": "Unconfirmed Organism: .", 
+                "Number biomasses": "1", 
+                "Number compartments": "2", 
+                "Number compounds": "1015", 
+                "Number gapfills": "0", 
+                "Number gapgens": "0", 
+                "Number reactions": "749", 
+                "Source": "KBase", 
+                "Source ID": "Bacteroidetes_bin1.MM", 
+                "Type": "GenomeScale"
+            }
+        ]
+    ], 
+    "provenance": [
+        {
+            "copy_source_inaccessible": 0, 
+            "created": "2017-11-24T14:13:50+0000", 
+            "creator": "rprops2", 
+            "epoch": 1511532830766, 
+            "extracted_ids": {}, 
+            "info": [
+                39, 
+                "Bacteroidetes_bin1.MM", 
+                "KBaseFBA.FBAModel-11.0", 
+                "2017-11-24T14:13:50+0000", 
+                1, 
+                "rprops2", 
+                23639, 
+                "rprops2:narrative_1503490156422", 
+                "8ae83b8451b1e636dcfdc17e81fe6f97", 
+                1121844, 
+                {
+                    "Genome": "23639/28/1", 
+                    "Name": "Unconfirmed Organism: .", 
+                    "Number biomasses": "1", 
+                    "Number compartments": "2", 
+                    "Number compounds": "1015", 
+                    "Number gapfills": "0", 
+                    "Number gapgens": "0", 
+                    "Number reactions": "749", 
+                    "Source": "KBase", 
+                    "Source ID": "Bacteroidetes_bin1.MM", 
+                    "Type": "GenomeScale"
+                }
+            ], 
+            "orig_wsid": 23639, 
+            "path": [
+                "23639/39/1"
+            ], 
+            "provenance": [
+                {
+                    "custom": {}, 
+                    "external_data": [], 
+                    "input_ws_objects": [], 
+                    "method": "build_metabolic_model", 
+                    "method_params": [
+                        {
+                            "activation_coefficient": 0.5, 
+                            "comprehensive_gapfill": 0, 
+                            "coremodel": 0, 
+                            "custom_bound_list": [], 
+                            "exp_threshold_margin": 0.1, 
+                            "exp_threshold_percentile": 0.5, 
+                            "expression_condition": null, 
+                            "expseries_id": null, 
+                            "expseries_workspace": "rprops2:narrative_1503490156422", 
+                            "fbamodel_output_id": "Bacteroidetes_bin1.MM", 
+                            "gapfill_model": 0, 
+                            "genome_id": "Bacteroidetes_bin1.RAST", 
+                            "genome_workspace": "rprops2:narrative_1503490156422", 
+                            "media_id": null, 
+                            "media_supplement_list": "", 
+                            "media_workspace": "rprops2:narrative_1503490156422", 
+                            "minimum_target_flux": 0.1, 
+                            "number_of_solutions": 1, 
+                            "objective_fraction": 0.1, 
+                            "omega": 0, 
+                            "template_id": "NewKBaseModelTemplates/GramNegModelTemplate", 
+                            "template_workspace": null, 
+                            "thermodynamic_constraints": 0, 
+                            "workspace": "rprops2:narrative_1503490156422"
+                        }
+                    ], 
+                    "resolved_ws_objects": [], 
+                    "service": "fba_tools", 
+                    "subactions": []
+                }
+            ], 
+            "refs": [
+                "23639/28/1"
+            ]
+        }
+    ]
+}
