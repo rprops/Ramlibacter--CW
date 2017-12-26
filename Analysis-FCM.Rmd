@@ -1,0 +1,283 @@
+---
+title: "Analysis-FCM"
+author: "Ruben Props"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    code_folding: show
+    highlight: haddock
+    keep_md: yes
+    theme: united
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+      toc_depth: 2
+    css: report_styles.css
+    df_print: paged
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include = FALSE, warning = FALSE}
+knitr::opts_chunk$set(eval = TRUE, 
+                      echo = TRUE, 
+                      cache = TRUE,
+                      include = TRUE,
+                      collapse = FALSE,
+                      dependson = NULL,
+                      engine = "R", # Chunks will always have R code, unless noted
+                      error = TRUE,
+                      fig.path="Figures-FCM/cached/",  # Set the figure options
+                      fig.align = "center",
+                      cache.lazy = FALSE)
+# Load libraries
+library("Phenoflow")
+library("grofit")
+library("ggplot2")
+library("gridExtra")
+library("tidyr")
+library("dplyr")
+library('grid')
+source('functions.R')
+
+# xyplot options
+my.settings <- list(
+  strip.background=list(col="transparent"),
+  strip.border=list(col="transparent", cex=5),
+  gate=list(col="black", fill="lightblue", alpha=0.2,border=NA,lwd=2),
+  panel.background=list(col="lightgray"),
+  background=list(col="white"))
+
+col_RAMLI <- "#060670"
+```
+
+
+# Cell density 
+
+```{r fcm-density-data, warning = FALSE, dpi = 500, fig.width = 7, fig.height = 6}
+# Start beta diversity analysis on FCM data
+path = "/media/projects1/Ruben/Ramlibacter--CW/isolation/online-growth/"
+flowData_transformed  <- read.flowSet(path = path, transformation = FALSE, pattern = ".fcs")
+
+flowData_transformed <- transform(flowData_transformed,`FL1-H`=asinh(`FL1-H`), 
+                                  `SSC-H`=asinh(`SSC-H`), 
+                                  `FL3-H`=asinh(`FL3-H`), 
+                                  `FSC-H`=asinh(`FSC-H`))
+param=c("FL1-H", "FL3-H","SSC-H","FSC-H")
+# flowData_transformed = flowData_transformed[,param]
+
+# Create a PolygonGate for denoising the dataset
+# Define coordinates for gate in sqrcut1 in format: c(x,x,x,x,y,y,y,y)
+sqrcut1 <- matrix(c(8.25,8.25,15,15,3,7.25,14,3),ncol=2, nrow=4)
+colnames(sqrcut1) <- c("FL1-H","FL3-H")
+polyGate1 <- polygonGate(.gate=sqrcut1, filterId = "Total Cells")
+
+#  Gating quality check
+xyplot(`FL3-H` ~ `FL1-H`, data=flowData_transformed[2], filter=polyGate1,
+       scales=list(y=list(limits=c(0,14)),
+                   x=list(limits=c(6,16))),
+       par.settings = my.settings,
+       axis = axis.default, nbin=125, 
+       par.strip.text=list(col="white", font=2, cex=2), smooth=FALSE)
+
+# Isolate only the cellular information based on the polyGate1
+flowData_transformed <- Subset(flowData_transformed, polyGate1)
+
+
+# Reformat gates
+sqrcut1 <- matrix(c(8.25,8.25,15,15,3,7.25,14,3),ncol=2, nrow=4)
+colnames(sqrcut1) <- c("FL1-H","FL3-H")
+polyGate1 <- polygonGate(.gate=sqrcut1, filterId = "Total Cells")
+sqrcut1 <- matrix(c(asinh(12500),asinh(12500),15,15,3,9.55,14,3),ncol=2, nrow=4)
+colnames(sqrcut1) <- c("FL1-H","FL3-H")
+rGate_HNA <- polygonGate(.gate=sqrcut1, filterId = "HNA")
+sqrcut1 <- matrix(c(8.5,8.5,asinh(12500),asinh(12500),3,8,9.55,3),ncol=2, nrow=4)
+colnames(sqrcut1) <- c("FL1-H","FL3-H")
+rGate_LNA <- polygonGate(.gate=sqrcut1, filterId = "LNA")
+
+# Check if rectangle gate is correct, if not, adjust rGate_HNA
+xyplot(`FL3-H` ~ `FL1-H`, data=flowData_transformed[200], filter=rGate_HNA,
+       scales=list(y=list(limits=c(0,14)),
+                   x=list(limits=c(6,16))),
+       par.settings = my.settings,
+       axis = axis.default, nbin=125, par.strip.text=list(col="white", font=2, 
+                                                          cex=2), smooth=FALSE)
+
+# Extract the cell counts
+a <- flowCore::filter(flowData_transformed, rGate_HNA) 
+HNACount <- flowCore::summary(a);HNACount <- toTable(HNACount)
+s <- flowCore::filter(flowData_transformed, polyGate1)
+TotalCount <- flowCore::summary(s);TotalCount <- flowCore::toTable(TotalCount)
+
+# Extract the volume
+vol <- as.numeric(flowCore::fsApply(flowData_transformed, FUN = function(x) x@description$`$VOL`))/1000
+
+# Save counts
+counts <- data.frame(Samples = flowCore::sampleNames(flowData_transformed), 
+                     Total.cells = TotalCount$true/vol, HNA.cells = HNACount$true/vol,
+                     LNA.cells = (TotalCount$true-HNACount$true)/vol)
+
+# Extract metadata from sampleNames
+counts$NutrientCondition <- do.call(rbind, strsplit(as.character(counts$Samples), "_"))[,1]
+counts$NutrientCondition <- plyr::revalue(counts$NutrientCondition,  c("R1"="1 mg/L R2A", "R2"="10 mg/L R2A", "R3"="100 mg/L R2A" ))
+counts$NutrientCondition <- factor(counts$NutrientCondition, levels = c("1 mg/L R2A", "10 mg/L R2A", "100 mg/L R2A"))
+counts$Timepoint <- as.numeric(gsub(".fcs", "", do.call(rbind, strsplit(as.character(counts$Samples), "_"))[,2]))
+counts$ExactTime <- as.numeric(flowCore::fsApply(flowData_transformed, FUN = function(x) x@description$`#BDACCURICAPTUREDDATE`))
+counts$ExactTime <- (counts$ExactTime - min(counts$ExactTime))/(60*60*1000) # To go from default ms to hours
+```
+
+```{r fcm-density-data-2, warning = FALSE, dpi = 500, fig.width = 15, fig.height = 7}
+p_counts <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = NutrientCondition))+
+  geom_line(aes(color = NutrientCondition))+
+  geom_point(shape = 21, size = 4)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+  scale_color_brewer(palette = "Accent")+
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom")+
+  ylab("Cell density (cells/µL)")+
+  xlab("Time (h)")+
+  labs(title="Total population")+
+  guides(color = FALSE)
+
+
+p_HNA <- ggplot(counts, aes(x = ExactTime, y = HNA.cells, fill = NutrientCondition))+
+  geom_line(aes(color = NutrientCondition))+
+  geom_point(shape = 21, size = 4)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+  scale_color_brewer(palette = "Accent")+
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom")+
+  ylab("Cell density (cells/µL)")+
+  xlab("Time (h)")+
+  labs(title="HNA population")+
+  guides(color = FALSE)
+
+
+p_LNA <- ggplot(counts, aes(x = ExactTime, y = LNA.cells, fill = NutrientCondition))+
+    geom_line(aes(color = NutrientCondition))+
+  geom_point(shape = 21, size = 4)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+  scale_color_brewer(palette = "Accent")+
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom")+
+  ylab("Cell density (cells/µL)")+
+  xlab("Time (h)")+
+  labs(title="LNA population")+
+  guides(color = FALSE)
+
+grid_arrange_shared_legend(p_counts, p_HNA, p_LNA, ncol = 3)
+```
+
+
+# Diversity dynamics
+
+```{r diversity-fcm-1, warning = FALSE, dpi = 500, fig.width = 7, fig.height = 6}
+# Calculate phenotypic alpha diversity
+diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FALSE, parallel = TRUE,
+                              ncores = 10)
+
+```
+
+
+```{r diversity-fcm-2, warning = FALSE, dpi = 500, fig.width = 10, fig.height = 6}
+# Add metadata to phenotypic diversity estimate
+diversity_fcm <- dplyr::left_join(diversity_fcm, counts, by = c("Sample_names" =  "Samples"))
+
+# Plot results
+p_div <- ggplot(diversity_fcm, aes(x = ExactTime, y = D2, fill = NutrientCondition))+
+    geom_line(aes(color = NutrientCondition))+
+    geom_point(shape = 21, size = 4)+
+    theme_bw()+
+    scale_fill_brewer("Nutrient condition", palette = "Accent")+
+    scale_color_brewer("Nutrient condition", palette = "Accent")+
+    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom",
+        strip.text = element_text(size = 16))+
+    ylab(expression("Phenotypic diversity - D"[2]))+
+    facet_grid(~NutrientCondition)+
+    xlab("Time (h)")+
+    guides(fill = FALSE, color = FALSE)
+
+
+print(p_div)
+```
+
+```{r count-diversity-fcm, warning = FALSE, dpi = 500, fig.width = 14, fig.height = 11}
+# Reshape combined data
+diversity_fcm_long <- tidyr::gather(diversity_fcm, population, Density, Total.cells, LNA.cells, HNA.cells, D2)
+diversity_fcm_long$population <- plyr::revalue(diversity_fcm_long$population,  c("Total.cells"="Whole population", "HNA.cells"="HNA population", "LNA.cells"="LNA population", "D2" = "Phenotypic diversity"))
+
+# Combine diversity and count plot
+p_count2 <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = NutrientCondition))+
+  geom_line(aes(color = NutrientCondition))+
+  geom_point(shape = 21, size = 4)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+  scale_color_brewer(palette = "Accent")+
+    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom",
+        strip.text = element_text(size = 16))+
+  ylab("Cell density (cells/µL)")+
+  xlab("Time (h)")+
+  facet_grid(~NutrientCondition)+
+  guides(color = FALSE, fill = FALSE)
+
+p_HNA2 <- ggplot(counts, aes(x = ExactTime, y = HNA.cells, fill = NutrientCondition))+
+  geom_line(aes(color = NutrientCondition))+
+  geom_point(shape = 21, size = 4)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+  scale_color_brewer(palette = "Accent")+
+    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom",
+        strip.text = element_text(size = 16))+
+  ylab("Cell density (cells/µL)")+
+  xlab("Time (h)")+
+  facet_grid(~NutrientCondition)+
+  guides(color = FALSE, fill = FALSE)
+
+p_LNA2 <- ggplot(counts, aes(x = ExactTime, y = LNA.cells, fill = NutrientCondition))+
+  geom_line(aes(color = NutrientCondition))+
+  geom_point(shape = 21, size = 4)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+  scale_color_brewer(palette = "Accent")+
+    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom",
+        strip.text = element_text(size = 16))+
+  ylab("Cell density (cells/µL)")+
+  xlab("Time (h)")+
+  facet_grid(~NutrientCondition)+
+  guides(color = FALSE, fill = FALSE)
+
+grid.arrange(p_count2, p_div, nrow = 2)
+
+grid.arrange(p_HNA2, p_div, nrow = 2)
+
+grid.arrange(p_LNA2, p_div, nrow = 2)
+```
+# Growth rate estimation
+
+```{r growth-rate, warning = FALSE, dpi = 500, fig.width = 7, fig.height = 6}
+# Format data for grofit
+
+# Normalize time axis to start at 1
+
+# Run grofit and choose logistic model for fit
+
+# Plot lag-phase length, maximum growth rate, etc etc.
+
+```
+
