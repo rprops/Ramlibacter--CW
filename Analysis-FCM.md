@@ -1,7 +1,7 @@
 ---
 title: "Analysis-FCM"
 author: "Ruben Props"
-date: "26 December, 2017"
+date: "27 December, 2017"
 output:
   html_document:
     code_folding: show
@@ -2020,6 +2020,7 @@ diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FA
 ```r
 # Add metadata to phenotypic diversity estimate
 diversity_fcm <- dplyr::left_join(diversity_fcm, counts, by = c("Sample_names" =  "Samples"))
+diversity_fcm <- diversity_fcm %>% dplyr::filter(Timepoint > 5) # Only consider after first 5 samples due to bleaching of tubing
 
 # Plot results
 p_div <- ggplot(diversity_fcm, aes(x = ExactTime, y = D2, fill = NutrientCondition))+
@@ -2111,16 +2112,109 @@ grid.arrange(p_LNA2, p_div, nrow = 2)
 ```
 
 <img src="Figures-FCM/cached/count-diversity-fcm-3.png" style="display: block; margin: auto;" />
+
 # Growth rate estimation
 
 
 ```r
 # Format data for grofit
+## Samples as rows and timepoints as columns
+counts_tmp <- counts %>% dplyr::filter(Timepoint > 5) # Only consider after first 5 samples due to bleaching of tubing
+count_wide <- spread(counts_tmp[, c(5,2,7)], ExactTime, Total.cells)
+time_wide <- as.matrix(spread(counts_tmp[, c(5,7)], ExactTime, ExactTime)[,-1])
 
-# Normalize time axis to start at 1
+## Add two additional columns (mandatory for grofit to run properly)
+count_wide <- data.frame(ReactorName = c("R1", "R2","R3"), 
+                         NutrientLevel = c("Low", "Medium", "High"), count_wide)
 
-# Run grofit and choose logistic model for fit
-
-# Plot lag-phase length, maximum growth rate, etc etc.
+## Fit grofit models
+Fit <- grofit::gcFit(time_wide, count_wide, grofit.control(nboot.gc = 1000, smooth.gc=0.5, interactive = FALSE))
 ```
 
+```
+## 
+## 
+## = 1. growth curve =================================
+## ----------------------------------------------------
+## --> Try to fit model logistic--> Try to fit model richards--> Try to fit model gompertz--> Try to fit model gompertz.exp
+## 
+## 
+## = 2. growth curve =================================
+## ----------------------------------------------------
+## --> Try to fit model logistic--> Try to fit model richards--> Try to fit model gompertz--> Try to fit model gompertz.exp
+## 
+## 
+## = 3. growth curve =================================
+## ----------------------------------------------------
+## --> Try to fit model logistic--> Try to fit model richards--> Try to fit model gompertz--> Try to fit model gompertz.exp
+```
+
+```r
+sum <- summary(Fit)
+par(mfrow=c(3,1))
+plot(Fit, opt = "s", slope = TRUE, colSpline = 4, cex = 2, title = "Spline fit") # show spline fits
+par(mfrow=c(1,1))
+
+# We continue to work with the spline fits as they seem to be the best
+growth_results <- sum[, c("concentration","mu.bt", "lambda.bt", "A.bt",
+                          "ci95.mu.bt.up", "ci95.mu.bt.lo",
+                          "ci95.lambda.bt.up", "ci95.lambda.bt.lo",
+                          "ci95.A.bt.up", "ci95.A.bt.lo")]
+```
+
+
+```r
+# Plot lag-phase length, maximum growth rate, etc etc.
+
+# maximum growth rate
+p_mu <- ggplot(growth_results, aes(x = concentration, y = mu.bt, fill = concentration))+
+  geom_point(shape = 21, size = 5)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom",
+        strip.text = element_text(size = 16))+
+  ylab(expression(mu["max"] ~ "- cells h"^"-1"))+
+  xlab("")+
+  guides(color = FALSE, fill = FALSE)+
+  geom_errorbar(aes(ymax = ci95.mu.bt.up, ymin = ci95.mu.bt.lo), width = 0.025)
+
+# print(p_mu)
+
+# Lag phase
+p_lambda <- ggplot(growth_results, aes(x = concentration, y = lambda.bt, fill = concentration))+
+  geom_point(shape = 21, size = 5)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom",
+        strip.text = element_text(size = 16))+
+  ylab(expression(lambda ~ "(h)"))+
+  xlab("")+
+  guides(color = FALSE, fill = FALSE)+
+  geom_errorbar(aes(ymax = ci95.lambda.bt.up, ymin = ci95.lambda.bt.lo), width = 0.025)
+
+# print(p_lambda)
+
+# Carrying capacity
+p_A <- ggplot(growth_results, aes(x = concentration, y = A.bt, fill = concentration))+
+  geom_point(shape = 21, size = 5)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom",
+        strip.text = element_text(size = 16))+
+  ylab(expression("Carrying capacity" ~ "- cells µL"^"-1"))+
+  xlab("")+
+  guides(color = FALSE, fill = FALSE)+
+  geom_errorbar(aes(ymax = ci95.A.bt.up, ymin = ci95.A.bt.lo), width = 0.025)
+# 
+# print(p_A)
+
+grid.arrange(p_lambda, p_mu, p_A, nrow = 3)
+```
+
+<img src="Figures-FCM/cached/growth-rate-plot-1.png" style="display: block; margin: auto;" />
