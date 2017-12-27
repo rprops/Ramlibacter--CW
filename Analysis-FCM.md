@@ -2115,6 +2115,8 @@ grid.arrange(p_LNA2, p_div, nrow = 2)
 
 # Growth rate estimation
 
+## Grofit
+
 
 ```r
 # Format data for grofit
@@ -2218,3 +2220,20 @@ grid.arrange(p_lambda, p_mu, p_A, nrow = 3)
 ```
 
 <img src="Figures-FCM/cached/growth-rate-plot-1.png" style="display: block; margin: auto;" />
+
+## Growthcurver
+
+
+```r
+# Create wide format
+count_gc_wide <- spread(counts[, c(5,2,7)], NutrientCondition, Total.cells)
+
+# Run growthcurver
+gc_fit <- list()
+gc_fit[[1]] <- SummarizeGrowth(count_gc_wide$ExactTime[!is.na(count_gc_wide$`1 mg/L R2A`)], count_gc_wide$`1 mg/L R2A`[!is.na(count_gc_wide$`1 mg/L R2A`)])
+gc_fit[[2]] <- SummarizeGrowth(count_gc_wide$ExactTime[!is.na(count_gc_wide$`10 mg/L R2A`)], count_gc_wide$`10 mg/L R2A`[!is.na(count_gc_wide$`10 mg/L R2A`)])
+gc_fit[[3]] <- SummarizeGrowth(count_gc_wide$ExactTime[!is.na(count_gc_wide$`100 mg/L R2A`)], count_gc_wide$`100 mg/L R2A`[!is.na(count_gc_wide$`100 mg/L R2A`)], t_trim = 79)
+
+gc_results <- data.frame(concentration = colnames(count_gc_wide)[-1], 
+                         rbind(gc_fit[[1]]$vals, gc_fit[[2]]$vals, gc_fit[[3]]$vals)) 
+```

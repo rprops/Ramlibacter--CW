@@ -35,6 +35,7 @@ knitr::opts_chunk$set(eval = TRUE,
 # Load libraries
 library("Phenoflow")
 library("grofit")
+library("growthcurver")
 library("reshape2")
 library("ggplot2")
 library("gridExtra")
@@ -273,6 +274,8 @@ grid.arrange(p_LNA2, p_div, nrow = 2)
 
 # Growth rate estimation
 
+## Grofit
+
 ```{r growth-rate, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 12, message = FALSE}
 # Format data for grofit
 ## Samples as rows and timepoints as columns
@@ -296,6 +299,7 @@ growth_results <- sum[, c("concentration","mu.bt", "lambda.bt", "A.bt",
                           "ci95.mu.bt.up", "ci95.mu.bt.lo",
                           "ci95.lambda.bt.up", "ci95.lambda.bt.lo",
                           "ci95.A.bt.up", "ci95.A.bt.lo")]
+
 ```
 
 ```{r growth-rate-plot, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 13}
@@ -347,8 +351,25 @@ p_A <- ggplot(growth_results, aes(x = concentration, y = A.bt, fill = concentrat
   xlab("")+
   guides(color = FALSE, fill = FALSE)+
   geom_errorbar(aes(ymax = ci95.A.bt.up, ymin = ci95.A.bt.lo), width = 0.025)
-# 
+
 # print(p_A)
 
 grid.arrange(p_lambda, p_mu, p_A, nrow = 3)
+```
+
+## Growthcurver
+
+```{r growthcurver-analysis, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 13}
+# Create wide format
+count_gc_wide <- spread(counts[, c(5,2,7)], NutrientCondition, Total.cells)
+
+# Run growthcurver
+gc_fit <- list()
+gc_fit[[1]] <- SummarizeGrowth(count_gc_wide$ExactTime[!is.na(count_gc_wide$`1 mg/L R2A`)], count_gc_wide$`1 mg/L R2A`[!is.na(count_gc_wide$`1 mg/L R2A`)])
+gc_fit[[2]] <- SummarizeGrowth(count_gc_wide$ExactTime[!is.na(count_gc_wide$`10 mg/L R2A`)], count_gc_wide$`10 mg/L R2A`[!is.na(count_gc_wide$`10 mg/L R2A`)])
+gc_fit[[3]] <- SummarizeGrowth(count_gc_wide$ExactTime[!is.na(count_gc_wide$`100 mg/L R2A`)], count_gc_wide$`100 mg/L R2A`[!is.na(count_gc_wide$`100 mg/L R2A`)])
+
+gc_results <- data.frame(concentration = colnames(count_gc_wide)[-1], 
+                         rbind(gc_fit[[1]]$vals, gc_fit[[2]]$vals, gc_fit[[3]]$vals)) 
+
 ```
