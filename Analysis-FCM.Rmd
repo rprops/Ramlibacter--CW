@@ -58,7 +58,7 @@ col_RAMLI <- "#060670"
 
 # Cell density 
 
-```{r fcm-density-data, warning = FALSE, dpi = 500, fig.width = 7, fig.height = 6, message = FALSE}
+```{r fcm-density-data, warning = FALSE, dpi = 500, fig.width = 7, fig.height = 6, include = FALSE}
 # Start beta diversity analysis on FCM data
 path = "/media/projects1/Ruben/Ramlibacter--CW/isolation/online-growth/"
 flowData_transformed  <- read.flowSet(path = path, transformation = FALSE, pattern = ".fcs")
