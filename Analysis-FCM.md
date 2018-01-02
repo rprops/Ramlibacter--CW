@@ -83,6 +83,9 @@ grid_arrange_shared_legend(p_counts, p_HNA, p_LNA, ncol = 3)
 
 
 ```r
+# Resample to atleast 10,000 cells for diversity assay
+# flowData_transformed_subs <- FCS_resample(flowData_transformed, sample = 10000, replace = TRUE)
+
 # Calculate phenotypic alpha diversity
 diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FALSE, parallel = TRUE,
                               ncores = 10)
@@ -90,7 +93,7 @@ diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FA
 
 ```
 ## -------------------------------------------------------------------------------------------------
-## Tue Jan  2 10:27:05 2018 --- Normalizing your FCS data based on maximum FL1-H value
+## Tue Jan  2 12:10:20 2018 --- Normalizing your FCS data based on maximum FL1-H value
 ## --- Maximum FL1-H before normalizing: 14.95
 ## --- Maximum FL3-H before normalizing: 13.27
 ## --- Maximum SSC-H before normalizing: 17.33
@@ -102,9 +105,9 @@ diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FA
 ## --- Maximum FSC-H after normalizing: 1.13
 ## -------------------------------------------------------------------------------------------------
 ##  
-## Tue Jan  2 10:27:46 2018 --- Using 10 cores for calculations
-## Tue Jan  2 10:53:17 2018 --- Closing workers
-## Tue Jan  2 10:53:17 2018 --- Alpha diversity metrics (D0,D1,D2) have been computed after 100 bootstraps
+## Tue Jan  2 12:10:58 2018 --- Using 10 cores for calculations
+## Tue Jan  2 12:36:18 2018 --- Closing workers
+## Tue Jan  2 12:36:18 2018 --- Alpha diversity metrics (D0,D1,D2) have been computed after 100 bootstraps
 ## -----------------------------------------------------------------------------------------------------
 ## 
 ```
@@ -130,8 +133,8 @@ p_div <- ggplot(diversity_fcm, aes(x = ExactTime, y = D2, fill = NutrientConditi
     ylab(expression("Phenotypic diversity - D"[2]))+
     facet_grid(~NutrientCondition)+
     xlab("Time (h)")+
-    guides(fill = FALSE, color = FALSE)
-
+    guides(fill = FALSE, color = FALSE)+
+  geom_ribbon(aes(ymin = D2 - sd.D2, ymax = D2 + sd.D2), alpha = 0.3)
 
 print(p_div)
 ```
