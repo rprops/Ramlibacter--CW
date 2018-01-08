@@ -1866,3 +1866,97 @@ print(p_blast_sdisc)
 ```{r Gene-set-enrichment-analysis, dpi = 500, fig.width = 8, fig.height = 7, warning = FALSE}
 library("GSAR")
 ```
+
+# Predict MGT
+Compare the growth rate with the minimum generation time estimated from the MAG
+using Growthpred. Dotted line in the graph of the predicted optimal growth temperature
+indicates the mean +/- st.dev of the operational temperature in the cooling water system.  
+
+```{r MGT-1, warning = FALSE, fig.width = 9, fig.height = 4, dpi = 500}
+MGT_df <- read.table("./Growthpred/GP_results.tsv", header = TRUE,
+                     stringsAsFactors = FALSE, sep = "\t")
+
+MGT_df <- MGT_df[c(1:3, 6:8), ]
+# Order genome_ids according to the phylogenetic clustering
+MGT_df$Genome_ID <- factor(MGT_df$Genome_ID, levels = c("Ramli. sp. MAG",
+                                                        "Ramli. sp. 5-10",
+                                                        "Ramli. sp. Leaf400",
+                                                        "Ramli. sp. TTB310",
+                                                        "Bact. sp. MAG1",
+                                                        "Bact. sp. MAG2"))
+
+# Make barplot with st.dev to visualize MGT and optimal temperature
+selected_points <- data.frame(Genome_ID = MGT_df$Genome_ID, 
+                              ypos = c(rep(7.5, 3), rep(NA,3)))
+p_MGT <- ggplot(MGT_df, aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_manual("Minimal generation time (h)",
+                    values = c(col_RAMLI, col_RAMLI,col_RAMLI,col_RAMLI,
+                               col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=FALSE)+
+  geom_errorbar(aes(ymin = MGT - sd.MGT, ymax = MGT + sd.MGT), width = 0.15,
+                position = position_dodge(width = 1))+
+  ylab("")+
+  xlab("")+
+  ggtitle("Minimal Generation Time (h)")+
+  geom_point(data = selected_points, aes(x = Genome_ID, y = ypos),
+             shape = 25, fill = "black", col = "black", size = 3)
+  # scale_y_continuous(labels = function(x) sprintf("%.2f", x), breaks = seq(0.20,0.90,0.10),
+  #                    limits = c(0.2,0.9))
+
+# svg(filename = "MGT_figure.svg", width = 9.5, height = 4)
+print(p_MGT)
+#dev.off()
+
+selected_points <- data.frame(Genome_ID = MGT_df$Genome_ID, 
+                              ypos = c(rep(35, 3), rep(NA,3)))
+selected_band <- data.frame(Genome_ID = MGT_df$Genome_ID, 
+                            Topt = MGT_df$Topt,
+                            lwr = rep(26.89 - 1.26, 6),
+                            upr = rep(26.89 + 1.26, 6),
+                            y_val = 26.89)
+
+p_Topt <- ggplot(MGT_df, aes(x = Genome_ID, y = Topt, fill = Genome_ID))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_manual("Optimal growth temperature (°C)",
+                    values = c(col_RAMLI, col_RAMLI,col_RAMLI,col_RAMLI,
+                               col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=FALSE)+
+  ylab("")+
+  xlab("")+
+  ggtitle("Optimal growth temperature (°C)")+
+  geom_point(data = selected_points, aes(x = Genome_ID, y = ypos),
+             shape = 25, fill = "black", col = "black", size = 3)+
+  geom_hline(yintercept = 26.89, linetype = 2, col = "black")+
+  geom_rect(data = selected_band, aes(ymin = lwr,
+                                      ymax = upr,
+                                      xmin = 0,
+                                      xmax = 7), alpha=0.1, fill = "gray",
+            col = NA)
+
+# svg(filename = "MGT_figure.svg", width = 9.5, height = 4)
+print(p_Topt)
+#dev.off()
+```
