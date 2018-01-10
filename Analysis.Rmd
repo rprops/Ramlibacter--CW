@@ -606,48 +606,7 @@ print(p_cog_func_clust)
 
 ```{r KO pathways, dpi = 300, warning = FALSE, fig.width = 12, fig.height = 13}
 # Import data
-ko_path_df <- read.table("./Mapping_files/ko00000.keg", header = FALSE, sep = ";",
-                      skip = 3, quote = "", fill = TRUE, 
-                      col.names = c("Level", "KO", "Function_abbrev", "Function_spec"))
-ko_path_df <- ko_path_df[1:(nrow(ko_path_df)-1), ] # remove tailing "!" at the end of file
-
-# Remove empty rows
-ko_path_df$KO <- as.character(ko_path_df$KO);  ko_path_df$Level <- as.character( ko_path_df$Level)
-ko_path_df$KO[grep("A",ko_path_df$Level)] <- ko_path_df$Level[grep("A",ko_path_df$Level)]
-ko_path_df$Level[grep("A",ko_path_df$Level)] <- "A"
-ko_path_df <- ko_path_df[!ko_path_df$KO == "", ]
-# Extract pathways from dataframe and add them as new factor column
-# pathw_hier <- data.frame(Level = ko_path_df$Level[ko_path_df$Level %in% c("A","B","C")], 
-#                     Name = ko_path_df$KO[ko_path_df$Level %in% c("A","B","C")]
-#                     )
-# pathw_hier$Name <- as.character(pathw_hier$Name)
-ko_path_df <- data.frame(ko_path_df, level_A = "A", level_B = "B", level_C = "C",
-                         stringsAsFactors = FALSE)
-ko_path_df$KO <- as.character(ko_path_df$KO)
-
-# Get positions where to replicate higher hierarichcal level
-pos_A <- c(c(1:nrow(ko_path_df))[ko_path_df$Level %in% "A"], nrow(ko_path_df)+1)
-pos_B <- c(c(1:nrow(ko_path_df))[ko_path_df$Level %in% "B"], nrow(ko_path_df)+1)
-pos_C <- c(c(1:nrow(ko_path_df))[ko_path_df$Level %in% "C"], nrow(ko_path_df)+1)
-
-
-for(i in 1:(length(pos_A)-1)){
-  ko_path_df$level_A[pos_A[i]:(pos_A[i+1]-1)] <- ko_path_df$KO[pos_A[i]]
-}
-
-for(i in 1:(length(pos_B)-1)){
-  ko_path_df$level_B[pos_B[i]:(pos_B[i+1]-1)] <- ko_path_df$KO[pos_B[i]]
-}
-
-for(i in 1:(length(pos_C)-1)){
-  ko_path_df$level_C[pos_C[i]:(pos_C[i+1]-1)] <- ko_path_df$KO[pos_C[i]]
-}
-
-# Remove all rows with level A, B, C - and level column
-ko_path_df <- ko_path_df[!ko_path_df$Level %in% c("A","B", "C"), ]
-ko_path_df$level_A <- gsub(ko_path_df$level_A, pattern = "<b>|</b>", replacement = "")
-ko_path_df$level_B <- gsub(ko_path_df$level_B, pattern = "<b>|</b>", replacement = "")
-ko_path_df <- ko_path_df[, -1]
+ko_path_df <- format_ko(path = "./Mapping_files/ko00000.keg")
 
 # Annotate merged ko file
 merged_gc_ko <- rbind(RAMLI_gc_KO, BAC1_gc_KO, BAC2_gc_KO)
@@ -657,12 +616,12 @@ merged_gc_ko <- data.frame(merged_gc_ko,
                                          rep("Bacteroidetes MAG2", nrow(BAC2_gc_KO)))
                             )
 merged_gc_ko$ko_id <- gsub(merged_gc_ko$ko_id, pattern = "KO:", replacement = "")
-merged_gc_ko <- dplyr::left_join(merged_gc_ko, ko_path_df[, c(1, 4:6)], by = c("ko_id" = "KO"))
+merged_gc_ko <- dplyr::left_join(merged_gc_ko, ko_path_df[, c(1, 4:6)], by = "ko_id")
 
 # Fill up NA slots with "Unknown" pathway
-merged_gc_ko$level_A[is.na(merged_gc_ko$level_A)] <- "Unknown"
-merged_gc_ko$level_B[is.na(merged_gc_ko$level_B)] <- "Unknown"
-merged_gc_ko$level_C[is.na(merged_gc_ko$level_C)] <- "Unknown"
+merged_gc_ko$ko_level_A[is.na(merged_gc_ko$ko_level_A)] <- "Unknown"
+merged_gc_ko$ko_level_B[is.na(merged_gc_ko$ko_level_B)] <- "Unknown"
+merged_gc_ko$ko_level_C[is.na(merged_gc_ko$ko_level_C)] <- "Unknown"
 ```
 
 # 8.  Synonymous Codon Usage Bias analysis using CodonO
@@ -756,7 +715,7 @@ p_SCUO.1 <- ggplot(data = SCUO_merged, aes (x = 100*GC, y = SCUO, fill = Genome_
 print(p_SCUO.1)
 
 # Subset to genes for which ko annotation is available
-SCUO_merged_sb <- SCUO_merged[!is.na(SCUO_merged$level_A), ]
+SCUO_merged_sb <- SCUO_merged[!is.na(SCUO_merged$ko_level_A), ]
 SCUO_merged_sb <- SCUO_merged_sb[SCUO_merged_sb$GCx == "GC_mean", ]
 # Look at pathways enriched in high %GC
 # SCUO_merged_sb[]
@@ -786,6 +745,7 @@ p_SCUO.2 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))
   )
 # 
 print(p_SCUO.2)
+
 tmp <- SCUO_merged_sb$genome_id
 tmp2 <- cbind(SCUO_merged_sb$ko_id, 
       c(rep(col_RAMLI, table(tmp)[3]), rep(col_bac1, table(tmp)[1]), rep(col_bac2, table(tmp)[2]))
@@ -952,6 +912,10 @@ data_posi <- left_join(data_posi, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_clade <- left_join(data_posi_clade, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
 data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+# Also add COG annotation to both data sets
+data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+# Also add Pfam annotation to both data sets
 
 # Retain clade or MAG only genes in the respective dataframes
 pos <- !data_posi_KO$Gene %in% data_posi_clade_KO$Gene
@@ -971,16 +935,16 @@ write.table(file = "KO_posiG_clade.tsv", unique(data_posi_clade_KO$ko_id), quote
 # Merge dataframes to plot
 
 # Remove levels without "n_level" number of genes
-n_level <- round(0.01*sum(table(data_posi_clade_KO$level_C)),0)
-posiG_p_df_clade  <- table(data_posi_clade_KO$level_C)[table(data_posi_clade_KO$level_C)>n_level]
+n_level <- round(0.01*sum(table(data_posi_clade_KO$ko_level_C)),0)
+posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)[table(data_posi_clade_KO$ko_level_C)>n_level]
 posiG_p_df_clade <- data.frame(posiG_p_df_clade); posiG_p_df_clade$Var1 <- as.character(posiG_p_df_clade$Var1)
 
-n_level <- round(0.01*sum(table(data_posi_KO$level_C)),0)
-posiG_p_df_MAG  <- table(data_posi_KO$level_C)[table(data_posi_KO$level_C)>n_level]
+n_level <- round(0.01*sum(table(data_posi_KO$ko_level_C)),0)
+posiG_p_df_MAG  <- table(data_posi_KO$ko_level_C)[table(data_posi_KO$ko_level_C)>n_level]
 posiG_p_df_MAG <- data.frame(posiG_p_df_MAG); posiG_p_df_MAG$Var1 <- as.character(posiG_p_df_MAG$Var1)
 
-n_level <- round(0.01*sum(table(data_posi_clade_MAG_KO$level_C)),0)
-posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$level_C)[table(data_posi_clade_MAG_KO$level_C)>n_level]
+n_level <- round(0.01*sum(table(data_posi_clade_MAG_KO$ko_level_C)),0)
+posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$ko_level_C)[table(data_posi_clade_MAG_KO$ko_level_C)>n_level]
 posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$Var1 <- as.character(posiG_p_df_MAG_clade$Var1)
 
 # Merge dataframes
@@ -994,30 +958,26 @@ posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG,
 data_posi_KO_merge <- rbind(data_posi_KO, data_posi_clade_KO, data_posi_clade_MAG_KO)
 
 # Merge with level B annotation
-posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_KO_merge[, c("level_A","level_B","level_C")],
-                       by = c("Var1" = "level_C")) %>% distinct()
-posiG_p_df_merged$level_B <- substring(posiG_p_df_merged$level_B, 7)
-posiG_p_df_merged$level_A <- substring(posiG_p_df_merged$level_A, 7)
-posiG_p_df_merged$Var1 <- substring(posiG_p_df_merged$Var1, 7)
-posiG_p_df_merged$Var1 <- gsub("\\[[^\\]]*\\]", "", posiG_p_df_merged$Var1 , perl=TRUE)
-posiG_p_df_merged$level_B[posiG_p_df_merged$level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
+posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_KO_merge[, c("ko_level_A","ko_level_B","ko_level_C")],
+                       by = c("Var1" = "ko_level_C")) %>% distinct()
+posiG_p_df_merged$ko_level_B[posiG_p_df_merged$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
 
 # Sort according to frequency
 posiG_p_df_merged$Var1 <- factor(posiG_p_df_merged$Var1, levels = unique(posiG_p_df_merged$Var1[rev(order(posiG_p_df_merged$Freq))]))
 
-posiG_p_df_merged$level_B <- factor(posiG_p_df_merged$level_B, levels = unique(posiG_p_df_merged$level_B[rev(order(posiG_p_df_merged$Freq))]))
+posiG_p_df_merged$ko_level_B <- factor(posiG_p_df_merged$ko_level_B, levels = unique(posiG_p_df_merged$ko_level_B[rev(order(posiG_p_df_merged$Freq))]))
 
 # Add extra column to shorten number of labels in legend
 # Only show 12 most frequent categories
-posiG_p_df_merged <- posiG_p_df_merged %>% mutate(level_C_short = 
+posiG_p_df_merged <- posiG_p_df_merged %>% mutate(ko_level_C_short = 
                                                     Var1)
 tmp <- levels(posiG_p_df_merged$Var1)[1:11]
-posiG_p_df_merged$level_C_short <- as.character(posiG_p_df_merged$level_C_short)
-posiG_p_df_merged$level_C_short[!posiG_p_df_merged$level_C_short %in% tmp] <- "Other"
-posiG_p_df_merged$level_C_short <- factor(posiG_p_df_merged$level_C_short,
+posiG_p_df_merged$ko_level_C_short <- as.character(posiG_p_df_merged$ko_level_C_short)
+posiG_p_df_merged$ko_level_C_short[!posiG_p_df_merged$ko_level_C_short %in% tmp] <- "Other"
+posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
                                           levels = c(tmp,"Other"))
 # Make plot
-p_KO_posi <- ggplot(posiG_p_df_merged, aes(x = level_B, y = Freq, fill = level_C_short))+
+p_KO_posi <- ggplot(posiG_p_df_merged, aes(x = ko_level_B, y = Freq, fill = ko_level_C_short))+
   geom_bar(stat="identity", color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
@@ -1067,7 +1027,7 @@ selected_KOlevels <- c("Signal transduction",
 "Unknown"
 )
 
-# Extract level_C labels of genes in top 5 dN/ds ratio
+# Extract ko_level_C labels of genes in top 5 dN/ds ratio
 # First filter out the genes with multiple annotations by
 # selecting the annotation with the highest identity.
 # data_posi_KO_unique <- data_posi_KO %>% group_by(Gene) %>%
@@ -1075,21 +1035,21 @@ selected_KOlevels <- c("Signal transduction",
 
 
 # Remove everything before first space
-data_posi_KO[, 24:26] <- apply(data_posi_KO[, 24:26], 2 ,  
-                               function(x) sub(".*? (.+)", "\\1", x))
+# data_posi_KO[, 24:26] <- apply(data_posi_KO[, 24:26], 2 ,  
+#                                function(x) sub(".*? (.+)", "\\1", x))
 # Remove everything between brackets ([*])
-data_posi_KO[, 24:26] <- apply(data_posi_KO[, 24:26], 2 ,  
-                               function(x) gsub(pattern = " *\\[.*?\\] *", 
-                                 replacement = "", x))
+# data_posi_KO[, 24:26] <- apply(data_posi_KO[, 24:26], 2 ,  
+#                                function(x) gsub(pattern = " *\\[.*?\\] *", 
+#                                  replacement = "", x))
 
 top <- 10
-thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
-selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$level_C
-selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
+thresh <- sort(data_posi_KO[data_posi_KO$ko_level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
+selected_KOlevels_labels <- data_posi_KO[data_posi_KO$ko_level_B %in% selected_KOlevels, ]$ko_level_C
+selected_KOlevels_labels[data_posi_KO[data_posi_KO$ko_level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
 
-p_SCUO_posi1 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
-  ggplot(aes(x = level_B, y = HA.foreground.omega,
-                                                   fill = level_B))+
+p_SCUO_posi1 <- data_posi_KO[data_posi_KO$ko_level_B %in% selected_KOlevels, ] %>% 
+  ggplot(aes(x = ko_level_B, y = HA.foreground.omega,
+                                                   fill = ko_level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
@@ -1126,15 +1086,15 @@ p_SCUO_posi1 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>%
 p_SCUO_posi1
 
 
-# Extract level_C labels of genes in top 5 dN/ds ratio
+# Extract ko_level_C labels of genes in top 5 dN/ds ratio
 top <- 10
-thresh <- sort(data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
-selected_KOlevels_labels <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$ko_name
-selected_KOlevels_labels[data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
+thresh <- sort(data_posi_KO[data_posi_KO$ko_level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
+selected_KOlevels_labels <- data_posi_KO[data_posi_KO$ko_level_B %in% selected_KOlevels, ]$ko_name
+selected_KOlevels_labels[data_posi_KO[data_posi_KO$ko_level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
 
-p_SCUO_posi2 <- data_posi_KO[data_posi_KO$level_B %in% selected_KOlevels, ] %>% 
-  ggplot(aes(x = level_B, y = HA.foreground.omega,
-                                                   fill = level_B))+
+p_SCUO_posi2 <- data_posi_KO[data_posi_KO$ko_level_B %in% selected_KOlevels, ] %>% 
+  ggplot(aes(x = ko_level_B, y = HA.foreground.omega,
+                                                   fill = ko_level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
@@ -1227,13 +1187,13 @@ print(p_posi_test_GC_clade)
 
 
 top <- 10
-thresh <- sort(data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
-selected_KOlevels_labels <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$level_C
-selected_KOlevels_labels[data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
+thresh <- sort(data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
+selected_KOlevels_labels <- data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_KOlevels, ]$ko_level_C
+selected_KOlevels_labels[data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
 
-p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ] %>% 
-  ggplot(aes(x = level_B, y = HA.foreground.omega,
-                                                   fill = level_B))+
+p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_KOlevels, ] %>% 
+  ggplot(aes(x = ko_level_B, y = HA.foreground.omega,
+                                                   fill = ko_level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
@@ -1269,15 +1229,15 @@ p_SCUO_posi3 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOle
 
 p_SCUO_posi3
 
-# Extract level_C labels of genes in top 5 dN/ds ratio
+# Extract ko_level_C labels of genes in top 5 dN/ds ratio
 top <- 10
-thresh <- sort(data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
-selected_KOlevels_labels <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$ko_name
-selected_KOlevels_labels[data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
+thresh <- sort(data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_KOlevels, ]$HA.foreground.omega, decreasing = TRUE)[top+1]
+selected_KOlevels_labels <- data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_KOlevels, ]$ko_name
+selected_KOlevels_labels[data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_KOlevels, ]$HA.foreground.omega < thresh] <- ""
 
-p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$level_B %in% selected_KOlevels, ] %>% 
-  ggplot(aes(x = level_B, y = HA.foreground.omega,
-                                                   fill = level_B))+
+p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_KOlevels, ] %>% 
+  ggplot(aes(x = ko_level_B, y = HA.foreground.omega,
+                                                   fill = ko_level_B))+
   # geom_jitter(shape = 21, aes(fill = posi_select, size = posi_select), width = 0.2)+
   geom_jitter(shape = 21, size = 3, width = 0.2, alpha = 0.5)+
   geom_boxplot(alpha=0.5, size =1, color = "black", width = 0.35,
@@ -1370,19 +1330,19 @@ panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = c("ko_id" = "KO"))
 
 # join with corresponding COG ids
 panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, by = c("gene_callers_id" = "gene_id"))
-panG_ko_cog$level_B <- substring(panG_ko_cog$level_B, 7)
-panG_ko_cog$level_C <- substring(panG_ko_cog$level_C, 7)
-panG_ko_cog$level_A <- substring(panG_ko_cog$level_A, 7)
-panG_ko_cog$level_C <- gsub("\\[[^\\]]*\\]", "", panG_ko_cog$level_C , perl=TRUE)
+panG_ko_cog$ko_level_B <- substring(panG_ko_cog$ko_level_B, 7)
+panG_ko_cog$ko_level_C <- substring(panG_ko_cog$ko_level_C, 7)
+panG_ko_cog$ko_level_A <- substring(panG_ko_cog$ko_level_A, 7)
+panG_ko_cog$ko_level_C <- gsub("\\[[^\\]]*\\]", "", panG_ko_cog$ko_level_C , perl=TRUE)
 
-# Shorten/change level_B annotation a bit
-panG_ko_cog$level_B[panG_ko_cog$level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
-panG_ko_cog$level_B[panG_ko_cog$level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation"
-panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
-panG_ko_cog$level_C[panG_ko_cog$level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation"
+# Shorten/change ko_level_B annotation a bit
+panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
+panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation"
+panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
+panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation"
 
 # Select some annotation levels of interest to visualize
-tmp_names <- names(table(panG_ko_cog$level_B)[rev(order(table(panG_ko_cog$level_B)))][1:10])
+tmp_names <- names(table(panG_ko_cog$ko_level_B)[rev(order(table(panG_ko_cog$ko_level_B)))][1:10])
 
 write.table(unique(panG_ko_cog$gene_callers_id), 
             "./panG/gene_ids_pan.tsv", row.names = FALSE,
@@ -1390,14 +1350,14 @@ write.table(unique(panG_ko_cog$gene_callers_id),
 
 # Plot distribution of panG annotation 
 ## Expressed as number of genes
-p_panG1 <- panG_ko_cog %>% filter(level_B %in% tmp_names) %>% 
-  ggplot(aes(x = genome_name, fill = level_B))+
+p_panG1 <- panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>% 
+  ggplot(aes(x = genome_name, fill = ko_level_B))+
   geom_bar(color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
-  facet_grid(.~level_A)+
+  facet_grid(.~ko_level_A)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
@@ -1414,30 +1374,30 @@ sizes_panG <- data.frame(panG %>% group_by(bin_name) %>%
   count(bin_name))
 sizes_panG <- left_join(sizes_panG, distinct(panG[, 1:2]), by = "bin_name")
 
-# Format table to include level_A annotation
+# Format table to include ko_level_A annotation
 # as well as the protein cluster sizes so that we can normalize to 
 # CORE genome as well as each accessory genome
-panG_ko_table <- data.frame(panG_ko_cog %>% filter(level_B %in% tmp_names) %>% 
-  group_by(genome_name, level_B) %>% 
+panG_ko_table <- data.frame(panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>% 
+  group_by(genome_name, ko_level_B) %>% 
   summarise(abund_ko = n()))
 panG_ko_table <- left_join(panG_ko_table, sizes_panG, by = "genome_name")
 panG_ko_table <- panG_ko_table %>% group_by(genome_name) %>% 
   mutate(abund_ko_prop = abund_ko/n)
 panG_ko_table <- left_join(panG_ko_table, 
-                           distinct(panG_ko_cog[, c("level_A", "level_B")]),
-                           by = c("level_B"))
+                           distinct(panG_ko_cog[, c("ko_level_A", "ko_level_B")]),
+                           by = c("ko_level_B"))
 
 # Plot distribution of panG annotation 
 ## Expressed as % of core genome gene set
 p_panG2 <- panG_ko_table %>% 
   filter(bin_name %in% c("CORE_PC")) %>% 
-  ggplot(aes(x = genome_name, y = 100*abund_ko_prop,  fill = level_B))+
+  ggplot(aes(x = genome_name, y = 100*abund_ko_prop,  fill = ko_level_B))+
   geom_bar(color = "black", stat = "identity")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
   ggtitle("Relative abundance (% - normalized vs. core genome)")+
   ylab("") + xlab("")+
-  facet_grid(.~level_A)+
+  facet_grid(.~ko_level_A)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
@@ -1457,13 +1417,13 @@ p_panG3 <- panG_ko_table %>%
                          "Ramli_5-10_PC",
                          "Ramli_Leaf400_PC", 
                          "Ramli_TTB310_PC")) %>% 
-  ggplot(aes(x = genome_name, fill = level_B, y = 100*abund_ko_prop))+
+  ggplot(aes(x = genome_name, fill = ko_level_B, y = 100*abund_ko_prop))+
   geom_bar(color = "black", stat = "identity")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
   ggtitle("Relative abundance (% - normalized vs. accessory genomes)")+
   ylab("") + xlab("")+
-  facet_grid(.~level_A)+
+  facet_grid(.~ko_level_A)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
