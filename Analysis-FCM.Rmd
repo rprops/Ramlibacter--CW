@@ -426,3 +426,5 @@ p_mu_spec <- ggplot(growth_results, aes(x = concentration_value, y = mu_spec, fi
 plot_grid(p_mu, p_mu_spec, 
              p_lambda, p_A, ncol = 2, align = 'hv')
 ```
+
+

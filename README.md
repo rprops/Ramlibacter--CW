@@ -5,7 +5,7 @@ Repository for the analysis of *Ramlibacter sp.* and *Bacteroidetes sp.* metagen
 ## 1. QC and assembly  
 
 ### Quality control and adapter trimming
-`Sickle` was used for removing erronous and low-quality reads from the raw data. `Scythe` was used for removing adapter sequences.
+`Sickle` was used for removing erroneous  and low-quality reads from the raw data. `Scythe` was used for removing adapter sequences.
 
 ### Co-assembly with IDBA-ID with on interleaved fasta with following parameters
 
