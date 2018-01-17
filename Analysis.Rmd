@@ -36,6 +36,7 @@ library('dplyr')
 library('ggplot2')
 library("grid")
 library("gridExtra")
+library("janitor")
 library("reshape2")
 library("easyGgplot2")
 library("KEGGREST")
@@ -873,11 +874,10 @@ PosiGene also tries to minimize false positives/negatives through additional fil
 
 ```{r posigene-selection, dpi = 300, fig.width = 13, fig.height = 10, warning = FALSE}
 # Import results file of genome-specific PSGs
-data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", 
-                                                                                                                                     "Number.of.Sites.under.positive.Selection")]
+data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", "HA.kappa",                                                                            "Number.of.Sites.under.positive.Selection")]
 # Import results file of Ramlibacter clade-specific PSGs
-data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", 
-                                                                                                                                     "Number.of.Sites.under.positive.Selection")]
+data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega",  "HA.kappa",
+                                                              "Number.of.Sites.under.positive.Selection")]
 
 
 colnames(data_posi)[1] <- "Gene"; colnames(data_posi_clade)[1] <- "Gene"
@@ -1274,6 +1274,98 @@ p_SCUO_posi4 <- data_posi_clade_KO[data_posi_clade_KO$ko_level_B %in% selected_K
 p_SCUO_posi4
 ```
 
+```{r posigene-aa, dpi = 500, fig.width = 8, fig.height = 6, warning = FALSE}
+# Import results file of genome-specific PSGs
+data_posi2 <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")
+
+data_posi2 <- data_posi2 %>% filter(P.Value < 0.05 & 
+                                    FDR < 0.05,
+                                    HA.foreground.omega < 10)
+
+# Remove empty columns
+data_posi2 <- data_posi2 %>%
+    mutate_all(funs(na_if(., ""))) %>%
+    remove_empty_cols()
+  
+# Reformat sites under positive selection
+data_posi2 <- cbind(data_posi2[c("Transcript", "HA.foreground.omega", "HA.kappa")], 
+                    apply(data_posi2[, 27:105], 2, FUN = function(x) extract_aa(x)))
+colnames(data_posi2)[4] <- "Site.under.positve.Selection.1"
+
+# Get this into long dataframe format
+data_posi2_long <- gather(data_posi2, Site, AA-codon, 
+                          Site.under.positve.Selection.1:Site.under.positve.Selection.79, factor_key=TRUE)
+# Split codon and AA
+data_posi2_long <- cbind(data_posi2_long[-4], do.call(rbind, strsplit(data_posi2_long$`AA - codon`, "-"))) 
+colnames(data_posi2_long)[c(5,6)] <- c("AA", "codon")
+
+# remove NA rows
+data_posi2_long <- data_posi2_long[!data_posi2_long$AA %in% "NA", ]
+data_posi2_long <- droplevels(data_posi2_long)
+
+# order AA according to abundance
+order_AA <- levels(data_posi2_long$AA)[order(table(data_posi2_long$AA), decreasing = TRUE)]
+data_posi2_long$AA <- as.character(data_posi2_long$AA)
+data_posi2_long$AA <- factor(data_posi2_long$AA, levels = order_AA)
+
+# Ready to make plots
+p_aa_summary <- ggplot(data_posi2_long, aes(x = AA))+
+  geom_bar()+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom")+
+  xlab("Amino acid")
+print(p_aa_summary)
+
+p_omega <- ggplot(data_posi2_long, aes(x = AA, y = HA.foreground.omega))+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom")+
+  xlab("Amino acid")
+print(p_omega)
+
+p_aa_kappa <- ggplot(data_posi2_long, aes(x = AA, y = HA.kappa))+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom")+
+  xlab("Amino acid")
+print(p_aa_kappa)
+```
+
+```{r posigene-codon, dpi = 500, fig.width = 8, fig.height = 6, warning = FALSE}
+
+```
+
+## 9.2. Evaluate nucleotide transitions
+
+```{r posigene-trans, dpi = 500, fig.width = 8, fig.height = 6, warning = FALSE}
+# Read in global nucleotide alignment file
+
+# Read in gene/PSG site information
+
+# Search for nucleotide composition and location of PSGs
+
+# Store in long dataframe
+
+# Investigate specific transitions for the whole genome as well as each gene
+
+```
+
 # Pangenome analysis  
 
 * Genomes were annotated with COG ids through `anvi-run-ncbi-cogs` by `blast` searches.  
@@ -1326,14 +1418,10 @@ panG_ko <- panG_ko[panG_ko$ko_id != "",]
 panG_ko$ko_id <- gsub(" ","", panG_ko$ko_id)
 
 # Annotate KO_IDs with hierarchy
-panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = c("ko_id" = "KO"))
+panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = "ko_id")
 
 # join with corresponding COG ids
 panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, by = c("gene_callers_id" = "gene_id"))
-panG_ko_cog$ko_level_B <- substring(panG_ko_cog$ko_level_B, 7)
-panG_ko_cog$ko_level_C <- substring(panG_ko_cog$ko_level_C, 7)
-panG_ko_cog$ko_level_A <- substring(panG_ko_cog$ko_level_A, 7)
-panG_ko_cog$ko_level_C <- gsub("\\[[^\\]]*\\]", "", panG_ko_cog$ko_level_C , perl=TRUE)
 
 # Shorten/change ko_level_B annotation a bit
 panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
@@ -1919,4 +2007,9 @@ p_Topt <- ggplot(MGT_df, aes(x = Genome_ID, y = Topt, fill = Genome_ID))+
 # svg(filename = "MGT_figure.svg", width = 9.5, height = 4)
 print(p_Topt)
 #dev.off()
+```
+
+# Phosphatase diversity
+```{r Pho, warning = FALSE, fig.width = 9, fig.height = 4, dpi = 500}
+
 ```

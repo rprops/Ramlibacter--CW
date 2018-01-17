@@ -1,0 +1,114 @@
+{
+    "metadata": [
+        [
+            44, 
+            "CoolingWater.MM.gapfilled", 
+            "KBaseFBA.FBAModel-11.0", 
+            "2017-11-24T14:32:50+0000", 
+            1, 
+            "rprops2", 
+            23639, 
+            "rprops2:narrative_1503490156422", 
+            "f72e470c83ae4630f3fda4706438f095", 
+            3941959, 
+            {
+                "Genome": "23639/41/1", 
+                "Name": "CoolingWater.MM", 
+                "Number biomasses": "4", 
+                "Number compartments": "5", 
+                "Number compounds": "3231", 
+                "Number gapfills": "1", 
+                "Number gapgens": "0", 
+                "Number reactions": "2821", 
+                "Source": "KBase", 
+                "Source ID": "CoolingWater.MM", 
+                "Type": "CommunityModel"
+            }
+        ]
+    ], 
+    "provenance": [
+        {
+            "copy_source_inaccessible": 0, 
+            "created": "2017-11-24T14:32:50+0000", 
+            "creator": "rprops2", 
+            "epoch": 1511533970729, 
+            "extracted_ids": {}, 
+            "info": [
+                44, 
+                "CoolingWater.MM.gapfilled", 
+                "KBaseFBA.FBAModel-11.0", 
+                "2017-11-24T14:32:50+0000", 
+                1, 
+                "rprops2", 
+                23639, 
+                "rprops2:narrative_1503490156422", 
+                "f72e470c83ae4630f3fda4706438f095", 
+                3941959, 
+                {
+                    "Genome": "23639/41/1", 
+                    "Name": "CoolingWater.MM", 
+                    "Number biomasses": "4", 
+                    "Number compartments": "5", 
+                    "Number compounds": "3231", 
+                    "Number gapfills": "1", 
+                    "Number gapgens": "0", 
+                    "Number reactions": "2821", 
+                    "Source": "KBase", 
+                    "Source ID": "CoolingWater.MM", 
+                    "Type": "CommunityModel"
+                }
+            ], 
+            "orig_wsid": 23639, 
+            "path": [
+                "23639/44/1"
+            ], 
+            "provenance": [
+                {
+                    "custom": {}, 
+                    "external_data": [], 
+                    "input_ws_objects": [], 
+                    "method": "gapfill_metabolic_model", 
+                    "method_params": [
+                        {
+                            "activation_coefficient": 0, 
+                            "comprehensive_gapfill": 0, 
+                            "custom_bound_list": [], 
+                            "exp_threshold_margin": 0.1, 
+                            "exp_threshold_percentile": 0.5, 
+                            "expression_condition": null, 
+                            "expseries_id": null, 
+                            "expseries_workspace": "rprops2:narrative_1503490156422", 
+                            "fbamodel_id": "CoolingWater.MM", 
+                            "fbamodel_output_id": "CoolingWater.MM.gapfilled", 
+                            "fbamodel_workspace": "rprops2:narrative_1503490156422", 
+                            "feature_ko_list": [], 
+                            "gapfill_output_id": null, 
+                            "media_id": "Carbon-D-Glucose", 
+                            "media_supplement_list": "", 
+                            "media_workspace": "rprops2:narrative_1503490156422", 
+                            "minimum_target_flux": "0.1", 
+                            "number_of_solutions": 1, 
+                            "objective_fraction": 0, 
+                            "omega": 0, 
+                            "probanno_id": null, 
+                            "probanno_workspace": "rprops2:narrative_1503490156422", 
+                            "reaction_ko_list": [], 
+                            "source_fbamodel_id": null, 
+                            "source_fbamodel_workspace": "rprops2:narrative_1503490156422", 
+                            "target_reaction": "bio1", 
+                            "thermodynamic_constraints": 0, 
+                            "workspace": "rprops2:narrative_1503490156422"
+                        }
+                    ], 
+                    "resolved_ws_objects": [], 
+                    "service": "fba_tools", 
+                    "subactions": []
+                }
+            ], 
+            "refs": [
+                "23639/41/1", 
+                "23639/11/2"
+            ]
+        }
+    ]
+}
