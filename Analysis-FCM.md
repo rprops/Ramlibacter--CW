@@ -1,7 +1,7 @@
 ---
 title: "Analysis-FCM"
 author: "Ruben Props"
-date: "16 January, 2018"
+date: "17 January, 2018"
 output:
   html_document:
     code_folding: show
@@ -93,7 +93,7 @@ diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FA
 
 ```
 ## -------------------------------------------------------------------------------------------------
-## Tue Jan  2 12:10:20 2018 --- Normalizing your FCS data based on maximum FL1-H value
+## Wed Jan 17 13:59:34 2018 --- Normalizing your FCS data based on maximum FL1-H value
 ## --- Maximum FL1-H before normalizing: 14.95
 ## --- Maximum FL3-H before normalizing: 13.27
 ## --- Maximum SSC-H before normalizing: 17.33
@@ -105,9 +105,9 @@ diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FA
 ## --- Maximum FSC-H after normalizing: 1.13
 ## -------------------------------------------------------------------------------------------------
 ##  
-## Tue Jan  2 12:10:58 2018 --- Using 10 cores for calculations
-## Tue Jan  2 12:36:18 2018 --- Closing workers
-## Tue Jan  2 12:36:18 2018 --- Alpha diversity metrics (D0,D1,D2) have been computed after 100 bootstraps
+## Wed Jan 17 14:00:14 2018 --- Using 10 cores for calculations
+## Wed Jan 17 14:28:45 2018 --- Closing workers
+## Wed Jan 17 14:28:46 2018 --- Alpha diversity metrics (D0,D1,D2) have been computed after 100 bootstraps
 ## -----------------------------------------------------------------------------------------------------
 ## 
 ```
@@ -324,7 +324,7 @@ p_mu <- ggplot(growth_results, aes(x = concentration_value, y = mu.bt, fill = co
         legend.direction = "horizontal",legend.position = "bottom",
         strip.text = element_text(size = 16),
         axis.text.x = element_text(size = 16))+
-  ylab(expression(mu["max"] ~ "- cells h"^"-1"))+
+  ylab(expression(mu["max"] ~ "- cells" ~ "mL"^"-1"~"h"^"-1"))+
   xlab(expression("Medium concentration - mg L"^"-1"))+
   guides(color = FALSE, fill = FALSE)+
   geom_errorbar(aes(ymax = ci95.mu.bt.up, ymin = ci95.mu.bt.lo), width = 0.025)+
@@ -423,3 +423,5 @@ plot_grid(p_mu, p_mu_spec,
 ```
 
 <img src="Figures-FCM/cached/growthcurver-analysis-1.png" style="display: block; margin: auto;" />
+
+

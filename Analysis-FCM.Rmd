@@ -348,7 +348,7 @@ p_mu <- ggplot(growth_results, aes(x = concentration_value, y = mu.bt, fill = co
         legend.direction = "horizontal",legend.position = "bottom",
         strip.text = element_text(size = 16),
         axis.text.x = element_text(size = 16))+
-  ylab(expression(mu["max"] ~ "- cells h"^"-1"))+
+  ylab(expression(mu["max"] ~ "- cells" ~ "mL"^"-1"~"h"^"-1"))+
   xlab(expression("Medium concentration - mg L"^"-1"))+
   guides(color = FALSE, fill = FALSE)+
   geom_errorbar(aes(ymax = ci95.mu.bt.up, ymin = ci95.mu.bt.lo), width = 0.025)+
