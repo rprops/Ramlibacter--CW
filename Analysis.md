@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "17 January, 2018"
+date: "19 January, 2018"
 output:
   html_document:
     code_folding: show
@@ -1043,6 +1043,30 @@ print(p_SCUO.1)
 <img src="Figures/cached/Codon bias-1.png" style="display: block; margin: auto;" />
 
 ```r
+# Visualize differences in codon bias per codon position
+p_SCUO.2 <- SCUO_merged %>% filter(GCx != "GC_mean") %>% 
+  ggplot(aes (x = GCx, y = 100*GC, fill = Genome_ID))+
+  geom_jitter(size = 4, shape = 21, alpha = 0.1, width = 0.2)+
+  geom_boxplot(alpha = 0.2, size = 1.2, color = "darkorange")+
+  scale_fill_manual("", values = c(col_bac1, col_bac2, col_RAMLI))+
+  theme_bw()+
+  facet_wrap(~Genome_ID, ncol = 2)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  ylab("%GC")+
+  xlab("Codon position")+
+  guides(fill = FALSE)+
+  ylim(0,100)
+
+print(p_SCUO.2)
+```
+
+<img src="Figures/cached/Codon bias-2.png" style="display: block; margin: auto;" />
+
+```r
 # Subset to genes for which ko annotation is available
 SCUO_merged_sb <- SCUO_merged[!is.na(SCUO_merged$ko_level_A), ]
 SCUO_merged_sb <- SCUO_merged_sb[SCUO_merged_sb$GCx == "GC_mean", ]
@@ -1052,7 +1076,7 @@ SCUO_merged_sb <- SCUO_merged_sb[SCUO_merged_sb$GCx == "GC_mean", ]
 
 SCUO_merged_gen_gcmean <- SCUO_merged_gen %>% dplyr::filter(GCx == "GC_mean")
 
-p_SCUO.2 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))+
+p_SCUO.3 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))+
   geom_jitter(size = 3, alpha = 0.3, shape = 21, aes(fill = Genome_ID))+
   geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
   # scale_fill_brewer(palette = "Accent")+
@@ -1073,10 +1097,10 @@ p_SCUO.2 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))
                             "Ramlibacter sp. MAG" = paste("Ramlibacter sp. MAG (n=",table(SCUO_merged_gen_gcmean$Genome_ID)[3],")", sep = ""))
   )
 # 
-print(p_SCUO.2)
+print(p_SCUO.3)
 ```
 
-<img src="Figures/cached/Codon bias-2.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/Codon bias-3.png" style="display: block; margin: auto;" />
 
 ```r
 tmp <- SCUO_merged_sb$genome_id
@@ -1211,6 +1235,84 @@ Green branch indicates the clade for which the LCA was tested for PSGs.
 PosiGene also tries to minimize false positives/negatives through additional filtering:  
 
 **This filtering step can also be seen as an instrument to reduce false negatives. Few badly conserved sequences can force the first mentioned filter to delete large parts of the MSA reducing the power of the test and potentially removing positively selected sites. Third, entire MSAs can be discarded if they are considered unreliable for the following reasons, if: (i) a small absolute number or a small percentage of alignment columns or anchor species codons remain after the first filtering step, (ii) few sequences remain after the second filtering step, (iii) disproportional dN/dS ratios (e.g. ≥100 in foreground branch) were calculated by CODEML or (iv) an implausibly high fraction of positively selected sites was inferred. Additionally, MSAs will only be considered if at least one species from the sister taxon (i.e. the most closely-related species/clade) of the examined branch is represented in it. Without this condition it is not possible to say whether potentially observed selective pressure worked on the branch of interest or before in evolution .**
+
+
+## 9.1. Controles  
+
+In order to put our results into context, we performed PosiGene analysis on the following conditions:  
+* 
+* 
+* 
+* 
+
+```r
+# Test
+posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles")
+```
+
+```
+## [1] "control1_Ramlibacter_MAG_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control1_Ramlibacter_MAG_results.tsv"
+## [1] "control2_Ramlibacter_tataouinensis_5_10_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control2_Ramlibacter_tataouinensis_5_10_results.tsv"
+## [1] "control3_Limnohabitans_planktonicus_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control3_Limnohabitans_planktonicus_results.tsv"
+## [1] "control4_Limnohabitans_planktonicus_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control4_Limnohabitans_planktonicus_results.tsv"
+## [1] "control5_Ramlibacter_tataouinensis_5_10_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5_Ramlibacter_tataouinensis_5_10_results.tsv"
+```
+
+```r
+# Filter out non-PSGs
+posi_controls <- posi_controls %>% filter(P.Value < 0.05 & 
+                                    FDR < 0.05)
+
+# Plot dN/dS ratios for controls
+# Make plot
+p_dNdS_control <- ggplot(posi_controls, aes(x = sample_file, y = HA.foreground.omega, fill = sample_file))+
+  geom_jitter(size = 4, shape = 21, width = 0.2)+
+  geom_boxplot(alpha = 0.4, outlier.shape = NA)+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  # ylab("") + xlab("")+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_blank(),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        # ,legend.position = c(0.87, 0.85)
+        )+
+  xlab("")+
+  guides(fill=guide_legend(ncol=2))
+
+# print(p_dNdS_control)
+
+
+p_N_control <- ggplot(posi_controls, aes(x = sample_file, fill = sample_file))+
+  geom_bar(stat = "count", color = "black")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  # ylab("") + xlab("")+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_blank(),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        # ,legend.position = c(0.87, 0.85)
+        )+
+  ylab("Number of PSGs")+
+  xlab("")+
+  guides(fill=guide_legend(ncol=2))
+
+# print(p_N_control)
+
+grid_arrange_shared_legend(p_N_control, p_dNdS_control, position = "bottom")
+```
+
+<img src="Figures/cached/posigene-controls-1.png" style="display: block; margin: auto;" />
 
 
 ```r
@@ -1363,6 +1465,39 @@ print(p_KO_posi)
 As we had significant concerns related that there was a %GC dependency of dN/dS (`HA.foreground.omega`) and the associated `P.value` for the branch-site codon model we also checked this specifically for the branch- and clade-tests.   
 **Conclusions: There was no strong pattern/correlation to be observed between** 
 **%GC and dN/dS and the P-value** 
+
+
+```r
+data_GC_posi <- SCUO_merged_gen
+data_GC_posi$posi_select <- data_GC_posi$Gene %in% data_posi$IMG_geneID
+data_GC_posi$posi_select <- factor(data_GC_posi$posi_select, levels = c("FALSE", "TRUE"))
+
+data_GC_posi <- left_join(data_GC_posi,
+                            data_posi, by = c("Gene" = "IMG_geneID"))
+
+# Visualize differences in codon bias per codon position
+p_SCUO_GC <- data_GC_posi %>% filter(GCx != "GC_mean", Genome_ID == "Ramlibacter sp. MAG") %>% 
+  ggplot(aes(x = posi_select, y = 100*GC))+
+  geom_jitter(size = 4, shape = 21, alpha = 0.1, width = 0.2, fill = col_RAMLI)+
+  geom_boxplot(alpha = 0.2, size = 1.05, color = "darkorange")+
+  scale_fill_manual("", values = c(col_RAMLI))+
+  theme_bw()+
+  facet_wrap(~GCx, ncol = 3)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  ylab("%GC")+
+  xlab("Gene under positive selection (PSG)")+
+  guides(fill = FALSE)+
+  ylim(0,100)+
+  ggtitle("Ramlibacter sp. MAG")
+
+print(p_SCUO_GC)
+```
+
+<img src="Figures/cached/posigene-test-GC-1.png" style="display: block; margin: auto;" />
 
 
 ```r
@@ -1752,6 +1887,21 @@ print(p_aa_kappa)
 <img src="Figures/cached/posigene-aa-3.png" style="display: block; margin: auto;" />
 
 
+
+## 9.2. Evaluate nucleotide transitions
+
+
+```r
+# Read in global nucleotide alignment file
+
+# Read in gene/PSG site information
+
+# Search for nucleotide composition and location of PSGs
+
+# Store in long dataframe
+
+# Investigate specific transitions for the whole genome as well as each gene
+```
 
 # Pangenome analysis  
 
@@ -2349,6 +2499,13 @@ library("GSAR")
 ```
 ## Error in library("GSAR"): there is no package called 'GSAR'
 ```
+
+# Search for FW-relevant COGs  
+
+Here we are searching the "core" and "accessory" genome for COGs/Pfams that were
+shown to be important for Carbon-cycling in freshwater systems
+
+
 
 # Predict MGT
 Compare the growth rate with the minimum generation time estimated from the MAG

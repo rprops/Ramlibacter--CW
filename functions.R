@@ -254,3 +254,64 @@ format_ko <- function(path = "./Mapping_files/ko00000.keg"){
   return(ko_path_df)
   
 }
+
+# Small function to extract amino acid code and codon (anchor species) 
+# from result file from PosiGene
+# Usage on imported posigene dataframe:
+# data_posi2 <- apply(data_posi2[, 27:105], 2, FUN = function(x) extract_aa(x))
+extract_aa <- function(x, pos = c(10:11)){
+  tmp <- matrix(do.call(rbind, strsplit(as.character(x), ";"))[, pos], 
+                ncol = length(pos))
+  tmp <- matrix(apply(tmp, 2, FUN = function(x) do.call(rbind, strsplit(as.character(x), " "))[,2]), 
+                ncol = length(pos))
+  tmp <- paste(tmp[,1], tmp[,2], sep = "-")
+  return(tmp)
+}
+
+
+extract_nt.pos <- function(x, pos = 8){
+  tmp <- matrix(do.call(rbind, strsplit(as.character(x), ";"))[, pos], 
+                ncol = length(pos))
+  tmp <- as.numeric(matrix(apply(tmp, 2, FUN = function(x) do.call(rbind, strsplit(as.character(x), " "))[,2]), 
+                ncol = length(pos))
+  )
+  tmp <- paste(tmp[,1], tmp[,2], sep = "-")
+  return(tmp)
+}
+
+# results_posi$Site.under.positve.Selection.1.1..Probability.to.be.under.positive.selection.2..Position.in.amino.acid.sequence.of.anchor.species.3..Position.in.nucleotide.sequence.of.anchor.species.4.Position.in.main.protein.alignment.fastp.clustalw.aln.5..Position.in.protein.clustal.subalignment...aln.6..Position.in.to.codon.backtranslated.clustal.subalignment..Codon_aln.fasta..7..Position.in.prank.alignment..protein...8..Position.in.prank.alignment..codon...prank.best.fas..9..Position.in.PAML.ready.prank.alignment..prank.best.fas.prepared.gb..10..Amino.acid.in.anchor.species.11..Codon.in.anchor.species.
+# 
+# 
+# x <- results_posi[,27]
+# extract_aa(x)
+# 
+# for(i in 27:215){
+#   x <- results_posi[,i]
+#   tmpx <- extract_aa(x, pos = 11)
+#   str(tmpx)
+#   print(i)
+# }
+
+# Function to read in multiple posigene result files and concatenate them
+# into a single dataframe
+read_posi <- function(pathx, patt = "_results.tsv"){
+  files_short <- list.files(pathx, pattern = patt)
+  files_long <- list.files(pathx, full.names = TRUE)
+  for(i in 1:length(files_short)){
+    print(files_short[i])
+    print(files_long[i])
+    data_tmp <- read.table(files_long[i],
+                            header = TRUE, fill = TRUE, sep = "\t")
+    data_tmp$Transcript <- as.factor(data_tmp$Transcript)
+    data_tmp <- data.frame(sample_file = files_short[i], data_tmp)
+    if(i == 1){
+      data_posi <- data_tmp
+    } else {
+      data_posi <- bind_rows(data_posi, data_tmp)
+    }
+  }
+  data_posi$sample_file <- gsub(patt, "", data_posi$sample_file)
+  return(data_posi)
+}
+
+
