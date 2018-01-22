@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "19 January, 2018"
+date: "22 January, 2018"
 output:
   html_document:
     code_folding: show
@@ -1240,13 +1240,15 @@ PosiGene also tries to minimize false positives/negatives through additional fil
 ## 9.1. Controles  
 
 In order to put our results into context, we performed PosiGene analysis on the following conditions:  
-* 
-* 
-* 
-* 
+
+*  
+*  
+*  
+*  
+
 
 ```r
-# Test
+# Import posigene result files in batch
 posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles")
 ```
 
@@ -1261,6 +1263,8 @@ posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_ana
 ## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control4_Limnohabitans_planktonicus_results.tsv"
 ## [1] "control5_Ramlibacter_tataouinensis_5_10_results.tsv"
 ## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5_Ramlibacter_tataouinensis_5_10_results.tsv"
+## [1] "control5fr_Ramlibacter_MAG_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5fr_Ramlibacter_MAG_results.tsv"
 ```
 
 ```r
@@ -1309,19 +1313,62 @@ p_N_control <- ggplot(posi_controls, aes(x = sample_file, fill = sample_file))+
 
 # print(p_N_control)
 
+# Print both panels
 grid_arrange_shared_legend(p_N_control, p_dNdS_control, position = "bottom")
 ```
 
 <img src="Figures/cached/posigene-controls-1.png" style="display: block; margin: auto;" />
 
+```r
+# Check similarity between PSG profiles
+posi_control_wide <- posi_controls[, 1:2]
+posi_control_wide$Presence <- 1
+posi_control_wide <- tidyr::spread(posi_control_wide, Transcript, Presence)
+posi_control_wide[is.na(posi_control_wide)] <- 0
+rownames(posi_control_wide) <- posi_control_wide$sample_file; posi_control_wide <- posi_control_wide[, -1]
+
+# Split dataset according to reference/anchor species because this will affect
+# the gene labelling (anchor species label) and thus result in erronous gene labels.
+
+# Calculate distance between posigene results
+dist_hm <- dist(posi_control_wide, method = "binary")
+row.order <- attr(dist_hm, "Labels")[hclust(dist_hm)$order] # clustering
+col.order <- attr(dist_hm, "Labels")[hclust(t(dist_hm))$order]
+
+# Fix order according to hierarchical clustering
+df_hm <- melt(as.matrix(dist_hm))
+df_hm$Var1 <- factor(as.character(df_hm$Var1), levels = row.order)
+df_hm$Var2 <- factor(as.character(df_hm$Var2), levels = col.order)
+
+hm_posi_c <- ggplot(df_hm, aes(Var1, Var2)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = value)) + # background colours are mapped according to the value column
+  geom_text(aes(fill = df_hm$value, label = round(df_hm$value, 2))) + # write the values
+  scale_fill_gradient(low = "lightblue", high = "darkslategray") + 
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1,vjust=1,size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Dissimilarity\n")
+
+print(hm_posi_c)
+```
+
+<img src="Figures/cached/posigene-controls-2.png" style="display: block; margin: auto;" />
+
 
 ```r
-# Import results file of genome-specific PSGs
+# Import results file of genome-specific PSGs only
 data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", "HA.kappa",                                                                            "Number.of.Sites.under.positive.Selection")]
 # Import results file of Ramlibacter clade-specific PSGs
 data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega",  "HA.kappa",
                                                               "Number.of.Sites.under.positive.Selection")]
-
 
 colnames(data_posi)[1] <- "Gene"; colnames(data_posi_clade)[1] <- "Gene"
 data_posi$Gene <- as.character(data_posi$Gene)
