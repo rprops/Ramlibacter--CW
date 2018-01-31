@@ -467,3 +467,9 @@ plot_grid(p_mu, p_mu_spec,
 <img src="Figures-FCM/cached/growthcurver-analysis-1.png" style="display: block; margin: auto;" />
 
 
+```r
+# Plot only three main ones
+plot_grid(p_lambda,  p_mu_spec, p_A, ncol = 3, align = 'h')
+```
+
+<img src="Figures-FCM/cached/growthcurver-analysis-2-1.png" style="display: block; margin: auto;" />

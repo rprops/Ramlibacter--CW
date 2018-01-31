@@ -210,7 +210,7 @@ p_HNA_pct <- ggplot(counts, aes(x = ExactTime, y = 100*pct_HNA.cells, fill = Nut
 
 ```
 
-```{r fcm-density-data-3, warning = FALSE, dpi = 500, fig.width = 7, fig.height = 9, dev = c("png", "svg")}
+```{r fcm-density-data-3, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 9, dev = c("png", "svg")}
 plot_grid(p_counts_log, p_HNA_pct,nrow = 2, align = 'v')
 plot_grid(p_HNA, p_HNA_pct, nrow = 2, align = 'v')
 ```
@@ -465,4 +465,7 @@ plot_grid(p_mu, p_mu_spec,
 
 ```
 
-
+```{r growthcurver-analysis-2, warning = FALSE, dpi = 500, fig.width = 12, fig.height = 4, dev = c("png", "svg")}
+# Plot only three main ones
+plot_grid(p_lambda,  p_mu_spec, p_A, ncol = 3, align = 'h')
+```
