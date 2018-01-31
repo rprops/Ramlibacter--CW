@@ -228,7 +228,7 @@ diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FA
 ```
 
 
-```{r diversity-fcm-2, warning = FALSE, dpi = 500, fig.width = 10, fig.height = 6}
+```{r diversity-fcm-2, warning = FALSE, dpi = 500, fig.width = 10, fig.height = 6, dev = c("png", "svg")}
 # Add metadata to phenotypic diversity estimate
 diversity_fcm <- dplyr::left_join(diversity_fcm, counts, by = c("Sample_names" =  "Samples"))
 diversity_fcm <- diversity_fcm %>% dplyr::filter(Timepoint > 5) # Only consider after first 5 samples due to bleaching of tubing
@@ -253,7 +253,7 @@ p_div <- ggplot(diversity_fcm, aes(x = ExactTime, y = D2, fill = NutrientConditi
 print(p_div)
 ```
 
-```{r count-diversity-fcm, warning = FALSE, dpi = 500, fig.width = 14, fig.height = 11}
+```{r count-diversity-fcm, warning = FALSE, dpi = 500, fig.width = 14, fig.height = 11, dev = c("png", "svg")}
 # Reshape combined data
 diversity_fcm_long <- tidyr::gather(diversity_fcm, population, Density, Total.cells, LNA.cells, HNA.cells, D2)
 diversity_fcm_long$population <- plyr::revalue(diversity_fcm_long$population,  c("Total.cells"="Whole population", "HNA.cells"="HNA population", "LNA.cells"="LNA population", "D2" = "Phenotypic diversity"))
@@ -315,7 +315,7 @@ grid.arrange(p_LNA2, p_div, nrow = 2)
 
 ## Grofit
 
-```{r growth-rate, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 12, message = FALSE}
+```{r growth-rate, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 12, message = FALSE, dev = c("png", "svg")}
 # Format data for grofit
 counts <- counts %>% group_by(NutrientCondition) %>% 
   dplyr::mutate(ratio_TotalCells = log(Total.cells/min(Total.cells)))
@@ -349,7 +349,7 @@ growth_results <- summary(Fit)[, c("concentration","mu.bt", "lambda.bt", "A.bt",
 
 ```
 
-```{r growth-rate-plot, warning = FALSE, dpi = 500, fig.width = 13, fig.height = 4.5}
+```{r growth-rate-plot, warning = FALSE, dpi = 500, fig.width = 13, fig.height = 4.5, dev = c("png", "svg")}
 
 # Plot lag-phase length, maximum growth rate, etc etc.
 growth_results <- growth_results %>% dplyr::mutate(concentration_value = as.numeric(gsub("mg/L R2A", "", concentration)))
@@ -418,7 +418,7 @@ p_A <- ggplot(growth_results, aes(x = concentration_value, y = A.bt, fill = conc
 
 ## Growthcurver
 
-```{r growthcurver-analysis, warning = FALSE, dpi = 500, fig.width = 9, fig.height = 8}
+```{r growthcurver-analysis, warning = FALSE, dpi = 500, fig.width = 9, fig.height = 8, dev = c("png", "svg")}
 # Create wide format
 count_gc_wide <- spread(counts[, c(6,2,8)], NutrientCondition, Total.cells)
 
