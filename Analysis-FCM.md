@@ -36,7 +36,7 @@ p_counts <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = NutrientCo
   scale_fill_brewer("Nutrient condition", palette = "Accent")+
   scale_color_brewer(palette = "Accent")+
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
+        title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
   ylab("Cell density (cells/µL)")+
   xlab("Time (h)")+
@@ -50,7 +50,7 @@ p_counts_log <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = Nutrie
   scale_fill_brewer("Nutrient condition", palette = "Accent")+
   scale_color_brewer(palette = "Accent")+
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
+        title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
   ylab("Cell density (cells/µL)")+
   xlab("Time (h)")+
@@ -65,7 +65,7 @@ p_HNA <- ggplot(counts, aes(x = ExactTime, y = HNA.cells, fill = NutrientConditi
   scale_fill_brewer("Nutrient condition", palette = "Accent")+
   scale_color_brewer(palette = "Accent")+
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
+        title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
   ylab("Cell density (cells/µL)")+
   xlab("Time (h)")+
@@ -80,7 +80,7 @@ p_LNA <- ggplot(counts, aes(x = ExactTime, y = LNA.cells, fill = NutrientConditi
   scale_fill_brewer("Nutrient condition", palette = "Accent")+
   scale_color_brewer(palette = "Accent")+
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
+        title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
   ylab("Cell density (cells/µL)")+
   xlab("Time (h)")+
@@ -100,7 +100,7 @@ p_HNA_pct <- ggplot(counts, aes(x = ExactTime, y = pct_HNA.cells, fill = Nutrien
   scale_fill_brewer("Nutrient condition", palette = "Accent")+
   scale_color_brewer(palette = "Accent")+
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
+        title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
   ylab("%HNA cells")+
   xlab("Time (h)")+
@@ -114,6 +114,12 @@ grid.arrange(p_counts_log, p_HNA_pct, nrow = 2)
 ```
 
 <img src="Figures-FCM/cached/fcm-density-data-3-1.png" style="display: block; margin: auto;" />
+
+```r
+grid.arrange(p_HNA, p_HNA_pct, nrow = 2)
+```
+
+<img src="Figures-FCM/cached/fcm-density-data-3-2.png" style="display: block; margin: auto;" />
 
 # Diversity dynamics
 
