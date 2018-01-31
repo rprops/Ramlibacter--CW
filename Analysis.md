@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "10 January, 2018"
+date: "22 January, 2018"
 output:
   html_document:
     code_folding: show
@@ -437,9 +437,9 @@ RAMLI_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Wed Jan 10 16:19:28 2018  --- There are 2830 genes with > 0.1 %
-## Wed Jan 10 16:19:28 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:28 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:10 2018  --- There are 2830 genes with > 0.1 %
+## Wed Jan 17 10:12:10 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:10 2018  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -470,9 +470,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Wed Jan 10 16:19:28 2018  --- There are 1889 genes with > 0.1 %
-## Wed Jan 10 16:19:28 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:28 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:10 2018  --- There are 1889 genes with > 0.1 %
+## Wed Jan 17 10:12:10 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:10 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -514,9 +514,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Wed Jan 10 16:19:28 2018  --- There are 1797 genes with > 0.1 %
-## Wed Jan 10 16:19:28 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:28 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:10 2018  --- There are 1797 genes with > 0.1 %
+## Wed Jan 17 10:12:10 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:10 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -558,9 +558,9 @@ RAMLI_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Wed Jan 10 16:19:29 2018  --- There are 4954 genes with > 0.1 %
-## Wed Jan 10 16:19:29 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:29 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:10 2018  --- There are 4954 genes with > 0.1 %
+## Wed Jan 17 10:12:10 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:10 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -580,9 +580,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Wed Jan 10 16:19:29 2018  --- There are 3929 genes with > 0.1 %
-## Wed Jan 10 16:19:29 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:29 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:11 2018  --- There are 3929 genes with > 0.1 %
+## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -602,9 +602,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Wed Jan 10 16:19:29 2018  --- There are 3573 genes with > 0.1 %
-## Wed Jan 10 16:19:29 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:29 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:11 2018  --- There are 3573 genes with > 0.1 %
+## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -624,9 +624,9 @@ RAMLI_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Wed Jan 10 16:19:29 2018  --- There are 2164 genes with > 0.1 %
-## Wed Jan 10 16:19:29 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:29 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:11 2018  --- There are 2164 genes with > 0.1 %
+## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -657,9 +657,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Wed Jan 10 16:19:29 2018  --- There are 1384 genes with > 0.1 %
-## Wed Jan 10 16:19:29 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:29 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:11 2018  --- There are 1384 genes with > 0.1 %
+## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -679,9 +679,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Wed Jan 10 16:19:29 2018  --- There are 1342 genes with > 0.1 %
-## Wed Jan 10 16:19:29 2018  --- This is 100 % of all genes
-## Wed Jan 10 16:19:29 2018  --- The 10 genes with the highest GC% are:
+## Wed Jan 17 10:12:11 2018  --- There are 1342 genes with > 0.1 %
+## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
+## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -1043,6 +1043,30 @@ print(p_SCUO.1)
 <img src="Figures/cached/Codon bias-1.png" style="display: block; margin: auto;" />
 
 ```r
+# Visualize differences in codon bias per codon position
+p_SCUO.2 <- SCUO_merged %>% filter(GCx != "GC_mean") %>% 
+  ggplot(aes (x = GCx, y = 100*GC, fill = Genome_ID))+
+  geom_jitter(size = 4, shape = 21, alpha = 0.1, width = 0.2)+
+  geom_boxplot(alpha = 0.2, size = 1.2, color = "darkorange")+
+  scale_fill_manual("", values = c(col_bac1, col_bac2, col_RAMLI))+
+  theme_bw()+
+  facet_wrap(~Genome_ID, ncol = 2)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  ylab("%GC")+
+  xlab("Codon position")+
+  guides(fill = FALSE)+
+  ylim(0,100)
+
+print(p_SCUO.2)
+```
+
+<img src="Figures/cached/Codon bias-2.png" style="display: block; margin: auto;" />
+
+```r
 # Subset to genes for which ko annotation is available
 SCUO_merged_sb <- SCUO_merged[!is.na(SCUO_merged$ko_level_A), ]
 SCUO_merged_sb <- SCUO_merged_sb[SCUO_merged_sb$GCx == "GC_mean", ]
@@ -1052,7 +1076,7 @@ SCUO_merged_sb <- SCUO_merged_sb[SCUO_merged_sb$GCx == "GC_mean", ]
 
 SCUO_merged_gen_gcmean <- SCUO_merged_gen %>% dplyr::filter(GCx == "GC_mean")
 
-p_SCUO.2 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))+
+p_SCUO.3 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))+
   geom_jitter(size = 3, alpha = 0.3, shape = 21, aes(fill = Genome_ID))+
   geom_boxplot(alpha=0, size =1.5, color = "darkorange")+
   # scale_fill_brewer(palette = "Accent")+
@@ -1073,10 +1097,10 @@ p_SCUO.2 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))
                             "Ramlibacter sp. MAG" = paste("Ramlibacter sp. MAG (n=",table(SCUO_merged_gen_gcmean$Genome_ID)[3],")", sep = ""))
   )
 # 
-print(p_SCUO.2)
+print(p_SCUO.3)
 ```
 
-<img src="Figures/cached/Codon bias-2.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/Codon bias-3.png" style="display: block; margin: auto;" />
 
 ```r
 tmp <- SCUO_merged_sb$genome_id
@@ -1213,14 +1237,138 @@ PosiGene also tries to minimize false positives/negatives through additional fil
 **This filtering step can also be seen as an instrument to reduce false negatives. Few badly conserved sequences can force the first mentioned filter to delete large parts of the MSA reducing the power of the test and potentially removing positively selected sites. Third, entire MSAs can be discarded if they are considered unreliable for the following reasons, if: (i) a small absolute number or a small percentage of alignment columns or anchor species codons remain after the first filtering step, (ii) few sequences remain after the second filtering step, (iii) disproportional dN/dS ratios (e.g. ≥100 in foreground branch) were calculated by CODEML or (iv) an implausibly high fraction of positively selected sites was inferred. Additionally, MSAs will only be considered if at least one species from the sister taxon (i.e. the most closely-related species/clade) of the examined branch is represented in it. Without this condition it is not possible to say whether potentially observed selective pressure worked on the branch of interest or before in evolution .**
 
 
-```r
-# Import results file of genome-specific PSGs
-data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", 
-                                                                                                                                     "Number.of.Sites.under.positive.Selection")]
-# Import results file of Ramlibacter clade-specific PSGs
-data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", 
-                                                                                                                                     "Number.of.Sites.under.positive.Selection")]
+## 9.1. Controles  
 
+In order to put our results into context, we performed PosiGene analysis on the following conditions:  
+
+*  
+*  
+*  
+*  
+
+
+```r
+# Import posigene result files in batch
+posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles")
+```
+
+```
+## [1] "control1_Ramlibacter_MAG_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control1_Ramlibacter_MAG_results.tsv"
+## [1] "control2_Ramlibacter_tataouinensis_5_10_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control2_Ramlibacter_tataouinensis_5_10_results.tsv"
+## [1] "control3_Limnohabitans_planktonicus_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control3_Limnohabitans_planktonicus_results.tsv"
+## [1] "control4_Limnohabitans_planktonicus_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control4_Limnohabitans_planktonicus_results.tsv"
+## [1] "control5_Ramlibacter_tataouinensis_5_10_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5_Ramlibacter_tataouinensis_5_10_results.tsv"
+## [1] "control5fr_Ramlibacter_MAG_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5fr_Ramlibacter_MAG_results.tsv"
+```
+
+```r
+# Filter out non-PSGs
+posi_controls <- posi_controls %>% filter(P.Value < 0.05 & 
+                                    FDR < 0.05)
+
+# Plot dN/dS ratios for controls
+# Make plot
+p_dNdS_control <- ggplot(posi_controls, aes(x = sample_file, y = HA.foreground.omega, fill = sample_file))+
+  geom_jitter(size = 4, shape = 21, width = 0.2)+
+  geom_boxplot(alpha = 0.4, outlier.shape = NA)+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  # ylab("") + xlab("")+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_blank(),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        # ,legend.position = c(0.87, 0.85)
+        )+
+  xlab("")+
+  guides(fill=guide_legend(ncol=2))
+
+# print(p_dNdS_control)
+
+
+p_N_control <- ggplot(posi_controls, aes(x = sample_file, fill = sample_file))+
+  geom_bar(stat = "count", color = "black")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  # ylab("") + xlab("")+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_blank(),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        # ,legend.position = c(0.87, 0.85)
+        )+
+  ylab("Number of PSGs")+
+  xlab("")+
+  guides(fill=guide_legend(ncol=2))
+
+# print(p_N_control)
+
+# Print both panels
+grid_arrange_shared_legend(p_N_control, p_dNdS_control, position = "bottom")
+```
+
+<img src="Figures/cached/posigene-controls-1.png" style="display: block; margin: auto;" />
+
+```r
+# Check similarity between PSG profiles
+posi_control_wide <- posi_controls[, 1:2]
+posi_control_wide$Presence <- 1
+posi_control_wide <- tidyr::spread(posi_control_wide, Transcript, Presence)
+posi_control_wide[is.na(posi_control_wide)] <- 0
+rownames(posi_control_wide) <- posi_control_wide$sample_file; posi_control_wide <- posi_control_wide[, -1]
+
+# Split dataset according to reference/anchor species because this will affect
+# the gene labelling (anchor species label) and thus result in erronous gene labels.
+
+# Calculate distance between posigene results
+dist_hm <- dist(posi_control_wide, method = "binary")
+row.order <- attr(dist_hm, "Labels")[hclust(dist_hm)$order] # clustering
+col.order <- attr(dist_hm, "Labels")[hclust(t(dist_hm))$order]
+
+# Fix order according to hierarchical clustering
+df_hm <- melt(as.matrix(dist_hm))
+df_hm$Var1 <- factor(as.character(df_hm$Var1), levels = row.order)
+df_hm$Var2 <- factor(as.character(df_hm$Var2), levels = col.order)
+
+hm_posi_c <- ggplot(df_hm, aes(Var1, Var2)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = value)) + # background colours are mapped according to the value column
+  geom_text(aes(fill = df_hm$value, label = round(df_hm$value, 2))) + # write the values
+  scale_fill_gradient(low = "lightblue", high = "darkslategray") + 
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1,vjust=1,size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Dissimilarity\n")
+
+print(hm_posi_c)
+```
+
+<img src="Figures/cached/posigene-controls-2.png" style="display: block; margin: auto;" />
+
+
+```r
+# Import results file of genome-specific PSGs only
+data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", "HA.kappa",                                                                            "Number.of.Sites.under.positive.Selection")]
+# Import results file of Ramlibacter clade-specific PSGs
+data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega",  "HA.kappa",
+                                                              "Number.of.Sites.under.positive.Selection")]
 
 colnames(data_posi)[1] <- "Gene"; colnames(data_posi_clade)[1] <- "Gene"
 data_posi$Gene <- as.character(data_posi$Gene)
@@ -1275,6 +1423,10 @@ data_posi <- left_join(data_posi, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_clade <- left_join(data_posi_clade, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
 data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+# Also add COG annotation to both data sets
+data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+# Also add Pfam annotation to both data sets
 
 # Retain clade or MAG only genes in the respective dataframes
 pos <- !data_posi_KO$Gene %in% data_posi_clade_KO$Gene
@@ -1360,6 +1512,39 @@ print(p_KO_posi)
 As we had significant concerns related that there was a %GC dependency of dN/dS (`HA.foreground.omega`) and the associated `P.value` for the branch-site codon model we also checked this specifically for the branch- and clade-tests.   
 **Conclusions: There was no strong pattern/correlation to be observed between** 
 **%GC and dN/dS and the P-value** 
+
+
+```r
+data_GC_posi <- SCUO_merged_gen
+data_GC_posi$posi_select <- data_GC_posi$Gene %in% data_posi$IMG_geneID
+data_GC_posi$posi_select <- factor(data_GC_posi$posi_select, levels = c("FALSE", "TRUE"))
+
+data_GC_posi <- left_join(data_GC_posi,
+                            data_posi, by = c("Gene" = "IMG_geneID"))
+
+# Visualize differences in codon bias per codon position
+p_SCUO_GC <- data_GC_posi %>% filter(GCx != "GC_mean", Genome_ID == "Ramlibacter sp. MAG") %>% 
+  ggplot(aes(x = posi_select, y = 100*GC))+
+  geom_jitter(size = 4, shape = 21, alpha = 0.1, width = 0.2, fill = col_RAMLI)+
+  geom_boxplot(alpha = 0.2, size = 1.05, color = "darkorange")+
+  scale_fill_manual("", values = c(col_RAMLI))+
+  theme_bw()+
+  facet_wrap(~GCx, ncol = 3)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "bottom")+
+  ylab("%GC")+
+  xlab("Gene under positive selection (PSG)")+
+  guides(fill = FALSE)+
+  ylim(0,100)+
+  ggtitle("Ramlibacter sp. MAG")
+
+print(p_SCUO_GC)
+```
+
+<img src="Figures/cached/posigene-test-GC-1.png" style="display: block; margin: auto;" />
 
 
 ```r
@@ -1664,6 +1849,107 @@ p_SCUO_posi4
 
 <img src="Figures/cached/posigene-scuo-6.png" style="display: block; margin: auto;" />
 
+
+```r
+# Import results file of genome-specific PSGs
+data_posi2 <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")
+
+data_posi2 <- data_posi2 %>% filter(P.Value < 0.05 & 
+                                    FDR < 0.05,
+                                    HA.foreground.omega < 10)
+
+# Remove empty columns
+data_posi2 <- data_posi2 %>%
+    mutate_all(funs(na_if(., ""))) %>%
+    remove_empty_cols()
+  
+# Reformat sites under positive selection
+data_posi2 <- cbind(data_posi2[c("Transcript", "HA.foreground.omega", "HA.kappa")], 
+                    apply(data_posi2[, 27:105], 2, FUN = function(x) extract_aa(x)))
+colnames(data_posi2)[4] <- "Site.under.positve.Selection.1"
+
+# Get this into long dataframe format
+data_posi2_long <- gather(data_posi2, Site, AA-codon, 
+                          Site.under.positve.Selection.1:Site.under.positve.Selection.79, factor_key=TRUE)
+# Split codon and AA
+data_posi2_long <- cbind(data_posi2_long[-4], do.call(rbind, strsplit(data_posi2_long$`AA - codon`, "-"))) 
+colnames(data_posi2_long)[c(5,6)] <- c("AA", "codon")
+
+# remove NA rows
+data_posi2_long <- data_posi2_long[!data_posi2_long$AA %in% "NA", ]
+data_posi2_long <- droplevels(data_posi2_long)
+
+# order AA according to abundance
+order_AA <- levels(data_posi2_long$AA)[order(table(data_posi2_long$AA), decreasing = TRUE)]
+data_posi2_long$AA <- as.character(data_posi2_long$AA)
+data_posi2_long$AA <- factor(data_posi2_long$AA, levels = order_AA)
+
+# Ready to make plots
+p_aa_summary <- ggplot(data_posi2_long, aes(x = AA))+
+  geom_bar()+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom")+
+  xlab("Amino acid")
+print(p_aa_summary)
+```
+
+<img src="Figures/cached/posigene-aa-1.png" style="display: block; margin: auto;" />
+
+```r
+p_omega <- ggplot(data_posi2_long, aes(x = AA, y = HA.foreground.omega))+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom")+
+  xlab("Amino acid")
+print(p_omega)
+```
+
+<img src="Figures/cached/posigene-aa-2.png" style="display: block; margin: auto;" />
+
+```r
+p_aa_kappa <- ggplot(data_posi2_long, aes(x = AA, y = HA.kappa))+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom")+
+  xlab("Amino acid")
+print(p_aa_kappa)
+```
+
+<img src="Figures/cached/posigene-aa-3.png" style="display: block; margin: auto;" />
+
+
+
+## 9.2. Evaluate nucleotide transitions
+
+
+```r
+# Read in global nucleotide alignment file
+
+# Read in gene/PSG site information
+
+# Search for nucleotide composition and location of PSGs
+
+# Store in long dataframe
+
+# Investigate specific transitions for the whole genome as well as each gene
+```
+
 # Pangenome analysis  
 
 * Genomes were annotated with COG ids through `anvi-run-ncbi-cogs` by `blast` searches.  
@@ -1717,81 +2003,17 @@ panG_ko <- panG_ko[panG_ko$ko_id != "",]
 panG_ko$ko_id <- gsub(" ","", panG_ko$ko_id)
 
 # Annotate KO_IDs with hierarchy
-panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = c("ko_id" = "KO"))
-```
+panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = "ko_id")
 
-```
-## Error: `by` can't contain join column `KO` which is missing from RHS
-```
-
-```r
 # join with corresponding COG ids
 panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, by = c("gene_callers_id" = "gene_id"))
-panG_ko_cog$ko_level_B <- substring(panG_ko_cog$ko_level_B, 7)
-```
 
-```
-## Error in `$<-.data.frame`(`*tmp*`, ko_level_B, value = character(0)): replacement has 0 rows, data has 2698
-```
-
-```r
-panG_ko_cog$ko_level_C <- substring(panG_ko_cog$ko_level_C, 7)
-```
-
-```
-## Error in `$<-.data.frame`(`*tmp*`, ko_level_C, value = character(0)): replacement has 0 rows, data has 2698
-```
-
-```r
-panG_ko_cog$ko_level_A <- substring(panG_ko_cog$ko_level_A, 7)
-```
-
-```
-## Error in `$<-.data.frame`(`*tmp*`, ko_level_A, value = character(0)): replacement has 0 rows, data has 2698
-```
-
-```r
-panG_ko_cog$ko_level_C <- gsub("\\[[^\\]]*\\]", "", panG_ko_cog$ko_level_C , perl=TRUE)
-```
-
-```
-## Error in `$<-.data.frame`(`*tmp*`, ko_level_C, value = character(0)): replacement has 0 rows, data has 2698
-```
-
-```r
 # Shorten/change ko_level_B annotation a bit
 panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
-```
-
-```
-## Error in `$<-.data.frame`(`*tmp*`, ko_level_B, value = character(0)): replacement has 0 rows, data has 2698
-```
-
-```r
 panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation"
-```
-
-```
-## Error in `$<-.data.frame`(`*tmp*`, ko_level_B, value = character(0)): replacement has 0 rows, data has 2698
-```
-
-```r
 panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
-```
-
-```
-## Error in `$<-.data.frame`(`*tmp*`, ko_level_C, value = character(0)): replacement has 0 rows, data has 2698
-```
-
-```r
 panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation"
-```
 
-```
-## Error in `$<-.data.frame`(`*tmp*`, ko_level_C, value = character(0)): replacement has 0 rows, data has 2698
-```
-
-```r
 # Select some annotation levels of interest to visualize
 tmp_names <- names(table(panG_ko_cog$ko_level_B)[rev(order(table(panG_ko_cog$ko_level_B)))][1:10])
 
@@ -1818,19 +2040,10 @@ p_panG1 <- panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>%
         legend.position = "bottom"
         )+
   guides(fill = guide_legend(nrow = 4))
-```
-
-```
-## Error in filter_impl(.data, quo): Evaluation error: object 'ko_level_B' not found.
-```
-
-```r
 print(p_panG1)
 ```
 
-```
-## Error in print(p_panG1): object 'p_panG1' not found
-```
+<img src="Figures/cached/panG-analysis-1.png" style="display: block; margin: auto;" />
 
 ```r
 # Get sizes of each protein cluster bin
@@ -1844,40 +2057,13 @@ sizes_panG <- left_join(sizes_panG, distinct(panG[, 1:2]), by = "bin_name")
 panG_ko_table <- data.frame(panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>% 
   group_by(genome_name, ko_level_B) %>% 
   summarise(abund_ko = n()))
-```
-
-```
-## Error in filter_impl(.data, quo): Evaluation error: object 'ko_level_B' not found.
-```
-
-```r
 panG_ko_table <- left_join(panG_ko_table, sizes_panG, by = "genome_name")
-```
-
-```
-## Error in left_join(panG_ko_table, sizes_panG, by = "genome_name"): object 'panG_ko_table' not found
-```
-
-```r
 panG_ko_table <- panG_ko_table %>% group_by(genome_name) %>% 
   mutate(abund_ko_prop = abund_ko/n)
-```
-
-```
-## Error in eval(lhs, parent, parent): object 'panG_ko_table' not found
-```
-
-```r
 panG_ko_table <- left_join(panG_ko_table, 
                            distinct(panG_ko_cog[, c("ko_level_A", "ko_level_B")]),
                            by = c("ko_level_B"))
-```
 
-```
-## Error in left_join(panG_ko_table, distinct(panG_ko_cog[, c("ko_level_A", : object 'panG_ko_table' not found
-```
-
-```r
 # Plot distribution of panG annotation 
 ## Expressed as % of core genome gene set
 p_panG2 <- panG_ko_table %>% 
@@ -1898,19 +2084,11 @@ p_panG2 <- panG_ko_table %>%
         legend.position = "bottom"
         )+
   guides(fill = guide_legend(nrow = 4))
-```
 
-```
-## Error in eval(lhs, parent, parent): object 'panG_ko_table' not found
-```
-
-```r
 print(p_panG2)
 ```
 
-```
-## Error in print(p_panG2): object 'p_panG2' not found
-```
+<img src="Figures/cached/panG-analysis-2.png" style="display: block; margin: auto;" />
 
 ```r
 # Plot distribution of panG annotation 
@@ -1936,19 +2114,11 @@ p_panG3 <- panG_ko_table %>%
         legend.position = "bottom"
         )+
   guides(fill = guide_legend(nrow = 4))
-```
 
-```
-## Error in eval(lhs, parent, parent): object 'panG_ko_table' not found
-```
-
-```r
 print(p_panG3)
 ```
 
-```
-## Error in print(p_panG3): object 'p_panG3' not found
-```
+<img src="Figures/cached/panG-analysis-3.png" style="display: block; margin: auto;" />
 
 ```r
 # Plot distribution of panG annotation 
@@ -2377,6 +2547,13 @@ library("GSAR")
 ## Error in library("GSAR"): there is no package called 'GSAR'
 ```
 
+# Search for FW-relevant COGs  
+
+Here we are searching the "core" and "accessory" genome for COGs/Pfams that were
+shown to be important for Carbon-cycling in freshwater systems
+
+
+
 # Predict MGT
 Compare the growth rate with the minimum generation time estimated from the MAG
 using Growthpred. Dotted line in the graph of the predicted optimal growth temperature
@@ -2481,3 +2658,6 @@ print(p_Topt)
 ```r
 #dev.off()
 ```
+
+# Phosphatase diversity
+
