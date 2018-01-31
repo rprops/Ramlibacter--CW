@@ -52,7 +52,7 @@ p_counts_log <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = Nutrie
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
-  ylab("Cell density (cells/µL)")+
+  ylab(expression("Cell density - cells µL"^"-1"))+
   xlab("Time (h)")+
   labs(title="Total population")+
   guides(color = FALSE)+
@@ -67,7 +67,7 @@ p_HNA <- ggplot(counts, aes(x = ExactTime, y = HNA.cells, fill = NutrientConditi
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
-  ylab("Cell density (cells/µL)")+
+  ylab(expression("Cell density - cells µL"^"-1"))+
   xlab("Time (h)")+
   labs(title="HNA population")+
   guides(color = FALSE)
@@ -82,7 +82,7 @@ p_LNA <- ggplot(counts, aes(x = ExactTime, y = LNA.cells, fill = NutrientConditi
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
-  ylab("Cell density (cells/µL)")+
+  ylab(expression("Cell density - cells µL"^"-1"))+
   xlab("Time (h)")+
   labs(title="LNA population")+
   guides(color = FALSE)
@@ -93,7 +93,7 @@ grid_arrange_shared_legend(p_counts, p_HNA, p_LNA, ncol = 3)
 <img src="Figures-FCM/cached/fcm-density-data-2-1.png" style="display: block; margin: auto;" />
 
 ```r
-p_HNA_pct <- ggplot(counts, aes(x = ExactTime, y = pct_HNA.cells, fill = NutrientCondition))+
+p_HNA_pct <- ggplot(counts, aes(x = ExactTime, y = 100*pct_HNA.cells, fill = NutrientCondition))+
   geom_line(aes(color = NutrientCondition))+
   geom_point(shape = 21, size = 4)+
   theme_bw()+
@@ -110,13 +110,13 @@ p_HNA_pct <- ggplot(counts, aes(x = ExactTime, y = pct_HNA.cells, fill = Nutrien
 
 
 ```r
-grid.arrange(p_counts_log, p_HNA_pct, nrow = 2)
+plot_grid(p_counts_log, p_HNA_pct,nrow = 2, align = 'v')
 ```
 
 <img src="Figures-FCM/cached/fcm-density-data-3-1.png" style="display: block; margin: auto;" />
 
 ```r
-grid.arrange(p_HNA, p_HNA_pct, nrow = 2)
+plot_grid(p_HNA, p_HNA_pct, nrow = 2, align = 'v')
 ```
 
 <img src="Figures-FCM/cached/fcm-density-data-3-2.png" style="display: block; margin: auto;" />
