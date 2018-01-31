@@ -905,14 +905,22 @@ In order to put our results into context, we performed PosiGene analysis on the 
 ```{r posigene-controls, dpi = 300, fig.width = 12, fig.height = 8, warning = FALSE}
 # Import posigene result files in batch
 posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles")
+posi_control_meta <- read.table("./Mapping_files/posiG_controle_mapping.tsv",
+                                header = TRUE)
 
 # Filter out non-PSGs
 posi_controls <- posi_controls %>% filter(P.Value < 0.05 & 
                                     FDR < 0.05)
 
+# merge with metadata
+posi_controls <- left_join(posi_controls, posi_control_meta, 
+                           by = c("sample_file"= "result_filename"))
+
 # Plot dN/dS ratios for controls
 # Make plot
-p_dNdS_control <- ggplot(posi_controls, aes(x = sample_file, y = HA.foreground.omega, fill = sample_file))+
+p_dNdS_control <- posi_controls %>% dplyr::filter(group == "Ramli_only") %>% 
+  ggplot(aes(x = sample_file, y = HA.foreground.omega,
+                            fill = sample_file))+
   geom_jitter(size = 4, shape = 21, width = 0.2)+
   geom_boxplot(alpha = 0.4, outlier.shape = NA)+
   theme_bw()+
@@ -921,13 +929,14 @@ p_dNdS_control <- ggplot(posi_controls, aes(x = sample_file, y = HA.foreground.o
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_blank(),
+        # axis.text.x = element_blank(),
         strip.text=element_text(size=18),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         # ,legend.position = c(0.87, 0.85)
         )+
   xlab("")+
-  guides(fill=guide_legend(ncol=2))
+  guides(fill=FALSE)
+  # facet_grid(~target_species)
 
 # print(p_dNdS_control)
 
@@ -991,7 +1000,8 @@ hm_posi_c <- ggplot(df_hm, aes(Var1, Var2)) + # x and y axes => Var1 and Var2
   scale_y_discrete(name="") +
   labs(fill="Dissimilarity\n")
 
-print(hm_posi_c)
+print(hm_posi_c) 
+
 ```
 
 ```{r posigene-selection, dpi = 300, fig.width = 13, fig.height = 10, warning = FALSE}

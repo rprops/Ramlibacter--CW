@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "22 January, 2018"
+date: "23 January, 2018"
 output:
   html_document:
     code_folding: show
@@ -1265,6 +1265,14 @@ posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_ana
 ## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5_Ramlibacter_tataouinensis_5_10_results.tsv"
 ## [1] "control5fr_Ramlibacter_MAG_results.tsv"
 ## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5fr_Ramlibacter_MAG_results.tsv"
+## [1] "control6fr_Ramlibacter_MAG_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control6fr_Ramlibacter_MAG_results.tsv"
+## [1] "control7_Ramlibacter_sp_Leaf400_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control7_Ramlibacter_sp_Leaf400_results.tsv"
+## [1] "control7fr_Ramlibacter_MAG_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control7fr_Ramlibacter_MAG_results.tsv"
+## [1] "control8_Ramlibacter_tataouinensis_TTB310_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control8_Ramlibacter_tataouinensis_TTB310_results.tsv"
 ```
 
 ```r
@@ -1357,7 +1365,7 @@ hm_posi_c <- ggplot(df_hm, aes(Var1, Var2)) + # x and y axes => Var1 and Var2
   scale_y_discrete(name="") +
   labs(fill="Dissimilarity\n")
 
-print(hm_posi_c)
+print(hm_posi_c) 
 ```
 
 <img src="Figures/cached/posigene-controls-2.png" style="display: block; margin: auto;" />
