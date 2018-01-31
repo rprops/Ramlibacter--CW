@@ -1,7 +1,7 @@
 ---
 title: "Analysis-FCM"
 author: "Ruben Props"
-date: "17 January, 2018"
+date: "31 January, 2018"
 output:
   html_document:
     code_folding: show
@@ -43,6 +43,20 @@ p_counts <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = NutrientCo
   labs(title="Total population")+
   guides(color = FALSE)
 
+p_counts_log <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = NutrientCondition))+
+  geom_line(aes(color = NutrientCondition))+
+  geom_point(shape = 21, size = 4)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+  scale_color_brewer(palette = "Accent")+
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom")+
+  ylab("Cell density (cells/µL)")+
+  xlab("Time (h)")+
+  labs(title="Total population")+
+  guides(color = FALSE)+
+  scale_y_continuous(trans='log2', breaks = c(10, 100,1000,5000,1e4, 1.5e4), limits = c(1,1.6e4))
 
 p_HNA <- ggplot(counts, aes(x = ExactTime, y = HNA.cells, fill = NutrientCondition))+
   geom_line(aes(color = NutrientCondition))+
@@ -78,6 +92,28 @@ grid_arrange_shared_legend(p_counts, p_HNA, p_LNA, ncol = 3)
 
 <img src="Figures-FCM/cached/fcm-density-data-2-1.png" style="display: block; margin: auto;" />
 
+```r
+p_HNA_pct <- ggplot(counts, aes(x = ExactTime, y = pct_HNA.cells, fill = NutrientCondition))+
+  geom_line(aes(color = NutrientCondition))+
+  geom_point(shape = 21, size = 4)+
+  theme_bw()+
+  scale_fill_brewer("Nutrient condition", palette = "Accent")+
+  scale_color_brewer(palette = "Accent")+
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=16),
+        legend.direction = "horizontal",legend.position = "bottom")+
+  ylab("%HNA cells")+
+  xlab("Time (h)")+
+  labs(title="HNA population")+
+  guides(color = FALSE)
+```
+
+
+```r
+grid.arrange(p_counts_log, p_HNA_pct, nrow = 2)
+```
+
+<img src="Figures-FCM/cached/fcm-density-data-3-1.png" style="display: block; margin: auto;" />
 
 # Diversity dynamics
 
@@ -93,7 +129,7 @@ diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FA
 
 ```
 ## -------------------------------------------------------------------------------------------------
-## Wed Jan 17 13:59:34 2018 --- Normalizing your FCS data based on maximum FL1-H value
+## Wed Jan 31 15:59:10 2018 --- Normalizing your FCS data based on maximum FL1-H value
 ## --- Maximum FL1-H before normalizing: 14.95
 ## --- Maximum FL3-H before normalizing: 13.27
 ## --- Maximum SSC-H before normalizing: 17.33
@@ -105,9 +141,9 @@ diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FA
 ## --- Maximum FSC-H after normalizing: 1.13
 ## -------------------------------------------------------------------------------------------------
 ##  
-## Wed Jan 17 14:00:14 2018 --- Using 10 cores for calculations
-## Wed Jan 17 14:28:45 2018 --- Closing workers
-## Wed Jan 17 14:28:46 2018 --- Alpha diversity metrics (D0,D1,D2) have been computed after 100 bootstraps
+## Wed Jan 31 15:59:49 2018 --- Using 10 cores for calculations
+## Wed Jan 31 16:24:51 2018 --- Closing workers
+## Wed Jan 31 16:24:51 2018 --- Alpha diversity metrics (D0,D1,D2) have been computed after 100 bootstraps
 ## -----------------------------------------------------------------------------------------------------
 ## 
 ```
@@ -222,9 +258,9 @@ counts <- counts %>% group_by(NutrientCondition) %>%
 
 ## Samples as rows and timepoints as columns
 counts_tmp <- counts %>% dplyr::filter(Timepoint > 5) # Only consider after first 5 samples due to bleaching of tubing
-count_wide <- spread(counts_tmp[, c(5,2,7)], ExactTime, Total.cells)
-count_wide2 <- spread(counts_tmp[, c(5,8,7)], ExactTime, ratio_TotalCells)
-time_wide <- as.matrix(spread(counts_tmp[, c(5,7)], ExactTime, ExactTime)[,-1])
+count_wide <- spread(counts_tmp[, c(6,2,8)], ExactTime, Total.cells)
+count_wide2 <- spread(counts_tmp[, c(6,9,8)], ExactTime, ratio_TotalCells)
+time_wide <- as.matrix(spread(counts_tmp[, c(6,8)], ExactTime, ExactTime)[,-1])
 
 ## Add two additional columns (mandatory for grofit to run properly)
 count_wide <- data.frame(ReactorName = c("R1", "R2","R3"), 
@@ -279,11 +315,11 @@ Fit2 <- grofit::gcFit(time_wide, count_wide2, grofit.control(nboot.gc = 1000, sm
 ```r
 sum <- summary(Fit)
 par(mfrow=c(3,1))
-plot(Fit2, opt = "s", slope = TRUE, colSpline = 4, cex = 2, title = "Spline fit") # show spline fits
+plot(Fit, opt = "s", slope = TRUE, colSpline = 4, cex = 2, title = "Spline fit") # show spline fits
 par(mfrow=c(1,1))
 
 # We continue to work with the spline fits as they seem to be the best
-growth_results <- sum[, c("concentration","mu.bt", "lambda.bt", "A.bt",
+growth_results <- summary(Fit)[, c("concentration","mu.bt", "lambda.bt", "A.bt",
                           "ci95.mu.bt.up", "ci95.mu.bt.lo",
                           "ci95.lambda.bt.up", "ci95.lambda.bt.lo",
                           "ci95.A.bt.up", "ci95.A.bt.lo")]
@@ -360,7 +396,7 @@ p_A <- ggplot(growth_results, aes(x = concentration_value, y = A.bt, fill = conc
 
 ```r
 # Create wide format
-count_gc_wide <- spread(counts[, c(5,2,7)], NutrientCondition, Total.cells)
+count_gc_wide <- spread(counts[, c(6,2,8)], NutrientCondition, Total.cells)
 
 # Run growthcurver
 gc_fit <- list()
