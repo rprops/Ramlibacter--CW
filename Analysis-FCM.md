@@ -44,8 +44,8 @@ flowData_transformed_sb <- transform(flowData_transformed_sb,`FL1-H`=mytrans(`FL
                                   `FSC-H`=mytrans(`FSC-H`))
 
 MyText <- c("1 mg/L - 20h", "1 mg/L - 30h", "1 mg/L - 40h", "1 mg/L - 60h", "1 mg/L - 70h",
-            "1 mg/L - 20h", "10 mg/L - 30h", "10 mg/L - 40h", "10 mg/L - 60h", "10 mg/L - 70h",
-            "1 mg/L - 20h", "100 mg/L - 30h", "100 mg/L - 40h", "100 mg/L - 60h", "100 mg/L - 70h")
+            "10 mg/L - 20h", "10 mg/L - 30h", "10 mg/L - 40h", "10 mg/L - 60h", "10 mg/L - 70h",
+            "100 mg/L - 20h", "100 mg/L - 30h", "100 mg/L - 40h", "100 mg/L - 60h", "100 mg/L - 70h")
 
 sqrcut1 <- matrix(c(asinh(8500),asinh(8500),15,15,3,9.55,14,3)/max,ncol=2, nrow=4)
 colnames(sqrcut1) <- c("FL1-H","FL3-H")
