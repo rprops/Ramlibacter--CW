@@ -62,6 +62,7 @@ flist <- list(filters , filters, filters,
               filters, filters, filters)
 names(flist) <- flowCore::sampleNames(flowData_transformed_sb)
 
+# Print fluorescence scatter plots
 print(xyplot(`FL3-H`~`FL1-H`, data=flowData_transformed_sb,
              index.cond=list(c(1,6,11,
                                2,7,12,
@@ -69,12 +70,12 @@ print(xyplot(`FL3-H`~`FL1-H`, data=flowData_transformed_sb,
                                4,9,14,
                                5,10,15)),
              filter=flist,
-             xbins=400,nbin=128, par.strip.text=list(col="black", font=3,cex=1.85), 
+             xbins=400,nbin=128, par.strip.text=list(col="black", font=3,cex=1), 
              smooth=FALSE, xlim=c(0.5,1),ylim=c(0.1,1),xlab=list(label="Green fluorescence intensity (FL1-H)",cex=2),
-             ylab=list(label="Red fluorescence intensity (FL3-H)", cex=2),
+             ylab=list(label="Red fluorescence intensity (FL3-H)", cex=1),
              par.settings=my.settings,
-             scales=list(x=list(at=seq(from=0, to=1, by=.1), cex=1.5),
-                         y=list(at=seq(from=0, to=1, by=.2), cex=1.5)), layout=c(3,5),
+             scales=list(x=list(at=seq(from=0, to=1, by=.1), cex=1),
+                         y=list(at=seq(from=0, to=1, by=.2), cex=1)), layout=c(3,5),
              strip=strip.custom(factor.levels=MyText),
              margin=TRUE,
              binTrans="log"
@@ -83,6 +84,29 @@ print(xyplot(`FL3-H`~`FL1-H`, data=flowData_transformed_sb,
 ```
 
 <img src="Figures-FCM/cached/xplore-scatterplots-1.png" style="display: block; margin: auto;" />
+
+```r
+# Print scatters scatter plots
+print(xyplot(`FSC-H`~`SSC-H`, data=flowData_transformed_sb,
+             index.cond=list(c(1,6,11,
+                               2,7,12,
+                               3,8,13,
+                               4,9,14,
+                               5,10,15)),
+             xbins=400,nbin=128, par.strip.text=list(col="black", font=3,cex=1), 
+             smooth=FALSE, xlim=c(0.3,1),ylim=c(0.3,1),xlab=list(label="Sideway scatter intensity (SSC-H)",cex=2),
+             ylab=list(label="Forward scatter intensity (FSC-H)", cex=1),
+             par.settings=my.settings,
+             scales=list(x=list(at=seq(from=0, to=1, by=.2), cex=1),
+                         y=list(at=seq(from=0, to=1, by=.2), cex=1)), layout=c(3,5),
+             strip=strip.custom(factor.levels=MyText),
+             margin=TRUE,
+             binTrans="log"
+      )
+)
+```
+
+<img src="Figures-FCM/cached/xplore-scatterplots-2.png" style="display: block; margin: auto;" />
 
 
 
