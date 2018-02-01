@@ -1,7 +1,7 @@
 ---
 title: "Analysis-FCM"
 author: "Ruben Props"
-date: "31 January, 2018"
+date: "01 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -25,6 +25,64 @@ editor_options:
 
 # Cell density 
 
+
+
+
+```r
+summary <- fsApply(x=flowData_transformed,FUN=function(x) apply(x,2,max), use.exprs=TRUE)
+max = max(summary[,"FL1-H"])
+flowData_transformed_sb <- flowData_transformed[which(flowCore::sampleNames(flowData_transformed) 
+                                                   %in% c("R1_41.fcs","R2_41.fcs","R3_41.fcs",
+                                                          "R1_56.fcs","R2_56.fcs","R3_56.fcs",
+                                                          "R1_64.fcs","R2_64.fcs","R3_64.fcs",
+                                                         "R1_81.fcs","R2_81.fcs","R3_81.fcs",
+                                                         "R1_90.fcs","R2_90.fcs","R3_90.fcs"))]
+mytrans <- function(x) x/max
+flowData_transformed_sb <- transform(flowData_transformed_sb,`FL1-H`=mytrans(`FL1-H`),
+                                  `FL3-H`=mytrans(`FL3-H`), 
+                                  `SSC-H`=mytrans(`SSC-H`),
+                                  `FSC-H`=mytrans(`FSC-H`))
+
+MyText <- c("1 mg/L - 20h", "1 mg/L - 30h", "1 mg/L - 40h", "1 mg/L - 60h", "1 mg/L - 70h",
+            "1 mg/L - 20h", "10 mg/L - 30h", "10 mg/L - 40h", "10 mg/L - 60h", "10 mg/L - 70h",
+            "1 mg/L - 20h", "100 mg/L - 30h", "100 mg/L - 40h", "100 mg/L - 60h", "100 mg/L - 70h")
+
+sqrcut1 <- matrix(c(asinh(8500),asinh(8500),15,15,3,9.55,14,3)/max,ncol=2, nrow=4)
+colnames(sqrcut1) <- c("FL1-H","FL3-H")
+rGate_HNA <- polygonGate(.gate=sqrcut1, filterId = "HNA")
+sqrcut1 <- matrix(c(8.25,8.25,asinh(8500),asinh(8500),3,8,9.55,3)/max,ncol=2, nrow=4)
+colnames(sqrcut1) <- c("FL1-H","FL3-H")
+rGate_LNA <- polygonGate(.gate=sqrcut1, filterId = "LNA")
+
+filters <- filters(list(rGate_LNA, rGate_HNA))
+flist <- list(filters , filters, filters, 
+              filters, filters, filters,
+              filters, filters, filters,
+              filters, filters, filters,
+              filters, filters, filters)
+names(flist) <- flowCore::sampleNames(flowData_transformed_sb)
+
+print(xyplot(`FL3-H`~`FL1-H`, data=flowData_transformed_sb,
+             index.cond=list(c(1,6,11,
+                               2,7,12,
+                               3,8,13,
+                               4,9,14,
+                               5,10,15)),
+             filter=flist,
+             xbins=400,nbin=128, par.strip.text=list(col="black", font=3,cex=1.85), 
+             smooth=FALSE, xlim=c(0.5,1),ylim=c(0.1,1),xlab=list(label="Green fluorescence intensity (FL1-H)",cex=2),
+             ylab=list(label="Red fluorescence intensity (FL3-H)", cex=2),
+             par.settings=my.settings,
+             scales=list(x=list(at=seq(from=0, to=1, by=.1), cex=1.5),
+                         y=list(at=seq(from=0, to=1, by=.2), cex=1.5)), layout=c(3,5),
+             strip=strip.custom(factor.levels=MyText),
+             margin=TRUE,
+             binTrans="log"
+      )
+)
+```
+
+<img src="Figures-FCM/cached/xplore-scatterplots-1.png" style="display: block; margin: auto;" />
 
 
 
@@ -121,136 +179,101 @@ plot_grid(p_HNA, p_HNA_pct, nrow = 2, align = 'v')
 
 <img src="Figures-FCM/cached/fcm-density-data-3-2.png" style="display: block; margin: auto;" />
 
-# Diversity dynamics
+<!-- # Diversity dynamics -->
+
+<!-- ```{r diversity-fcm-1, warning = FALSE, dpi = 500, fig.width = 7, fig.height = 6} -->
+<!-- # Resample to atleast 10,000 cells for diversity assay -->
+<!-- # flowData_transformed_subs <- FCS_resample(flowData_transformed, sample = 10000, replace = TRUE) -->
+
+<!-- # Calculate phenotypic alpha diversity -->
+<!-- diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FALSE, parallel = TRUE, -->
+<!--                               ncores = 10) -->
+
+<!-- ``` -->
 
 
-```r
-# Resample to atleast 10,000 cells for diversity assay
-# flowData_transformed_subs <- FCS_resample(flowData_transformed, sample = 10000, replace = TRUE)
+<!-- ```{r diversity-fcm-2, warning = FALSE, dpi = 500, fig.width = 10, fig.height = 6, dev = c("png", "svg")} -->
+<!-- # Add metadata to phenotypic diversity estimate -->
+<!-- diversity_fcm <- dplyr::left_join(diversity_fcm, counts, by = c("Sample_names" =  "Samples")) -->
+<!-- diversity_fcm <- diversity_fcm %>% dplyr::filter(Timepoint > 5) # Only consider after first 5 samples due to bleaching of tubing -->
 
-# Calculate phenotypic alpha diversity
-diversity_fcm <- Diversity_rf(flowData_transformed, param = param, cleanFCS = FALSE, parallel = TRUE,
-                              ncores = 10)
-```
+<!-- # Plot results -->
+<!-- p_div <- ggplot(diversity_fcm, aes(x = ExactTime, y = D2, fill = NutrientCondition))+ -->
+<!--     geom_line(aes(color = NutrientCondition))+ -->
+<!--     geom_point(shape = 21, size = 4)+ -->
+<!--     theme_bw()+ -->
+<!--     scale_fill_brewer("Nutrient condition", palette = "Accent")+ -->
+<!--     scale_color_brewer("Nutrient condition", palette = "Accent")+ -->
+<!--     theme(axis.text=element_text(size=16), axis.title=element_text(size=20), -->
+<!--         title=element_text(size=20), legend.text=element_text(size=16), -->
+<!--         legend.direction = "horizontal",legend.position = "bottom", -->
+<!--         strip.text = element_text(size = 16))+ -->
+<!--     ylab(expression("Phenotypic diversity - D"[2]))+ -->
+<!--     facet_grid(~NutrientCondition)+ -->
+<!--     xlab("Time (h)")+ -->
+<!--     guides(fill = FALSE, color = FALSE)+ -->
+<!--   geom_ribbon(aes(ymin = D2 - sd.D2, ymax = D2 + sd.D2), alpha = 0.3) -->
 
-```
-## -------------------------------------------------------------------------------------------------
-## Wed Jan 31 15:59:10 2018 --- Normalizing your FCS data based on maximum FL1-H value
-## --- Maximum FL1-H before normalizing: 14.95
-## --- Maximum FL3-H before normalizing: 13.27
-## --- Maximum SSC-H before normalizing: 17.33
-## --- Maximum FSC-H before normalizing: 16.96
-## -------------------------------------------------------------------------------------------------
-## --- Maximum FL1-H after normalizing: 1
-## --- Maximum FL3-H after normalizing: 0.89
-## --- Maximum SSC-H after normalizing: 1.16
-## --- Maximum FSC-H after normalizing: 1.13
-## -------------------------------------------------------------------------------------------------
-##  
-## Wed Jan 31 15:59:49 2018 --- Using 10 cores for calculations
-## Wed Jan 31 16:24:51 2018 --- Closing workers
-## Wed Jan 31 16:24:51 2018 --- Alpha diversity metrics (D0,D1,D2) have been computed after 100 bootstraps
-## -----------------------------------------------------------------------------------------------------
-## 
-```
+<!-- print(p_div) -->
+<!-- ``` -->
 
+<!-- ```{r count-diversity-fcm, warning = FALSE, dpi = 500, fig.width = 14, fig.height = 11, dev = c("png", "svg")} -->
+<!-- # Reshape combined data -->
+<!-- diversity_fcm_long <- tidyr::gather(diversity_fcm, population, Density, Total.cells, LNA.cells, HNA.cells, D2) -->
+<!-- diversity_fcm_long$population <- plyr::revalue(diversity_fcm_long$population,  c("Total.cells"="Whole population", "HNA.cells"="HNA population", "LNA.cells"="LNA population", "D2" = "Phenotypic diversity")) -->
 
+<!-- # Combine diversity and count plot -->
+<!-- p_count2 <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = NutrientCondition))+ -->
+<!--   geom_line(aes(color = NutrientCondition))+ -->
+<!--   geom_point(shape = 21, size = 4)+ -->
+<!--   theme_bw()+ -->
+<!--   scale_fill_brewer("Nutrient condition", palette = "Accent")+ -->
+<!--   scale_color_brewer(palette = "Accent")+ -->
+<!--     theme(axis.text=element_text(size=16), axis.title=element_text(size=20), -->
+<!--         title=element_text(size=20), legend.text=element_text(size=16), -->
+<!--         legend.direction = "horizontal",legend.position = "bottom", -->
+<!--         strip.text = element_text(size = 16))+ -->
+<!--   ylab("Cell density (cells/µL)")+ -->
+<!--   xlab("Time (h)")+ -->
+<!--   facet_grid(~NutrientCondition)+ -->
+<!--   guides(color = FALSE, fill = FALSE) -->
 
-```r
-# Add metadata to phenotypic diversity estimate
-diversity_fcm <- dplyr::left_join(diversity_fcm, counts, by = c("Sample_names" =  "Samples"))
-diversity_fcm <- diversity_fcm %>% dplyr::filter(Timepoint > 5) # Only consider after first 5 samples due to bleaching of tubing
+<!-- p_HNA2 <- ggplot(counts, aes(x = ExactTime, y = HNA.cells, fill = NutrientCondition))+ -->
+<!--   geom_line(aes(color = NutrientCondition))+ -->
+<!--   geom_point(shape = 21, size = 4)+ -->
+<!--   theme_bw()+ -->
+<!--   scale_fill_brewer("Nutrient condition", palette = "Accent")+ -->
+<!--   scale_color_brewer(palette = "Accent")+ -->
+<!--     theme(axis.text=element_text(size=16), axis.title=element_text(size=20), -->
+<!--         title=element_text(size=20), legend.text=element_text(size=16), -->
+<!--         legend.direction = "horizontal",legend.position = "bottom", -->
+<!--         strip.text = element_text(size = 16))+ -->
+<!--   ylab("Cell density (cells/µL)")+ -->
+<!--   xlab("Time (h)")+ -->
+<!--   facet_grid(~NutrientCondition)+ -->
+<!--   guides(color = FALSE, fill = FALSE) -->
 
-# Plot results
-p_div <- ggplot(diversity_fcm, aes(x = ExactTime, y = D2, fill = NutrientCondition))+
-    geom_line(aes(color = NutrientCondition))+
-    geom_point(shape = 21, size = 4)+
-    theme_bw()+
-    scale_fill_brewer("Nutrient condition", palette = "Accent")+
-    scale_color_brewer("Nutrient condition", palette = "Accent")+
-    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
-        legend.direction = "horizontal",legend.position = "bottom",
-        strip.text = element_text(size = 16))+
-    ylab(expression("Phenotypic diversity - D"[2]))+
-    facet_grid(~NutrientCondition)+
-    xlab("Time (h)")+
-    guides(fill = FALSE, color = FALSE)+
-  geom_ribbon(aes(ymin = D2 - sd.D2, ymax = D2 + sd.D2), alpha = 0.3)
+<!-- p_LNA2 <- ggplot(counts, aes(x = ExactTime, y = LNA.cells, fill = NutrientCondition))+ -->
+<!--   geom_line(aes(color = NutrientCondition))+ -->
+<!--   geom_point(shape = 21, size = 4)+ -->
+<!--   theme_bw()+ -->
+<!--   scale_fill_brewer("Nutrient condition", palette = "Accent")+ -->
+<!--   scale_color_brewer(palette = "Accent")+ -->
+<!--     theme(axis.text=element_text(size=16), axis.title=element_text(size=20), -->
+<!--         title=element_text(size=20), legend.text=element_text(size=16), -->
+<!--         legend.direction = "horizontal",legend.position = "bottom", -->
+<!--         strip.text = element_text(size = 16))+ -->
+<!--   ylab("Cell density (cells/µL)")+ -->
+<!--   xlab("Time (h)")+ -->
+<!--   facet_grid(~NutrientCondition)+ -->
+<!--   guides(color = FALSE, fill = FALSE) -->
 
-print(p_div)
-```
+<!-- grid.arrange(p_count2, p_div, nrow = 2) -->
 
-<img src="Figures-FCM/cached/diversity-fcm-2-1.png" style="display: block; margin: auto;" />
+<!-- grid.arrange(p_HNA2, p_div, nrow = 2) -->
 
-
-```r
-# Reshape combined data
-diversity_fcm_long <- tidyr::gather(diversity_fcm, population, Density, Total.cells, LNA.cells, HNA.cells, D2)
-diversity_fcm_long$population <- plyr::revalue(diversity_fcm_long$population,  c("Total.cells"="Whole population", "HNA.cells"="HNA population", "LNA.cells"="LNA population", "D2" = "Phenotypic diversity"))
-
-# Combine diversity and count plot
-p_count2 <- ggplot(counts, aes(x = ExactTime, y = Total.cells, fill = NutrientCondition))+
-  geom_line(aes(color = NutrientCondition))+
-  geom_point(shape = 21, size = 4)+
-  theme_bw()+
-  scale_fill_brewer("Nutrient condition", palette = "Accent")+
-  scale_color_brewer(palette = "Accent")+
-    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
-        legend.direction = "horizontal",legend.position = "bottom",
-        strip.text = element_text(size = 16))+
-  ylab("Cell density (cells/µL)")+
-  xlab("Time (h)")+
-  facet_grid(~NutrientCondition)+
-  guides(color = FALSE, fill = FALSE)
-
-p_HNA2 <- ggplot(counts, aes(x = ExactTime, y = HNA.cells, fill = NutrientCondition))+
-  geom_line(aes(color = NutrientCondition))+
-  geom_point(shape = 21, size = 4)+
-  theme_bw()+
-  scale_fill_brewer("Nutrient condition", palette = "Accent")+
-  scale_color_brewer(palette = "Accent")+
-    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
-        legend.direction = "horizontal",legend.position = "bottom",
-        strip.text = element_text(size = 16))+
-  ylab("Cell density (cells/µL)")+
-  xlab("Time (h)")+
-  facet_grid(~NutrientCondition)+
-  guides(color = FALSE, fill = FALSE)
-
-p_LNA2 <- ggplot(counts, aes(x = ExactTime, y = LNA.cells, fill = NutrientCondition))+
-  geom_line(aes(color = NutrientCondition))+
-  geom_point(shape = 21, size = 4)+
-  theme_bw()+
-  scale_fill_brewer("Nutrient condition", palette = "Accent")+
-  scale_color_brewer(palette = "Accent")+
-    theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=16),
-        legend.direction = "horizontal",legend.position = "bottom",
-        strip.text = element_text(size = 16))+
-  ylab("Cell density (cells/µL)")+
-  xlab("Time (h)")+
-  facet_grid(~NutrientCondition)+
-  guides(color = FALSE, fill = FALSE)
-
-grid.arrange(p_count2, p_div, nrow = 2)
-```
-
-<img src="Figures-FCM/cached/count-diversity-fcm-1.png" style="display: block; margin: auto;" />
-
-```r
-grid.arrange(p_HNA2, p_div, nrow = 2)
-```
-
-<img src="Figures-FCM/cached/count-diversity-fcm-2.png" style="display: block; margin: auto;" />
-
-```r
-grid.arrange(p_LNA2, p_div, nrow = 2)
-```
-
-<img src="Figures-FCM/cached/count-diversity-fcm-3.png" style="display: block; margin: auto;" />
+<!-- grid.arrange(p_LNA2, p_div, nrow = 2) -->
+<!-- ``` -->
 
 # Growth rate estimation
 
