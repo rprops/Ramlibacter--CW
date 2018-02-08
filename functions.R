@@ -275,7 +275,6 @@ extract_nt.pos <- function(x, pos = 8){
   tmp <- as.numeric(matrix(apply(tmp, 2, FUN = function(x) do.call(rbind, strsplit(as.character(x), " "))[,2]), 
                 ncol = length(pos))
   )
-  tmp <- paste(tmp[,1], tmp[,2], sep = "-")
   return(tmp)
 }
 
@@ -287,7 +286,7 @@ extract_nt.pos <- function(x, pos = 8){
 # 
 # for(i in 27:215){
 #   x <- results_posi[,i]
-#   tmpx <- extract_aa(x, pos = 11)
+#   tmpx <- extract_nt.pos(x, pos = 11)
 #   str(tmpx)
 #   print(i)
 # }
@@ -314,4 +313,33 @@ read_posi <- function(pathx, patt = "_results.tsv"){
   return(data_posi)
 }
 
+# Function to format IMG compare-genome files to STAMPS compatible format
 
+format_STAMPS <- function(pathx, patho){
+  return_first <- function(x){
+    y <- x[1]
+    return(y)
+  }
+  
+  df <- read.delim(pathx)
+  dim(df)
+  
+  # temp files
+  tmp1 <- do.call(rbind,by(df[, 3:ncol(df)], INDICES = factor(df$Func_name), 
+                           FUN = colSums))
+  
+  tmp2 <- aggregate(Func_id~Func_name, data = df, FUN = return_first)
+  
+  # merge
+  output <- cbind(tmp2, tmp1)
+  output <- output[,c(2,1,3:ncol(output))]
+  
+  # write
+  write.table(output, file = patho, sep = "\t", row.names = FALSE, quote=FALSE)
+}
+
+# format_STAMPS(pathx = "./IMG_annotation/STAMP_profiles/abundance_cog_71453.tab.xls",
+#               patho = "./IMG_annotation/STAMP_profiles/STAMPS_abundance_cog_71453.tab.xls")
+# 
+# format_STAMPS(pathx = "./IMG_annotation/STAMP_profiles/abundance_ko_71619.tab.xls",
+#               patho = "./IMG_annotation/STAMP_profiles/STAMPS_abundance_ko_71619.tab.xls")

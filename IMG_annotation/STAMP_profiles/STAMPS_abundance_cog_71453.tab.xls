@@ -1,0 +1,1994 @@
+Func_id	Func_name	Limnohabitans_sp_bin_1	Ramlibacter_sp_Leaf400	Ramlibacter_tataouinensis_5_10	Ramlibacter_tataouinensis_TTB310
+COG1778	 3-deoxy-D-manno-octulosonate 8-phosphate phosphatase KdsC and related HAD superfamily phosphatases	1	1	1	0
+COG1402	 Creatinine amidohydrolase/Fe(II)-dependent formamide hydrolase involved in riboflavin and F420 biosynthesis	2	1	3	1
+COG0724	 RNA recognition motif (RRM) domain	0	0	1	0
+COG3411	(2Fe-2S) ferredoxin	1	1	1	1
+COG0317	(p)ppGpp synthase/hydrolase, HD superfamily	2	2	2	2
+COG0204	1-acyl-sn-glycerol-3-phosphate acyltransferase	3	2	4	3
+COG2515	1-aminocyclopropane-1-carboxylate deaminase/D-cysteine desulfhydrase, PLP-dependent ACC family	0	1	1	2
+COG0743	1-deoxy-D-xylulose 5-phosphate reductoisomerase	1	1	1	1
+COG3396	1,2-phenylacetyl-CoA epoxidase, catalytic subunit	4	3	4	3
+COG3460	1,2-phenylacetyl-CoA epoxidase, PaaB subunit	1	1	1	1
+COG0296	1,4-alpha-glucan branching enzyme	0	2	0	0
+COG0447	1,4-Dihydroxy-2-naphthoyl-CoA synthase	0	0	1	0
+COG2377	1,6-Anhydro-N-acetylmuramate kinase	1	1	1	1
+COG0030	16S rRNA A1518 and A1519 N6-dimethyltransferase RsmA/KsgA/DIM1 (may also have DNA glycosylase/AP lyase activity)	1	1	1	1
+COG0313	16S rRNA C1402 (ribose-2'-O) methylase RsmI	1	2	2	2
+COG0275	16S rRNA C1402 N4-methylase RsmH	1	1	1	1
+COG0144	16S rRNA C967 or C1407 C5-methylase, RsmB/RsmF family	2	2	2	2
+COG0357	16S rRNA G527 N7-methylase RsmG (former glucose-inhibited division protein B)	1	1	1	1
+COG0742	16S rRNA G966 N2-methylase RsmD	1	1	1	1
+COG1385	16S rRNA U1498 N3-methylase RsmE	1	1	1	1
+COG1187	16S rRNA U516 pseudouridylate synthase RsuA and related 23S rRNA U2605, pseudouridylate synthases	4	4	4	4
+COG1514	2'-5' RNA ligase	1	1	1	2
+COG0737	2',3'-cyclic-nucleotide 2'-phosphodiesterase/5'- or 3'-nucleotidase, 5'-nucleotidase family	1	1	1	1
+COG1211	2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase	1	1	1	1
+COG3917	2-hydroxychromene-2-carboxylate isomerase	3	4	2	2
+COG0800	2-keto-3-deoxy-6-phosphogluconate aldolase	2	2	2	2
+COG3734	2-keto-3-deoxy-galactonokinase	1	1	1	1
+COG3836	2-keto-3-deoxy-L-rhamnonate aldolase RhmA	1	2	3	1
+COG3971	2-keto-4-pentenoate hydratase	3	6	1	3
+COG0179	2-keto-4-pentenoate hydratase/2-oxohepta-3-ene-1,7-dioic acid hydratase (catechol pathway)	9	9	8	6
+COG2828	2-Methylaconitate cis-trans-isomerase PrpF (2-methyl citrate pathway)	0	0	0	1
+COG2079	2-methylcitrate dehydratase PrpD	2	6	1	5
+COG2513	2-Methylisocitrate lyase and related enzymes, PEP mutase family	0	4	1	4
+COG3195	2-oxo-4-hydroxy-4-carboxy--5-ureidoimidazoline (OHCU) decarboxylase	1	1	1	1
+COG0567	2-oxoglutarate dehydrogenase complex, dehydrogenase (E1) component, and related enzymes	1	1	1	1
+COG2227	2-polyprenyl-3-methyl-5-hydroxy-6-metoxy-1,4-benzoquinol methylase	1	2	2	1
+COG0654	2-polyprenyl-6-methoxyphenol hydroxylase and related FAD-dependent oxidoreductases	10	13	9	7
+COG1902	2,4-dienoyl-CoA reductase or related NADH-dependent reductase, Old Yellow Enzyme (OYE) family	4	3	2	2
+COG2961	23S rRNA A2030 N6-methylase RlmJ	1	1	1	1
+COG1092	23S rRNA G2069 N7-methylase RlmK or C1962 C5-methylase RlmI	1	1	1	1
+COG0116	23S rRNA G2445 N2-methylase RlmL	1	1	1	1
+COG1576	23S rRNA pseudoU1915 N3-methylase RlmH	1	1	1	1
+COG0293	23S rRNA U2552 (ribose-2'-O)-methylase RlmE/FtsJ	1	1	1	1
+COG0245	2C-methyl-D-erythritol 2,4-cyclodiphosphate synthase	1	1	1	1
+COG1218	3'-Phosphoadenosine 5'-phosphosulfate (PAPS) 3'-phosphatase	1	0	1	0
+COG0175	3'-phosphoadenosine 5'-phosphosulfate sulfotransferase (PAPS reductase)/FAD synthetase or related enzyme	2	2	2	2
+COG1409	3',5'-cyclic AMP phosphodiesterase CpdA	1	1	2	1
+COG0710	3-dehydroquinate dehydratase	1	2	2	1
+COG0337	3-dehydroquinate synthetase	1	1	1	1
+COG0722	3-deoxy-D-arabino-heptulosonate 7-phosphate (DAHP) synthase	2	1	3	1
+COG3200	3-deoxy-D-arabino-heptulosonate 7-phosphate (DAHP) synthase, class II	1	0	0	0
+COG1519	3-deoxy-D-manno-octulosonic-acid transferase	1	1	1	1
+COG2877	3-deoxy-D-manno-octulosonic acid (KDO) 8-phosphate synthase	1	1	1	1
+COG1250	3-hydroxyacyl-CoA dehydrogenase	5	5	4	3
+COG2084	3-hydroxyisobutyrate dehydrogenase or related beta-hydroxyacid dehydrogenase	3	11	6	4
+COG0764	3-hydroxymyristoyl/3-hydroxydecanoyl-(acyl carrier protein) dehydratase	1	1	2	1
+COG0066	3-isopropylmalate dehydratase small subunit	1	3	2	5
+COG2897	3-mercaptopyruvate sulfurtransferase SseA, contains two rhodanese domains	1	1	1	1
+COG4335	3-methyladenine DNA glycosylase AlkC	0	1	1	0
+COG2094	3-methyladenine DNA glycosylase Mpg	1	1	1	1
+COG2818	3-methyladenine DNA glycosylase Tag	0	0	1	0
+COG0122	3-methyladenine DNA glycosylase/8-oxoguanine DNA glycosylase	1	1	1	1
+COG0304	3-oxoacyl-(acyl-carrier-protein) synthase	1	1	2	2
+COG0332	3-oxoacyl-[acyl-carrier-protein] synthase III	1	1	1	3
+COG5517	3-phenylpropionate/cinnamic acid dioxygenase, small subunit	1	3	1	2
+COG0126	3-phosphoglycerate kinase	1	1	1	1
+COG0043	3-polyprenyl-4-hydroxybenzoate decarboxylase	0	0	2	0
+COG0108	3,4-dihydroxy-2-butanone 4-phosphate synthase	1	2	2	2
+COG1807	4-amino-4-deoxy-L-arabinose transferase or related glycosyltransferase of PMT family	1	1	1	1
+COG0160	4-aminobutyrate aminotransferase or related aminotransferase	0	0	1	0
+COG1947	4-diphosphocytidyl-2C-methyl-D-erythritol kinase	1	1	1	1
+COG0821	4-hydroxy-3-methylbut-2-en-1-yl diphosphate synthase IspG/GcpE	1	1	1	1
+COG0761	4-Hydroxy-3-methylbut-2-enyl diphosphate reductase IspH	1	1	1	1
+COG1995	4-hydroxy-L-threonine phosphate dehydrogenase PdxA	1	3	1	3
+COG0382	4-hydroxybenzoate polyprenyltransferase	2	1	2	2
+COG3185	4-hydroxyphenylpyruvate dioxygenase and related hemolysins	1	3	1	1
+COG0258	5'-3' exonuclease	0	1	1	0
+COG3232	5-carboxymethyl-2-hydroxymuconate isomerase	1	1	1	1
+COG0128	5-enolpyruvylshikimate-3-phosphate synthase	1	1	1	1
+COG0212	5-formyltetrahydrofolate cyclo-ligase	1	1	1	1
+COG2351	5-hydroxyisourate hydrolase (purine catabolism), transthyretin-related family	1	1	1	1
+COG1401	5-methylcytosine-specific restriction endonuclease McrBC, GTP-binding regulatory subunit McrB	0	0	0	1
+COG4268	5-methylcytosine-specific restriction endonuclease McrBC, regulatory subunit McrC	0	0	1	0
+COG0190	5,10-methylene-tetrahydrofolate dehydrogenase/Methenyl tetrahydrofolate cyclohydrolase	1	1	2	1
+COG0685	5,10-methylenetetrahydrofolate reductase	1	1	1	1
+COG2262	50S ribosomal subunit-associated GTPase HflX	1	1	1	1
+COG0205	6-phosphofructokinase	1	0	1	0
+COG2706	6-phosphogluconolactonase, cycloisomerase 2 family	0	0	1	0
+COG0720	6-pyruvoyl-tetrahydropterin synthase	1	0	0	0
+COG0054	6,7-dimethyl-8-ribityllumazine synthase (Riboflavin synthase beta chain)	1	1	1	1
+COG0603	7-cyano-7-deazaguanine synthase (queuosine biosynthesis)	1	0	1	1
+COG0156	7-keto-8-aminopelargonate synthetase or related enzyme	1	0	0	1
+COG0801	7,8-dihydro-6-hydroxymethylpterin-pyrophosphokinase	1	1	1	1
+COG0494	8-oxo-dGTP pyrophosphatase MutT and related house-cleaning NTP pyrophosphohydrolases, NUDIX family	1	3	2	2
+COG0464	AAA+-type ATPase, SpoVK/Ycf46/Vps4 family	1	1	1	1
+COG0765	ABC-type amino acid transport system, permease component	5	8	4	4
+COG0834	ABC-type amino acid transport/signal transduction system, periplasmic component/domain	6	7	4	5
+COG4986	ABC-type anion transport system, duplicated permease component	1	0	0	0
+COG0577	ABC-type antimicrobial peptide transport system, permease component	0	2	0	0
+COG2274	ABC-type bacteriocin/lantibiotic exporters, contain an N-terminal double-glycine peptidase domain	0	0	1	1
+COG0410	ABC-type branched-chain amino acid transport system, ATPase component	33	29	32	19
+COG0683	ABC-type branched-chain amino acid transport system, periplasmic component	28	22	29	15
+COG4177	ABC-type branched-chain amino acid transport system, permease component	14	13	15	10
+COG1120	ABC-type cobalamin/Fe3+-siderophores transport system, ATPase component	1	1	1	1
+COG0444	ABC-type dipeptide/oligopeptide/nickel transport system, ATPase component	4	4	6	2
+COG0601	ABC-type dipeptide/oligopeptide/nickel transport system, permease component	10	6	13	4
+COG0614	ABC-type Fe3+-hydroxamate transport system, periplasmic component	2	2	2	2
+COG0609	ABC-type Fe3+-siderophore transport system, permease component	1	1	1	1
+COG1840	ABC-type Fe3+ transport system, periplasmic component	0	1	2	2
+COG1178	ABC-type Fe3+ transport system, permease component	0	1	2	2
+COG3842	ABC-type Fe3+/spermidine/putrescine transport systems, ATPase components	1	2	3	2
+COG1653	ABC-type glycerol-3-phosphate transport system, periplasmic component	2	4	3	3
+COG0395	ABC-type glycerol-3-phosphate transport system, permease component	2	3	3	3
+COG0390	ABC-type iron transport system FetAB, permease component	1	0	0	0
+COG1137	ABC-type lipopolysaccharide export system, ATPase component	1	1	1	1
+COG1136	ABC-type lipoprotein export system, ATPase component	4	5	2	3
+COG1133	ABC-type long-chain fatty acid transport system, fused permease and ATPase components	0	1	0	1
+COG4172	ABC-type microcin C transport system, duplicated ATPase component YejF	2	1	2	1
+COG4174	ABC-type microcin C transport system, permease component YejB	1	1	1	1
+COG4239	ABC-type microcin C transport system, permease component YejE	1	1	1	1
+COG1108	ABC-type Mn2+/Zn2+ transport system, permease component	1	0	1	0
+COG4148	ABC-type molybdate transport system, ATPase component	1	1	1	1
+COG0725	ABC-type molybdate transport system, periplasmic component	6	4	4	3
+COG4149	ABC-type molybdate transport system, permease component	2	1	1	1
+COG1132	ABC-type multidrug transport system, ATPase and permease component	4	6	4	4
+COG1131	ABC-type multidrug transport system, ATPase component	3	2	5	3
+COG0842	ABC-type multidrug transport system, permease component	1	0	2	0
+COG1116	ABC-type nitrate/sulfonate/bicarbonate transport system, ATPase component	5	5	6	4
+COG0715	ABC-type nitrate/sulfonate/bicarbonate transport system, periplasmic component	4	6	7	6
+COG0600	ABC-type nitrate/sulfonate/bicarbonate transport system, permease component	4	5	6	5
+COG4608	ABC-type oligopeptide transport system, ATPase component	3	1	5	1
+COG4166	ABC-type oligopeptide transport system, periplasmic component	2	1	2	1
+COG1117	ABC-type phosphate transport system, ATPase component	1	1	1	1
+COG0226	ABC-type phosphate transport system, periplasmic component	1	1	2	1
+COG0573	ABC-type phosphate transport system, permease component	2	2	2	2
+COG3638	ABC-type phosphate/phosphonate transport system, ATPase component	1	0	0	2
+COG3221	ABC-type phosphate/phosphonate transport system, periplasmic component	1	0	0	6
+COG3639	ABC-type phosphate/phosphonate transport system, permease component	2	0	0	3
+COG4107	ABC-type phosphonate transport system, ATPase component	0	0	0	1
+COG1126	ABC-type polar amino acid transport system, ATPase component	3	5	3	3
+COG1682	ABC-type polysaccharide/polyol phosphate export permease	3	1	2	4
+COG1134	ABC-type polysaccharide/polyol phosphate transport system, ATPase component	1	0	1	2
+COG4618	ABC-type protease/lipase transport system, ATPase and permease components	0	2	2	0
+COG1176	ABC-type spermidine/putrescine transport system, permease component I	0	1	1	0
+COG1177	ABC-type spermidine/putrescine transport system, permease component II	0	0	1	0
+COG1129	ABC-type sugar transport system, ATPase component	4	3	5	6
+COG1879	ABC-type sugar transport system, periplasmic component, contains N-terminal xre family HTH domain	1	0	1	2
+COG1175	ABC-type sugar transport system, permease component	2	3	3	3
+COG1613	ABC-type sulfate transport system, periplasmic component	2	2	2	2
+COG0555	ABC-type sulfate transport system, permease component	2	2	2	2
+COG1118	ABC-type sulfate/molybdate transport systems, ATPase component	1	1	1	1
+COG4133	ABC-type transport system involved in cytochrome c biogenesis, ATPase component	0	0	1	0
+COG0755	ABC-type transport system involved in cytochrome c biogenesis, permease component	1	1	3	1
+COG5265	ABC-type transport system involved in Fe-S cluster assembly, permease and ATPase components	1	1	1	1
+COG1277	ABC-type transport system involved in multi-copper enzyme maturation, permease component	0	0	2	0
+COG4591	ABC-type transport system, involved in lipoprotein release, permease component	4	2	2	3
+COG0747	ABC-type transport system, periplasmic component	4	4	8	3
+COG1127	ABC-type transporter Mla maintaining outer membrane lipid asymmetry, ATPase component MlaF	2	2	2	2
+COG2853	ABC-type transporter Mla maintaining outer membrane lipid asymmetry, lipoprotein component MlaA	1	1	1	1
+COG3113	ABC-type transporter Mla maintaining outer membrane lipid asymmetry, MlaB component, contains STAS domain	1	1	1	1
+COG1463	ABC-type transporter Mla maintaining outer membrane lipid asymmetry, periplasmic component MlaD	2	3	3	2
+COG2854	ABC-type transporter Mla maintaining outer membrane lipid asymmetry, periplasmic MlaC component	1	1	1	1
+COG0767	ABC-type transporter Mla maintaining outer membrane lipid asymmetry, permease component MlaE	2	3	3	3
+COG4662	ABC-type tungstate transport system, periplasmic component	1	1	1	1
+COG2998	ABC-type tungstate transport system, permease component	1	1	2	1
+COG4136	ABC-type uncharacterized transport system YnjBCD, ATPase component	0	0	0	1
+COG4134	ABC-type uncharacterized transport system YnjBCD, periplasmic component	0	0	0	1
+COG4135	ABC-type uncharacterized transport system YnjBCD, permease component	0	0	0	1
+COG3845	ABC-type uncharacterized transport system, ATPase component	3	2	2	3
+COG3218	ABC-type uncharacterized transport system, auxiliary component	1	2	2	1
+COG2984	ABC-type uncharacterized transport system, periplasmic component	0	0	1	0
+COG4178	ABC-type uncharacterized transport system, permease and ATPase components	1	0	1	0
+COG1079	ABC-type uncharacterized transport system, permease component	5	3	3	5
+COG0803	ABC-type Zn uptake system ZnuABC, Zn-binding component ZnuA	1	0	1	0
+COG0282	Acetate kinase	0	0	1	0
+COG0123	Acetoin utilization deacetylase AcuC or a related deacetylase	2	3	3	2
+COG0028	Acetolactate synthase large subunit or other thiamine pyrophosphate-requiring enzyme	3	7	5	5
+COG0440	Acetolactate synthase, small subunit	1	1	1	1
+COG0183	Acetyl-CoA acetyltransferase	7	7	19	5
+COG0825	Acetyl-CoA carboxylase alpha subunit	1	1	1	1
+COG0777	Acetyl-CoA carboxylase beta subunit	1	1	1	1
+COG4799	Acetyl-CoA carboxylase, carboxyltransferase component	2	3	4	2
+COG0657	Acetyl esterase/lipase	3	3	2	5
+COG4770	Acetyl/propionyl-CoA carboxylase, alpha subunit	3	3	4	2
+COG0548	Acetylglutamate kinase	2	2	2	2
+COG0624	Acetylornithine deacetylase/Succinyl-diaminopimelate desuccinylase or related deacylase	6	8	4	5
+COG4992	Acetylornithine/succinyldiaminopimelate/putrescine aminotransferase	2	2	2	1
+COG0110	Acetyltransferase (isoleucine patch superfamily)	0	1	0	0
+COG5653	Acetyltransferase involved in cellulose biosynthesis, CelD/BcsL family	0	1	0	1
+COG5007	Acid stress-induced BolA-like protein IbaG/YrbA, predicted regulator of iron metabolism	1	1	1	1
+COG1048	Aconitase A	1	2	1	1
+COG1049	Aconitase B	1	1	1	1
+COG1077	Actin-like ATPase involved in cell morphogenesis	1	1	1	1
+COG1043	Acyl-[acyl carrier protein]--UDP-N-acetylglucosamine O-acyltransferase	1	1	1	1
+COG4281	Acyl-CoA-binding protein	1	1	1	1
+COG1960	Acyl-CoA dehydrogenase related to the alkylation response protein AidB	19	25	38	16
+COG0427	Acyl-CoA hydrolase	2	2	1	2
+COG1012	Acyl-CoA reductase or other NAD-dependent aldehyde dehydrogenase	8	14	15	5
+COG0318	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II	17	15	22	9
+COG1042	Acyl-CoA synthetase (NDP forming)	1	3	1	1
+COG1946	Acyl-CoA thioesterase	1	1	1	0
+COG0824	Acyl-CoA thioesterase FadM	5	6	7	6
+COG0365	Acyl-coenzyme A synthetase/AMP-(fatty) acid ligase	6	6	6	7
+COG2050	Acyl-coenzyme A thioesterase PaaI, contains HGG motif	9	10	10	9
+COG2366	Acyl-homoserine lactone (AHL) acylase PvdQ	0	1	1	0
+COG0236	Acyl carrier protein	1	2	1	3
+COG4670	Acyl CoA:acetate/3-ketoacid CoA transferase	1	1	1	0
+COG1788	Acyl CoA:acetate/3-ketoacid CoA transferase, alpha subunit	2	1	2	2
+COG2057	Acyl CoA:acetate/3-ketoacid CoA transferase, beta subunit	2	1	2	2
+COG2030	Acyl dehydratase	1	5	10	2
+COG3321	Acyl transferase domain in polyketide synthase (PKS) enzymes	1	1	1	1
+COG1254	Acylphosphatase	0	1	0	0
+COG1194	Adenine-specific DNA glycosylase, acts on AG and A-oxoG pairs	0	1	1	1
+COG0820	Adenine C2-methylase RlmN of 23S rRNA A2503 and tRNA A37	2	2	2	2
+COG1816	Adenosine deaminase	1	2	1	1
+COG2087	Adenosyl cobinamide kinase/adenosyl cobinamide phosphate guanylyltransferase	0	1	1	1
+COG0161	Adenosylmethionine-8-amino-7-oxononanoate aminotransferase	1	2	1	1
+COG2114	Adenylate cyclase, class 3	4	5	1	3
+COG0563	Adenylate kinase or related kinase	1	1	1	1
+COG0015	Adenylosuccinate lyase	1	1	1	1
+COG0104	Adenylosuccinate synthase	1	1	1	1
+COG0448	ADP-glucose pyrophosphorylase	0	2	0	0
+COG0859	ADP-heptose:LPS heptosyltransferase	4	3	3	2
+COG1051	ADP-ribose pyrophosphatase YjhB, NUDIX family	2	4	1	3
+COG2080	Aerobic-type carbon monoxide dehydrogenase, small subunit, CoxS/CutS family	4	4	5	5
+COG0138	AICAR transformylase/IMP cyclohydrolase PurH	1	1	1	1
+COG0787	Alanine racemase	1	1	1	1
+COG0013	Alanyl-tRNA synthetase	1	1	1	1
+COG1454	Alcohol dehydrogenase, class IV	2	3	4	2
+COG0656	Aldo/keto reductase, related to diketogulonate reductase	1	1	2	1
+COG0450	Alkyl hydroperoxide reductase subunit AhpC (peroxiredoxin)	2	3	2	2
+COG3634	Alkyl hydroperoxide reductase subunit AhpF	1	1	1	1
+COG2015	Alkyl sulfatase BDS1 and related hydrolases, metallo-beta-lactamase superfamily	0	0	2	0
+COG3145	Alkylated DNA repair dioxygenase AlkB	1	1	0	0
+COG2128	Alkylhydroperoxidase family enzyme, contains CxxC motif	2	4	2	3
+COG3627	Alpha-D-ribose 1-methylphosphonate 5-phosphate C-P lyase	0	0	0	1
+COG3454	Alpha-D-ribose 1-methylphosphonate 5-triphosphate diphosphatase PhnM	0	0	0	1
+COG3624	Alpha-D-ribose 1-methylphosphonate 5-triphosphate synthase subunit PhnG	0	0	0	1
+COG3625	Alpha-D-ribose 1-methylphosphonate 5-triphosphate synthase subunit PhnH	0	0	0	1
+COG3626	Alpha-D-ribose 1-methylphosphonate 5-triphosphate synthase subunit PhnI	0	0	0	1
+COG4778	Alpha-D-ribose 1-methylphosphonate 5-triphosphate synthase subunit PhnL	0	0	0	1
+COG2945	Alpha/beta superfamily hydrolase	1	1	1	1
+COG2721	Altronate dehydratase	1	4	3	3
+COG0531	Amino acid transporter	0	2	0	1
+COG2187	Aminoglycoside phosphotransferase family enzyme	1	1	0	0
+COG0308	Aminopeptidase N	1	1	2	1
+COG0004	Ammonia channel protein AmtB	2	2	2	1
+COG0243	Anaerobic selenocysteine-containing dehydrogenase	3	2	4	2
+COG0666	Ankyrin repeat	0	1	0	1
+COG0547	Anthranilate phosphoribosyltransferase	2	2	2	2
+COG0512	Anthranilate/para-aminobenzoate synthase component II	1	1	1	1
+COG0147	Anthranilate/para-aminobenzoate synthases component I	1	2	1	1
+COG1366	Anti-anti-sigma regulatory factor (antagonist of anti-sigma factor)	0	2	2	2
+COG5343	Anti-sigma-K factor RskA	1	2	1	1
+COG3806	Anti-sigma factor ChrR, cupin superfamily	1	0	0	0
+COG2172	Anti-sigma regulatory factor (Ser/Thr protein kinase)	0	3	2	2
+COG5499	Antitoxin component HigA of the HigAB toxin-antitoxin module, contains an N-terminal HTH domain	1	0	0	0
+COG2336	Antitoxin component of the MazEF toxin-antitoxin module	0	1	0	0
+COG3077	Antitoxin component of the RelBE or YafQ-DinJ toxin-antitoxin module	1	0	0	0
+COG4118	Antitoxin component of toxin-antitoxin stability system, DNA-binding transcriptional repressor	2	1	0	1
+COG2849	Antitoxin component YwqK of the YwqJK toxin-antitoxin module	0	0	0	1
+COG0815	Apolipoprotein N-acyltransferase	1	1	1	1
+COG2207	AraC-type DNA-binding domain and AraC-containing proteins	6	3	17	11
+COG0075	Archaeal aspartate aminotransferase or a related aminotransferase, includes purine catabolism protein PucG	1	2	2	2
+COG0433	Archaeal DNA helicase HerA or a related bacterial ATPase, contains HAS-barrel and ATPase domains	0	1	1	1
+COG0483	Archaeal fructose-1,6-bisphosphatase or related enzyme of inositol monophosphatase family	1	1	1	1
+COG0010	Arginase family enzyme	1	1	1	1
+COG1279	Arginine exporter protein ArgO	0	0	0	1
+COG1982	Arginine/lysine/ornithine decarboxylase	1	1	2	1
+COG0165	Argininosuccinate lyase	2	1	1	1
+COG0137	Argininosuccinate synthase	1	1	1	1
+COG2935	Arginyl-tRNA--protein-N-Asp/Glu arginylyltransferase	1	1	1	1
+COG0018	Arginyl-tRNA synthetase	1	1	1	1
+COG3805	Aromatic ring-cleaving dioxygenase	1	1	2	0
+COG3384	Aromatic ring-opening dioxygenase, catalytic subunit, LigB family	3	3	3	4
+COG2368	Aromatic ring hydroxylase	1	1	0	1
+COG1393	Arsenate reductase and related proteins, glutaredoxin family	1	3	2	1
+COG2730	Aryl-phospho-beta-D-glucosidase BglC, GH1 family	4	1	2	2
+COG3119	Arylsulfatase A or related enzyme	1	2	7	1
+COG0154	Asp-tRNAAsn/Glu-tRNAGln amidotransferase A subunit or related amidase	9	6	5	5
+COG0064	Asp-tRNAAsn/Glu-tRNAGln amidotransferase B subunit	1	1	1	1
+COG0721	Asp-tRNAAsn/Glu-tRNAGln amidotransferase C subunit	1	1	1	1
+COG4126	Asp/Glu/hydantoin racemase	0	1	0	0
+COG0367	Asparagine synthetase B (glutamine-hydrolyzing)	1	1	0	1
+COG0136	Aspartate-semialdehyde dehydrogenase	1	1	1	1
+COG0853	Aspartate 1-decarboxylase	0	0	2	0
+COG1027	Aspartate ammonia-lyase	0	1	0	1
+COG0540	Aspartate carbamoyltransferase, catalytic chain	1	1	1	1
+COG0029	Aspartate oxidase	1	1	1	1
+COG1794	Aspartate/glutamate racemase	1	0	1	2
+COG0436	Aspartate/methionine/tyrosine aminotransferase	6	8	5	6
+COG1448	Aspartate/tyrosine/aromatic aminotransferase	1	1	1	1
+COG0527	Aspartokinase	1	1	1	1
+COG0173	Aspartyl-tRNA synthetase	1	1	1	1
+COG2909	ATP-, maltotriose- and DNA-dependent transcriptional regulator MalT	1	1	5	0
+COG2127	ATP-dependent Clp protease adapter protein ClpS	1	1	1	1
+COG0542	ATP-dependent Clp protease ATP-binding subunit ClpA	2	2	2	2
+COG1793	ATP-dependent DNA ligase	2	3	1	2
+COG1074	ATP-dependent exoDNAse (exonuclease V) beta subunit (contains helicase and exonuclease domains)	1	1	1	1
+COG0507	ATP-dependent exoDNAse (exonuclease V), alpha subunit, helicase superfamily I	1	1	1	0
+COG0466	ATP-dependent Lon protease, bacterial type	1	1	1	1
+COG1219	ATP-dependent protease Clp, ATPase subunit	1	1	1	1
+COG0740	ATP-dependent protease ClpP, protease subunit	2	2	2	2
+COG1220	ATP-dependent protease HslVU (ClpYQ), ATPase subunit	1	1	1	1
+COG5405	ATP-dependent protease HslVU (ClpYQ), peptidase subunit	2	2	2	2
+COG0465	ATP-dependent Zn proteases	2	3	2	3
+COG0040	ATP phosphoribosyltransferase	1	1	1	1
+COG3705	ATP phosphoribosyltransferase regulatory subunit HisZ	1	1	1	1
+COG2109	ATP:corrinoid adenosyltransferase	0	0	0	1
+COG0488	ATPase components of ABC transporters with duplicated ATPase domains	3	3	3	3
+COG2911	Autotransporter translocation and assembly factor TamB	1	1	1	1
+COG3382	B3/B4 domain (DNA/RNA-binding domain of Phe-tRNA-synthetase)	0	0	0	1
+COG0772	Bacterial cell division protein FtsW, lipid II flippase	2	2	2	2
+COG0776	Bacterial nucleoid DNA-binding protein	3	3	4	3
+COG2906	Bacterioferritin-associated ferredoxin	0	1	1	0
+COG2193	Bacterioferritin (cytochrome b1)	0	2	2	1
+COG5511	Bacteriophage capsid protein	0	1	0	0
+COG4251	Bacteriophytochrome (light-regulated signal transduction histidine kinase)	0	2	0	2
+COG2971	BadF-type ATPase, related to human N-acetylglucosamine kinase	0	0	0	1
+COG1744	Basic membrane lipoprotein Med, periplasmic binding protein (PBP1-ABC) superfamily	3	2	2	3
+COG1775	Benzoyl-CoA reductase/2-hydroxyglutaryl-CoA dehydratase subunit, BcrC/BadD/HgdB	0	0	2	0
+COG3250	Beta-galactosidase/beta-glucuronidase	0	1	0	0
+COG2723	Beta-glucosidase/6-phospho-beta-glucosidase/beta-galactosidase	1	0	0	2
+COG2367	Beta-lactamase class A	0	0	0	3
+COG0637	Beta-phosphoglucomutase or related phosphatase, HAD superfamily	1	1	2	1
+COG3664	Beta-xylosidase	0	0	0	1
+COG2002	Bifunctional DNA-binding transcriptional regulator of stationary/sporulation/toxin gene expression and antitoxin component of the YhaV-PrlF toxin-antitoxin module	0	0	0	1
+COG1168	Bifunctional PLP-dependent enzyme with beta-cystathionase and maltose regulon repressor activities	0	0	1	0
+COG1207	Bifunctional protein GlmU, N-acetylglucosamine-1-phosphate-uridyltransferase/glucosamine-1-phosphate-acetyltransferase	1	1	1	1
+COG0811	Biopolymer transport protein ExbB/TolQ	5	4	8	4
+COG0848	Biopolymer transport protein ExbD	7	4	12	4
+COG0340	Biotin-(acetyl-CoA carboxylase) ligase	1	1	1	1
+COG0511	Biotin carboxyl carrier protein	1	1	2	1
+COG0439	Biotin carboxylase	1	1	1	1
+COG2516	Biotin synthase-related protein, radical SAM superfamily	1	0	0	0
+COG0502	Biotin synthase or related enzyme	1	0	0	0
+COG0559	Branched-chain amino acid ABC-type transport system, permease component	18	15	16	10
+COG0115	Branched-chain amino acid aminotransferase/4-amino-4-deoxychorismate lyase	2	2	4	2
+COG4392	Branched-chain amino acid transport protein	1	2	1	1
+COG0406	Broad specificity phosphatase PhoE	2	4	3	5
+COG0496	Broad specificity polyphosphatase and 5'/3'-nucleotidase SurE	1	1	1	1
+COG3434	c-di-GMP-related signal transduction protein, contains EAL and HDOD domains	1	0	0	0
+COG0793	C-terminal processing protease CtpA/Prc, contains a PDZ domain	1	1	2	1
+COG2931	Ca2+-binding protein, RTX toxin-related	0	2	1	1
+COG0387	Ca2+/H+ antiporter	0	0	2	0
+COG0664	cAMP-binding domain of CRP or a regulatory subunit of cAMP-dependent protein kinases	9	10	16	4
+COG0458	Carbamoylphosphate synthase large subunit	1	1	1	1
+COG0505	Carbamoylphosphate synthase small subunit	1	1	1	1
+COG3427	Carbon monoxide dehydrogenase subunit G	2	1	2	1
+COG0288	Carbonic anhydrase	1	1	4	1
+COG0663	Carbonic anhydrase or acetyltransferase, isoleucine patch superfamily	1	1	1	1
+COG2272	Carboxylesterase type B	0	1	3	0
+COG4576	Carboxysome shell and ethanolamine utilization microcompartment protein CcmK/EutM	0	0	1	0
+COG3670	Carotenoid cleavage dioxygenase or a related enzyme	0	0	1	0
+COG0753	Catalase	1	2	1	3
+COG0376	Catalase (peroxidase I)	0	0	0	1
+COG2514	Catechol-2,3-dioxygenase	1	0	0	0
+COG0346	Catechol 2,3-dioxygenase or other lactoylglutathione lyase family enzyme	8	6	6	4
+COG2217	Cation transport ATPase	6	3	2	1
+COG3703	Cation transport regulator ChaC	1	1	1	1
+COG2993	Cbb3-type cytochrome oxidase, cytochrome c subunit	1	1	1	0
+COG3278	Cbb3-type cytochrome oxidase, subunit 1	1	1	1	0
+COG4736	Cbb3-type cytochrome oxidase, subunit 3	1	0	1	0
+COG3448	CBS-domain-containing membrane protein	1	1	1	1
+COG0517	CBS domain	2	2	1	2
+COG0575	CDP-diglyceride synthetase	1	1	1	1
+COG0849	Cell division ATPase FtsA	1	1	1	1
+COG0206	Cell division GTPase FtsZ	1	1	1	1
+COG3147	Cell division protein DedD (periplasmic protein involved in septation)	0	1	1	1
+COG2919	Cell division protein FtsB	1	1	1	0
+COG0768	Cell division protein FtsI/penicillin-binding protein 2	2	2	2	2
+COG3116	Cell division protein FtsL, interacts with FtsB, FtsL and FtsQ	1	1	1	1
+COG3087	Cell division protein FtsN	2	0	0	1
+COG1559	Cell division protein YceG, involved in septum cleavage	1	1	1	1
+COG3027	Cell division protein ZapA, inhibits GTPase activity of FtsZ	0	0	1	0
+COG4582	Cell division protein ZapD, interacts with FtsZ	1	1	1	1
+COG1589	Cell division septal protein FtsQ	1	1	1	1
+COG1792	Cell shape-determining protein MreC	1	1	1	1
+COG2891	Cell shape-determining protein MreD	1	1	1	1
+COG0791	Cell wall-associated hydrolase, NlpC family	0	0	1	0
+COG3459	Cellobiose phosphorylase	0	0	1	0
+COG1192	Cellulose biosynthesis protein BcsQ	3	1	3	3
+COG0459	Chaperonin GroEL (HSP60 family)	1	1	1	1
+COG1406	Chemotaxis protein CheX, a CheY~P-specific phosphatase	0	1	1	0
+COG0643	Chemotaxis protein histidine kinase CheA	2	1	3	2
+COG1871	Chemotaxis receptor (MCP) glutamine deamidase CheD	1	0	1	0
+COG3143	Chemotaxis regulator CheZ, phosphatase of CheY~P	1	0	0	0
+COG2201	Chemotaxis response regulator CheB, contains REC and protein-glutamate methylesterase domains	1	0	1	0
+COG0835	Chemotaxis signal transduction protein	3	1	4	2
+COG0784	CheY chemotaxis protein or a CheY-like REC (receiver) domain	1	1	0	1
+COG3469	Chitinase	0	2	0	1
+COG2303	Choline dehydrogenase or related flavoprotein	4	8	5	4
+COG1605	Chorismate mutase	0	1	1	0
+COG0082	Chorismate synthase	1	1	1	1
+COG2059	Chromate transport protein ChrA	4	3	3	3
+COG1354	Chromatin segregation and condensation protein Rec8/ScpA/Scc1, kleisin family	1	1	1	1
+COG0593	Chromosomal replication initiation ATPase DnaA	1	1	1	1
+COG0489	Chromosome partitioning ATPase, Mrp family, contains Fe-S cluster	2	2	3	2
+COG1386	Chromosome segregation and condensation protein ScpB	1	1	1	1
+COG1196	Chromosome segregation ATPase	1	1	1	1
+COG1475	Chromosome segregation protein Spo0J, contains ParB-like nuclease domain	2	2	1	1
+COG2301	Citrate lyase beta subunit	1	3	1	2
+COG3052	Citrate lyase, gamma subunit	1	1	0	0
+COG0372	Citrate synthase	1	1	1	1
+COG1212	CMP-2-keto-3-deoxyoctulosonic acid synthetase	1	1	1	1
+COG1083	CMP-N-acetylneuraminic acid synthetase	1	1	0	0
+COG0234	Co-chaperonin GroES (HSP10)	1	1	1	1
+COG1319	CO or xanthine dehydrogenase, FAD-binding subunit	2	3	3	4
+COG1529	CO or xanthine dehydrogenase, Mo-binding subunit	5	5	6	6
+COG1230	Co/Zn/Cd efflux system component	1	1	1	1
+COG2096	Cob(I)alamin adenosyltransferase	1	1	1	1
+COG1270	Cobalamin biosynthesis protein CobD/CbiB	1	1	1	2
+COG0368	Cobalamin synthase	0	1	1	2
+COG1492	Cobyric acid synthase	0	1	1	1
+COG1797	Cobyrinic acid a,c-diamide synthase	0	0	0	1
+COG1278	Cold shock protein, CspA family	2	1	2	1
+COG0826	Collagenase-like protease, PrtC family	0	0	2	0
+COG0718	Conserved DNA-binding protein YbaB (function unknown)	1	1	1	1
+COG2608	Copper chaperone CopZ	2	3	2	2
+COG1496	Copper oxidase (laccase) domain	1	1	1	1
+COG2847	Copper(I)-binding protein	1	1	1	1
+COG0408	Coproporphyrinogen III oxidase	1	1	1	1
+COG0635	Coproporphyrinogen III oxidase or related Fe-S oxidoreductase	2	2	2	1
+COG1518	CRISPR/Cas system-associated endonuclease Cas1	0	0	0	1
+COG1203	CRISPR/Cas system-associated endonuclease/helicase Cas3	0	0	0	1
+COG1343	CRISPR/Cas system-associated endoribonuclease Cas2	0	0	0	1
+COG1468	CRISPR/Cas system-associated exonuclease Cas4, RecB family	0	0	0	1
+COG3649	CRISPR/Cas system type I-B associated protein Csh2, Cas7 group, RAMP superfamily	0	0	0	1
+COG1804	Crotonobetainyl-CoA:carnitine CoA-transferase CaiB and related acyl-CoA transferases	5	17	17	11
+COG0504	CTP synthase (UTP-ammonia lyase)	1	1	1	1
+COG2068	CTP:molybdopterin cytidylyltransferase MocA	1	1	2	1
+COG3696	Cu/Ag efflux pump CusA	3	0	1	0
+COG2032	Cu/Zn superoxide dismutase	0	0	1	1
+COG1680	CubicO group peptidase, beta-lactamase class C family	4	2	5	3
+COG1917	Cupin domain protein related to quercetin dioxygenase	1	3	1	3
+COG1513	Cyanate lyase	1	1	0	0
+COG2807	Cyanate permease	1	1	2	2
+COG2230	Cyclopropane fatty-acyl-phospholipid synthase and related methyltransferases	2	1	1	4
+COG2606	Cys-tRNA(Pro) deacylase, prolyl-tRNA editing enzyme YbaK/EbsC	2	2	2	2
+COG0626	Cystathionine beta-lyase/cystathionine gamma-synthase	2	3	2	3
+COG1104	Cysteine sulfinate desulfinase/cysteine desulfurase or related enzyme	1	1	1	1
+COG0031	Cysteine synthase	1	1	3	1
+COG0215	Cysteinyl-tRNA synthetase	1	1	1	1
+COG0283	Cytidylate kinase	1	0	1	0
+COG3658	Cytochrome b	1	1	1	1
+COG2864	Cytochrome b subunit of formate dehydrogenase	1	1	1	1
+COG1290	Cytochrome b subunit of the bc complex	1	1	1	1
+COG3038	Cytochrome b561	2	1	2	0
+COG1271	Cytochrome bd-type quinol oxidase, subunit 1	0	1	1	1
+COG1294	Cytochrome bd-type quinol oxidase, subunit 2	0	1	1	1
+COG2332	Cytochrome c-type biogenesis protein CcmE	0	0	1	0
+COG3088	Cytochrome c-type biogenesis protein CcmH/NrfF	0	0	1	0
+COG4235	Cytochrome c-type biogenesis protein CcmH/NrfG	0	0	1	0
+COG1138	Cytochrome c biogenesis factor	0	0	1	0
+COG0785	Cytochrome c biogenesis protein CcdA	2	0	0	0
+COG1333	Cytochrome c biogenesis protein ResB	1	0	1	1
+COG3336	Cytochrome c oxidase assembly factor CtaG	1	1	0	1
+COG3175	Cytochrome c oxidase assembly protein Cox11	1	1	1	1
+COG5605	Cytochrome c oxidase subunit IV	0	1	1	0
+COG1858	Cytochrome c peroxidase	1	1	0	0
+COG2010	Cytochrome c, mono- and diheme variants	3	3	2	0
+COG2857	Cytochrome c1	1	1	1	1
+COG3474	Cytochrome c2	0	3	0	0
+COG3245	Cytochrome c5	2	1	2	1
+COG4654	Cytochrome c551/c552	3	3	3	2
+COG2863	Cytochrome c553	8	5	5	6
+COG3909	Cytochrome c556	0	1	1	1
+COG3346	Cytochrome oxidase assembly protein ShyY1	2	1	2	1
+COG1999	Cytochrome oxidase Cu insertion factor, SCO1/SenC/PrrC family	3	6	3	1
+COG2124	Cytochrome P450	2	3	4	2
+COG3062	Cytoplasmic chaperone NapD for the signal peptide of periplasmic nitrate reductase NapAB	0	0	1	0
+COG3381	Cytoplasmic chaperone TorD involved in molybdoenzyme TorA maturation	1	1	1	1
+COG3022	Cytoplasmic iron level regulating protein YaaA, DUF328/UPF0246 family	0	1	1	1
+COG0402	Cytosine/adenosine deaminase or related metal-dependent hydrolase	1	4	3	2
+COG1664	Cytoskeletal protein CcmA, bactofilin family	2	2	2	2
+COG1426	Cytoskeletal protein RodZ, contains Xre-like HTH and DUF4115 domains	1	1	1	1
+COG1181	D-alanine-D-alanine ligase and related ATP-grasp enzymes	1	1	2	2
+COG1686	D-alanyl-D-alanine carboxypeptidase	3	2	4	2
+COG1064	D-arabinose 1-dehydrogenase, Zn-dependent alcohol dehydrogenase family	1	0	3	1
+COG0794	D-arabinose 5-phosphate isomerase GutQ	1	1	1	1
+COG0676	D-hexose-6-phosphate mutarotase	0	1	0	1
+COG3616	D-serine deaminase, pyridoxal phosphate-dependent	1	1	2	2
+COG1490	D-Tyr-tRNAtyr deacylase	1	1	1	1
+COG0644	Dehydrogenase (flavoprotein)	1	1	1	4
+COG0113	Delta-aminolevulinic acid dehydratase, porphobilinogen synthase	1	1	1	1
+COG4230	Delta 1-pyrroline-5-carboxylate dehydrogenase	1	1	1	1
+COG2941	Demethoxyubiquinone hydroxylase, CLK1/Coq7/Cat5 family	1	1	1	1
+COG0717	Deoxycytidine triphosphate deaminase	1	1	1	1
+COG0415	Deoxyribodipyrimidine photolyase	1	1	0	1
+COG1154	Deoxyxylulose-5-phosphate synthase	1	1	1	1
+COG0237	Dephospho-CoA kinase	1	1	1	1
+COG0232	dGTP triphosphohydrolase	1	1	1	1
+COG0818	Diacylglycerol kinase	1	1	1	1
+COG1597	Diacylglycerol kinase family enzyme	0	1	0	1
+COG0537	Diadenosine tetraphosphate (Ap4A) hydrolase or other HIT family hydrolase	2	1	3	2
+COG0019	Diaminopimelate decarboxylase	1	1	1	1
+COG0253	Diaminopimelate epimerase	1	1	1	1
+COG0412	Dienelactone hydrolase	4	2	4	3
+COG0289	Dihydrodipicolinate reductase	1	1	1	1
+COG0329	Dihydrodipicolinate synthase/N-acetylneuraminate lyase	1	5	2	4
+COG0262	Dihydrofolate reductase	1	1	3	2
+COG1539	Dihydroneopterin aldolase	1	1	1	1
+COG0418	Dihydroorotase	1	1	1	1
+COG0044	Dihydroorotase or related cyclic amidohydrolase	1	2	1	2
+COG0167	Dihydroorotate dehydrogenase	1	1	1	1
+COG0294	Dihydropteroate synthase	1	1	1	1
+COG0129	Dihydroxyacid dehydratase/phosphogluconate dehydratase	5	6	3	5
+COG1506	Dipeptidyl aminopeptidase/acylaminoacyl peptidase	2	0	3	0
+COG1495	Disulfide bond formation protein DsbB	1	1	1	1
+COG0053	Divalent metal cation (Fe/Co/Zn/Cd) transporter	3	1	1	1
+COG3302	DMSO reductase anchor subunit	0	0	1	0
+COG3391	DNA-binding beta-propeller fold protein YncE	2	1	2	1
+COG0783	DNA-binding ferritin-like protein (oxidative damage protectant)	0	0	0	2
+COG3636	DNA-binding prophage protein	0	2	0	0
+COG2901	DNA-binding protein Fis (factor for inversion stimulation)	1	1	1	1
+COG2916	DNA-binding protein H-NS	1	2	1	1
+COG3279	DNA-binding response regulator, LytR/AlgR family	4	2	4	2
+COG2197	DNA-binding response regulator, NarL/FixJ family, contains REC and HTH domains	12	9	14	5
+COG0745	DNA-binding response regulator, OmpR family, contains REC and winged-helix (wHTH) domain	14	11	11	11
+COG3629	DNA-binding transcriptional activator of the SARP family	0	0	1	0
+COG1510	DNA-binding transcriptional regulator GbsR, MarR family	0	1	0	1
+COG2005	DNA-binding transcriptional regulator ModE (molybdenum-dependent)	2	0	1	1
+COG1349	DNA-binding transcriptional regulator of sugar metabolism, DeoR/GlpR family	0	0	0	1
+COG2944	DNA-binding transcriptional regulator YiaG, XRE-type HTH domain	0	2	0	0
+COG1309	DNA-binding transcriptional regulator, AcrR family	10	17	12	12
+COG0640	DNA-binding transcriptional regulator, ArsR family	5	5	3	4
+COG2771	DNA-binding transcriptional regulator, CsgD family	3	1	1	4
+COG2186	DNA-binding transcriptional regulator, FadR family	1	6	2	3
+COG1802	DNA-binding transcriptional regulator, GntR family	9	17	8	15
+COG1733	DNA-binding transcriptional regulator, HxlR family	1	2	1	2
+COG1414	DNA-binding transcriptional regulator, IclR family	3	18	6	8
+COG1959	DNA-binding transcriptional regulator, IscR family	2	1	4	2
+COG1609	DNA-binding transcriptional regulator, LacI/PurR family	2	7	1	2
+COG1522	DNA-binding transcriptional regulator, Lrp family	6	9	8	6
+COG0583	DNA-binding transcriptional regulator, LysR family	32	68	41	46
+COG1846	DNA-binding transcriptional regulator, MarR family	15	18	9	14
+COG0789	DNA-binding transcriptional regulator, MerR family	4	5	6	2
+COG1167	DNA-binding transcriptional regulator, MocR family, contains an aminotransferase domain	4	4	3	4
+COG1737	DNA-binding transcriptional regulator, MurR/RpiR family, contains HTH and SIS domains	0	1	0	1
+COG1476	DNA-binding transcriptional regulator, XRE-family HTH domain	0	1	2	0
+COG2204	DNA-binding transcriptional response regulator, NtrC family, contains REC, AAA-type ATPase, and a Fis-type DNA-binding domains	2	6	4	5
+COG1191	DNA-directed RNA polymerase specialized sigma subunit	1	0	1	0
+COG1595	DNA-directed RNA polymerase specialized sigma subunit, sigma24 family	6	8	10	4
+COG1508	DNA-directed RNA polymerase specialized sigma subunit, sigma54 homolog	1	2	2	2
+COG0202	DNA-directed RNA polymerase, alpha subunit/40 kD subunit	1	1	1	1
+COG0086	DNA-directed RNA polymerase, beta' subunit/160 kD subunit	1	1	1	1
+COG0085	DNA-directed RNA polymerase, beta subunit/140 kD subunit	1	0	1	0
+COG0568	DNA-directed RNA polymerase, sigma subunit (sigma70/sigma32)	3	3	3	3
+COG1758	DNA-directed RNA polymerase, subunit K/omega	1	1	1	1
+COG2840	DNA-nicking endonuclease, Smr domain	1	1	1	1
+COG1322	DNA anti-recombination protein (rearrangement mutator) RmuC	1	1	1	1
+COG0188	DNA gyrase/topoisomerase IV, subunit A	2	2	2	2
+COG0187	DNA gyrase/topoisomerase IV, subunit B	2	2	2	2
+COG0323	DNA mismatch repair ATPase MutL	1	1	1	1
+COG0249	DNA mismatch repair ATPase MutS	1	1	1	1
+COG0749	DNA polymerase I - 3'-5' exonuclease and polymerase domains	1	1	1	1
+COG0592	DNA polymerase III sliding clamp (beta) subunit, PCNA homolog	1	1	1	1
+COG0587	DNA polymerase III, alpha subunit	2	2	2	2
+COG2927	DNA polymerase III, chi subunit	1	1	1	1
+COG1466	DNA polymerase III, delta subunit	1	1	1	1
+COG0847	DNA polymerase III, epsilon subunit or related 3'-5' exonuclease	1	1	1	1
+COG2812	DNA polymerase III, gamma/tau subunits	1	1	1	1
+COG0358	DNA primase (bacterial type)	1	1	1	1
+COG2974	DNA recombination-dependent growth factor C	1	1	1	1
+COG0497	DNA repair ATPase RecN	1	1	1	1
+COG1533	DNA repair photolyase	1	1	1	1
+COG2003	DNA repair protein RadC, contains a helix-hairpin-helix DNA-binding motif	1	1	1	1
+COG0550	DNA topoisomerase IA	1	1	1	1
+COG3569	DNA topoisomerase IB	0	1	0	1
+COG0484	DnaJ-class molecular chaperone with C-terminal Zn finger domain	1	2	2	1
+COG1076	DnaJ-domain-containing proteins 1	1	1	1	1
+COG0571	dsRNA-specific ribonuclease	1	1	1	1
+COG0399	dTDP-4-amino-4,6-dideoxygalactose transaminase	1	1	1	1
+COG1898	dTDP-4-dehydrorhamnose 3,5-epimerase or related enzyme	1	2	2	2
+COG1091	dTDP-4-dehydrorhamnose reductase	1	2	1	2
+COG1088	dTDP-D-glucose 4,6-dehydratase	0	1	1	1
+COG1209	dTDP-glucose pyrophosphorylase	1	1	2	2
+COG0756	dUTPase	1	1	1	1
+COG2200	EAL domain, c-di-GMP-specific phosphodiesterase class I (or its enzymatically inactive variant)	0	1	0	1
+COG5285	Ectoine hydroxylase-related dioxygenase, phytanoyl-CoA dioxygenase (PhyH) family	1	0	1	0
+COG2086	Electron transfer flavoprotein, alpha and beta subunits	1	1	2	1
+COG2025	Electron transfer flavoprotein, alpha subunit	1	1	2	1
+COG0251	Enamine deaminase RidA, house cleaning of reactive enamine intermediates, YjgF/YER057c/UK114 family	4	6	6	5
+COG3405	Endo-1,4-beta-D-glucanase Y	0	0	0	2
+COG3024	Endogenous inhibitor of DNA gyrase, YacG/DUF329 family	1	1	1	1
+COG0177	Endonuclease III	1	1	1	1
+COG1525	Endonuclease YncB, thermonuclease family	1	1	1	1
+COG1787	Endonuclease, HJR/Mrr/RecB family	0	0	0	1
+COG0148	Enolase	1	1	2	1
+COG0623	Enoyl-[acyl-carrier-protein] reductase (NADH)	1	1	2	1
+COG1024	Enoyl-CoA hydratase/carnithine racemase	18	25	29	13
+COG1600	Epoxyqueuosine reductase  QueG (queuosine biosynthesis)	1	1	1	1
+COG2312	Erythromycin esterase homolog	0	1	0	1
+COG1647	Esterase/lipase	0	0	1	0
+COG4782	Esterase/lipase superfamily enzyme	0	0	1	0
+COG3285	Eukaryotic-type DNA primase	2	2	1	2
+COG0178	Excinuclease UvrABC ATPase subunit	3	3	2	2
+COG0556	Excinuclease UvrABC helicase subunit UvrB	1	1	1	1
+COG0322	Excinuclease UvrABC, nuclease subunit	1	1	1	1
+COG0708	Exonuclease III	3	3	3	3
+COG1330	Exonuclease V gamma subunit	1	1	1	0
+COG1722	Exonuclease VII small subunit	0	1	1	1
+COG1570	Exonuclease VII, large subunit	1	1	1	1
+COG0248	Exopolyphosphatase/pppGpp-phosphohydrolase	1	1	2	1
+COG0557	Exoribonuclease R	2	2	3	2
+COG4252	Extracellular (periplasmic) sensor domain CHASE2 (specificity unknown)	0	1	2	0
+COG0196	FAD synthase	1	1	1	1
+COG0277	FAD/FMN-containing dehydrogenase	5	9	11	5
+COG1398	Fatty-acid desaturase	1	1	1	2
+COG3239	Fatty acid desaturase	1	1	0	2
+COG0416	Fatty acid/phospholipid biosynthesis enzyme	1	1	1	1
+COG0437	Fe-S-cluster-containing dehydrogenase component	1	1	2	1
+COG0396	Fe-S cluster assembly ATPase SufC	0	0	1	0
+COG0316	Fe-S cluster assembly iron-binding protein IscA	2	2	2	2
+COG0719	Fe-S cluster assembly scaffold protein SufB	0	0	2	0
+COG2924	Fe-S cluster biosynthesis and repair protein YggX	1	1	1	1
+COG0247	Fe-S oxidoreductase	3	3	3	2
+COG0735	Fe2+ or Zn2+ uptake regulation protein	1	1	1	2
+COG0370	Fe2+ transport system protein B	0	0	1	0
+COG1918	Fe2+ transport system protein FeoA	0	0	1	0
+COG0633	Ferredoxin	3	4	1	4
+COG1018	Ferredoxin-NADP reductase	3	4	4	2
+COG2146	Ferredoxin subunit of nitrite reductase or a ring-hydroxylating dioxygenase	3	2	4	2
+COG3177	Fic family protein	1	0	0	0
+COG2184	Fido, protein-threonine AMPylation domain	0	1	0	0
+COG0544	FKBP-type peptidyl-prolyl cis-trans isomerase (trigger factor)	1	1	1	1
+COG1047	FKBP-type peptidyl-prolyl cis-trans isomerase 2	3	3	3	3
+COG1261	Flagella basal body P-ring formation protein FlgA	1	0	0	0
+COG1580	Flagellar basal body-associated protein FliL	1	0	0	0
+COG2063	Flagellar basal body L-ring protein FlgH	1	0	1	0
+COG1706	Flagellar basal body P-ring protein FlgI	1	0	1	0
+COG1815	Flagellar basal body rod protein FlgB	1	0	1	0
+COG1558	Flagellar basal body rod protein FlgC	1	0	1	0
+COG4787	Flagellar basal body rod protein FlgF	1	0	0	0
+COG4786	Flagellar basal body rod protein FlgG	1	0	2	0
+COG2882	Flagellar biosynthesis chaperone FliJ	1	0	0	0
+COG1419	Flagellar biosynthesis GTPase FlhF	1	0	0	0
+COG1298	Flagellar biosynthesis pathway, component FlhA	1	0	1	0
+COG1377	Flagellar biosynthesis protein FlhB	1	0	1	1
+COG1987	Flagellar biosynthesis protein FliQ	1	0	1	0
+COG1684	Flagellar biosynthesis protein FliR	1	0	1	0
+COG1157	Flagellar biosynthesis/type III secretory pathway ATPase	1	0	1	1
+COG1766	Flagellar biosynthesis/type III secretory pathway M-ring protein FliF/YscJ	1	0	1	0
+COG1317	Flagellar biosynthesis/type III secretory pathway protein FliH	1	0	1	1
+COG1338	Flagellar biosynthetic protein FliP	1	0	1	0
+COG1345	Flagellar capping protein FliD	1	0	0	0
+COG1256	Flagellar hook-associated protein FlgK	1	0	0	0
+COG1677	Flagellar hook-basal body complex protein FliE	1	0	1	0
+COG1843	Flagellar hook assembly protein FlgD	1	0	0	0
+COG1749	Flagellar hook protein FlgE	1	0	1	0
+COG1291	Flagellar motor component MotA	1	0	0	0
+COG1360	Flagellar motor protein MotB	2	1	1	1
+COG1536	Flagellar motor switch protein FliG	1	0	0	0
+COG1868	Flagellar motor switch protein FliM	1	0	0	0
+COG1886	Flagellar motor switch/type III secretory pathway protein FliN	1	0	0	0
+COG1516	Flagellin-specific chaperone FliS	1	0	0	0
+COG1344	Flagellin and related hook-associated protein FlgL	3	0	0	0
+COG1705	Flagellum-specific peptidoglycan hydrolase FlgJ	1	0	0	0
+COG3360	Flavin-binding protein dodecin	0	1	1	0
+COG2141	Flavin-dependent oxidoreductase, luciferase family (includes alkanesulfonate monooxygenase SsuD and methylene tetrahydromethanopterin reductase)	1	1	1	2
+COG3745	Flp pilus assembly protein CpaB	1	1	1	0
+COG4965	Flp pilus assembly protein TadB	1	1	1	0
+COG5010	Flp pilus assembly protein TadD, contains TPR repeats	0	0	2	1
+COG4961	Flp pilus assembly protein TadG	1	1	1	0
+COG4963	Flp pilus assembly protein, ATPase CpaE	1	1	1	0
+COG3847	Flp pilus assembly protein, pilin Flp	3	1	1	0
+COG4960	Flp pilus assembly protein, protease CpaA	1	1	1	0
+COG4964	Flp pilus assembly protein, secretin CpaC	1	1	1	0
+COG0239	Fluoride ion exporter CrcB/FEX, affects chromosome condensation	1	0	1	0
+COG1304	FMN-dependent dehydrogenase, includes L-lactate dehydrogenase and type II isopentenyl diphosphate isomerase	1	7	2	4
+COG1182	FMN-dependent NADH-azoreductase	1	1	1	0
+COG1011	FMN phosphatase YigB, HAD superfamily	4	4	1	3
+COG3312	FoF1-type ATP synthase assembly protein I	0	1	1	0
+COG0056	FoF1-type ATP synthase, alpha subunit	1	1	1	1
+COG0055	FoF1-type ATP synthase, beta subunit	1	1	1	1
+COG0712	FoF1-type ATP synthase, delta subunit	1	1	1	1
+COG0355	FoF1-type ATP synthase, epsilon subunit	1	1	1	1
+COG0224	FoF1-type ATP synthase, gamma subunit	1	1	1	1
+COG0356	FoF1-type ATP synthase, membrane subunit a	1	1	1	1
+COG0711	FoF1-type ATP synthase, membrane subunit b or b'	1	1	1	1
+COG0636	FoF1-type ATP synthase, membrane subunit c/Archaeal/vacuolar-type H+-ATPase, subunit K	2	2	2	2
+COG0354	Folate-binding Fe-S cluster repair protein YgfZ, possible role in tRNA modification	1	1	1	1
+COG0299	Folate-dependent phosphoribosylglycinamide formyltransferase PurN	1	1	1	1
+COG0285	Folylpolyglutamate synthase/Dihydropteroate synthase	1	1	1	1
+COG0266	Formamidopyrimidine-DNA glycosylase	1	2	1	2
+COG0027	Formate-dependent phosphoribosylglycinamide formyltransferase (GAR transformylase)	1	0	0	0
+COG1526	Formate dehydrogenase assembly factor FdhD	1	1	1	1
+COG0651	Formate hydrogenlyase subunit 3/Multisubunit Na+/H+ antiporter, MnhD subunit	0	1	0	1
+COG1143	Formate hydrogenlyase subunit 6/NADH:ubiquinone oxidoreductase 23 kD subunit (chain I)	1	1	1	1
+COG2116	Formate/nitrite transporter FocA, FNT family	1	0	0	0
+COG1262	Formylglycine-generating enzyme, required for sulfatase activity, contains SUMF1/FGE domain	4	3	5	4
+COG0788	Formyltetrahydrofolate hydrolase	1	1	2	1
+COG3001	Fructosamine-3-kinase	0	0	1	0
+COG1105	Fructose-1-phosphate kinase or kinase (PfkB)	0	1	0	0
+COG0158	Fructose-1,6-bisphosphatase	1	1	1	1
+COG3588	Fructose-bisphosphate aldolase class 1	0	1	1	0
+COG0191	Fructose/tagatose bisphosphate aldolase	1	1	1	1
+COG2222	Fructoselysine-6-P-deglycase FrlB and related proteins with duplicated sugar isomerase (SIS) domain	0	0	0	1
+COG0738	Fucose permease	0	0	0	3
+COG0114	Fumarate hydratase class II	1	1	1	1
+COG3970	Fumarylacetoacetate (FAA) hydrolase family protein	1	2	1	1
+COG2203	GAF domain	2	2	0	0
+COG0153	Galactokinase	1	1	0	1
+COG1085	Galactose-1-phosphate uridylyltransferase	1	0	0	1
+COG2017	Galactose mutarotase or related enzyme	1	0	2	1
+COG2071	Gamma-glutamyl-gamma-aminobutyrate hydrolase PuuD (putrescine degradation), contains GATase1-like domain	0	2	2	4
+COG0014	Gamma-glutamyl phosphate reductase	1	1	1	1
+COG2170	Gamma-glutamyl:cysteine ligase YbdK, ATP-grasp superfamily	1	1	1	1
+COG2918	Gamma-glutamylcysteine synthetase	1	1	1	1
+COG0405	Gamma-glutamyltranspeptidase	2	2	5	4
+COG1089	GDP-D-mannose dehydratase	1	0	1	0
+COG3871	General stress protein 26 (function unknown)	1	1	1	2
+COG3435	Gentisate 1,2-dioxygenase	1	1	1	1
+COG0142	Geranylgeranyl pyrophosphate synthase	2	2	2	3
+COG2199	GGDEF domain, diguanylate cyclase (c-di-GMP synthetase) or its enzymatically inactive variants	3	5	5	3
+COG0058	Glucan phosphorylase	0	1	0	0
+COG3387	Glucoamylase (glucan-1,4-alpha-glucosidase), GH15 family	1	1	1	1
+COG3265	Gluconate kinase	1	1	0	1
+COG0449	Glucosamine 6-phosphate synthetase, contains amidotransferase and phosphosugar isomerase domains	1	1	1	1
+COG0364	Glucose-6-phosphate 1-dehydrogenase	1	1	1	1
+COG0166	Glucose-6-phosphate isomerase	1	1	1	1
+COG4993	Glucose dehydrogenase	3	0	1	0
+COG2133	Glucose/arabinose dehydrogenase, beta-propeller fold	3	4	4	5
+COG0001	Glutamate-1-semialdehyde aminotransferase	1	1	2	1
+COG0263	Glutamate 5-kinase	1	1	1	1
+COG0334	Glutamate dehydrogenase/leucine dehydrogenase	0	1	2	1
+COG0796	Glutamate racemase	1	1	1	0
+COG0069	Glutamate synthase domain 2	1	1	1	1
+COG2066	Glutaminase	1	1	1	1
+COG3823	Glutamine cyclotransferase	0	0	1	0
+COG0034	Glutamine phosphoribosylpyrophosphate amidotransferase	1	1	1	1
+COG0174	Glutamine synthetase	3	4	3	3
+COG1391	Glutamine synthetase adenylyltransferase	1	1	1	1
+COG0008	Glutamyl- or glutaminyl-tRNA synthetase	3	2	2	2
+COG0373	Glutamyl-tRNA reductase	1	1	1	1
+COG0695	Glutaredoxin	2	2	3	2
+COG0278	Glutaredoxin-related protein	2	1	1	1
+COG0386	Glutathione peroxidase, house-cleaning role in reducing lipid peroxides	2	2	2	2
+COG0625	Glutathione S-transferase	11	14	17	14
+COG0189	Glutathione synthase/RimK-type ligase, ATP-grasp superfamily	1	2	2	1
+COG0435	Glutathionyl-hydroquinone reductase	0	0	1	0
+COG0057	Glyceraldehyde-3-phosphate dehydrogenase/erythrose-4-phosphate dehydrogenase	1	1	1	1
+COG2379	Glycerate-2-kinase	1	1	2	1
+COG0240	Glycerol-3-phosphate dehydrogenase	2	2	2	3
+COG0554	Glycerol kinase	1	1	1	1
+COG0580	Glycerol uptake facilitator and related aquaporins (Major Intrinsic Protein Family)	1	1	1	1
+COG0584	Glycerophosphoryl diester phosphodiesterase	1	2	2	1
+COG0509	Glycine cleavage system H protein (lipoate-binding)	1	1	1	1
+COG1003	Glycine cleavage system protein P (pyridoxal-binding), C-terminal domain	1	1	1	1
+COG0404	Glycine cleavage system T protein (aminomethyltransferase)	1	1	3	1
+COG0665	Glycine/D-amino acid oxidase (deaminating)	6	6	5	4
+COG0112	Glycine/serine hydroxymethyltransferase	1	1	1	1
+COG3408	Glycogen debranching enzyme (alpha-1,6-glucosidase)	0	1	1	0
+COG0297	Glycogen synthase	0	1	0	0
+COG0438	Glycosyltransferase involved in cell wall bisynthesis	12	8	24	12
+COG1215	Glycosyltransferase, catalytic subunit of cellulose synthase and poly-beta-1,6-N-acetylglucosamine synthase	1	2	0	1
+COG1216	Glycosyltransferase, GT2 family	4	1	2	4
+COG0752	Glycyl-tRNA synthetase, alpha subunit	1	1	1	1
+COG0751	Glycyl-tRNA synthetase, beta subunit	1	1	1	1
+COG3865	Glyoxalase superfamily enzyme, possibly 3-demethylubiquinone-9 3-methyltransferase	0	1	1	3
+COG0491	Glyoxylase or a related metal-dependent hydrolase, beta-lactamase superfamily II	9	10	9	5
+COG3960	Glyoxylate carboligase	0	1	1	0
+COG0519	GMP synthase, PP-ATPase domain/subunit	1	1	1	1
+COG2320	GrpB domain, predicted nucleotidyltransferase, UPF0157 family	0	0	0	1
+COG0218	GTP-binding protein EngB required for normal cell division	1	1	1	1
+COG0302	GTP cyclohydrolase I	1	1	1	1
+COG0807	GTP cyclohydrolase II	0	1	1	1
+COG1159	GTPase Era, involved in 16S rRNA processing	1	1	1	1
+COG0536	GTPase involved in cell partioning and DNA repair	1	1	1	1
+COG0523	GTPase, G3E family	1	1	1	1
+COG4290	Guanyl-specific ribonuclease Sa	1	1	1	1
+COG0194	Guanylate kinase	1	1	1	2
+COG0038	H+/Cl- antiporter ClcA	3	0	0	0
+COG2770	HAMP domain	1	0	1	0
+COG1639	HD-like signal output (HDOD) domain, no enzymatic activity	1	0	0	0
+COG3187	Heat shock protein HslJ	0	0	1	0
+COG2329	Heme-degrading monooxygenase HmoA and related ABM domain proteins	1	0	1	0
+COG1612	Heme A synthase	1	1	2	1
+COG3230	Heme oxygenase	0	1	0	1
+COG0843	Heme/copper-type cytochrome/quinol oxidase, subunit 1	3	3	5	2
+COG1622	Heme/copper-type cytochrome/quinol oxidase, subunit 2	3	3	4	2
+COG1845	Heme/copper-type cytochrome/quinol oxidase, subunit 3	3	3	4	1
+COG3125	Heme/copper-type cytochrome/quinol oxidase, subunit 4	1	0	1	0
+COG2703	Hemerythrin	1	0	2	0
+COG3945	Hemerythrin-like domain	2	2	3	0
+COG4256	Hemin uptake protein HemP	0	1	1	1
+COG1017	Hemoglobin-like flavoprotein	0	1	1	0
+COG2831	Hemolysin activation/secretion protein	2	1	1	0
+COG1253	Hemolysin or related protein, contains CBS domains	1	1	1	2
+COG0672	High-affinity Fe2+/Pb2+ permease	2	0	0	0
+COG2216	High-affinity K+ transport system, ATPase chain B	0	0	1	0
+COG3376	High-affinity nickel permease	0	0	1	0
+COG2986	Histidine ammonia-lyase	0	1	1	0
+COG0079	Histidinol-phosphate/aromatic aminotransferase or cobyric acid decarboxylase	1	2	2	2
+COG0141	Histidinol dehydrogenase	1	2	2	2
+COG0241	Histidinol phosphatase or a related phosphatase	1	1	1	1
+COG0124	Histidyl-tRNA synthetase	1	1	1	1
+COG0632	Holliday junction resolvasome RuvABC DNA-binding subunit	1	1	1	1
+COG0817	Holliday junction resolvasome RuvABC endonuclease subunit	1	1	1	1
+COG2255	Holliday junction resolvasome RuvABC, ATP-dependent DNA helicase subunit	1	1	1	1
+COG0065	Homoaconitase/3-isopropylmalate dehydratase large subunit	1	4	1	5
+COG2021	Homoserine acetyltransferase	3	1	2	1
+COG0460	Homoserine dehydrogenase	1	1	1	1
+COG5310	Homospermidine synthase	0	0	1	0
+COG2198	HPt (histidine-containing phosphotransfer) domain	1	0	0	0
+COG1643	HrpA-like RNA helicase	1	1	1	1
+COG2370	Hydrogenase/urease accessory protein HupE	0	1	1	0
+COG3777	Hydroxyacyl-ACP dehydratase HTD2, hotdog domain	1	1	1	2
+COG2145	Hydroxyethylthiazole kinase, sugar kinase family	0	0	1	0
+COG0561	Hydroxymethylpyrimidine pyrophosphatase and other HAD family phosphatases	1	1	1	2
+COG0351	Hydroxymethylpyrimidine/phosphomethylpyrimidine kinase	2	1	3	2
+COG3622	Hydroxypyruvate isomerase	1	2	2	1
+COG2236	Hypoxanthine phosphoribosyltransferase	1	1	1	1
+COG0107	Imidazole glycerol phosphate synthase subunit HisF	1	1	1	1
+COG0131	Imidazoleglycerol phosphate dehydratase HisB	1	1	1	1
+COG0118	Imidazoleglycerol phosphate synthase glutamine amidotransferase subunit HisH	1	1	1	1
+COG1228	Imidazolonepropionase or related amidohydrolase	0	2	3	0
+COG0516	IMP dehydrogenase/GMP reductase	2	2	2	2
+COG0134	Indole-3-glycerol phosphate synthase	1	1	1	1
+COG0221	Inorganic pyrophosphatase	2	1	1	1
+COG3025	Inorganic triphosphatase YgiF, contains CYTH and CHAD domains	1	1	1	0
+COG1957	Inosine-uridine nucleoside N-ribohydrolase	0	0	0	1
+COG0127	Inosine/xanthosine triphosphate pyrophosphatase, all-alpha NTP-PPase family	1	1	1	1
+COG0670	Integral membrane protein, interacts with FtsH	1	1	1	1
+COG3447	Integral membrane sensor domain MASE1	0	0	1	0
+COG0582	Integrase	2	1	1	0
+COG2917	Intracellular septation protein A	1	1	1	1
+COG1416	Intracellular sulfur oxidation protein, DsrE/DsrF family	2	1	1	0
+COG1965	Iron-binding protein CyaY, frataxin homolog	1	1	1	1
+COG0538	Isocitrate dehydrogenase	1	1	0	1
+COG4579	Isocitrate dehydrogenase kinase/phosphatase	1	1	1	1
+COG2224	Isocitrate lyase	1	1	1	1
+COG0473	Isocitrate/isopropylmalate dehydrogenase	4	3	4	4
+COG0060	Isoleucyl-tRNA synthetase	1	1	1	1
+COG3491	Isopenicillin N synthase and related dioxygenases	0	0	2	0
+COG0119	Isopropylmalate/homocitrate/citramalate synthases	1	1	2	3
+COG2205	K+-sensing histidine kinase KdpD	1	0	4	0
+COG2060	K+-transporting ATPase, A chain	0	0	1	0
+COG2156	K+-transporting ATPase, c chain	0	0	1	0
+COG3158	K+ transporter	2	2	2	2
+COG0475	Kef-type K+ transport system, membrane component KefB	3	3	3	4
+COG0059	Ketol-acid reductoisomerase	1	1	1	1
+COG0413	Ketopantoate hydroxymethyltransferase	1	0	2	0
+COG1893	Ketopantoate reductase	4	1	3	1
+COG3631	Ketosteroid isomerase-related protein	0	3	2	0
+COG4319	Ketosteroid isomerase homolog	2	1	2	1
+COG3844	Kynureninase	1	1	1	1
+COG1878	Kynurenine formamidase	1	1	2	1
+COG0579	L-2-hydroxyglutarate oxidase LhgO	1	1	1	1
+COG4948	L-alanine-DL-glutamate epimerase or related enzyme of enolase superfamily	2	15	3	6
+COG1247	L-amino acid N-acyltransferase YncA	1	3	4	2
+COG3191	L-aminopeptidase/D-esterase	1	1	1	1
+COG2220	L-ascorbate metabolism protein UlaG, beta-lactamase superfamily	1	1	3	2
+COG4448	L-asparaginase II	0	1	1	1
+COG0252	L-asparaginase/archaeal Glu-tRNAGln amidotransferase subunit D	1	2	1	2
+COG1052	Lactate dehydrogenase or related 2-hydroxyacid dehydrogenase	2	5	4	5
+COG1970	Large-conductance mechanosensitive channel	1	1	1	0
+COG1560	Lauroyl/myristoyl acyltransferase	2	2	2	2
+COG5608	LEA14-like dessication related protein	0	0	1	0
+COG2360	Leu/Phe-tRNA-protein transferase	1	1	1	1
+COG0495	Leucyl-tRNA synthetase	1	1	1	1
+COG0260	Leucyl aminopeptidase	1	1	1	1
+COG1201	Lhr-like helicase	1	1	1	1
+COG2930	Lipid-binding SYLF domain	0	0	1	0
+COG0763	Lipid A disaccharide synthetase	1	1	1	1
+COG2348	Lipid II:glycine glycyltransferase (Peptidoglycan interpeptide bridge formation enzyme)	0	0	1	0
+COG0321	Lipoate-protein ligase B	1	1	1	1
+COG0320	Lipoate synthase	1	1	1	1
+COG2956	Lipopolysaccharide biosynthesis regulator YciM, contains six TPR domains and a predicted metal-binding C-terminal domain	1	1	1	1
+COG0795	Lipopolysaccharide export LptBFGC system, permease protein LptF	2	2	2	2
+COG1934	Lipopolysaccharide export system protein LptA	1	1	1	1
+COG3117	Lipopolysaccharide export system protein LptC	1	1	1	0
+COG0597	Lipoprotein signal peptidase	1	1	1	1
+COG1022	Long-chain acyl-CoA synthetase (AMP-forming)	2	4	6	1
+COG1452	LPS assembly outer membrane protein LptD (organic solvent tolerance protein OstA)	1	1	1	1
+COG2755	Lysophospholipase L1 or related esterase	3	3	2	2
+COG2267	Lysophospholipase, alpha-beta hydrolase superfamily	3	2	2	4
+COG1190	Lysyl-tRNA synthetase (class II)	1	1	1	1
+COG0474	Magnesium-transporting ATPase (P-type)	1	1	1	0
+COG2225	Malate synthase	1	1	1	1
+COG0039	Malate/lactate dehydrogenase	1	1	1	1
+COG2055	Malate/lactate/ureidoglycolate dehydrogenase, LDH2 family	0	2	0	3
+COG3473	Maleate cis-trans isomerase	0	3	0	1
+COG0281	Malic enzyme	2	3	2	1
+COG0331	Malonyl CoA-acyl carrier protein transacylase	2	2	1	1
+COG3280	Maltooligosyltrehalose synthase	0	1	0	0
+COG0246	Mannitol-1-phosphate/altronate dehydrogenases	0	0	0	1
+COG0836	Mannose-1-phosphate guanylyltransferase	1	1	1	0
+COG0662	Mannose-6-phosphate isomerase, cupin superfamily	0	1	1	0
+COG0759	Membrane-anchored protein YidD, putatitve component of membrane protein insertase Oxa1/YidC/SpoIIIJ	1	1	1	1
+COG4575	Membrane-anchored ribosome-binding protein, inhibits growth in stationary phase, ElaB/YqjD/DUF883 family	2	0	0	1
+COG0750	Membrane-associated protease RseP, regulator of RpoE activity	0	0	1	0
+COG2821	Membrane-bound lytic murein transglycosylase	1	1	1	1
+COG2951	Membrane-bound lytic murein transglycosylase B	1	1	1	1
+COG1988	Membrane-bound metal-dependent hydrolase YbcI, DUF457 family	0	1	0	1
+COG1030	Membrane-bound serine protease (ClpP class)	0	1	1	0
+COG0705	Membrane associated serine protease, rhomboid family	0	0	1	0
+COG0744	Membrane carboxypeptidase (penicillin-binding protein)	1	1	0	0
+COG5009	Membrane carboxypeptidase/penicillin-binding protein	1	2	1	2
+COG4953	Membrane carboxypeptidase/penicillin-binding protein PbpC	0	0	1	0
+COG2943	Membrane glycosyltransferase	0	1	1	1
+COG4260	Membrane protease subunit, stomatin/prohibitin family, contains C-terminal Zn-ribbon domain	0	0	1	0
+COG1266	Membrane protease YdiL, CAAX protease family	0	0	1	0
+COG1585	Membrane protein implicated in regulation of membrane protease activity	1	1	1	1
+COG0706	Membrane protein insertase Oxa1/YidC/SpoIIIJ, required for the localization of integral membrane proteins	1	1	1	1
+COG2244	Membrane protein involved in the export of O-antigen and teichoic acid	1	3	3	1
+COG0861	Membrane protein TerC, possibly involved in tellurium resistance	3	3	4	4
+COG2339	Membrane proteinase PrsW, cleaves anti-sigma factor RsiW, M82 family	1	0	0	0
+COG1473	Metal-dependent amidase/aminoacylase/carboxypeptidase	4	5	2	4
+COG1237	Metal-dependent hydrolase, beta-lactamase superfamily II	2	1	2	1
+COG3568	Metal-dependent hydrolase, endonuclease/exonuclease/phosphatase family	2	3	2	2
+COG0864	Metal-responsive transcriptional regulator, contains CopG/Arc/MetJ DNA-binding domain	1	0	0	0
+COG2151	Metal-sulfur cluster biosynthetic enzyme	2	1	4	1
+COG1407	Metallophosphoesterase superfamily enzyme	1	1	0	1
+COG0024	Methionine aminopeptidase	1	1	1	2
+COG0646	Methionine synthase I (cobalamin-dependent), methyltransferase domain	1	1	1	1
+COG1410	Methionine synthase I, cobalamin-binding domain	1	1	1	1
+COG0620	Methionine synthase II (cobalamin-independent)	1	3	3	2
+COG0223	Methionyl-tRNA formyltransferase	1	1	2	1
+COG0143	Methionyl-tRNA synthetase	1	1	1	1
+COG0840	Methyl-accepting chemotaxis protein	12	2	5	2
+COG1352	Methylase of chemotaxis methyl-accepting proteins	1	2	3	1
+COG2890	Methylase of polypeptide chain release factors	4	4	3	3
+COG2185	Methylmalonyl-CoA mutase, C-terminal domain/subunit (cobalamin-binding)	0	1	0	0
+COG1884	Methylmalonyl-CoA mutase, N-terminal domain/subunit	2	3	2	2
+COG2169	Methylphosphotriester-DNA--protein-cysteine methyltransferase (N-terminal fragment of Ada), contains Zn-binding and two AraC-type DNA-binding domains	1	1	1	1
+COG2270	MFS-type transporter involved in bile tolerance, Atg22 family	0	2	1	1
+COG1240	Mg-chelatase subunit ChlD	2	1	1	0
+COG1239	Mg-chelatase subunit ChlI	1	0	0	0
+COG2239	Mg/Co/Ni transporter MgtE (contains CBS domain)	0	1	0	0
+COG0598	Mg2+ and Co2+ transporter CorA	2	2	2	2
+COG4535	Mg2+ and Co2+ transporter CorC, contains CBS pair and CorC-HlyC domains	1	1	1	1
+COG3300	MHYT domain, NO-binding membrane sensor	2	0	0	1
+COG5476	Microcystin degradation protein MlrC, contains DUF1485 domain	0	1	0	0
+COG3228	Mlc titration factor MtfA, regulates ptsG expression	0	1	1	1
+COG1914	Mn2+ and Fe2+ transporters of the NRAMP family	3	0	0	1
+COG0443	Molecular chaperone DnaK (HSP70)	2	2	4	3
+COG0576	Molecular chaperone GrpE (heat shock protein)	1	1	1	1
+COG0071	Molecular chaperone IbpA, HSP20 family	2	4	1	2
+COG0326	Molecular chaperone, HSP90 family	1	1	1	1
+COG0315	Molybdenum cofactor biosynthesis enzyme	1	1	1	1
+COG2896	Molybdenum cofactor biosynthesis enzyme MoaA	1	1	1	1
+COG1763	Molybdopterin-guanine dinucleotide biosynthesis protein	1	1	1	1
+COG0746	Molybdopterin-guanine dinucleotide biosynthesis protein A	1	1	1	1
+COG0303	Molybdopterin biosynthesis enzyme	2	2	2	2
+COG0521	Molybdopterin biosynthesis enzyme MoaB	1	1	1	1
+COG1977	Molybdopterin converting factor, small subunit	1	1	1	1
+COG0476	Molybdopterin or thiamine biosynthesis adenylyltransferase	1	1	1	1
+COG0314	Molybdopterin synthase catalytic subunit	1	1	1	1
+COG1231	Monoamine oxidase	1	0	1	0
+COG2838	Monomeric isocitrate dehydrogenase	1	0	0	0
+COG0714	MoxR-like ATPase	4	4	5	5
+COG2001	MraZ, DNA-binding transcriptional regulator and inhibitor of RsmH methyltransferase activity	1	1	1	1
+COG4680	mRNA-degrading endonuclease (mRNA interferase) HigB, toxic component of the HigAB toxin-antitoxin module	1	0	0	0
+COG3041	mRNA-degrading endonuclease (mRNA interferase) YafQ, toxin component of the YafQ-DinJ toxin-antitoxin module	1	0	0	0
+COG2132	Multicopper oxidase with three cupredoxin domains (includes cell division protein FtsP and spore coat protein CotA)	3	7	1	2
+COG0845	Multidrug efflux pump subunit AcrA (membrane-fusion protein)	8	7	10	6
+COG0841	Multidrug efflux pump subunit AcrB	8	8	10	6
+COG1566	Multidrug resistance efflux pump	5	4	5	0
+COG2076	Multidrug transporter EmrE and related cation transporters	0	1	1	1
+COG0655	Multimeric flavodoxin WrbA	3	1	3	3
+COG1006	Multisubunit Na+/H+ antiporter, MnhC subunit	0	1	0	1
+COG1863	Multisubunit Na+/H+ antiporter, MnhE subunit	0	1	0	1
+COG2212	Multisubunit Na+/H+ antiporter, MnhF subunit	0	1	0	1
+COG1320	Multisubunit Na+/H+ antiporter, MnhG subunit	0	1	0	1
+COG1619	Muramoyltetrapeptide carboxypeptidase LdcA (peptidoglycan recycling)	1	1	1	1
+COG0739	Murein DD-endopeptidase MepM and murein hydrolase activator NlpD, contain LysM domain	2	2	1	3
+COG3034	Murein L,D-transpeptidase YafK	0	1	0	0
+COG1260	Myo-inositol-1-phosphate synthase	0	0	0	1
+COG3023	N-acetyl-anhydromuramyl-L-alanine amidase AmpD	1	0	1	0
+COG0002	N-acetyl-gamma-glutamylphosphate reductase	1	2	1	2
+COG1820	N-acetylglucosamine-6-phosphate deacetylase	0	0	0	1
+COG2120	N-acetylglucosaminyl deacetylase, LmbE family	1	1	1	0
+COG1364	N-acetylglutamate synthase (N-acetylornithine aminotransferase)	1	1	1	1
+COG1246	N-acetylglutamate synthase or related acetyltransferase, GNAT family	0	0	0	1
+COG0860	N-acetylmuramoyl-L-alanine amidase	1	1	1	1
+COG3653	N-acyl-D-aspartate/D-glutamate deacylase	0	1	0	3
+COG3916	N-acyl-L-homoserine lactone synthetase	0	0	1	0
+COG3741	N-formylglutamate amidohydrolase	1	3	4	1
+COG0145	N-methylhydantoinase A/oxoprolinase/acetone carboxylase, beta subunit	0	1	0	0
+COG0146	N-methylhydantoinase B/oxoprolinase/acetone carboxylase, alpha subunit	1	2	1	1
+COG4725	N6-adenosine-specific RNA methylase IME4	0	0	0	1
+COG0534	Na+-driven multidrug efflux pump	1	3	2	3
+COG2878	Na+-translocating ferredoxin:NAD+ oxidoreductase RNF, RnfB subunit	1	1	1	1
+COG3808	Na+ or H+-translocating membrane pyrophosphatase	1	1	1	1
+COG4147	Na+(or H+)/acetate symporter ActP	1	0	0	0
+COG0786	Na+/glutamate symporter	0	0	1	0
+COG1301	Na+/H+-dicarboxylate symporter	1	0	0	0
+COG1055	Na+/H+ antiporter NhaD or related arsenite permease	1	1	1	1
+COG2211	Na+/melibiose symporter or related transporter	1	0	1	1
+COG1283	Na+/phosphate symporter	0	1	1	1
+COG0591	Na+/proline symporter	1	1	1	1
+COG1146	NAD-dependent dihydropyrimidine dehydrogenase, PreA subunit	1	1	1	1
+COG0272	NAD-dependent DNA ligase	1	1	1	1
+COG0846	NAD-dependent protein deacetylase, SIR2 family	0	1	1	1
+COG2902	NAD-specific glutamate dehydrogenase	1	0	1	0
+COG0061	NAD kinase	1	1	1	1
+COG1028	NAD(P)-dependent dehydrogenase, short-chain alcohol dehydrogenase family	29	32	39	30
+COG2070	NAD(P)H-dependent flavin oxidoreductase YrpB, nitropropane dioxygenase family	4	2	3	1
+COG0431	NAD(P)H-dependent FMN reductase	2	2	3	2
+COG0543	NAD(P)H-flavin reductase	1	3	2	2
+COG0063	NAD(P)H-hydrate repair enzyme Nnr, NAD(P)H-hydrate dehydratase domain	1	2	1	2
+COG0062	NAD(P)H-hydrate repair enzyme Nnr, NAD(P)H-hydrate epimerase domain	0	0	1	0
+COG1251	NAD(P)H-nitrite reductase, large subunit	2	1	1	1
+COG3288	NAD/NADP transhydrogenase alpha subunit	1	1	2	1
+COG1282	NAD/NADP transhydrogenase beta subunit	1	1	2	1
+COG1853	NADH-FMN oxidoreductase RutF, flavin reductase (DIM6/NTAB) family	2	1	1	2
+COG1252	NADH dehydrogenase, FAD-containing subunit	1	1	1	2
+COG1034	NADH dehydrogenase/NADH:ubiquinone oxidoreductase 75 kD subunit (chain G)	1	1	1	1
+COG0377	NADH:ubiquinone oxidoreductase 20 kD subunit (chhain B) or related Fe-S oxidoreductase	1	1	1	1
+COG1905	NADH:ubiquinone oxidoreductase 24 kD subunit (chain E)	1	1	1	1
+COG0852	NADH:ubiquinone oxidoreductase 27 kD subunit (chain C)	1	1	1	1
+COG0649	NADH:ubiquinone oxidoreductase 49 kD subunit (chain D)	1	1	1	1
+COG1005	NADH:ubiquinone oxidoreductase subunit 1 (chain H)	1	1	1	1
+COG0713	NADH:ubiquinone oxidoreductase subunit 11 or 4L (chain K)	1	1	1	1
+COG1007	NADH:ubiquinone oxidoreductase subunit 2 (chain N)	1	1	1	1
+COG0838	NADH:ubiquinone oxidoreductase subunit 3 (chain A)	1	1	1	1
+COG1008	NADH:ubiquinone oxidoreductase subunit 4 (chain M)	1	1	1	1
+COG1009	NADH:ubiquinone oxidoreductase subunit 5 (chain L)/Multisubunit Na+/H+ antiporter, MnhA subunit	1	2	1	2
+COG0839	NADH:ubiquinone oxidoreductase subunit 6 (chain J)	1	1	1	1
+COG1894	NADH:ubiquinone oxidoreductase, NADH-binding 51 kD subunit (chain F)	2	2	3	2
+COG4221	NADP-dependent 3-hydroxy acid dehydrogenase YdfG	2	2	4	6
+COG0446	NADPH-dependent 2,4-dienoyl-CoA reductase, sulfur reductase, or a related oxidoreductase	0	1	0	1
+COG0780	NADPH-dependent 7-cyano-7-deazaguanine reductase QueF, C-terminal domain, T-fold superfamily	0	0	1	0
+COG2904	NADPH-dependent 7-cyano-7-deazaguanine reductase QueF, N-terminal domain	1	1	0	1
+COG2130	NADPH-dependent curcumin reductase CurA	1	2	1	1
+COG0493	NADPH-dependent glutamate synthase beta chain or related oxidoreductase	1	2	4	1
+COG0604	NADPH:quinone reductase or related Zn-dependent oxidoreductase	8	6	8	5
+COG2038	NaMN:DMB phosphoribosyltransferase	0	1	1	1
+COG1086	NDP-sugar epimerase, includes UDP-GlcNAc-inverting 4,6-dehydratase FlaA1 and capsular polysaccharide biosynthesis protein EpsC	1	1	2	0
+COG2747	Negative regulator of flagellin synthesis (anti-sigma28 factor)	1	0	0	0
+COG3118	Negative regulator of GroEL, contains thioredoxin-like and TPR-like domains	1	1	1	1
+COG3026	Negative regulator of sigma E activity	1	2	1	1
+COG0171	NH3-dependent NAD+ synthetase	2	1	1	1
+COG0025	NhaP-type Na+/H+ or K+/H+ antiporter	1	0	2	1
+COG0378	Ni2+-binding GTPase involved in regulation of expression and maturation of urease and hydrogenase	1	1	2	1
+COG1335	Nicotinamidase-related amidase	4	4	2	2
+COG1546	Nicotinamide mononucleotide (NMN) deamidase PncC	1	1	1	1
+COG3172	Nicotinamide riboside kinase	1	1	1	1
+COG3201	Nicotinamide riboside transporter PnuC	1	1	0	0
+COG0157	Nicotinate-nucleotide pyrophosphorylase	1	1	1	1
+COG1057	Nicotinic acid mononucleotide adenylyltransferase	1	1	1	1
+COG1488	Nicotinic acid phosphoribosyltransferase	0	0	0	1
+COG0822	NifU homolog involved in Fe-S cluster formation	1	1	2	1
+COG5013	Nitrate reductase alpha subunit	0	0	1	0
+COG2180	Nitrate reductase assembly protein NarJ, required for insertion of molybdenum cofactor	0	0	1	0
+COG1140	Nitrate reductase beta subunit	0	0	1	0
+COG3043	Nitrate reductase cytochrome c-type subunit	0	0	1	0
+COG2181	Nitrate reductase gamma subunit	0	0	1	0
+COG2223	Nitrate/nitrite transporter NarK	2	3	4	1
+COG3256	Nitric oxide reductase large subunit	1	0	1	0
+COG0347	Nitrogen regulatory protein PII	3	2	2	2
+COG3467	Nitroimidazol reductase NimA or a related FMN-containing flavoprotein, pyridoxamine 5'-phosphate oxidase superfamily	0	0	1	0
+COG0778	Nitroreductase	2	1	2	1
+COG3420	Nitrous oxidase accessory protein NosD, contains tandem CASH domains	0	0	2	0
+COG4263	Nitrous oxide reductase	0	0	2	0
+COG4314	Nitrous oxide reductase accessory protein NosL	0	0	2	0
+COG1273	Non-homologous end joining protein Ku, dsDNA break repair	1	2	1	1
+COG1021	Non-ribosomal peptide synthetase component E (peptide arylation enzyme)	0	0	1	0
+COG1020	Non-ribosomal peptide synthetase component F	1	1	1	0
+COG1694	NTP pyrophosphatase, house-cleaning of non-canonical NTPs	0	0	1	0
+COG0451	Nucleoside-diphosphate-sugar epimerase	7	7	10	10
+COG3613	Nucleoside 2-deoxyribosyltransferase	1	0	0	0
+COG0105	Nucleoside diphosphate kinase	1	1	1	1
+COG0775	Nucleoside phosphorylase	2	2	3	2
+COG0589	Nucleotide-binding universal stress protein,  UspA family	4	8	7	4
+COG0389	Nucleotidyltransferase/DNA polymerase involved in DNA repair	2	2	2	1
+COG2873	O-acetylhomoserine/O-acetylserine sulfhydrylase, pyridoxal phosphate-dependent	2	2	2	1
+COG3307	O-antigen ligase	4	4	3	4
+COG0350	O6-methylguanine-DNA--protein-cysteine methyltransferase	2	2	2	2
+COG1164	Oligoendopeptidase F	1	0	1	0
+COG1949	Oligoribonuclease (3'-5' exoribonuclease)	1	1	1	1
+COG3637	Opacity protein and related surface antigens	0	1	1	1
+COG1764	Organic hydroperoxide reductase OsmC/OhrA	2	1	2	1
+COG0602	Organic radical activating enzyme	1	0	0	0
+COG0078	Ornithine carbamoyltransferase	1	1	1	1
+COG2423	Ornithine cyclodeaminase/archaeal alanine dehydrogenase, mu-crystallin family	1	1	1	1
+COG0461	Orotate phosphoribosyltransferase	1	1	1	1
+COG0284	Orotidine-5'-phosphate decarboxylase	1	1	1	1
+COG2823	Osmotically-inducible protein OsmY, contains BON domain	1	1	1	1
+COG4206	Outer membrane cobalamin receptor protein	1	0	1	1
+COG2834	Outer membrane lipoprotein-sorting protein	1	1	1	1
+COG3017	Outer membrane lipoprotein LolB, involved in outer membrane biogenesis	0	0	1	0
+COG3417	Outer membrane lipoprotein LpoB, binds and activates PBP1b	0	1	0	0
+COG2980	Outer membrane lipoprotein LptE/RlpB (LPS assembly)	1	1	1	1
+COG3133	Outer membrane lipoprotein SlyB	1	0	0	0
+COG3203	Outer membrane protein (porin)	3	2	3	1
+COG4775	Outer membrane protein assembly factor BamA	1	1	1	1
+COG1520	Outer membrane protein assembly factor BamB, contains PQQ-like beta-propeller repeat	2	1	1	1
+COG4105	Outer membrane protein assembly factor BamD, BamD/ComL family	1	1	1	0
+COG2913	Outer membrane protein assembly factor BamE, lipoprotein component of the BamABCDE complex	1	1	1	1
+COG2885	Outer membrane protein OmpA and related peptidoglycan-associated (lipo)proteins	3	2	6	3
+COG1538	Outer membrane protein TolC	9	8	13	5
+COG3047	Outer membrane protein W	2	0	0	0
+COG4772	Outer membrane receptor for Fe3+-dicitrate	0	0	0	1
+COG4773	Outer membrane receptor for ferric coprogen and ferric-rhodotorulic acid	0	0	1	1
+COG4771	Outer membrane receptor for ferrienterochelin and colicins	1	1	0	1
+COG4774	Outer membrane receptor for monomeric catechols	0	1	2	2
+COG1629	Outer membrane receptor proteins, mostly Fe transport	6	3	5	2
+COG3713	Outer membrane scaffolding protein for murein synthesis, MipA/OmpV family	0	1	0	1
+COG0729	Outer membrane translocation and assembly module TamA	1	1	1	1
+COG3188	Outer membrane usher protein FimD/PapC	0	1	1	1
+COG3121	P pilus assembly protein, chaperone PapD	1	1	1	1
+COG0414	Panthothenate synthetase	1	0	2	0
+COG1521	Pantothenate kinase type III	1	1	1	1
+COG0760	Parvulin-like peptidyl-prolyl isomerase	2	1	1	1
+COG0036	Pentose-5-phosphate-3-epimerase	1	1	1	1
+COG3340	Peptidase E	1	0	0	0
+COG4108	Peptide chain release factor RF-3	1	1	1	1
+COG0242	Peptide deformylase	2	2	2	2
+COG0225	Peptide methionine sulfoxide reductase MsrA	1	1	2	1
+COG0229	Peptide methionine sulfoxide reductase MsrB	1	1	1	1
+COG0728	Peptidoglycan biosynthesis protein MviN/MurJ, putative lipid II flippase	1	2	1	1
+COG1835	Peptidoglycan/LPS O-acetylase OafA/YrhL, contains acyltransferase and SGNH-hydrolase domains	4	3	3	2
+COG0726	Peptidoglycan/xylan/chitin deacetylase, PgdA/CDA1 family	2	2	2	3
+COG0652	Peptidyl-prolyl cis-trans isomerase (rotamase) - cyclophilin family	2	2	2	2
+COG0193	Peptidyl-tRNA hydrolase	1	1	1	1
+COG1472	Periplasmic beta-glucosidase and related glycosidases	1	1	4	2
+COG2825	Periplasmic chaperone for outer membrane proteins, Skp family	1	1	1	1
+COG0823	Periplasmic component of the Tol biopolymer transport system	1	1	2	1
+COG5569	Periplasmic Cu and Ag efflux protein CusF	1	1	1	0
+COG2837	Periplasmic deferrochelatase/peroxidase EfeB	1	1	2	0
+COG2717	Periplasmic DMSO/TMAO reductase YedYZ, heme-binding membrane subunit	1	1	1	1
+COG2041	Periplasmic DMSO/TMAO reductase YedYZ, molybdopterin-dependent catalytic subunit	5	3	3	3
+COG3131	Periplasmic glucans biosynthesis protein	0	1	1	1
+COG1732	Periplasmic glycine betaine/choline-binding (lipo)protein of an ABC-type transport system (osmoprotectant binding protein)	1	1	1	0
+COG1910	Periplasmic molybdate-binding protein/domain	1	1	1	1
+COG4459	Periplasmic nitrate reductase system, NapE component	0	0	1	0
+COG1596	Periplasmic protein involved in polysaccharide export, contains SLBB domain of the beta-grasp fold	2	2	2	1
+COG3678	Periplasmic protein refolding chaperone Spy/CpxP family	0	0	1	0
+COG0810	Periplasmic protein TonB, links inner and outer membranes	2	2	3	2
+COG5455	Periplasmic regulator RcnB of Ni and Co efflux	1	1	0	1
+COG0616	Periplasmic serine protease, ClpP class	1	2	1	1
+COG0265	Periplasmic serine protease, S1-C subfamily, contain C-terminal PDZ domain	3	4	5	4
+COG1729	Periplasmic TolA-binding protein (function unknown)	1	1	1	1
+COG0697	Permease of the drug/metabolite transporter (DMT) superfamily	7	10	6	7
+COG0678	Peroxiredoxin	2	4	3	3
+COG3772	Phage-related lysozyme (muramidase), GH24 family	0	0	0	1
+COG2932	Phage repressor protein C, contains Cro/C1-type HTH and peptisase s24 domains	0	1	0	0
+COG5525	Phage terminase, large subunit GpA	0	1	0	0
+COG1541	Phenylacetate-coenzyme A ligase PaaK, adenylate-forming domain family	2	2	4	2
+COG3186	Phenylalanine-4-hydroxylase	0	1	0	1
+COG0016	Phenylalanyl-tRNA synthetase alpha subunit	1	1	1	1
+COG0072	Phenylalanyl-tRNA synthetase beta subunit	1	1	1	1
+COG4638	Phenylpropionate dioxygenase or related ring-hydroxylating dioxygenase, large terminal subunit	4	8	2	4
+COG1942	Phenylpyruvate tautomerase PptA, 4-oxalocrotonate tautomerase family	1	1	2	1
+COG1702	Phosphate starvation-inducible protein PhoH, predicted ATPase	1	1	1	1
+COG0704	Phosphate uptake regulator	1	1	1	1
+COG0306	Phosphate/sulfate permease	1	1	1	1
+COG1267	Phosphatidylglycerophosphatase A	1	1	1	1
+COG0558	Phosphatidylglycerophosphate synthase	1	1	1	1
+COG0688	Phosphatidylserine decarboxylase	1	1	1	1
+COG1183	Phosphatidylserine synthase	2	2	2	1
+COG1502	Phosphatidylserine/phosphatidylglycerophosphate/cardiolipin synthase or related enzyme	5	6	6	6
+COG3540	Phosphodiesterase/alkaline phosphatase D	1	1	1	1
+COG1080	Phosphoenolpyruvate-protein kinase (PTS system EI component in bacteria)	1	1	1	1
+COG1274	Phosphoenolpyruvate carboxykinase, GTP-dependent	1	1	1	1
+COG2352	Phosphoenolpyruvate carboxylase	1	1	1	1
+COG0574	Phosphoenolpyruvate synthase/pyruvate phosphate dikinase	1	2	1	1
+COG2194	Phosphoethanolamine transferase for periplasmic glucans (OPG), alkaline phosphatase superfamily	1	1	1	0
+COG0111	Phosphoglycerate dehydrogenase or related dehydrogenase	3	10	4	7
+COG0588	Phosphoglycerate mutase (BPG-dependent)	1	2	1	1
+COG0546	Phosphoglycolate phosphatase, HAD superfamily	3	4	3	3
+COG0279	Phosphoheptose isomerase	2	1	1	1
+COG2062	Phosphohistidine phosphatase SixA	1	2	2	1
+COG3511	Phospholipase C	1	0	0	0
+COG3240	Phospholipase/lecithinase/hemolysin	1	3	3	1
+COG0344	Phospholipid biosynthesis protein PlsY, probable glycerol-3-phosphate acyltransferase	1	1	1	1
+COG3963	Phospholipid N-methyltransferase	0	1	0	1
+COG1109	Phosphomannomutase	2	3	2	3
+COG0669	Phosphopantetheine adenylyltransferase	1	1	1	1
+COG2091	Phosphopantetheinyl transferase	0	1	1	0
+COG0736	Phosphopantetheinyl transferase (holo-ACP synthase)	2	2	1	1
+COG0452	Phosphopantothenoylcysteine synthetase/decarboxylase	1	1	1	1
+COG0139	Phosphoribosyl-AMP cyclohydrolase	1	1	1	1
+COG0140	Phosphoribosyl-ATP pyrophosphohydrolase	1	1	1	1
+COG1235	Phosphoribosyl 1,2-cyclic phosphodiesterase	2	1	1	1
+COG0151	Phosphoribosylamine-glycine ligase	1	1	1	1
+COG0152	Phosphoribosylaminoimidazole-succinocarboxamide synthase	1	1	1	1
+COG0150	Phosphoribosylaminoimidazole (AIR) synthetase	1	1	1	1
+COG0026	Phosphoribosylaminoimidazole carboxylase (NCAIR synthetase)	1	1	1	1
+COG0135	Phosphoribosylanthranilate isomerase	1	1	1	1
+COG0041	Phosphoribosylcarboxyaminoimidazole (NCAIR) mutase	1	1	1	1
+COG0106	Phosphoribosylformimino-5-aminoimidazole carboxamide ribonucleotide (ProFAR) isomerase	1	1	1	1
+COG0046	Phosphoribosylformylglycinamidine (FGAM) synthase, synthetase domain	1	1	1	1
+COG0462	Phosphoribosylpyrophosphate synthetase	2	1	2	1
+COG1932	Phosphoserine aminotransferase	1	1	1	1
+COG0560	Phosphoserine phosphatase	2	2	5	2
+COG0280	Phosphotransacetylase	0	0	1	0
+COG1762	Phosphotransferase system mannitol/fructose-specific IIA domain (Ntr-type)	1	1	1	1
+COG1925	Phosphotransferase system, HPr and related phosphotransfer proteins	1	1	1	1
+COG2893	Phosphotransferase system, mannose/fructose-specific component IIA	1	1	1	1
+COG1233	Phytoene dehydrogenase-related protein	0	0	0	1
+COG1562	Phytoene/squalene synthetase	2	2	2	3
+COG2064	Pilus assembly protein TadC	1	1	1	0
+COG4962	Pilus assembly protein, ATPase of CpaF family	1	1	1	0
+COG0596	Pimeloyl-ACP methyl ester carboxylesterase	20	24	24	16
+COG3093	Plasmid maintenance system antidote protein VapI, contains XRE-type HTH domain	0	1	0	1
+COG3549	Plasmid maintenance system killer protein	0	1	0	1
+COG4691	Plasmid stability protein	0	1	0	1
+COG3668	Plasmid stabilization system protein ParE	1	0	0	1
+COG3794	Plastocyanin	1	0	1	1
+COG4553	Poly-beta-hydroxyalkanoate depolymerase	1	1	1	1
+COG2843	Poly-gamma-glutamate biosynthesis protein CapA/YwtB (capsule formation), metallophosphatase superfamily	0	0	1	0
+COG3243	Poly(3-hydroxyalkanoate) synthetase	2	2	2	1
+COG3509	Poly(3-hydroxybutyrate) depolymerase	1	2	2	2
+COG0348	Polyferredoxin	1	1	1	0
+COG5394	Polyhydroxyalkanoate (PHA) synthesis regulator protein, binds DNA and PHA	1	1	1	1
+COG3937	Polyhydroxyalkanoate synthesis regulator phasin	0	1	1	0
+COG2353	Polyisoprenoid-binding periplasmic protein YceI	0	0	1	0
+COG0855	Polyphosphate kinase	1	1	1	1
+COG2326	Polyphosphate kinase 2, PPK2 family	2	1	3	0
+COG0109	Polyprenyltransferase (heme O synthase)	1	1	2	1
+COG1185	Polyribonucleotide nucleotidyltransferase (polynucleotide phosphorylase)	1	1	1	1
+COG0181	Porphobilinogen deaminase	1	1	1	1
+COG3173	Predicted  kinase, aminoglycoside phosphotransferase (APT) family	1	2	1	1
+COG3128	Predicted 2-oxoglutarate- and Fe(II)-dependent dioxygenase YbiX	0	1	1	1
+COG4706	Predicted 3-hydroxylacyl-ACP dehydratase, HotDog domain	0	0	0	1
+COG4185	Predicted ABC-type ATPase	1	2	0	2
+COG4181	Predicted ABC-type transport system involved in lysophospholipase L1 biosynthesis, ATPase component	1	1	1	1
+COG3127	Predicted ABC-type transport system involved in lysophospholipase L1 biosynthesis, permease component	1	1	1	1
+COG3393	Predicted acetyltransferase, GNAT family	1	0	1	0
+COG2388	Predicted acetyltransferase, GNAT superfamily	0	1	0	2
+COG2936	Predicted acyl esterase	0	1	1	0
+COG1752	Predicted acylesterase/phospholipase RssA, containd patatin domain	3	3	7	2
+COG4261	Predicted acyltransferase, LPLAT superfamily	0	0	0	1
+COG4757	Predicted alpha/beta hydrolase	0	0	1	1
+COG0388	Predicted amidohydrolase	2	2	2	2
+COG1040	Predicted amidophosphoribosyltransferases	1	1	1	1
+COG4324	Predicted aminopeptidase	1	1	1	1
+COG2814	Predicted arabinose efflux permease, MFS family	23	20	22	16
+COG3577	Predicted aspartyl protease	0	1	1	1
+COG3593	Predicted ATP-dependent endonuclease of the OLD family, contains P-loop ATPase and TOPRIM domains	0	0	1	0
+COG1066	Predicted ATP-dependent serine protease	1	1	1	1
+COG1485	Predicted ATPase	2	1	3	2
+COG0606	Predicted ATPase with chaperone activity	1	1	1	1
+COG1373	Predicted ATPase, AAA+ superfamily	1	1	1	2
+COG1296	Predicted branched-chain amino acid permease (azaleucine resistance)	1	3	1	2
+COG4589	Predicted CDP-diglyceride synthetase/phosphatidate cytidylyltransferase	1	1	1	0
+COG3179	Predicted chitinase	0	1	0	0
+COG1832	Predicted CoA-binding protein	1	1	1	0
+COG3456	Predicted component of the type VI protein secretion system, contains a FHA domain	0	0	1	1
+COG1700	Predicted component of virus defense system, contains PD-(D/E)xK nuclease domain, DUF524	0	0	0	1
+COG3608	Predicted deacylase	1	2	0	1
+COG0673	Predicted dehydrogenase	1	2	3	5
+COG4188	Predicted dienelactone hydrolase	1	0	0	0
+COG3565	Predicted dioxygenase of extradiol dioxygenase family	1	1	1	1
+COG2761	Predicted dithiol-disulfide isomerase, DsbA family	0	1	2	1
+COG4312	Predicted dithiol-disulfide oxidoreductase, DUF899 family	0	0	1	0
+COG1661	Predicted DNA-binding protein with PD1-like DNA-binding motif	0	0	1	0
+COG4277	Predicted DNA-binding protein with the Helix-hairpin-helix motif	1	1	0	1
+COG3311	Predicted DNA-binding transcriptional regulator AlpA	2	0	0	0
+COG2378	Predicted DNA-binding transcriptional regulator YafY, contains an HTH and WYL domains	0	0	0	1
+COG0792	Predicted endonuclease distantly related to archaeal Holliday junction resolvase	1	1	1	1
+COG2827	Predicted endonuclease, GIY-YIG superfamily	1	2	1	0
+COG3324	Predicted enzyme related to lactoylglutathione lyase	1	2	2	2
+COG0384	Predicted epimerase YddE/YHI9, PhzF superfamily	1	1	1	1
+COG0400	Predicted esterase	2	2	1	2
+COG3545	Predicted esterase of the alpha/beta hydrolase fold	2	1	2	1
+COG3150	Predicted esterase YcpF, UPF0227 family	1	1	1	1
+COG4258	Predicted exporter	0	0	0	1
+COG1033	Predicted exporter protein, RND superfamily	0	0	5	0
+COG3313	Predicted Fe-S protein YdhL, DUF1289 family	2	1	1	0
+COG3576	Predicted flavin-nucleotide-binding protein, pyridoxine 5'-phosphate oxidase superfamily	0	1	2	0
+COG2072	Predicted flavoprotein CzcO associated with the cation diffusion facilitator CzcD	3	1	2	1
+COG2081	Predicted flavoprotein YhiN	2	2	2	2
+COG2808	Predicted FMN-binding regulatory protein PaiB	1	1	1	1
+COG0121	Predicted glutamine amidotransferase	1	1	1	1
+COG3394	Predicted glycoside hydrolase or deacetylase ChbG, UPF0249 family	1	0	1	0
+COG1160	Predicted GTPases	1	1	1	1
+COG4341	Predicted HD phosphohydrolase	1	0	1	1
+COG4091	Predicted homoserine dehydrogenase, contains C-terminal SAF domain	0	3	1	2
+COG0424	Predicted house-cleaning NTP pyrophosphatase, Maf/HAM1 superfamily	2	2	2	2
+COG0429	Predicted hydrolase of the alpha/beta-hydrolase fold	1	2	2	1
+COG4651	Predicted Kef-type K+ transport protein, K+/H+ antiporter domain	0	2	1	1
+COG3607	Predicted lactoylglutathione lyase	0	3	1	2
+COG4395	Predicted lipid-binding transport protein, Tim44 family	2	2	2	2
+COG3154	Predicted lipid carrier protein YhbT, SCP2 domain	0	0	1	0
+COG4315	Predicted lipoprotein with conserved Yx(FWY)xxD motif (function unknown)	1	1	1	0
+COG1217	Predicted membrane GTPase involved in stress response	1	1	1	1
+COG5486	Predicted metal-binding membrane protein	0	1	2	0
+COG1451	Predicted metal-dependent hydrolase	2	2	2	3
+COG2159	Predicted metal-dependent hydrolase, TIM-barrel fold	5	4	7	5
+COG0613	Predicted metal-dependent phosphoesterase TrpH, contains PHP domain	1	1	1	1
+COG4339	Predicted metal-dependent phosphohydrolase, HD superfamily	0	1	1	0
+COG2321	Predicted metalloprotease	1	1	1	1
+COG3975	Predicted metalloprotease, contains C-terminal PDZ domain	1	1	1	1
+COG4798	Predicted methyltransferase	1	0	1	0
+COG4976	Predicted methyltransferase, contains TPR repeat	0	1	1	1
+COG3383	Predicted molibdopterin-dependent oxidoreductase YjgC	1	1	2	2
+COG3153	Predicted N-acetyltransferase YhbS	1	0	0	0
+COG3146	Predicted N-acyltransferase	1	1	1	1
+COG0385	Predicted Na+-dependent transporter	0	0	2	0
+COG2907	Predicted NAD/FAD-binding protein	1	0	0	2
+COG3380	Predicted NAD/FAD-dependent oxidoreductase	1	1	1	1
+COG4119	Predicted NTP pyrophosphohydrolase, NUDIX family	1	1	1	1
+COG4804	Predicted nuclease of restriction endonuclease-like (RecB) superfamily,  DUF1016 family	0	0	0	1
+COG1598	Predicted nuclease of the RNAse H fold, HicB family	0	2	0	1
+COG5611	Predicted nucleic-acid-binding protein, contains PIN domain	0	0	0	1
+COG1487	Predicted nucleic acid-binding protein, contains PIN domain	3	4	1	11
+COG3809	Predicted nucleic acid-binding protein, contains Zn-finger domain	0	1	1	0
+COG2331	Predicted nucleic acid-binding protein, contains Zn-ribbon domain	1	1	1	1
+COG1058	Predicted nucleotide-utilizing enzyme related to molybdopterin-biosynthesis enzyme MoeA	1	1	1	1
+COG1669	Predicted nucleotidyltransferase	0	0	0	2
+COG3652	Predicted outer membrane protein	2	2	3	2
+COG0667	Predicted oxidoreductase (related to aryl-alcohol dehydrogenase)	7	5	6	4
+COG3489	Predicted periplasmic lipoprotein	0	0	0	1
+COG3900	Predicted periplasmic protein	0	0	1	0
+COG1427	Predicted periplasmic solute-binding protein	0	0	0	1
+COG0679	Predicted permease	2	4	2	3
+COG2044	Predicted peroxiredoxin	0	2	0	0
+COG0622	Predicted phosphodiesterase	1	1	2	1
+COG2129	Predicted phosphoesterase, related to the Icc protein	1	1	1	1
+COG1408	Predicted phosphohydrolase, MPP superfamily	1	1	1	1
+COG3453	Predicted phosphohydrolase, protein tyrosine phosphatase (PTP) superfamily, DUF442 family	1	0	0	0
+COG1926	Predicted phosphoribosyltransferase	1	1	1	1
+COG3178	Predicted phosphotransferase, aminoglycoside/choline kinase (APH/ChoK) family	1	1	1	1
+COG3484	Predicted proteasome-type protease	1	1	1	1
+COG0628	Predicted PurR-regulated permease PerM	4	3	4	2
+COG1524	Predicted pyrophosphatase or phosphodiesterase, AlkP superfamily	0	0	1	0
+COG1875	Predicted ribonuclease YlaK, contains NYN-type RNase and PhoH-family ATPase domains	1	1	1	1
+COG2947	Predicted RNA-binding protein, contains PUA-like domain	1	1	1	1
+COG1724	Predicted RNA binding protein YcfA, dsRBD-like fold, HicA-like mRNA interferase family	0	1	0	0
+COG4941	Predicted RNA polymerase sigma factor, contains C-terminal TPR domain	0	1	2	2
+COG1611	Predicted Rossmann fold nucleotide-binding protein	2	2	3	2
+COG0758	Predicted Rossmann fold nucleotide-binding protein DprA/Smf involved in DNA uptake	1	1	1	1
+COG1189	Predicted rRNA methylase YqxC, contains S4 and FtsJ domains	1	1	1	1
+COG3471	Predicted secreted (periplasmic) protein	1	1	1	1
+COG5621	Predicted secreted hydrolase	1	1	1	1
+COG5501	Predicted secreted protein	1	1	1	1
+COG2766	Predicted Ser/Thr protein kinase	1	1	1	1
+COG5477	Predicted small integral membrane protein	0	0	1	1
+COG5510	Predicted small secreted protein	1	0	1	0
+COG4922	Predicted SnoaL-like aldol condensation-catalyzing enzyme	1	0	0	0
+COG4262	Predicted spermidine synthase with an N-terminal membrane domain	0	0	1	0
+COG1054	Predicted sulfurtransferase	1	1	1	1
+COG5496	Predicted thioesterase	0	0	1	0
+COG2865	Predicted transcriptional regulator, contains HTH domain	0	1	0	0
+COG0661	Predicted unusual protein kinase regulating ubiquinone biosynthesis, AarF/ABC1/UbiB family	1	1	1	1
+COG0612	Predicted Zn-dependent peptidase	2	3	2	2
+COG0312	Predicted Zn-dependent protease or its inactivated homolog	2	2	2	2
+COG0077	Prephenate dehydratase	1	1	1	1
+COG0287	Prephenate dehydrogenase	1	1	1	1
+COG1989	Prepilin signal peptidase PulO (type II secretory pathway) or related peptidase	1	1	1	1
+COG0653	Preprotein translocase subunit SecA (ATPase, RNA helicase)	1	1	1	1
+COG1952	Preprotein translocase subunit SecB	1	1	1	1
+COG0342	Preprotein translocase subunit SecD	1	1	1	1
+COG0690	Preprotein translocase subunit SecE	1	1	1	1
+COG0341	Preprotein translocase subunit SecF	1	1	1	1
+COG1314	Preprotein translocase subunit SecG	1	1	1	1
+COG0201	Preprotein translocase subunit SecY	1	1	1	1
+COG1862	Preprotein translocase subunit YajC	1	1	1	1
+COG1198	Primosomal protein N' (replication factor Y) - superfamily II helicase	1	1	1	1
+COG2965	Primosomal replication protein N	1	1	1	1
+COG0682	Prolipoprotein diacylglyceryltransferase	1	1	1	1
+COG0442	Prolyl-tRNA synthetase	1	1	1	1
+COG1505	Prolyl oligopeptidase PreP, S9A serine peptidase family	0	0	1	0
+COG3654	Prophage maintenance system killer protein	1	0	0	1
+COG1651	Protein-disulfide isomerase	3	1	1	2
+COG2518	Protein-L-isoaspartate O-methyltransferase	2	2	2	3
+COG2020	Protein-S-isoprenylcysteine O-methyltransferase Ste14	1	0	2	0
+COG0394	Protein-tyrosine-phosphatase	1	1	1	1
+COG0216	Protein chain release factor A	1	1	1	1
+COG1186	Protein chain release factor B	1	1	1	1
+COG1670	Protein N-acetyltransferase, RimJ/RimL family	5	3	5	3
+COG2365	Protein tyrosine/serine phosphatase	1	1	1	1
+COG3485	Protocatechuate 3,4-dioxygenase beta subunit	1	1	1	1
+COG0276	Protoheme ferro-lyase (ferrochelatase)	1	1	1	1
+COG1232	Protoporphyrinogen oxidase	1	0	0	0
+COG2313	Pseudouridine-5'-phosphate glycosidase (pseudoU degradation)	0	1	1	0
+COG0564	Pseudouridylate synthase, 23S rRNA- or tRNA-specific	4	3	3	4
+COG2154	Pterin-4a-carbinolamine dehydratase	1	1	1	1
+COG1523	Pullulanase/glycogen debranching enzyme	0	1	0	0
+COG1457	Purine-cytosine permease or related protein	0	0	1	0
+COG5042	Purine nucleoside permease	0	0	1	0
+COG1363	Putative aminopeptidase FrvX	0	0	0	1
+COG2914	Putative antitoxin component PasI (RatB) of the RatAB toxin-antitoxin module, ubiquitin-RnfH superfamily	1	1	1	1
+COG2119	Putative Ca2+/H+ antiporter, TMEM165/GDT1 family	1	1	1	1
+COG3657	Putative component of the toxin-antitoxin plasmid stabilization module	0	1	0	0
+COG1346	Putative effector of murein hydrolase	1	0	0	1
+COG1380	Putative effector of murein hydrolase LrgA, UPF0299 family	1	0	0	1
+COG2246	Putative flippase GtrA (transmembrane translocase of bactoprenol-linked glucose)	3	1	2	1
+COG0327	Putative GTP cyclohydrolase 1 type 2, NIF3 family	1	1	1	1
+COG3176	Putative hemolysin	2	0	1	1
+COG0693	Putative intracellular protease/amidase	2	0	0	1
+COG2921	Putative lipoic acid-binding regulatory protein	1	1	1	1
+COG2249	Putative NADPH-quinone reductase (modulator of drug activity B)	2	2	3	0
+COG2976	Putative negative regulator of RcsB-dependent stress response	1	1	1	1
+COG1703	Putative periplasmic protein kinase ArgK or related GTPase of G3E family	1	2	1	1
+COG1162	Putative ribosome biogenesis GTPase RsgA	1	1	1	1
+COG2135	Putative SOS response-associated peptidase YedK	1	1	1	0
+COG1678	Putative transcriptional regulator, AlgH/UPF0301 family	1	1	1	1
+COG1739	Putative translation regulator, IMPACT (imprinted ancient) protein family	1	0	1	0
+COG4784	Putative Zn-dependent protease	0	0	1	0
+COG4783	Putative Zn-dependent protease, contains TPR repeats	1	1	1	1
+COG0854	Pyridoxine 5'-phosphate synthase PdxJ	1	1	1	1
+COG0259	Pyridoxine/pyridoxamine 5'-phosphate oxidase	1	1	1	1
+COG2065	Pyrimidine operon attenuation protein/uracil phosphoribosyltransferase	1	1	1	1
+COG1985	Pyrimidine reductase, riboflavin biosynthesis	1	1	1	1
+COG2039	Pyrrolidone-carboxylate peptidase (N-terminal pyroglutamyl peptidase)	1	1	1	1
+COG0345	Pyrroline-5-carboxylate reductase	1	1	1	1
+COG5424	Pyrroloquinoline quinone (PQQ) biosynthesis protein C	1	1	0	0
+COG1180	Pyruvate-formate lyase-activating enzyme	0	0	1	0
+COG1038	Pyruvate carboxylase	0	0	1	0
+COG2609	Pyruvate dehydrogenase complex, dehydrogenase (E1) component	2	2	2	2
+COG0469	Pyruvate kinase	1	1	2	1
+COG0508	Pyruvate/2-oxoglutarate dehydrogenase complex, dihydrolipoamide acyltransferase (E2) component	3	3	4	3
+COG1249	Pyruvate/2-oxoglutarate dehydrogenase complex, dihydrolipoamide dehydrogenase (E3) component or related enzyme	5	4	5	4
+COG0022	Pyruvate/2-oxoglutarate/acetoin dehydrogenase complex, dehydrogenase (E1) component	1	2	2	2
+COG5016	Pyruvate/oxaloacetate carboxyltransferase	0	0	2	0
+COG0674	Pyruvate:ferredoxin oxidoreductase or related 2-oxoacid:ferredoxin oxidoreductase, alpha subunit	0	1	3	0
+COG1013	Pyruvate:ferredoxin oxidoreductase or related 2-oxoacid:ferredoxin oxidoreductase, beta subunit	0	1	2	0
+COG1014	Pyruvate:ferredoxin oxidoreductase or related 2-oxoacid:ferredoxin oxidoreductase, gamma subunit	1	2	3	2
+COG0343	Queuine/archaeosine tRNA-ribosyltransferase	1	1	1	1
+COG1359	Quinol monooxygenase YgiN	2	1	0	0
+COG0379	Quinolinate synthase	1	1	1	1
+COG1199	Rad3-related DNA helicase	2	2	1	2
+COG1032	Radical SAM superfamily enzyme YgiQ, UPF0313 family	1	1	1	0
+COG0535	Radical SAM superfamily enzyme, MoaA/NifB/PqqE/SkfB family	1	0	0	0
+COG0797	Rare lipoprotein A, peptidoglycan hydrolase digesting naked glycans, contains C-terminal SPOR domain	1	0	0	0
+COG0467	RecA-superfamily ATPase, KaiC/GvpD/RAD55 family	1	1	0	2
+COG0468	RecA/RadA recombinase	1	1	1	1
+COG2887	RecB family exonuclease	0	0	0	1
+COG1200	RecG-like helicase	1	1	1	1
+COG1381	Recombinational DNA repair protein (RecF pathway)	1	1	1	1
+COG0353	Recombinational DNA repair protein RecR	1	1	1	1
+COG1281	Redox-regulated molecular chaperone, HSP33 family	1	1	1	1
+COG1741	Redox-sensitive bicupin YhaK, pirin superfamily	3	3	3	3
+COG3901	Regulator of nitric oxide reductase transcription	0	0	2	0
+COG1806	Regulator of PEP synthase PpsR, kinase-PPPase family (combines ADP:protein kinase and phosphorylase activities)	1	1	1	1
+COG0330	Regulator of protease activity HflC, stomatin/prohibitin superfamily	3	4	4	3
+COG0684	Regulator of RNase E activity RraA	3	9	2	6
+COG2912	Regulator of sirC expression, contains transglutaminase-like and TPR domains	1	1	1	1
+COG1943	REP element-mobilizing transposase RayT	1	1	1	1
+COG2256	Replication-associated recombination protein RarA (DNA-dependent ATPase)	1	1	1	1
+COG0305	Replicative DNA helicase	1	1	1	1
+COG3437	Response regulator c-di-GMP phosphodiesterase, RpfG family, contains REC and HD-GYP domains	1	0	0	0
+COG0732	Restriction endonuclease S subunit	2	0	0	1
+COG3344	Retron-type reverse transcriptase	1	0	0	0
+COG0607	Rhodanese-related sulfurtransferase	2	3	2	5
+COG0307	Riboflavin synthase alpha chain	1	1	1	1
+COG1234	Ribonuclease BN, tRNA processing enzyme	0	0	1	3
+COG1530	Ribonuclease G or E	2	2	2	2
+COG0328	Ribonuclease HI	1	1	1	1
+COG0164	Ribonuclease HII	1	1	1	1
+COG0689	Ribonuclease PH	1	1	1	1
+COG0209	Ribonucleotide reductase alpha subunit	1	1	2	1
+COG0208	Ribonucleotide reductase beta subunit, ferritin-like domain	1	1	1	1
+COG3709	Ribose 1,5-bisphosphokinase PhnN	0	0	0	1
+COG0120	Ribose 5-phosphate isomerase	1	1	1	1
+COG0698	Ribose 5-phosphate isomerase RpiB	0	1	0	0
+COG1172	Ribose/xylose/arabinose/galactoside ABC-type transport system, permease component	2	0	1	3
+COG0806	Ribosomal 30S subunit maturation factor RimM, required for 16S rRNA processing	1	1	1	1
+COG3028	Ribosomal 50S subunit-associated protein YjgA (function unknown), DUF615 family	1	1	1	1
+COG1188	Ribosomal 50S subunit-recycling heat shock protein, contains S4 domain	1	1	1	1
+COG0081	Ribosomal protein L1	1	1	1	1
+COG0244	Ribosomal protein L10	1	1	1	1
+COG0080	Ribosomal protein L11	1	1	1	1
+COG2264	Ribosomal protein L11 methylase PrmA	1	1	1	1
+COG0102	Ribosomal protein L13	1	1	1	1
+COG0093	Ribosomal protein L14	1	1	1	1
+COG0200	Ribosomal protein L15	1	1	1	1
+COG2850	Ribosomal protein L16 Arg81 hydroxylase, contains JmjC domain	1	1	1	1
+COG0197	Ribosomal protein L16/L10AE	1	1	1	1
+COG0203	Ribosomal protein L17	1	1	1	1
+COG0256	Ribosomal protein L18	1	1	1	1
+COG0335	Ribosomal protein L19	1	1	1	1
+COG0090	Ribosomal protein L2	1	1	1	1
+COG0292	Ribosomal protein L20	1	1	1	1
+COG0261	Ribosomal protein L21	1	1	1	1
+COG0091	Ribosomal protein L22	1	1	1	1
+COG0089	Ribosomal protein L23	1	1	1	1
+COG0198	Ribosomal protein L24	1	1	1	1
+COG1825	Ribosomal protein L25 (general stress protein Ctc)	1	1	1	1
+COG0211	Ribosomal protein L27	1	1	1	1
+COG0227	Ribosomal protein L28	1	1	1	1
+COG0255	Ribosomal protein L29	1	1	1	1
+COG0087	Ribosomal protein L3	1	1	1	1
+COG1841	Ribosomal protein L30/L7E	1	1	1	1
+COG0254	Ribosomal protein L31	1	1	1	1
+COG0333	Ribosomal protein L32	1	1	1	1
+COG0267	Ribosomal protein L33	1	1	1	1
+COG0291	Ribosomal protein L35	1	1	1	1
+COG0257	Ribosomal protein L36	1	1	1	1
+COG0088	Ribosomal protein L4	1	1	1	1
+COG0094	Ribosomal protein L5	1	1	1	1
+COG0097	Ribosomal protein L6P/L9E	1	1	1	1
+COG0222	Ribosomal protein L7/L12	1	1	1	1
+COG0359	Ribosomal protein L9	1	1	1	1
+COG0539	Ribosomal protein S1	1	1	1	1
+COG0051	Ribosomal protein S10	1	1	1	1
+COG0100	Ribosomal protein S11	1	1	1	1
+COG0048	Ribosomal protein S12	1	1	1	1
+COG1944	Ribosomal protein S12 methylthiotransferase accessory factor YcaO	0	0	1	0
+COG0099	Ribosomal protein S13	1	1	1	1
+COG0199	Ribosomal protein S14	1	1	1	1
+COG0184	Ribosomal protein S15P/S13E	1	1	1	1
+COG0228	Ribosomal protein S16	1	1	1	1
+COG0186	Ribosomal protein S17	1	1	1	1
+COG0238	Ribosomal protein S18	1	1	1	1
+COG0456	Ribosomal protein S18 acetylase RimI and related acetyltransferases	2	4	8	4
+COG0185	Ribosomal protein S19	1	1	1	1
+COG0052	Ribosomal protein S2	1	1	1	1
+COG0268	Ribosomal protein S20	1	1	1	1
+COG0828	Ribosomal protein S21	1	1	1	1
+COG0092	Ribosomal protein S3	1	1	1	1
+COG0522	Ribosomal protein S4 or related protein	1	1	1	1
+COG0098	Ribosomal protein S5	1	1	1	1
+COG0360	Ribosomal protein S6	1	1	1	1
+COG0049	Ribosomal protein S7	1	1	1	1
+COG0096	Ribosomal protein S8	1	1	1	1
+COG0103	Ribosomal protein S9	1	1	1	1
+COG0799	Ribosomal silencing factor RsfS, regulates association of 30S and 50S subunits	1	1	1	1
+COG1544	Ribosome-associated translation inhibitor RaiA	1	1	1	1
+COG0012	Ribosome-binding ATPase YchF, GTP1/OBG family	1	1	1	1
+COG0858	Ribosome-binding factor A	1	1	1	1
+COG2867	Ribosome association toxin PasT (RatA) of the RatAB toxin-antitoxin module	1	1	1	1
+COG0779	Ribosome maturation factor RimP	1	1	1	1
+COG0233	Ribosome recycling factor	1	1	1	1
+COG0235	Ribulose-5-phosphate 4-epimerase/Fuculose-1-phosphate aldolase	3	10	5	5
+COG0723	Rieske Fe-S protein	1	1	2	2
+COG1534	RNA-binding protein YhbY	1	1	1	1
+COG1690	RNA-splicing ligase RtcB, repairs tRNA damage	0	0	1	0
+COG1734	RNA polymerase-binding transcription factor DksA	2	3	2	2
+COG1236	RNA processing exonuclease, beta-lactamase fold, Cft2 family	2	2	1	1
+COG1660	RNase adaptor protein for sRNA GlmZ degradation, contains a P-loop ATPase domain	0	1	1	1
+COG0816	RNase H-fold protein, predicted Holliday junction resolvase in Firmicutes and mycoplasms, involved in anti-termination at Rho-dependent terminators	1	1	1	1
+COG0594	RNase P protein component	0	0	1	1
+COG1773	Rubredoxin	1	0	0	0
+COG1592	Rubrerythrin	1	1	3	0
+COG0499	S-adenosylhomocysteine hydrolase	1	1	1	1
+COG1586	S-adenosylmethionine decarboxylase or arginine decarboxylase	0	1	1	1
+COG0192	S-adenosylmethionine synthetase	1	1	1	1
+COG0809	S-adenosylmethionine:tRNA-ribosyltransferase-isomerase (queuine synthetase)	1	1	2	1
+COG0627	S-formylglutathione hydrolase FrmB	1	1	0	1
+COG0500	SAM-dependent methyltransferase	1	0	0	0
+COG1565	SAM-dependent methyltransferase, MidA family	1	1	1	1
+COG4311	Sarcosine oxidase delta subunit	0	0	1	0
+COG0805	Sec-independent protein secretion pathway component TatC	1	1	1	1
+COG1826	Sec-independent protein translocase protein TatA	1	2	2	2
+COG3211	Secreted phosphatase, PhoX family	0	2	1	4
+COG0520	Selenocysteine lyase/Cysteine desulfurase	0	1	1	1
+COG0709	Selenophosphate synthase	1	1	1	1
+COG2144	Selenophosphate synthetase-related protein	1	0	0	0
+COG2894	Septum formation inhibitor-activating ATPase MinD	1	1	1	1
+COG0850	Septum formation inhibitor MinC	1	1	1	1
+COG0851	Septum formation topological specificity factor MinE	1	1	1	1
+COG2872	Ser-tRNA(Ala) deacylase AlaX (editing enzyme)	1	1	1	1
+COG2334	Ser/Thr protein kinase RdoA involved in Cpx stress response, MazF antagonist	2	2	3	3
+COG1045	Serine acetyltransferase	1	1	1	1
+COG1493	Serine kinase of the HPr protein, regulates carbohydrate metabolism	1	1	1	1
+COG2208	Serine phosphatase RsbU, regulator of sigma subunit	0	0	2	0
+COG1404	Serine protease, subtilisin family	0	0	2	0
+COG1718	Serine/threonine-protein kinase RIO1	0	0	0	1
+COG0515	Serine/threonine protein kinase	6	6	8	4
+COG3550	Serine/threonine protein kinase HipA, toxin component of the HipAB toxin-antitoxin module	0	1	0	1
+COG0631	Serine/threonine protein phosphatase PrpC	3	4	4	3
+COG0172	Seryl-tRNA synthetase	1	1	1	1
+COG0169	Shikimate 5-dehydrogenase	1	2	2	1
+COG0703	Shikimate kinase	3	2	2	2
+COG0300	Short-chain dehydrogenase	6	9	5	10
+COG2089	Sialic acid synthase SpsE, contains C-terminal SAF domain	1	1	1	0
+COG2905	Signal-transduction protein containing cAMP-binding, CBS, and nucleotidyltransferase domains	1	0	0	0
+COG0681	Signal peptidase I	1	1	1	1
+COG0541	Signal recognition particle GTPase	2	2	2	2
+COG0642	Signal transduction histidine kinase	42	39	22	46
+COG5000	Signal transduction histidine kinase involved in nitrogen fixation and metabolism regulation	1	1	1	1
+COG4191	Signal transduction histidine kinase regulating C4-dicarboxylate transport system	2	2	2	0
+COG3850	Signal transduction histidine kinase, nitrate/nitrite-specific	0	0	1	0
+COG3852	Signal transduction histidine kinase, nitrogen specific	1	1	1	1
+COG0629	Single-stranded DNA-binding protein	0	1	1	1
+COG0608	Single-stranded DNA-specific exonuclease, DHH superfamily, may be involved in archaeal DNA replication intiation	1	1	1	1
+COG0270	Site-specific DNA-cytosine methylase	0	0	2	0
+COG1961	Site-specific DNA recombinase related to the DNA invertase Pin	1	0	0	0
+COG4389	Site-specific recombinase	1	0	0	1
+COG4973	Site-specific recombinase XerC	1	1	1	1
+COG4974	Site-specific recombinase XerD	2	1	2	1
+COG0668	Small-conductance mechanosensitive channel	1	1	1	1
+COG4398	Small ligand-binding sensory domain FIST	1	1	1	1
+COG2095	Small neutral amino acid transporter SnatA, MarC family	2	1	1	0
+COG0741	Soluble lytic murein transglycosylase and related regulatory proteins (some contain LysM/invasin domains)	1	1	1	3
+COG1974	SOS-response transcriptional repressor LexA (RecA-mediated autopeptidase)	1	1	1	1
+COG2137	SOS response regulatory protein OraA/RecX, interacts with RecA	1	1	1	1
+COG0421	Spermidine synthase	1	2	1	0
+COG0687	Spermidine/putrescine-binding periplasmic protein	0	1	1	0
+COG1861	Spore coat polysaccharide biosynthesis protein SpsF, cytidylyltransferase family	0	0	1	0
+COG3980	Spore coat polysaccharide biosynthesis protein SpsG, predicted glycosyltransferase	0	0	1	0
+COG5430	Spore coat protein U (SCPU) domain, function unknown	2	0	0	0
+COG4641	Spore maturation protein CgeB	0	0	0	4
+COG1923	sRNA-binding regulator protein Hfq	1	1	1	1
+COG0319	ssRNA-specific RNase YbeY, 16S rRNA maturation enzyme	1	1	1	1
+COG2719	Stage V sporulation protein SpoVR/YcgB, involved in spore cortex formation (function unknown)	1	1	1	1
+COG3752	Steroid 5-alpha reductase family enzyme	0	0	0	1
+COG3000	Sterol desaturase/sphingolipid hydroxylase, fatty acid hydroxylase superfamily	2	3	3	1
+COG4257	Streptogramin lyase	0	0	1	0
+COG0271	Stress-induced morphogen (activity unknown)	1	1	1	1
+COG3861	Stress response protein YsnF (function unknown)	1	0	0	0
+COG2969	Stringent starvation protein B	1	1	1	1
+COG2938	Succinate dehydrogenase flavin-adding protein, antitoxin component of the CptAB toxin-antitoxin module	1	1	1	1
+COG2142	Succinate dehydrogenase, hydrophobic anchor subunit	1	2	1	1
+COG2009	Succinate dehydrogenase/fumarate reductase, cytochrome b subunit	1	2	1	1
+COG0479	Succinate dehydrogenase/fumarate reductase, Fe-S protein subunit	1	2	1	2
+COG1053	Succinate dehydrogenase/fumarate reductase, flavoprotein subunit	2	4	2	2
+COG0074	Succinyl-CoA synthetase, alpha subunit	1	1	1	1
+COG0045	Succinyl-CoA synthetase, beta subunit	1	1	1	1
+COG2988	Succinylglutamate desuccinylase	1	1	0	0
+COG1940	Sugar kinase of the NBD/HSP70 family, may contain an N-terminal HTH domain	1	1	2	2
+COG3386	Sugar lactone lactonase YvrE	1	3	3	2
+COG0524	Sugar or nucleoside kinase, ribokinase family	2	4	2	4
+COG1082	Sugar phosphate isomerase/epimerase	1	5	2	4
+COG2271	Sugar phosphate permease	0	3	8	5
+COG2148	Sugar transferase involved in LPS biosynthesis (colanic, teichoic acid)	2	3	3	2
+COG0641	Sulfatase maturation enzyme AslB, radical SAM superfamily	0	0	1	0
+COG2895	Sulfate adenylyltransferase subunit 1, EFTu-like GTPase family	1	1	1	1
+COG0659	Sulfate permease or related transporter, MFS superfamily	4	2	3	1
+COG2836	Sulfite exporter TauE/SafE	1	1	1	0
+COG0155	Sulfite reductase, beta subunit (hemoprotein)	1	1	1	1
+COG4032	Sulfopyruvate decarboxylase, TPP-binding subunit (coenzyme M biosynthesis)	0	1	0	0
+COG2104	Sulfur carrier protein ThiS (thiamine biosynthesis)	1	0	1	1
+COG0210	Superfamily I DNA or RNA helicase	3	3	3	2
+COG0513	Superfamily II DNA and RNA helicase	3	5	4	4
+COG0514	Superfamily II DNA helicase RecQ	2	2	1	2
+COG1061	Superfamily II DNA or RNA helicase	1	0	1	0
+COG0605	Superoxide dismutase	2	1	1	1
+COG1951	Tartrate dehydratase alpha subunit/Fumarate hydratase class I, N-terminal domain	1	2	1	1
+COG1838	Tartrate dehydratase beta subunit/Fumarate hydratase class I, C-terminal domain	0	1	0	0
+COG0084	Tat protein secretion system quality control protein TatD (DNase activity)	2	2	2	2
+COG2175	Taurine dioxygenase, alpha-ketoglutarate-dependent	1	4	3	1
+COG3333	TctA family transporter	2	6	4	3
+COG1663	Tetraacyldisaccharide-1-P 4'-kinase	1	1	1	1
+COG3005	Tetraheme cytochrome c subunit of nitrate or TMAO reductase	0	0	1	0
+COG2171	Tetrahydrodipicolinate N-succinyltransferase	1	1	1	1
+COG4970	Tfp pilus assembly protein FimT	3	2	3	3
+COG3170	Tfp pilus assembly protein FimV	1	1	1	1
+COG4968	Tfp pilus assembly protein PilE	2	1	1	2
+COG3063	Tfp pilus assembly protein PilF	1	1	2	2
+COG3166	Tfp pilus assembly protein PilN	1	1	1	1
+COG3167	Tfp pilus assembly protein PilO	1	1	1	1
+COG3168	Tfp pilus assembly protein PilP	1	1	1	1
+COG2805	Tfp pilus assembly protein PilT, pilus retraction ATPase	1	1	1	1
+COG4967	Tfp pilus assembly protein PilV	2	2	1	2
+COG4966	Tfp pilus assembly protein PilW	1	2	0	1
+COG4726	Tfp pilus assembly protein PilX	1	1	0	0
+COG3215	Tfp pilus assembly protein PilZ	1	1	1	1
+COG4972	Tfp pilus assembly protein, ATPase PilM	2	1	1	1
+COG5008	Tfp pilus assembly protein, ATPase PilU	2	2	2	2
+COG4969	Tfp pilus assembly protein, major pilin PilA	2	2	2	1
+COG3419	Tfp pilus assembly protein, tip-associated adhesin PilY1	2	2	0	1
+COG2022	Thiamin biosynthesis thiazole synthase ThiGH, ThiG subunit	1	0	1	1
+COG0432	Thiamin phosphate synthase YjbQ, UPF0047 family	0	1	0	1
+COG1477	Thiamine biosynthesis lipoprotein ApbE	0	0	2	0
+COG0422	Thiamine biosynthesis protein ThiC	1	0	1	0
+COG0611	Thiamine monophosphate kinase	1	1	1	1
+COG0352	Thiamine monophosphate synthase	0	0	1	1
+COG3320	Thioester reductase domain of alpha aminoadipate reductase Lys2 and NRPSs	1	1	1	0
+COG3319	Thioesterase domain of type I polyketide synthase or non-ribosomal peptide synthetase	0	0	1	0
+COG0526	Thiol-disulfide isomerase or thioredoxin	3	3	4	4
+COG4232	Thiol:disulfide interchange protein	1	1	0	1
+COG0492	Thioredoxin reductase	3	3	4	6
+COG4117	Thiosulfate reductase cytochrome b subunit	1	0	0	0
+COG2008	Threonine aldolase	1	1	1	1
+COG1171	Threonine dehydratase	4	4	4	5
+COG1063	Threonine dehydrogenase or related Zn-dependent dehydrogenase	2	2	0	4
+COG0498	Threonine synthase	1	1	1	1
+COG5006	Threonine/homoserine efflux transporter RhtA	6	4	5	3
+COG1280	Threonine/homoserine/homoserine lactone efflux protein	3	6	4	5
+COG0441	Threonyl-tRNA synthetase	1	1	1	1
+COG0213	Thymidine phosphorylase	1	0	1	0
+COG0125	Thymidylate kinase	1	1	1	1
+COG0207	Thymidylate synthase	1	1	1	1
+COG0691	tmRNA-binding protein	1	1	1	1
+COG5616	TolB amino-terminal domain (function unknown)	0	2	2	0
+COG4231	TPP-dependent indolepyruvate ferredoxin oxidoreductase, alpha subunit	3	6	4	3
+COG1071	TPP-dependent pyruvate or acetoin dehydrogenase subunit alpha	1	2	2	2
+COG4106	Trans-aconitate methyltransferase	1	0	0	0
+COG0176	Transaldolase	0	1	0	1
+COG1197	Transcription-repair coupling factor (superfamily II helicase)	1	1	1	1
+COG0195	Transcription antitermination factor NusA, contains S1 and KH domains	1	1	1	1
+COG0250	Transcription antitermination factor NusG	1	1	1	1
+COG0782	Transcription elongation factor, GreA/GreB family	2	2	2	2
+COG0781	Transcription termination factor NusB	1	1	1	1
+COG1158	Transcription termination factor Rho	1	1	1	1
+COG2183	Transcriptional accessory protein Tex/SPT6	1	1	1	1
+COG0217	Transcriptional and/or translational regulatory protein YebC/TACO1	1	1	1	1
+COG3604	Transcriptional regulator containing GAF, AAA-type ATPase, and DNA-binding Fis domains	0	1	0	0
+COG3829	Transcriptional regulator containing PAS, AAA-type ATPase, and DNA-binding Fis domains	2	1	1	2
+COG4977	Transcriptional regulator GlxA family, contains an amidase domain and an AraC-type DNA-binding HTH domain	4	5	1	1
+COG1327	Transcriptional regulator NrdR, contains Zn-ribbon and ATP-cone domains	1	1	1	1
+COG3070	Transcriptional regulator of competence genes, TfoX/Sxy family	0	0	1	0
+COG1420	Transcriptional regulator of heat shock response	1	1	1	1
+COG3609	Transcriptional regulator, contains Arc/MetJ-type RHH (ribbon-helix-helix) DNA-binding domain	0	0	1	0
+COG1396	Transcriptional regulator, contains XRE-family HTH domain	1	2	1	1
+COG1305	Transglutaminase-like enzyme, putative cysteine protease	2	4	3	2
+COG0021	Transketolase	1	1	2	1
+COG3958	Transketolase, C-terminal subunit	0	1	1	1
+COG3959	Transketolase, N-terminal subunit	0	1	1	1
+COG0481	Translation elongation factor EF-4, membrane-bound GTPase	1	1	1	1
+COG0480	Translation elongation factor EF-G, a GTPase	2	2	2	1
+COG0264	Translation elongation factor EF-Ts	1	1	1	1
+COG0050	Translation elongation factor EF-Tu, a GTPase	0	1	2	2
+COG0231	Translation elongation factor P (EF-P)/translation initiation factor 5A (eIF-5A)	1	1	1	1
+COG0023	Translation initiation factor 1 (eIF-1/SUI1)	0	1	0	0
+COG0361	Translation initiation factor IF-1	2	3	3	3
+COG0532	Translation initiation factor IF-2, a GTPase	1	1	1	1
+COG0290	Translation initiation factor IF-3	1	1	1	1
+COG5662	Transmembrane transcriptional regulator (anti-sigma factor RsiW)	1	1	1	0
+COG3436	Transposase	2	2	0	0
+COG1593	TRAP-type C4-dicarboxylate transport system, large permease component	5	14	6	9
+COG1638	TRAP-type C4-dicarboxylate transport system, periplasmic component	7	19	8	10
+COG3090	TRAP-type C4-dicarboxylate transport system, small permease component	4	11	7	10
+COG4664	TRAP-type mannitol/chloroaromatic compound transport system, large permease component	1	3	2	1
+COG4663	TRAP-type mannitol/chloroaromatic compound transport system, periplasmic component	1	5	3	3
+COG4665	TRAP-type mannitol/chloroaromatic compound transport system, small permease component	1	4	2	2
+COG4666	TRAP-type uncharacterized transport system, fused permease components	0	1	1	1
+COG2358	TRAP-type uncharacterized transport system, periplasmic component	1	2	4	2
+COG1877	Trehalose-6-phosphatase	1	2	1	1
+COG0380	Trehalose-6-phosphate synthase	2	2	2	1
+COG0149	Triosephosphate isomerase	1	1	1	1
+COG3181	Tripartite-type tricarboxylate transporter, receptor component TctC	19	119	49	75
+COG1767	Triphosphoribosyl-dephospho-CoA synthetase	1	1	0	0
+COG0168	Trk-type K+ transport system, membrane component	0	1	0	1
+COG0569	Trk K+ transport system, NAD-binding component	1	1	0	1
+COG0073	tRNA-binding EMAP/Myf domain	0	1	0	0
+COG0042	tRNA-dihydrouridine synthase	2	2	2	2
+COG1720	tRNA (Thr-GGU) A37 N-methylase	0	0	1	0
+COG2603	tRNA 2-selenouridine synthase SelU, contains rhodanese domain	1	1	1	1
+COG0621	tRNA A37 methylthiotransferase MiaB	2	2	2	2
+COG0324	tRNA A37 N6-isopentenylltransferase MiaA	1	1	1	1
+COG0802	tRNA A37 threonylcarbamoyladenosine biosynthesis protein TsaE	1	1	1	1
+COG1179	tRNA A37 threonylcarbamoyladenosine dehydratase	1	1	1	1
+COG1214	tRNA A37 threonylcarbamoyladenosine modification protein TsaB	1	1	1	1
+COG0009	tRNA A37 threonylcarbamoyladenosine synthetase subunit TsaC/SUA5/YrdC	2	2	2	2
+COG0533	tRNA A37 threonylcarbamoyltransferase TsaD	1	1	1	1
+COG0565	tRNA C32,U32 (ribose-2'-O)-methylase TrmJ or a related methyltransferase	1	1	1	1
+COG0566	tRNA G18 (ribose-2'-O)-methylase SpoU	2	2	2	2
+COG0336	tRNA G37 N-methylase TrmD	1	1	1	1
+COG0220	tRNA G46 methylase TrmB	1	1	1	1
+COG0617	tRNA nucleotidyltransferase/poly(A) polymerase	2	2	2	2
+COG0482	tRNA U34 2-thiouridine synthase MnmA/TrmU, contains the PP-loop ATPase domain	1	1	1	1
+COG0445	tRNA U34 5-carboxymethylaminomethyl modifying enzyme MnmG/GidA	1	1	1	1
+COG0486	tRNA U34 5-carboxymethylaminomethyl modifying GTPase MnmE/TrmE	1	1	1	1
+COG4121	tRNA U34 5-methylaminomethyl-2-thiouridine-forming methyltransferase MnmC	0	1	1	1
+COG0101	tRNA U38,U39,U40 pseudouridine synthase TruA	1	1	1	1
+COG0130	tRNA U55 pseudouridine synthase TruB, may also work on U342 of tmRNA	1	1	1	1
+COG0590	tRNA(Arg) A34 adenosine deaminase TadA	1	1	1	1
+COG0037	tRNA(Ile)-lysidine synthase TilS/MesJ	2	2	2	2
+COG0219	tRNA(Leu) C34 or U34 (ribose-2'-O)-methylase TrmL, contains SPOUT domain	1	1	1	1
+COG2265	tRNA/tmRNA/rRNA uracil-C5-methylase, TrmA/RlmC/RlmD family	1	1	1	1
+COG2346	Truncated hemoglobin YjbI	2	1	1	2
+COG3476	Tryptophan-rich sensory protein (mitochondrial benzodiazepine receptor homolog)	0	0	0	1
+COG3483	Tryptophan 2,3-dioxygenase (vermilion)	1	1	1	1
+COG0159	Tryptophan synthase alpha chain	1	1	1	1
+COG0133	Tryptophan synthase beta chain	1	1	1	1
+COG0180	Tryptophanyl-tRNA synthetase	1	1	1	1
+COG0425	TusA-related sulfurtransferase	1	1	1	1
+COG4567	Two-component response regulator, ActR/RegA family, consists of REC and Fis-type HTH domains	1	0	1	0
+COG3707	Two-component response regulator, AmiR/NasT family, consists of REC and RNA-binding antiterminator (ANTAR) domains	0	1	1	1
+COG4566	Two-component response regulator, FixJ family, consists of REC and HTH domains	3	2	4	2
+COG0286	Type I restriction-modification system, DNA methylase subunit	2	0	0	2
+COG0610	Type I site-specific restriction-modification system, R (restriction) subunit and related helicases ...	1	0	0	1
+COG4096	Type I site-specific restriction endonuclease, part of a restriction-modification system	1	0	0	1
+COG2804	Type II secretory pathway ATPase GspE/PulE or T4P pilus assembly pathway ATPase PilB	5	4	4	5
+COG1450	Type II secretory pathway component GspD/PulD (secretin)	0	1	1	2
+COG3267	Type II secretory pathway, component ExeA (predicted ATPase)	2	1	1	1
+COG4796	Type II secretory pathway, component HofQ	1	1	1	2
+COG1459	Type II secretory pathway, component PulF	3	2	2	3
+COG4795	Type II secretory pathway, component PulJ	1	0	0	0
+COG3156	Type II secretory pathway, component PulK	1	1	1	1
+COG3297	Type II secretory pathway, component PulL	1	1	0	1
+COG3149	Type II secretory pathway, component PulM	1	1	0	1
+COG2165	Type II secretory pathway, pseudopilin PulG	2	1	1	3
+COG4790	Type III secretory pathway, component EscR	0	0	0	1
+COG4794	Type III secretory pathway, component EscS	0	0	0	1
+COG4791	Type III secretory pathway, component EscT	0	0	0	1
+COG4789	Type III secretory pathway, component EscV	0	0	0	1
+COG4669	Type III secretory pathway, lipoprotein EscJ	0	0	0	1
+COG3455	Type VI protein secretion system component VasF	0	0	1	0
+COG3523	Type VI protein secretion system component VasK	0	0	1	0
+COG0162	Tyrosyl-tRNA synthetase	1	1	1	1
+COG2226	Ubiquinone/menaquinone biosynthesis C-methylase UbiE	2	5	3	2
+COG2908	UDP-2,3-diacylglucosamine pyrophosphatase LpxH	2	1	2	2
+COG1044	UDP-3-O-[3-hydroxymyristoyl] glucosamine N-acyltransferase	1	1	1	1
+COG0774	UDP-3-O-acyl-N-acetylglucosamine deacetylase	1	1	1	1
+COG0562	UDP-galactopyranose mutase	1	0	1	1
+COG1087	UDP-glucose 4-epimerase	1	2	1	2
+COG1004	UDP-glucose 6-dehydrogenase	0	1	1	1
+COG1922	UDP-N-acetyl-D-mannosaminuronic acid transferase, WecB/TagA/CpsF family	1	2	1	1
+COG0812	UDP-N-acetylenolpyruvoylglucosamine reductase	1	1	1	1
+COG0381	UDP-N-acetylglucosamine 2-epimerase	1	3	0	0
+COG0766	UDP-N-acetylglucosamine enolpyruvyl transferase	1	2	1	1
+COG0707	UDP-N-acetylglucosamine:LPS N-acetylglucosamine transferase	1	1	1	1
+COG0773	UDP-N-acetylmuramate-alanine ligase	2	2	2	2
+COG0771	UDP-N-acetylmuramoylalanine-D-glutamate ligase	1	1	1	1
+COG0472	UDP-N-acetylmuramyl pentapeptide phosphotransferase/UDP-N-acetylglucosamine-1-phosphate transferase	2	2	2	2
+COG0770	UDP-N-acetylmuramyl pentapeptide synthase	1	1	1	1
+COG0769	UDP-N-acetylmuramyl tripeptide synthase	1	1	1	1
+COG1819	UDP:flavonoid glycosyltransferase YjiC, YdhE family	0	0	0	1
+COG2335	Uncaracterized surface protein containing fasciclin (FAS1) repeats	2	2	1	2
+COG5507	Uncharacterized  conserved protein YbaA, DUF1428 family	0	1	1	2
+COG1430	Uncharacterized conserved membrane protein, UPF0127 family	1	2	1	1
+COG1704	Uncharacterized conserved protein	5	10	22	13
+COG3193	Uncharacterized conserved protein GlcG, DUF336 family	2	1	2	2
+COG2959	Uncharacterized conserved protein HemX (no evidence of involvement in heme biosynthesis)	1	1	1	1
+COG3071	Uncharacterized conserved protein HemY, contains two TPR repeats	1	1	1	1
+COG2764	Uncharacterized conserved protein PhnB, glyoxalase superfamily	0	2	6	1
+COG3209	Uncharacterized conserved protein RhaS, contains 28 RHS repeats	0	2	1	2
+COG2922	Uncharacterized conserved protein Smg, DUF494 family	1	1	1	1
+COG3488	Uncharacterized conserved protein with two CxxC motifs, DUF1111 family	0	0	0	1
+COG4681	Uncharacterized conserved protein YaeQ, suppresses RfaH defect	1	1	1	1
+COG3123	Uncharacterized conserved protein YaiE, UPF0345 family	1	1	1	1
+COG1666	Uncharacterized conserved protein YajQ, UPF0234 family	1	1	1	1
+COG2835	Uncharacterized conserved protein YbaR, Trm112 family	1	1	1	1
+COG3002	Uncharacterized conserved protein YbcC, UPF0753/DUF2309 family	1	0	0	0
+COG0393	Uncharacterized conserved protein YbjQ, UPF0145 family	0	0	1	0
+COG0702	Uncharacterized conserved protein YbjT, contains NAD(P)-binding and DUF2867 domains	1	2	2	2
+COG3217	Uncharacterized conserved protein YcbX, contains MOSC and Fe-S domains	1	1	1	1
+COG3132	Uncharacterized conserved protein YceH, UPF0502 family	0	1	1	0
+COG3134	Uncharacterized conserved protein YcfJ, contains glycine zipper 2TM domain	4	2	1	1
+COG3665	Uncharacterized conserved protein YcgI, DUF1989 family	2	0	0	0
+COG3012	Uncharacterized conserved protein YchJ, contains N- and C-terminal SEC-C domains	1	1	1	1
+COG2350	Uncharacterized conserved protein YciI, contains a putative active-site phosphohistidine	1	0	0	1
+COG0397	Uncharacterized conserved protein YdiU, UPF0061 family	1	1	1	1
+COG2718	Uncharacterized conserved protein YeaH/YhbH, required for sporulation, DUF444 family	1	1	1	1
+COG3189	Uncharacterized conserved protein YeaO, DUF488 family	1	1	1	1
+COG3318	Uncharacterized conserved protein YecA, UPF0149 family, contains C-terminal Zn-binding SEC-C motif	1	0	1	1
+COG1801	Uncharacterized conserved protein YecE, DUF72 family	2	3	2	2
+COG2373	Uncharacterized conserved protein YfaS, alpha-2-macroglobulin family	0	0	1	0
+COG3395	Uncharacterized conserved protein YgbK, DUF1537 family	1	2	1	1
+COG0762	Uncharacterized conserved protein YggT, Ycf19 family	1	1	1	1
+COG3164	Uncharacterized conserved protein YhdP, contains DUF3971 and AsmA2 domains	1	1	1	1
+COG1561	Uncharacterized conserved protein YicC, UPF0701 family	1	1	1	1
+COG3753	Uncharacterized conserved protein YidB, DUF937 family	0	0	1	0
+COG3159	Uncharacterized conserved protein YigA, DUF484 family	1	1	1	1
+COG2258	Uncharacterized conserved protein YiiM, contains MOSC domain	1	1	0	0
+COG3237	Uncharacterized conserved protein YjbJ, UPF0337 family	0	2	1	0
+COG3242	Uncharacterized conserved protein YjeT, DUF2065 family	1	1	1	1
+COG1392	Uncharacterized conserved protein YkaA, distantly related to PhoU, UPF0111/DUF47 family	1	1	1	1
+COG2340	Uncharacterized conserved protein YkwD, contains CAP (CSP/antigen 5/PR1) domain	1	1	0	2
+COG3832	Uncharacterized conserved protein YndB, AHSA1/START domain	3	3	6	4
+COG1610	Uncharacterized conserved protein YqeY	1	1	1	1
+COG2839	Uncharacterized conserved protein YqgC, DUF456 family	0	1	1	1
+COG2105	Uncharacterized conserved protein YtfP, gamma-glutamylcyclotransferase (GGCT)/AIG2-like family	1	0	1	0
+COG0599	Uncharacterized conserved protein YurZ, alkylhydroperoxidase/carboxymuconolactone decarboxylase family	2	1	2	3
+COG3825	Uncharacterized conserved protein,  contains von Willebrand factor type A (vWA) domain	1	1	1	1
+COG2013	Uncharacterized conserved protein, AIM24 family	0	1	0	1
+COG2307	Uncharacterized conserved protein, Alpha-E superfamily	1	1	1	1
+COG2308	Uncharacterized conserved protein, circularly permuted ATPgrasp superfamily	2	2	2	2
+COG2833	Uncharacterized conserved protein, contains ferritin-like DUF455 domain	1	1	1	1
+COG5266	Uncharacterized conserved protein, contains GH25 family domain	0	1	1	0
+COG2361	Uncharacterized conserved protein, contains HEPN domain	0	0	0	2
+COG3737	Uncharacterized conserved protein, contains Mth938-like domain	1	1	1	0
+COG3349	Uncharacterized conserved protein, contains NAD-binding domain and a Fe-S cluster	0	1	0	1
+COG1656	Uncharacterized conserved protein, contains PIN domain	0	2	2	0
+COG4095	Uncharacterized conserved protein, contains PQ loop repeat	1	0	0	0
+COG4301	Uncharacterized conserved protein, contains predicted SAM-dependent methyltransferase domain	1	1	1	1
+COG5654	Uncharacterized conserved protein, contains RES domain	1	0	0	0
+COG3552	Uncharacterized conserved protein, contains von Willebrand factor type A (vWA) domain	1	1	2	1
+COG3837	Uncharacterized conserved protein, cupin superfamily	1	0	0	0
+COG5470	Uncharacterized conserved protein, DUF1330 family	1	1	1	1
+COG3496	Uncharacterized conserved protein, DUF1365 family	1	0	0	1
+COG4102	Uncharacterized conserved protein, DUF1501 family	1	0	1	1
+COG3797	Uncharacterized conserved protein, DUF1697 family	0	0	1	0
+COG4453	Uncharacterized conserved protein, DUF1778 family	1	0	0	0
+COG5267	Uncharacterized conserved protein, DUF1800 family	1	0	1	1
+COG4196	Uncharacterized conserved protein, DUF2126 family	1	1	0	1
+COG4731	Uncharacterized conserved protein, DUF2147 family	1	1	1	1
+COG5460	Uncharacterized conserved protein, DUF2164 family	0	0	1	1
+COG3651	Uncharacterized conserved protein, DUF2237 family	1	0	0	0
+COG4309	Uncharacterized conserved protein, DUF2249 family	0	0	1	0
+COG5642	Uncharacterized conserved protein, DUF2384 family	1	0	0	0
+COG3439	Uncharacterized conserved protein, DUF302 family	1	0	0	0
+COG3544	Uncharacterized conserved protein, DUF305 family	0	1	0	0
+COG3530	Uncharacterized conserved protein, DUF3820 family	1	1	1	1
+COG2343	Uncharacterized conserved protein, DUF427 family	1	0	0	1
+COG2442	Uncharacterized conserved protein, DUF433 family	0	1	0	0
+COG3169	Uncharacterized conserved protein, DUF486 family	1	1	1	1
+COG1721	Uncharacterized conserved protein, DUF58 family, contains vWF domain	1	1	0	2
+COG3597	Uncharacterized conserved protein, DUF697 family	0	0	0	1
+COG3246	Uncharacterized conserved protein, DUF849 family	3	0	4	0
+COG4805	Uncharacterized conserved protein, DUF885 familyt	1	0	1	0
+COG3803	Uncharacterized conserved protein, DUF924 family	1	1	2	1
+COG3749	Uncharacterized conserved protein, DUF934 family	0	1	0	0
+COG3536	Uncharacterized conserved protein, DUF971 family	1	1	1	1
+COG3222	Uncharacterized conserved protein, glycosyltransferase A (GT-A) superfamily, DUF2064 family	0	0	0	1
+COG1432	Uncharacterized conserved protein, LabA/DUF88 family	0	0	1	1
+COG3686	Uncharacterized conserved protein, MAPEG superfamily	1	1	1	1
+COG3558	Uncharacterized conserved protein, nuclear transport factor 2 (NTF2) superfamily	1	0	0	0
+COG1881	Uncharacterized conserved protein, phosphatidylethanolamine-binding protein (PEBP) family	2	1	2	1
+COG4103	Uncharacterized conserved protein, tellurite resistance protein B (TerB) family	1	1	0	1
+COG4454	Uncharacterized copper-binding protein, cupredoxin-like subfamily	1	1	1	1
+COG2318	Uncharacterized damage-inducible protein DinB (forms a four-helix bundle)	0	1	0	2
+COG4643	Uncharacterized domain associated with phage/plasmid primase	0	1	0	0
+COG2509	Uncharacterized FAD-dependent dehydrogenase	1	1	1	1
+COG3592	Uncharacterized Fe-S cluster protein YjdI	0	0	1	0
+COG1742	Uncharacterized inner membrane protein YnfA, drug/metabolite transporter superfamily	0	0	1	0
+COG5416	Uncharacterized integral membrane protein	1	1	1	1
+COG3182	Uncharacterized iron-regulated membrane protein	0	0	1	1
+COG3016	Uncharacterized iron-regulated protein	1	0	0	1
+COG3317	Uncharacterized lipoprotein	1	1	1	1
+COG4705	Uncharacterized membrane-anchored protein	4	1	1	0
+COG1981	Uncharacterized membrane protein	16	18	24	22
+COG3180	Uncharacterized membrane protein AbrB, regulator of aidB expression	1	1	1	1
+COG0586	Uncharacterized membrane protein DedA, SNARE-associated domain	2	3	2	3
+COG3247	Uncharacterized membrane protein HdeD, DUF308 family	0	0	1	0
+COG2354	Uncharacterized membrane protein MutK, may be involved in DNA repair	0	1	1	1
+COG2962	Uncharacterized membrane protein RarD, contains two EamA domains	2	3	4	3
+COG1300	Uncharacterized membrane protein SpoIIM, required for sporulation	0	0	0	1
+COG2855	Uncharacterized membrane protein YadS	3	1	2	1
+COG2832	Uncharacterized membrane protein YbaN, DUF454 family	0	1	1	0
+COG0392	Uncharacterized membrane protein YbhN, UPF0104 family	1	1	1	1
+COG2985	Uncharacterized membrane protein YbjL, putative transporter	0	0	2	0
+COG1289	Uncharacterized membrane protein YccC	1	0	1	0
+COG1714	Uncharacterized membrane protein YckC, RDD family	1	0	1	3
+COG2261	Uncharacterized membrane protein YeaQ/YmgE, transglycosylase-associated protein family	1	2	2	2
+COG2391	Uncharacterized membrane protein YedE/YeeE, contains two sulfur transport domains	2	2	2	0
+COG2860	Uncharacterized membrane protein YeiH	1	0	1	1
+COG0730	Uncharacterized membrane protein YfcA	4	7	5	4
+COG1512	Uncharacterized membrane protein YgcG, contains a TPM-fold domain	1	1	1	1
+COG4539	Uncharacterized membrane protein YGL010W	1	1	1	1
+COG3152	Uncharacterized membrane protein YhaH, DUF805 family	1	1	1	1
+COG2149	Uncharacterized membrane protein YidH, DUF202 family	1	0	0	0
+COG3339	Uncharacterized membrane protein YkvA, DUF1232 family	0	1	1	1
+COG2259	Uncharacterized membrane protein YphA, DoxX/SURF4 family	2	2	2	1
+COG1238	Uncharacterized membrane protein YqaA, SNARE-associated domain	1	1	1	1
+COG2862	Uncharacterized membrane protein YqhA	1	1	1	1
+COG5393	Uncharacterized membrane protein YqjE	1	0	0	0
+COG3326	Uncharacterized membrane protein YsdA, DUF1294 family	0	1	0	0
+COG2155	Uncharacterized membrane protein YuzA, DUF378 family	1	0	0	0
+COG1950	Uncharacterized membrane protein YvlD, DUF360 family	2	1	1	1
+COG1295	Uncharacterized membrane protein, BrkB/YihY/UPF0761 family (not an RNase)	3	5	4	5
+COG3174	Uncharacterized membrane protein, DUF4010 family	1	0	0	0
+COG3162	Uncharacterized membrane protein, DUF485 family	1	0	0	0
+COG3136	Uncharacterized membrane protein, GlpM family	0	0	0	1
+COG1286	Uncharacterized membrane protein, required for colicin V production	1	1	1	1
+COG1399	Uncharacterized metal-binding protein YceD, DUF177 family	0	1	0	0
+COG1545	Uncharacterized OB-fold protein, contains Zn-ribbon domain	0	0	2	0
+COG1765	Uncharacterized OsmC-related protein	1	1	2	1
+COG2456	Uncharacterized protein	11	17	20	14
+COG2967	Uncharacterized protein affecting Mg2+/Co2+ transport	1	1	1	1
+COG3206	Uncharacterized protein involved in exopolysaccharide biosynthesis	1	2	2	1
+COG2982	Uncharacterized protein involved in outer membrane biogenesis	2	1	2	1
+COG3213	Uncharacterized protein involved in response to NO	1	0	2	0
+COG1324	Uncharacterized protein involved in tolerance to divalent cations	0	1	1	1
+COG3046	Uncharacterized protein related to deoxyribodipyrimidine photolyase	1	0	0	1
+COG4447	Uncharacterized protein related to plant photosystem II stability/assembly factor	0	1	5	0
+COG2990	Uncharacterized protein VirK/YbjX	0	0	1	0
+COG4549	Uncharacterized protein YcnI	0	1	1	1
+COG4405	Uncharacterized protein YhfF	0	1	0	0
+COG3204	Uncharacterized protein YjiK	0	0	1	0
+COG4274	Uncharacterized protein, contains GYD domain	0	2	1	0
+COG4310	Uncharacterized protein, cotains an aminopeptidase-like domain	0	1	1	0
+COG5579	Uncharacterized protein, DUF1810 family	1	1	1	0
+COG3197	Uncharacterized protein, possibly involved in nitrogen fixation	1	1	1	0
+COG4101	Uncharacterized protein, RmlC-like cupin domain	1	1	1	1
+COG2802	Uncharacterized protein, similar to the N-terminal domain of Lon protease	1	1	1	1
+COG0325	Uncharacterized pyridoxal phosphate-containing protein, affects Ilv metabolism, UPF0001 family	1	1	1	1
+COG1434	Uncharacterized SAM-binding protein YcdF, DUF218 family	0	1	1	2
+COG1968	Undecaprenyl pyrophosphate phosphatase UppP	1	1	1	2
+COG0020	Undecaprenyl pyrophosphate synthase	1	1	1	1
+COG1573	Uracil-DNA glycosylase	3	2	1	2
+COG0692	Uracil DNA glycosylase	1	1	1	1
+COG0035	Uracil phosphoribosyltransferase	1	1	1	1
+COG4413	Urea transporter	0	0	1	0
+COG2371	Urease accessory protein UreE	1	1	1	1
+COG0830	Urease accessory protein UreF	1	1	1	1
+COG0829	Urease accessory protein UreH	1	1	2	1
+COG0804	Urease alpha subunit	1	1	2	1
+COG0832	Urease beta subunit	1	1	2	1
+COG0831	Urease gamma subunit	1	1	2	1
+COG0528	Uridylate kinase	1	1	1	1
+COG2987	Urocanate hydratase	0	1	1	0
+COG0407	Uroporphyrinogen-III decarboxylase	1	1	1	1
+COG0007	Uroporphyrinogen-III methylase (siroheme synthase)	1	1	1	1
+COG1587	Uroporphyrinogen-III synthase	1	1	1	1
+COG1210	UTP-glucose-1-phosphate uridylyltransferase	1	1	1	1
+COG2844	UTP:GlnB (protein PII) uridylyltransferase	1	1	1	1
+COG3591	V8-like Glu-specific endopeptidase	0	0	2	0
+COG0525	Valyl-tRNA synthetase	1	1	1	1
+COG3758	Various environmental stresses-induced protein Ves (function unknown)	0	1	1	0
+COG2852	Very-short-patch-repair endonuclease	0	1	1	0
+COG4456	Virulence-associated protein VagC (function unknown)	0	0	0	1
+COG1226	Voltage-gated potassium channel Kch	0	0	1	0
+COG0006	Xaa-Pro aminopeptidase	1	1	1	1
+COG1975	Xanthine and CO dehydrogenase maturation factor, XdhC/CoxF family	2	2	2	2
+COG4630	Xanthine dehydrogenase, iron-sulfur cluster and FAD-binding subunit A	1	1	1	1
+COG4631	Xanthine dehydrogenase, molybdopterin-binding subunit B	1	1	1	1
+COG2233	Xanthine/uracil permease	2	1	1	1
+COG0428	Zinc transporter ZupT	2	2	1	1
+COG1062	Zn-dependent alcohol dehydrogenase	1	1	1	1
+COG2355	Zn-dependent dipeptidase, microsomal dipeptidase homolog	0	0	1	0
+COG0339	Zn-dependent oligopeptidase	1	1	3	1
+COG1994	Zn-dependent protease (includes SpoIVFB)	1	1	1	1
+COG0501	Zn-dependent protease with chaperone function	2	1	2	2

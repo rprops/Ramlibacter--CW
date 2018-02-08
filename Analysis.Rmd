@@ -2179,6 +2179,72 @@ print(p_Topt)
 #dev.off()
 ```
 
+# Trophic strategy markers  
+
+```{r markers-1, warning = FALSE, fig.width = 6, fig.height = 5, dpi = 500}
+Tstrategy_df <- read.csv("./IMG_annotation/markers.Tstrategy.csv")
+
+merged_gc_cog <- merged_gc_cog %>% dplyr::group_by(Genome) %>% 
+  mutate(Noligo = sum(cog_id %in% Tstrategy_df$COG_id[Tstrategy_df$Trophic_strategy == "Oligotroph"]),
+         Ncopio = sum(cog_id %in% Tstrategy_df$COG_id[Tstrategy_df$Trophic_strategy == "Copiotroph"]))
+
+merged_gc_cog <- merged_gc_cog %>% mutate(Nratio = Noligo/Ncopio)
+
+toMatch_oligo <- Tstrategy_df$COG_id[Tstrategy_df$Trophic_strategy == "Oligotroph"]
+toMatch_copio <- Tstrategy_df$COG_id[Tstrategy_df$Trophic_strategy == "Copiotroph"]
+
+test <- panG %>% dplyr::group_by(genome_name) %>% 
+  mutate(Noligo = length(grep(paste(toMatch_oligo, collapse="|"), 
+                        COG_FUNCTION_ACC, value=TRUE)),
+         Ncopio = length(grep(paste(toMatch_copio, collapse="|"), 
+                        COG_FUNCTION_ACC, value=TRUE))) %>% 
+  mutate(Nratio = Noligo/Ncopio)
+
+
+
+p_markers1 <- ggplot(test, aes(x = genome_name, y = Noligo, fill = genome_name))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_brewer(palette = "Paired")+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylab("")+
+  xlab("")+
+  ggtitle("Noligo")
+
+print(p_markers1)
+
+p_markers2 <- ggplot(test, aes(x = genome_name, y = Ncopio, fill = genome_name))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_brewer(palette = "Paired")+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylab("")+
+  xlab("")+
+  ggtitle("Ncopio")
+
+print(p_markers2)
+
+cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
+```
+
 # Phosphatase diversity
 ```{r Pho, warning = FALSE, fig.width = 9, fig.height = 4, dpi = 500}
 
