@@ -5,3 +5,8 @@
 
 SEQ_discrete/
 isolation/online-growth/
+Figures-FCM/plot_gif/SC/*.png
+Figures-FCM/plot_gif/FL/*.png
+Figures-FCM/plot_gif/FLFSC/*.png
+Figures-FCM/plot_gif/FLSC/*.png
+Figures-FCM/plot_gif/counts/*.png
