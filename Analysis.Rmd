@@ -154,13 +154,13 @@ sample_data(phy_df_rel) <- sample_data(meta_16S)
 # Select samples for which corresponding counts are available
 cell_counts <- cell_counts[cell_counts$sample_title %in% sample_names(phy_df_rel), ]
 cell_counts <- droplevels(cell_counts)
-phy_df_rel <- prune_samples(sample_names(phy_df_rel) %in% cell_counts$sample_title, phy_df_rel)
+phy_df_abs <- prune_samples(sample_names(phy_df_rel) %in% cell_counts$sample_title, phy_df_rel)
 
 # Multiply with cell counts in 50 µL of sample
-otu_table(phy_df_rel) <- otu_table(phy_df_rel) * cell_counts$Number_of_cells
+otu_table(phy_df_abs) <- otu_table(phy_df_abs) * cell_counts$Number_of_cells
 
 # Select taxa that were selected based on prevalence in previous chunk
-phy_df_abs <- prune_taxa(taxa_names(phy_df_filtered), phy_df_rel)
+phy_df_abs <- prune_taxa(taxa_names(phy_df_filtered), phy_df_abs)
 
 # Round absolute abundances to integers
 otu_table(phy_df_abs) <- round(otu_table(phy_df_abs), 0)
@@ -234,6 +234,52 @@ p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>%
   guides(shape = guide_legend(title="Reactor status", ncol =1))
 
 print(p_abs_otu1)
+```
+
+## Physicochemistry
+
+```{r physico-data, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 6}
+# psmelt relative abundance data
+df_rel <- psmelt(phy_df_rel)
+
+for(otu in unique(df_rel$OTU)[1:3]){
+  # Assess correlations
+  Physico_df_trim_abs <- df_abs[, c("OTU", "Timepoint","Dilution_factor", 
+                              "Formate", "Acetate", "Sulfate", 
+                              "Nitrate", "Chloride", "Temperature", 
+                              "Conductivity", "pH", "Abundance")] %>%
+  dplyr::filter(!is.na(Formate), OTU == otu)
+
+  Physico_df_trim_rel <- df_rel[, c("OTU", "Timepoint","Dilution_factor", 
+                              "Formate", "Acetate", "Sulfate", 
+                              "Nitrate", "Chloride", "Temperature", 
+                              "Conductivity", "pH", "Abundance")] %>%
+  dplyr::filter(!is.na(Formate), OTU == otu)
+
+  # Get P-values of correlations between OTUs and physicochemistry
+  p.mat_abs <- cor.mtest(Physico_df_trim_abs[, -c(1,2,3)],
+                                            method = "kendall")
+  p.mat_rel <- cor.mtest(Physico_df_trim_rel[, -c(1,2,3)],
+                                            method = "kendall")
+
+  # Making correlation plots
+   corrplot::corrplot(cor(Physico_df_trim_abs[, -c(1,2,3)],
+                                            method = "kendall"),
+                                        type="lower",
+                                        tl.col="black", tl.srt=45,
+                                        p.mat = p.mat_abs, sig.level = 0.05,
+                                        diag=FALSE, 
+                                        title = paste("Absolute abundances - ", otu))
+   
+   corrplot::corrplot(cor(Physico_df_trim_rel[, -c(1,2,3)],
+                                            method = "kendall"), type="lower",
+                                    tl.col="black", tl.srt=45,
+                                    p.mat = p.mat_rel, sig.level = 0.05,
+                                    diag=FALSE, 
+                                    title = paste("Relative abundances - ", otu))
+
+  
+}
 ```
 
 # B. MetaG analysis

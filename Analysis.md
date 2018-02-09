@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "23 January, 2018"
+date: "09 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -145,13 +145,13 @@ sample_data(phy_df_rel) <- sample_data(meta_16S)
 # Select samples for which corresponding counts are available
 cell_counts <- cell_counts[cell_counts$sample_title %in% sample_names(phy_df_rel), ]
 cell_counts <- droplevels(cell_counts)
-phy_df_rel <- prune_samples(sample_names(phy_df_rel) %in% cell_counts$sample_title, phy_df_rel)
+phy_df_abs <- prune_samples(sample_names(phy_df_rel) %in% cell_counts$sample_title, phy_df_rel)
 
 # Multiply with cell counts in 50 µL of sample
-otu_table(phy_df_rel) <- otu_table(phy_df_rel) * cell_counts$Number_of_cells
+otu_table(phy_df_abs) <- otu_table(phy_df_abs) * cell_counts$Number_of_cells
 
 # Select taxa that were selected based on prevalence in previous chunk
-phy_df_abs <- prune_taxa(taxa_names(phy_df_filtered), phy_df_rel)
+phy_df_abs <- prune_taxa(taxa_names(phy_df_filtered), phy_df_abs)
 
 # Round absolute abundances to integers
 otu_table(phy_df_abs) <- round(otu_table(phy_df_abs), 0)
@@ -252,6 +252,55 @@ print(p_abs_otu1)
 ```
 
 <img src="Figures/cached/OTU1-dynamics-1.png" style="display: block; margin: auto;" />
+
+## Physicochemistry
+
+
+```r
+# psmelt relative abundance data
+df_rel <- psmelt(phy_df_rel)
+
+for(otu in unique(df_rel$OTU)[1:3]){
+  # Assess correlations
+  Physico_df_trim_abs <- df_abs[, c("OTU", "Timepoint","Dilution_factor", 
+                              "Formate", "Acetate", "Sulfate", 
+                              "Nitrate", "Chloride", "Temperature", 
+                              "Conductivity", "pH", "Abundance")] %>%
+  dplyr::filter(!is.na(Formate), OTU == otu)
+
+  Physico_df_trim_rel <- df_rel[, c("OTU", "Timepoint","Dilution_factor", 
+                              "Formate", "Acetate", "Sulfate", 
+                              "Nitrate", "Chloride", "Temperature", 
+                              "Conductivity", "pH", "Abundance")] %>%
+  dplyr::filter(!is.na(Formate), OTU == otu)
+
+  # Get P-values of correlations between OTUs and physicochemistry
+  p.mat_abs <- cor.mtest(Physico_df_trim_abs[, -c(1,2,3)],
+                                            method = "kendall")
+  p.mat_rel <- cor.mtest(Physico_df_trim_rel[, -c(1,2,3)],
+                                            method = "kendall")
+
+  # Making correlation plots
+   corrplot::corrplot(cor(Physico_df_trim_abs[, -c(1,2,3)],
+                                            method = "kendall"),
+                                        type="lower",
+                                        tl.col="black", tl.srt=45,
+                                        p.mat = p.mat_abs, sig.level = 0.05,
+                                        diag=FALSE, 
+                                        title = paste("Absolute abundances - ", otu))
+   
+   corrplot::corrplot(cor(Physico_df_trim_rel[, -c(1,2,3)],
+                                            method = "kendall"), type="lower",
+                                    tl.col="black", tl.srt=45,
+                                    p.mat = p.mat_rel, sig.level = 0.05,
+                                    diag=FALSE, 
+                                    title = paste("Relative abundances - ", otu))
+
+  
+}
+```
+
+<img src="Figures/cached/physico-data-1.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-2.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-3.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-4.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-5.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-6.png" style="display: block; margin: auto;" />
 
 # B. MetaG analysis
 
@@ -437,9 +486,9 @@ RAMLI_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Wed Jan 17 10:12:10 2018  --- There are 2830 genes with > 0.1 %
-## Wed Jan 17 10:12:10 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:10 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:41 2018  --- There are 2830 genes with > 0.1 %
+## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -470,9 +519,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Wed Jan 17 10:12:10 2018  --- There are 1889 genes with > 0.1 %
-## Wed Jan 17 10:12:10 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:10 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:41 2018  --- There are 1889 genes with > 0.1 %
+## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -514,9 +563,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Wed Jan 17 10:12:10 2018  --- There are 1797 genes with > 0.1 %
-## Wed Jan 17 10:12:10 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:10 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:41 2018  --- There are 1797 genes with > 0.1 %
+## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -558,9 +607,9 @@ RAMLI_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Wed Jan 17 10:12:10 2018  --- There are 4954 genes with > 0.1 %
-## Wed Jan 17 10:12:10 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:10 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:41 2018  --- There are 4954 genes with > 0.1 %
+## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -580,9 +629,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Wed Jan 17 10:12:11 2018  --- There are 3929 genes with > 0.1 %
-## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:41 2018  --- There are 3929 genes with > 0.1 %
+## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -602,9 +651,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Wed Jan 17 10:12:11 2018  --- There are 3573 genes with > 0.1 %
-## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:42 2018  --- There are 3573 genes with > 0.1 %
+## Fri Feb 09 16:55:42 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:42 2018  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -624,9 +673,9 @@ RAMLI_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Wed Jan 17 10:12:11 2018  --- There are 2164 genes with > 0.1 %
-## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:42 2018  --- There are 2164 genes with > 0.1 %
+## Fri Feb 09 16:55:42 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:42 2018  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -657,9 +706,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Wed Jan 17 10:12:11 2018  --- There are 1384 genes with > 0.1 %
-## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:42 2018  --- There are 1384 genes with > 0.1 %
+## Fri Feb 09 16:55:42 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:42 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -679,9 +728,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Wed Jan 17 10:12:11 2018  --- There are 1342 genes with > 0.1 %
-## Wed Jan 17 10:12:11 2018  --- This is 100 % of all genes
-## Wed Jan 17 10:12:11 2018  --- The 10 genes with the highest GC% are:
+## Fri Feb 09 16:55:42 2018  --- There are 1342 genes with > 0.1 %
+## Fri Feb 09 16:55:42 2018  --- This is 100 % of all genes
+## Fri Feb 09 16:55:42 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -1273,16 +1322,27 @@ posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_ana
 ## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control7fr_Ramlibacter_MAG_results.tsv"
 ## [1] "control8_Ramlibacter_tataouinensis_TTB310_results.tsv"
 ## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control8_Ramlibacter_tataouinensis_TTB310_results.tsv"
+## [1] "EXP_Ramlibacter_MAG_results.tsv"
+## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/EXP_Ramlibacter_MAG_results.tsv"
 ```
 
 ```r
+posi_control_meta <- read.table("./Mapping_files/posiG_controle_mapping.tsv",
+                                header = TRUE)
+
 # Filter out non-PSGs
 posi_controls <- posi_controls %>% filter(P.Value < 0.05 & 
                                     FDR < 0.05)
 
+# merge with metadata
+posi_controls <- left_join(posi_controls, posi_control_meta, 
+                           by = c("sample_file"= "result_filename"))
+
 # Plot dN/dS ratios for controls
 # Make plot
-p_dNdS_control <- ggplot(posi_controls, aes(x = sample_file, y = HA.foreground.omega, fill = sample_file))+
+p_dNdS_control <- posi_controls %>% dplyr::filter(group == "Ramli_only") %>% 
+  ggplot(aes(x = sample_file, y = HA.foreground.omega,
+                            fill = sample_file))+
   geom_jitter(size = 4, shape = 21, width = 0.2)+
   geom_boxplot(alpha = 0.4, outlier.shape = NA)+
   theme_bw()+
@@ -1291,13 +1351,14 @@ p_dNdS_control <- ggplot(posi_controls, aes(x = sample_file, y = HA.foreground.o
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_blank(),
+        # axis.text.x = element_blank(),
         strip.text=element_text(size=18),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         # ,legend.position = c(0.87, 0.85)
         )+
   xlab("")+
-  guides(fill=guide_legend(ncol=2))
+  guides(fill=FALSE)
+  # facet_grid(~target_species)
 
 # print(p_dNdS_control)
 
@@ -2666,6 +2727,83 @@ print(p_Topt)
 ```r
 #dev.off()
 ```
+
+# Trophic strategy markers  
+
+
+```r
+Tstrategy_df <- read.csv("./IMG_annotation/markers.Tstrategy.csv")
+
+merged_gc_cog <- merged_gc_cog %>% dplyr::group_by(Genome) %>% 
+  mutate(Noligo = sum(cog_id %in% Tstrategy_df$COG_id[Tstrategy_df$Trophic_strategy == "Oligotroph"]),
+         Ncopio = sum(cog_id %in% Tstrategy_df$COG_id[Tstrategy_df$Trophic_strategy == "Copiotroph"]))
+
+merged_gc_cog <- merged_gc_cog %>% mutate(Nratio = Noligo/Ncopio)
+
+toMatch_oligo <- Tstrategy_df$COG_id[Tstrategy_df$Trophic_strategy == "Oligotroph"]
+toMatch_copio <- Tstrategy_df$COG_id[Tstrategy_df$Trophic_strategy == "Copiotroph"]
+
+test <- panG %>% dplyr::group_by(genome_name) %>% 
+  mutate(Noligo = length(grep(paste(toMatch_oligo, collapse="|"), 
+                        COG_FUNCTION_ACC, value=TRUE)),
+         Ncopio = length(grep(paste(toMatch_copio, collapse="|"), 
+                        COG_FUNCTION_ACC, value=TRUE))) %>% 
+  mutate(Nratio = Noligo/Ncopio)
+
+
+
+p_markers1 <- ggplot(test, aes(x = genome_name, y = Noligo, fill = genome_name))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_brewer(palette = "Paired")+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylab("")+
+  xlab("")+
+  ggtitle("Noligo")
+
+print(p_markers1)
+```
+
+<img src="Figures/cached/markers-1-1.png" style="display: block; margin: auto;" />
+
+```r
+p_markers2 <- ggplot(test, aes(x = genome_name, y = Ncopio, fill = genome_name))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_brewer(palette = "Paired")+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylab("")+
+  xlab("")+
+  ggtitle("Ncopio")
+
+print(p_markers2)
+```
+
+<img src="Figures/cached/markers-1-2.png" style="display: block; margin: auto;" />
+
+```r
+cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
+```
+
+<img src="Figures/cached/markers-1-3.png" style="display: block; margin: auto;" />
 
 # Phosphatase diversity
 
