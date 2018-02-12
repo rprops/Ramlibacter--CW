@@ -1,0 +1,62 @@
+# blastn
+# Iteration: 0
+# Query: Inoculum
+# RID: 7KK0PXF1114
+# Database: n/a
+# Fields: query id, subject ids, query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 5 hits found
+Inoculum	Reactor100mgL_reseq	Inoculum	Query_68183	99.353	1237	3	5	5	1238	1	1235	0.0	2237
+Inoculum	Inoculum	Inoculum	Query_68179	100.000	1238	0	0	1	1238	1	1238	0.0	2279
+Inoculum	Reactor10mgL	Inoculum	Query_68182	99.112	1239	5	6	5	1238	1	1238	0.0	2222
+Inoculum	Reactor1mgL_reseq_F	Inoculum	Query_68180	99.644	843	2	1	5	847	1	842	0.0	1543
+Inoculum	Reactor1mgL_reseq_R	Inoculum	Query_68181	99.757	412	1	0	827	1238	412	1	0.0	756
+# blastn
+# Iteration: 0
+# Query: Reactor1mgL_reseq_F
+# RID: 7KK0PXF1114
+# Database: n/a
+# Fields: query id, subject ids, query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 4 hits found
+Reactor1mgL_reseq_F	Reactor100mgL_reseq	Reactor1mgL_reseq_F	Query_68183	99.289	844	3	3	1	842	1	843	0.0	1528
+Reactor1mgL_reseq_F	Inoculum	Reactor1mgL_reseq_F	Query_68179	99.644	843	2	1	1	842	5	847	0.0	1543
+Reactor1mgL_reseq_F	Reactor10mgL	Reactor1mgL_reseq_F	Query_68182	99.526	844	2	2	1	842	1	844	0.0	1539
+Reactor1mgL_reseq_F	Reactor1mgL_reseq_F	Reactor1mgL_reseq_F	Query_68180	100.000	842	0	0	1	842	1	842	0.0	1555
+# blastn
+# Iteration: 0
+# Query: Reactor1mgL_reseq_R
+# RID: 7KK0PXF1114
+# Database: n/a
+# Fields: query id, subject ids, query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 4 hits found
+Reactor1mgL_reseq_R	Reactor100mgL_reseq	Reactor1mgL_reseq_R	Query_68183	99.516	413	1	1	1	412	1235	823	0.0	750
+Reactor1mgL_reseq_R	Inoculum	Reactor1mgL_reseq_R	Query_68179	99.757	412	1	0	1	412	1238	827	0.0	756
+Reactor1mgL_reseq_R	Reactor10mgL	Reactor1mgL_reseq_R	Query_68182	98.313	415	4	3	1	412	1238	824	0.0	725
+Reactor1mgL_reseq_R	Reactor1mgL_reseq_R	Reactor1mgL_reseq_R	Query_68181	100.000	412	0	0	1	412	1	412	0.0	761
+# blastn
+# Iteration: 0
+# Query: Reactor10mgL
+# RID: 7KK0PXF1114
+# Database: n/a
+# Fields: query id, subject ids, query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 5 hits found
+Reactor10mgL	Reactor100mgL_reseq	Reactor10mgL	Query_68183	98.791	1241	6	9	1	1238	1	1235	0.0	2202
+Reactor10mgL	Inoculum	Reactor10mgL	Query_68179	99.112	1239	5	6	1	1238	5	1238	0.0	2222
+Reactor10mgL	Reactor10mgL	Reactor10mgL	Query_68182	100.000	1238	0	0	1	1238	1	1238	0.0	2279
+Reactor10mgL	Reactor1mgL_reseq_F	Reactor10mgL	Query_68180	99.526	844	2	2	1	844	1	842	0.0	1539
+Reactor10mgL	Reactor1mgL_reseq_R	Reactor10mgL	Query_68181	98.313	415	4	3	824	1238	412	1	0.0	725
+# blastn
+# Iteration: 0
+# Query: Reactor100mgL_reseq
+# RID: 7KK0PXF1114
+# Database: n/a
+# Fields: query id, subject ids, query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 5 hits found
+Reactor100mgL_reseq	Reactor100mgL_reseq	Reactor100mgL_reseq	Query_68183	100.000	1235	0	0	1	1235	1	1235	0.0	2270
+Reactor100mgL_reseq	Inoculum	Reactor100mgL_reseq	Query_68179	99.353	1237	3	5	1	1235	5	1238	0.0	2237
+Reactor100mgL_reseq	Reactor10mgL	Reactor100mgL_reseq	Query_68182	98.791	1241	6	9	1	1235	1	1238	0.0	2202
+Reactor100mgL_reseq	Reactor1mgL_reseq_F	Reactor100mgL_reseq	Query_68180	99.289	844	3	3	1	843	1	842	0.0	1528
+Reactor100mgL_reseq	Reactor1mgL_reseq_R	Reactor100mgL_reseq	Query_68181	99.516	413	1	1	823	1235	412	1	0.0	750
+
+
+
+
