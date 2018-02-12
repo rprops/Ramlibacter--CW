@@ -1,7 +1,7 @@
 ---
 title: "Analysis-FCM"
 author: "Ruben Props"
-date: "01 February, 2018"
+date: "12 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -31,17 +31,18 @@ editor_options:
 ```r
 summary <- fsApply(x=flowData_transformed,FUN=function(x) apply(x,2,max), use.exprs=TRUE)
 max = max(summary[,"FL1-H"])
+mytrans <- function(x) x/max
+flowData_transformed <- transform(flowData_transformed,`FL1-H`=mytrans(`FL1-H`),
+                                  `FL3-H`=mytrans(`FL3-H`), 
+                                  `SSC-H`=mytrans(`SSC-H`),
+                                  `FSC-H`=mytrans(`FSC-H`))
+
 flowData_transformed_sb <- flowData_transformed[which(flowCore::sampleNames(flowData_transformed) 
                                                    %in% c("R1_41.fcs","R2_41.fcs","R3_41.fcs",
                                                           "R1_56.fcs","R2_56.fcs","R3_56.fcs",
                                                           "R1_64.fcs","R2_64.fcs","R3_64.fcs",
                                                          "R1_81.fcs","R2_81.fcs","R3_81.fcs",
                                                          "R1_90.fcs","R2_90.fcs","R3_90.fcs"))]
-mytrans <- function(x) x/max
-flowData_transformed_sb <- transform(flowData_transformed_sb,`FL1-H`=mytrans(`FL1-H`),
-                                  `FL3-H`=mytrans(`FL3-H`), 
-                                  `SSC-H`=mytrans(`SSC-H`),
-                                  `FSC-H`=mytrans(`FSC-H`))
 
 MyText <- c("1 mg/L - 20h", "1 mg/L - 30h", "1 mg/L - 40h", "1 mg/L - 60h", "1 mg/L - 70h",
             "10 mg/L - 20h", "10 mg/L - 30h", "10 mg/L - 40h", "10 mg/L - 60h", "10 mg/L - 70h",
@@ -108,6 +109,141 @@ print(xyplot(`FSC-H`~`SSC-H`, data=flowData_transformed_sb,
 
 <img src="Figures-FCM/cached/xplore-scatterplots-2.png" style="display: block; margin: auto;" />
 
+```r
+#Export all figures to make GIF
+# for(timepoint in sort(unique(counts$Timepoint))){
+#   print(timepoint)
+#   samples_to_sel <- counts$Samples[counts$Timepoint == timepoint]
+#   flowData_transformed_tmp <- flowData_transformed[which(flowCore::sampleNames(flowData_transformed)
+#                                                    %in% counts$Samples[counts$Timepoint == timepoint])]
+#   
+  # MyText_tmp <- c(paste("1 mg/L - ", round(counts$ExactTime[counts$Timepoint == timepoint])[1], "h", sep =""),
+  #                 paste("10 mg/L - ", round(counts$ExactTime[counts$Timepoint == timepoint])[2], "h", sep =""),
+  #                 paste("100 mg/L - ", round(counts$ExactTime[counts$Timepoint == timepoint])[3], "h", sep ="")
+  # )
+  # flist_tmp <- list(filters , filters, filters)
+  # names(flist_tmp) <- flowCore::sampleNames(flowData_transformed_tmp)
+
+  # # Print fluorescence scatter plots
+  # png(paste("./plot_gif/FL/FL_", timepoint , ".png", sep = ""),
+  #     res = 500, units = "in", width = 6, height = 3, bg = "transparent")
+  #   print(xyplot(`FL3-H`~`FL1-H`, data=flowData_transformed_tmp,
+  #            index.cond=list(c(1:3)),
+  #            filter=flist_tmp,
+  #            xbins=400,nbin=128, par.strip.text=list(col="black", font=3,cex=1),
+  #            smooth=FALSE, xlim=c(0.5,1),ylim=c(0.1,1),
+  #            xlab=list(label="Green fluorescence intensity (FL1-H)",cex=1),
+  #            ylab=list(label="Red fluorescence intensity (FL3-H)", cex=1),
+  #            par.settings=my.settings,
+  #            scales=list(x=list(at=seq(from=0, to=1, by=.1), cex=1),
+  #                        y=list(at=seq(from=0, to=1, by=.2), cex=1)), layout=c(3,1),
+  #            strip=strip.custom(factor.levels=MyText_tmp),
+  #            margin=TRUE,
+  #            binTrans="log"
+  #            )
+  #  )
+  #
+  # dev.off()
+
+
+  # # Print scatters scatter plots
+    # png(paste("./plot_gif/SC/SC_", timepoint , ".png", sep = ""),
+    #   res = 500, units = "in", width = 6, height = 3, bg = "transparent")
+    #     print(xyplot(`FSC-H`~`SSC-H`, data=flowData_transformed_tmp,
+    #          index.cond=list(c(1:3)),
+    #          xbins=400,nbin=128, par.strip.text=list(col="black", font=3,cex=1),
+    #          smooth=FALSE, xlim=c(0.3,1),ylim=c(0.3,1),
+    #          xlab=list(label="Sideway scatter intensity (SSC-H)",cex=1),
+    #          ylab=list(label="Forward scatter intensity (FSC-H)", cex=1),
+    #          par.settings=my.settings,
+    #          scales=list(x=list(at=seq(from=0, to=1, by=.2), cex=1),
+    #                      y=list(at=seq(from=0, to=1, by=.2), cex=1)), layout=c(3,1),
+    #          strip=strip.custom(factor.levels=MyText_tmp),
+    #          margin=TRUE,
+    #          binTrans="log"
+    #          )
+    #   )
+    #     dev.off()
+
+# # Print scatter-FL1 plots
+    # png(paste("./plot_gif/FLSC/FLFSC_", timepoint , ".png", sep = ""),
+    #   res = 500, units = "in", width = 6, height = 3, bg = "transparent")
+#         print(xyplot(`FSC-H`~`FL1-H`, data=flowData_transformed_tmp,
+#              index.cond=list(c(1:3)),
+#              xbins=400,nbin=128, par.strip.text=list(col="black", font=3,cex=1),
+#              smooth=FALSE, xlim=c(0.3,1),ylim=c(0.3,1),
+#              xlab=list(label="Green fluorescence intensity (FL1-H)",cex=1),
+#              ylab=list(label="Forward scatter intensity (SSC-H)", cex=1),
+#              par.settings=my.settings,
+#              scales=list(x=list(at=seq(from=0, to=1, by=.2), cex=1),
+#                          y=list(at=seq(from=0, to=1, by=.2), cex=1)), layout=c(3,1),
+#              strip=strip.custom(factor.levels=MyText_tmp),
+#              margin=TRUE,
+#              binTrans="log"
+#              )
+#       )
+#         dev.off()
+#   if(timepoint == 1) {
+#     samples_to_sel_counts <- as.character(samples_to_sel)
+#     } else {
+#       samples_to_sel_counts <- c(samples_to_sel_counts, as.character(samples_to_sel))
+#     }
+#   
+#     p1_tmp <- counts %>% dplyr::filter(NutrientCondition=="1 mg/L R2A" & Samples %in% samples_to_sel_counts) %>% 
+#       ggplot(aes(x = ExactTime, y = Total.cells))+
+#   geom_line(color = "#7FC97F")+
+#   geom_point(shape = 21, size = 3, fill = "#7FC97F")+
+#   theme_bw()+
+#   scale_fill_brewer("Nutrient condition", palette = "Accent")+
+#   scale_color_brewer(palette = "Accent")+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=14),
+#         title=element_text(size=14), legend.text=element_text(size=12),
+#         legend.direction = "horizontal",legend.position = "bottom")+
+#   ylab("Cell density (cells/µL)")+
+#   xlab("Time (h)")+
+#   guides(color = FALSE, fill = FALSE)+
+#       xlim(0, 85)+
+#       ylim(0,16000)
+#     
+#     p2_tmp <- counts %>% dplyr::filter(NutrientCondition=="10 mg/L R2A" & Samples %in% samples_to_sel_counts) %>% 
+#       ggplot(aes(x = ExactTime, y = Total.cells))+
+#   geom_line(color = "#BEAED4")+
+#   geom_point(shape = 21, size = 3, fill = "#BEAED4")+
+#   theme_bw()+
+#   scale_fill_brewer("Nutrient condition", palette = "Accent")+
+#   scale_color_brewer(palette = "Accent")+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=14),
+#         title=element_text(size=14), legend.text=element_text(size=12),
+#         legend.direction = "horizontal",legend.position = "bottom")+
+#   ylab("Cell density (cells/µL)")+
+#   xlab("Time (h)")+
+#   guides(color = FALSE, fill = FALSE)+
+#       xlim(0, 85)+
+#       ylim(0,16000)
+#     
+#       p3_tmp <- counts %>% dplyr::filter(NutrientCondition=="100 mg/L R2A" & Samples %in% samples_to_sel_counts) %>% 
+#       ggplot(aes(x = ExactTime, y = Total.cells))+
+#   geom_line(color = "#FDC086")+
+#   geom_point(shape = 21, size = 3, fill = "#FDC086")+
+#   theme_bw()+
+#   scale_fill_brewer("Nutrient condition", palette = "Accent")+
+#   scale_color_brewer(palette = "Accent")+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=14),
+#         title=element_text(size=14), legend.text=element_text(size=12),
+#         legend.direction = "horizontal",legend.position = "bottom")+
+#   ylab("Cell density (cells/µL)")+
+#   xlab("Time (h)")+
+#   guides(color = FALSE, fill = FALSE)+
+#       xlim(0, 85)+
+#       ylim(0,16000)
+#       
+#       png(paste("./plot_gif/counts/count_", timepoint , ".png", sep = ""),
+#       res = 500, units = "in", width = 9, height = 3, bg = "transparent")
+#       print(cowplot::plot_grid(p1_tmp, p2_tmp, p3_tmp, nrow = 1, align = 'h'))
+#       dev.off()
+# }
+```
+
 
 
 ```r
@@ -151,7 +287,7 @@ p_HNA <- ggplot(counts, aes(x = ExactTime, y = HNA.cells, fill = NutrientConditi
         legend.direction = "horizontal",legend.position = "bottom")+
   ylab(expression("Cell density - cells µL"^"-1"))+
   xlab("Time (h)")+
-  labs(title="HNA population")+
+  labs(title="High fluorescence population")+
   guides(color = FALSE)
 
 
@@ -166,7 +302,7 @@ p_LNA <- ggplot(counts, aes(x = ExactTime, y = LNA.cells, fill = NutrientConditi
         legend.direction = "horizontal",legend.position = "bottom")+
   ylab(expression("Cell density - cells µL"^"-1"))+
   xlab("Time (h)")+
-  labs(title="LNA population")+
+  labs(title="Low fluorescence population")+
   guides(color = FALSE)
 
 grid_arrange_shared_legend(p_counts, p_HNA, p_LNA, ncol = 3)
@@ -184,9 +320,9 @@ p_HNA_pct <- ggplot(counts, aes(x = ExactTime, y = 100*pct_HNA.cells, fill = Nut
   theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.direction = "horizontal",legend.position = "bottom")+
-  ylab("%HNA cells")+
+  ylab("High fluorescence cells - %")+
   xlab("Time (h)")+
-  labs(title="HNA population")+
+  labs(title="High fluorescence population")+
   guides(color = FALSE)
 ```
 
