@@ -338,8 +338,28 @@ format_STAMPS <- function(pathx, patho){
   write.table(output, file = patho, sep = "\t", row.names = FALSE, quote=FALSE)
 }
 
-# format_STAMPS(pathx = "./IMG_annotation/STAMP_profiles/abundance_cog_71453.tab.xls",
-#               patho = "./IMG_annotation/STAMP_profiles/STAMPS_abundance_cog_71453.tab.xls")
+format_STAMPS(pathx = "./IMG_annotation/STAMP_profiles/abundance_cog_118624.tab.xls",
+              patho = "./IMG_annotation/STAMP_profiles/STAMPS_abundance_cog_118624.tab.xls")
 # 
 # format_STAMPS(pathx = "./IMG_annotation/STAMP_profiles/abundance_ko_71619.tab.xls",
 #               patho = "./IMG_annotation/STAMP_profiles/STAMPS_abundance_ko_71619.tab.xls")
+
+# Computing the p-value of correlations
+# http://www.sthda.com/english/wiki/visualize-correlation-matrix-using-correlogram
+# To compute the matrix of p-value, a custom R function is used :
+## mat : is a matrix of data
+## ... : further arguments to pass to the native R cor.test function
+cor.mtest <- function(mat, ...) {
+  mat <- as.matrix(mat)
+  n <- ncol(mat)
+  p.mat<- matrix(NA, n, n)
+  diag(p.mat) <- 0
+  for (i in 1:(n - 1)) {
+    for (j in (i + 1):n) {
+      tmp <- cor.test(mat[, i], mat[, j], ...)
+      p.mat[i, j] <- p.mat[j, i] <- tmp$p.value
+    }
+  }
+  colnames(p.mat) <- rownames(p.mat) <- colnames(mat)
+  p.mat
+}

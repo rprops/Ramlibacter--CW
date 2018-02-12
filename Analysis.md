@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "09 February, 2018"
+date: "12 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -235,7 +235,7 @@ p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>%
   facet_grid(.~Reactor.cycle)+
   scale_shape_manual(values = c(21,24))+
   geom_line(size = 1.5, linetype = 2, color = adjustcolor("#000000", 0.5))+
-  geom_point(size = 4, fill = "#e2a2fd", aes(shape = Reactor_status), alpha = 0.8,
+  geom_point(size = 4, fill = "gray", aes(shape = Reactor_status), alpha = 0.8,
              color = "black")+
   theme_bw()+
   ylab(expression("Otu00001 abundance - cells mL"^"-1"))+
@@ -260,47 +260,100 @@ print(p_abs_otu1)
 # psmelt relative abundance data
 df_rel <- psmelt(phy_df_rel)
 
-for(otu in unique(df_rel$OTU)[1:3]){
   # Assess correlations
-  Physico_df_trim_abs <- df_abs[, c("OTU", "Timepoint","Dilution_factor", 
+  Physico_df_trim_abs_OTU1 <- df_abs[, c("OTU", "Timepoint","Dilution_factor", 
                               "Formate", "Acetate", "Sulfate", 
                               "Nitrate", "Chloride", "Temperature", 
-                              "Conductivity", "pH", "Abundance")] %>%
-  dplyr::filter(!is.na(Formate), OTU == otu)
-
-  Physico_df_trim_rel <- df_rel[, c("OTU", "Timepoint","Dilution_factor", 
+                              "Conductivity", "pH", "Sample", "Abundance")] %>%
+  dplyr::filter(!is.na(Formate), OTU == "Otu00001")
+  
+  colnames(Physico_df_trim_abs_OTU1)[13] <- "OTU1 - abundance"
+  
+  Physico_df_trim_abs_OTU2 <- df_abs[,  c("OTU", "Sample", "Abundance")] %>%
+  dplyr::filter(OTU == "Otu00002")
+  colnames(Physico_df_trim_abs_OTU2)[3] <- "OTU2 - abundance"
+  
+  Physico_df_trim_abs_OTU3 <- df_abs[, c("OTU", "Sample", "Abundance")]%>%
+  dplyr::filter(OTU == "Otu00003")
+  colnames(Physico_df_trim_abs_OTU3)[3] <- "OTU3 - abundance"
+  
+  Physico_df_trim_abs_merged <- left_join(Physico_df_trim_abs_OTU1, 
+                                            Physico_df_trim_abs_OTU2,
+                                            by = "Sample")
+  
+  Physico_df_trim_abs_merged <- left_join(Physico_df_trim_abs_merged, 
+                                            Physico_df_trim_abs_OTU3,
+                                            by = "Sample")
+  # Same for relative abundances
+  Physico_df_trim_rel_OTU1 <- df_rel[, c("OTU", "Timepoint","Dilution_factor", 
                               "Formate", "Acetate", "Sulfate", 
                               "Nitrate", "Chloride", "Temperature", 
-                              "Conductivity", "pH", "Abundance")] %>%
-  dplyr::filter(!is.na(Formate), OTU == otu)
+                              "Conductivity", "pH", "Sample", "Abundance")] %>%
+  dplyr::filter(!is.na(Formate), OTU == "Otu00001")
+  
+  colnames(Physico_df_trim_rel_OTU1)[13] <- "OTU1 - abundance"
+  
+  Physico_df_trim_rel_OTU2 <- df_rel[,  c("OTU", "Sample", "Abundance")] %>%
+  dplyr::filter(OTU == "Otu00002")
+  colnames(Physico_df_trim_rel_OTU2)[3] <- "OTU2 - abundance"
+  
+  Physico_df_trim_rel_OTU3 <- df_rel[, c("OTU", "Sample", "Abundance")]%>%
+  dplyr::filter(OTU == "Otu00003")
+  colnames(Physico_df_trim_rel_OTU3)[3] <- "OTU3 - abundance"
+  
+  Physico_df_trim_rel_merged <- left_join(Physico_df_trim_rel_OTU1, 
+                                            Physico_df_trim_rel_OTU2,
+                                            by = "Sample")
+  
+  Physico_df_trim_rel_merged <- left_join(Physico_df_trim_rel_merged, 
+                                            Physico_df_trim_rel_OTU3,
+                                            by = "Sample")
+  
+  
+  # Physico_df_trim_rel <- df_rel[, c("OTU", "Timepoint","Dilution_factor", 
+  #                             "Formate", "Acetate", "Sulfate", 
+  #                             "Nitrate", "Chloride", "Temperature", 
+  #                             "Conductivity", "pH", "Abundance")] %>%
+  # dplyr::filter(!is.na(Formate), OTU == otu)
 
   # Get P-values of correlations between OTUs and physicochemistry
-  p.mat_abs <- cor.mtest(Physico_df_trim_abs[, -c(1,2,3)],
+  p.mat_abs <- cor.mtest(Physico_df_trim_abs_merged[, -c(1:3, 12,14,16)],
                                             method = "kendall")
-  p.mat_rel <- cor.mtest(Physico_df_trim_rel[, -c(1,2,3)],
+  
+  p.mat_rel <- cor.mtest(Physico_df_trim_rel_merged[, -c(1:3, 12,14,16)],
                                             method = "kendall")
 
   # Making correlation plots
-   corrplot::corrplot(cor(Physico_df_trim_abs[, -c(1,2,3)],
-                                            method = "kendall"),
-                                        type="lower",
-                                        tl.col="black", tl.srt=45,
-                                        p.mat = p.mat_abs, sig.level = 0.05,
-                                        diag=FALSE, 
-                                        title = paste("Absolute abundances - ", otu))
-   
-   corrplot::corrplot(cor(Physico_df_trim_rel[, -c(1,2,3)],
-                                            method = "kendall"), type="lower",
-                                    tl.col="black", tl.srt=45,
-                                    p.mat = p.mat_rel, sig.level = 0.05,
-                                    diag=FALSE, 
-                                    title = paste("Relative abundances - ", otu))
-
-  
-}
+  corrplot::corrplot(cor(Physico_df_trim_abs_merged[, -c(1:3, 12,14,16)],
+                         method = "kendall"),
+                     type="upper",
+                     tl.col="black", tl.srt=45,
+                     p.mat = p.mat_abs, sig.level = 0.05,
+                     diag=FALSE, 
+                     title = paste("Absolute abundances - ", otu))
 ```
 
-<img src="Figures/cached/physico-data-1.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-2.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-3.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-4.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-5.png" style="display: block; margin: auto;" /><img src="Figures/cached/physico-data-6.png" style="display: block; margin: auto;" />
+```
+## Error in paste("Absolute abundances - ", otu): object 'otu' not found
+```
+
+<img src="Figures/cached/physico-data-1.png" style="display: block; margin: auto;" />
+
+```r
+  corrplot::corrplot(cor(Physico_df_trim_rel_merged[, -c(1:3, 12,14,16)],
+                         method = "kendall"),
+                     type="upper",
+                     tl.col="black", tl.srt=45,
+                     p.mat = p.mat_rel, sig.level = 0.05,
+                     diag=FALSE, 
+                     title = paste("Relative abundances - ", otu))
+```
+
+```
+## Error in paste("Relative abundances - ", otu): object 'otu' not found
+```
+
+<img src="Figures/cached/physico-data-2.png" style="display: block; margin: auto;" />
 
 # B. MetaG analysis
 
