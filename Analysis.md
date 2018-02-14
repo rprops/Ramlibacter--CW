@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "12 February, 2018"
+date: "14 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -2858,5 +2858,42 @@ cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
 
 <img src="Figures/cached/markers-1-3.png" style="display: block; margin: auto;" />
 
-# Phosphatase diversity
+# DOC-transporters  
 
+
+```r
+# Import DOM usage table
+DOM_usage_df <- read.csv("./IMG_annotation/DOM_usage.csv")
+
+# Import IMG exported COG-annotation of all genomes in phylogenomic tree
+COG_profiles <- read.table("./IMG_annotation/STAMP_profiles/STAMPS_F_abundance_cog_118624.tsv", header = TRUE, sep = "\t", quote = "")
+
+# Retain COG_ids that are found in DOM_usage_df list
+COG_profiles_sub <- COG_profiles %>% dplyr::filter(Func_id %in% DOM_usage_df$COG_ID)
+
+COG_profiles_sub <- dplyr::left_join(COG_profiles_sub, DOM_usage_df, 
+                                     by = c("Func_id" = "COG_ID"))
+rownames(COG_profiles_sub) <- COG_profiles_sub$Func_id
+# Wide to long format
+COG_profiles_sub_long <- tidyr::gather(COG_profiles_sub, Genome, 
+                                       Counts, 
+                          Curvibacter_gracilis_ATCC_BAA_807:Variovorax_paradoxus_EPS,
+                          factor_key = TRUE) %>% 
+  dplyr::filter(Counts>0)
+
+# Heatmap plot
+coul = colorRampPalette(brewer.pal(9, "BuPu") )(25)
+heatmap(t(as.matrix(COG_profiles_sub[, 3:15])), scale="column", col = coul)
+```
+
+<img src="Figures/cached/Transp-1-1.png" style="display: block; margin: auto;" />
+
+
+```r
+# Identify genes that are under positive selection & that have DOM_usage annotation
+merged_gc_cog_psg <- merged_gc_cog %>% 
+  dplyr::mutate(PSG = gene_oid %in% data_posi_KO$gene_oid)
+
+merged_gc_cog_psg <- merged_gc_cog_psg %>% 
+  dplyr::left_join(., DOM_usage_df, by = c("cog_id" = "COG_ID"))
+```
