@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "14 February, 2018"
+date: "21 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -2420,7 +2420,9 @@ panG_modules_table <- data.frame(genome_id = rownames(query_output_panG$MATRIX),
                                  query_output_panG$MATRIX)
 
 # now reshape so that panG id is also a column
-panG_modules_table <- tidyr::gather(panG_modules_table, module, module_completeness, M00001:M00822, factor_key=TRUE)
+panG_modules_table <- tidyr::gather(panG_modules_table, module, 
+                                    module_completeness, M00001:M00822, 
+                                    factor_key=TRUE)
 panG_modules_table <- left_join(panG_modules_table, query_output_panG$METADATA,
                                 by = c("module" = "MODULE_ID"))
 panG_modules_table <- panG_modules_table[, -c(9, 10)]
@@ -2442,8 +2444,8 @@ p_mod3 <- panG_modules_table %>% dplyr::filter(CLASS_III %in% mod_spec1,
         axis.text.y = element_text(size=16),
         axis.text.x = element_text(size=16, angle = 300, hjust = 0),
         title=element_text(size=20),
-        panel.background = element_rect(fill = "transparent",colour = NA),
-        plot.background = element_rect(fill = "transparent",colour = NA)
+        panel.background = element_rect(fill = "transparent", colour = NA),
+        plot.background = element_rect(fill = "transparent", colour = NA)
   )
 
 print(p_mod3)
@@ -2823,12 +2825,8 @@ p_markers1 <- ggplot(test, aes(x = genome_name, y = Noligo, fill = genome_name))
   xlab("")+
   ggtitle("Noligo")
 
-print(p_markers1)
-```
+# print(p_markers1)
 
-<img src="Figures/cached/markers-1-1.png" style="display: block; margin: auto;" />
-
-```r
 p_markers2 <- ggplot(test, aes(x = genome_name, y = Ncopio, fill = genome_name))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
@@ -2847,16 +2845,12 @@ p_markers2 <- ggplot(test, aes(x = genome_name, y = Ncopio, fill = genome_name))
   xlab("")+
   ggtitle("Ncopio")
 
-print(p_markers2)
-```
+# print(p_markers2)
 
-<img src="Figures/cached/markers-1-2.png" style="display: block; margin: auto;" />
-
-```r
 cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
 ```
 
-<img src="Figures/cached/markers-1-3.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/markers-1-1.png" style="display: block; margin: auto;" />
 
 # DOC-transporters  
 
@@ -2866,7 +2860,7 @@ cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
 DOM_usage_df <- read.csv("./IMG_annotation/DOM_usage.csv")
 
 # Import IMG exported COG-annotation of all genomes in phylogenomic tree
-COG_profiles <- read.table("./IMG_annotation/STAMP_profiles/STAMPS_F_abundance_cog_118624.tsv", header = TRUE, sep = "\t", quote = "")
+COG_profiles <- read.table("./IMG_annotation/STAMP_profiles/abundance_cog_37895.tab.xls", header = TRUE, sep = "\t", quote = "")
 
 # Retain COG_ids that are found in DOM_usage_df list
 COG_profiles_sub <- COG_profiles %>% dplyr::filter(Func_id %in% DOM_usage_df$COG_ID)
@@ -2880,10 +2874,17 @@ COG_profiles_sub_long <- tidyr::gather(COG_profiles_sub, Genome,
                           Curvibacter_gracilis_ATCC_BAA_807:Variovorax_paradoxus_EPS,
                           factor_key = TRUE) %>% 
   dplyr::filter(Counts>0)
+```
 
+```
+## Error in typeof(x): object 'Curvibacter_gracilis_ATCC_BAA_807' not found
+```
+
+```r
 # Heatmap plot
 coul = colorRampPalette(brewer.pal(9, "BuPu") )(25)
-heatmap(t(as.matrix(COG_profiles_sub[, 3:15])), scale="column", col = coul)
+heatmap(t(as.matrix(COG_profiles_sub[, 3:15])), scale="column", col = coul, 
+        margins = c(7, 8))
 ```
 
 <img src="Figures/cached/Transp-1-1.png" style="display: block; margin: auto;" />
@@ -2892,8 +2893,71 @@ heatmap(t(as.matrix(COG_profiles_sub[, 3:15])), scale="column", col = coul)
 ```r
 # Identify genes that are under positive selection & that have DOM_usage annotation
 merged_gc_cog_psg <- merged_gc_cog %>% 
-  dplyr::mutate(PSG = gene_oid %in% data_posi_KO$gene_oid)
+  dplyr::filter(Genome == "121950.assembled.gff") %>% 
+  dplyr::mutate(PSG = gene_oid %in% data_posi$Gene) 
 
+# Label DOM-usage genes
 merged_gc_cog_psg <- merged_gc_cog_psg %>% 
   dplyr::left_join(., DOM_usage_df, by = c("cog_id" = "COG_ID"))
+
+# Overview of DOM-genes
+merged_gc_cog_psg_POS <- 
+  merged_gc_cog_psg %>% dplyr::filter(PSG  == TRUE & !is.na(DOM_type))
+
+# Order according to COG counts
+merged_gc_cog_psg_POS$cog_id <- factor(merged_gc_cog_psg_POS$cog_id,
+                                       levels = names(table(merged_gc_cog_psg_POS$cog_id))[rev(order(table(merged_gc_cog_psg_POS$cog_id)))])
+
+
+p_DOM_psg <- ggplot2::ggplot(merged_gc_cog_psg_POS, aes(x = cog_id, fill = cog_name))+
+  geom_bar(alpha = 0.4, stat = "count", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_brewer("", palette = "Paired")+
+  theme_bw()+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=10),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="top",
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=guide_legend(ncol=1))+
+  ylab("Number of PSGs")
+
+print(p_DOM_psg)
 ```
+
+<img src="Figures/cached/Transp-2-1.png" style="display: block; margin: auto;" />
+
+```r
+# Negative for PSG DOM-uptake genes
+merged_gc_cog_psg_NEG <-
+  merged_gc_cog_psg %>% dplyr::filter(PSG  == FALSE & !is.na(DOM_type))
+
+# Order according to COG counts
+merged_gc_cog_psg_NEG$cog_id <- factor(merged_gc_cog_psg_NEG$cog_id,
+                                       levels = names(table(merged_gc_cog_psg_NEG$cog_id))[rev(order(table(merged_gc_cog_psg_NEG$cog_id)))])
+
+p_DOM_no_psg <- ggplot2::ggplot(merged_gc_cog_psg_NEG, aes(x = cog_id, fill = DOM_type))+
+  geom_bar(alpha = 0.4, stat = "count", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_brewer("", palette = "Paired")+
+  theme_bw()+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=12),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="top",
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=guide_legend(ncol=1))+
+  ylab("Number of PSGs")
+
+print(p_DOM_no_psg)
+```
+
+<img src="Figures/cached/Transp-2-2.png" style="display: block; margin: auto;" />
