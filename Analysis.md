@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "21 February, 2018"
+date: "22 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -2857,7 +2857,9 @@ cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
 
 ```r
 # Import DOM usage table
-DOM_usage_df <- read.csv("./IMG_annotation/DOM_usage.csv")
+DOM_usage_df <- read.csv("./IMG_annotation/DOM_usage.csv", stringsAsFactors = FALSE,
+                         check.names =FALSE)
+DOM_usage_df$DOM_type <- gsub("\\n","\n", DOM_usage_df$DOM_type, fixed = TRUE)
 
 # Import IMG exported COG-annotation of all genomes in phylogenomic tree
 COG_profiles <- read.table("./IMG_annotation/STAMP_profiles/abundance_cog_37895.tab.xls", header = TRUE, sep = "\t", quote = "")
@@ -2871,18 +2873,12 @@ rownames(COG_profiles_sub) <- COG_profiles_sub$Func_id
 # Wide to long format
 COG_profiles_sub_long <- tidyr::gather(COG_profiles_sub, Genome, 
                                        Counts, 
-                          Curvibacter_gracilis_ATCC_BAA_807:Variovorax_paradoxus_EPS,
+                          Curvibacter_lanceolatus_ATCC_14669:Variovorax_paradoxus_EPS,
                           factor_key = TRUE) %>% 
   dplyr::filter(Counts>0)
-```
 
-```
-## Error in typeof(x): object 'Curvibacter_gracilis_ATCC_BAA_807' not found
-```
-
-```r
 # Heatmap plot
-coul = colorRampPalette(brewer.pal(9, "BuPu") )(25)
+coul = colorRampPalette(RColorBrewer::brewer.pal(9, "BuPu") )(25)
 heatmap(t(as.matrix(COG_profiles_sub[, 3:15])), scale="column", col = coul, 
         margins = c(7, 8))
 ```
@@ -2909,9 +2905,8 @@ merged_gc_cog_psg_POS$cog_id <- factor(merged_gc_cog_psg_POS$cog_id,
                                        levels = names(table(merged_gc_cog_psg_POS$cog_id))[rev(order(table(merged_gc_cog_psg_POS$cog_id)))])
 
 
-p_DOM_psg <- ggplot2::ggplot(merged_gc_cog_psg_POS, aes(x = cog_id, fill = cog_name))+
-  geom_bar(alpha = 0.4, stat = "count", color = "black",
-           position = position_dodge(width = 1), width = 0.7)+
+p_DOM_psg <- ggplot2::ggplot(merged_gc_cog_psg_POS, aes(x = DOM_type, fill = cog_name))+
+  geom_bar(alpha = 0.4, stat = "count", color = "black", width = 0.5)+
   scale_fill_brewer("", palette = "Paired")+
   theme_bw()+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
@@ -2940,24 +2935,22 @@ merged_gc_cog_psg_NEG <-
 merged_gc_cog_psg_NEG$cog_id <- factor(merged_gc_cog_psg_NEG$cog_id,
                                        levels = names(table(merged_gc_cog_psg_NEG$cog_id))[rev(order(table(merged_gc_cog_psg_NEG$cog_id)))])
 
-p_DOM_no_psg <- ggplot2::ggplot(merged_gc_cog_psg_NEG, aes(x = cog_id, fill = DOM_type))+
-  geom_bar(alpha = 0.4, stat = "count", color = "black",
-           position = position_dodge(width = 1), width = 0.7)+
-  scale_fill_brewer("", palette = "Paired")+
-  theme_bw()+
-  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-        title=element_text(size=20), legend.text=element_text(size=12),
-        legend.background = element_rect(fill="transparent"),
-        # axis.text.x = element_text(angle = 65, hjust = 1),
-        strip.text.x=element_text(size = 18),
-        legend.position="top",
-        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
-        axis.title.x=element_blank(),
-        plot.title = element_text(hjust = 0, size=18))+
-  guides(fill=guide_legend(ncol=1))+
-  ylab("Number of PSGs")
-
-print(p_DOM_no_psg)
+# p_DOM_no_psg <- ggplot2::ggplot(merged_gc_cog_psg_NEG, aes(x = cog_id, fill = DOM_type))+
+#   geom_bar(alpha = 0.4, stat = "count", color = "black",
+#            position = position_dodge(width = 1), width = 0.7)+
+#   scale_fill_brewer("", palette = "Paired")+
+#   theme_bw()+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+#         title=element_text(size=20), legend.text=element_text(size=12),
+#         legend.background = element_rect(fill="transparent"),
+#         # axis.text.x = element_text(angle = 65, hjust = 1),
+#         strip.text.x=element_text(size = 18),
+#         legend.position="top",
+#         axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+#         axis.title.x=element_blank(),
+#         plot.title = element_text(hjust = 0, size=18))+
+#   guides(fill=guide_legend(ncol=1))+
+#   ylab("Number of PSGs")
+# 
+# print(p_DOM_no_psg)
 ```
-
-<img src="Figures/cached/Transp-2-2.png" style="display: block; margin: auto;" />
