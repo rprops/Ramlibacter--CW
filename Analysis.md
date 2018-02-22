@@ -2671,14 +2671,8 @@ library("GSAR")
 ## Error in library("GSAR"): there is no package called 'GSAR'
 ```
 
-# Search for FW-relevant COGs  
+# Predict MGT  
 
-Here we are searching the "core" and "accessory" genome for COGs/Pfams that were
-shown to be important for Carbon-cycling in freshwater systems
-
-
-
-# Predict MGT
 Compare the growth rate with the minimum generation time estimated from the MAG
 using Growthpred. Dotted line in the graph of the predicted optimal growth temperature
 indicates the mean +/- st.dev of the operational temperature in the cooling water system.  
@@ -2783,7 +2777,131 @@ print(p_Topt)
 #dev.off()
 ```
 
+# Predict replication rate
+
+Estimate the population replication rate using the iRep tool.
+
+
+```r
+df_irep <- read.table("./iRep/results_irep.tsv", header = TRUE, stringsAsFactors = FALSE,
+                      sep = "\t") %>% 
+  dplyr::filter(iRep_type == "iRep" & !is.na(iRep_value))
+
+df_irep$Genome_bin <- factor(df_irep$Genome_bin, levels = unique(df_irep$Genome_bin)[c(3,1,2)])
+
+p_iRep_1 <- df_irep %>% 
+  ggplot(aes(x = Reactor_cycle, y = iRep_value, shape = Manual_exception))+
+  geom_point(size = 5, color = "black", aes(fill = Genome_bin),
+             alpha = 0.7)+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.75,0.9),
+        axis.text.x=element_text(size = 14, angle =0, hjust= 0.5),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylim(1.0,1.70)+
+  labs(y = "iRep", scales = "free")+
+  guides(shape = FALSE,
+    fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
+                         nrow = 4)
+   )
+  
+print(p_iRep_1)
+```
+
+<embed src="Figures/cached/irep-1-1.pdf" style="display: block; margin: auto;" type="application/pdf" />
+
+```r
+p_iRep_2 <- df_irep %>% 
+  ggplot(aes(x = Genome_bin, y = iRep_value,fill = Genome_bin))+
+    geom_boxplot(width = 0.3, alpha = 0.2)+
+  geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.75,0.9),
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylim(1.0,1.70)+
+  labs(y = "iRep", scales = "free")+
+  guides(shape = FALSE,
+    fill  = FALSE
+   )
+  
+print(p_iRep_2)
+```
+
+<embed src="Figures/cached/irep-1-2.pdf" style="display: block; margin: auto;" type="application/pdf" />
+
+
+```r
+p_iRep_3 <- df_irep %>% 
+  ggplot(aes(x = relative_abundance_16S, y = iRep_value, fill = Genome_bin))+
+  geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=12),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.7,0.1),
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylim(1.0,1.70)+ xlim(0,100)+
+  labs(y = "iRep", x = "Relative abundance (%)")+
+  guides(shape = FALSE,
+    fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
+                         nrow = 4)
+   )+
+  geom_smooth(method="lm", color="black", fill = "lightgray",
+              alpha=0.2, formula = y ~ splines::ns(x,df=3))
+
+
+p_iRep_4 <- df_irep %>% 
+  ggplot(aes(x = absolute_abundance_16S, y = iRep_value, fill = Genome_bin))+
+  geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=12),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.7,0.1),
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylim(1.0,1.70)+ xlim(0,800)+
+  labs(y = "iRep", x = "Absolute abundance (cells/mL)")+
+  guides(shape = FALSE,
+    fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
+                         nrow = 4)
+   )+
+  geom_smooth(method = "lm",color="black", fill ="lightgray", formula=y~x)
+  
+cowplot::plot_grid(p_iRep_3, p_iRep_4, ncol = 2, align = "h")
+```
+
+<embed src="Figures/cached/irep-2-1.pdf" style="display: block; margin: auto;" type="application/pdf" />
+
 # Trophic strategy markers  
+
+Here we are searching the "core" and "accessory" genome for COGs/Pfams that were
+shown to be important for Carbon-cycling in freshwater systems
 
 
 ```r
