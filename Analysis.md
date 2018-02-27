@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "22 February, 2018"
+date: "27 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -1488,9 +1488,13 @@ print(hm_posi_c)
 ```r
 # Import results file of genome-specific PSGs only
 data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", "HA.kappa",                                                                            "Number.of.Sites.under.positive.Selection")]
+
 # Import results file of Ramlibacter clade-specific PSGs
-data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega",  "HA.kappa",
-                                                              "Number.of.Sites.under.positive.Selection")]
+data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv",
+                              header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript",
+                                                                          "P.Value","FDR",
+                                                                          "HA.foreground.omega", 
+                                                                          "HA.kappa",                                                                        "Number.of.Sites.under.positive.Selection")]
 
 colnames(data_posi)[1] <- "Gene"; colnames(data_posi_clade)[1] <- "Gene"
 data_posi$Gene <- as.character(data_posi$Gene)
@@ -1506,48 +1510,58 @@ map_posi$posi_geneID <- as.character(map_posi$posi_geneID)
 # Taking threshold of adjusted p.value of 0.05 and FDR < 0.05
 # Also remove dN/dS ratios of less than 15.
 data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05 & HA.foreground.omega < 10)
+                                    FDR < 0.05 & HA.foreground.omega < 30)
 data_posi_clade <- data_posi_clade %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05 & HA.foreground.omega < 10)
-# data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-#                                     FDR < 0.05 & HA.foreground.omega < 10 &
-#                                     Number.of.Sites.under.positive.Selection > 10)
+                                    FDR < 0.05 & HA.foreground.omega < 30)
+
 # Report summaries
 cat(paste("There are ", nrow(data_posi), " genes under positive selection in this MAG (P<0.05). This is ",round(100*nrow(data_posi)/nrow(map_posi),1), "% of all genes",  sep = "")
 )
 ```
 
 ```
-## There are 415 genes under positive selection in this MAG (P<0.05). This is 10.8% of all genes
+## There are 485 genes under positive selection in this MAG (P<0.05). This is 12.6% of all genes
 ```
 
 ```r
-cat(paste("There are ", nrow(data_posi_clade), " genes under positive selection in the Ramlibacter clade (P<0.05). This is ", round(100*nrow(data_posi_clade)/nrow(map_posi),1), "% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species",  sep = "")
-)
+cat(paste("There are ", nrow(data_posi_clade), 
+          " genes under positive selection in the Ramlibacter clade (P<0.05). This is ",
+          round(100*nrow(data_posi_clade)/nrow(map_posi),1), 
+          "% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species",  
+          sep = "")
+    )
 ```
 
 ```
-## There are 184 genes under positive selection in the Ramlibacter clade (P<0.05). This is 4.8% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species
-```
-
-```r
-cat(paste("There are ", sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene)), " genes under positive selection in this MAG (P<0.05). This is ",round(100*sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene))/nrow(map_posi),1), "% of all genes in this MAG",  sep = "")
-)
-```
-
-```
-## There are 332 genes under positive selection in this MAG (P<0.05). This is 8.6% of all genes in this MAG
+## There are 291 genes under positive selection in the Ramlibacter clade (P<0.05). This is 7.6% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species
 ```
 
 ```r
-# Merge this data with the functional annotation (e.g. KO) of these genes
+cat(paste("There are ", sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene)), 
+          " genes unique to this MAG under positive selection (P<0.05). This is ",
+          round(100*sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene))/nrow(map_posi),1),
+          "% of all genes in this MAG",  sep = "")
+    )
+```
+
+```
+## There are 335 genes unique to this MAG under positive selection (P<0.05). This is 8.7% of all genes in this MAG
+```
+
+```r
+# Merge this data with the functional annotation (i.e. KO and COG) of these genes
 data_posi <- left_join(data_posi, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_clade <- left_join(data_posi_clade, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
 data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+
 # Also add COG annotation to both data sets
-data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
-data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+data_posi_COG <- left_join(data_posi, merged_gc_cog, 
+                           by = c("IMG_geneID" = "contig_geneID"))
+
+data_posi_clade_COG <- left_join(data_posi_clade, merged_gc_cog, 
+                                 by = c("IMG_geneID" = "contig_geneID"))
+
 # Also add Pfam annotation to both data sets
 
 # Retain clade or MAG only genes in the respective dataframes
@@ -1559,14 +1573,12 @@ data_posi_clade_KO <- data_posi_clade_KO[pos2, ]
 data_posi_clade_MAG_KO <- data_posi_clade_KO[pos3, ]
 
 # Optional: write table for quick view in iPath v2
-write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
-            row.names = FALSE, col.names = FALSE)
-write.table(file = "KO_posiG_clade.tsv", unique(data_posi_clade_KO$ko_id), quote = FALSE,
-            row.names = FALSE, col.names = FALSE)
-# cat("Genes under positive selection with KO annotation")
+# write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
+#             row.names = FALSE, col.names = FALSE)
+# write.table(file = "KO_posiG_clade.tsv", unique(data_posi_clade_KO$ko_id), quote = FALSE,
+#             row.names = FALSE, col.names = FALSE)
 
 # Merge dataframes to plot
-
 # Remove levels without "n_level" number of genes
 n_level <- round(0.01*sum(table(data_posi_clade_KO$ko_level_C)),0)
 posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)[table(data_posi_clade_KO$ko_level_C)>n_level]
@@ -1609,14 +1621,22 @@ posiG_p_df_merged$ko_level_C_short <- as.character(posiG_p_df_merged$ko_level_C_
 posiG_p_df_merged$ko_level_C_short[!posiG_p_df_merged$ko_level_C_short %in% tmp] <- "Other"
 posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
                                           levels = c(tmp,"Other"))
+
+# selected_KO <- c("Membrane transport", "Amino acid metabolism",
+#                  "Amino acid metabolism", "Translation",
+#                  "Lipid metabolism", "Energy metabolism",
+#                  "Metabolism of cofactors and vitamins")
 # Make plot
-p_KO_posi <- ggplot(posiG_p_df_merged, aes(x = ko_level_B, y = Freq, fill = ko_level_C_short))+
+p_KO_posi <- posiG_p_df_merged %>% 
+  dplyr::filter(branch == "MAG") %>% 
+  # dplyr::filter(ko_level_B %in% selected_KO) %>% 
+  ggplot(aes(x = ko_level_B, y = Freq, fill = ko_level_C_short))+
   geom_bar(stat="identity", color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
-  facet_grid(branch~.)+
+  # facet_grid(branch~.)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
@@ -1630,6 +1650,104 @@ print(p_KO_posi)
 ```
 
 <img src="Figures/cached/posigene-selection-1.png" style="display: block; margin: auto;" />
+
+
+```r
+# Also add COG annotation to both data sets
+data_posi_COG <- left_join(data_posi, merged_gc_cog, 
+                           by = c("IMG_geneID" = "contig_geneID"))
+
+data_posi_clade_COG <- left_join(data_posi_clade, merged_gc_cog, 
+                                 by = c("IMG_geneID" = "contig_geneID"))
+
+
+# Same analysis as above but for the COG annotated PSG dataset
+# Retain clade or MAG only genes in the respective dataframes
+pos <- !data_posi_COG$Gene %in% data_posi_clade_COG$Gene
+pos2 <- !data_posi_clade_COG$Gene %in% data_posi_COG$Gene
+pos3 <- data_posi_clade_COG$Gene %in% data_posi_COG$Gene
+data_posi_COG <- data_posi_KO[pos, ]
+data_posi_clade_COG <- data_posi_clade_COG[pos2, ]
+data_posi_clade_MAG_COG <- data_posi_clade_COG[pos3, ]
+
+# Optional: write table for quick view in iPath v2
+# write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
+#             row.names = FALSE, col.names = FALSE)
+# write.table(file = "KO_posiG_clade.tsv", unique(data_posi_clade_KO$ko_id), quote = FALSE,
+#             row.names = FALSE, col.names = FALSE)
+
+# Merge dataframes to plot
+# Remove levels without "n_level" number of genes
+n_level <- round(0.01*sum(table(data_posi_clade_COG$COG_functional_category)),0)
+posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)[table(data_posi_clade_KO$ko_level_C)>n_level]
+posiG_p_df_clade <- data.frame(posiG_p_df_clade); posiG_p_df_clade$Var1 <- as.character(posiG_p_df_clade$Var1)
+
+n_level <- round(0.01*sum(table(data_posi_KO$ko_level_C)),0)
+posiG_p_df_MAG  <- table(data_posi_KO$ko_level_C)[table(data_posi_KO$ko_level_C)>n_level]
+posiG_p_df_MAG <- data.frame(posiG_p_df_MAG); posiG_p_df_MAG$Var1 <- as.character(posiG_p_df_MAG$Var1)
+
+n_level <- round(0.01*sum(table(data_posi_clade_MAG_KO$ko_level_C)),0)
+posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$ko_level_C)[table(data_posi_clade_MAG_KO$ko_level_C)>n_level]
+posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$Var1 <- as.character(posiG_p_df_MAG_clade$Var1)
+
+# Merge dataframes
+posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG, 
+                                      posiG_p_df_MAG_clade),
+                                branch = factor(c(rep("clade", nrow(posiG_p_df_clade)), 
+                                           rep("MAG", nrow(posiG_p_df_MAG)),
+                                           rep("clade+MAG", nrow(posiG_p_df_MAG_clade))),
+                                levels = c("MAG", "clade", "clade+MAG"))
+)
+data_posi_KO_merge <- rbind(data_posi_KO, data_posi_clade_KO, data_posi_clade_MAG_KO)
+
+# Merge with level B annotation
+posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_KO_merge[, c("ko_level_A","ko_level_B","ko_level_C")],
+                       by = c("Var1" = "ko_level_C")) %>% distinct()
+posiG_p_df_merged$ko_level_B[posiG_p_df_merged$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
+
+# Sort according to frequency
+posiG_p_df_merged$Var1 <- factor(posiG_p_df_merged$Var1, levels = unique(posiG_p_df_merged$Var1[rev(order(posiG_p_df_merged$Freq))]))
+
+posiG_p_df_merged$ko_level_B <- factor(posiG_p_df_merged$ko_level_B, levels = unique(posiG_p_df_merged$ko_level_B[rev(order(posiG_p_df_merged$Freq))]))
+
+# Add extra column to shorten number of labels in legend
+# Only show 12 most frequent categories
+posiG_p_df_merged <- posiG_p_df_merged %>% mutate(ko_level_C_short = 
+                                                    Var1)
+tmp <- levels(posiG_p_df_merged$Var1)[1:11]
+posiG_p_df_merged$ko_level_C_short <- as.character(posiG_p_df_merged$ko_level_C_short)
+posiG_p_df_merged$ko_level_C_short[!posiG_p_df_merged$ko_level_C_short %in% tmp] <- "Other"
+posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
+                                          levels = c(tmp,"Other"))
+
+# selected_KO <- c("Membrane transport", "Amino acid metabolism",
+#                  "Amino acid metabolism", "Translation",
+#                  "Lipid metabolism", "Energy metabolism",
+#                  "Metabolism of cofactors and vitamins")
+# Make plot
+p_KO_posi <- posiG_p_df_merged %>% 
+  dplyr::filter(branch == "MAG") %>% 
+  # dplyr::filter(ko_level_B %in% selected_KO) %>% 
+  ggplot(aes(x = ko_level_B, y = Freq, fill = ko_level_C_short))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  ggtitle("Number of genes")+
+  ylab("") + xlab("")+
+  # facet_grid(branch~.)+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        # ,legend.position = c(0.87, 0.85)
+        )
+
+print(p_KO_posi)
+```
+
+<img src="Figures/cached/posigene-selection-2-1.png" style="display: block; margin: auto;" />
 
 As we had significant concerns related that there was a %GC dependency of dN/dS (`HA.foreground.omega`) and the associated `P.value` for the branch-site codon model we also checked this specifically for the branch- and clade-tests.   
 **Conclusions: There was no strong pattern/correlation to be observed between** 
@@ -2659,18 +2777,6 @@ print(p_blast_sdisc)
 <img src="Figures/cached/seq-discrete-1-1.png" style="display: block; margin: auto;" />
 
 
-# 11. Gene set enrichment analysis  
-
-
-
-```r
-library("GSAR")
-```
-
-```
-## Error in library("GSAR"): there is no package called 'GSAR'
-```
-
 # Predict MGT  
 
 Compare the growth rate with the minimum generation time estimated from the MAG
@@ -2777,7 +2883,7 @@ print(p_Topt)
 #dev.off()
 ```
 
-# Predict replication rate
+# iRep
 
 Estimate the population replication rate using the iRep tool.
 
@@ -2815,7 +2921,7 @@ p_iRep_1 <- df_irep %>%
 print(p_iRep_1)
 ```
 
-<embed src="Figures/cached/irep-1-1.pdf" style="display: block; margin: auto;" type="application/pdf" />
+<img src="Figures/cached/irep-1-1.png" style="display: block; margin: auto;" />
 
 ```r
 p_iRep_2 <- df_irep %>% 
@@ -2843,7 +2949,7 @@ p_iRep_2 <- df_irep %>%
 print(p_iRep_2)
 ```
 
-<embed src="Figures/cached/irep-1-2.pdf" style="display: block; margin: auto;" type="application/pdf" />
+<img src="Figures/cached/irep-1-2.png" style="display: block; margin: auto;" />
 
 
 ```r
@@ -2861,7 +2967,7 @@ p_iRep_3 <- df_irep %>%
         legend.position=c(0.7,0.1),
         axis.text.x=element_text(size = 14, angle =45, hjust= 1),
         plot.title = element_text(hjust = 0, size=18))+
-  ylim(1.0,1.70)+ xlim(0,100)+
+  ylim(1.2,1.8)+ xlim(0,100)+
   labs(y = "iRep", x = "Relative abundance (%)")+
   guides(shape = FALSE,
     fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
@@ -2885,7 +2991,7 @@ p_iRep_4 <- df_irep %>%
         legend.position=c(0.7,0.1),
         axis.text.x=element_text(size = 14, angle =45, hjust= 1),
         plot.title = element_text(hjust = 0, size=18))+
-  ylim(1.0,1.70)+ xlim(0,800)+
+  ylim(1.2,1.8)+ xlim(0,800)+
   labs(y = "iRep", x = "Absolute abundance (cells/mL)")+
   guides(shape = FALSE,
     fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
@@ -2896,7 +3002,7 @@ p_iRep_4 <- df_irep %>%
 cowplot::plot_grid(p_iRep_3, p_iRep_4, ncol = 2, align = "h")
 ```
 
-<embed src="Figures/cached/irep-2-1.pdf" style="display: block; margin: auto;" type="application/pdf" />
+<img src="Figures/cached/irep-2-1.png" style="display: block; margin: auto;" />
 
 # Trophic strategy markers  
 
@@ -3004,6 +3110,7 @@ heatmap(t(as.matrix(COG_profiles_sub[, 3:15])), scale="column", col = coul,
 <img src="Figures/cached/Transp-1-1.png" style="display: block; margin: auto;" />
 
 
+
 ```r
 # Identify genes that are under positive selection & that have DOM_usage annotation
 merged_gc_cog_psg <- merged_gc_cog %>% 
@@ -3071,4 +3178,129 @@ merged_gc_cog_psg_NEG$cog_id <- factor(merged_gc_cog_psg_NEG$cog_id,
 #   ylab("Number of PSGs")
 # 
 # print(p_DOM_no_psg)
+```
+
+# Phosphate scavenging genes  
+
+### All genomes 
+
+
+
+```r
+df_pho <- read.csv("./IMG_annotation/custom_tables/Annotation_P.csv", header = TRUE)
+# df_pho[, -1] <- scale(df_pho[, -1])
+df_pho_long <- df_pho %>% melt()
+```
+
+```
+## Using Genome as id variables
+```
+
+```r
+df_pho_long$variable <- gsub("_", " - ", df_pho_long$variable)
+colnames(df_pho) <- gsub("_", " - ", colnames(df_pho))
+
+
+# In case the labels should clustered according to hierarchical clustering
+# row.order <- df_pho$Genome[hclust(dist(df_pho[, -1]))$order] # clustering
+col.order <- colnames(df_pho)[-1][hclust(dist(t(df_pho[, -1])))$order]
+
+# Fix order according to hierarchical clustering
+# df_pho_long$Genome <- factor(as.character(df_pho_long$Genome), levels = row.order)
+df_pho_long$variable <- factor(as.character(df_pho_long$variable), levels = col.order)
+
+# make heatmap
+hm_pho1 <- df_pho_long %>% 
+  ggplot(aes(y= Genome, x= variable)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = value), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(df_pho_long$value, 0))) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1,size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+print(hm_pho1)
+```
+
+<img src="Figures/cached/Pho-1-1.png" style="display: block; margin: auto;" />
+
+```r
+# changed something
+```
+
+### Subset of genomes  
+
+
+
+```r
+df_pho_long_sel <- df_pho %>% melt()
+```
+
+```
+## Using Genome as id variables
+```
+
+```r
+df_pho_long_sel$variable <- gsub("_", " - ", df_pho_long_sel$variable)
+
+# Select subset of genomes for phosphate scavenging
+selected_genomes <- c("Ramlibacter sp. 5-10",
+                      "Ramlibacter sp. TTB310","Ramlibacter sp. Leaf400",
+                      "Ramlibacter sp. MAG",
+                      "Unclassified Bacteroidetes sp. MAG1", 
+                      "Unclassified Bacteroidetes sp. MAG2")
+df_pho_long_sel <- df_pho_long %>% 
+  dplyr::filter(Genome %in% selected_genomes)
+
+# Order fators
+df_pho_long_sel$Genome <- factor(as.character(df_pho_long_sel$Genome),
+                                 levels = selected_genomes)
+
+df_pho_long_sel$variable <- factor(as.character(df_pho_long_sel$variable),
+                                 levels = colnames(df_pho)[-1])
+
+# make heatmap
+hm_pho2 <- df_pho_long_sel %>% 
+  dplyr::filter(Genome %in% selected_genomes) %>% 
+  ggplot(aes(y= Genome, x= variable)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = value), col = "lightgrey") +
+  geom_text(aes(label = round(value, 0))) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1,vjust=1,size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+print(hm_pho2)
+```
+
+<img src="Figures/cached/Pho-2-1.png" style="display: block; margin: auto;" />
+
+```r
+# changed something
 ```
