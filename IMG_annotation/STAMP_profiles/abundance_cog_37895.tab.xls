@@ -1,4 +1,4 @@
-Func_id	Func_name	Curvibacter_lanceolatus_ATCC_14669	Curvibacter_sp_PAE_UM	Limnohabitans_sp_63ED37_2_Limnohabitans_	Limnohabitans_sp_Rim28_Limnohabitans_sp_Rim28_73_Contigs_	Limnohabitans_sp_Rim47_finished	Ramlibacter_sp_MAG	Ramlibacter_sp_Leaf400	Ramlibacter_tataouinensis_5_10	Ramlibacter_tataouinensis_TTB310	Rhodoferax_ferrireducens_T118	Rhodoferax_saidenbachensis_ED16	Unclassified_Bacteroidetes_bin_1	Unclassified_Bacteroidetes_bin_2	Variovorax_paradoxus_110B	Variovorax_paradoxus_EPS
+Func_id	Func_name	Curvibacter_sp._ATCC	Curvibacter_sp._PAE	Limnohabitans_sp._63ED37	Limnohabitans_sp._Rim28	Limnohabitans_sp._Rim47	Ramlibacter_sp._MAG	Ramlibacter_sp._Leaf400	Ramlibacter_sp._5-10	Ramlibacter_sp._TTB310	Rhodoferax_sp._T118	Rhodoferax_sp._ED16	Bacteroidetes_sp._MAG1	Bacteroidetes_sp._MAG2	Variovorax_sp._110B	Variovorax_sp._EPS
 COG0001	Glutamate-1-semialdehyde aminotransferase	3	2	2	2	1	1	1	2	1	1	3	2	1	2	2
 COG0002	N-acetyl-gamma-glutamylphosphate reductase	2	1	1	1	1	1	2	1	2	1	1	1	1	1	2
 COG0003	"Anion-transporting ATPase, ArsA/GET3 family"	1	0	0	0	0	0	0	0	0	1	2	0	0	0	0
