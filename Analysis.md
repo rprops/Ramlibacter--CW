@@ -1628,7 +1628,7 @@ posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
 #                  "Metabolism of cofactors and vitamins")
 # Make plot
 p_KO_posi <- posiG_p_df_merged %>% 
-  dplyr::filter(branch == "MAG") %>% 
+  # dplyr::filter(branch == "MAG") %>% 
   # dplyr::filter(ko_level_B %in% selected_KO) %>% 
   ggplot(aes(x = ko_level_B, y = Freq, fill = ko_level_C_short))+
   geom_bar(stat="identity", color = "black")+
@@ -1636,7 +1636,7 @@ p_KO_posi <- posiG_p_df_merged %>%
   scale_fill_brewer(palette="Paired")+
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
-  # facet_grid(branch~.)+
+  facet_grid(branch~.)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
@@ -1650,6 +1650,7 @@ print(p_KO_posi)
 ```
 
 <img src="Figures/cached/posigene-selection-1.png" style="display: block; margin: auto;" />
+
 
 
 ```r
@@ -1666,7 +1667,7 @@ data_posi_clade_COG <- left_join(data_posi_clade, merged_gc_cog,
 pos <- !data_posi_COG$Gene %in% data_posi_clade_COG$Gene
 pos2 <- !data_posi_clade_COG$Gene %in% data_posi_COG$Gene
 pos3 <- data_posi_clade_COG$Gene %in% data_posi_COG$Gene
-data_posi_COG <- data_posi_KO[pos, ]
+data_posi_COG <- data_posi_COG[pos, ]
 data_posi_clade_COG <- data_posi_clade_COG[pos2, ]
 data_posi_clade_MAG_COG <- data_posi_clade_COG[pos3, ]
 
@@ -1679,15 +1680,15 @@ data_posi_clade_MAG_COG <- data_posi_clade_COG[pos3, ]
 # Merge dataframes to plot
 # Remove levels without "n_level" number of genes
 n_level <- round(0.01*sum(table(data_posi_clade_COG$COG_functional_category)),0)
-posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)[table(data_posi_clade_KO$ko_level_C)>n_level]
+posiG_p_df_clade  <- table(data_posi_clade_COG$COG_functional_category)[table(data_posi_clade_COG$COG_functional_category)>n_level]
 posiG_p_df_clade <- data.frame(posiG_p_df_clade); posiG_p_df_clade$Var1 <- as.character(posiG_p_df_clade$Var1)
 
-n_level <- round(0.01*sum(table(data_posi_KO$ko_level_C)),0)
-posiG_p_df_MAG  <- table(data_posi_KO$ko_level_C)[table(data_posi_KO$ko_level_C)>n_level]
+n_level <- round(0.01*sum(table(data_posi_COG$COG_functional_category)),0)
+posiG_p_df_MAG  <- table(data_posi_COG$COG_functional_category)[table(data_posi_COG$COG_functional_category)>n_level]
 posiG_p_df_MAG <- data.frame(posiG_p_df_MAG); posiG_p_df_MAG$Var1 <- as.character(posiG_p_df_MAG$Var1)
 
-n_level <- round(0.01*sum(table(data_posi_clade_MAG_KO$ko_level_C)),0)
-posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$ko_level_C)[table(data_posi_clade_MAG_KO$ko_level_C)>n_level]
+n_level <- round(0.01*sum(table(data_posi_clade_MAG_COG$COG_functional_category)),0)
+posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_COG$COG_functional_category)[table(data_posi_clade_MAG_COG$COG_functional_category)>n_level]
 posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$Var1 <- as.character(posiG_p_df_MAG_clade$Var1)
 
 # Merge dataframes
@@ -1698,43 +1699,46 @@ posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG,
                                            rep("clade+MAG", nrow(posiG_p_df_MAG_clade))),
                                 levels = c("MAG", "clade", "clade+MAG"))
 )
-data_posi_KO_merge <- rbind(data_posi_KO, data_posi_clade_KO, data_posi_clade_MAG_KO)
+data_posi_cog_merge <- rbind(data_posi_COG, data_posi_clade_COG, data_posi_clade_MAG_COG)
 
 # Merge with level B annotation
-posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_KO_merge[, c("ko_level_A","ko_level_B","ko_level_C")],
-                       by = c("Var1" = "ko_level_C")) %>% distinct()
-posiG_p_df_merged$ko_level_B[posiG_p_df_merged$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
+posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_cog_merge[, 
+                                                                      c("COG_functional_category",
+                                                                        "COG_functional_cluster",
+                                                                        "COG_class")],
+                       by = c("Var1" = "COG_functional_category")) %>% distinct()
+
+# posiG_p_df_merged$ko_level_B[posiG_p_df_merged$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
 
 # Sort according to frequency
 posiG_p_df_merged$Var1 <- factor(posiG_p_df_merged$Var1, levels = unique(posiG_p_df_merged$Var1[rev(order(posiG_p_df_merged$Freq))]))
 
-posiG_p_df_merged$ko_level_B <- factor(posiG_p_df_merged$ko_level_B, levels = unique(posiG_p_df_merged$ko_level_B[rev(order(posiG_p_df_merged$Freq))]))
+# posiG_p_df_merged$ko_level_B <- factor(posiG_p_df_merged$COG_functional_cluster, levels = unique(posiG_p_df_merged$ko_level_B[rev(order(posiG_p_df_merged$Freq))]))
 
 # Add extra column to shorten number of labels in legend
 # Only show 12 most frequent categories
-posiG_p_df_merged <- posiG_p_df_merged %>% mutate(ko_level_C_short = 
-                                                    Var1)
-tmp <- levels(posiG_p_df_merged$Var1)[1:11]
-posiG_p_df_merged$ko_level_C_short <- as.character(posiG_p_df_merged$ko_level_C_short)
-posiG_p_df_merged$ko_level_C_short[!posiG_p_df_merged$ko_level_C_short %in% tmp] <- "Other"
-posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
-                                          levels = c(tmp,"Other"))
+# posiG_p_df_merged <- posiG_p_df_merged %>% mutate(ko_level_C_short = 
+#                                                     Var1)
+# tmp <- levels(posiG_p_df_merged$Var1)[1:11]
+# posiG_p_df_merged$ko_level_C_short <- as.character(posiG_p_df_merged$ko_level_C_short)
+# posiG_p_df_merged$ko_level_C_short[!posiG_p_df_merged$ko_level_C_short %in% tmp] <- "Other"
+# posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
+#                                           levels = c(tmp,"Other"))
 
 # selected_KO <- c("Membrane transport", "Amino acid metabolism",
 #                  "Amino acid metabolism", "Translation",
 #                  "Lipid metabolism", "Energy metabolism",
 #                  "Metabolism of cofactors and vitamins")
 # Make plot
-p_KO_posi <- posiG_p_df_merged %>% 
-  dplyr::filter(branch == "MAG") %>% 
+p_cog_posi <- posiG_p_df_merged %>% 
   # dplyr::filter(ko_level_B %in% selected_KO) %>% 
-  ggplot(aes(x = ko_level_B, y = Freq, fill = ko_level_C_short))+
+  ggplot(aes(x = Var1, y = Freq, fill = COG_functional_cluster))+
   geom_bar(stat="identity", color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
-  # facet_grid(branch~.)+
+  facet_grid(branch~.)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
@@ -1744,7 +1748,7 @@ p_KO_posi <- posiG_p_df_merged %>%
         # ,legend.position = c(0.87, 0.85)
         )
 
-print(p_KO_posi)
+print(p_cog_posi)
 ```
 
 <img src="Figures/cached/posigene-selection-2-1.png" style="display: block; margin: auto;" />
@@ -3078,6 +3082,8 @@ cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
 
 # DOC-transporters  
 
+### Exploration
+
 
 ```r
 # Import DOM usage table
@@ -3094,16 +3100,18 @@ COG_profiles_sub <- COG_profiles %>% dplyr::filter(Func_id %in% DOM_usage_df$COG
 COG_profiles_sub <- dplyr::left_join(COG_profiles_sub, DOM_usage_df, 
                                      by = c("Func_id" = "COG_ID"))
 rownames(COG_profiles_sub) <- COG_profiles_sub$Func_id
+
 # Wide to long format
 COG_profiles_sub_long <- tidyr::gather(COG_profiles_sub, Genome, 
                                        Counts, 
-                          Curvibacter_lanceolatus_ATCC_14669:Variovorax_paradoxus_EPS,
-                          factor_key = TRUE) %>% 
-  dplyr::filter(Counts>0)
+                          Curvibacter_sp._ATCC:Variovorax_sp._EPS,
+                          factor_key = TRUE)
+COG_profiles_sub_long$Genome <- gsub("_", " ", COG_profiles_sub_long$Genome)
+COG_profiles_sub_long$Genome <- gsub("5.10", "5-10", COG_profiles_sub_long$Genome)
 
 # Heatmap plot
 coul = colorRampPalette(RColorBrewer::brewer.pal(9, "BuPu") )(25)
-heatmap(t(as.matrix(COG_profiles_sub[, 3:15])), scale="column", col = coul, 
+heatmap(t(as.matrix(COG_profiles_sub[, 3:17])), scale="column", col = coul, 
         margins = c(7, 8))
 ```
 
@@ -3180,6 +3188,49 @@ merged_gc_cog_psg_NEG$cog_id <- factor(merged_gc_cog_psg_NEG$cog_id,
 # print(p_DOM_no_psg)
 ```
 
+### Heatmap
+
+```r
+# Select subset of genomes for phosphate scavenging
+selected_genomes <- c("Ramlibacter sp. 5-10",
+                      "Ramlibacter sp. TTB310",
+                      "Ramlibacter sp. Leaf400",
+                      "Ramlibacter sp. MAG",
+                      "Bacteroidetes sp. MAG1", 
+                      "Bacteroidetes sp. MAG2")
+# Order fators
+COG_profiles_sub_long$Genome <- factor(as.character(COG_profiles_sub_long$Genome),
+                                 levels = selected_genomes)
+# make heatmap
+hm_DOC1 <- COG_profiles_sub_long %>% 
+  dplyr::filter(Genome %in% selected_genomes) %>% 
+  ggplot(aes(y= Genome, x= Func_id)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = Counts), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(Counts, 0))) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1,size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+print(hm_DOC1)
+```
+
+<img src="Figures/cached/Transp-3-1.png" style="display: block; margin: auto;" />
+
+
 # Phosphate scavenging genes  
 
 ### All genomes 
@@ -3237,12 +3288,7 @@ print(hm_pho1)
 
 <img src="Figures/cached/Pho-1-1.png" style="display: block; margin: auto;" />
 
-```r
-# changed something
-```
-
 ### Subset of genomes  
-
 
 
 ```r
@@ -3301,6 +3347,53 @@ print(hm_pho2)
 
 <img src="Figures/cached/Pho-2-1.png" style="display: block; margin: auto;" />
 
+
+### Check for PSGss
+
 ```r
-# changed something
+# Get list of COGs/KO
+p_cog_ko_list <- do.call(rbind, base::strsplit(split = " - ", colnames(df_pho)[-1]))[,2]
+
+# Get P COGs that are PSG
+print(data_posi_COG %>% dplyr::filter(cog_id %in% p_cog_ko_list) %>% distinct())
+```
+
+```
+## Error in filter_impl(.data, quo): Evaluation error: object 'cog_id' not found.
+```
+
+```r
+# Get P KOs that are PSG
+print(data_posi_KO %>% dplyr::filter(ko_id %in% p_cog_ko_list))
+```
+
+```
+##  [1] Gene                                    
+##  [2] P.Value                                 
+##  [3] FDR                                     
+##  [4] HA.foreground.omega                     
+##  [5] HA.kappa                                
+##  [6] Number.of.Sites.under.positive.Selection
+##  [7] IMG_geneID                              
+##  [8] contig                                  
+##  [9] GC                                      
+## [10] Genome                                  
+## [11] gene_oid                                
+## [12] gene_length                             
+## [13] percent_identity                        
+## [14] query_start                             
+## [15] query_end                               
+## [16] subj_start                              
+## [17] subj_end                                
+## [18] evalue                                  
+## [19] bit_score                               
+## [20] ko_id                                   
+## [21] ko_name                                 
+## [22] EC                                      
+## [23] img_ko_flag                             
+## [24] genome_id                               
+## [25] ko_level_A                              
+## [26] ko_level_B                              
+## [27] ko_level_C                              
+## <0 rows> (or 0-length row.names)
 ```
