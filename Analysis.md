@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "27 February, 2018"
+date: "28 February, 2018"
 output:
   html_document:
     code_folding: show
@@ -3204,7 +3204,7 @@ COG_profiles_sub_long$Func_id <- factor(COG_profiles_sub_long$Func_id,
                                         levels = COG_order$COG_ID)
 # make heatmap
 hm_DOC1 <- COG_profiles_sub_long %>% 
-  dplyr::filter(Genome %in% selected_genomes) %>% 
+  # dplyr::filter(Genome %in% selected_genomes) %>% 
   ggplot(aes(y= Genome, x= Func_id)) + # x and y axes => Var1 and Var2
   geom_tile(aes(fill = Counts), col = "lightgrey") + # background colours are mapped according to the value column
   geom_text(aes(label = round(Counts, 0)), size = 3) + # write the values
@@ -3239,7 +3239,8 @@ print(hm_DOC1)
 
 
 ```r
-df_pho <- read.csv("./IMG_annotation/custom_tables/Annotation_P.csv", header = TRUE)
+df_pho <- read.csv("./IMG_annotation/custom_tables/Annotation_P.csv", header = TRUE,
+                        stringsAsFactors = FALSE)
 # df_pho[, -1] <- scale(df_pho[, -1])
 df_pho_long <- df_pho %>% melt()
 ```
@@ -3253,13 +3254,12 @@ df_pho_long$variable <- gsub("_", " - ", df_pho_long$variable)
 colnames(df_pho) <- gsub("_", " - ", colnames(df_pho))
 
 
-# In case the labels should clustered according to hierarchical clustering
-# row.order <- df_pho$Genome[hclust(dist(df_pho[, -1]))$order] # clustering
-col.order <- colnames(df_pho)[-1][hclust(dist(t(df_pho[, -1])))$order]
+# Order fators
+df_pho_long$Genome <- factor(as.character(df_pho_long$Genome),
+                                 levels = df_pho$Genome)
 
-# Fix order according to hierarchical clustering
-# df_pho_long$Genome <- factor(as.character(df_pho_long$Genome), levels = row.order)
-df_pho_long$variable <- factor(as.character(df_pho_long$variable), levels = col.order)
+df_pho_long$variable <- factor(as.character(df_pho_long$variable),
+                                 levels = colnames(df_pho)[-1])
 
 # make heatmap
 hm_pho1 <- df_pho_long %>% 
@@ -3288,6 +3288,10 @@ print(hm_pho1)
 ```
 
 <img src="Figures/cached/Pho-1-1.png" style="display: block; margin: auto;" />
+
+```r
+# changed again
+```
 
 ### Subset of genomes  
 
@@ -3349,6 +3353,10 @@ print(hm_pho2)
 
 <img src="Figures/cached/Pho-2-1.png" style="display: block; margin: auto;" />
 
+```r
+# changed again
+```
+
 
 ### Check for PSGss
 
@@ -3399,3 +3407,6 @@ print(data_posi_KO %>% dplyr::filter(ko_id %in% p_cog_ko_list))
 ## [27] ko_level_C                              
 ## <0 rows> (or 0-length row.names)
 ```
+
+
+
