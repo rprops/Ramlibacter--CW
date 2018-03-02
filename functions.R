@@ -338,8 +338,8 @@ format_STAMPS <- function(pathx, patho){
   write.table(output, file = patho, sep = "\t", row.names = FALSE, quote=FALSE)
 }
 
-format_STAMPS(pathx = "./IMG_annotation/STAMP_profiles/abundance_cog_118624.tab.xls",
-              patho = "./IMG_annotation/STAMP_profiles/STAMPS_abundance_cog_118624.tab.xls")
+# format_STAMPS(pathx = "./IMG_annotation/STAMP_profiles/abundance_cog_118624.tab.xls",
+              # patho = "./IMG_annotation/STAMP_profiles/STAMPS_abundance_cog_118624.tab.xls")
 # 
 # format_STAMPS(pathx = "./IMG_annotation/STAMP_profiles/abundance_ko_71619.tab.xls",
 #               patho = "./IMG_annotation/STAMP_profiles/STAMPS_abundance_ko_71619.tab.xls")
@@ -363,3 +363,39 @@ cor.mtest <- function(mat, ...) {
   colnames(p.mat) <- rownames(p.mat) <- colnames(mat)
   p.mat
 }
+
+# Querry a gene list for PSGs
+# querry_PSG <- function(ref, querry, plot = FALSE){
+#   
+# }
+
+
+# Querry dataframe for module completness
+get_mq <- function(x, genome_label, ko_label){
+  for(genome in unique(x[, genome_label])){
+    print(genome)
+    KO_metqy <- x[x[, genome_label] %in% genome, ]
+    KO_metqy <- data.frame(genome_id = genome,
+                                 KOs = paste(KO_metqy[, ko_label], collapse = ";"),
+                                 stringsAsFactors = FALSE
+    )
+    KO_metqy$KOs <- gsub("KO:","",KO_metqy$KOs)
+    
+    # Run MetQy (takes a few seconds)
+    query_output <- MetQy::query_genomes_to_modules(KO_metqy, splitBy='[;]',
+                                                    GENOME_ID_COL = "genome_id", GENES_COL = "KOs", 
+                                                    META_OUT = TRUE)
+    
+    modules_table = cbind(t(query_output$MATRIX), query_output$METADATA)
+    modules_table <- modules_table[, -c(8, 9)]
+    colnames(modules_table)[1] <- "module_completeness"
+    modules_table <- data.frame(modules_table, Genome = genome)
+    if(genome == unique(x[, genome_label])[1]){
+      results <- modules_table
+    } else{
+      results <- rbind(results, modules_table)
+    }
+  }
+  return(results)
+}
+

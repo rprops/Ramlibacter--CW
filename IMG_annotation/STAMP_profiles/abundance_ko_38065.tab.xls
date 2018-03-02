@@ -1,4 +1,4 @@
-Func_id	Func_name	Curvibacter sp. ATCC	Curvibacter sp. PAE	Limnohabitans sp. 63ED37	Limnohabitans sp. Rim28	Limnohabitans sp. Rim47	Ramlibacter sp. MAG	Ramlibacter sp. Leaf400	Ramlibacter sp. 5-10	Ramlibacter sp. TTB310	Rhodoferax sp. T118	Rhodoferax sp. ED16	Bacteroidetes sp. MAG1	Bacteroidetes sp. MAG2	Variovorax sp. 110B	Variovorax sp. EPS
+Func_id	Func_name	Curvibacter_sp._ATCC	Curvibacter_sp._PAE	Limnohabitans_sp._63ED37	Limnohabitans_sp._Rim28	Limnohabitans_sp._Rim47	Ramlibacter_sp._MAG	Ramlibacter_sp._Leaf400	Ramlibacter_sp._5-10	Ramlibacter_sp._TTB310	Rhodoferax_sp._T118	Rhodoferax_sp._ED16	Bacteroidetes_sp._MAG1	Bacteroidetes_sp._MAG2	Variovorax_sp._110B	Variovorax_sp._EPS
 KO:K00001	alcohol dehydrogenase [EC:1.1.1.1]	1	0	0	0	0	1	0	0	1	1	0	0	0	0	0
 KO:K00003	homoserine dehydrogenase [EC:1.1.1.3]	2	1	1	1	1	1	1	1	1	1	1	1	1	2	2
 KO:K00004	"(R,R)-butanediol dehydrogenase / meso-butanediol dehydrogenase / diacetyl reductase [EC:1.1.1.4 1.1.1.- 1.1.1.303]"	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
