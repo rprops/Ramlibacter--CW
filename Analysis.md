@@ -1484,6 +1484,8 @@ print(hm_posi_c)
 
 <img src="Figures/cached/posigene-controls-2.png" style="display: block; margin: auto;" />
 
+## 9.2. Analysis  
+
 
 ```r
 # Import results file of genome-specific PSGs only
@@ -1629,13 +1631,27 @@ posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
 # Make plot
 posiG_p_df_merged$branch <- factor(as.character(posiG_p_df_merged$branch),
                                    levels = c("MAG","clade+MAG","clade"))
-p_KO_posi <- posiG_p_df_merged %>% 
+# Get order of ko_level_b correct based on summed frequencies
+posiG_p_df_merged <- posiG_p_df_merged %>% 
   # dplyr::filter(branch == "MAG") %>% 
-  # dplyr::filter(ko_level_B %in% selected_KO) %>% 
-  ggplot(aes(x = Var1, y = Freq, fill = branch))+
+  # dplyr::filter(ko_level_B %in% selected_KO) %>%
+  arrange(ko_level_B, Freq) %>%               # sort your dataframe
+  mutate(Var1 = factor(Var1, unique(Var1))) # reset your factor-column based on that order
+
+# order_var1 <- posiG_p_df_merged %>% group_by(Var1, ko_level_B) %>% summarise(sum(Freq))
+# order_var1 <- as.character(order_var1[rev(order(order_var1$`sum(Freq)`)), ]$Var1)
+# posiG_p_df_merged$Var1 <- factor(as.character(posiG_p_df_merged$Var1),
+#                                  levels = order_var1)
+
+# Only select the functions for which there has been selection in the MAG
+
+p_KO_posi <- posiG_p_df_merged %>% 
+  # group_by(Var1) %>% 
+  # arrange(Freq) %>% 
+  ggplot(aes(x = Var1, y = Freq, fill = branch, group = ko_level_B))+
   geom_bar(stat="identity", color = "black")+
   theme_bw()+
-  scale_fill_brewer(palette="Paired")+
+  scale_fill_brewer(palette="Paired", direction = 1)+
   ylab("PSG frequency") + xlab("")+
   theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
         legend.text=element_text(size=18),
@@ -1644,8 +1660,12 @@ p_KO_posi <- posiG_p_df_merged %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  # facet_grid(.~ko_level_B)+
   coord_flip()+
-  theme(axis.text.x = element_text(size=18, angle = 65, hjust = 1))
+  theme(axis.text.x = element_text(size=18, angle = 0))+
+  theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
 
 print(p_KO_posi)
 ```
@@ -2178,7 +2198,7 @@ print(p_aa_kappa)
 
 <img src="Figures/cached/posigene-aa-3.png" style="display: block; margin: auto;" />
 
-## 9.2. Evaluate nucleotide transitions
+## 9.3. Evaluate nucleotide transitions
 
 
 ```r
