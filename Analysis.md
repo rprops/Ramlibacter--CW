@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "02 March, 2018"
+date: "03 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -1644,14 +1644,27 @@ posiG_p_df_merged <- posiG_p_df_merged %>%
 #                                  levels = order_var1)
 
 # Only select the functions for which there has been selection in the MAG
+relevant_Var1 <- posiG_p_df_merged %>% dplyr::filter(branch == "MAG")
 
-p_KO_posi <- posiG_p_df_merged %>% 
-  # group_by(Var1) %>% 
-  # arrange(Freq) %>% 
+# Order withing ko_level_b based on summed frequency (for visualization)
+within_ko_order <- posiG_p_df_merged %>% 
+  # dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  group_by(Var1) %>% 
+  mutate(sum_freq = sum(Freq))
+
+# Make plot
+p_KO_posi <- within_ko_order %>% 
+  # dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  droplevels() %>% 
+  group_by(ko_level_B) %>% 
+  dplyr::arrange(desc(sum_freq), .by_group = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Var1 = as.character(Var1)) %>% 
+  mutate(Var1 = factor(Var1, unique(Var1))) %>% 
   ggplot(aes(x = Var1, y = Freq, fill = branch, group = ko_level_B))+
   geom_bar(stat="identity", color = "black")+
   theme_bw()+
-  scale_fill_brewer(palette="Paired", direction = 1)+
+  scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
   ylab("PSG frequency") + xlab("")+
   theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
         legend.text=element_text(size=18),
@@ -1671,6 +1684,45 @@ print(p_KO_posi)
 ```
 
 <img src="Figures/cached/posigene-selection-1.png" style="display: block; margin: auto;" />
+
+```r
+within_ko_order_sb <- posiG_p_df_merged %>% 
+  dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  group_by(Var1) %>% 
+  mutate(sum_freq = sum(Freq))
+
+# Make plot
+p_KO_posi_subset <- within_ko_order_sb %>% 
+  dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  droplevels() %>% 
+  group_by(ko_level_B) %>% 
+  dplyr::arrange(desc(sum_freq), .by_group = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Var1 = as.character(Var1)) %>% 
+  mutate(Var1 = factor(Var1, unique(Var1))) %>% 
+  ggplot(aes(x = Var1, y = Freq, fill = branch, group = ko_level_B))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
+  ylab("PSG frequency") + xlab("")+
+  theme(axis.text.y=element_text(size=15), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  # facet_grid(.~ko_level_B)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=18, angle = 0))+
+  theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+
+print(p_KO_posi_subset)
+```
+
+<img src="Figures/cached/posigene-selection-2.png" style="display: block; margin: auto;" />
 
 
 
