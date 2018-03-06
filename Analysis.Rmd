@@ -2796,9 +2796,12 @@ within_GH_order <- merged_gc_cog_psg_cazy %>%
   summarise(Subject_Freq = n()) %>% 
   arrange(desc(Subject_Freq))
 
-merged_gc_cog_psg_cazy$Subject <- factor(merged_gc_cog_psg_cazy$Subject,
+merged_gc_cog_psg_cazy_GH <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycoside hydrolases") %>% 
+  droplevels()
+merged_gc_cog_psg_cazy_GH$Subject <- factor(merged_gc_cog_psg_cazy_GH$Subject,
                                             levels = within_GH_order$Subject)
-p_cazy2 <- merged_gc_cog_psg_cazy %>% 
+p_cazy2 <- merged_gc_cog_psg_cazy_GH %>% 
   dplyr::filter(cazy_class == "Glycoside hydrolases") %>%
   droplevels() %>% 
   ggplot(aes(x = Subject, fill = Genome.x))+
@@ -2821,6 +2824,75 @@ p_cazy2 <- merged_gc_cog_psg_cazy %>%
 guides(fill = FALSE)
 
 print(p_cazy2)
+
+# Make plot of GT alone
+# Customize factor levels
+within_GT_order <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycosyltransferases") %>%
+  group_by(Subject) %>% 
+  summarise(Subject_Freq = n()) %>% 
+  arrange(desc(Subject_Freq))
+
+merged_gc_cog_psg_cazy_GT <-  merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycosyltransferases") %>% 
+  droplevels()
+merged_gc_cog_psg_cazy_GT$Subject <- factor(merged_gc_cog_psg_cazy_GT$Subject,
+                                            levels = within_GT_order$Subject)
+p_cazy3 <- merged_gc_cog_psg_cazy_GT %>% 
+  dplyr::filter(cazy_class == "Glycosyltransferases") %>%
+  droplevels() %>% 
+  ggplot(aes(x = Subject, fill = Genome.x))+
+  geom_bar(stat="count", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, col_bac1, col_bac2))+
+  ylab("Number of genes") + xlab("Glycosyltransferases")+
+  theme(axis.text.y=element_text(size=13), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=14), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,20,5))+
+  facet_grid(.~Genome.x)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=16, angle = 0))+
+  # theme(axis.line = element_line(size = 1, colour = "grey80"),
+  #       panel.border = element_blank())+
+guides(fill = FALSE)
+
+print(p_cazy3)
+```
+
+### Heatmap  
+
+```{r Cazy-4, warning = FALSE, fig.width = 12, fig.height = 3.5, dpi = 500, dev = c("png", "pdf")}
+# make heatmap of GH
+hm_GH <- merged_gc_cog_psg_cazy_GH %>%
+  group_by(Subject, Genome.x) %>% 
+  dplyr::summarise(Counts = n()) %>% 
+  complete(., Genome.x, Subject, fill = list(Counts=0)) %>% 
+  ggplot(aes(y = Genome.x, x = Subject)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = Counts), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(Counts, 0)), size = 3) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+print(hm_GH)
 ```
 
 # DOC-transporters  
