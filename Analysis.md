@@ -3234,6 +3234,137 @@ cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
 
 <img src="Figures/cached/markers-1-1.png" style="display: block; margin: auto;" />
 
+# CAZymes  
+
+### Exploration  
+
+
+```r
+# Import CAZY reference annotation
+cazy_reference <- read.table("./IMG_annotation/CAZY_annotation.tsv", 
+                             stringsAsFactors = FALSE, header = TRUE,
+                            sep = "\t", fill = TRUE)
+
+# Import CAZY annotation of IMG gene calls
+cazy_files <- list.files(".", pattern = "*dbCAN*",
+                       recursive = TRUE)
+cazy_name <- c("Ramlibacter sp. MAG", "Bacteroidetes sp. MAG1",
+               "Bacteroidetes sp. MAG2")
+for(i in 1:length(cazy_files)){
+  cazy_df <- read.table(cazy_files[i], stringsAsFactors = FALSE,
+                         check.names =FALSE, header = TRUE)
+  cazy_df$Genome <- cazy_name[i]
+  if(i == 1) cazy_results_df <- cazy_df else cazy_results_df <- rbind(cazy_results_df, cazy_df)
+}
+
+# Replace ".hmm" extension from reference
+cazy_results_df$Subject <- gsub(".hmm", "", cazy_results_df$Subject)
+cazy_results_df$Query <- as.character(cazy_results_df$Query)
+
+# Combine with kegg annotation
+# Identify genes that are under positive selection & that have DOM_usage annotation
+merged_gc_cog_psg_cazy <- left_join(cazy_results_df, merged_gc_cog, by = c("Query"
+                                                                      = "gene_oid"))
+# Combine with CAZY reference information
+merged_gc_cog_psg_cazy <- left_join(merged_gc_cog_psg_cazy, cazy_reference, 
+                                    by = c("Subject"= "Family"))
+
+# Add AA annotation with was missing from the reference file
+merged_gc_cog_psg_cazy$cazy_class[is.na(merged_gc_cog_psg_cazy$cazy_class)] <- "Auxiliary activities"
+
+# Relabel other classes for interpretation
+merged_gc_cog_psg_cazy$cazy_class <- plyr::revalue(merged_gc_cog_psg_cazy$cazy_class,
+                                             c("CBM" = "Carbohydrate-binding modules",
+                                               "CE" = "Carbohydrate esterases",
+                                               "GH" = "Glycoside hydrolases",
+                                               "GT" = "Glycosyltransferases",
+                                               "PL" = "Polysaccharide lyases"))
+# Customize factor levels
+within_cazy_order <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class != "Cellulosome") %>%
+  group_by(cazy_class) %>% 
+  summarise(cazy_class_freq = n()) %>% 
+  arrange(desc(cazy_class_freq))
+
+merged_gc_cog_psg_cazy$cazy_class <- factor(merged_gc_cog_psg_cazy$cazy_class,
+                                            levels = within_cazy_order$cazy_class)
+
+merged_gc_cog_psg_cazy$Genome.x <- factor(merged_gc_cog_psg_cazy$Genome.x ,
+                                            levels = c("Ramlibacter sp. MAG",
+                                                       "Bacteroidetes sp. MAG1",
+                                                       "Bacteroidetes sp. MAG2"))
+```
+
+### Plots
+
+```r
+# Make plot of cazy classes
+p_cazy1 <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class != "Cellulosome") %>%
+  droplevels() %>% 
+  ggplot(aes(x = cazy_class, fill = cazy_class))+
+  geom_bar(stat="count", color = "black", width = 0.5)+
+  theme_bw()+
+  scale_fill_brewer(palette = "Accent")+
+  ylab("Number of genes") + xlab("")+
+  theme(axis.text.y=element_text(size=15), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=14), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,80))+
+  facet_grid(.~Genome.x)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=16, angle = 0))+
+  # theme(axis.line = element_line(size = 1, colour = "grey80"),
+  #       panel.border = element_blank())+
+guides(fill = FALSE)
+
+print(p_cazy1)
+```
+
+<img src="Figures/cached/CAZy-2-1.png" style="display: block; margin: auto;" />
+
+
+```r
+# Make plot of GH alone
+# Customize factor levels
+within_GH_order <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycoside hydrolases") %>%
+  group_by(Subject) %>% 
+  summarise(Subject_Freq = n()) %>% 
+  arrange(desc(Subject_Freq))
+
+merged_gc_cog_psg_cazy$Subject <- factor(merged_gc_cog_psg_cazy$Subject,
+                                            levels = within_GH_order$Subject)
+p_cazy2 <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycoside hydrolases") %>%
+  droplevels() %>% 
+  ggplot(aes(x = Subject, fill = Genome.x))+
+  geom_bar(stat="count", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, col_bac1, col_bac2))+
+  ylab("Number of genes") + xlab("Glycoside hydrolase family")+
+  theme(axis.text.y=element_text(size=13), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=14), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,20,5))+
+  facet_grid(.~Genome.x)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=16, angle = 0))+
+  # theme(axis.line = element_line(size = 1, colour = "grey80"),
+  #       panel.border = element_blank())+
+guides(fill = FALSE)
+
+print(p_cazy2)
+```
+
+<img src="Figures/cached/CAZy-3-1.png" style="display: block; margin: auto;" />
+
 # DOC-transporters  
 
 ### Exploration
