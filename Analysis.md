@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "03 March, 2018"
+date: "06 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -1265,7 +1265,7 @@ p_ramli_SCUO <- ref_RAMLI_SCUO %>% dplyr::filter(GCx == "GC_mean") %>%
   scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
                                rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
                                rep("#e2a2fd",4)))+
-  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         # axis.text.x = element_text(angle = 65, hjust = 1),
@@ -1291,14 +1291,14 @@ p_ramli_SCUO
 p_ramli_GC <- ref_RAMLI_SCUO  %>% dplyr::filter(GCx == "GC_mean") %>% 
   ggplot(aes(x = Genome, y = GC, fill = Genome))+
   theme_bw()+
-  geom_hline(yintercept = 0.7, col = 'black', lwd = 1, linetype = 2, alpha = 0.6)+
+  # geom_hline(yintercept = 0.7, col = 'black', lwd = 1, linetype = 2, alpha = 0.6)+
     # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
             # ymin = -Inf,ymax = Inf, alpha = 0.005, show.legend =FALSE, inherit.aes = FALSE)+
   geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
   scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
                                rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
                                rep("#e2a2fd",4)))+
-  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         # axis.text.x = element_text(angle = 65, hjust = 1),
@@ -1322,8 +1322,42 @@ p_ramli_GC
 <img src="Figures/cached/compare-ramli-CB-2.png" style="display: block; margin: auto;" />
 
 ```r
-# Format file for annotation of phylogenetic tree
+# Plot number of gene distributions
+ref_RAMLI_genes <- ref_RAMLI_SCUO  %>% dplyr::filter(GCx == "GC_mean") %>% group_by(Genome) %>% 
+  summarise(Genes = n())
+
+p_ramli_genes <- ref_RAMLI_genes  %>% 
+  ggplot(aes(x = Genome, y = Genes, fill = Genome))+
+  theme_bw()+
+  # geom_hline(yintercept = 0.7, col = 'black', lwd = 1, linetype = 2, alpha = 0.6)+
+    # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
+            # ymin = -Inf,ymax = Inf, alpha = 0.005, show.legend =FALSE, inherit.aes = FALSE)+
+  geom_bar(stat = "identity", alpha = 0.4, color = "black", size = 1.1)+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4)))+
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom",
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+
+  guides(fill=FALSE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+  xlab("")+
+  ylab("")
+  # scale_y_continuous(labels = function(x) sprintf("%.2f", x), breaks = seq(0.20,0.90,0.10),
+                     # limits = c(0.2,0.9))
+  # scale_y_continuous(breaks = seq(0.20,0.90,0.10), limits = c(0.2,0.9))
+
+p_ramli_genes
 ```
+
+<img src="Figures/cached/compare-ramli-CB-3.png" style="display: block; margin: auto;" />
 
 
 # 9.  PosiGene analysis for identifying genes under positive selection in the Ramlibacter sp. MAG
@@ -3531,4 +3565,21 @@ print(data_posi_KO %>% dplyr::filter(ko_id %in% p_cog_ko_list))
 # Sigma factors
 
 ###  
+
+# Reverse Ecology
+
+```r
+library("RevEcoR")
+```
+
+```
+## 
+## Attaching package: 'RevEcoR'
+```
+
+```
+## The following object is masked from 'package:igraph':
+## 
+##     compose
+```
 
