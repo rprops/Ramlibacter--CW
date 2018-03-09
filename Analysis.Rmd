@@ -50,6 +50,7 @@ library("MetQy")
 library("RColorBrewer")
 
 col_RAMLI <- "#887CAF"
+# col_RAMLI <- "#e2a2fd"
 col_bac1 <- "#720000"
 col_bac2 <- "#D46A6A"
 ```
@@ -58,7 +59,7 @@ col_bac2 <- "#D46A6A"
 ## Network analysis on relative abundances  
 
 In the first analysis we utilize the raw counts. As such this network will be built using relative abundance data.
-```{r network-analysis-relative, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8}
+```{r network-analysis-relative, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8, dev = c("png","pdf")}
 # Set seed
 set.seed(777)
 
@@ -66,8 +67,7 @@ set.seed(777)
 otus <- as.matrix(read.csv2("16S_data/OTU_table_raw.csv", fill = TRUE, header = TRUE,
                     row.names = 1))
 
-taxa <- tax_table(as.matrix(read.csv2("16S_data/tax_table_raw.csv", fill = TRUE, header = TRUE,
-                    row.names = 1))
+taxa <- tax_table(as.matrix(read.csv2("16S_data/tax_table_raw.csv", fill = TRUE, header = TRUE,row.names = 1))
 )
 
 phy_df <- phyloseq(otu_table(otus, taxa_are_rows = FALSE), taxa)
@@ -137,7 +137,7 @@ plot_network_custom(ig.mb, phy_df_filtered, type='taxa',
 
 The second network will be built using absolute abundance data by multiplying the relative taxon abundances by the total cell density. The final obtained counts will expressed as nr. of cells measured in 50 µL samples. We also only consider the OTUs that were left after the prevalence filtering conducted in the network construction with relative abundance data.  
 
-```{r network-analysis-absolute, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8}
+```{r network-analysis-absolute, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8, dev = c("png","pdf")}
 # Import cell count data
 cell_counts <- read.csv("16S_data/cell_counts.csv")
 cell_counts$sample_title <- as.factor(cell_counts$sample_title)
@@ -178,7 +178,10 @@ MAGs <- c(); MAGs[taxa_names(phy_df_abs)=="Otu00001"]  <- "Ramlibacter sp. MAG"
 MAGs[taxa_names(phy_df_abs)=="Otu00002"]  <- "Bacteroidetes sp. MAG1"
 MAGs[taxa_names(phy_df_abs)=="Otu00003"]  <- "Bacteroidetes sp. MAG2"
 MAGs[is.na(MAGs)] <-""
+```
 
+
+```{r network-analysis-absolute-plot, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8, dev = c("png","pdf")}
 # Plot network inferred from absolute abundances
 # png(file = "./Figures/Figures_network/NETWORK-ABS-CX-C30-A25.png", width = 9, height = 9, res = 500, units = "in")
 plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
@@ -186,7 +189,8 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
              point_size = 0.1, alpha = 0.01, label_size = 3.95)+
   # scale_fill_brewer(palette = "Paired")+
   # scale_color_brewer(palette = "Paired")+
-  scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
+  # scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
+    scale_fill_manual(values = c(col_RAMLI, brewer.pal(n = 12, "Paired")[c(6,3,4,4,7,8,1:2,11,12)]) )+
   geom_point(aes(size = vsize_abs, fill = Lineage_abs), alpha = 0.5,
              colour="black", shape=21)+
   guides(size = FALSE,
@@ -211,17 +215,22 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
 # dev.off()
 ```
 
+## Plots  
+
 ```{r OTU1-dynamics, warning = FALSE, dpi = 500, fig.width = 9, fig.height = 5.5, dev = c("png", "svg")}
 # Plot absolute OTU dynamics of OTU1
 df_abs <- psmelt(phy_df_abs)
+col_RAMLI <- "#887CAF"
 
 p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>% 
   ggplot(aes(x = Timepoint, y = Abundance))+
-  facet_grid(.~Reactor.cycle)+
+  facet_grid(.~Reactor.cycle, scales = "free")+
   scale_shape_manual(values = c(21,24))+
   geom_line(size = 1.5, linetype = 2, color = adjustcolor("#000000", 0.5))+
-  geom_point(size = 4, fill = "gray", aes(shape = Reactor_status), alpha = 0.8,
+  geom_point(size = 4, fill ="#e2a2fd", aes(shape = Reactor_status, 
+                                            alpha = Reactor_status),
              color = "black")+
+  scale_alpha_manual(values = c(0.5,1))+
   theme_bw()+
   ylab(expression("Otu00001 abundance - cells mL"^"-1"))+
   xlab("Time relative to reactor start - days")+
@@ -231,17 +240,89 @@ p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>%
         legend.background = element_rect(fill="transparent"),
         strip.text.x=element_text(size=18),
         legend.position = "top")+
-  guides(shape = guide_legend(title="Reactor status", ncol =1))
-
+  guides(shape = guide_legend(title="Reactor status", ncol =1),
+         alpha = FALSE)
 print(p_abs_otu1)
+```
+
+```{r OTU1-box-abs, warning = FALSE, dpi = 500, fig.width = 6.5, fig.height = 5, dev = c("png", "pdf")}
+
+# Boxplot of absolute abundances
+col_RAMLI <- "#887CAF"
+
+p_abs_box <- df_abs %>% 
+  dplyr::filter(OTU %in% c("Otu00001","Otu00002","Otu00003")) %>% 
+  ggplot(aes(x = OTU, y = Abundance, fill = OTU))+
+  geom_jitter(size = 2,
+             color = "black", shape = 21, width = 0.1, alpha = 0.5)+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE,
+              trim = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+  # geom_boxplot(width = 0.5, alpha = 0.4, outlier.shape = NA)+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme_bw()+
+  ylab(expression("Cells mL"^"-1"))+
+  xlab("")+
+  # ylab("")+
+  scale_y_continuous(breaks = seq(0,50e3,10e3), limits = c(-5e3,40e3))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        axis.text.x=element_text(size=14),
+        title=element_text(size=16), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "sqrt")+
+  guides(shape = guide_legend(title="Reactor status", ncol =1),
+         fill = FALSE)+
+    theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+  # ggtitle(expression("Cells mL"^"-1"))
+  # ggtitle(expression("Absolute abundance (cells mL"^"-1)"))
+
+
+print(p_abs_box)
+```
+
+```{r OTU1-box-rel, dpi = 500, fig.width = 6.5, fig.height = 5, dev = c("png", "pdf")}
+# psmelt relative abundance data
+df_rel <- psmelt(phy_df_rel)
+col_RAMLI <- "#887CAF"
+
+# Boxplot of relative abundances
+p_rel_box <- df_rel %>% 
+  dplyr::filter(OTU %in% c("Otu00001","Otu00002","Otu00003")) %>% 
+  ggplot(aes(x = OTU, y = 100*Abundance, fill = OTU))+
+  geom_jitter(size = 2,
+             color = "black", shape = 21, width = 0.1, alpha = 0.5)+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+  # geom_boxplot(width = 0.5, alpha = 0.4, outlier.shape = NA)+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme_bw()+
+  # ylab(expression("Relative abundance - %"))+
+  xlab("")+
+  ylab("")+
+  scale_y_continuous(breaks = 100*seq(0,1,0.2), limits = 100*c(-0.05,1))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        axis.text.x=element_text(size=14, angle = 0),
+        title=element_text(size=16), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "top")+
+  guides(shape = guide_legend(title="Reactor status", ncol =1),
+         fill = FALSE)+
+    theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())+
+  ggtitle("Relative abundance (%)")
+
+
+print(p_rel_box)
 ```
 
 ## Physicochemistry
 
 ```{r physico-data, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 6, dev = c("png", "svg")}
-# psmelt relative abundance data
-df_rel <- psmelt(phy_df_rel)
-
   # Assess correlations
   Physico_df_trim_abs_OTU1 <- df_abs[, c("OTU", "Timepoint","Dilution_factor", 
                               "Formate", "Acetate", "Sulfate", 
@@ -2721,6 +2802,9 @@ for(i in 1:length(cazy_files)){
   if(i == 1) cazy_results_df <- cazy_df else cazy_results_df <- rbind(cazy_results_df, cazy_df)
 }
 
+# Summary of CAZY genes found in each genome
+cazy_results_df %>% group_by(Genome) %>% summarise(CAZY_counts = n())
+
 # Replace ".hmm" extension from reference
 cazy_results_df$Subject <- gsub(".hmm", "", cazy_results_df$Subject)
 cazy_results_df$Query <- as.character(cazy_results_df$Query)
@@ -2732,6 +2816,8 @@ merged_gc_cog_psg_cazy <- left_join(cazy_results_df, merged_gc_cog, by = c("Quer
 # Combine with CAZY reference information
 merged_gc_cog_psg_cazy <- left_join(merged_gc_cog_psg_cazy, cazy_reference, 
                                     by = c("Subject"= "Family"))
+merged_gc_cog_psg_cazy <- merged_gc_cog_psg_cazy %>% 
+  mutate(PSG = Query %in% data_posi$Gene)
 
 # Add AA annotation with was missing from the reference file
 merged_gc_cog_psg_cazy$cazy_class[is.na(merged_gc_cog_psg_cazy$cazy_class)] <- "Auxiliary activities"
