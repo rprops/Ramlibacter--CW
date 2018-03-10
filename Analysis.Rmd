@@ -217,24 +217,25 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
 
 ## Plots  
 
-```{r OTU1-dynamics, warning = FALSE, dpi = 500, fig.width = 9, fig.height = 5.5, dev = c("png", "svg")}
+```{r OTU1-dynamics, warning = FALSE, dpi = 500, fig.width = 9, fig.height = 5.5, dev = c("png")}
 # Plot absolute OTU dynamics of OTU1
 df_abs <- psmelt(phy_df_abs)
 col_RAMLI <- "#887CAF"
 
+# Need to account for dilution factor of 2 and 50 µL volume measured
 p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>% 
-  ggplot(aes(x = Timepoint, y = Abundance))+
+  ggplot(aes(x = Timepoint, y = 2*Abundance/50))+
   facet_grid(.~Reactor.cycle, scales = "free")+
   scale_shape_manual(values = c(21,24))+
   geom_line(size = 1.5, linetype = 2, color = adjustcolor("#000000", 0.5))+
-  geom_point(size = 4, fill ="#e2a2fd", aes(shape = Reactor_status, 
+  geom_point(size = 4, fill = col_RAMLI, aes(shape = Reactor_status, 
                                             alpha = Reactor_status),
              color = "black")+
   scale_alpha_manual(values = c(0.5,1))+
   theme_bw()+
-  ylab(expression("Otu00001 abundance - cells mL"^"-1"))+
+  ylab(expression("Otu00001 abundance - cells µL"^"-1"))+
   xlab("Time relative to reactor start - days")+
-  scale_y_continuous(breaks = seq(0,50e3,5e3), limits = c(0,30e3))+
+  scale_y_continuous(breaks = seq(0,50e3,5e3)*2/50, limits = c(0,30e3)*2/50)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
@@ -252,7 +253,7 @@ col_RAMLI <- "#887CAF"
 
 p_abs_box <- df_abs %>% 
   dplyr::filter(OTU %in% c("Otu00001","Otu00002","Otu00003")) %>% 
-  ggplot(aes(x = OTU, y = Abundance, fill = OTU))+
+  ggplot(aes(x = OTU, y = 2*Abundance/50, fill = OTU))+
   geom_jitter(size = 2,
              color = "black", shape = 21, width = 0.1, alpha = 0.5)+
   geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE,
@@ -262,10 +263,10 @@ p_abs_box <- df_abs %>%
   # geom_boxplot(width = 0.5, alpha = 0.4, outlier.shape = NA)+
   scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
   theme_bw()+
-  ylab(expression("Cells mL"^"-1"))+
+  ylab(expression("Cells µL"^"-1"))+
   xlab("")+
   # ylab("")+
-  scale_y_continuous(breaks = seq(0,50e3,10e3), limits = c(-5e3,40e3))+
+  scale_y_continuous(breaks = seq(0,50e3,10e3)*2/50, limits = c(-5e3,40e3)*2/50)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
         axis.text.x=element_text(size=14),
         title=element_text(size=16), legend.text=element_text(size=14),
@@ -402,7 +403,12 @@ print(p_rel_box)
                      p.mat = p.mat_rel, sig.level = 0.05,
                      diag=FALSE, 
                      title = paste("Relative abundances - ", otu))
+  
 
+# Calculate element-wise N/P ratio assuming 1 µg/L of PO4
+molP <- (1/94.9714)/1000 # in mmol/L of upper detection limit
+mean((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP) # in mmol/L
+sd((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP)
 ```
 
 # B. MetaG analysis

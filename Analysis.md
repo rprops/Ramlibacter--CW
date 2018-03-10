@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "08 March, 2018"
+date: "10 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -237,19 +237,20 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
 df_abs <- psmelt(phy_df_abs)
 col_RAMLI <- "#887CAF"
 
+# Need to account for dilution factor of 2 and 50 µL volume measured
 p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>% 
-  ggplot(aes(x = Timepoint, y = Abundance))+
+  ggplot(aes(x = Timepoint, y = 2*Abundance/50))+
   facet_grid(.~Reactor.cycle, scales = "free")+
   scale_shape_manual(values = c(21,24))+
   geom_line(size = 1.5, linetype = 2, color = adjustcolor("#000000", 0.5))+
-  geom_point(size = 4, fill ="#e2a2fd", aes(shape = Reactor_status, 
+  geom_point(size = 4, fill = col_RAMLI, aes(shape = Reactor_status, 
                                             alpha = Reactor_status),
              color = "black")+
   scale_alpha_manual(values = c(0.5,1))+
   theme_bw()+
-  ylab(expression("Otu00001 abundance - cells mL"^"-1"))+
+  ylab(expression("Otu00001 abundance - cells µL"^"-1"))+
   xlab("Time relative to reactor start - days")+
-  scale_y_continuous(breaks = seq(0,50e3,5e3), limits = c(0,30e3))+
+  scale_y_continuous(breaks = seq(0,50e3,5e3)*2/50, limits = c(0,30e3)*2/50)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
@@ -269,25 +270,26 @@ col_RAMLI <- "#887CAF"
 
 p_abs_box <- df_abs %>% 
   dplyr::filter(OTU %in% c("Otu00001","Otu00002","Otu00003")) %>% 
-  ggplot(aes(x = OTU, y = Abundance, fill = OTU))+
+  ggplot(aes(x = OTU, y = 2*Abundance/50, fill = OTU))+
   geom_jitter(size = 2,
              color = "black", shape = 21, width = 0.1, alpha = 0.5)+
-  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE,
+              trim = TRUE)+
   stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
                  geom="pointrange", color="black")+
   # geom_boxplot(width = 0.5, alpha = 0.4, outlier.shape = NA)+
   scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
   theme_bw()+
-  ylab(expression("Cells mL"^"-1"))+
+  ylab(expression("Cells µL"^"-1"))+
   xlab("")+
   # ylab("")+
-  scale_y_continuous(breaks = seq(0,50e3,5e3), limits = c(-5e3,40e3))+
+  scale_y_continuous(breaks = seq(0,50e3,10e3)*2/50, limits = c(-5e3,40e3)*2/50)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
         axis.text.x=element_text(size=14),
         title=element_text(size=16), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         strip.text.x=element_text(size=18),
-        legend.position = "top")+
+        legend.position = "sqrt")+
   guides(shape = guide_legend(title="Reactor status", ncol =1),
          fill = FALSE)+
     theme(axis.line = element_line(size = 1, colour = "grey80"),
@@ -439,6 +441,24 @@ print(p_rel_box)
 ```
 
 <img src="Figures/cached/physico-data-2.png" style="display: block; margin: auto;" />
+
+```r
+# Calculate element-wise N/P ratio assuming 1 µg/L of PO4
+molP <- (1/94.9714)/1000 # in mmol/L of upper detection limit
+mean((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP) # in mmol/L
+```
+
+```
+## [1] 422.9694
+```
+
+```r
+sd((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP)
+```
+
+```
+## [1] 340.0476
+```
 
 # B. MetaG analysis
 
@@ -624,9 +644,9 @@ RAMLI_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Fri Feb 09 16:55:41 2018  --- There are 2830 genes with > 0.1 %
-## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:08 2018  --- There are 2830 genes with > 0.1 %
+## Sat Mar 10 19:21:08 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:08 2018  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -657,9 +677,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Fri Feb 09 16:55:41 2018  --- There are 1889 genes with > 0.1 %
-## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:08 2018  --- There are 1889 genes with > 0.1 %
+## Sat Mar 10 19:21:08 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:08 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -701,9 +721,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Fri Feb 09 16:55:41 2018  --- There are 1797 genes with > 0.1 %
-## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:09 2018  --- There are 1797 genes with > 0.1 %
+## Sat Mar 10 19:21:09 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:09 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -745,9 +765,9 @@ RAMLI_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Fri Feb 09 16:55:41 2018  --- There are 4954 genes with > 0.1 %
-## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:09 2018  --- There are 4954 genes with > 0.1 %
+## Sat Mar 10 19:21:09 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:09 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -767,9 +787,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Fri Feb 09 16:55:41 2018  --- There are 3929 genes with > 0.1 %
-## Fri Feb 09 16:55:41 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:41 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:09 2018  --- There are 3929 genes with > 0.1 %
+## Sat Mar 10 19:21:09 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:09 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -789,9 +809,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Fri Feb 09 16:55:42 2018  --- There are 3573 genes with > 0.1 %
-## Fri Feb 09 16:55:42 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:42 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:10 2018  --- There are 3573 genes with > 0.1 %
+## Sat Mar 10 19:21:10 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:10 2018  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -811,9 +831,9 @@ RAMLI_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Fri Feb 09 16:55:42 2018  --- There are 2164 genes with > 0.1 %
-## Fri Feb 09 16:55:42 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:42 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:10 2018  --- There are 2164 genes with > 0.1 %
+## Sat Mar 10 19:21:10 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:10 2018  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -844,9 +864,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Fri Feb 09 16:55:42 2018  --- There are 1384 genes with > 0.1 %
-## Fri Feb 09 16:55:42 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:42 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:10 2018  --- There are 1384 genes with > 0.1 %
+## Sat Mar 10 19:21:10 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:10 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -866,9 +886,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Fri Feb 09 16:55:42 2018  --- There are 1342 genes with > 0.1 %
-## Fri Feb 09 16:55:42 2018  --- This is 100 % of all genes
-## Fri Feb 09 16:55:42 2018  --- The 10 genes with the highest GC% are:
+## Sat Mar 10 19:21:11 2018  --- There are 1342 genes with > 0.1 %
+## Sat Mar 10 19:21:11 2018  --- This is 100 % of all genes
+## Sat Mar 10 19:21:11 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -3831,7 +3851,34 @@ print(data_posi_COG %>% dplyr::filter(cog_id %in% p_cog_ko_list) %>% distinct())
 ```
 
 ```
-## Error in filter_impl(.data, quo): Evaluation error: object 'cog_id' not found.
+##         Gene   P.Value         FDR HA.foreground.omega HA.kappa
+## 1 2727790921 0.0006156 0.002841803            1.585493  2.07378
+## 2 2727790928 0.0042980 0.014352524           12.180261  1.94745
+## 3 2727790930 0.0107200 0.031259847            1.075120  1.75049
+##   Number.of.Sites.under.positive.Selection       IMG_geneID         contig
+## 1                                       11 Ga0182879_101228 Ga0182879_1012
+## 2                                       11 Ga0182879_101235 Ga0182879_1012
+## 3                                        2 Ga0182879_101237 Ga0182879_1012
+##      GC               Genome   gene_oid gene_length percent_identity
+## 1 0.702 121950.assembled.gff 2727790921         697            48.76
+## 2 0.689 121950.assembled.gff 2727790928         299            47.20
+## 3 0.655 121950.assembled.gff 2727790930         234            37.23
+##   query_start query_end subj_start subj_end evalue bit_score  cog_id
+## 1           6       685          2      683  0e+00       741 COG0855
+## 2          21       299          4      289  4e-67       248 COG0581
+## 3           4       234          7      235  3e-36       145 COG0704
+##                                                  cog_name cog_length
+## 1                                    Polyphosphate kinase        696
+## 2 ABC-type phosphate transport system, permease component        292
+## 3                              Phosphate uptake regulator        240
+##             genome_id COG_class                COG_functional_category
+## 1 Ramlibacter sp. MAG         P Inorganic ion transport and metabolism
+## 2 Ramlibacter sp. MAG         P Inorganic ion transport and metabolism
+## 3 Ramlibacter sp. MAG         P Inorganic ion transport and metabolism
+##   COG_functional_cluster
+## 1             METABOLISM
+## 2             METABOLISM
+## 3             METABOLISM
 ```
 
 ```r
