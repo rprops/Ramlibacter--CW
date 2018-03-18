@@ -1,9 +1,21 @@
 REF_id	Genome_ID	nHEG	nOEG	MGT	sd.MGT	Topt	T_fysico	sd.T_fysico
-2724679690	Ramli. sp. MAG	53	3847	3.61	0.54	29.0	26.89	1.26
-2724679691	Bact. sp. MAG1	51	3361	3.31	0.30	18.0	26.89	1.26
-2724679698	Bact. sp. MAG2	51	3159	3.8	0.35	16.0	26.89	1.26
-2754412601	Ramli. sp. MAG-2	53	4080	3.64	0.57	29.0	26.89	1.26
-2754412602	Bact. sp. MAG2-2	51	3267	3.82	0.42	16.0	26.89	1.26
-Ramlibacter_sp_Leaf400	Ramli. sp. Leaf400	54	4364	3.98	0.82	32.0	26.89	1.26
-Ramlibacter_tataouinensis_5_10	Ramli. sp. 5-10	53	4552	4.23	0.78	29.0	26.89	1.26
-Ramlibacter_tataouinensis_TTB310	Ramli. sp. TTB310	52	3911	4.17	1.03	32.0	26.89	1.26
+2724679690	Ramlibacter sp. MAG	53	3847	3.61	0.54	29.0	26.89	1.26
+2724679691	Bacteroidetes sp. MAG2	51	3361	3.31	0.30	18.0	26.89	1.26
+2724679698	Bacteroidetes sp. MAG1	51	3159	3.8	0.35	16.0	26.89	1.26
+2754412601	Ramlibacter sp. MAG-2	53	4080	3.64	0.57	29.0	26.89	1.26
+2754412602	Bacteroidetes sp. MAG1-2	51	3267	3.82	0.42	16.0	26.89	1.26
+Ramlibacter_sp_Leaf400	Ramlibacter sp. Leaf400	54	4364	3.98	0.82	32.0	26.89	1.26
+Ramlibacter_tataouinensis_5_10	Ramlibacter sp. 5-10	53	4552	4.23	0.78	29.0	26.89	1.26
+Ramlibacter_tataouinensis_TTB310	Ramlibacter sp. TTB310	52	3911	4.17	1.03	32.0	26.89	1.26
+Curvibacter_lanceolatus	Curvibacter sp. ATCC	54	6214	1.46	0.16	28.0		
+Curvibacter_sp_PAE	Curvibacter sp. PAE-UM	53	3428	3.36	0.5	33		
+Limnohabitans_planktonicus_II-D5	Limnohabitans sp. II-D5	54	3988	3.48	0.44	11.0		
+Limnohabitans_sp_103DPR2	Limnohabitans sp. 103DPR2	54	2790	4.08	0.67	13.0		
+Limnohabitans_sp_2KL-27	Limnohabitans sp. 2KL-27	54	2865	3.45	0.44	16.0		
+Limnohabitans_sp_2KL-3	Limnohabitans sp. 2KL-3	54	4271	3.62	0.37	14.0		
+Limnohabitans_sp_Rim11	Limnohabitans sp. Rim11	54	2769	3.3	0.4	14.0		
+Limnohabitans_sp_Rim47	Limnohabitans sp. Rim47	54	2828	3.52	0.46	17.0		
+Rhodoferax_ferrireducens_T118	Rhodoferax sp. T118	53	4550	5.24	0.47	25.0		
+Rhodoferax_saidenbachensis_ED16	Rhodoferax sp. ED16	54	4014	2.7	0.3	20.0		
+Variovorax_paradoxus_110B	Variovorax sp. 110B	55	6965	2.16	0.27	26.0		
+Variovorax_paradoxus_EPS	Variovorax sp. EPS	54	5988	2.21	0.26	24.0		

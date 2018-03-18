@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "10 March, 2018"
+date: "18 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -460,6 +460,11 @@ sd((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP)
 ## [1] 340.0476
 ```
 
+```r
+# mean((14*Physico_df_trim_rel_OTU1$Nitrate/62.0049))
+# sd((14*Physico_df_trim_rel_OTU1$Nitrate/62.0049))
+```
+
 # B. MetaG analysis
 
 ```r
@@ -545,7 +550,7 @@ data_total[data_total$bins %in% c("Bacteroidetes sp. MAG1",
 
 # 1. Phylogenetic tree
 ## Ramlibacter sp.
-![RAxML tree for Ramlibacter sp. MAG](./Tree/ANI_tree_concat-lowres.png)
+![RAxML tree for Ramlibacter sp. MAG](./Tree/ANI_tree_concat-lowres2.png)
 
 # *2. Investigate MAG- and 16S-based abundances*
 It is clear that there is significant %GC coverage bias present. The estimated relative abundances
@@ -3051,32 +3056,42 @@ indicates the mean +/- st.dev of the operational temperature in the cooling wate
 MGT_df <- read.table("./Growthpred/GP_results.tsv", header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
 
-MGT_df <- MGT_df[c(1:3, 6:8), ]
+MGT_df <- MGT_df[-c(4:5), ] %>% droplevels()
+
 # Order genome_ids according to the phylogenetic clustering
-MGT_df$Genome_ID <- factor(MGT_df$Genome_ID, levels = c("Ramli. sp. MAG",
-                                                        "Ramli. sp. 5-10",
-                                                        "Ramli. sp. Leaf400",
-                                                        "Ramli. sp. TTB310",
-                                                        "Bact. sp. MAG1",
-                                                        "Bact. sp. MAG2"))
+ord_full_list_bin <- c("Limnohabitans sp. Rim11", "Limnohabitans sp. 103DPR2",
+                  "Limnohabitans sp. 2KL-27", "Limnohabitans sp. Rim47",
+                  "Limnohabitans sp. II-D5", "Limnohabitans sp. 2KL-3",
+                  "Rhodoferax sp. ED16","Rhodoferax sp. T118",
+                  "Curvibacter sp. ATCC", "Curvibacter sp. PAE-UM",
+                  "Variovorax sp. 110B", "Variovorax sp. EPS",
+                  "Ramlibacter sp. Leaf400", "Ramlibacter sp. TTB310",
+                  "Ramlibacter sp. MAG", 
+                  "Ramlibacter sp. 5-10",
+                  "Bacteroidetes sp. MAG1",
+                  "Bacteroidetes sp. MAG2"
+                  )
+
+MGT_df$Genome_ID <- factor(MGT_df$Genome_ID, levels = ord_full_list_bin)
 
 # Make barplot with st.dev to visualize MGT and optimal temperature
 selected_points <- data.frame(Genome_ID = MGT_df$Genome_ID, 
                               ypos = c(rep(7.5, 3), rep(NA,3)))
-p_MGT <- ggplot(MGT_df, aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+p_MGT_1 <- MGT_df[-c(2:3),] %>% 
+  ggplot(aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
            position = position_dodge(width = 1), width = 0.7)+
-  scale_fill_manual("Minimal generation time (h)",
-                    values = c(col_RAMLI, col_RAMLI,col_RAMLI,col_RAMLI,
-                               col_bac1, col_bac2))+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4), col_bac1, col_bac2))+
   theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size = 18),
         legend.position="bottom",
-        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
         axis.title.x=element_blank(),
         plot.title = element_text(hjust = 0, size=18))+
   guides(fill=FALSE)+
@@ -3085,20 +3100,37 @@ p_MGT <- ggplot(MGT_df, aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
   ylab("")+
   xlab("")+
   ggtitle("Minimal Generation Time (h)")+
-  geom_point(data = selected_points, aes(x = Genome_ID, y = ypos),
-             shape = 25, fill = "black", col = "black", size = 3)
-  # scale_y_continuous(labels = function(x) sprintf("%.2f", x), breaks = seq(0.20,0.90,0.10),
-  #                    limits = c(0.2,0.9))
+  ylim(0,6)
 
-# svg(filename = "MGT_figure.svg", width = 9.5, height = 4)
-print(p_MGT)
+p_MGT_2 <- MGT_df[c(2:3),] %>% 
+  ggplot(aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_manual(values = c(col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=11), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=FALSE)+
+  geom_errorbar(aes(ymin = MGT - sd.MGT, ymax = MGT + sd.MGT), width = 0.15,
+                position = position_dodge(width = 1))+
+  ylab("")+
+  xlab("")+
+  ggtitle("")+
+  ylim(0,6)
+
+cowplot::plot_grid(p_MGT_1, p_MGT_2, align = "hv", rel_widths = c(4,1))
 ```
 
 <img src="Figures/cached/MGT-1-1.png" style="display: block; margin: auto;" />
 
 ```r
-#dev.off()
-
 selected_points <- data.frame(Genome_ID = MGT_df$Genome_ID, 
                               ypos = c(rep(35, 3), rep(NA,3)))
 selected_band <- data.frame(Genome_ID = MGT_df$Genome_ID, 
@@ -3107,44 +3139,63 @@ selected_band <- data.frame(Genome_ID = MGT_df$Genome_ID,
                             upr = rep(26.89 + 1.26, 6),
                             y_val = 26.89)
 
-p_Topt <- ggplot(MGT_df, aes(x = Genome_ID, y = Topt, fill = Genome_ID))+
+p_Topt_1 <- MGT_df[-c(2:3),] %>% 
+  ggplot(aes(x = Genome_ID, y = Topt, fill = Genome_ID))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
            position = position_dodge(width = 1), width = 0.7)+
-  scale_fill_manual("Optimal growth temperature (°C)",
-                    values = c(col_RAMLI, col_RAMLI,col_RAMLI,col_RAMLI,
-                               col_bac1, col_bac2))+
-  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4), col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=11), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size = 18),
         legend.position="bottom",
-        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
         axis.title.x=element_blank(),
         plot.title = element_text(hjust = 0, size=18))+
   guides(fill=FALSE)+
   ylab("")+
   xlab("")+
   ggtitle("Optimal growth temperature (°C)")+
-  geom_point(data = selected_points, aes(x = Genome_ID, y = ypos),
-             shape = 25, fill = "black", col = "black", size = 3)+
-  geom_hline(yintercept = 26.89, linetype = 2, col = "black")+
-  geom_rect(data = selected_band, aes(ymin = lwr,
-                                      ymax = upr,
-                                      xmin = 0,
-                                      xmax = 7), alpha=0.1, fill = "gray",
-            col = NA)
+  ylim(0,35)
+  # geom_point(data = selected_points, aes(x = Genome_ID, y = ypos),
+             # shape = 25, fill = "black", col = "black", size = 3)+
+  # geom_hline(yintercept = 26.89, linetype = 2, col = "black")+
+  # geom_rect(data = selected_band, aes(ymin = lwr,
+  #                                     ymax = upr,
+  #                                     xmin = 0.5,
+  #                                     xmax = 18.5), alpha=0.01, fill = "gray",
+  #           col = NA)
 
-# svg(filename = "MGT_figure.svg", width = 9.5, height = 4)
-print(p_Topt)
+p_Topt_2 <- MGT_df[c(2:3),] %>% 
+  ggplot(aes(x = Genome_ID, y = Topt, fill = Genome_ID))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_manual(values = c(col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=11), axis.title=element_text(size=11),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=FALSE)+
+  ylab("")+
+  xlab("")+
+  ggtitle("")+
+  ylim(0,35)
+
+# Print plots
+cowplot::plot_grid(p_Topt_1, p_Topt_2, align = "h", rel_widths = c(4,1))
 ```
 
 <img src="Figures/cached/MGT-1-2.png" style="display: block; margin: auto;" />
-
-```r
-#dev.off()
-```
 
 # iRep
 
