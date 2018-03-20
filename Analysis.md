@@ -1741,10 +1741,10 @@ posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$V
 # Merge dataframes
 posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG, 
                                       posiG_p_df_MAG_clade),
-                                branch = factor(c(rep("clade", nrow(posiG_p_df_clade)), 
+                                branch = factor(c(rep("LCA", nrow(posiG_p_df_clade)), 
                                            rep("MAG", nrow(posiG_p_df_MAG)),
-                                           rep("clade+MAG", nrow(posiG_p_df_MAG_clade))),
-                                levels = c("MAG", "clade", "clade+MAG"))
+                                           rep( "LCA+MAG", nrow(posiG_p_df_MAG_clade))),
+                                levels = c("MAG", "LCA",  "LCA+MAG"))
 )
 data_posi_KO_merge <- rbind(data_posi_KO, data_posi_clade_KO, data_posi_clade_MAG_KO)
 
@@ -1774,7 +1774,7 @@ posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
 #                  "Metabolism of cofactors and vitamins")
 # Make plot
 posiG_p_df_merged$branch <- factor(as.character(posiG_p_df_merged$branch),
-                                   levels = c("MAG","clade+MAG","clade"))
+                                   levels = c("MAG", "LCA+MAG","LCA"))
 # Get order of ko_level_b correct based on summed frequencies
 posiG_p_df_merged <- posiG_p_df_merged %>% 
   # dplyr::filter(branch == "MAG") %>% 
@@ -1911,10 +1911,10 @@ posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$V
 # Merge dataframes
 posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG, 
                                       posiG_p_df_MAG_clade),
-                                branch = factor(c(rep("clade", nrow(posiG_p_df_clade)), 
+                                branch = factor(c(rep("LCA", nrow(posiG_p_df_clade)), 
                                            rep("MAG", nrow(posiG_p_df_MAG)),
-                                           rep("clade+MAG", nrow(posiG_p_df_MAG_clade))),
-                                levels = c("MAG", "clade", "clade+MAG"))
+                                           rep( "LCA+MAG", nrow(posiG_p_df_MAG_clade))),
+                                levels = c("MAG", "LCA",  "LCA+MAG"))
 )
 data_posi_cog_merge <- rbind(data_posi_COG, data_posi_clade_COG, data_posi_clade_MAG_COG)
 
@@ -3264,6 +3264,27 @@ print(p_iRep_2)
 ```
 
 <img src="Figures/cached/irep-1-2.png" style="display: block; margin: auto;" />
+
+```r
+# Print summary irep statistics
+df_irep %>% group_by(Genome_bin) %>% summarize(mean(iRep_value))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Genome_bin"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["mean(iRep_value)"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Ramlibacter sp. MAG","2":"1.482997"},{"1":"Bacteroidetes sp. MAG1","2":"1.629398"},{"1":"Bacteroidetes sp. MAG2","2":"1.402130"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+df_irep %>% group_by(Genome_bin) %>% summarize(sd(iRep_value))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Genome_bin"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["sd(iRep_value)"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Ramlibacter sp. MAG","2":"0.079643772"},{"1":"Bacteroidetes sp. MAG1","2":"0.037571020"},{"1":"Bacteroidetes sp. MAG2","2":"0.005680642"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 
 ```r
