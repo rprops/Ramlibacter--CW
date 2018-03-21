@@ -797,6 +797,9 @@ merged_gc_ko <- data.frame(merged_gc_ko,
 merged_gc_ko$ko_id <- gsub(merged_gc_ko$ko_id, pattern = "KO:", replacement = "")
 merged_gc_ko <- dplyr::left_join(merged_gc_ko, ko_path_df[, c(1, 4:6)], by = "ko_id")
 
+# Remove EC column because it allows duplicates for same functional classification
+merged_gc_ko <- merged_gc_ko %>% select(-EC) %>% distinct()
+
 # Fill up NA slots with "Unknown" pathway
 merged_gc_ko$ko_level_A[is.na(merged_gc_ko$ko_level_A)] <- "Unknown"
 merged_gc_ko$ko_level_B[is.na(merged_gc_ko$ko_level_B)] <- "Unknown"
@@ -1259,11 +1262,14 @@ cat(paste("There are ", sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$G
           round(100*sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene))/nrow(map_posi),1),
           "% of all genes in this MAG",  sep = "")
     )
+
 # Merge this data with the functional annotation (i.e. KO and COG) of these genes
 data_posi <- left_join(data_posi, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_clade <- left_join(data_posi_clade, map_posi, by = c("Gene" = "posi_geneID"))
-data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
-data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+data_posi_KO <- left_join(data_posi, merged_gc_ko, 
+                          by = c("IMG_geneID" = "contig_geneID")) %>% distinct()
+data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, 
+                                by = c("IMG_geneID" = "contig_geneID")) %>% distinct()
 
 # Also add COG annotation to both data sets
 data_posi_COG <- left_join(data_posi, merged_gc_cog, 
@@ -1282,25 +1288,30 @@ data_posi_KO <- data_posi_KO[pos, ]
 data_posi_clade_KO <- data_posi_clade_KO[pos2, ]
 data_posi_clade_MAG_KO <- data_posi_clade_KO[pos3, ]
 
-# Optional: write table for quick view in iPath v2
-# write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
-#             row.names = FALSE, col.names = FALSE)
-# write.table(file = "KO_posiG_clade.tsv", unique(data_posi_clade_KO$ko_id), quote = FALSE,
-#             row.names = FALSE, col.names = FALSE)
-
 # Merge dataframes to plot
 # Remove levels without "n_level" number of genes
-n_level <- round(0.01*sum(table(data_posi_clade_KO$ko_level_C)),0)
-posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)[table(data_posi_clade_KO$ko_level_C)>n_level]
-posiG_p_df_clade <- data.frame(posiG_p_df_clade); posiG_p_df_clade$Var1 <- as.character(posiG_p_df_clade$Var1)
+n_level = 10
 
-n_level <- round(0.01*sum(table(data_posi_KO$ko_level_C)),0)
-posiG_p_df_MAG  <- table(data_posi_KO$ko_level_C)[table(data_posi_KO$ko_level_C)>n_level]
-posiG_p_df_MAG <- data.frame(posiG_p_df_MAG); posiG_p_df_MAG$Var1 <- as.character(posiG_p_df_MAG$Var1)
+# make contigency tables for functional level C
+posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)
+posiG_p_df_clade <- data.frame(posiG_p_df_clade) 
+posiG_p_df_MAG  <- table(data_posi_KO$ko_level_C)
+posiG_p_df_MAG <- data.frame(posiG_p_df_MAG) 
+posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$ko_level_C)
+posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade)
 
-n_level <- round(0.01*sum(table(data_posi_clade_MAG_KO$ko_level_C)),0)
-posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$ko_level_C)[table(data_posi_clade_MAG_KO$ko_level_C)>n_level]
-posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$Var1 <- as.character(posiG_p_df_MAG_clade$Var1)
+# Merge tables and extract labels of interest
+test <- left_join(posiG_p_df_MAG, posiG_p_df_MAG_clade, 
+                            by = "Var1")
+test <- left_join(test, posiG_p_df_clade, 
+                            by = "Var1")
+test[is.na(test)] <- 0
+test <- data.frame(labels = test$Var1, totalSums = rowSums(test[, 2:4]))
+labels_2_vis <- test$labels[test$totalSums > n_level]
+
+posiG_p_df_MAG <- posiG_p_df_MAG %>% dplyr::filter(Var1 %in% labels_2_vis)
+posiG_p_df_MAG_clade <- posiG_p_df_MAG_clade %>% dplyr::filter(Var1 %in% labels_2_vis)
+posiG_p_df_clade <- posiG_p_df_clade %>% dplyr::filter(Var1 %in% labels_2_vis)
 
 # Merge dataframes
 posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG, 
@@ -1369,7 +1380,7 @@ p_KO_posi <- within_ko_order %>%
   ungroup() %>% 
   mutate(Var1 = as.character(Var1)) %>% 
   mutate(Var1 = factor(Var1, unique(Var1))) %>% 
-  ggplot(aes(x = Var1, y = Freq, fill = branch, group = ko_level_B))+
+  ggplot(aes(x = Var1, y = Freq, fill = branch, group = branch))+
   geom_bar(stat="identity", color = "black")+
   theme_bw()+
   scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
@@ -1404,7 +1415,7 @@ p_KO_posi_subset <- within_ko_order_sb %>%
   ungroup() %>% 
   mutate(Var1 = as.character(Var1)) %>% 
   mutate(Var1 = factor(Var1, unique(Var1))) %>% 
-  ggplot(aes(x = Var1, y = Freq, fill = branch, group = ko_level_B))+
+  ggplot(aes(x = Var1, y = Freq, fill = branch, group = branch))+
   geom_bar(stat="identity", color = "black")+
   theme_bw()+
   scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
@@ -1424,6 +1435,9 @@ p_KO_posi_subset <- within_ko_order_sb %>%
         panel.border = element_blank())
 
 print(p_KO_posi_subset)
+
+# Upset figure
+
 ```
 
 
