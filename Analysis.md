@@ -1748,6 +1748,11 @@ posiG_p_df_MAG <- posiG_p_df_MAG %>% dplyr::filter(Var1 %in% labels_2_vis)
 posiG_p_df_MAG_clade <- posiG_p_df_MAG_clade %>% dplyr::filter(Var1 %in% labels_2_vis)
 posiG_p_df_clade <- posiG_p_df_clade %>% dplyr::filter(Var1 %in% labels_2_vis)
 
+# Get total of ko annotated genes per category
+total_ko_genes <- table(merged_gc_ko$ko_level_C)
+total_ko_genes <- data.frame(total_ko_genes)
+colnames(total_ko_genes)[2] <- "TotalGenes"
+
 # Merge dataframes
 posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG, 
                                       posiG_p_df_MAG_clade),
@@ -1757,6 +1762,10 @@ posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG,
                                 levels = c("MAG", "LCA",  "LCA+MAG"))
 )
 data_posi_KO_merge <- rbind(data_posi_KO, data_posi_clade_KO, data_posi_clade_MAG_KO)
+
+# Add total ko annotated genes per category
+posiG_p_df_merged <- dplyr::left_join(posiG_p_df_merged, total_ko_genes,
+                                       by = "Var1")
 
 # Merge with level B annotation
 posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_KO_merge[, c("ko_level_A","ko_level_B","ko_level_C")],
@@ -1840,6 +1849,40 @@ print(p_KO_posi)
 <img src="Figures/cached/posigene-selection-1.png" style="display: block; margin: auto;" />
 
 ```r
+# Make plot
+p_KO_posi_relative <- within_ko_order %>% 
+  # dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  droplevels() %>% 
+  group_by(ko_level_B) %>% 
+  dplyr::arrange(desc(sum_freq), .by_group = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Var1 = as.character(Var1)) %>% 
+  mutate(Var1 = factor(Var1, unique(Var1))) %>% 
+  ggplot(aes(x = Var1, y = 100*Freq/TotalGenes, fill = branch, group = branch))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
+  ylab("PSG frequency (%)") + xlab("")+
+  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  # facet_grid(.~ko_level_B)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=18, angle = 0))+
+  theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+
+print(p_KO_posi_relative)
+```
+
+<img src="Figures/cached/posigene-selection-2.png" style="display: block; margin: auto;" />
+
+```r
 within_ko_order_sb <- posiG_p_df_merged %>% 
   dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
   group_by(Var1) %>% 
@@ -1876,7 +1919,40 @@ p_KO_posi_subset <- within_ko_order_sb %>%
 print(p_KO_posi_subset)
 ```
 
-<img src="Figures/cached/posigene-selection-2.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/posigene-selection-3.png" style="display: block; margin: auto;" />
+
+```r
+p_KO_posi_subset_relative <- within_ko_order_sb %>% 
+  dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  droplevels() %>% 
+  group_by(ko_level_B) %>% 
+  dplyr::arrange(desc(sum_freq), .by_group = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Var1 = as.character(Var1)) %>% 
+  mutate(Var1 = factor(Var1, unique(Var1))) %>% 
+  ggplot(aes(x = Var1, y = 100*Freq/TotalGenes, fill = branch, group = branch))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
+  ylab("PSG frequency (%)") + xlab("")+
+  theme(axis.text.y=element_text(size=15), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  # facet_grid(.~ko_level_B)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=18, angle = 0))+
+  theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+
+print(p_KO_posi_subset_relative)
+```
+
+<img src="Figures/cached/posigene-selection-4.png" style="display: block; margin: auto;" />
 
 ```r
 # Upset figure
@@ -2676,12 +2752,6 @@ modules_table <- get_mq(KO_profiles_long, genome_label = "Genome", ko_label = "F
 # Remove absent modules
 # modules_table <- modules_table %>% dplyr::filter(module_completeness > 0)
 
-# Specific modules
-mod_spec1 <- c("Cell signaling", "Two-component regulatory system",
-               "Mineral and organic ion transport system", "Nitrogen metabolism", 
-               "Carbon fixation", "Cofactor and vitamin biosynthesis",
-               "Other carbohydrate metabolism",
-               "Central carbohydrate metabolism")
 
 # Select subset of genomes for phosphate scavenging
 selected_genomes <- c("Ramlibacter sp. TTB310",
@@ -2691,15 +2761,16 @@ selected_genomes <- c("Ramlibacter sp. TTB310",
                       "Bacteroidetes sp. MAG1", 
                       "Bacteroidetes sp. MAG2")
 
-# Visualize output statistics
-p_mod1 <- modules_table %>% dplyr::filter(module_completeness > 0 & Genome %in% selected_genomes) %>% 
+# Visualize output statistics for Carbon fixation
+p_mod1 <- modules_table %>% dplyr::filter(module_completeness > 0 & Genome %in% selected_genomes, CLASS_III == "Carbon fixation") %>% 
   ggplot(aes(x = MODULE_ID, y = module_completeness, fill = Genome))+
-  geom_jitter(shape = 21, size = 4, width = 0.3)+ theme_bw()+
+  geom_point(shape = 21, size = 4, 
+             position = position_dodge(width = 1))+ theme_bw()+
   scale_fill_brewer(palette = "Accent")+
   xlab("")+
   ylab("Module completeness")+
   ylim(0,1)+
-  facet_grid(Genome~.)+
+  # facet_grid(Genome~.)+
     theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
         legend.title=element_text(size=15), legend.text=element_text(size=14),
         axis.text.y = element_text(size=16),
@@ -2715,20 +2786,27 @@ print(p_mod1)
 <img src="Figures/cached/m-genome-completeness-1.png" style="display: block; margin: auto;" />
 
 ```r
-# Visualize output statistics
-p_mod2 <- modules_table %>% dplyr::filter(module_completeness > 0 & Genome %in% selected_genomes
-                                          & CLASS_III %in% mod_spec1) %>% 
-  ggplot(aes(x = MODULE_ID, y = module_completeness, fill = Genome))+
-  geom_jitter(shape = 21, size = 4, width = 0.3)+ theme_bw()+
+# Specific modules
+mod_spec1 <- c("Cell signaling",
+               "Quorum sensing 2-CRS (Qse)",
+               "Quorum sensing 2-CRS (Lux)")
+
+# Visualize output statistics for 
+p_mod2 <- modules_table %>% 
+  dplyr::filter(Genome %in% selected_genomes & 
+                  NAME_SHORT %in% mod_spec1) %>% 
+  ggplot(aes(x = NAME_SHORT, y = module_completeness, fill = Genome))+
+  geom_point(shape = 21, size = 4, 
+             position = position_dodge(width = 1))+ theme_bw()+
   scale_fill_brewer(palette = "Accent")+
   xlab("")+
   ylab("Module completeness")+
   ylim(0,1)+
-  facet_grid(Genome~.)+
+  # facet_grid(Genome~.)+
     theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
         legend.title=element_text(size=15), legend.text=element_text(size=14),
         axis.text.y = element_text(size=16),
-        axis.text.x = element_text(size=16, angle = 300, hjust = 0),
+        axis.text.x = element_text(size=16, angle = 0),
         title=element_text(size=20),
         panel.background = element_rect(fill = "transparent",colour = NA),
         plot.background = element_rect(fill = "transparent",colour = NA)
@@ -2741,6 +2819,36 @@ print(p_mod2)
 <img src="Figures/cached/m-genome-completeness-2.png" style="display: block; margin: auto;" />
 
 ```r
+# Specific modules
+mod_spec3 <- c("Cell signaling",
+               "Quorum sensing 2-CRS (Qse)",
+               "Quorum sensing 2-CRS (Lux)")
+
+# # Visualize output statistics for 
+# p_mod3 <- modules_table %>% 
+#   dplyr::filter(Genome %in% selected_genomes & 
+#                   NAME_SHORT %in% mod_spec3) %>% 
+#   ggplot(aes(x = NAME_SHORT, y = module_completeness, fill = Genome))+
+#   geom_point(shape = 21, size = 4, 
+#              position = position_dodge(width = 1))+ theme_bw()+
+#   scale_fill_brewer(palette = "Accent")+
+#   xlab("")+
+#   ylab("Module completeness")+
+#   ylim(0,1)+
+#   # facet_grid(Genome~.)+
+#     theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
+#         legend.title=element_text(size=15), legend.text=element_text(size=14),
+#         axis.text.y = element_text(size=16),
+#         axis.text.x = element_text(size=16, angle = 0),
+#         title=element_text(size=20),
+#         panel.background = element_rect(fill = "transparent",colour = NA),
+#         plot.background = element_rect(fill = "transparent",colour = NA)
+#   )
+# 
+# 
+# print(p_mod3)
+
+
 # Heatmap
 # make heatmap for all class_III levels
 
