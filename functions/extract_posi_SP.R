@@ -76,15 +76,15 @@ anc.mpr = ancestral.pars(tree, phydat_aln, "MPR")
 # This necesary to later select the most appropriate LCA for the target species
 # gene
 
-index <- (1:length(desc_list))[unlist(lapply(desc_list, FUN = function(x) length(x)>1))]
+index <- (1:length(desc_list))[unlist(lapply(desc_list, FUN = function(x) length(x)>0))]
 desc_list <- phangorn::allDescendants(tree)
-desc_df <- matrix(ncol = 2, nrow = sum(unlist(lapply(desc_list, FUN = function(x) length(x)>1))))
+desc_df <- matrix(ncol = 2, nrow = sum(unlist(lapply(desc_list, FUN = function(x) length(x)>0))))
 for(i in 1:nrow(desc_df)){
-    desc_df[i, 2] <- print(paste("LCA", 
-                                     paste(desc_list[[index[i]]], collapse="_", sep = "_"), sep = "_"))
+    desc_df[i, 2] <- print(paste(paste(desc_list[[index[i]]], collapse="_", sep = "_"), sep = "_"))
     desc_df[i, 1] <- index[i]
 }
 desc_df <- data.frame(desc_df); colnames(desc_df) <- c("node_name", "LCA_name")
+
 
 ################################################################################
 ### Step 2: Extract site patterns from PSG sites
@@ -107,8 +107,9 @@ for(sequence in 1:length(anc.mpr)){
   # print(names(anc.mpr)[sequence])
   psg_df <- psg_df %>% tidyr::unite('all_cols', A:T, sep = ";")
   psg_df$all_cols <- gsub(" ;", "", psg_df$all_cols, fixed = TRUE)
-  psg_df <- data.frame(Gene = names(anc.mpr)[sequence], site = df_posi_long_sb$PSG_position, 
-                       nucleotide = psg_df$all_cols)
+  psg_df <- data.frame(TargetGene = , Gene = names(anc.mpr)[sequence], PSG_site = df_posi_long_sb$PSG_position, 
+                       nucleotide = psg_df$all_cols, node_name = desc_df$node_name[sequence], 
+                       LCA_name = desc_df$LCA_name[sequence])
   if(sequence == 1) psg_final <- psg_df else psg_final <- rbind(psg_final, psg_df)
 }
 

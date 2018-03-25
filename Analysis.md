@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "21 March, 2018"
+date: "23 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -2669,19 +2669,48 @@ print(p_panG3)
 
 <img src="Figures/cached/panG-analysis-3.png" style="display: block; margin: auto;" />
 
+
 ```r
-# Plot distribution of panG annotation 
-## Expressed as % of individual genome gene pool
+# Plot upset plot flagellar assembly genes
+panG_ko_flagel <- panG_ko %>% 
+  dplyr::filter(!grepl("flagel ", ko_function_spec))  %>% 
+  select(ko_id, Genome, ko_function_abbrev, ko_function_spec) %>%
+  distinct()
 
+# Make presence column
+panG_ko_flagel$Presence <- 1
+panG_ko_flagel$Genome <- gsub("-", "_", panG_ko_flagel$Genome)
 
+# From long to wide format
+panG_ko_flagel <- tidyr::spread(panG_ko_flagel, Genome, Presence)
+
+# Replace NA values by 0
+panG_ko_flagel[is.na(panG_ko_flagel)] <- 0
+
+# Make upset plot
+upset(panG_ko_flagel, sets = c('Ramli_5_10', 'Ramli_Leaf400',
+                                   "Ramli_MAG", "Ramli_TTB310"),
+      mb.ratio = c(0.55, 0.45), 
+      order.by = "freq", number.angles = 30, point.size = 3.5,
+      mainbar.y.label = "Gene intersections", sets.x.label = "Number of genes",
+      text.scale = c(1.5, 1.5, 1.5, 1.4, 2, 0.75),
+      show.numbers = FALSE,
+      scale.intersections = "log2",
+      keep.order = FALSE,
+      line.size = NA)
+```
+
+<img src="Figures/cached/panG-analysis-2-1.png" style="display: block; margin: auto;" />
+
+```r
 # Now select the genes that are PSGs
-blast_panG <- read.delim("./panG/genes_pan.blast", header = FALSE)
-colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
-                          "gapopen", "qstart", "qend", "sstart", "send", 
-                          "evalue", "bitscore")
-
-blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), split = "|", fixed = TRUE))[,1]
-
+# blast_panG <- read.delim("./panG/genes_pan.blast", header = FALSE)
+# colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
+#                           "gapopen", "qstart", "qend", "sstart", "send", 
+#                           "evalue", "bitscore")
+# 
+# blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), split = "|", fixed = TRUE))[,1]
+# 
 
 # Plot genes in pangenome that were under positive selection
 ```
@@ -2851,11 +2880,11 @@ mod_spec3 <- c("Cell signaling",
 
 # Heatmap
 # make heatmap for all class_III levels
-
+# 
 # for(class_i in unique(modules_table$CLASS_III)){
-#   hm_mod <- modules_table %>% 
-#   dplyr::filter(CLASS_III %in% 
-#                   class_i) %>% 
+#   hm_mod <- modules_table %>%
+#   dplyr::filter(CLASS_III %in%
+#                   class_i) %>%
 #   ggplot(aes(y = Genome, x= MODULE_ID)) + # x and y axes => Var1 and Var2
 #   geom_tile(aes(fill = module_completeness), col = "lightgrey") + # background colours are mapped according to the value column
 #   # geom_text(aes(label = round(module_completeness, 1)), size = 3) + # write the values
@@ -2865,17 +2894,17 @@ mod_spec3 <- c("Cell signaling",
 #   scale_fill_distiller(palette="YlOrRd", na.value="lightgrey",
 #                        direction = 1, limits = c(0,1)) +
 #   theme(panel.grid.major.x=element_blank(), #no gridlines
-#         panel.grid.minor.x=element_blank(), 
-#         panel.grid.major.y=element_blank(), 
+#         panel.grid.minor.x=element_blank(),
+#         panel.grid.major.y=element_blank(),
 #         panel.grid.minor.y=element_blank(),
 #         panel.background=element_rect(fill="white"), # background=white
 #         axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,face = "bold"),
 #         plot.title = element_text(size=20,face="bold"),
 #         axis.text.y = element_text(size = 12,face = "bold"))+
-#   theme(legend.title=element_text(face="bold", size=14)) + 
+#   theme(legend.title=element_text(face="bold", size=14)) +
 #   scale_x_discrete(name="") +
 #   scale_y_discrete(name="") +
-#   facet_grid(CLASS_III~.)+
+#   # facet_grid(CLASS_III~.)+
 #   labs(fill="Module\ncompleteness\n")+
 #   ggtitle(class_i)
 # class_i <- gsub("/"," or ", class_i)

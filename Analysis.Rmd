@@ -47,6 +47,7 @@ library("seqtime")
 library("ggrepel")
 library("scales")
 library("MetQy")
+ library("UpSetR")
 library("RColorBrewer")
 
 col_RAMLI <- "#887CAF"
@@ -2021,7 +2022,7 @@ done
 
 ![Pangenome visualized in anvio](./panG/image4144.png)
 
-```{r panG-analysis, dpi = 500, fig.width = 11, fig.height = 12, warning = FALSE}
+```{r panG-analysis, dpi = 500, fig.width = 11, fig.height = 12, warning = FALSE, dev = c("png","pdf")}
 # Import and format panG data
 panG <- read.table("./panG/SUMMARY_Ramli_PCs/panG-ramli_protein_clusters_summary.txt", header = TRUE, fill = TRUE, sep = "\t")[ , c("bin_name",	"genome_name",	"gene_callers_id",	"COG_CATEGORY_ACC",	"COG_CATEGORY",	"COG_FUNCTION_ACC", "COG_FUNCTION", "aa_sequence")]
 panG$aa_sequence <- gsub("-", "", panG$aa_sequence)
@@ -2162,19 +2163,47 @@ p_panG3 <- panG_ko_table %>%
   guides(fill = guide_legend(nrow = 4))
 
 print(p_panG3)
+```
 
-# Plot distribution of panG annotation 
-## Expressed as % of individual genome gene pool
+```{r panG-analysis-2, dpi = 500, fig.width = 8, fig.height = 4.5, warning = FALSE, dev = c("png","pdf")}
+
+# Plot upset plot flagellar assembly genes
+panG_ko_flagel <- panG_ko %>% 
+  dplyr::filter(!grepl("flagel ", ko_function_spec))  %>% 
+  select(ko_id, Genome, ko_function_abbrev, ko_function_spec) %>%
+  distinct()
+
+# Make presence column
+panG_ko_flagel$Presence <- 1
+panG_ko_flagel$Genome <- gsub("-", "_", panG_ko_flagel$Genome)
+
+# From long to wide format
+panG_ko_flagel <- tidyr::spread(panG_ko_flagel, Genome, Presence)
+
+# Replace NA values by 0
+panG_ko_flagel[is.na(panG_ko_flagel)] <- 0
+
+# Make upset plot
+upset(panG_ko_flagel, sets = c('Ramli_5_10', 'Ramli_Leaf400',
+                                   "Ramli_MAG", "Ramli_TTB310"),
+      mb.ratio = c(0.55, 0.45), 
+      order.by = "freq", number.angles = 30, point.size = 3.5,
+      mainbar.y.label = "Gene intersections", sets.x.label = "Number of genes",
+      text.scale = c(1.5, 1.5, 1.5, 1.4, 2, 0.75),
+      show.numbers = FALSE,
+      scale.intersections = "log2",
+      keep.order = FALSE,
+      line.size = NA)
 
 
 # Now select the genes that are PSGs
-blast_panG <- read.delim("./panG/genes_pan.blast", header = FALSE)
-colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
-                          "gapopen", "qstart", "qend", "sstart", "send", 
-                          "evalue", "bitscore")
-
-blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), split = "|", fixed = TRUE))[,1]
-
+# blast_panG <- read.delim("./panG/genes_pan.blast", header = FALSE)
+# colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
+#                           "gapopen", "qstart", "qend", "sstart", "send", 
+#                           "evalue", "bitscore")
+# 
+# blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), split = "|", fixed = TRUE))[,1]
+# 
 
 # Plot genes in pangenome that were under positive selection
 

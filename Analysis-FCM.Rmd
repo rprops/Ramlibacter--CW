@@ -100,6 +100,10 @@ sqrcut1 <- matrix(c(8.25,8.25,asinh(8500),asinh(8500),3,8,9.55,3),ncol=2, nrow=4
 colnames(sqrcut1) <- c("FL1-H","FL3-H")
 rGate_LNA <- polygonGate(.gate=sqrcut1, filterId = "LNA")
 
+# Make filterlist so you can see both on xyplot
+flist <- list(filters , filters, filters, filters, filters, filters)
+names(flist) <- flowCore::sampleNames(flowData_transformed)
+
 # Check if rectangle gate is correct, if not, adjust rGate_HNA
 print(xyplot(`FL3-H` ~ `FL1-H`, data=flowData_transformed[200], filter=rGate_HNA,
        scales=list(y=list(limits=c(0,14)),
