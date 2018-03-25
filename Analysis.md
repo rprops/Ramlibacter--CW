@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "23 March, 2018"
+date: "25 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -15,6 +15,8 @@ output:
       toc_depth: 2
     css: report_styles.css
     df_print: paged
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -421,10 +423,8 @@ print(p_rel_box)
 ```
 
 ```
-## Error in paste("Absolute abundances - ", otu): object 'otu' not found
+## Error in loadNamespace(name): there is no package called 'corrplot'
 ```
-
-<img src="Figures/cached/physico-data-1.png" style="display: block; margin: auto;" />
 
 ```r
   corrplot::corrplot(cor(Physico_df_trim_rel_merged[, -c(1:3, 12,14,16)],
@@ -437,10 +437,8 @@ print(p_rel_box)
 ```
 
 ```
-## Error in paste("Relative abundances - ", otu): object 'otu' not found
+## Error in loadNamespace(name): there is no package called 'corrplot'
 ```
-
-<img src="Figures/cached/physico-data-2.png" style="display: block; margin: auto;" />
 
 ```r
 # Calculate element-wise N/P ratio assuming 1 µg/L of PO4
@@ -649,9 +647,9 @@ RAMLI_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Sat Mar 10 19:21:08 2018  --- There are 2830 genes with > 0.1 %
-## Sat Mar 10 19:21:08 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:08 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 2830 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -682,9 +680,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Sat Mar 10 19:21:08 2018  --- There are 1889 genes with > 0.1 %
-## Sat Mar 10 19:21:08 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:08 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 1889 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -726,9 +724,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Sat Mar 10 19:21:09 2018  --- There are 1797 genes with > 0.1 %
-## Sat Mar 10 19:21:09 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:09 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 1797 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -770,9 +768,9 @@ RAMLI_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Sat Mar 10 19:21:09 2018  --- There are 4954 genes with > 0.1 %
-## Sat Mar 10 19:21:09 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:09 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 4954 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -792,9 +790,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Sat Mar 10 19:21:09 2018  --- There are 3929 genes with > 0.1 %
-## Sat Mar 10 19:21:09 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:09 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 3929 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -814,9 +812,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Sat Mar 10 19:21:10 2018  --- There are 3573 genes with > 0.1 %
-## Sat Mar 10 19:21:10 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:10 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 3573 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -836,9 +834,9 @@ RAMLI_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Sat Mar 10 19:21:10 2018  --- There are 2164 genes with > 0.1 %
-## Sat Mar 10 19:21:10 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:10 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 2164 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -869,9 +867,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Sat Mar 10 19:21:10 2018  --- There are 1384 genes with > 0.1 %
-## Sat Mar 10 19:21:10 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:10 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 1384 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -891,9 +889,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Sat Mar 10 19:21:11 2018  --- There are 1342 genes with > 0.1 %
-## Sat Mar 10 19:21:11 2018  --- This is 100 % of all genes
-## Sat Mar 10 19:21:11 2018  --- The 10 genes with the highest GC% are:
+## Sun Mar 25 18:42:55 2018  --- There are 1342 genes with > 0.1 %
+## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
+## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -1235,7 +1233,13 @@ SCUO_merged_gen <- data.frame(rbind(SCUO_RAMLI, SCUO_BAC1, SCUO_BAC2),
 
 # Merge codon bias data with KO pathway annotation
 SCUO_merged <- dplyr::left_join(SCUO_merged_gen, merged_gc_ko[, c(1:2,4 ,14:21)], by = c("Gene" = "contig_geneID"))
-          
+```
+
+```
+## Error in `[.data.frame`(merged_gc_ko, , c(1:2, 4, 14:21)): undefined columns selected
+```
+
+```r
 # Visualize differences in codon bias
 p_SCUO.1 <- ggplot(data = SCUO_merged, aes (x = 100*GC, y = SCUO, fill = Genome_ID))+
   geom_point(size = 4, shape = 21, alpha = 0.7)+
@@ -1251,11 +1255,19 @@ p_SCUO.1 <- ggplot(data = SCUO_merged, aes (x = 100*GC, y = SCUO, fill = Genome_
   ylab("SCUO")+
   xlab("%GC")+
   ylim(0,1)
+```
 
+```
+## Error in ggplot(data = SCUO_merged, aes(x = 100 * GC, y = SCUO, fill = Genome_ID)): object 'SCUO_merged' not found
+```
+
+```r
 print(p_SCUO.1)
 ```
 
-<img src="Figures/cached/Codon bias-1.png" style="display: block; margin: auto;" />
+```
+## Error in print(p_SCUO.1): object 'p_SCUO.1' not found
+```
 
 ```r
 # Visualize differences in codon bias per codon position
@@ -1275,16 +1287,38 @@ p_SCUO.2 <- SCUO_merged %>% filter(GCx != "GC_mean") %>%
   xlab("Codon position")+
   guides(fill = FALSE)+
   ylim(0,100)
+```
 
+```
+## Error in eval(lhs, parent, parent): object 'SCUO_merged' not found
+```
+
+```r
 print(p_SCUO.2)
 ```
 
-<img src="Figures/cached/Codon bias-2.png" style="display: block; margin: auto;" />
+```
+## Error in print(p_SCUO.2): object 'p_SCUO.2' not found
+```
 
 ```r
 # Subset to genes for which ko annotation is available
 SCUO_merged_sb <- SCUO_merged[!is.na(SCUO_merged$ko_level_A), ]
+```
+
+```
+## Error in eval(expr, envir, enclos): object 'SCUO_merged' not found
+```
+
+```r
 SCUO_merged_sb <- SCUO_merged_sb[SCUO_merged_sb$GCx == "GC_mean", ]
+```
+
+```
+## Error in eval(expr, envir, enclos): object 'SCUO_merged_sb' not found
+```
+
+```r
 # Look at pathways enriched in high %GC
 # SCUO_merged_sb[]
 
@@ -1315,16 +1349,33 @@ p_SCUO.3 <- ggplot(data = SCUO_merged_gen_gcmean, aes (x = Genome_ID, y = SCUO))
 print(p_SCUO.3)
 ```
 
-<img src="Figures/cached/Codon bias-3.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/Codon bias-1.png" style="display: block; margin: auto;" />
 
 ```r
 tmp <- SCUO_merged_sb$genome_id
+```
+
+```
+## Error in eval(expr, envir, enclos): object 'SCUO_merged_sb' not found
+```
+
+```r
 tmp2 <- cbind(SCUO_merged_sb$ko_id, 
       c(rep(col_RAMLI, table(tmp)[3]), rep(col_bac1, table(tmp)[1]), rep(col_bac2, table(tmp)[2]))
 )
+```
 
+```
+## Error in cbind(SCUO_merged_sb$ko_id, c(rep(col_RAMLI, table(tmp)[3]), : object 'SCUO_merged_sb' not found
+```
+
+```r
 write.table(tmp2, file = "All_KO.tsv", quote = FALSE,
             col.names = FALSE, row.names = FALSE)
+```
+
+```
+## Error in is.data.frame(x): object 'tmp2' not found
 ```
 
 
@@ -2521,8 +2572,21 @@ done
 panG <- read.table("./panG/SUMMARY_Ramli_PCs/panG-ramli_protein_clusters_summary.txt", header = TRUE, fill = TRUE, sep = "\t")[ , c("bin_name",	"genome_name",	"gene_callers_id",	"COG_CATEGORY_ACC",	"COG_CATEGORY",	"COG_FUNCTION_ACC", "COG_FUNCTION", "aa_sequence")]
 panG$aa_sequence <- gsub("-", "", panG$aa_sequence)
 panG_MAG <- panG %>% filter(bin_name %in% c("MAG_PC", "Ramli_5-10_PC",
-                                          "Ramli_Leaf400_PC", "Ramli_TTB310_PC"))
+                                          "Ramli_Leaf400_PC", "Ramli_TTB310_PC",
+                                          "CORE_PC"))
 panG_MAG$gene_callers_id <- as.character(panG_MAG$gene_callers_id)
+panG_MAG$genome_name <- gsub("Ramlibacter_MAG", "Ramli-MAG", 
+                             panG_MAG$genome_name)
+panG_MAG$genome_name <- gsub("Ramlibacter_sp_Leaf400", "Ramli-Leaf400", 
+                             panG_MAG$genome_name)
+panG_MAG$genome_name <- gsub("Ramlibacter_sp_TTB310", "Ramli-TTB310",
+                             panG_MAG$genome_name)
+panG_MAG$genome_name <- gsub("Ramlibacter_sp_5_10", "Ramli-5-10", 
+                             panG_MAG$genome_name)
+
+# Add unique gene identifier 
+panG_MAG$unique_gene_callers_id <- interaction(panG_MAG$genome_name, 
+                                               panG_MAG$gene_callers_id)
 
 # Export Ramlibacter sp. auxillary genome COGF annotation 
 # for visualization in ipath2
@@ -2550,18 +2614,23 @@ for(ko_file in ko_files){
 colnames(panG_ko)[1:2] <- c("gene_id", "ko_id")
 panG_ko <- panG_ko[panG_ko$ko_id != "",]
 panG_ko$ko_id <- gsub(" ","", panG_ko$ko_id)
+panG_ko <- panG_ko[panG_ko$gene_id != "gene_id", ]
 
+# Create unique gene identifier
+panG_ko$unique_gene_callers_id <- interaction(panG_ko$Genome, panG_ko$gene_id)
+  
 # Annotate KO_IDs with hierarchy
 panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = "ko_id")
 
 # join with corresponding COG ids
-panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, by = c("gene_callers_id" = "gene_id"))
+panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, 
+                                by = "unique_gene_callers_id")
 
 # Shorten/change ko_level_B annotation a bit
 panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
 panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation"
 panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
-panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation"
+panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Biofilm formation"
 
 # Select some annotation levels of interest to visualize
 tmp_names <- names(table(panG_ko_cog$ko_level_B)[rev(order(table(panG_ko_cog$ko_level_B)))][1:10])
@@ -2596,9 +2665,9 @@ print(p_panG1)
 
 ```r
 # Get sizes of each protein cluster bin
-sizes_panG <- data.frame(panG %>% group_by(bin_name) %>% 
+sizes_panG <- data.frame(panG_MAG %>% group_by(bin_name) %>% 
   count(bin_name))
-sizes_panG <- left_join(sizes_panG, distinct(panG[, 1:2]), by = "bin_name")
+sizes_panG <- left_join(sizes_panG, distinct(panG_MAG[, 1:2]), by = "bin_name")
 
 # Format table to include ko_level_A annotation
 # as well as the protein cluster sizes so that we can normalize to 
@@ -2615,31 +2684,27 @@ panG_ko_table <- left_join(panG_ko_table,
 
 # Plot distribution of panG annotation 
 ## Expressed as % of core genome gene set
-p_panG2 <- panG_ko_table %>% 
-  filter(bin_name %in% c("CORE_PC")) %>% 
-  ggplot(aes(x = genome_name, y = 100*abund_ko_prop,  fill = ko_level_B))+
-  geom_bar(color = "black", stat = "identity")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  ggtitle("Relative abundance (% - normalized vs. core genome)")+
-  ylab("") + xlab("")+
-  facet_grid(.~ko_level_A)+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text=element_text(size=18),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
-        legend.position = "bottom"
-        )+
-  guides(fill = guide_legend(nrow = 4))
+# p_panG2 <- panG_ko_table %>% 
+#   filter(bin_name %in% c("CORE_PC")) %>% 
+#   ggplot(aes(x = genome_name, y = 100*abund_ko_prop,  fill = ko_level_B))+
+#   geom_bar(color = "black", stat = "identity")+
+#   theme_bw()+
+#   scale_fill_brewer(palette="Paired")+
+#   ggtitle("Relative abundance (% - normalized vs. core genome)")+
+#   ylab("") + xlab("")+
+#   facet_grid(.~ko_level_A)+
+#   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+#         title=element_text(size=18), legend.text=element_text(size=14),
+#         legend.background = element_rect(fill="transparent"),
+#         axis.text.x = element_text(angle = 45, hjust = 1),
+#         strip.text=element_text(size=18),
+#         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
+#         legend.position = "bottom"
+#         )+
+#   guides(fill = guide_legend(nrow = 4))
+# 
+# print(p_panG2)
 
-print(p_panG2)
-```
-
-<img src="Figures/cached/panG-analysis-2.png" style="display: block; margin: auto;" />
-
-```r
 # Plot distribution of panG annotation 
 ## Expressed as % of individual unique gene pool
 p_panG3 <- panG_ko_table %>% 
@@ -2667,14 +2732,15 @@ p_panG3 <- panG_ko_table %>%
 print(p_panG3)
 ```
 
-<img src="Figures/cached/panG-analysis-3.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/panG-analysis-2.png" style="display: block; margin: auto;" />
+
 
 
 ```r
 # Plot upset plot flagellar assembly genes
 panG_ko_flagel <- panG_ko %>% 
-  dplyr::filter(!grepl("flagel ", ko_function_spec))  %>% 
-  select(ko_id, Genome, ko_function_abbrev, ko_function_spec) %>%
+  dplyr::filter(grepl("flagel", ko_function_spec)) %>% 
+  dplyr::select(ko_id, Genome, ko_function_abbrev, ko_function_spec) %>%
   distinct()
 
 # Make presence column
@@ -2687,9 +2753,8 @@ panG_ko_flagel <- tidyr::spread(panG_ko_flagel, Genome, Presence)
 # Replace NA values by 0
 panG_ko_flagel[is.na(panG_ko_flagel)] <- 0
 
-# Make upset plot
-upset(panG_ko_flagel, sets = c('Ramli_5_10', 'Ramli_Leaf400',
-                                   "Ramli_MAG", "Ramli_TTB310"),
+# Make upset plot of flagel assembly genes
+upset(panG_ko_flagel, sets = c('Ramli_5_10', "Ramli_MAG"),
       mb.ratio = c(0.55, 0.45), 
       order.by = "freq", number.angles = 30, point.size = 3.5,
       mainbar.y.label = "Gene intersections", sets.x.label = "Number of genes",
@@ -2703,18 +2768,50 @@ upset(panG_ko_flagel, sets = c('Ramli_5_10', 'Ramli_Leaf400',
 <img src="Figures/cached/panG-analysis-2-1.png" style="display: block; margin: auto;" />
 
 ```r
-# Now select the genes that are PSGs
-# blast_panG <- read.delim("./panG/genes_pan.blast", header = FALSE)
-# colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
-#                           "gapopen", "qstart", "qend", "sstart", "send", 
-#                           "evalue", "bitscore")
-# 
-# blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), split = "|", fixed = TRUE))[,1]
-# 
+# Plot upset plot chemotaxis genes
+panG_ko_chemo <- panG_ko %>% 
+  dplyr::filter(grepl("chemotaxis", ko_level_C)) %>% 
+  dplyr::select(ko_id, Genome, ko_function_abbrev, ko_function_spec) %>%
+  distinct()
 
-# Plot genes in pangenome that were under positive selection
+# Make presence column
+panG_ko_chemo$Presence <- 1
+panG_ko_chemo$Genome <- gsub("-", "_", panG_ko_chemo$Genome)
+
+# From long to wide format
+panG_ko_chemo <- tidyr::spread(panG_ko_chemo, Genome, Presence)
+
+# Replace NA values by 0
+panG_ko_chemo[is.na(panG_ko_chemo)] <- 0
+
+# Make upset plot of flagel assembly genes
+upset(panG_ko_chemo, sets = c('Ramli_5_10', "Ramli_MAG", "Ramli_TTB310"),
+      mb.ratio = c(0.55, 0.45), 
+      order.by = "freq", number.angles = 30, point.size = 3.5,
+      mainbar.y.label = "Gene intersections", sets.x.label = "Number of genes",
+      text.scale = c(1.5, 1.5, 1.5, 1.4, 2, 0.75),
+      show.numbers = FALSE,
+      scale.intersections = "log2",
+      keep.order = FALSE,
+      line.size = NA)
 ```
 
+<img src="Figures/cached/panG-analysis-2-2.png" style="display: block; margin: auto;" />
+
+### Statistics
+
+```r
+# Number of mcp (chemotaxis receptors) per bin
+panG_ko_cog %>% dplyr::filter(ko_function_abbrev == "mcp") %>% 
+  select(bin_name,gene_callers_id,ko_function_abbrev) %>% 
+  distinct() %>% group_by(bin_name) %>% summarize(ntot = n())
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["ntot"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"MAG_PC","2":"4"},{"1":"Ramli_5-10_PC","2":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 # Module completeness analysis
 
@@ -4131,12 +4228,11 @@ print(data_posi_KO %>% dplyr::filter(ko_id %in% p_cog_ko_list))
 ## [19] bit_score                               
 ## [20] ko_id                                   
 ## [21] ko_name                                 
-## [22] EC                                      
-## [23] img_ko_flag                             
-## [24] genome_id                               
-## [25] ko_level_A                              
-## [26] ko_level_B                              
-## [27] ko_level_C                              
+## [22] img_ko_flag                             
+## [23] genome_id                               
+## [24] ko_level_A                              
+## [25] ko_level_B                              
+## [26] ko_level_C                              
 ## <0 rows> (or 0-length row.names)
 ```
 
