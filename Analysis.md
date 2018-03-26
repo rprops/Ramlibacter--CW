@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "25 March, 2018"
+date: "26 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -2573,7 +2573,7 @@ panG <- read.table("./panG/SUMMARY_Ramli_PCs/panG-ramli_protein_clusters_summary
 panG$aa_sequence <- gsub("-", "", panG$aa_sequence)
 panG_MAG <- panG %>% filter(bin_name %in% c("MAG_PC", "Ramli_5-10_PC",
                                           "Ramli_Leaf400_PC", "Ramli_TTB310_PC",
-                                          "CORE_PC"))
+                                          "CORE_PC", "Mixed_PCs"))
 panG_MAG$gene_callers_id <- as.character(panG_MAG$gene_callers_id)
 panG_MAG$genome_name <- gsub("Ramlibacter_MAG", "Ramli-MAG", 
                              panG_MAG$genome_name)
@@ -2588,16 +2588,23 @@ panG_MAG$genome_name <- gsub("Ramlibacter_sp_5_10", "Ramli-5-10",
 panG_MAG$unique_gene_callers_id <- interaction(panG_MAG$genome_name, 
                                                panG_MAG$gene_callers_id)
 
+# Export all AA sequences for annotation with KAAS or for blast
+for(i in 1:length(unique(panG_MAG$genome_name))){
+  tmp <- panG_MAG %>% dplyr::filter(genome_name == unique(panG_MAG$genome_name)[i]) %>% 
+    droplevels()
+    write.table(file = paste0("./panG/", unique(panG_MAG$genome_name)[i],
+                              "_aa_export.fa"), 
+           paste0("> ", tmp$unique_gene_callers_id, 
+      "\n", tmp$aa_sequence, sep = ""),
+      quote = FALSE, row.names = FALSE, col.names = FALSE
+      )
+}
+
 # Export Ramlibacter sp. auxillary genome COGF annotation 
 # for visualization in ipath2
-write.table(paste(panG_MAG$COG_FUNCTION_ACC, "W10", "#e2a2fd", panG_MAG$genome_name,
-                  sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
-            quote = FALSE, col.names = FALSE)
-
-write.table(paste(">", panG_MAG$gene_callers_id,
-                  "\n", panG_MAG$aa_sequence, sep = ""), 
-            "./panG/aaSeq_panG.fa", row.names = FALSE,
-            quote = FALSE, col.names = FALSE)
+# write.table(paste(panG_MAG$COG_FUNCTION_ACC, "W10", "#e2a2fd", panG_MAG$genome_name,
+#                   sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
+#             quote = FALSE, col.names = FALSE)
 
 # Import KEGG annotation through KAAS (http://www.genome.jp/tools/kaas/) of amino
 # acid sequences
