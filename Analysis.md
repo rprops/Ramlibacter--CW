@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "26 March, 2018"
+date: "27 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -548,7 +548,7 @@ data_total[data_total$bins %in% c("Bacteroidetes sp. MAG1",
 
 # 1. Phylogenetic tree
 ## Ramlibacter sp.
-![RAxML tree for Ramlibacter sp. MAG](./Tree/ANI_tree_concat-lowres2.png)
+<!-- ![RAxML tree for Ramlibacter sp. MAG](./Tree/ANI_tree_concat-lowres2.png) -->
 
 # *2. Investigate MAG- and 16S-based abundances*
 It is clear that there is significant %GC coverage bias present. The estimated relative abundances
@@ -2564,7 +2564,7 @@ for gene in `cat gene_list_pan.tsv`; do
 done
 ```
 
-![Pangenome visualized in anvio](./panG/image4144.png)
+![Pangenome visualized in anvio](./panG/viewport.png)
 
 
 ```r
@@ -2575,30 +2575,30 @@ panG_MAG <- panG %>% filter(bin_name %in% c("MAG_PC", "Ramli_5-10_PC",
                                           "Ramli_Leaf400_PC", "Ramli_TTB310_PC",
                                           "CORE_PC", "Mixed_PCs"))
 panG_MAG$gene_callers_id <- as.character(panG_MAG$gene_callers_id)
-panG_MAG$genome_name <- gsub("Ramlibacter_MAG", "Ramli-MAG", 
-                             panG_MAG$genome_name)
-panG_MAG$genome_name <- gsub("Ramlibacter_sp_Leaf400", "Ramli-Leaf400", 
-                             panG_MAG$genome_name)
-panG_MAG$genome_name <- gsub("Ramlibacter_sp_TTB310", "Ramli-TTB310",
-                             panG_MAG$genome_name)
-panG_MAG$genome_name <- gsub("Ramlibacter_sp_5_10", "Ramli-5-10", 
-                             panG_MAG$genome_name)
+
+# Shorten names
+panG_MAG$genome_name <- plyr::revalue(panG_MAG$genome_name,
+                            replace = c("Ramlibacter_MAG" = "Ramli-MAG",
+                                        "Ramlibacter_sp_Leaf400" = "Ramli-Leaf400",
+                                        "Ramlibacter_sp_TTB310" = "Ramli-TTB310",
+                                        "Ramlibacter_sp_5_10" = "Ramli-5-10"))
 
 # Add unique gene identifier 
 panG_MAG$unique_gene_callers_id <- interaction(panG_MAG$genome_name, 
-                                               panG_MAG$gene_callers_id)
+                                               panG_MAG$gene_callers_id,
+                                               sep = ".")
 
 # Export all AA sequences for annotation with KAAS or for blast
-for(i in 1:length(unique(panG_MAG$genome_name))){
-  tmp <- panG_MAG %>% dplyr::filter(genome_name == unique(panG_MAG$genome_name)[i]) %>% 
-    droplevels()
-    write.table(file = paste0("./panG/", unique(panG_MAG$genome_name)[i],
-                              "_aa_export.fa"), 
-           paste0("> ", tmp$unique_gene_callers_id, 
-      "\n", tmp$aa_sequence, sep = ""),
-      quote = FALSE, row.names = FALSE, col.names = FALSE
-      )
-}
+# for(i in 1:length(unique(panG_MAG$genome_name))){
+#   tmp <- panG_MAG %>% dplyr::filter(genome_name == unique(panG_MAG$genome_name)[i]) %>% 
+#     droplevels()
+#     write.table(file = paste0("./panG/", unique(panG_MAG$genome_name)[i],
+#                               "_aa_export.fa"), 
+#            paste0(">", tmp$unique_gene_callers_id, 
+#       "\n", tmp$aa_sequence, sep = ""),
+#       quote = FALSE, row.names = FALSE, col.names = FALSE
+#       )
+# }
 
 # Export Ramlibacter sp. auxillary genome COGF annotation 
 # for visualization in ipath2
@@ -2612,19 +2612,14 @@ ko_files <- list.files(".", pattern = "KO-annotation.tsv",
                        recursive = TRUE)
 panG_ko <- data.frame()
 for(ko_file in ko_files){
-  tmp <- read.delim(ko_file, header = FALSE)
+  tmp <- read.delim(ko_file, fill = TRUE)
   tmp <- data.frame(tmp, Genome = do.call(rbind, strsplit(ko_file, "_"))[,2])
   if(ko_file == ko_files[1]) panG_ko <- tmp else{
     panG_ko <- rbind(panG_ko, tmp)
   }
 }
-colnames(panG_ko)[1:2] <- c("gene_id", "ko_id")
 panG_ko <- panG_ko[panG_ko$ko_id != "",]
 panG_ko$ko_id <- gsub(" ","", panG_ko$ko_id)
-panG_ko <- panG_ko[panG_ko$gene_id != "gene_id", ]
-
-# Create unique gene identifier
-panG_ko$unique_gene_callers_id <- interaction(panG_ko$Genome, panG_ko$gene_id)
   
 # Annotate KO_IDs with hierarchy
 panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = "ko_id")
@@ -2655,7 +2650,7 @@ p_panG1 <- panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>%
   scale_fill_brewer(palette="Paired")+
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
-  facet_grid(.~ko_level_A)+
+  facet_grid(bin_name~ko_level_A)+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
@@ -2679,7 +2674,10 @@ sizes_panG <- left_join(sizes_panG, distinct(panG_MAG[, 1:2]), by = "bin_name")
 # Format table to include ko_level_A annotation
 # as well as the protein cluster sizes so that we can normalize to 
 # CORE genome as well as each accessory genome
-panG_ko_table <- data.frame(panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>% 
+panG_ko_table <- data.frame(panG_ko_cog %>% filter(bin_name %in% c("MAG_PC", 
+                         "Ramli_5-10_PC",
+                         "Ramli_Leaf400_PC", 
+                         "Ramli_TTB310_PC") & ko_level_B %in% tmp_names) %>% 
   group_by(genome_name, ko_level_B) %>% 
   summarise(abund_ko = n()))
 panG_ko_table <- left_join(panG_ko_table, sizes_panG, by = "genome_name")
@@ -4324,4 +4322,43 @@ cowplot::plot_grid(p_sigma_1, p_sigma_2, align = "hv", rel_widths = c(4,1))
 
 <img src="Figures/cached/sigma-1-1.png" style="display: block; margin: auto;" />
 
+# Size distribution R. aquaticus
 
+
+```r
+size_files <- list.files(".", pattern = "RP_",
+                       recursive = TRUE)
+Raquat_size <- data.frame()
+for(size_file in size_files){
+  tmp <- read.delim(size_file, fill = TRUE)
+  tmp <- data.frame(tmp, sample = do.call(rbind, strsplit(size_file, "_"))[,2])
+  if(size_file == size_files[1]) Raquat_size <- tmp else{
+    Raquat_size <- rbind(Raquat_size, tmp)
+  }
+}
+
+# Make ggplot plot
+
+p_size <- ggplot(Raquat_size, aes(x= "R. aquaticus", y = Length))+
+  # geom_jitter(shape = 21, width = 0.025, size = 2.5, fill = col_RAMLI, alpha = 0.5)+
+  geom_violin(width = 0.5, alpha = 0.2, fill = col_RAMLI, bw = 0.1, 
+              adjust = 1, draw_quantiles = TRUE,
+              trim = TRUE, scale = "count")+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  scale_y_sqrt(breaks = c(0.25,0.5,1,2,4,6,8), labels = c(0.25,0.5,1,2,4,6,8), 
+               lim = c(0.25,8.1),
+               position = "right")+
+  labs(title = "Length (µm)")
+
+print(p_size)
+```
+
+<img src="Figures/cached/size-1-1.png" style="display: block; margin: auto;" />
