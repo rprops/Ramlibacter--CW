@@ -2743,23 +2743,30 @@ print(p_panG3)
 
 ```r
 # Plot upset plot flagellar assembly genes
-panG_ko_flagel <- panG_ko %>% 
+panG_ko_flagel <- panG_ko_cog %>% 
   dplyr::filter(grepl("flagel", ko_function_spec)) %>% 
-  dplyr::select(ko_id, Genome, ko_function_abbrev, ko_function_spec) %>%
+  dplyr::select(ko_id, bin_name, ko_function_abbrev, ko_function_spec) %>%
   distinct()
 
 # Make presence column
 panG_ko_flagel$Presence <- 1
-panG_ko_flagel$Genome <- gsub("-", "_", panG_ko_flagel$Genome)
+# panG_ko_flagel$bin_name <- gsub("-", "_", panG_ko_flagel$bin_name)
+
+# Revalue
+panG_ko_flagel$bin_name <- plyr::revalue(panG_ko_flagel$bin_name,
+                                  replace = c("MAG_PC" = "R.aquaticus", 
+                                              "Ramli_5-10_PC" = 'R.5-10', 
+                                              "Ramli_TTB310_PC" = "R.TTB310",
+                                              "Mixed_PCs" = "Mixed_PCs"))
 
 # From long to wide format
-panG_ko_flagel <- tidyr::spread(panG_ko_flagel, Genome, Presence)
+panG_ko_flagel <- tidyr::spread(panG_ko_flagel, bin_name, Presence)
 
 # Replace NA values by 0
 panG_ko_flagel[is.na(panG_ko_flagel)] <- 0
 
 # Make upset plot of flagel assembly genes
-upset(panG_ko_flagel, sets = c('Ramli_5_10', "Ramli_MAG"),
+upset(panG_ko_flagel, sets = c("R.aquaticus", 'R.5-10'),
       mb.ratio = c(0.55, 0.45), 
       order.by = "freq", number.angles = 30, point.size = 3.5,
       mainbar.y.label = "Gene intersections", sets.x.label = "Number of genes",
@@ -2774,23 +2781,31 @@ upset(panG_ko_flagel, sets = c('Ramli_5_10', "Ramli_MAG"),
 
 ```r
 # Plot upset plot chemotaxis genes
-panG_ko_chemo <- panG_ko %>% 
+panG_ko_chemo <- panG_ko_cog %>% 
   dplyr::filter(grepl("chemotaxis", ko_level_C)) %>% 
-  dplyr::select(ko_id, Genome, ko_function_abbrev, ko_function_spec) %>%
+  dplyr::select(ko_id, bin_name, ko_function_abbrev, ko_function_spec) %>%
   distinct()
 
 # Make presence column
 panG_ko_chemo$Presence <- 1
-panG_ko_chemo$Genome <- gsub("-", "_", panG_ko_chemo$Genome)
+# panG_ko_chemo$bin_name <- gsub("-", "_", panG_ko_chemo$bin_name)
 
+# Revalue
+panG_ko_chemo$bin_name <- plyr::revalue(panG_ko_chemo$bin_name,
+                                  replace = c("MAG_PC" = "R.aquaticus", 
+                                              "Ramli_5-10_PC" = 'R.5-10', 
+                                              "Ramli_TTB310_PC" = "R.TTB310",
+                                              "Mixed_PCs" = "Mixed_PCs"))
+  
 # From long to wide format
-panG_ko_chemo <- tidyr::spread(panG_ko_chemo, Genome, Presence)
+panG_ko_chemo <- tidyr::spread(panG_ko_chemo, bin_name, Presence)
 
 # Replace NA values by 0
 panG_ko_chemo[is.na(panG_ko_chemo)] <- 0
 
 # Make upset plot of flagel assembly genes
-upset(panG_ko_chemo, sets = c('Ramli_5_10', "Ramli_MAG", "Ramli_TTB310"),
+upset(panG_ko_chemo, sets = c( "R.aquaticus", 'R.5-10', 
+                               "R.TTB310", "Mixed_PCs"),
       mb.ratio = c(0.55, 0.45), 
       order.by = "freq", number.angles = 30, point.size = 3.5,
       mainbar.y.label = "Gene intersections", sets.x.label = "Number of genes",
@@ -4362,3 +4377,85 @@ print(p_size)
 ```
 
 <img src="Figures/cached/size-1-1.png" style="display: block; margin: auto;" />
+
+```r
+# Calculate mean & st dev
+Raquat_size %>% dplyr::filter(Length<1) %>% summarize(mean(Length)) %>% round(.,1)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["mean(Length)"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+Raquat_size %>% dplyr::filter(Length>1) %>% summarize(mean(Length))%>% round(.,1)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["mean(Length)"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"2.5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+Raquat_size %>% dplyr::filter(Length<1) %>% summarize(sd(Length))%>% round(.,1)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["sd(Length)"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+Raquat_size %>% dplyr::filter(Length>1) %>% summarize(sd(Length))%>% round(.,1)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["sd(Length)"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"1.6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+# Partition around medoids clustering
+Raquat_size$cluster_alloc <- factor(pam(Raquat_size$Length, 3)$cluster)
+```
+
+```
+## Error in pam(Raquat_size$Length, 3): could not find function "pam"
+```
+
+```r
+tmp.si <- c()
+for(i in 2:10){
+    tmp.si[i] <- cluster::pam(Raquat_size$Length, k = i)$silinfo$avg.width
+}
+nr_clusters_bacteria <- which(tmp.si == max(tmp.si, na.rm = TRUE))
+Raquat_size$cluster_alloc <- factor(cluster::pam(Raquat_size$Length,
+                                        nr_clusters_bacteria)$cluster)
+
+p_size2 <- ggplot(Raquat_size, aes(x= "R. aquaticus", y = Length))+
+  geom_jitter(shape = 21, width = 0.1, size = 4, aes(fill = cluster_alloc)
+              , alpha = 0.7)+
+  scale_fill_brewer(palette = "Paired")+
+  xlab("")+ 
+  ylab("")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  scale_y_sqrt(breaks = c(0.25,0.5,1,2,4,6,8), labels = c(0.25,0.5,1,2,4,6,8), 
+               lim = c(0.25,8.1),
+               position = "right")+
+  labs(title = "Length (µm)")+
+  guides(fill = FALSE)
+
+print(p_size2)
+```
+
+<img src="Figures/cached/size-1-2.png" style="display: block; margin: auto;" />
