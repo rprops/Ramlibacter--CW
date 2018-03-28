@@ -2641,21 +2641,28 @@ write.table(unique(panG_ko_cog$gene_callers_id),
             "./panG/gene_ids_pan.tsv", row.names = FALSE,
             quote = FALSE, col.names = FALSE)
 
+# Add column denoting whether it is core/mixed or accessory
+panG_ko_cog$bin_core <- factor(panG_ko_cog$bin_name == "CORE_PC" | panG_ko_cog$bin_name == "Mixed_PCs")
+panG_ko_cog$bin_core <- plyr::revalue(panG_ko_cog$bin_core, replace = c("TRUE" = "CORE/Mixed", "FALSE" = "Accessory"))
+
 # Plot distribution of panG annotation 
 ## Expressed as number of genes
-p_panG1 <- panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>% 
+p_panG1 <- panG_ko_cog %>% 
+  select(ko_level_B, genome_name,ko_level_A, bin_core, unique_gene_callers_id) %>% 
+  filter(ko_level_B %in% tmp_names) %>% 
+  distinct() %>% 
   ggplot(aes(x = genome_name, fill = ko_level_B))+
   geom_bar(color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
-  facet_grid(bin_name~ko_level_A)+
+  facet_grid(bin_core~ko_level_A, scales = "free")+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text=element_text(size=18),
+        strip.text=element_text(size=14),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
         legend.position = "bottom"
         )+
@@ -2667,22 +2674,28 @@ print(p_panG1)
 
 ```r
 # Get sizes of each protein cluster bin
-sizes_panG <- data.frame(panG_MAG %>% group_by(bin_name) %>% 
-  count(bin_name))
-sizes_panG <- left_join(sizes_panG, distinct(panG_MAG[, 1:2]), by = "bin_name")
+sizes_panG <- data.frame(panG_MAG %>% group_by(bin_name, genome_name) 
+                         %>% count(bin_name)
+                         %>% mutate(merge_bin_genome = 
+                                      interaction(bin_name, genome_name))
+)
+sizes_panG <- sizes_panG[-c(1,2)]
+colnames(sizes_panG)[1] <- "bin_size"
 
 # Format table to include ko_level_A annotation
 # as well as the protein cluster sizes so that we can normalize to 
 # CORE genome as well as each accessory genome
-panG_ko_table <- data.frame(panG_ko_cog %>% filter(bin_name %in% c("MAG_PC", 
-                         "Ramli_5-10_PC",
-                         "Ramli_Leaf400_PC", 
-                         "Ramli_TTB310_PC") & ko_level_B %in% tmp_names) %>% 
-  group_by(genome_name, ko_level_B) %>% 
-  summarise(abund_ko = n()))
-panG_ko_table <- left_join(panG_ko_table, sizes_panG, by = "genome_name")
-panG_ko_table <- panG_ko_table %>% group_by(genome_name) %>% 
-  mutate(abund_ko_prop = abund_ko/n)
+panG_ko_cog <- panG_ko_cog %>% mutate(merge_bin_genome = 
+                                      interaction(bin_name, genome_name))
+
+# Calculate relative abundance
+panG_ko_cog <- left_join(panG_ko_cog, sizes_panG, by = "merge_bin_genome")
+panG_ko_table <- panG_ko_cog %>% dplyr::filter(ko_level_B %in% tmp_names) %>% 
+  group_by(merge_bin_genome, ko_level_B) %>% 
+  mutate(abund_ko = length(unique(unique_gene_callers_id))/bin_size,
+         number_of_genes = length(unique(ko_id)))
+
+
 panG_ko_table <- left_join(panG_ko_table, 
                            distinct(panG_ko_cog[, c("ko_level_A", "ko_level_B")]),
                            by = c("ko_level_B"))
@@ -2713,27 +2726,36 @@ panG_ko_table <- left_join(panG_ko_table,
 # Plot distribution of panG annotation 
 ## Expressed as % of individual unique gene pool
 p_panG3 <- panG_ko_table %>% 
-  filter(bin_name %in% c("MAG_PC", 
-                         "Ramli_5-10_PC",
-                         "Ramli_Leaf400_PC", 
-                         "Ramli_TTB310_PC")) %>% 
-  ggplot(aes(x = genome_name, fill = ko_level_B, y = 100*abund_ko_prop))+
+  select(genome_name, abund_ko, ko_level_B, ko_level_A.x, bin_core) %>% 
+  distinct() %>% 
+  filter(bin_core == "Accessory") %>% 
+  # filter(bin_name %in% c("MAG_PC", 
+  #                        "Ramli_5-10_PC",
+  #                        "Ramli_Leaf400_PC", 
+  #                        "Ramli_TTB310_PC")) %>% 
+  ggplot(aes(x = genome_name, fill = ko_level_B, y = 100*abund_ko))+
   geom_bar(color = "black", stat = "identity")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
-  ggtitle("Relative abundance (% - normalized vs. accessory genomes)")+
+  ggtitle("Relative abundance (% - normalized vs. accessory genome sizes)")+
   ylab("") + xlab("")+
-  facet_grid(.~ko_level_A)+
+  facet_grid(.~ko_level_A.x, scales = "free")+
   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text=element_text(size=18),
+        strip.text=element_blank(),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
         legend.position = "bottom"
         )+
   guides(fill = guide_legend(nrow = 4))
+```
 
+```
+## Adding missing grouping variables: `merge_bin_genome`
+```
+
+```r
 print(p_panG3)
 ```
 
