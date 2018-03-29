@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "27 March, 2018"
+date: "29 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -2767,7 +2767,8 @@ print(p_panG3)
 # Plot upset plot flagellar assembly genes
 panG_ko_flagel <- panG_ko_cog %>% 
   dplyr::filter(grepl("flagel", ko_function_spec)) %>% 
-  dplyr::select(ko_id, bin_name, ko_function_abbrev, ko_function_spec) %>%
+  dplyr::select(ko_id, bin_name, ko_function_abbrev, ko_function_spec,
+                unique_gene_callers_id) %>%
   distinct()
 
 # Make presence column
@@ -2777,35 +2778,54 @@ panG_ko_flagel$Presence <- 1
 # Revalue
 panG_ko_flagel$bin_name <- plyr::revalue(panG_ko_flagel$bin_name,
                                   replace = c("MAG_PC" = "R.aquaticus", 
-                                              "Ramli_5-10_PC" = 'R.5-10', 
+                                              "Ramli_5-10_PC" = 'R.5.10', 
                                               "Ramli_TTB310_PC" = "R.TTB310",
                                               "Mixed_PCs" = "Mixed_PCs"))
 
 # From long to wide format
-panG_ko_flagel <- tidyr::spread(panG_ko_flagel, bin_name, Presence)
+panG_ko_flagel <- panG_ko_flagel %>% 
+  group_by(ko_id, bin_name) %>% 
+  mutate(sum_presence = sum(Presence)) %>% 
+  select(-unique_gene_callers_id, -Presence) %>%
+  distinct() %>% 
+  droplevels()
 
-# Replace NA values by 0
-panG_ko_flagel[is.na(panG_ko_flagel)] <- 0
+# Make heatmap plot of flagel assembly genes
+hm_flagel <- panG_ko_flagel %>%
+  select(ko_id,bin_name,sum_presence) %>% 
+  complete(., bin_name, ko_id, fill = list(sum_presence=0)) %>% 
+  ungroup() %>% 
+  mutate(bin_name = factor(bin_name, 
+                           levels = c("R.aquaticus","R.5.10",
+                                      "R.TTB310","Mixed_PCs"))) %>% 
+  distinct() %>% 
+  ggplot(aes(y = bin_name, x = ko_id)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = sum_presence), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(sum_presence, 0)), size = 3) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1, limits = c(0,4)) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,
+                                   face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
 
-# Make upset plot of flagel assembly genes
-upset(panG_ko_flagel, sets = c("R.aquaticus", 'R.5-10'),
-      mb.ratio = c(0.55, 0.45), 
-      order.by = "freq", number.angles = 30, point.size = 3.5,
-      mainbar.y.label = "Gene intersections", sets.x.label = "Number of genes",
-      text.scale = c(1.5, 1.5, 1.5, 1.4, 2, 0.75),
-      show.numbers = FALSE,
-      scale.intersections = "log2",
-      keep.order = FALSE,
-      line.size = NA)
-```
-
-<img src="Figures/cached/panG-analysis-2-1.png" style="display: block; margin: auto;" />
-
-```r
 # Plot upset plot chemotaxis genes
 panG_ko_chemo <- panG_ko_cog %>% 
   dplyr::filter(grepl("chemotaxis", ko_level_C)) %>% 
-  dplyr::select(ko_id, bin_name, ko_function_abbrev, ko_function_spec) %>%
+  dplyr::select(ko_id, bin_name, ko_function_abbrev, 
+                ko_function_spec, unique_gene_callers_id) %>%
   distinct()
 
 # Make presence column
@@ -2815,30 +2835,54 @@ panG_ko_chemo$Presence <- 1
 # Revalue
 panG_ko_chemo$bin_name <- plyr::revalue(panG_ko_chemo$bin_name,
                                   replace = c("MAG_PC" = "R.aquaticus", 
-                                              "Ramli_5-10_PC" = 'R.5-10', 
+                                              "Ramli_5-10_PC" = 'R.5.10', 
                                               "Ramli_TTB310_PC" = "R.TTB310",
                                               "Mixed_PCs" = "Mixed_PCs"))
   
 # From long to wide format
-panG_ko_chemo <- tidyr::spread(panG_ko_chemo, bin_name, Presence)
+panG_ko_chemo <- panG_ko_chemo %>% 
+  group_by(ko_id, bin_name) %>% 
+  mutate(sum_presence = sum(Presence)) %>% 
+  select(-unique_gene_callers_id, -Presence) %>%
+  distinct() %>% 
+  droplevels()
 
-# Replace NA values by 0
-panG_ko_chemo[is.na(panG_ko_chemo)] <- 0
+# Make heatmap plot of flagel assembly genes
+hm_chemo <- panG_ko_chemo %>%
+  select(ko_id,bin_name,sum_presence) %>% 
+  complete(., bin_name, ko_id, fill = list(sum_presence=0)) %>% 
+  ungroup() %>% 
+  mutate(bin_name = factor(bin_name, 
+                           levels = c("R.aquaticus","R.5.10",
+                                      "R.TTB310","Mixed_PCs"))) %>% 
+  distinct() %>% 
+  ggplot(aes(y = bin_name, x = ko_id)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = sum_presence), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(sum_presence, 0)), size = 3) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1, limits = c(0,4)) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,
+                                   face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
 
-# Make upset plot of flagel assembly genes
-upset(panG_ko_chemo, sets = c( "R.aquaticus", 'R.5-10', 
-                               "R.TTB310", "Mixed_PCs"),
-      mb.ratio = c(0.55, 0.45), 
-      order.by = "freq", number.angles = 30, point.size = 3.5,
-      mainbar.y.label = "Gene intersections", sets.x.label = "Number of genes",
-      text.scale = c(1.5, 1.5, 1.5, 1.4, 2, 0.75),
-      show.numbers = FALSE,
-      scale.intersections = "log2",
-      keep.order = FALSE,
-      line.size = NA)
+cowplot::plot_grid(hm_flagel, hm_chemo, nrow = 2, align = "v",
+                   labels = c("A.", "B."))
 ```
 
-<img src="Figures/cached/panG-analysis-2-2.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/panG-analysis-2-1.png" style="display: block; margin: auto;" />
 
 ### Statistics
 
@@ -2851,9 +2895,18 @@ panG_ko_cog %>% dplyr::filter(ko_function_abbrev == "mcp") %>%
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["ntot"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"MAG_PC","2":"4"},{"1":"Ramli_5-10_PC","2":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["ntot"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"MAG_PC","2":"1"},{"1":"Ramli_5-10_PC","2":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+
+```r
+# Perform hypergeometric test to see if we have significantly more n genes
+phyper()
+```
+
+```
+## Error in phyper(): argument "q" is missing, with no default
+```
 
 # Module completeness analysis
 
@@ -4402,7 +4455,7 @@ print(p_size)
 
 ```r
 # Calculate mean & st dev
-Raquat_size %>% dplyr::filter(Length<1) %>% summarize(mean(Length)) %>% round(.,1)
+Raquat_size %>% dplyr::filter(Length<=1) %>% summarize(mean(Length)) %>% round(.,1)
 ```
 
 <div data-pagedtable="false">
@@ -4422,7 +4475,7 @@ Raquat_size %>% dplyr::filter(Length>1) %>% summarize(mean(Length))%>% round(.,1
 </div>
 
 ```r
-Raquat_size %>% dplyr::filter(Length<1) %>% summarize(sd(Length))%>% round(.,1)
+Raquat_size %>% dplyr::filter(Length<=1) %>% summarize(sd(Length))%>% round(.,1)
 ```
 
 <div data-pagedtable="false">
