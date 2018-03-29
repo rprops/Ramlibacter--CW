@@ -647,9 +647,9 @@ RAMLI_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 2830 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:54 2018  --- There are 2830 genes with > 0.1 %
+## Thu Mar 29 20:08:54 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:54 2018  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -680,9 +680,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 1889 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:54 2018  --- There are 1889 genes with > 0.1 %
+## Thu Mar 29 20:08:54 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:54 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -724,9 +724,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 1797 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:54 2018  --- There are 1797 genes with > 0.1 %
+## Thu Mar 29 20:08:54 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:54 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -768,9 +768,9 @@ RAMLI_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 4954 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:55 2018  --- There are 4954 genes with > 0.1 %
+## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -790,9 +790,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 3929 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:55 2018  --- There are 3929 genes with > 0.1 %
+## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -812,9 +812,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 3573 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:55 2018  --- There are 3573 genes with > 0.1 %
+## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -834,9 +834,9 @@ RAMLI_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 2164 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:55 2018  --- There are 2164 genes with > 0.1 %
+## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -867,9 +867,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 1384 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:55 2018  --- There are 1384 genes with > 0.1 %
+## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -889,9 +889,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Sun Mar 25 18:42:55 2018  --- There are 1342 genes with > 0.1 %
-## Sun Mar 25 18:42:55 2018  --- This is 100 % of all genes
-## Sun Mar 25 18:42:55 2018  --- The 10 genes with the highest GC% are:
+## Thu Mar 29 20:08:55 2018  --- There are 1342 genes with > 0.1 %
+## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
+## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -2761,6 +2761,44 @@ print(p_panG3)
 
 <img src="Figures/cached/panG-analysis-2.png" style="display: block; margin: auto;" />
 
+```r
+# Plot distribution of panG annotation 
+## Expressed as % of individual unique gene pool
+p_panG4 <- panG_ko_cog %>% 
+  select(genome_name, ko_level_B, ko_level_C, bin_core, unique_gene_callers_id) %>% 
+  filter(ko_level_B == "Membrane transport") %>% 
+  distinct() %>% 
+  filter(bin_core == "Accessory") %>% 
+  # filter(bin_name %in% c("MAG_PC", 
+  #                        "Ramli_5-10_PC",
+  #                        "Ramli_Leaf400_PC", 
+  #                        "Ramli_TTB310_PC")) %>% 
+  ggplot(aes(x = genome_name, fill = ko_level_C, y = 100*abund_ko))+
+  geom_bar(color = "black", stat = "identity")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  ggtitle("Relative abundance (% - normalized vs. accessory genome sizes)")+
+  ylab("") + xlab("")+
+  # facet_grid(.~ko_level_A.x, scales = "free")+
+  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+        title=element_text(size=18), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text=element_blank(),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
+        legend.position = "bottom"
+        )+
+  guides(fill = guide_legend(nrow = 4))
+
+print(p_panG4)
+```
+
+```
+## Error in FUN(X[[i]], ...): object 'abund_ko' not found
+```
+
+<img src="Figures/cached/panG-analysis-3.png" style="display: block; margin: auto;" />
+
 
 
 ```r
@@ -2859,9 +2897,6 @@ hm_chemo <- panG_ko_chemo %>%
   ggplot(aes(y = bin_name, x = ko_id)) + # x and y axes => Var1 and Var2
   geom_tile(aes(fill = sum_presence), col = "lightgrey") + # background colours are mapped according to the value column
   geom_text(aes(label = round(sum_presence, 0)), size = 3) + # write the values
-  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
-  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
-                      # trans = "log1p", limits=c(1, 40)) +
   scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
                        direction = 1, limits = c(0,4)) +
   theme(panel.grid.major.x=element_blank(), #no gridlines
@@ -2884,29 +2919,103 @@ cowplot::plot_grid(hm_flagel, hm_chemo, nrow = 2, align = "v",
 
 <img src="Figures/cached/panG-analysis-2-1.png" style="display: block; margin: auto;" />
 
-### Statistics
+### Gene enrichment  
+
 
 ```r
-# Number of mcp (chemotaxis receptors) per bin
-panG_ko_cog %>% dplyr::filter(ko_function_abbrev == "mcp") %>% 
-  select(bin_name,gene_callers_id,ko_function_abbrev) %>% 
-  distinct() %>% group_by(bin_name) %>% summarize(ntot = n())
+# Perform hypergeometric test to see if there is functional enrichment in the pangenome
+for(i_genome in 1:length(unique(panG_ko$Genome))){
+  bg_gsea <- panG_ko %>% filter(Genome == unique(panG_ko$Genome)[i_genome]) %>% 
+  select(ko_level_C,unique_gene_callers_id) %>% 
+  distinct()
+  
+  panG_gseq <- panG_ko_cog %>% 
+    filter(Genome == unique(panG_ko$Genome)[i_genome] & bin_core == "Accessory") %>%
+    select(ko_level_C,unique_gene_callers_id) %>% 
+    distinct()
+  
+  panG_gsea <- enricher(gene = panG_gseq$unique_gene_callers_id,
+         universe = bg_gsea$unique_gene_callers_id, 
+         TERM2GENE = bg_gsea,
+         pvalueCutoff = 0.05,
+         qvalueCutoff = 0.2)
+
+  tmp_gseq <- data.frame(panG_gsea@result, Genome = unique(panG_ko$Genome)[i_genome])
+  if(i_genome == 1) results_gseq <- tmp_gseq else {
+    results_gseq <- rbind(results_gseq, tmp_gseq)
+  }
+  genes_per_gseq <- panG_gseq %>% 
+     filter(ko_level_C %in% panG_gsea@result$Description) %>%
+     group_by(ko_level_C) %>% 
+     summarize(Counts = n())
+  genes_per_gseq <- data.frame(genes_per_gseq, 
+                               Genome = unique(panG_ko$Genome)[i_genome])
+  if(i_genome == 1) results_pergene <- genes_per_gseq else {
+    results_pergene <- rbind(results_pergene, genes_per_gseq)
+  }
+}
+
+# Calculate fraction of enriched genes vs. annotated panG genes
+results_pergene_sum <- results_pergene %>% group_by(Genome) %>% summarize(enrich_counts = sum(Counts))
+
+annotated_fraction_panG <- panG_ko_cog %>% 
+  filter(bin_core == "Accessory" & !is.na(ko_level_C)) %>% 
+  group_by(Genome) %>% select(unique_gene_callers_id) %>% 
+  distinct() %>% 
+  summarize(panG_counts = n())
 ```
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["ntot"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"MAG_PC","2":"1"},{"1":"Ramli_5-10_PC","2":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+```
+## Adding missing grouping variables: `Genome`
+```
 
 ```r
-# Perform hypergeometric test to see if we have significantly more n genes
-phyper()
+results_pergene_sum <- left_join(results_pergene_sum, annotated_fraction_panG,
+                                 by = "Genome")
+
+# Merge actual unique gene counts per gsea category with the accessory genome sizes
+results_pergene_sum <- results_pergene_sum %>% mutate(frac_enrich = enrich_counts/panG_counts)
+
+print(results_pergene_sum)
 ```
 
 ```
-## Error in phyper(): argument "q" is missing, with no default
+## # A tibble: 4 x 4
+##   Genome        enrich_counts panG_counts frac_enrich
+##   <fct>                 <int>       <int>       <dbl>
+## 1 Ramli-5-10               42         236      0.178 
+## 2 Ramli-Leaf400             6         148      0.0405
+## 3 Ramli-MAG               154         174      0.885 
+## 4 Ramli-TTB310             66         136      0.485
 ```
+
+```r
+# Revalue gsea results
+results_gseq$Genome <- plyr::revalue(results_gseq$Genome,
+                                  replace = c("Ramli-MAG" = "R.aquaticus", 
+                                              "Ramli-5-10" = 'R. solisilvae 5-10', 
+                                              "Ramli-Leaf400" = "R. Leaf400",
+                                              "Ramli-TTB310" = "R. tatouinensis TTB310"))
+
+# Make plot
+p_panG5 <- results_gseq %>% 
+  ggplot(aes(x = Description, fill = Genome, y = Count))+
+  geom_bar(color = "black", stat = "identity")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  ylab("Number of genes") + xlab("")+
+  facet_grid(.~Genome, scales = "free")+
+  theme(axis.text.y=element_text(size=12.5), axis.title.y =element_text(size = 18),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
+        plot.margin = unit(c(1.1,1.1,1.1,1.1), "cm")
+        )+
+  guides(fill = FALSE)
+
+print(p_panG5)
+```
+
+<img src="Figures/cached/panG-analysis-3-1.png" style="display: block; margin: auto;" />
 
 # Module completeness analysis
 
