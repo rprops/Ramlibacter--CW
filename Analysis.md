@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "29 March, 2018"
+date: "30 March, 2018"
 output:
   html_document:
     code_folding: show
@@ -2919,7 +2919,7 @@ cowplot::plot_grid(hm_flagel, hm_chemo, nrow = 2, align = "v",
 
 <img src="Figures/cached/panG-analysis-2-1.png" style="display: block; margin: auto;" />
 
-### Gene enrichment  
+### Enrichment in panG
 
 
 ```r
@@ -2956,11 +2956,14 @@ for(i_genome in 1:length(unique(panG_ko$Genome))){
 }
 
 # Calculate fraction of enriched genes vs. annotated panG genes
-results_pergene_sum <- results_pergene %>% group_by(Genome) %>% summarize(enrich_counts = sum(Counts))
+results_pergene_sum <- results_pergene %>% 
+  group_by(Genome) %>% 
+  summarize(enrich_counts = sum(Counts))
 
 annotated_fraction_panG <- panG_ko_cog %>% 
   filter(bin_core == "Accessory" & !is.na(ko_level_C)) %>% 
-  group_by(Genome) %>% select(unique_gene_callers_id) %>% 
+  group_by(Genome) %>% 
+  select(unique_gene_callers_id) %>% 
   distinct() %>% 
   summarize(panG_counts = n())
 ```
@@ -2974,7 +2977,8 @@ results_pergene_sum <- left_join(results_pergene_sum, annotated_fraction_panG,
                                  by = "Genome")
 
 # Merge actual unique gene counts per gsea category with the accessory genome sizes
-results_pergene_sum <- results_pergene_sum %>% mutate(frac_enrich = enrich_counts/panG_counts)
+results_pergene_sum <- results_pergene_sum %>% 
+  mutate(frac_enrich = enrich_counts/panG_counts)
 
 print(results_pergene_sum)
 ```
@@ -3016,6 +3020,28 @@ print(p_panG5)
 ```
 
 <img src="Figures/cached/panG-analysis-3-1.png" style="display: block; margin: auto;" />
+
+## Enrichment of PSGs  
+
+* No functional groups were significantly enriched in the positively selected gene pool
+
+
+```r
+posi_df_gsea <- data_posi_KO %>% 
+  select(ko_level_C, Gene) %>% 
+  filter(!is.na(ko_level_C)) %>% 
+  distinct()
+
+bg_posi_gsea <- merged_gc_ko %>% filter(genome_id == "Ramlibacter sp. MAG") %>% 
+  select(ko_level_C, gene_oid)
+
+posiG_gsea <- enricher(gene = posi_df_gsea$Gene,
+         universe = unique(bg_posi_gsea$gene_oid), 
+         TERM2GENE = bg_posi_gsea,
+         pvalueCutoff = 0.05,
+         qvalueCutoff = 0.2)
+```
+
 
 # Module completeness analysis
 
@@ -4557,12 +4583,6 @@ p_size <- ggplot(Raquat_size, aes(x= "R. aquaticus", y = Length))+
                position = "right")+
   labs(title = "Length (µm)")
 
-print(p_size)
-```
-
-<img src="Figures/cached/size-1-1.png" style="display: block; margin: auto;" />
-
-```r
 # Calculate mean & st dev
 Raquat_size %>% dplyr::filter(Length<=1) %>% summarize(mean(Length)) %>% round(.,1)
 ```
@@ -4605,14 +4625,7 @@ Raquat_size %>% dplyr::filter(Length>1) %>% summarize(sd(Length))%>% round(.,1)
 
 ```r
 # Partition around medoids clustering
-Raquat_size$cluster_alloc <- factor(pam(Raquat_size$Length, 3)$cluster)
-```
-
-```
-## Error in pam(Raquat_size$Length, 3): could not find function "pam"
-```
-
-```r
+Raquat_size$cluster_alloc <- factor(cluster::pam(Raquat_size$Length, 3)$cluster)
 tmp.si <- c()
 for(i in 2:10){
     tmp.si[i] <- cluster::pam(Raquat_size$Length, k = i)$silinfo$avg.width
@@ -4639,7 +4652,7 @@ p_size2 <- ggplot(Raquat_size, aes(x= "R. aquaticus", y = Length))+
   labs(title = "Length (µm)")+
   guides(fill = FALSE)
 
-print(p_size2)
+cowplot::plot_grid(p_size, p_size2, ncol =2, align = "h")
 ```
 
-<img src="Figures/cached/size-1-2.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/size-1-1.png" style="display: block; margin: auto;" />
