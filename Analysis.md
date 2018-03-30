@@ -2634,13 +2634,6 @@ panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Xenobiotics biodegradation and
 panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
 panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Biofilm formation"
 
-# Select some annotation levels of interest to visualize
-tmp_names <- names(table(panG_ko_cog$ko_level_B)[rev(order(table(panG_ko_cog$ko_level_B)))][1:10])
-
-write.table(unique(panG_ko_cog$gene_callers_id), 
-            "./panG/gene_ids_pan.tsv", row.names = FALSE,
-            quote = FALSE, col.names = FALSE)
-
 # Add column denoting whether it is core/mixed or accessory
 panG_ko_cog$bin_core <- factor(panG_ko_cog$bin_name == "CORE_PC" | panG_ko_cog$bin_name == "Mixed_PCs")
 panG_ko_cog$bin_core <- plyr::revalue(panG_ko_cog$bin_core, replace = c("TRUE" = "CORE/Mixed", "FALSE" = "Accessory"))
@@ -2658,19 +2651,28 @@ p_panG1 <- panG_ko_cog %>%
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
   facet_grid(bin_core~ko_level_A, scales = "free")+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
         strip.text=element_text(size=14),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
         legend.position = "bottom"
         )+
   guides(fill = guide_legend(nrow = 4))
+```
+
+```
+## Error in filter_impl(.data, quo): Evaluation error: object 'tmp_names' not found.
+```
+
+```r
 print(p_panG1)
 ```
 
-<img src="Figures/cached/panG-analysis-1.png" style="display: block; margin: auto;" />
+```
+## Error in print(p_panG1): object 'p_panG1' not found
+```
 
 ```r
 # Get sizes of each protein cluster bin
@@ -2694,35 +2696,23 @@ panG_ko_table <- panG_ko_cog %>% dplyr::filter(ko_level_B %in% tmp_names) %>%
   group_by(merge_bin_genome, ko_level_B) %>% 
   mutate(abund_ko = length(unique(unique_gene_callers_id))/bin_size,
          number_of_genes = length(unique(ko_id)))
+```
 
+```
+## Error in filter_impl(.data, quo): Evaluation error: object 'tmp_names' not found.
+```
 
+```r
 panG_ko_table <- left_join(panG_ko_table, 
                            distinct(panG_ko_cog[, c("ko_level_A", "ko_level_B")]),
                            by = c("ko_level_B"))
+```
 
-# Plot distribution of panG annotation 
-## Expressed as % of core genome gene set
-# p_panG2 <- panG_ko_table %>% 
-#   filter(bin_name %in% c("CORE_PC")) %>% 
-#   ggplot(aes(x = genome_name, y = 100*abund_ko_prop,  fill = ko_level_B))+
-#   geom_bar(color = "black", stat = "identity")+
-#   theme_bw()+
-#   scale_fill_brewer(palette="Paired")+
-#   ggtitle("Relative abundance (% - normalized vs. core genome)")+
-#   ylab("") + xlab("")+
-#   facet_grid(.~ko_level_A)+
-#   theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
-#         title=element_text(size=18), legend.text=element_text(size=14),
-#         legend.background = element_rect(fill="transparent"),
-#         axis.text.x = element_text(angle = 45, hjust = 1),
-#         strip.text=element_text(size=18),
-#         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
-#         legend.position = "bottom"
-#         )+
-#   guides(fill = guide_legend(nrow = 4))
-# 
-# print(p_panG2)
+```
+## Error in left_join(panG_ko_table, distinct(panG_ko_cog[, c("ko_level_A", : object 'panG_ko_table' not found
+```
 
+```r
 # Plot distribution of panG annotation 
 ## Expressed as % of individual unique gene pool
 p_panG3 <- panG_ko_table %>% 
@@ -2740,10 +2730,10 @@ p_panG3 <- panG_ko_table %>%
   ggtitle("Relative abundance (% - normalized vs. accessory genome sizes)")+
   ylab("") + xlab("")+
   facet_grid(.~ko_level_A.x, scales = "free")+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
         strip.text=element_blank(),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
         legend.position = "bottom"
@@ -2752,52 +2742,16 @@ p_panG3 <- panG_ko_table %>%
 ```
 
 ```
-## Adding missing grouping variables: `merge_bin_genome`
+## Error in eval(lhs, parent, parent): object 'panG_ko_table' not found
 ```
 
 ```r
 print(p_panG3)
 ```
 
-<img src="Figures/cached/panG-analysis-2.png" style="display: block; margin: auto;" />
-
-```r
-# Plot distribution of panG annotation 
-## Expressed as % of individual unique gene pool
-p_panG4 <- panG_ko_cog %>% 
-  select(genome_name, ko_level_B, ko_level_C, bin_core, unique_gene_callers_id) %>% 
-  filter(ko_level_B == "Membrane transport") %>% 
-  distinct() %>% 
-  filter(bin_core == "Accessory") %>% 
-  # filter(bin_name %in% c("MAG_PC", 
-  #                        "Ramli_5-10_PC",
-  #                        "Ramli_Leaf400_PC", 
-  #                        "Ramli_TTB310_PC")) %>% 
-  ggplot(aes(x = genome_name, fill = ko_level_C, y = 100*abund_ko))+
-  geom_bar(color = "black", stat = "identity")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  ggtitle("Relative abundance (% - normalized vs. accessory genome sizes)")+
-  ylab("") + xlab("")+
-  # facet_grid(.~ko_level_A.x, scales = "free")+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text=element_blank(),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
-        legend.position = "bottom"
-        )+
-  guides(fill = guide_legend(nrow = 4))
-
-print(p_panG4)
 ```
-
+## Error in print(p_panG3): object 'p_panG3' not found
 ```
-## Error in FUN(X[[i]], ...): object 'abund_ko' not found
-```
-
-<img src="Figures/cached/panG-analysis-3.png" style="display: block; margin: auto;" />
 
 
 
