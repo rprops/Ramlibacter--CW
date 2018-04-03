@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "30 March, 2018"
+date: "03 April, 2018"
 output:
   html_document:
     code_folding: show
@@ -2535,6 +2535,7 @@ print(p_aa_kappa)
 
 <img src="Figures/cached/posigene-aa-3.png" style="display: block; margin: auto;" />
 
+
 ## 9.3. Evaluate nucleotide transitions
 
 
@@ -2792,11 +2793,8 @@ hm_flagel <- panG_ko_flagel %>%
                                       "R.TTB310","Mixed_PCs"))) %>% 
   distinct() %>% 
   ggplot(aes(y = bin_name, x = ko_id)) + # x and y axes => Var1 and Var2
-  geom_tile(aes(fill = sum_presence), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_tile(aes(fill = sum_presence), col = "lightgrey") + 
   geom_text(aes(label = round(sum_presence, 0)), size = 3) + # write the values
-  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
-  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
-                      # trans = "log1p", limits=c(1, 40)) +
   scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
                        direction = 1, limits = c(0,4)) +
   theme(panel.grid.major.x=element_blank(), #no gridlines
@@ -2995,6 +2993,106 @@ posiG_gsea <- enricher(gene = posi_df_gsea$Gene,
          pvalueCutoff = 0.05,
          qvalueCutoff = 0.2)
 ```
+
+## C/N ratio of AA
+
+
+```r
+# Import amino acid information
+meta_aa <- read.csv("./mapping_files/aa_comp.csv")
+
+# Get amino acid names individually
+aa_seq_split <- strsplit(panG_ko_cog$aa_sequence, split = "")
+ncol <- max(sapply(aa_seq_split,length))
+aa_seq_split <- as.data.table(lapply(1:ncol, function(i) sapply(aa_seq_split, "[", i)))
+
+df_aa_seq_split <- data.table::data.table(bin_name = panG_ko_cog$bin_name, 
+                 genome_name = panG_ko_cog$genome_name,
+                 unique_gene_callers_id = panG_ko_cog$unique_gene_callers_id,
+                 aa_seq_split)
+
+remove(aa_seq_split)
+
+# Wide to long format
+df_aa_seq_split <- gather(df_aa_seq_split, codon_position,
+                          aa_ID, V1:V2467, factor_key=TRUE)
+# Annotate AA sequences
+df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
+df_aa_seq_split$unique_gene_callers_id <- factor(df_aa_seq_split$unique_gene_callers_id)
+
+data_C_N <- df_aa_seq_split %>%
+  filter(!is.na(C_elem)) %>% 
+  distinct() %>% 
+  group_by(unique_gene_callers_id) %>% 
+  summarize(N_sum = sum(N_elem),
+            C_sum = sum(C_elem))
+remove(df_aa_seq_split)
+
+# Merge this information with initial dataframe
+final_df_arsc <- left_join(panG_ko_cog, data_C_N, by = "unique_gene_callers_id")
+
+# Add amino acid protein length
+final_df_arsc <- final_df_arsc %>% mutate(aa_length = nchar(aa_sequence))
+
+# Calculate N_ARSC and C_ARSC
+final_df_arsc <- final_df_arsc %>% 
+  select(unique_gene_callers_id, bin_name, genome_name, aa_length, N_sum, C_sum) %>% 
+  distinct() %>% 
+  mutate(N_ARSC = N_sum/aa_length, C_ARSC = C_sum/aa_length)
+```
+
+
+```r
+p_aa_C <- final_df_arsc %>% 
+  ggplot(aes(x = bin_name, y = C_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI, draw_quantiles = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("C-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")+
+  ylim(0,15)
+
+p_aa_N <- final_df_arsc %>% 
+  ggplot(aes(x = bin_name, y = N_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("N-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")+
+  ylim(0,15)
+
+cowplot::plot_grid(p_aa_C, p_aa_N, nrow = 2,
+                   labels = c("A","B"))
+```
+
+<img src="Figures/cached/panG-analysis-6-1.png" style="display: block; margin: auto;" />
+
+```r
+# Summary statistics
+final_df_arsc %>% group_by(bin_name) %>% 
+  summarize(mean_N_ARSC = mean(N_ARSC),
+            mean_C_ARSC = mean(C_ARSC),
+            sd_N_ARSC = sd(N_ARSC),
+            sd_C_ARSC = sd(C_ARSC))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["mean_N_ARSC"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mean_C_ARSC"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["sd_N_ARSC"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sd_C_ARSC"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"CORE_PC","2":"1.383184","3":"4.842169","4":"0.07755192","5":"0.1783593"},{"1":"MAG_PC","2":"1.380855","3":"4.766043","4":"0.09238682","5":"0.2231605"},{"1":"Mixed_PCs","2":"1.376460","3":"4.820810","4":"0.07799701","5":"0.1896899"},{"1":"Ramli_5-10_PC","2":"1.373175","3":"4.816771","4":"0.08403378","5":"0.2047465"},{"1":"Ramli_Leaf400_PC","2":"1.389232","3":"4.759977","4":"0.09388136","5":"0.2314777"},{"1":"Ramli_TTB310_PC","2":"1.390690","3":"4.784405","4":"0.09000061","5":"0.2242059"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 
 # Module completeness analysis
