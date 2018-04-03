@@ -2421,19 +2421,18 @@ df_aa_seq_split <- gather(df_aa_seq_split, codon_position,
 df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
 df_aa_seq_split$unique_gene_callers_id <- factor(df_aa_seq_split$unique_gene_callers_id)
 
+# Calculate C and N content of AA residuals
 data_C_N <- df_aa_seq_split %>%
   filter(!is.na(C_elem)) %>% 
   distinct() %>% 
   group_by(unique_gene_callers_id) %>% 
   summarize(N_sum = sum(N_elem),
-            C_sum = sum(C_elem))
+            C_sum = sum(C_elem),
+            aa_length = n())
 remove(df_aa_seq_split)
 
 # Merge this information with initial dataframe
 final_df_arsc <- left_join(panG_ko_cog, data_C_N, by = "unique_gene_callers_id")
-
-# Add amino acid protein length
-final_df_arsc <- final_df_arsc %>% mutate(aa_length = nchar(aa_sequence))
 
 # Calculate N_ARSC and C_ARSC
 final_df_arsc <- final_df_arsc %>% 
@@ -2455,8 +2454,7 @@ p_aa_C <- final_df_arsc %>%
         axis.text.y = element_text(size = 14),
         axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
         plot.title = element_text(size = 20, hjust = 0.5))+
-  labs(title = "")+
-  ylim(0,15)
+  labs(title = "")
 
 p_aa_N <- final_df_arsc %>% 
   ggplot(aes(x = bin_name, y = N_ARSC))+
@@ -2470,8 +2468,7 @@ p_aa_N <- final_df_arsc %>%
         axis.text.y = element_text(size = 14),
         axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
         plot.title = element_text(size = 20, hjust = 0.5))+
-  labs(title = "")+
-  ylim(0,15)
+  labs(title = "")
 
 cowplot::plot_grid(p_aa_C, p_aa_N, nrow = 2,
                    labels = c("A","B"))

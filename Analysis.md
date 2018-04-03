@@ -3020,19 +3020,18 @@ df_aa_seq_split <- gather(df_aa_seq_split, codon_position,
 df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
 df_aa_seq_split$unique_gene_callers_id <- factor(df_aa_seq_split$unique_gene_callers_id)
 
+# Calculate C and N content of AA residuals
 data_C_N <- df_aa_seq_split %>%
   filter(!is.na(C_elem)) %>% 
   distinct() %>% 
   group_by(unique_gene_callers_id) %>% 
   summarize(N_sum = sum(N_elem),
-            C_sum = sum(C_elem))
+            C_sum = sum(C_elem),
+            aa_length = n())
 remove(df_aa_seq_split)
 
 # Merge this information with initial dataframe
 final_df_arsc <- left_join(panG_ko_cog, data_C_N, by = "unique_gene_callers_id")
-
-# Add amino acid protein length
-final_df_arsc <- final_df_arsc %>% mutate(aa_length = nchar(aa_sequence))
 
 # Calculate N_ARSC and C_ARSC
 final_df_arsc <- final_df_arsc %>% 
@@ -3055,8 +3054,7 @@ p_aa_C <- final_df_arsc %>%
         axis.text.y = element_text(size = 14),
         axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
         plot.title = element_text(size = 20, hjust = 0.5))+
-  labs(title = "")+
-  ylim(0,15)
+  labs(title = "")
 
 p_aa_N <- final_df_arsc %>% 
   ggplot(aes(x = bin_name, y = N_ARSC))+
@@ -3070,8 +3068,7 @@ p_aa_N <- final_df_arsc %>%
         axis.text.y = element_text(size = 14),
         axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
         plot.title = element_text(size = 20, hjust = 0.5))+
-  labs(title = "")+
-  ylim(0,15)
+  labs(title = "")
 
 cowplot::plot_grid(p_aa_C, p_aa_N, nrow = 2,
                    labels = c("A","B"))
@@ -3090,7 +3087,7 @@ final_df_arsc %>% group_by(bin_name) %>%
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["mean_N_ARSC"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mean_C_ARSC"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["sd_N_ARSC"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sd_C_ARSC"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"CORE_PC","2":"1.383184","3":"4.842169","4":"0.07755192","5":"0.1783593"},{"1":"MAG_PC","2":"1.380855","3":"4.766043","4":"0.09238682","5":"0.2231605"},{"1":"Mixed_PCs","2":"1.376460","3":"4.820810","4":"0.07799701","5":"0.1896899"},{"1":"Ramli_5-10_PC","2":"1.373175","3":"4.816771","4":"0.08403378","5":"0.2047465"},{"1":"Ramli_Leaf400_PC","2":"1.389232","3":"4.759977","4":"0.09388136","5":"0.2314777"},{"1":"Ramli_TTB310_PC","2":"1.390690","3":"4.784405","4":"0.09000061","5":"0.2242059"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["mean_N_ARSC"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mean_C_ARSC"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["sd_N_ARSC"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sd_C_ARSC"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"CORE_PC","2":"1.383197","3":"4.842217","4":"0.07753881","5":"0.1783426"},{"1":"MAG_PC","2":"1.380855","3":"4.766043","4":"0.09238682","5":"0.2231605"},{"1":"Mixed_PCs","2":"1.376460","3":"4.820810","4":"0.07799701","5":"0.1896899"},{"1":"Ramli_5-10_PC","2":"1.373175","3":"4.816771","4":"0.08403378","5":"0.2047465"},{"1":"Ramli_Leaf400_PC","2":"1.389274","3":"4.760116","4":"0.09388833","5":"0.2313926"},{"1":"Ramli_TTB310_PC","2":"1.390690","3":"4.784405","4":"0.09000061","5":"0.2242059"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
