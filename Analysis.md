@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "03 April, 2018"
+date: "04 April, 2018"
 output:
   html_document:
     code_folding: show
@@ -3074,7 +3074,7 @@ cowplot::plot_grid(p_aa_C, p_aa_N, nrow = 2,
                    labels = c("A","B"))
 ```
 
-<img src="Figures/cached/panG-analysis-6-1.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/panG-analysis-7-1.png" style="display: block; margin: auto;" />
 
 ```r
 # Summary statistics
@@ -3087,7 +3087,7 @@ final_df_arsc %>% group_by(bin_name) %>%
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["mean_N_ARSC"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mean_C_ARSC"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["sd_N_ARSC"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sd_C_ARSC"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"CORE_PC","2":"1.383197","3":"4.842217","4":"0.07753881","5":"0.1783426"},{"1":"MAG_PC","2":"1.380855","3":"4.766043","4":"0.09238682","5":"0.2231605"},{"1":"Mixed_PCs","2":"1.376460","3":"4.820810","4":"0.07799701","5":"0.1896899"},{"1":"Ramli_5-10_PC","2":"1.373175","3":"4.816771","4":"0.08403378","5":"0.2047465"},{"1":"Ramli_Leaf400_PC","2":"1.389274","3":"4.760116","4":"0.09388833","5":"0.2313926"},{"1":"Ramli_TTB310_PC","2":"1.390690","3":"4.784405","4":"0.09000061","5":"0.2242059"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["mean_N_ARSC"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mean_C_ARSC"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["sd_N_ARSC"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sd_C_ARSC"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"CORE_PC","2":"0.3831969","3":"2.842217","4":"0.07753881","5":"0.1783426"},{"1":"MAG_PC","2":"0.3808549","3":"2.766043","4":"0.09238682","5":"0.2231605"},{"1":"Mixed_PCs","2":"0.3764602","3":"2.820810","4":"0.07799701","5":"0.1896899"},{"1":"Ramli_5-10_PC","2":"0.3731752","3":"2.816771","4":"0.08403378","5":"0.2047465"},{"1":"Ramli_Leaf400_PC","2":"0.3892738","3":"2.760116","4":"0.09388833","5":"0.2313926"},{"1":"Ramli_TTB310_PC","2":"0.3906899","3":"2.784405","4":"0.09000061","5":"0.2242059"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 

@@ -2439,9 +2439,11 @@ final_df_arsc <- final_df_arsc %>%
   select(unique_gene_callers_id, bin_name, genome_name, aa_length, N_sum, C_sum) %>% 
   distinct() %>% 
   mutate(N_ARSC = N_sum/aa_length, C_ARSC = C_sum/aa_length)
+
+
 ```
 
-```{r panG-analysis-6, dpi = 500, fig.width = 8, fig.height = 12, warning = FALSE, dev = c("png","pdf")}
+```{r panG-analysis-7, dpi = 500, fig.width = 8, fig.height = 12, warning = FALSE, dev = c("png","pdf")}
 p_aa_C <- final_df_arsc %>% 
   ggplot(aes(x = bin_name, y = C_ARSC))+
    geom_violin(alpha = 0.2, fill = col_RAMLI, draw_quantiles = TRUE)+
@@ -2479,6 +2481,7 @@ final_df_arsc %>% group_by(bin_name) %>%
             mean_C_ARSC = mean(C_ARSC),
             sd_N_ARSC = sd(N_ARSC),
             sd_C_ARSC = sd(C_ARSC))
+
 
 
 ```
