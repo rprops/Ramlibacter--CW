@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "04 April, 2018"
+date: "11 April, 2018"
 output:
   html_document:
     code_folding: show
@@ -2985,7 +2985,8 @@ posi_df_gsea <- data_posi_KO %>%
   distinct()
 
 bg_posi_gsea <- merged_gc_ko %>% filter(genome_id == "Ramlibacter sp. MAG") %>% 
-  select(ko_level_C, gene_oid)
+  select(ko_level_C, gene_oid) %>% 
+  distinct()
 
 posiG_gsea <- enricher(gene = posi_df_gsea$Gene,
          universe = unique(bg_posi_gsea$gene_oid), 
@@ -3041,6 +3042,7 @@ final_df_arsc <- final_df_arsc %>%
 ```
 
 
+
 ```r
 p_aa_C <- final_df_arsc %>% 
   ggplot(aes(x = bin_name, y = C_ARSC))+
@@ -3074,7 +3076,7 @@ cowplot::plot_grid(p_aa_C, p_aa_N, nrow = 2,
                    labels = c("A","B"))
 ```
 
-<img src="Figures/cached/panG-analysis-7-1.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/panG-analysis-6-1.png" style="display: block; margin: auto;" />
 
 ```r
 # Summary statistics
@@ -3090,6 +3092,170 @@ final_df_arsc %>% group_by(bin_name) %>%
 {"columns":[{"label":["bin_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["mean_N_ARSC"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mean_C_ARSC"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["sd_N_ARSC"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sd_C_ARSC"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"CORE_PC","2":"0.3831969","3":"2.842217","4":"0.07753881","5":"0.1783426"},{"1":"MAG_PC","2":"0.3808549","3":"2.766043","4":"0.09238682","5":"0.2231605"},{"1":"Mixed_PCs","2":"0.3764602","3":"2.820810","4":"0.07799701","5":"0.1896899"},{"1":"Ramli_5-10_PC","2":"0.3731752","3":"2.816771","4":"0.08403378","5":"0.2047465"},{"1":"Ramli_Leaf400_PC","2":"0.3892738","3":"2.760116","4":"0.09388833","5":"0.2313926"},{"1":"Ramli_TTB310_PC","2":"0.3906899","3":"2.784405","4":"0.09000061","5":"0.2242059"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+
+
+
+```r
+# Lets evaluate if there is a difference between the fraction under positive selection and the rest of the genome
+Ramli_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.genes.faa"))
+```
+
+```
+## Error in readDNAStringSet("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.genes.faa"): could not find function "readDNAStringSet"
+```
+
+```r
+colnames(Ramli_aa)[1] <- "AA_sequence"
+```
+
+```
+## Error in colnames(Ramli_aa)[1] <- "AA_sequence": object 'Ramli_aa' not found
+```
+
+```r
+Ramli_aa <- data.frame(Gene = do.call(rbind, strsplit(rownames(Ramli_aa), " "))[,1],
+                       Ramli_aa)
+```
+
+```
+## Error in rownames(Ramli_aa): object 'Ramli_aa' not found
+```
+
+```r
+# Get amino acid names individually
+aa_seq_split <- strsplit(Ramli_aa[,2], split = "")
+```
+
+```
+## Error in strsplit(Ramli_aa[, 2], split = ""): object 'Ramli_aa' not found
+```
+
+```r
+ncol <- max(sapply(aa_seq_split, length))
+```
+
+```
+## Error in lapply(X = X, FUN = FUN, ...): object 'aa_seq_split' not found
+```
+
+```r
+aa_seq_split <- as.data.table(lapply(1:ncol, function(i) sapply(aa_seq_split, "[", i)))
+```
+
+```
+## Error in lapply(X = X, FUN = FUN, ...): object 'aa_seq_split' not found
+```
+
+```r
+df_aa_seq_split <- data.table::data.table(unique_gene_callers_id = Ramli_aa$Gene,
+                 aa_seq_split)
+```
+
+```
+## Error in data.table::data.table(unique_gene_callers_id = Ramli_aa$Gene, : object 'Ramli_aa' not found
+```
+
+```r
+# Wide to long format
+df_aa_seq_split <- gather(df_aa_seq_split, codon_position,
+                          aa_ID, V1:V1993, factor_key=TRUE)
+```
+
+```
+## Error in gather(df_aa_seq_split, codon_position, aa_ID, V1:V1993, factor_key = TRUE): object 'df_aa_seq_split' not found
+```
+
+```r
+# Annotate AA sequences
+df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
+```
+
+```
+## Error in left_join(df_aa_seq_split, meta_aa, by = c(aa_ID = "AA_abbrev2")): object 'df_aa_seq_split' not found
+```
+
+```r
+# Calculate C-ARSC and N-ARSC
+data_C_N <- df_aa_seq_split %>%
+  filter(!is.na(C_elem)) %>%
+  distinct() %>%
+  group_by(unique_gene_callers_id) %>%
+  summarize(N_sum = sum(N_elem),
+            C_sum = sum(C_elem),
+            aa_length = n())
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'df_aa_seq_split' not found
+```
+
+```r
+remove(df_aa_seq_split)
+
+# Calculate N_ARSC and C_ARSC
+final_df_arsc_ramli <- data_C_N %>% 
+  select(unique_gene_callers_id, aa_length, N_sum, C_sum) %>% 
+  distinct() %>% 
+  mutate(N_ARSC = N_sum/aa_length, C_ARSC = C_sum/aa_length)
+
+# Add posigene information
+final_df_arsc_ramli$PSG <- final_df_arsc_ramli$unique_gene_callers_id %in% data_posi2_long$Transcript
+
+# Plot N-ARSC
+p_posi_N_ARSC <- final_df_arsc_ramli %>% 
+  ggplot(aes(x = PSG, y = N_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("N-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")
+
+
+# Plot C-ARSC
+p_posi_C_ARSC <- final_df_arsc_ramli %>% 
+  ggplot(aes(x = PSG, y = C_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("C-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")
+
+# bac1_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.genes.faa"))
+# bac2_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.genes.faa"))
+# 
+# # Get amino acid names individually
+# aa_seq_split <- strsplit(bac1_aa[,1], split = "")
+# ncol <- max(sapply(aa_seq_split,length))
+# aa_seq_split <- as.data.table(lapply(1:ncol, function(i) sapply(aa_seq_split, "[", i)))
+# 
+# # Wide to long format
+# df_aa_seq_split <- gather(aa_seq_split, codon_position,
+#                           aa_ID, V1:V2145, factor_key=TRUE)
+# # Annotate AA sequences
+# df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
+# 
+# # Calculate C-ARSC and N-ARSC
+# data_C_N <- df_aa_seq_split %>%
+#   filter(!is.na(C_elem)) %>% 
+#   distinct() %>% 
+#   group_by(unique_gene_callers_id) %>% 
+#   summarize(N_sum = sum(N_elem),
+#             C_sum = sum(C_elem),
+#             aa_length = n())
+# remove(df_aa_seq_split)
+```
 
 
 # Module completeness analysis
@@ -4524,6 +4690,14 @@ df_sigma <- read.table("./IMG_annotation/STAMP_profiles/abundance_ko_38065.tab.x
                        header = TRUE, sep = "\t", quote = "") %>% 
   dplyr::filter(grepl("sigma", Func_name))
 
+vegan::specnumber(df_sigma[, 3: ncol(df_sigma)])
+```
+
+```
+##  [1] 10 15 10 15 13 15 10 10 15  1  3 12  4
+```
+
+```r
 # From wide to long
 # df_sigma <- gather(df_sigma, Genome, Counts, Curvibacter_sp._ATCC:Variovorax_sp._EPS)
 df_sigma <- data.frame(Genome = colnames(df_sigma)[-c(1,2)], 
@@ -4595,6 +4769,48 @@ cowplot::plot_grid(p_sigma_1, p_sigma_2, align = "hv", rel_widths = c(4,1))
 ```
 
 <img src="Figures/cached/sigma-1-1.png" style="display: block; margin: auto;" />
+
+# Ordination
+
+
+```r
+# We use KEGG annotation because of its more defined sigma factor annotations
+df_ord <- read.table("./IMG_annotation/STAMP_profiles/abundance_ko_38065.tab.xls",
+                       header = TRUE, sep = "\t", quote = "")
+# perform tsne
+set.seed(777)
+dist_tsne <- dist(t(df_ord[, -c(1,2)]))
+df_tsne <- Rtsne::Rtsne(dist_tsne, perplexity = 1)
+
+# From wide to long
+# df_sigma <- gather(df_sigma, Genome, Counts, Curvibacter_sp._ATCC:Variovorax_sp._EPS)
+df_tsne <- data.frame(Genome = colnames(df_ord)[-c(1,2)], 
+                       X = df_tsne$Y[,1],
+                       Y = df_tsne$Y[,2])
+
+# Order genome_ids according to the phylogenetic clustering
+df_tsne$Genome <- gsub("_", " ", df_tsne$Genome)
+df_tsne$Genome <- factor(df_tsne$Genome, levels = ord_full_list_bin_sigma)
+
+p_ord <- ggplot(df_tsne, aes(x = X, y = Y, fill = Genome))+
+  geom_point(size = 4, alpha = 0.7, shape = 21)+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),3), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4), col_bac1, col_bac2))+
+  theme_bw()+
+  labs(x = "Axis 1", y = "Axis 2")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        plot.title = element_text(hjust = 0, size=18))
+
+print(p_ord)
+```
+
+<img src="Figures/cached/ord-1-1.png" style="display: block; margin: auto;" />
 
 # Size distribution R. aquaticus
 

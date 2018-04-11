@@ -2387,7 +2387,8 @@ posi_df_gsea <- data_posi_KO %>%
   distinct()
 
 bg_posi_gsea <- merged_gc_ko %>% filter(genome_id == "Ramlibacter sp. MAG") %>% 
-  select(ko_level_C, gene_oid)
+  select(ko_level_C, gene_oid) %>% 
+  distinct()
 
 posiG_gsea <- enricher(gene = posi_df_gsea$Gene,
          universe = unique(bg_posi_gsea$gene_oid), 
@@ -2440,10 +2441,10 @@ final_df_arsc <- final_df_arsc %>%
   distinct() %>% 
   mutate(N_ARSC = N_sum/aa_length, C_ARSC = C_sum/aa_length)
 
-
 ```
 
-```{r panG-analysis-7, dpi = 500, fig.width = 8, fig.height = 12, warning = FALSE, dev = c("png","pdf")}
+
+```{r panG-analysis-6, dpi = 500, fig.width = 8, fig.height = 12, warning = FALSE, dev = c("png","pdf")}
 p_aa_C <- final_df_arsc %>% 
   ggplot(aes(x = bin_name, y = C_ARSC))+
    geom_violin(alpha = 0.2, fill = col_RAMLI, draw_quantiles = TRUE)+
@@ -2481,9 +2482,102 @@ final_df_arsc %>% group_by(bin_name) %>%
             mean_C_ARSC = mean(C_ARSC),
             sd_N_ARSC = sd(N_ARSC),
             sd_C_ARSC = sd(C_ARSC))
+```
 
 
+```{r panG-analysis-7, dpi = 500, fig.width = 8, fig.height = 12, warning = FALSE, dev = c("png","pdf")}
+# Lets evaluate if there is a difference between the fraction under positive selection and the rest of the genome
+Ramli_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.genes.faa"))
+colnames(Ramli_aa)[1] <- "AA_sequence"
+Ramli_aa <- data.frame(Gene = do.call(rbind, strsplit(rownames(Ramli_aa), " "))[,1],
+                       Ramli_aa)
 
+# Get amino acid names individually
+aa_seq_split <- strsplit(Ramli_aa[,2], split = "")
+ncol <- max(sapply(aa_seq_split, length))
+aa_seq_split <- as.data.table(lapply(1:ncol, function(i) sapply(aa_seq_split, "[", i)))
+df_aa_seq_split <- data.table::data.table(unique_gene_callers_id = Ramli_aa$Gene,
+                 aa_seq_split)
+
+# Wide to long format
+df_aa_seq_split <- gather(df_aa_seq_split, codon_position,
+                          aa_ID, V1:V1993, factor_key=TRUE)
+# Annotate AA sequences
+df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
+
+# Calculate C-ARSC and N-ARSC
+data_C_N <- df_aa_seq_split %>%
+  filter(!is.na(C_elem)) %>%
+  distinct() %>%
+  group_by(unique_gene_callers_id) %>%
+  summarize(N_sum = sum(N_elem),
+            C_sum = sum(C_elem),
+            aa_length = n())
+remove(df_aa_seq_split)
+
+# Calculate N_ARSC and C_ARSC
+final_df_arsc_ramli <- data_C_N %>% 
+  select(unique_gene_callers_id, aa_length, N_sum, C_sum) %>% 
+  distinct() %>% 
+  mutate(N_ARSC = N_sum/aa_length, C_ARSC = C_sum/aa_length)
+
+# Add posigene information
+final_df_arsc_ramli$PSG <- final_df_arsc_ramli$unique_gene_callers_id %in% data_posi2_long$Transcript
+
+# Plot N-ARSC
+p_posi_N_ARSC <- final_df_arsc_ramli %>% 
+  ggplot(aes(x = PSG, y = N_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("N-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")
+
+
+# Plot C-ARSC
+p_posi_C_ARSC <- final_df_arsc_ramli %>% 
+  ggplot(aes(x = PSG, y = C_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("C-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")
+
+# bac1_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.genes.faa"))
+# bac2_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.genes.faa"))
+# 
+# # Get amino acid names individually
+# aa_seq_split <- strsplit(bac1_aa[,1], split = "")
+# ncol <- max(sapply(aa_seq_split,length))
+# aa_seq_split <- as.data.table(lapply(1:ncol, function(i) sapply(aa_seq_split, "[", i)))
+# 
+# # Wide to long format
+# df_aa_seq_split <- gather(aa_seq_split, codon_position,
+#                           aa_ID, V1:V2145, factor_key=TRUE)
+# # Annotate AA sequences
+# df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
+# 
+# # Calculate C-ARSC and N-ARSC
+# data_C_N <- df_aa_seq_split %>%
+#   filter(!is.na(C_elem)) %>% 
+#   distinct() %>% 
+#   group_by(unique_gene_callers_id) %>% 
+#   summarize(N_sum = sum(N_elem),
+#             C_sum = sum(C_elem),
+#             aa_length = n())
+# remove(df_aa_seq_split)
 ```
 
 
@@ -3731,6 +3825,7 @@ df_sigma <- read.table("./IMG_annotation/STAMP_profiles/abundance_ko_38065.tab.x
                        header = TRUE, sep = "\t", quote = "") %>% 
   dplyr::filter(grepl("sigma", Func_name))
 
+vegan::specnumber(df_sigma[, 3: ncol(df_sigma)])
 # From wide to long
 # df_sigma <- gather(df_sigma, Genome, Counts, Curvibacter_sp._ATCC:Variovorax_sp._EPS)
 df_sigma <- data.frame(Genome = colnames(df_sigma)[-c(1,2)], 
@@ -3799,6 +3894,45 @@ p_sigma_2 <- df_sigma %>% dplyr::filter(Genome == "Bacteroidetes sp. MAG1" |
   ylim(c(0,30))
 
 cowplot::plot_grid(p_sigma_1, p_sigma_2, align = "hv", rel_widths = c(4,1))
+```
+
+# Ordination
+
+```{r ord-1, warning = FALSE, fig.width = 7, fig.height = 5, dpi = 500, dev = c("png", "pdf")}
+# We use KEGG annotation because of its more defined sigma factor annotations
+df_ord <- read.table("./IMG_annotation/STAMP_profiles/abundance_ko_38065.tab.xls",
+                       header = TRUE, sep = "\t", quote = "")
+# perform tsne
+set.seed(777)
+dist_tsne <- dist(t(df_ord[, -c(1,2)]))
+df_tsne <- Rtsne::Rtsne(dist_tsne, perplexity = 1)
+
+# From wide to long
+# df_sigma <- gather(df_sigma, Genome, Counts, Curvibacter_sp._ATCC:Variovorax_sp._EPS)
+df_tsne <- data.frame(Genome = colnames(df_ord)[-c(1,2)], 
+                       X = df_tsne$Y[,1],
+                       Y = df_tsne$Y[,2])
+
+# Order genome_ids according to the phylogenetic clustering
+df_tsne$Genome <- gsub("_", " ", df_tsne$Genome)
+df_tsne$Genome <- factor(df_tsne$Genome, levels = ord_full_list_bin_sigma)
+
+p_ord <- ggplot(df_tsne, aes(x = X, y = Y, fill = Genome))+
+  geom_point(size = 4, alpha = 0.7, shape = 21)+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),3), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4), col_bac1, col_bac2))+
+  theme_bw()+
+  labs(x = "Axis 1", y = "Axis 2")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        plot.title = element_text(hjust = 0, size=18))
+
+print(p_ord)
 ```
 
 # Size distribution R. aquaticus
