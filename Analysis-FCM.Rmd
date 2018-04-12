@@ -427,6 +427,21 @@ p_HNA_pct <- ggplot(counts, aes(x = ExactTime, y = 100*pct_HNA.cells, fill = Nut
 plot_grid(p_counts_log, p_HNA_pct,nrow = 2, align = 'v')
 plot_grid(p_HNA, p_HNA_pct, nrow = 2, align = 'v')
 
+counts %>% group_by(NutrientCondition) %>% 
+  summarize(cor_p_value= cor.test(HNA.cells, Total.cells)$p.value,
+            cor_counts= cor.test(HNA.cells, Total.cells)$estimate)
+
+counts %>% group_by(NutrientCondition) %>% 
+  summarize(cor_p_value= cor.test(HNA.cells, Total.cells)$p.value,
+            cor_counts= cor.test(HNA.cells, Total.cells)$estimate)
+
+counts %>% group_by(NutrientCondition) %>% 
+  summarize(cor_p_value= cor.test(LNA.cells, Total.cells)$p.value,
+            cor_counts= cor.test(LNA.cells, Total.cells)$estimate)
+
+counts %>% group_by(NutrientCondition) %>% 
+  summarize(cor_p_value= cor.test(LNA.cells, HNA.cells)$p.value,
+            cor_counts= cor.test(LNA.cells, HNA.cells)$estimate)
 ```
 
 <!-- # Diversity dynamics -->
