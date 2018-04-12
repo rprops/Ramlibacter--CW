@@ -15,6 +15,8 @@ output:
       toc_depth: 2
     css: report_styles.css
     df_print: paged
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -47,9 +49,14 @@ library("seqtime")
 library("ggrepel")
 library("scales")
 library("MetQy")
+library("UpSetR")
+library("DOSE")
+library("clusterProfiler")
 library("RColorBrewer")
+library("data.table")
 
-col_RAMLI <- "#060670"
+col_RAMLI <- "#887CAF"
+# col_RAMLI <- "#e2a2fd"
 col_bac1 <- "#720000"
 col_bac2 <- "#D46A6A"
 ```
@@ -58,7 +65,7 @@ col_bac2 <- "#D46A6A"
 ## Network analysis on relative abundances  
 
 In the first analysis we utilize the raw counts. As such this network will be built using relative abundance data.
-```{r network-analysis-relative, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8}
+```{r network-analysis-relative, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8, dev = c("png","pdf")}
 # Set seed
 set.seed(777)
 
@@ -66,8 +73,7 @@ set.seed(777)
 otus <- as.matrix(read.csv2("16S_data/OTU_table_raw.csv", fill = TRUE, header = TRUE,
                     row.names = 1))
 
-taxa <- tax_table(as.matrix(read.csv2("16S_data/tax_table_raw.csv", fill = TRUE, header = TRUE,
-                    row.names = 1))
+taxa <- tax_table(as.matrix(read.csv2("16S_data/tax_table_raw.csv", fill = TRUE, header = TRUE,row.names = 1))
 )
 
 phy_df <- phyloseq(otu_table(otus, taxa_are_rows = FALSE), taxa)
@@ -137,7 +143,7 @@ plot_network_custom(ig.mb, phy_df_filtered, type='taxa',
 
 The second network will be built using absolute abundance data by multiplying the relative taxon abundances by the total cell density. The final obtained counts will expressed as nr. of cells measured in 50 µL samples. We also only consider the OTUs that were left after the prevalence filtering conducted in the network construction with relative abundance data.  
 
-```{r network-analysis-absolute, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8}
+```{r network-analysis-absolute, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8, dev = c("png","pdf")}
 # Import cell count data
 cell_counts <- read.csv("16S_data/cell_counts.csv")
 cell_counts$sample_title <- as.factor(cell_counts$sample_title)
@@ -178,7 +184,10 @@ MAGs <- c(); MAGs[taxa_names(phy_df_abs)=="Otu00001"]  <- "Ramlibacter sp. MAG"
 MAGs[taxa_names(phy_df_abs)=="Otu00002"]  <- "Bacteroidetes sp. MAG1"
 MAGs[taxa_names(phy_df_abs)=="Otu00003"]  <- "Bacteroidetes sp. MAG2"
 MAGs[is.na(MAGs)] <-""
+```
 
+
+```{r network-analysis-absolute-plot, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8, dev = c("png","pdf")}
 # Plot network inferred from absolute abundances
 # png(file = "./Figures/Figures_network/NETWORK-ABS-CX-C30-A25.png", width = 9, height = 9, res = 500, units = "in")
 plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
@@ -186,7 +195,8 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
              point_size = 0.1, alpha = 0.01, label_size = 3.95)+
   # scale_fill_brewer(palette = "Paired")+
   # scale_color_brewer(palette = "Paired")+
-  scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
+  # scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
+    scale_fill_manual(values = c(col_RAMLI, brewer.pal(n = 12, "Paired")[c(6,3,4,4,7,8,1:2,11,12)]) )+
   geom_point(aes(size = vsize_abs, fill = Lineage_abs), alpha = 0.5,
              colour="black", shape=21)+
   guides(size = FALSE,
@@ -211,75 +221,203 @@ plot_network_custom(ig.mb_abs, phy_df_abs, type='taxa',
 # dev.off()
 ```
 
-```{r OTU1-dynamics, warning = FALSE, dpi = 500, fig.width = 9, fig.height = 5.5}
+## Plots  
+
+```{r OTU1-dynamics, warning = FALSE, dpi = 500, fig.width = 9, fig.height = 5.5, dev = c("png")}
 # Plot absolute OTU dynamics of OTU1
 df_abs <- psmelt(phy_df_abs)
+col_RAMLI <- "#887CAF"
 
+# Need to account for dilution factor of 2 and 50 µL volume measured
 p_abs_otu1 <- df_abs %>% dplyr::filter(OTU == "Otu00001") %>% 
-  ggplot(aes(x = Timepoint, y = Abundance))+
-  facet_grid(.~Reactor.cycle)+
+  ggplot(aes(x = Timepoint, y = 2*Abundance/50))+
+  facet_grid(.~Reactor.cycle, scales = "free")+
   scale_shape_manual(values = c(21,24))+
   geom_line(size = 1.5, linetype = 2, color = adjustcolor("#000000", 0.5))+
-  geom_point(size = 4, fill = "#e2a2fd", aes(shape = Reactor_status), alpha = 0.8,
+  geom_point(size = 4, fill = col_RAMLI, aes(shape = Reactor_status, 
+                                            alpha = Reactor_status),
              color = "black")+
+  scale_alpha_manual(values = c(0.5,1))+
   theme_bw()+
-  ylab(expression("Otu00001 abundance - cells mL"^"-1"))+
+  ylab(expression("Otu00001 abundance - cells µL"^"-1"))+
   xlab("Time relative to reactor start - days")+
-  scale_y_continuous(breaks = seq(0,50e3,5e3), limits = c(0,30e3))+
+  scale_y_continuous(breaks = seq(0,50e3,5e3)*2/50, limits = c(0,30e3)*2/50)+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         strip.text.x=element_text(size=18),
         legend.position = "top")+
-  guides(shape = guide_legend(title="Reactor status", ncol =1))
-
+  guides(shape = guide_legend(title="Reactor status", ncol =1),
+         alpha = FALSE)
 print(p_abs_otu1)
+```
+
+```{r OTU1-box-abs, warning = FALSE, dpi = 500, fig.width = 6.5, fig.height = 5, dev = c("png", "pdf")}
+
+# Boxplot of absolute abundances
+col_RAMLI <- "#887CAF"
+
+p_abs_box <- df_abs %>% 
+  dplyr::filter(OTU %in% c("Otu00001","Otu00002","Otu00003")) %>% 
+  ggplot(aes(x = OTU, y = 2*Abundance/50, fill = OTU))+
+  geom_jitter(size = 2,
+             color = "black", shape = 21, width = 0.1, alpha = 0.5)+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE,
+              trim = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+  # geom_boxplot(width = 0.5, alpha = 0.4, outlier.shape = NA)+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme_bw()+
+  ylab(expression("Cells µL"^"-1"))+
+  xlab("")+
+  # ylab("")+
+  scale_y_continuous(breaks = seq(0,50e3,10e3)*2/50, limits = c(-5e3,40e3)*2/50)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        axis.text.x=element_text(size=14),
+        title=element_text(size=16), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "sqrt")+
+  guides(shape = guide_legend(title="Reactor status", ncol =1),
+         fill = FALSE)+
+    theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+  # ggtitle(expression("Cells mL"^"-1"))
+  # ggtitle(expression("Absolute abundance (cells mL"^"-1)"))
+
+
+print(p_abs_box)
+```
+
+```{r OTU1-box-rel, dpi = 500, fig.width = 6.5, fig.height = 5, dev = c("png", "pdf")}
+# psmelt relative abundance data
+df_rel <- psmelt(phy_df_rel)
+col_RAMLI <- "#887CAF"
+
+# Boxplot of relative abundances
+p_rel_box <- df_rel %>% 
+  dplyr::filter(OTU %in% c("Otu00001","Otu00002","Otu00003")) %>% 
+  ggplot(aes(x = OTU, y = 100*Abundance, fill = OTU))+
+  geom_jitter(size = 2,
+             color = "black", shape = 21, width = 0.1, alpha = 0.5)+
+  geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+  # geom_boxplot(width = 0.5, alpha = 0.4, outlier.shape = NA)+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme_bw()+
+  # ylab(expression("Relative abundance - %"))+
+  xlab("")+
+  ylab("")+
+  scale_y_continuous(breaks = 100*seq(0,1,0.2), limits = 100*c(-0.05,1))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        axis.text.x=element_text(size=14, angle = 0),
+        title=element_text(size=16), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        strip.text.x=element_text(size=18),
+        legend.position = "top")+
+  guides(shape = guide_legend(title="Reactor status", ncol =1),
+         fill = FALSE)+
+    theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())+
+  ggtitle("Relative abundance (%)")
+
+
+print(p_rel_box)
 ```
 
 ## Physicochemistry
 
-```{r physico-data, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 6}
-# psmelt relative abundance data
-df_rel <- psmelt(phy_df_rel)
-
-for(otu in unique(df_rel$OTU)[1:3]){
+```{r physico-data, warning = FALSE, dpi = 500, fig.width = 6, fig.height = 6, dev = c("png", "svg")}
   # Assess correlations
-  Physico_df_trim_abs <- df_abs[, c("OTU", "Timepoint","Dilution_factor", 
+  Physico_df_trim_abs_OTU1 <- df_abs[, c("OTU", "Timepoint","Dilution_factor", 
                               "Formate", "Acetate", "Sulfate", 
                               "Nitrate", "Chloride", "Temperature", 
-                              "Conductivity", "pH", "Abundance")] %>%
-  dplyr::filter(!is.na(Formate), OTU == otu)
-
-  Physico_df_trim_rel <- df_rel[, c("OTU", "Timepoint","Dilution_factor", 
+                              "Conductivity", "pH", "Sample", "Abundance")] %>%
+  dplyr::filter(!is.na(Formate), OTU == "Otu00001")
+  
+  colnames(Physico_df_trim_abs_OTU1)[13] <- "OTU1 - abundance"
+  
+  Physico_df_trim_abs_OTU2 <- df_abs[,  c("OTU", "Sample", "Abundance")] %>%
+  dplyr::filter(OTU == "Otu00002")
+  colnames(Physico_df_trim_abs_OTU2)[3] <- "OTU2 - abundance"
+  
+  Physico_df_trim_abs_OTU3 <- df_abs[, c("OTU", "Sample", "Abundance")]%>%
+  dplyr::filter(OTU == "Otu00003")
+  colnames(Physico_df_trim_abs_OTU3)[3] <- "OTU3 - abundance"
+  
+  Physico_df_trim_abs_merged <- left_join(Physico_df_trim_abs_OTU1, 
+                                            Physico_df_trim_abs_OTU2,
+                                            by = "Sample")
+  
+  Physico_df_trim_abs_merged <- left_join(Physico_df_trim_abs_merged, 
+                                            Physico_df_trim_abs_OTU3,
+                                            by = "Sample")
+  # Same for relative abundances
+  Physico_df_trim_rel_OTU1 <- df_rel[, c("OTU", "Timepoint","Dilution_factor", 
                               "Formate", "Acetate", "Sulfate", 
                               "Nitrate", "Chloride", "Temperature", 
-                              "Conductivity", "pH", "Abundance")] %>%
-  dplyr::filter(!is.na(Formate), OTU == otu)
+                              "Conductivity", "pH", "Sample", "Abundance")] %>%
+  dplyr::filter(!is.na(Formate), OTU == "Otu00001")
+  
+  colnames(Physico_df_trim_rel_OTU1)[13] <- "OTU1 - abundance"
+  
+  Physico_df_trim_rel_OTU2 <- df_rel[,  c("OTU", "Sample", "Abundance")] %>%
+  dplyr::filter(OTU == "Otu00002")
+  colnames(Physico_df_trim_rel_OTU2)[3] <- "OTU2 - abundance"
+  
+  Physico_df_trim_rel_OTU3 <- df_rel[, c("OTU", "Sample", "Abundance")]%>%
+  dplyr::filter(OTU == "Otu00003")
+  colnames(Physico_df_trim_rel_OTU3)[3] <- "OTU3 - abundance"
+  
+  Physico_df_trim_rel_merged <- left_join(Physico_df_trim_rel_OTU1, 
+                                            Physico_df_trim_rel_OTU2,
+                                            by = "Sample")
+  
+  Physico_df_trim_rel_merged <- left_join(Physico_df_trim_rel_merged, 
+                                            Physico_df_trim_rel_OTU3,
+                                            by = "Sample")
+  
+  
+  # Physico_df_trim_rel <- df_rel[, c("OTU", "Timepoint","Dilution_factor", 
+  #                             "Formate", "Acetate", "Sulfate", 
+  #                             "Nitrate", "Chloride", "Temperature", 
+  #                             "Conductivity", "pH", "Abundance")] %>%
+  # dplyr::filter(!is.na(Formate), OTU == otu)
 
   # Get P-values of correlations between OTUs and physicochemistry
-  p.mat_abs <- cor.mtest(Physico_df_trim_abs[, -c(1,2,3)],
+  p.mat_abs <- cor.mtest(Physico_df_trim_abs_merged[, -c(1:3, 12,14,16)],
                                             method = "kendall")
-  p.mat_rel <- cor.mtest(Physico_df_trim_rel[, -c(1,2,3)],
+  
+  p.mat_rel <- cor.mtest(Physico_df_trim_rel_merged[, -c(1:3, 12,14,16)],
                                             method = "kendall")
 
   # Making correlation plots
-   corrplot::corrplot(cor(Physico_df_trim_abs[, -c(1,2,3)],
-                                            method = "kendall"),
-                                        type="lower",
-                                        tl.col="black", tl.srt=45,
-                                        p.mat = p.mat_abs, sig.level = 0.05,
-                                        diag=FALSE, 
-                                        title = paste("Absolute abundances - ", otu))
-   
-   corrplot::corrplot(cor(Physico_df_trim_rel[, -c(1,2,3)],
-                                            method = "kendall"), type="lower",
-                                    tl.col="black", tl.srt=45,
-                                    p.mat = p.mat_rel, sig.level = 0.05,
-                                    diag=FALSE, 
-                                    title = paste("Relative abundances - ", otu))
-
+  corrplot::corrplot(cor(Physico_df_trim_abs_merged[, -c(1:3, 12,14,16)],
+                         method = "kendall"),
+                     type="upper",
+                     tl.col="black", tl.srt=45,
+                     p.mat = p.mat_abs, sig.level = 0.05,
+                     diag=FALSE, 
+                     title = paste("Absolute abundances - ", otu))
   
-}
+  corrplot::corrplot(cor(Physico_df_trim_rel_merged[, -c(1:3, 12,14,16)],
+                         method = "kendall"),
+                     type="upper",
+                     tl.col="black", tl.srt=45,
+                     p.mat = p.mat_rel, sig.level = 0.05,
+                     diag=FALSE, 
+                     title = paste("Relative abundances - ", otu))
+  
+
+# Calculate element-wise N/P ratio assuming 1 µg/L of PO4
+molP <- (1/94.9714)/1000 # in mmol/L of upper detection limit
+mean((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP) # in mmol/L
+sd((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP)
+# mean((14*Physico_df_trim_rel_OTU1$Nitrate/62.0049))
+# sd((14*Physico_df_trim_rel_OTU1$Nitrate/62.0049))
+
 ```
 
 # B. MetaG analysis
@@ -360,7 +498,7 @@ data_total[data_total$bins %in% c("Bacteroidetes sp. MAG1",
 
 # 1. Phylogenetic tree
 ## Ramlibacter sp.
-![RAxML tree for Ramlibacter sp. MAG](./Tree/ANI_tree_concat-lowres.png)
+<!-- ![RAxML tree for Ramlibacter sp. MAG](./Tree/ANI_tree_concat-lowres2.png) -->
 
 # *2. Investigate MAG- and 16S-based abundances*
 It is clear that there is significant %GC coverage bias present. The estimated relative abundances
@@ -665,6 +803,9 @@ merged_gc_ko <- data.frame(merged_gc_ko,
 merged_gc_ko$ko_id <- gsub(merged_gc_ko$ko_id, pattern = "KO:", replacement = "")
 merged_gc_ko <- dplyr::left_join(merged_gc_ko, ko_path_df[, c(1, 4:6)], by = "ko_id")
 
+# Remove EC column because it allows duplicates for same functional classification
+merged_gc_ko <- merged_gc_ko %>% select(-EC) %>% distinct()
+
 # Fill up NA slots with "Unknown" pathway
 merged_gc_ko$ko_level_A[is.na(merged_gc_ko$ko_level_A)] <- "Unknown"
 merged_gc_ko$ko_level_B[is.na(merged_gc_ko$ko_level_B)] <- "Unknown"
@@ -822,7 +963,7 @@ write.table(tmp2, file = "All_KO.tsv", quote = FALSE,
             col.names = FALSE, row.names = FALSE)
 ```
 
-```{r compare-ramli-CB, dpi = 500, warning = FALSE, fig.width = 10, fig.height = 4}
+```{r compare-ramli-CB, dpi = 500, warning = FALSE, fig.width = 10, fig.height = 4, dev = c("png","pdf")}
 # Import codonO results of reference genomes
 ref_SCUO <- codonO_2_df(pathx = "./IMG_annotation/References/codonO_output/")
 
@@ -872,7 +1013,7 @@ p_ramli_SCUO <- ref_RAMLI_SCUO %>% dplyr::filter(GCx == "GC_mean") %>%
   scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
                                rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
                                rep("#e2a2fd",4)))+
-  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         # axis.text.x = element_text(angle = 65, hjust = 1),
@@ -894,14 +1035,14 @@ p_ramli_SCUO
 p_ramli_GC <- ref_RAMLI_SCUO  %>% dplyr::filter(GCx == "GC_mean") %>% 
   ggplot(aes(x = Genome, y = GC, fill = Genome))+
   theme_bw()+
-  geom_hline(yintercept = 0.7, col = 'black', lwd = 1, linetype = 2, alpha = 0.6)+
+  # geom_hline(yintercept = 0.7, col = 'black', lwd = 1, linetype = 2, alpha = 0.6)+
     # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
             # ymin = -Inf,ymax = Inf, alpha = 0.005, show.legend =FALSE, inherit.aes = FALSE)+
   geom_violin(alpha = 0.4, adjust = 1, draw_quantiles = TRUE)+
   scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
                                rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
                                rep("#e2a2fd",4)))+
-  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         # axis.text.x = element_text(angle = 65, hjust = 1),
@@ -921,7 +1062,39 @@ p_ramli_GC <- ref_RAMLI_SCUO  %>% dplyr::filter(GCx == "GC_mean") %>%
 
 p_ramli_GC
 
-# Format file for annotation of phylogenetic tree
+# Plot number of gene distributions
+ref_RAMLI_genes <- ref_RAMLI_SCUO  %>% dplyr::filter(GCx == "GC_mean") %>% group_by(Genome) %>% 
+  summarise(Genes = n())
+
+p_ramli_genes <- ref_RAMLI_genes  %>% 
+  ggplot(aes(x = Genome, y = Genes, fill = Genome))+
+  theme_bw()+
+  # geom_hline(yintercept = 0.7, col = 'black', lwd = 1, linetype = 2, alpha = 0.6)+
+    # geom_rect(data = tp, aes(fill = new), xmin = -Inf, xmax = Inf,
+            # ymin = -Inf,ymax = Inf, alpha = 0.005, show.legend =FALSE, inherit.aes = FALSE)+
+  geom_bar(stat = "identity", alpha = 0.4, color = "black", size = 1.1)+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4)))+
+  theme(axis.text=element_text(size=16), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size=18),
+        legend.position="bottom",
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+
+  guides(fill=FALSE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black")+
+  xlab("")+
+  ylab("")
+  # scale_y_continuous(labels = function(x) sprintf("%.2f", x), breaks = seq(0.20,0.90,0.10),
+                     # limits = c(0.2,0.9))
+  # scale_y_continuous(breaks = seq(0.20,0.90,0.10), limits = c(0.2,0.9))
+
+p_ramli_genes
 
 ```
 
@@ -1050,12 +1223,18 @@ print(hm_posi_c)
 
 ```
 
-```{r posigene-selection, dpi = 300, fig.width = 13, fig.height = 10, warning = FALSE}
+## 9.2. Analysis  
+
+```{r posigene-selection, dpi = 300, fig.width = 13, fig.height = 10, warning = FALSE, dev = c("png","pdf")}
 # Import results file of genome-specific PSGs only
 data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", "HA.kappa",                                                                            "Number.of.Sites.under.positive.Selection")]
+
 # Import results file of Ramlibacter clade-specific PSGs
-data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega",  "HA.kappa",
-                                                              "Number.of.Sites.under.positive.Selection")]
+data_posi_clade <- read.table("./posigene_analysis/result_tables_clade/Ramlibacter_MAG_results.tsv",
+                              header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript",
+                                                                          "P.Value","FDR",
+                                                                          "HA.foreground.omega", 
+                                                                          "HA.kappa",                                                                        "Number.of.Sites.under.positive.Selection")]
 
 colnames(data_posi)[1] <- "Gene"; colnames(data_posi_clade)[1] <- "Gene"
 data_posi$Gene <- as.character(data_posi$Gene)
@@ -1071,27 +1250,40 @@ map_posi$posi_geneID <- as.character(map_posi$posi_geneID)
 # Taking threshold of adjusted p.value of 0.05 and FDR < 0.05
 # Also remove dN/dS ratios of less than 15.
 data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05 & HA.foreground.omega < 10)
+                                    FDR < 0.05 & HA.foreground.omega < 30)
 data_posi_clade <- data_posi_clade %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05 & HA.foreground.omega < 10)
-# data_posi <- data_posi %>% filter(P.Value < 0.05 & 
-#                                     FDR < 0.05 & HA.foreground.omega < 10 &
-#                                     Number.of.Sites.under.positive.Selection > 10)
+                                    FDR < 0.05 & HA.foreground.omega < 30)
+
 # Report summaries
 cat(paste("There are ", nrow(data_posi), " genes under positive selection in this MAG (P<0.05). This is ",round(100*nrow(data_posi)/nrow(map_posi),1), "% of all genes",  sep = "")
 )
-cat(paste("There are ", nrow(data_posi_clade), " genes under positive selection in the Ramlibacter clade (P<0.05). This is ", round(100*nrow(data_posi_clade)/nrow(map_posi),1), "% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species",  sep = "")
-)
-cat(paste("There are ", sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene)), " genes under positive selection in this MAG (P<0.05). This is ",round(100*sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene))/nrow(map_posi),1), "% of all genes in this MAG",  sep = "")
-)
-# Merge this data with the functional annotation (e.g. KO) of these genes
+cat(paste("There are ", nrow(data_posi_clade), 
+          " genes under positive selection in the Ramlibacter clade (P<0.05). This is ",
+          round(100*nrow(data_posi_clade)/nrow(map_posi),1), 
+          "% of all genes in the Ramlibacter sp. MAG which was used as reference/anchor species",  
+          sep = "")
+    )
+cat(paste("There are ", sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene)), 
+          " genes unique to this MAG under positive selection (P<0.05). This is ",
+          round(100*sum(!unique(data_posi$Gene)%in% unique(data_posi_clade$Gene))/nrow(map_posi),1),
+          "% of all genes in this MAG",  sep = "")
+    )
+
+# Merge this data with the functional annotation (i.e. KO and COG) of these genes
 data_posi <- left_join(data_posi, map_posi, by = c("Gene" = "posi_geneID"))
 data_posi_clade <- left_join(data_posi_clade, map_posi, by = c("Gene" = "posi_geneID"))
-data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
-data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+data_posi_KO <- left_join(data_posi, merged_gc_ko, 
+                          by = c("IMG_geneID" = "contig_geneID")) %>% distinct()
+data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, 
+                                by = c("IMG_geneID" = "contig_geneID")) %>% distinct()
+
 # Also add COG annotation to both data sets
-data_posi_KO <- left_join(data_posi, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
-data_posi_clade_KO <- left_join(data_posi_clade, merged_gc_ko, by = c("IMG_geneID" = "contig_geneID"))
+data_posi_COG <- left_join(data_posi, merged_gc_cog, 
+                           by = c("IMG_geneID" = "contig_geneID"))
+
+data_posi_clade_COG <- left_join(data_posi_clade, merged_gc_cog, 
+                                 by = c("IMG_geneID" = "contig_geneID"))
+
 # Also add Pfam annotation to both data sets
 
 # Retain clade or MAG only genes in the respective dataframes
@@ -1102,37 +1294,49 @@ data_posi_KO <- data_posi_KO[pos, ]
 data_posi_clade_KO <- data_posi_clade_KO[pos2, ]
 data_posi_clade_MAG_KO <- data_posi_clade_KO[pos3, ]
 
-# Optional: write table for quick view in iPath v2
-write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
-            row.names = FALSE, col.names = FALSE)
-write.table(file = "KO_posiG_clade.tsv", unique(data_posi_clade_KO$ko_id), quote = FALSE,
-            row.names = FALSE, col.names = FALSE)
-# cat("Genes under positive selection with KO annotation")
-
 # Merge dataframes to plot
-
 # Remove levels without "n_level" number of genes
-n_level <- round(0.01*sum(table(data_posi_clade_KO$ko_level_C)),0)
-posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)[table(data_posi_clade_KO$ko_level_C)>n_level]
-posiG_p_df_clade <- data.frame(posiG_p_df_clade); posiG_p_df_clade$Var1 <- as.character(posiG_p_df_clade$Var1)
+n_level = 10
 
-n_level <- round(0.01*sum(table(data_posi_KO$ko_level_C)),0)
-posiG_p_df_MAG  <- table(data_posi_KO$ko_level_C)[table(data_posi_KO$ko_level_C)>n_level]
-posiG_p_df_MAG <- data.frame(posiG_p_df_MAG); posiG_p_df_MAG$Var1 <- as.character(posiG_p_df_MAG$Var1)
+# make contigency tables for functional level C
+posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)
+posiG_p_df_clade <- data.frame(posiG_p_df_clade) 
+posiG_p_df_MAG  <- table(data_posi_KO$ko_level_C)
+posiG_p_df_MAG <- data.frame(posiG_p_df_MAG) 
+posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$ko_level_C)
+posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade)
 
-n_level <- round(0.01*sum(table(data_posi_clade_MAG_KO$ko_level_C)),0)
-posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_KO$ko_level_C)[table(data_posi_clade_MAG_KO$ko_level_C)>n_level]
-posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$Var1 <- as.character(posiG_p_df_MAG_clade$Var1)
+# Merge tables and extract labels of interest
+test <- left_join(posiG_p_df_MAG, posiG_p_df_MAG_clade, 
+                            by = "Var1")
+test <- left_join(test, posiG_p_df_clade, 
+                            by = "Var1")
+test[is.na(test)] <- 0
+test <- data.frame(labels = test$Var1, totalSums = rowSums(test[, 2:4]))
+labels_2_vis <- test$labels[test$totalSums > n_level]
+
+posiG_p_df_MAG <- posiG_p_df_MAG %>% dplyr::filter(Var1 %in% labels_2_vis)
+posiG_p_df_MAG_clade <- posiG_p_df_MAG_clade %>% dplyr::filter(Var1 %in% labels_2_vis)
+posiG_p_df_clade <- posiG_p_df_clade %>% dplyr::filter(Var1 %in% labels_2_vis)
+
+# Get total of ko annotated genes per category
+total_ko_genes <- table(merged_gc_ko$ko_level_C)
+total_ko_genes <- data.frame(total_ko_genes)
+colnames(total_ko_genes)[2] <- "TotalGenes"
 
 # Merge dataframes
 posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG, 
                                       posiG_p_df_MAG_clade),
-                                branch = factor(c(rep("clade", nrow(posiG_p_df_clade)), 
+                                branch = factor(c(rep("LCA", nrow(posiG_p_df_clade)), 
                                            rep("MAG", nrow(posiG_p_df_MAG)),
-                                           rep("clade+MAG", nrow(posiG_p_df_MAG_clade))),
-                                levels = c("MAG", "clade", "clade+MAG"))
+                                           rep( "LCA+MAG", nrow(posiG_p_df_MAG_clade))),
+                                levels = c("MAG", "LCA",  "LCA+MAG"))
 )
 data_posi_KO_merge <- rbind(data_posi_KO, data_posi_clade_KO, data_posi_clade_MAG_KO)
+
+# Add total ko annotated genes per category
+posiG_p_df_merged <- dplyr::left_join(posiG_p_df_merged, total_ko_genes,
+                                       by = "Var1")
 
 # Merge with level B annotation
 posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_KO_merge[, c("ko_level_A","ko_level_B","ko_level_C")],
@@ -1153,8 +1357,246 @@ posiG_p_df_merged$ko_level_C_short <- as.character(posiG_p_df_merged$ko_level_C_
 posiG_p_df_merged$ko_level_C_short[!posiG_p_df_merged$ko_level_C_short %in% tmp] <- "Other"
 posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
                                           levels = c(tmp,"Other"))
+
+# selected_KO <- c("Membrane transport", "Amino acid metabolism",
+#                  "Amino acid metabolism", "Translation",
+#                  "Lipid metabolism", "Energy metabolism",
+#                  "Metabolism of cofactors and vitamins")
 # Make plot
-p_KO_posi <- ggplot(posiG_p_df_merged, aes(x = ko_level_B, y = Freq, fill = ko_level_C_short))+
+posiG_p_df_merged$branch <- factor(as.character(posiG_p_df_merged$branch),
+                                   levels = c("MAG", "LCA+MAG","LCA"))
+# Get order of ko_level_b correct based on summed frequencies
+posiG_p_df_merged <- posiG_p_df_merged %>% 
+  # dplyr::filter(branch == "MAG") %>% 
+  # dplyr::filter(ko_level_B %in% selected_KO) %>%
+  arrange(ko_level_B, Freq) %>%               # sort your dataframe
+  mutate(Var1 = factor(Var1, unique(Var1))) # reset your factor-column based on that order
+
+# order_var1 <- posiG_p_df_merged %>% group_by(Var1, ko_level_B) %>% summarise(sum(Freq))
+# order_var1 <- as.character(order_var1[rev(order(order_var1$`sum(Freq)`)), ]$Var1)
+# posiG_p_df_merged$Var1 <- factor(as.character(posiG_p_df_merged$Var1),
+#                                  levels = order_var1)
+
+# Only select the functions for which there has been selection in the MAG
+relevant_Var1 <- posiG_p_df_merged %>% dplyr::filter(branch == "MAG")
+
+# Order withing ko_level_b based on summed frequency (for visualization)
+within_ko_order <- posiG_p_df_merged %>% 
+  # dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  group_by(Var1) %>% 
+  mutate(sum_freq = sum(Freq))
+
+# Make plot
+p_KO_posi <- within_ko_order %>% 
+  # dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  droplevels() %>% 
+  group_by(ko_level_B) %>% 
+  dplyr::arrange(desc(sum_freq), .by_group = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Var1 = as.character(Var1)) %>% 
+  mutate(Var1 = factor(Var1, unique(Var1))) %>% 
+  ggplot(aes(x = Var1, y = Freq, fill = branch, group = branch))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
+  ylab("PSG frequency") + xlab("")+
+  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  # facet_grid(.~ko_level_B)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=18, angle = 0))+
+  theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+
+print(p_KO_posi)
+
+# Make plot
+p_KO_posi_relative <- within_ko_order %>% 
+  # dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  droplevels() %>% 
+  group_by(ko_level_B) %>% 
+  dplyr::arrange(desc(sum_freq), .by_group = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Var1 = as.character(Var1)) %>% 
+  mutate(Var1 = factor(Var1, unique(Var1))) %>% 
+  ggplot(aes(x = Var1, y = 100*Freq/TotalGenes, fill = branch, group = branch))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
+  ylab("PSG frequency (%)") + xlab("")+
+  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  # facet_grid(.~ko_level_B)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=18, angle = 0))+
+  theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+
+print(p_KO_posi_relative)
+
+within_ko_order_sb <- posiG_p_df_merged %>% 
+  dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  group_by(Var1) %>% 
+  mutate(sum_freq = sum(Freq))
+
+# Make plot
+p_KO_posi_subset <- within_ko_order_sb %>% 
+  dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  droplevels() %>% 
+  group_by(ko_level_B) %>% 
+  dplyr::arrange(desc(sum_freq), .by_group = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Var1 = as.character(Var1)) %>% 
+  mutate(Var1 = factor(Var1, unique(Var1))) %>% 
+  ggplot(aes(x = Var1, y = Freq, fill = branch, group = branch))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
+  ylab("PSG frequency") + xlab("")+
+  theme(axis.text.y=element_text(size=15), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  # facet_grid(.~ko_level_B)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=18, angle = 0))+
+  theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+
+print(p_KO_posi_subset)
+
+
+p_KO_posi_subset_relative <- within_ko_order_sb %>% 
+  dplyr::filter(Var1 %in% unique(relevant_Var1$Var1)) %>%
+  droplevels() %>% 
+  group_by(ko_level_B) %>% 
+  dplyr::arrange(desc(sum_freq), .by_group = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Var1 = as.character(Var1)) %>% 
+  mutate(Var1 = factor(Var1, unique(Var1))) %>% 
+  ggplot(aes(x = Var1, y = 100*Freq/TotalGenes, fill = branch, group = branch))+
+  geom_bar(stat="identity", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, brewer.pal(11, "BrBG")[c(7,10)]))+
+  ylab("PSG frequency (%)") + xlab("")+
+  theme(axis.text.y=element_text(size=15), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=18),
+        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  # facet_grid(.~ko_level_B)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=18, angle = 0))+
+  theme(axis.line = element_line(size = 1, colour = "grey80"),
+        panel.border = element_blank())
+
+print(p_KO_posi_subset_relative)
+
+# Upset figure
+
+```
+
+
+```{r posigene-selection-2, dpi = 300, fig.width = 13, fig.height = 10, warning = FALSE, dev = c("png","pdf")}
+
+# Also add COG annotation to both data sets
+data_posi_COG <- left_join(data_posi, merged_gc_cog, 
+                           by = c("IMG_geneID" = "contig_geneID"))
+
+data_posi_clade_COG <- left_join(data_posi_clade, merged_gc_cog, 
+                                 by = c("IMG_geneID" = "contig_geneID"))
+
+
+# Same analysis as above but for the COG annotated PSG dataset
+# Retain clade or MAG only genes in the respective dataframes
+pos <- !data_posi_COG$Gene %in% data_posi_clade_COG$Gene
+pos2 <- !data_posi_clade_COG$Gene %in% data_posi_COG$Gene
+pos3 <- data_posi_clade_COG$Gene %in% data_posi_COG$Gene
+data_posi_COG <- data_posi_COG[pos, ]
+data_posi_clade_COG <- data_posi_clade_COG[pos2, ]
+data_posi_clade_MAG_COG <- data_posi_clade_COG[pos3, ]
+
+# Optional: write table for quick view in iPath v2
+# write.table(file = "KO_posiG.tsv", unique(data_posi_KO$ko_id), quote = FALSE,
+#             row.names = FALSE, col.names = FALSE)
+# write.table(file = "KO_posiG_clade.tsv", unique(data_posi_clade_KO$ko_id), quote = FALSE,
+#             row.names = FALSE, col.names = FALSE)
+
+# Merge dataframes to plot
+# Remove levels without "n_level" number of genes
+n_level <- round(0.01*sum(table(data_posi_clade_COG$COG_functional_category)),0)
+posiG_p_df_clade  <- table(data_posi_clade_COG$COG_functional_category)[table(data_posi_clade_COG$COG_functional_category)>n_level]
+posiG_p_df_clade <- data.frame(posiG_p_df_clade); posiG_p_df_clade$Var1 <- as.character(posiG_p_df_clade$Var1)
+
+n_level <- round(0.01*sum(table(data_posi_COG$COG_functional_category)),0)
+posiG_p_df_MAG  <- table(data_posi_COG$COG_functional_category)[table(data_posi_COG$COG_functional_category)>n_level]
+posiG_p_df_MAG <- data.frame(posiG_p_df_MAG); posiG_p_df_MAG$Var1 <- as.character(posiG_p_df_MAG$Var1)
+
+n_level <- round(0.01*sum(table(data_posi_clade_MAG_COG$COG_functional_category)),0)
+posiG_p_df_MAG_clade  <- table(data_posi_clade_MAG_COG$COG_functional_category)[table(data_posi_clade_MAG_COG$COG_functional_category)>n_level]
+posiG_p_df_MAG_clade <- data.frame(posiG_p_df_MAG_clade); posiG_p_df_MAG_clade$Var1 <- as.character(posiG_p_df_MAG_clade$Var1)
+
+# Merge dataframes
+posiG_p_df_merged <- data.frame(rbind(posiG_p_df_clade, posiG_p_df_MAG, 
+                                      posiG_p_df_MAG_clade),
+                                branch = factor(c(rep("LCA", nrow(posiG_p_df_clade)), 
+                                           rep("MAG", nrow(posiG_p_df_MAG)),
+                                           rep( "LCA+MAG", nrow(posiG_p_df_MAG_clade))),
+                                levels = c("MAG", "LCA",  "LCA+MAG"))
+)
+data_posi_cog_merge <- rbind(data_posi_COG, data_posi_clade_COG, data_posi_clade_MAG_COG)
+
+# Merge with level B annotation
+posiG_p_df_merged <- left_join(posiG_p_df_merged, data_posi_cog_merge[, 
+                                                                      c("COG_functional_category",
+                                                                        "COG_functional_cluster",
+                                                                        "COG_class")],
+                       by = c("Var1" = "COG_functional_category")) %>% distinct()
+
+# posiG_p_df_merged$ko_level_B[posiG_p_df_merged$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
+
+# Sort according to frequency
+posiG_p_df_merged$Var1 <- factor(posiG_p_df_merged$Var1, levels = unique(posiG_p_df_merged$Var1[rev(order(posiG_p_df_merged$Freq))]))
+
+# posiG_p_df_merged$ko_level_B <- factor(posiG_p_df_merged$COG_functional_cluster, levels = unique(posiG_p_df_merged$ko_level_B[rev(order(posiG_p_df_merged$Freq))]))
+
+# Add extra column to shorten number of labels in legend
+# Only show 12 most frequent categories
+# posiG_p_df_merged <- posiG_p_df_merged %>% mutate(ko_level_C_short = 
+#                                                     Var1)
+# tmp <- levels(posiG_p_df_merged$Var1)[1:11]
+# posiG_p_df_merged$ko_level_C_short <- as.character(posiG_p_df_merged$ko_level_C_short)
+# posiG_p_df_merged$ko_level_C_short[!posiG_p_df_merged$ko_level_C_short %in% tmp] <- "Other"
+# posiG_p_df_merged$ko_level_C_short <- factor(posiG_p_df_merged$ko_level_C_short,
+#                                           levels = c(tmp,"Other"))
+
+# selected_KO <- c("Membrane transport", "Amino acid metabolism",
+#                  "Amino acid metabolism", "Translation",
+#                  "Lipid metabolism", "Energy metabolism",
+#                  "Metabolism of cofactors and vitamins")
+# Make plot
+p_cog_posi <- posiG_p_df_merged %>% 
+  # dplyr::filter(ko_level_B %in% selected_KO) %>% 
+  ggplot(aes(x = Var1, y = Freq, fill = COG_functional_cluster))+
   geom_bar(stat="identity", color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
@@ -1170,7 +1612,7 @@ p_KO_posi <- ggplot(posiG_p_df_merged, aes(x = ko_level_B, y = Freq, fill = ko_l
         # ,legend.position = c(0.87, 0.85)
         )
 
-print(p_KO_posi)
+print(p_cog_posi)
 ```
 
 As we had significant concerns related that there was a %GC dependency of dN/dS (`HA.foreground.omega`) and the associated `P.value` for the branch-site codon model we also checked this specifically for the branch- and clade-tests.   
@@ -1554,11 +1996,8 @@ p_aa_kappa <- ggplot(data_posi2_long, aes(x = AA, y = HA.kappa))+
 print(p_aa_kappa)
 ```
 
-```{r posigene-codon, dpi = 500, fig.width = 8, fig.height = 6, warning = FALSE}
 
-```
-
-## 9.2. Evaluate nucleotide transitions
+## 9.3. Evaluate nucleotide transitions
 
 ```{r posigene-trans, dpi = 500, fig.width = 8, fig.height = 6, warning = FALSE}
 # Read in global nucleotide alignment file
@@ -1587,26 +2026,46 @@ for gene in `cat gene_list_pan.tsv`; do
 done
 ```
 
-![Pangenome visualized in anvio](./panG/image4144.png)
+![Pangenome visualized in anvio](./panG/viewport.png)
 
-```{r panG-analysis, dpi = 500, fig.width = 11, fig.height = 12, warning = FALSE}
+```{r panG-analysis, dpi = 500, fig.width = 13, fig.height = 7, warning = FALSE, dev = c("png","pdf")}
 # Import and format panG data
 panG <- read.table("./panG/SUMMARY_Ramli_PCs/panG-ramli_protein_clusters_summary.txt", header = TRUE, fill = TRUE, sep = "\t")[ , c("bin_name",	"genome_name",	"gene_callers_id",	"COG_CATEGORY_ACC",	"COG_CATEGORY",	"COG_FUNCTION_ACC", "COG_FUNCTION", "aa_sequence")]
 panG$aa_sequence <- gsub("-", "", panG$aa_sequence)
 panG_MAG <- panG %>% filter(bin_name %in% c("MAG_PC", "Ramli_5-10_PC",
-                                          "Ramli_Leaf400_PC", "Ramli_TTB310_PC"))
+                                          "Ramli_Leaf400_PC", "Ramli_TTB310_PC",
+                                          "CORE_PC", "Mixed_PCs"))
 panG_MAG$gene_callers_id <- as.character(panG_MAG$gene_callers_id)
+
+# Shorten names
+panG_MAG$genome_name <- plyr::revalue(panG_MAG$genome_name,
+                            replace = c("Ramlibacter_MAG" = "Ramli-MAG",
+                                        "Ramlibacter_sp_Leaf400" = "Ramli-Leaf400",
+                                        "Ramlibacter_sp_TTB310" = "Ramli-TTB310",
+                                        "Ramlibacter_sp_5_10" = "Ramli-5-10"))
+
+# Add unique gene identifier 
+panG_MAG$unique_gene_callers_id <- interaction(panG_MAG$genome_name, 
+                                               panG_MAG$gene_callers_id,
+                                               sep = ".")
+
+# Export all AA sequences for annotation with KAAS or for blast
+# for(i in 1:length(unique(panG_MAG$genome_name))){
+#   tmp <- panG_MAG %>% dplyr::filter(genome_name == unique(panG_MAG$genome_name)[i]) %>% 
+#     droplevels()
+#     write.table(file = paste0("./panG/", unique(panG_MAG$genome_name)[i],
+#                               "_aa_export.fa"), 
+#            paste0(">", tmp$unique_gene_callers_id, 
+#       "\n", tmp$aa_sequence, sep = ""),
+#       quote = FALSE, row.names = FALSE, col.names = FALSE
+#       )
+# }
 
 # Export Ramlibacter sp. auxillary genome COGF annotation 
 # for visualization in ipath2
-write.table(paste(panG_MAG$COG_FUNCTION_ACC, "W10", "#e2a2fd", panG_MAG$genome_name,
-                  sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
-            quote = FALSE, col.names = FALSE)
-
-write.table(paste(">", panG_MAG$gene_callers_id,
-                  "\n", panG_MAG$aa_sequence, sep = ""), 
-            "./panG/aaSeq_panG.fa", row.names = FALSE,
-            quote = FALSE, col.names = FALSE)
+# write.table(paste(panG_MAG$COG_FUNCTION_ACC, "W10", "#e2a2fd", panG_MAG$genome_name,
+#                   sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
+#             quote = FALSE, col.names = FALSE)
 
 # Import KEGG annotation through KAAS (http://www.genome.jp/tools/kaas/) of amino
 # acid sequences
@@ -1614,50 +2073,50 @@ ko_files <- list.files(".", pattern = "KO-annotation.tsv",
                        recursive = TRUE)
 panG_ko <- data.frame()
 for(ko_file in ko_files){
-  tmp <- read.delim(ko_file, header = FALSE)
+  tmp <- read.delim(ko_file, fill = TRUE)
   tmp <- data.frame(tmp, Genome = do.call(rbind, strsplit(ko_file, "_"))[,2])
   if(ko_file == ko_files[1]) panG_ko <- tmp else{
     panG_ko <- rbind(panG_ko, tmp)
   }
 }
-colnames(panG_ko)[1:2] <- c("gene_id", "ko_id")
 panG_ko <- panG_ko[panG_ko$ko_id != "",]
 panG_ko$ko_id <- gsub(" ","", panG_ko$ko_id)
-
+  
 # Annotate KO_IDs with hierarchy
 panG_ko <- dplyr::left_join(panG_ko, ko_path_df, by = "ko_id")
 
 # join with corresponding COG ids
-panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, by = c("gene_callers_id" = "gene_id"))
+panG_ko_cog <- dplyr::left_join(panG_MAG, panG_ko, 
+                                by = "unique_gene_callers_id")
 
 # Shorten/change ko_level_B annotation a bit
 panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Cellular community - prokaryotes"] <- "Biofilm formation & quorum sensing"
 panG_ko_cog$ko_level_B[panG_ko_cog$ko_level_B == "Xenobiotics biodegradation and metabolism"] <- "Xenobiotics degradation"
 panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Escherichia coli "] <- "Biofilm formation"
-panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Xenobiotics degradation"
+panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomonas aeruginosa "] <- "Biofilm formation"
 
-# Select some annotation levels of interest to visualize
-tmp_names <- names(table(panG_ko_cog$ko_level_B)[rev(order(table(panG_ko_cog$ko_level_B)))][1:10])
-
-write.table(unique(panG_ko_cog$gene_callers_id), 
-            "./panG/gene_ids_pan.tsv", row.names = FALSE,
-            quote = FALSE, col.names = FALSE)
+# Add column denoting whether it is core/mixed or accessory
+panG_ko_cog$bin_core <- factor(panG_ko_cog$bin_name == "CORE_PC" | panG_ko_cog$bin_name == "Mixed_PCs")
+panG_ko_cog$bin_core <- plyr::revalue(panG_ko_cog$bin_core, replace = c("TRUE" = "CORE/Mixed", "FALSE" = "Accessory"))
 
 # Plot distribution of panG annotation 
 ## Expressed as number of genes
-p_panG1 <- panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>% 
+p_panG1 <- panG_ko_cog %>% 
+  select(ko_level_B, genome_name,ko_level_A, bin_core, unique_gene_callers_id) %>% 
+  filter(ko_level_B %in% tmp_names) %>% 
+  distinct() %>% 
   ggplot(aes(x = genome_name, fill = ko_level_B))+
   geom_bar(color = "black")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
   ggtitle("Number of genes")+
   ylab("") + xlab("")+
-  facet_grid(.~ko_level_A)+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+  facet_grid(bin_core~ko_level_A, scales = "free")+
+  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text=element_text(size=18),
+        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
+        strip.text=element_text(size=14),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
         legend.position = "bottom"
         )+
@@ -1665,65 +2124,54 @@ p_panG1 <- panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>%
 print(p_panG1)
 
 # Get sizes of each protein cluster bin
-sizes_panG <- data.frame(panG %>% group_by(bin_name) %>% 
-  count(bin_name))
-sizes_panG <- left_join(sizes_panG, distinct(panG[, 1:2]), by = "bin_name")
+sizes_panG <- data.frame(panG_MAG %>% group_by(bin_name, genome_name) 
+                         %>% count(bin_name)
+                         %>% mutate(merge_bin_genome = 
+                                      interaction(bin_name, genome_name))
+)
+sizes_panG <- sizes_panG[-c(1,2)]
+colnames(sizes_panG)[1] <- "bin_size"
 
 # Format table to include ko_level_A annotation
 # as well as the protein cluster sizes so that we can normalize to 
 # CORE genome as well as each accessory genome
-panG_ko_table <- data.frame(panG_ko_cog %>% filter(ko_level_B %in% tmp_names) %>% 
-  group_by(genome_name, ko_level_B) %>% 
-  summarise(abund_ko = n()))
-panG_ko_table <- left_join(panG_ko_table, sizes_panG, by = "genome_name")
-panG_ko_table <- panG_ko_table %>% group_by(genome_name) %>% 
-  mutate(abund_ko_prop = abund_ko/n)
+panG_ko_cog <- panG_ko_cog %>% mutate(merge_bin_genome = 
+                                      interaction(bin_name, genome_name))
+
+# Calculate relative abundance
+panG_ko_cog <- left_join(panG_ko_cog, sizes_panG, by = "merge_bin_genome")
+panG_ko_table <- panG_ko_cog %>% dplyr::filter(ko_level_B %in% tmp_names) %>% 
+  group_by(merge_bin_genome, ko_level_B) %>% 
+  mutate(abund_ko = length(unique(unique_gene_callers_id))/bin_size,
+         number_of_genes = length(unique(ko_id)))
+
+
 panG_ko_table <- left_join(panG_ko_table, 
                            distinct(panG_ko_cog[, c("ko_level_A", "ko_level_B")]),
                            by = c("ko_level_B"))
 
 # Plot distribution of panG annotation 
-## Expressed as % of core genome gene set
-p_panG2 <- panG_ko_table %>% 
-  filter(bin_name %in% c("CORE_PC")) %>% 
-  ggplot(aes(x = genome_name, y = 100*abund_ko_prop,  fill = ko_level_B))+
-  geom_bar(color = "black", stat = "identity")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  ggtitle("Relative abundance (% - normalized vs. core genome)")+
-  ylab("") + xlab("")+
-  facet_grid(.~ko_level_A)+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text=element_text(size=18),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
-        legend.position = "bottom"
-        )+
-  guides(fill = guide_legend(nrow = 4))
-
-print(p_panG2)
-
-# Plot distribution of panG annotation 
 ## Expressed as % of individual unique gene pool
 p_panG3 <- panG_ko_table %>% 
-  filter(bin_name %in% c("MAG_PC", 
-                         "Ramli_5-10_PC",
-                         "Ramli_Leaf400_PC", 
-                         "Ramli_TTB310_PC")) %>% 
-  ggplot(aes(x = genome_name, fill = ko_level_B, y = 100*abund_ko_prop))+
+  select(genome_name, abund_ko, ko_level_B, ko_level_A.x, bin_core) %>% 
+  distinct() %>% 
+  filter(bin_core == "Accessory") %>% 
+  # filter(bin_name %in% c("MAG_PC", 
+  #                        "Ramli_5-10_PC",
+  #                        "Ramli_Leaf400_PC", 
+  #                        "Ramli_TTB310_PC")) %>% 
+  ggplot(aes(x = genome_name, fill = ko_level_B, y = 100*abund_ko))+
   geom_bar(color = "black", stat = "identity")+
   theme_bw()+
   scale_fill_brewer(palette="Paired")+
-  ggtitle("Relative abundance (% - normalized vs. accessory genomes)")+
+  ggtitle("Relative abundance (% - normalized vs. accessory genome sizes)")+
   ylab("") + xlab("")+
-  facet_grid(.~ko_level_A)+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
+  facet_grid(.~ko_level_A.x, scales = "free")+
+  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
         title=element_text(size=18), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text=element_text(size=18),
+        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
+        strip.text=element_blank(),
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
         legend.position = "bottom"
         )+
@@ -1731,21 +2179,405 @@ p_panG3 <- panG_ko_table %>%
 
 print(p_panG3)
 
-# Plot distribution of panG annotation 
-## Expressed as % of individual genome gene pool
+```
 
 
-# Now select the genes that are PSGs
-blast_panG <- read.delim("./panG/genes_pan.blast", header = FALSE)
-colnames(blast_panG) <- c("qseqid", "sseqid", "pident", "length", "mismatch",
-                          "gapopen", "qstart", "qend", "sstart", "send", 
-                          "evalue", "bitscore")
+```{r panG-analysis-2, dpi = 500, fig.width = 6.5, fig.height = 6, warning = FALSE, dev = c("png","pdf")}
+# Plot upset plot flagellar assembly genes
+panG_ko_flagel <- panG_ko_cog %>% 
+  dplyr::filter(grepl("flagel", ko_function_spec)) %>% 
+  dplyr::select(ko_id, bin_name, ko_function_abbrev, ko_function_spec,
+                unique_gene_callers_id) %>%
+  distinct()
 
-blast_panG$qseqid <- do.call(rbind, strsplit(as.character(blast_panG$qseqid), split = "|", fixed = TRUE))[,1]
+# Make presence column
+panG_ko_flagel$Presence <- 1
+# panG_ko_flagel$bin_name <- gsub("-", "_", panG_ko_flagel$bin_name)
+
+# Revalue
+panG_ko_flagel$bin_name <- plyr::revalue(panG_ko_flagel$bin_name,
+                                  replace = c("MAG_PC" = "R.aquaticus", 
+                                              "Ramli_5-10_PC" = 'R.5.10', 
+                                              "Ramli_TTB310_PC" = "R.TTB310",
+                                              "Mixed_PCs" = "Mixed_PCs"))
+
+# From long to wide format
+panG_ko_flagel <- panG_ko_flagel %>% 
+  group_by(ko_id, bin_name) %>% 
+  mutate(sum_presence = sum(Presence)) %>% 
+  select(-unique_gene_callers_id, -Presence) %>%
+  distinct() %>% 
+  droplevels()
+
+# Make heatmap plot of flagel assembly genes
+hm_flagel <- panG_ko_flagel %>%
+  select(ko_id,bin_name,sum_presence) %>% 
+  complete(., bin_name, ko_id, fill = list(sum_presence=0)) %>% 
+  ungroup() %>% 
+  mutate(bin_name = factor(bin_name, 
+                           levels = c("R.aquaticus","R.5.10",
+                                      "R.TTB310","Mixed_PCs"))) %>% 
+  distinct() %>% 
+  ggplot(aes(y = bin_name, x = ko_id)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = sum_presence), col = "lightgrey") + 
+  geom_text(aes(label = round(sum_presence, 0)), size = 3) + # write the values
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1, limits = c(0,4)) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,
+                                   face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+# Plot upset plot chemotaxis genes
+panG_ko_chemo <- panG_ko_cog %>% 
+  dplyr::filter(grepl("chemotaxis", ko_level_C)) %>% 
+  dplyr::select(ko_id, bin_name, ko_function_abbrev, 
+                ko_function_spec, unique_gene_callers_id) %>%
+  distinct()
+
+# Make presence column
+panG_ko_chemo$Presence <- 1
+# panG_ko_chemo$bin_name <- gsub("-", "_", panG_ko_chemo$bin_name)
+
+# Revalue
+panG_ko_chemo$bin_name <- plyr::revalue(panG_ko_chemo$bin_name,
+                                  replace = c("MAG_PC" = "R.aquaticus", 
+                                              "Ramli_5-10_PC" = 'R.5.10', 
+                                              "Ramli_TTB310_PC" = "R.TTB310",
+                                              "Mixed_PCs" = "Mixed_PCs"))
+  
+# From long to wide format
+panG_ko_chemo <- panG_ko_chemo %>% 
+  group_by(ko_id, bin_name) %>% 
+  mutate(sum_presence = sum(Presence)) %>% 
+  select(-unique_gene_callers_id, -Presence) %>%
+  distinct() %>% 
+  droplevels()
+
+# Make heatmap plot of flagel assembly genes
+hm_chemo <- panG_ko_chemo %>%
+  select(ko_id,bin_name,sum_presence) %>% 
+  complete(., bin_name, ko_id, fill = list(sum_presence=0)) %>% 
+  ungroup() %>% 
+  mutate(bin_name = factor(bin_name, 
+                           levels = c("R.aquaticus","R.5.10",
+                                      "R.TTB310","Mixed_PCs"))) %>% 
+  distinct() %>% 
+  ggplot(aes(y = bin_name, x = ko_id)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = sum_presence), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(sum_presence, 0)), size = 3) + # write the values
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1, limits = c(0,4)) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,
+                                   face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+cowplot::plot_grid(hm_flagel, hm_chemo, nrow = 2, align = "v",
+                   labels = c("A.", "B."))
+```
+
+### Enrichment in panG
+
+```{r panG-analysis-3, dpi = 500, fig.width = 7, fig.height = 4.5, warning = FALSE, dev = c("png","pdf")}
+# Perform hypergeometric test to see if there is functional enrichment in the pangenome
+for(i_genome in 1:length(unique(panG_ko$Genome))){
+  bg_gsea <- panG_ko %>% filter(Genome == unique(panG_ko$Genome)[i_genome]) %>% 
+  select(ko_level_C,unique_gene_callers_id) %>% 
+  distinct()
+  
+  panG_gseq <- panG_ko_cog %>% 
+    filter(Genome == unique(panG_ko$Genome)[i_genome] & bin_core == "Accessory") %>%
+    select(ko_level_C,unique_gene_callers_id) %>% 
+    distinct()
+  
+  panG_gsea <- enricher(gene = panG_gseq$unique_gene_callers_id,
+         universe = bg_gsea$unique_gene_callers_id, 
+         TERM2GENE = bg_gsea,
+         pvalueCutoff = 0.05,
+         qvalueCutoff = 0.2)
+
+  tmp_gseq <- data.frame(panG_gsea@result, Genome = unique(panG_ko$Genome)[i_genome])
+  if(i_genome == 1) results_gseq <- tmp_gseq else {
+    results_gseq <- rbind(results_gseq, tmp_gseq)
+  }
+  genes_per_gseq <- panG_gseq %>% 
+     filter(ko_level_C %in% panG_gsea@result$Description) %>%
+     group_by(ko_level_C) %>% 
+     summarize(Counts = n())
+  genes_per_gseq <- data.frame(genes_per_gseq, 
+                               Genome = unique(panG_ko$Genome)[i_genome])
+  if(i_genome == 1) results_pergene <- genes_per_gseq else {
+    results_pergene <- rbind(results_pergene, genes_per_gseq)
+  }
+}
+
+# Calculate fraction of enriched genes vs. annotated panG genes
+results_pergene_sum <- results_pergene %>% 
+  group_by(Genome) %>% 
+  summarize(enrich_counts = sum(Counts))
+
+annotated_fraction_panG <- panG_ko_cog %>% 
+  filter(bin_core == "Accessory" & !is.na(ko_level_C)) %>% 
+  group_by(Genome) %>% 
+  select(unique_gene_callers_id) %>% 
+  distinct() %>% 
+  summarize(panG_counts = n())
+
+results_pergene_sum <- left_join(results_pergene_sum, annotated_fraction_panG,
+                                 by = "Genome")
+
+# Merge actual unique gene counts per gsea category with the accessory genome sizes
+results_pergene_sum <- results_pergene_sum %>% 
+  mutate(frac_enrich = enrich_counts/panG_counts)
+
+print(results_pergene_sum)
+
+# Revalue gsea results
+results_gseq$Genome <- plyr::revalue(results_gseq$Genome,
+                                  replace = c("Ramli-MAG" = "R.aquaticus", 
+                                              "Ramli-5-10" = 'R. solisilvae 5-10', 
+                                              "Ramli-Leaf400" = "R. Leaf400",
+                                              "Ramli-TTB310" = "R. tatouinensis TTB310"))
+
+# Make plot
+p_panG5 <- results_gseq %>% 
+  ggplot(aes(x = Description, fill = Genome, y = Count))+
+  geom_bar(color = "black", stat = "identity")+
+  theme_bw()+
+  scale_fill_brewer(palette="Paired")+
+  ylab("Number of genes") + xlab("")+
+  facet_grid(.~Genome, scales = "free")+
+  theme(axis.text.y=element_text(size=12.5), axis.title.y =element_text(size = 18),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
+        plot.margin = unit(c(1.1,1.1,1.1,1.1), "cm")
+        )+
+  guides(fill = FALSE)
+
+print(p_panG5)
+```
+
+## Enrichment of PSGs  
+
+* No functional groups were significantly enriched in the positively selected gene pool
+
+```{r panG-analysis-4, dpi = 500, fig.width = 7, fig.height = 4.5, warning = FALSE, dev = c("png","pdf")}
+posi_df_gsea <- data_posi_KO %>% 
+  select(ko_level_C, Gene) %>% 
+  filter(!is.na(ko_level_C)) %>% 
+  distinct()
+
+bg_posi_gsea <- merged_gc_ko %>% filter(genome_id == "Ramlibacter sp. MAG") %>% 
+  select(ko_level_C, gene_oid) %>% 
+  distinct()
+
+posiG_gsea <- enricher(gene = posi_df_gsea$Gene,
+         universe = unique(bg_posi_gsea$gene_oid), 
+         TERM2GENE = bg_posi_gsea,
+         pvalueCutoff = 0.05,
+         qvalueCutoff = 0.2)
+```
+
+## C/N ratio of AA
+
+```{r panG-analysis-5, dpi = 500, fig.width = 8, fig.height = 6, warning = FALSE}
+# Import amino acid information
+meta_aa <- read.csv("./mapping_files/aa_comp.csv")
+
+# Get amino acid names individually
+aa_seq_split <- strsplit(panG_ko_cog$aa_sequence, split = "")
+ncol <- max(sapply(aa_seq_split,length))
+aa_seq_split <- as.data.table(lapply(1:ncol, function(i) sapply(aa_seq_split, "[", i)))
+
+df_aa_seq_split <- data.table::data.table(bin_name = panG_ko_cog$bin_name, 
+                 genome_name = panG_ko_cog$genome_name,
+                 unique_gene_callers_id = panG_ko_cog$unique_gene_callers_id,
+                 aa_seq_split)
+
+remove(aa_seq_split)
+
+# Wide to long format
+df_aa_seq_split <- gather(df_aa_seq_split, codon_position,
+                          aa_ID, V1:V2467, factor_key=TRUE)
+# Annotate AA sequences
+df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
+df_aa_seq_split$unique_gene_callers_id <- factor(df_aa_seq_split$unique_gene_callers_id)
+
+# Calculate C and N content of AA residuals
+data_C_N <- df_aa_seq_split %>%
+  filter(!is.na(C_elem)) %>% 
+  distinct() %>% 
+  group_by(unique_gene_callers_id) %>% 
+  summarize(N_sum = sum(N_elem),
+            C_sum = sum(C_elem),
+            aa_length = n())
+remove(df_aa_seq_split)
+
+# Merge this information with initial dataframe
+final_df_arsc <- left_join(panG_ko_cog, data_C_N, by = "unique_gene_callers_id")
+
+# Calculate N_ARSC and C_ARSC
+final_df_arsc <- final_df_arsc %>% 
+  select(unique_gene_callers_id, bin_name, genome_name, aa_length, N_sum, C_sum) %>% 
+  distinct() %>% 
+  mutate(N_ARSC = N_sum/aa_length, C_ARSC = C_sum/aa_length)
+
+```
 
 
-# Plot genes in pangenome that were under positive selection
+```{r panG-analysis-6, dpi = 500, fig.width = 8, fig.height = 12, warning = FALSE, dev = c("png","pdf")}
+p_aa_C <- final_df_arsc %>% 
+  ggplot(aes(x = bin_name, y = C_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI, draw_quantiles = TRUE)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("C-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")
 
+p_aa_N <- final_df_arsc %>% 
+  ggplot(aes(x = bin_name, y = N_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("N-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")
+
+cowplot::plot_grid(p_aa_C, p_aa_N, nrow = 2,
+                   labels = c("A","B"))
+
+# Summary statistics
+final_df_arsc %>% group_by(bin_name) %>% 
+  summarize(mean_N_ARSC = mean(N_ARSC),
+            mean_C_ARSC = mean(C_ARSC),
+            sd_N_ARSC = sd(N_ARSC),
+            sd_C_ARSC = sd(C_ARSC))
+```
+
+
+```{r panG-analysis-7, dpi = 500, fig.width = 8, fig.height = 12, warning = FALSE, dev = c("png","pdf")}
+# Lets evaluate if there is a difference between the fraction under positive selection and the rest of the genome
+Ramli_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.genes.faa"))
+colnames(Ramli_aa)[1] <- "AA_sequence"
+Ramli_aa <- data.frame(Gene = do.call(rbind, strsplit(rownames(Ramli_aa), " "))[,1],
+                       Ramli_aa)
+
+# Get amino acid names individually
+aa_seq_split <- strsplit(Ramli_aa[,2], split = "")
+ncol <- max(sapply(aa_seq_split, length))
+aa_seq_split <- as.data.table(lapply(1:ncol, function(i) sapply(aa_seq_split, "[", i)))
+df_aa_seq_split <- data.table::data.table(unique_gene_callers_id = Ramli_aa$Gene,
+                 aa_seq_split)
+
+# Wide to long format
+df_aa_seq_split <- gather(df_aa_seq_split, codon_position,
+                          aa_ID, V1:V1993, factor_key=TRUE)
+# Annotate AA sequences
+df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
+
+# Calculate C-ARSC and N-ARSC
+data_C_N <- df_aa_seq_split %>%
+  filter(!is.na(C_elem)) %>%
+  distinct() %>%
+  group_by(unique_gene_callers_id) %>%
+  summarize(N_sum = sum(N_elem),
+            C_sum = sum(C_elem),
+            aa_length = n())
+remove(df_aa_seq_split)
+
+# Calculate N_ARSC and C_ARSC
+final_df_arsc_ramli <- data_C_N %>% 
+  select(unique_gene_callers_id, aa_length, N_sum, C_sum) %>% 
+  distinct() %>% 
+  mutate(N_ARSC = N_sum/aa_length, C_ARSC = C_sum/aa_length)
+
+# Add posigene information
+final_df_arsc_ramli$PSG <- final_df_arsc_ramli$unique_gene_callers_id %in% data_posi2_long$Transcript
+
+# Plot N-ARSC
+p_posi_N_ARSC <- final_df_arsc_ramli %>% 
+  ggplot(aes(x = PSG, y = N_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("N-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")
+
+
+# Plot C-ARSC
+p_posi_C_ARSC <- final_df_arsc_ramli %>% 
+  ggplot(aes(x = PSG, y = C_ARSC))+
+   geom_violin(alpha = 0.2, fill = col_RAMLI)+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("C-ARSC")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14, angle = 45, hjust = 1),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  labs(title = "")
+
+# bac1_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.genes.faa"))
+# bac2_aa <- data.frame(readDNAStringSet("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.genes.faa"))
+# 
+# # Get amino acid names individually
+# aa_seq_split <- strsplit(bac1_aa[,1], split = "")
+# ncol <- max(sapply(aa_seq_split,length))
+# aa_seq_split <- as.data.table(lapply(1:ncol, function(i) sapply(aa_seq_split, "[", i)))
+# 
+# # Wide to long format
+# df_aa_seq_split <- gather(aa_seq_split, codon_position,
+#                           aa_ID, V1:V2145, factor_key=TRUE)
+# # Annotate AA sequences
+# df_aa_seq_split <- left_join(df_aa_seq_split, meta_aa, by = c("aa_ID" = "AA_abbrev2"))
+# 
+# # Calculate C-ARSC and N-ARSC
+# data_C_N <- df_aa_seq_split %>%
+#   filter(!is.na(C_elem)) %>% 
+#   distinct() %>% 
+#   group_by(unique_gene_callers_id) %>% 
+#   summarize(N_sum = sum(N_elem),
+#             C_sum = sum(C_elem),
+#             aa_length = n())
+# remove(df_aa_seq_split)
 ```
 
 
@@ -1766,45 +2598,52 @@ Andrea Martinez-Vernon, Fred Farrell, Orkun Soyer. _MetQy: an R package to query
 
 
 ```{r m-genome-completeness, dpi = 300, fig.width = 13, fig.height = 10, warning = FALSE}
-# Get list of all KO annotated genes
-KO_ramli <- merged_gc_ko %>% dplyr::filter(genome_id == "Ramlibacter sp. MAG")
-KO_ramli <- KO_ramli[, c("genome_id", "ko_id", "EC")]
-KO_ramli <- droplevels(KO_ramli)
-KO_ramli_metqy <- data.frame(genome_id = levels(KO_ramli$genome_id),
-                             KOs = paste(KO_ramli$ko_id, collapse = ";"),
-                             ECs = paste(KO_ramli$EC, collapse = ";"),
-                             stringsAsFactors = FALSE
-)
+# Get list of all KO annotated genes from IMG
+KO_profiles <- read.table("./IMG_annotation/STAMP_profiles/abundance_ko_38065.tab.xls", header = TRUE, sep = "\t", quote = "")
 
+# Remove zero rows
+KO_profiles <- KO_profiles[rowSums(KO_profiles[, - c(1:2)])>0, ]
 
-# Run MetQy (takes a few seconds)
-query_output <- MetQy::query_genomes_to_modules(KO_ramli_metqy, splitBy='[;]',
-                                GENOME_ID_COL = 1, GENES_COL = 2, 
-                                META_OUT = TRUE)
+# Wide to long format
+KO_profiles_long <- tidyr::gather(KO_profiles, Genome, 
+                                       Counts, 
+                          Curvibacter_sp._ATCC:Variovorax_sp._EPS,
+                          factor_key = TRUE)
 
-modules_table = cbind(t(query_output$MATRIX), query_output$METADATA)
-modules_table <- modules_table[, -c(8, 9)]
-colnames(modules_table)[1] <- "module_completeness"
+KO_profiles_long$Genome <- gsub("_", " ", KO_profiles_long$Genome)
+KO_profiles_long$Genome <- gsub("5.10", "5-10", KO_profiles_long$Genome)
+
+# Remove rows with 0 counts
+KO_profiles_long <- KO_profiles_long %>% dplyr::filter(Counts > 0)
+
+# Remove frequencies (not important for module completeness estimate)
+KO_profiles_long <- KO_profiles_long[, c(1:3)] %>% distinct()
+
+# Get module completeness
+modules_table <- get_mq(KO_profiles_long, genome_label = "Genome", ko_label = "Func_id")
 
 # Remove absent modules
 # modules_table <- modules_table %>% dplyr::filter(module_completeness > 0)
 
-# Specific modules
-mod_spec1 <- c("Cell signaling", "Two-component regulatory system",
-               "Mineral and organic ion transport system", "Nitrogen metabolism", 
-               "Carbon fixation", "Cofactor and vitamin biosynthesis",
-               "Other carbohydrate metabolism",
-               "Central carbohydrate metabolism")
 
-# Visualize output statistics
-p_mod1 <- modules_table %>% dplyr::filter(module_completeness > 0) %>% 
-  ggplot(aes(x = CLASS_II, y = module_completeness, fill = CLASS_II))+
-  geom_jitter(shape = 21, size = 4, width = 0.3)+ theme_bw()+
-  geom_boxplot(alpha = 0.4)+
+# Select subset of genomes for phosphate scavenging
+selected_genomes <- c("Ramlibacter sp. TTB310",
+                      "Ramlibacter sp. Leaf400",
+                      "Ramlibacter sp. 5-10",
+                      "Ramlibacter sp. MAG",
+                      "Bacteroidetes sp. MAG1", 
+                      "Bacteroidetes sp. MAG2")
+
+# Visualize output statistics for Carbon fixation
+p_mod1 <- modules_table %>% dplyr::filter(module_completeness > 0 & Genome %in% selected_genomes, CLASS_III == "Carbon fixation") %>% 
+  ggplot(aes(x = MODULE_ID, y = module_completeness, fill = Genome))+
+  geom_point(shape = 21, size = 4, 
+             position = position_dodge(width = 1))+ theme_bw()+
   scale_fill_brewer(palette = "Accent")+
   xlab("")+
   ylab("Module completeness")+
   ylim(0,1)+
+  # facet_grid(Genome~.)+
     theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
         legend.title=element_text(size=15), legend.text=element_text(size=14),
         axis.text.y = element_text(size=16),
@@ -1816,137 +2655,209 @@ p_mod1 <- modules_table %>% dplyr::filter(module_completeness > 0) %>%
 
 print(p_mod1)
 
-p_mod2 <- modules_table %>% dplyr::filter(CLASS_III %in% mod_spec1, 
-                                          module_completeness > 0 & 
-                                            module_completeness < 1) %>% 
-  ggplot(aes(x = CLASS_III, y = module_completeness, fill = CLASS_II))+
-  geom_jitter(shape = 21, size = 4, width = 0.3)+
-  theme_bw()+
-  geom_boxplot(alpha = 0.4)+
+# Specific modules
+mod_spec1 <- c("Cell signaling",
+               "Quorum sensing 2-CRS (Qse)",
+               "Quorum sensing 2-CRS (Lux)")
+
+# Visualize output statistics for 
+p_mod2 <- modules_table %>% 
+  dplyr::filter(Genome %in% selected_genomes & 
+                  NAME_SHORT %in% mod_spec1) %>% 
+  ggplot(aes(x = NAME_SHORT, y = module_completeness, fill = Genome))+
+  geom_point(shape = 21, size = 4, 
+             position = position_dodge(width = 1))+ theme_bw()+
   scale_fill_brewer(palette = "Accent")+
   xlab("")+
   ylab("Module completeness")+
   ylim(0,1)+
+  # facet_grid(Genome~.)+
     theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
         legend.title=element_text(size=15), legend.text=element_text(size=14),
         axis.text.y = element_text(size=16),
-        axis.text.x = element_text(size=16, angle = 300, hjust = 0),
+        axis.text.x = element_text(size=16, angle = 0),
         title=element_text(size=20),
         panel.background = element_rect(fill = "transparent",colour = NA),
         plot.background = element_rect(fill = "transparent",colour = NA)
   )
+
 
 print(p_mod2)
 
+# Specific modules
+mod_spec3 <- c("Cell signaling",
+               "Quorum sensing 2-CRS (Qse)",
+               "Quorum sensing 2-CRS (Lux)")
+
+# # Visualize output statistics for 
+# p_mod3 <- modules_table %>% 
+#   dplyr::filter(Genome %in% selected_genomes & 
+#                   NAME_SHORT %in% mod_spec3) %>% 
+#   ggplot(aes(x = NAME_SHORT, y = module_completeness, fill = Genome))+
+#   geom_point(shape = 21, size = 4, 
+#              position = position_dodge(width = 1))+ theme_bw()+
+#   scale_fill_brewer(palette = "Accent")+
+#   xlab("")+
+#   ylab("Module completeness")+
+#   ylim(0,1)+
+#   # facet_grid(Genome~.)+
+#     theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
+#         legend.title=element_text(size=15), legend.text=element_text(size=14),
+#         axis.text.y = element_text(size=16),
+#         axis.text.x = element_text(size=16, angle = 0),
+#         title=element_text(size=20),
+#         panel.background = element_rect(fill = "transparent",colour = NA),
+#         plot.background = element_rect(fill = "transparent",colour = NA)
+#   )
 # 
+# 
+# print(p_mod3)
+
+
+# Heatmap
+# make heatmap for all class_III levels
+# 
+# for(class_i in unique(modules_table$CLASS_III)){
+#   hm_mod <- modules_table %>%
+#   dplyr::filter(CLASS_III %in%
+#                   class_i) %>%
+#   ggplot(aes(y = Genome, x= MODULE_ID)) + # x and y axes => Var1 and Var2
+#   geom_tile(aes(fill = module_completeness), col = "lightgrey") + # background colours are mapped according to the value column
+#   # geom_text(aes(label = round(module_completeness, 1)), size = 3) + # write the values
+#   # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+#   # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+#                       # trans = "log1p", limits=c(1, 40)) +
+#   scale_fill_distiller(palette="YlOrRd", na.value="lightgrey",
+#                        direction = 1, limits = c(0,1)) +
+#   theme(panel.grid.major.x=element_blank(), #no gridlines
+#         panel.grid.minor.x=element_blank(),
+#         panel.grid.major.y=element_blank(),
+#         panel.grid.minor.y=element_blank(),
+#         panel.background=element_rect(fill="white"), # background=white
+#         axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,face = "bold"),
+#         plot.title = element_text(size=20,face="bold"),
+#         axis.text.y = element_text(size = 12,face = "bold"))+
+#   theme(legend.title=element_text(face="bold", size=14)) +
+#   scale_x_discrete(name="") +
+#   scale_y_discrete(name="") +
+#   # facet_grid(CLASS_III~.)+
+#   labs(fill="Module\ncompleteness\n")+
+#   ggtitle(class_i)
+# class_i <- gsub("/"," or ", class_i)
+# png(paste("./Figures/cached/MetQ/metQ_", class_i, ".png", sep = ""), res = 500, width = 12, height = 10, unit = "in")
+# print(hm_mod)
+# dev.off()
+# }
+
 
 ```
 
-### panG module completeness
-```{r m-panG-completeness, dpi = 400, fig.width = 13, fig.height = 10, warning = FALSE}
+<!-- ### panG module completeness -->
+<!-- ```{r m-panG-completeness, dpi = 400, fig.width = 13, fig.height = 10, warning = FALSE} -->
+<!-- # Import KO annotated accessory genome for all other Ramlibacter genomes -->
+<!-- panG_annot_files <- list.files("./panG/", pattern = "_KO-annotation.tsv") -->
+<!-- for(i in 1:length(panG_annot_files)){ -->
+<!--   tmp <- read.table(paste("./panG/", panG_annot_files[[i]], sep = ""), sep = "\t", -->
+<!--              fill = TRUE, header = FALSE, stringsAsFactors = FALSE) -->
+<!--   tmp <- cbind(tmp[,2], panG_annot_files[i]) -->
+<!--   colnames(tmp) <- c("ko_id", "panG_genome_id") -->
 
-# Import KO annotated accessory genome for all other Ramlibacter genomes
-panG_annot_files <- list.files("./panG/", pattern = "_KO-annotation.tsv")
-for(i in 1:length(panG_annot_files)){
-  tmp <- read.table(paste("./panG/", panG_annot_files[[i]], sep = ""), sep = "\t",
-             fill = TRUE, header = FALSE, stringsAsFactors = FALSE)
-  tmp <- cbind(tmp[,2], panG_annot_files[i])
-  colnames(tmp) <- c("ko_id", "panG_genome_id")
-  
-  cat(paste("KO annotated", round(100*sum(tmp[,1] != "")/nrow(tmp),0),"% of accessory genome", panG_annot_files[i],"\n", sep = " "))
-  
-  if(i == 1) {panG_annot <- tmp } else{
-                                          panG_annot <- rbind(panG_annot, tmp)
-  }
-}
-panG_annot <- data.frame(panG_annot)
-panG_annot$panG_genome_id <- gsub("_KO-annotation.tsv", "",
-                                  panG_annot$panG_genome_id)
-panG_annot <- panG_annot[panG_annot$ko_id !="" , ]
-panG_annot <- panG_annot %>% dplyr::filter(ko_id != "ko_id")
+<!--   cat(paste("KO annotated", round(100*sum(tmp[,1] != "")/nrow(tmp),0),"% of accessory genome", panG_annot_files[i],"\n", sep = " ")) -->
 
-# Format imported data for MetQy
-for(i in unique(panG_annot$panG_genome_id)){
-  KO_tmp <- panG_annot %>% dplyr::filter(panG_genome_id == i)
-  KO_tmp <- droplevels(KO_tmp)
-  KO_tmp_metqy <- data.frame(genome_id = unique(KO_tmp$panG_genome_id),
-                             KOs = paste(KO_tmp$ko_id, collapse = ";"),
-                             stringsAsFactors = FALSE
-  )
-  if(i == unique(panG_annot$panG_genome_id)[1]){
-    KO_panG_metqy <- KO_tmp_metqy
-  } else{ KO_panG_metqy <- rbind(KO_panG_metqy, KO_tmp_metqy)
-  }
-  KO_panG_metqy$KOs <- gsub(" ", "", KO_panG_metqy$KOs)
-}
-remove(KO_tmp)
+<!--   if(i == 1) {panG_annot <- tmp } else{ -->
+<!--                                           panG_annot <- rbind(panG_annot, tmp) -->
+<!--   } -->
+<!-- } -->
+<!-- panG_annot <- data.frame(panG_annot) -->
+<!-- panG_annot$panG_genome_id <- gsub("_KO-annotation.tsv", "", -->
+<!--                                   panG_annot$panG_genome_id) -->
+<!-- panG_annot <- panG_annot[panG_annot$ko_id !="" , ] -->
+<!-- panG_annot <- panG_annot %>% dplyr::filter(ko_id != "ko_id") -->
 
-# Run query
-query_output_panG <- MetQy::query_genomes_to_modules(KO_panG_metqy, splitBy='[;]',
-                                GENOME_ID_COL = 1, GENES_COL = 2, 
-                                META_OUT = TRUE)
+<!-- # Format imported data for MetQy -->
+<!-- for(i in unique(panG_annot$panG_genome_id)){ -->
+<!--   KO_tmp <- panG_annot %>% dplyr::filter(panG_genome_id == i) -->
+<!--   KO_tmp <- droplevels(KO_tmp) -->
+<!--   KO_tmp_metqy <- data.frame(genome_id = unique(KO_tmp$panG_genome_id), -->
+<!--                              KOs = paste(KO_tmp$ko_id, collapse = ";"), -->
+<!--                              stringsAsFactors = FALSE -->
+<!--   ) -->
+<!--   if(i == unique(panG_annot$panG_genome_id)[1]){ -->
+<!--     KO_panG_metqy <- KO_tmp_metqy -->
+<!--   } else{ KO_panG_metqy <- rbind(KO_panG_metqy, KO_tmp_metqy) -->
+<!--   } -->
+<!--   KO_panG_metqy$KOs <- gsub(" ", "", KO_panG_metqy$KOs) -->
+<!-- } -->
+<!-- remove(KO_tmp) -->
 
-# Visualize differences in module completeness across accessory genomes
-panG_modules_table <- data.frame(genome_id = rownames(query_output_panG$MATRIX),
-                                 query_output_panG$MATRIX)
+<!-- # Run query -->
+<!-- query_output_panG <- MetQy::query_genomes_to_modules(KO_panG_metqy, splitBy='[;]', -->
+<!--                                 GENOME_ID_COL = 1, GENES_COL = 2,  -->
+<!--                                 META_OUT = TRUE) -->
 
-# now reshape so that panG id is also a column
-panG_modules_table <- tidyr::gather(panG_modules_table, module, module_completeness, M00001:M00822, factor_key=TRUE)
-panG_modules_table <- left_join(panG_modules_table, query_output_panG$METADATA,
-                                by = c("module" = "MODULE_ID"))
-panG_modules_table <- panG_modules_table[, -c(9, 10)]
+<!-- # Visualize differences in module completeness across accessory genomes -->
+<!-- panG_modules_table <- data.frame(genome_id = rownames(query_output_panG$MATRIX), -->
+<!--                                  query_output_panG$MATRIX) -->
 
-# Visualize.. 
-p_mod3 <- panG_modules_table %>% dplyr::filter(CLASS_III %in% mod_spec1, 
-                                          module_completeness > 0) %>% 
-  ggplot(aes(x = CLASS_III, y = module_completeness, fill = CLASS_II))+
-  geom_jitter(shape = 21, size = 4, width = 0.3)+
-  theme_bw()+
-  # geom_boxplot(alpha = 0.4)+
-  scale_fill_brewer(palette = "Accent")+
-  xlab("")+
-  ylab("Module completeness")+
-  ylim(0,1)+
-  facet_grid(~genome_id)+
-    theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
-        legend.title=element_text(size=15), legend.text=element_text(size=14),
-        axis.text.y = element_text(size=16),
-        axis.text.x = element_text(size=16, angle = 300, hjust = 0),
-        title=element_text(size=20),
-        panel.background = element_rect(fill = "transparent",colour = NA),
-        plot.background = element_rect(fill = "transparent",colour = NA)
-  )
+<!-- # now reshape so that panG id is also a column -->
+<!-- panG_modules_table <- tidyr::gather(panG_modules_table, module,  -->
+<!--                                     module_completeness, M00001:M00822,  -->
+<!--                                     factor_key=TRUE) -->
+<!-- panG_modules_table <- left_join(panG_modules_table, query_output_panG$METADATA, -->
+<!--                                 by = c("module" = "MODULE_ID")) -->
+<!-- panG_modules_table <- panG_modules_table[, -c(9, 10)] -->
 
-print(p_mod3)
+<!-- # Visualize..  -->
+<!-- p_mod3 <- panG_modules_table %>% dplyr::filter(CLASS_III %in% mod_spec1,  -->
+<!--                                           module_completeness > 0) %>%  -->
+<!--   ggplot(aes(x = CLASS_III, y = module_completeness, fill = CLASS_II))+ -->
+<!--   geom_jitter(shape = 21, size = 4, width = 0.3)+ -->
+<!--   theme_bw()+ -->
+<!--   # geom_boxplot(alpha = 0.4)+ -->
+<!--   scale_fill_brewer(palette = "Accent")+ -->
+<!--   xlab("")+ -->
+<!--   ylab("Module completeness")+ -->
+<!--   ylim(0,1)+ -->
+<!--   facet_grid(~genome_id)+ -->
+<!--     theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16), -->
+<!--         legend.title=element_text(size=15), legend.text=element_text(size=14), -->
+<!--         axis.text.y = element_text(size=16), -->
+<!--         axis.text.x = element_text(size=16, angle = 300, hjust = 0), -->
+<!--         title=element_text(size=20), -->
+<!--         panel.background = element_rect(fill = "transparent", colour = NA), -->
+<!--         plot.background = element_rect(fill = "transparent", colour = NA) -->
+<!--   ) -->
 
-# Lets focus on the two-component regulatory systems (which are highly abundant
-# in all Ramlibacter genome annotations)
+<!-- print(p_mod3) -->
 
-p_mod4 <- panG_modules_table %>% dplyr::filter(CLASS_III == "Two-component regulatory system" &
-                                                 module_completeness >0) %>% 
-  ggplot(aes(x = NAME_SHORT, y = module_completeness))+
-  # geom_jitter(shape = 21, size = 4, width = 0.3)+
-  theme_bw()+
-  geom_bar(alpha = 1, stat = "identity", color = "black", fill = brewer.pal(n = 8, "Accent")[1])+
-  xlab("")+
-  ylab("Module completeness")+
-  ylim(0,1)+
-  facet_grid(genome_id~.)+
-    theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16),
-        legend.title=element_text(size=15),
-        axis.text.y = element_text(size=16),
-        axis.text.x = element_text(size=16, angle = 65, hjust = 1),
-        title=element_text(size=20),
-        panel.background = element_rect(fill = "transparent",colour = NA),
-        plot.background = element_rect(fill = "transparent",colour = NA),
-        strip.text = element_text(size = 14)
-  )+
-  ggtitle("Two-component regulatory system")+
-  guides(fill = FALSE)
+<!-- # Lets focus on the two-component regulatory systems (which are highly abundant -->
+<!-- # in all Ramlibacter genome annotations) -->
 
-print(p_mod4)
+<!-- p_mod4 <- panG_modules_table %>% dplyr::filter(CLASS_III == "Two-component regulatory system" & -->
+<!--                                                  module_completeness >0) %>%  -->
+<!--   ggplot(aes(x = NAME_SHORT, y = module_completeness))+ -->
+<!--   # geom_jitter(shape = 21, size = 4, width = 0.3)+ -->
+<!--   theme_bw()+ -->
+<!--   geom_bar(alpha = 1, stat = "identity", color = "black", fill = brewer.pal(n = 8, "Accent")[1])+ -->
+<!--   xlab("")+ -->
+<!--   ylab("Module completeness")+ -->
+<!--   ylim(0,1)+ -->
+<!--   facet_grid(genome_id~.)+ -->
+<!--     theme(axis.title=element_text(size=16), strip.text.x=element_text(size=16), -->
+<!--         legend.title=element_text(size=15), -->
+<!--         axis.text.y = element_text(size=16), -->
+<!--         axis.text.x = element_text(size=16, angle = 65, hjust = 1), -->
+<!--         title=element_text(size=20), -->
+<!--         panel.background = element_rect(fill = "transparent",colour = NA), -->
+<!--         plot.background = element_rect(fill = "transparent",colour = NA), -->
+<!--         strip.text = element_text(size = 14) -->
+<!--   )+ -->
+<!--   ggtitle("Two-component regulatory system")+ -->
+<!--   guides(fill = FALSE) -->
 
-```
+<!-- print(p_mod4) -->
+
+<!-- ``` -->
 
 # 10. ANI analysis using `pyani`
 
@@ -2115,57 +3026,52 @@ print(p_blast_sdisc)
 ```
 
 
-# 11. Gene set enrichment analysis  
+# Predict MGT  
 
-
-```{r Gene-set-enrichment-analysis, dpi = 500, fig.width = 8, fig.height = 7, warning = FALSE}
-library("GSAR")
-```
-
-# Search for FW-relevant COGs  
-
-Here we are searching the "core" and "accessory" genome for COGs/Pfams that were
-shown to be important for Carbon-cycling in freshwater systems
-
-```{r search-COGs-1, warning = FALSE, fig.width = 9, fig.height = 4, dpi = 500}
-
-```
-
-# Predict MGT
 Compare the growth rate with the minimum generation time estimated from the MAG
 using Growthpred. Dotted line in the graph of the predicted optimal growth temperature
 indicates the mean +/- st.dev of the operational temperature in the cooling water system.  
 
-```{r MGT-1, warning = FALSE, fig.width = 9, fig.height = 4, dpi = 500}
+```{r MGT-1, warning = FALSE, fig.width = 9, fig.height = 4, dpi = 500, dev = c("png","pdf")}
 MGT_df <- read.table("./Growthpred/GP_results.tsv", header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
 
-MGT_df <- MGT_df[c(1:3, 6:8), ]
+MGT_df <- MGT_df[-c(4:5), ] %>% droplevels()
+
 # Order genome_ids according to the phylogenetic clustering
-MGT_df$Genome_ID <- factor(MGT_df$Genome_ID, levels = c("Ramli. sp. MAG",
-                                                        "Ramli. sp. 5-10",
-                                                        "Ramli. sp. Leaf400",
-                                                        "Ramli. sp. TTB310",
-                                                        "Bact. sp. MAG1",
-                                                        "Bact. sp. MAG2"))
+ord_full_list_bin <- c("Limnohabitans sp. Rim11", "Limnohabitans sp. 103DPR2",
+                  "Limnohabitans sp. 2KL-27", "Limnohabitans sp. Rim47",
+                  "Limnohabitans sp. II-D5", "Limnohabitans sp. 2KL-3",
+                  "Rhodoferax sp. ED16","Rhodoferax sp. T118",
+                  "Curvibacter sp. ATCC", "Curvibacter sp. PAE-UM",
+                  "Variovorax sp. 110B", "Variovorax sp. EPS",
+                  "Ramlibacter sp. Leaf400", "Ramlibacter sp. TTB310",
+                  "Ramlibacter sp. MAG", 
+                  "Ramlibacter sp. 5-10",
+                  "Bacteroidetes sp. MAG1",
+                  "Bacteroidetes sp. MAG2"
+                  )
+
+MGT_df$Genome_ID <- factor(MGT_df$Genome_ID, levels = ord_full_list_bin)
 
 # Make barplot with st.dev to visualize MGT and optimal temperature
 selected_points <- data.frame(Genome_ID = MGT_df$Genome_ID, 
                               ypos = c(rep(7.5, 3), rep(NA,3)))
-p_MGT <- ggplot(MGT_df, aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+p_MGT_1 <- MGT_df[-c(2:3),] %>% 
+  ggplot(aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
            position = position_dodge(width = 1), width = 0.7)+
-  scale_fill_manual("Minimal generation time (h)",
-                    values = c(col_RAMLI, col_RAMLI,col_RAMLI,col_RAMLI,
-                               col_bac1, col_bac2))+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4), col_bac1, col_bac2))+
   theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size = 18),
         legend.position="bottom",
-        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
         axis.title.x=element_blank(),
         plot.title = element_text(hjust = 0, size=18))+
   guides(fill=FALSE)+
@@ -2174,14 +3080,33 @@ p_MGT <- ggplot(MGT_df, aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
   ylab("")+
   xlab("")+
   ggtitle("Minimal Generation Time (h)")+
-  geom_point(data = selected_points, aes(x = Genome_ID, y = ypos),
-             shape = 25, fill = "black", col = "black", size = 3)
-  # scale_y_continuous(labels = function(x) sprintf("%.2f", x), breaks = seq(0.20,0.90,0.10),
-  #                    limits = c(0.2,0.9))
+  ylim(0,6)
 
-# svg(filename = "MGT_figure.svg", width = 9.5, height = 4)
-print(p_MGT)
-#dev.off()
+p_MGT_2 <- MGT_df[c(2:3),] %>% 
+  ggplot(aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_manual(values = c(col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=11), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=FALSE)+
+  geom_errorbar(aes(ymin = MGT - sd.MGT, ymax = MGT + sd.MGT), width = 0.15,
+                position = position_dodge(width = 1))+
+  ylab("")+
+  xlab("")+
+  ggtitle("")+
+  ylim(0,6)
+
+cowplot::plot_grid(p_MGT_1, p_MGT_2, align = "hv", rel_widths = c(4,1))
+
 
 selected_points <- data.frame(Genome_ID = MGT_df$Genome_ID, 
                               ypos = c(rep(35, 3), rep(NA,3)))
@@ -2191,43 +3116,185 @@ selected_band <- data.frame(Genome_ID = MGT_df$Genome_ID,
                             upr = rep(26.89 + 1.26, 6),
                             y_val = 26.89)
 
-p_Topt <- ggplot(MGT_df, aes(x = Genome_ID, y = Topt, fill = Genome_ID))+
+p_Topt_1 <- MGT_df[-c(2:3),] %>% 
+  ggplot(aes(x = Genome_ID, y = Topt, fill = Genome_ID))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
            position = position_dodge(width = 1), width = 0.7)+
-  scale_fill_manual("Optimal growth temperature (°C)",
-                    values = c(col_RAMLI, col_RAMLI,col_RAMLI,col_RAMLI,
-                               col_bac1, col_bac2))+
-  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),6), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4), col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=11), axis.title=element_text(size=20),
         title=element_text(size=20), legend.text=element_text(size=14),
         legend.background = element_rect(fill="transparent"),
         # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size = 18),
         legend.position="bottom",
-        axis.text.x=element_text(size = 13, angle =45, hjust= 1),
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
         axis.title.x=element_blank(),
         plot.title = element_text(hjust = 0, size=18))+
   guides(fill=FALSE)+
   ylab("")+
   xlab("")+
   ggtitle("Optimal growth temperature (°C)")+
-  geom_point(data = selected_points, aes(x = Genome_ID, y = ypos),
-             shape = 25, fill = "black", col = "black", size = 3)+
-  geom_hline(yintercept = 26.89, linetype = 2, col = "black")+
-  geom_rect(data = selected_band, aes(ymin = lwr,
-                                      ymax = upr,
-                                      xmin = 0,
-                                      xmax = 7), alpha=0.1, fill = "gray",
-            col = NA)
+  ylim(0,35)
+  # geom_point(data = selected_points, aes(x = Genome_ID, y = ypos),
+             # shape = 25, fill = "black", col = "black", size = 3)+
+  # geom_hline(yintercept = 26.89, linetype = 2, col = "black")+
+  # geom_rect(data = selected_band, aes(ymin = lwr,
+  #                                     ymax = upr,
+  #                                     xmin = 0.5,
+  #                                     xmax = 18.5), alpha=0.01, fill = "gray",
+  #           col = NA)
 
-# svg(filename = "MGT_figure.svg", width = 9.5, height = 4)
-print(p_Topt)
-#dev.off()
+p_Topt_2 <- MGT_df[c(2:3),] %>% 
+  ggplot(aes(x = Genome_ID, y = Topt, fill = Genome_ID))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_manual(values = c(col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=11), axis.title=element_text(size=11),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=FALSE)+
+  ylab("")+
+  xlab("")+
+  ggtitle("")+
+  ylim(0,35)
+
+# Print plots
+cowplot::plot_grid(p_Topt_1, p_Topt_2, align = "h", rel_widths = c(4,1))
+
+```
+
+# iRep
+
+Estimate the population replication rate using the iRep tool.
+
+```{r irep-1, warning = FALSE, fig.width = 5, fig.height = 5, dpi = 500, dev = c("png","pdf")}
+df_irep <- read.table("./iRep/results_irep.tsv", header = TRUE, stringsAsFactors = FALSE,
+                      sep = "\t") %>% 
+  dplyr::filter(iRep_type == "iRep" & !is.na(iRep_value))
+
+df_irep$Genome_bin <- factor(df_irep$Genome_bin, levels = unique(df_irep$Genome_bin)[c(3,1,2)])
+
+p_iRep_1 <- df_irep %>% 
+  ggplot(aes(x = Reactor_cycle, y = iRep_value, shape = Manual_exception))+
+  geom_point(size = 5, color = "black", aes(fill = Genome_bin),
+             alpha = 0.7)+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.75,0.9),
+        axis.text.x=element_text(size = 14, angle =0, hjust= 0.5),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylim(1.0,1.70)+
+  labs(y = "iRep", scales = "free")+
+  guides(shape = FALSE,
+    fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
+                         nrow = 4)
+   )
+  
+print(p_iRep_1)
+
+
+p_iRep_2 <- df_irep %>% 
+  ggplot(aes(x = Genome_bin, y = iRep_value,fill = Genome_bin))+
+    geom_boxplot(width = 0.3, alpha = 0.2)+
+  geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.75,0.9),
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylim(1.0,1.70)+
+  labs(y = "iRep", scales = "free")+
+  guides(shape = FALSE,
+    fill  = FALSE
+   )
+  
+print(p_iRep_2)
+
+# Print summary irep statistics
+df_irep %>% group_by(Genome_bin) %>% summarize(mean(iRep_value))
+df_irep %>% group_by(Genome_bin) %>% summarize(sd(iRep_value))
+```
+
+```{r irep-2, warning = FALSE, fig.width = 10, fig.height = 5, dpi = 500, dev = c("png","pdf")}
+p_iRep_3 <- df_irep %>% 
+  ggplot(aes(x = relative_abundance_16S, y = iRep_value, fill = Genome_bin))+
+  geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=12),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.7,0.1),
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylim(1.2,1.8)+ xlim(0,100)+
+  labs(y = "iRep", x = "Relative abundance (%)")+
+  guides(shape = FALSE,
+    fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
+                         nrow = 4)
+   )+
+  geom_smooth(method="lm", color="black", fill = "lightgray",
+              alpha=0.2, formula = y ~ splines::ns(x,df=3))
+
+
+p_iRep_4 <- df_irep %>% 
+  ggplot(aes(x = absolute_abundance_16S, y = iRep_value, fill = Genome_bin))+
+  geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=12),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.7,0.1),
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        plot.title = element_text(hjust = 0, size=18))+
+  ylim(1.2,1.8)+ xlim(0,800)+
+  labs(y = "iRep", x = "Absolute abundance (cells/mL)")+
+  guides(shape = FALSE,
+    fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
+                         nrow = 4)
+   )+
+  geom_smooth(method = "lm",color="black", fill ="lightgray", formula=y~x)
+  
+cowplot::plot_grid(p_iRep_3, p_iRep_4, ncol = 2, align = "h")
 ```
 
 # Trophic strategy markers  
 
-```{r markers-1, warning = FALSE, fig.width = 6, fig.height = 5, dpi = 500}
+Here we are searching the "core" and "accessory" genome for COGs/Pfams that were
+shown to be important for Carbon-cycling in freshwater systems
+
+```{r markers-1, warning = FALSE, fig.width = 6, fig.height = 12, dpi = 500}
 Tstrategy_df <- read.csv("./IMG_annotation/markers.Tstrategy.csv")
 
 merged_gc_cog <- merged_gc_cog %>% dplyr::group_by(Genome) %>% 
@@ -2266,7 +3333,7 @@ p_markers1 <- ggplot(test, aes(x = genome_name, y = Noligo, fill = genome_name))
   xlab("")+
   ggtitle("Noligo")
 
-print(p_markers1)
+# print(p_markers1)
 
 p_markers2 <- ggplot(test, aes(x = genome_name, y = Ncopio, fill = genome_name))+
   theme_bw()+
@@ -2286,12 +3353,657 @@ p_markers2 <- ggplot(test, aes(x = genome_name, y = Ncopio, fill = genome_name))
   xlab("")+
   ggtitle("Ncopio")
 
-print(p_markers2)
+# print(p_markers2)
 
 cowplot::plot_grid(p_markers1, p_markers2, nrow = 2, align = "v")
 ```
 
-# Phosphatase diversity
-```{r Pho, warning = FALSE, fig.width = 9, fig.height = 4, dpi = 500}
+# CAZymes  
 
+### Exploration  
+
+```{r CAZy-1, warning = FALSE, fig.width = 7, fig.height = 6, dpi = 500}
+# Import CAZY reference annotation
+cazy_reference <- read.table("./IMG_annotation/CAZY_annotation.tsv", 
+                             stringsAsFactors = FALSE, header = TRUE,
+                            sep = "\t", fill = TRUE)
+
+# Import CAZY annotation of IMG gene calls
+cazy_files <- list.files(".", pattern = "*dbCAN*",
+                       recursive = TRUE)
+cazy_name <- c("Ramlibacter sp. MAG", "Bacteroidetes sp. MAG2",
+               "Bacteroidetes sp. MAG1")
+for(i in 1:length(cazy_files)){
+  cazy_df <- read.table(cazy_files[i], stringsAsFactors = FALSE,
+                         check.names =FALSE, header = TRUE)
+  cazy_df$Genome <- cazy_name[i]
+  if(i == 1) cazy_results_df <- cazy_df else cazy_results_df <- rbind(cazy_results_df, cazy_df)
+}
+
+# Summary of CAZY genes found in each genome
+cazy_results_df %>% group_by(Genome) %>% summarise(CAZY_counts = n())
+
+# Replace ".hmm" extension from reference
+cazy_results_df$Subject <- gsub(".hmm", "", cazy_results_df$Subject)
+cazy_results_df$Query <- as.character(cazy_results_df$Query)
+
+# Combine with kegg annotation
+# Identify genes that are under positive selection & that have DOM_usage annotation
+merged_gc_cog_psg_cazy <- left_join(cazy_results_df, merged_gc_cog, by = c("Query"
+                                                                      = "gene_oid"))
+# Combine with CAZY reference information
+merged_gc_cog_psg_cazy <- left_join(merged_gc_cog_psg_cazy, cazy_reference, 
+                                    by = c("Subject"= "Family"))
+merged_gc_cog_psg_cazy <- merged_gc_cog_psg_cazy %>% 
+  mutate(PSG = Query %in% data_posi$Gene)
+
+# Add AA annotation with was missing from the reference file
+merged_gc_cog_psg_cazy$cazy_class[is.na(merged_gc_cog_psg_cazy$cazy_class)] <- "Auxiliary activities"
+
+# Relabel other classes for interpretation
+merged_gc_cog_psg_cazy$cazy_class <- plyr::revalue(merged_gc_cog_psg_cazy$cazy_class,
+                                             c("CBM" = "Carbohydrate-binding modules",
+                                               "CE" = "Carbohydrate esterases",
+                                               "GH" = "Glycoside hydrolases",
+                                               "GT" = "Glycosyltransferases",
+                                               "PL" = "Polysaccharide lyases"))
+# Customize factor levels
+within_cazy_order <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class != "Cellulosome") %>%
+  group_by(cazy_class) %>% 
+  summarise(cazy_class_freq = n()) %>% 
+  arrange(desc(cazy_class_freq))
+
+merged_gc_cog_psg_cazy$cazy_class <- factor(merged_gc_cog_psg_cazy$cazy_class,
+                                            levels = within_cazy_order$cazy_class)
+
+merged_gc_cog_psg_cazy$Genome.x <- factor(merged_gc_cog_psg_cazy$Genome.x ,
+                                            levels = c("Ramlibacter sp. MAG",
+                                                       "Bacteroidetes sp. MAG1",
+                                                       "Bacteroidetes sp. MAG2"))
+```
+
+### Plots
+```{r CAZy-2, warning = FALSE, fig.width = 10, fig.height = 7, dpi = 500, dev = c("png","pdf")}
+# Make plot of cazy classes
+p_cazy1 <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class != "Cellulosome") %>%
+  droplevels() %>% 
+  ggplot(aes(x = cazy_class, fill = cazy_class))+
+  geom_bar(stat="count", color = "black", width = 0.5)+
+  theme_bw()+
+  scale_fill_brewer(palette = "Accent")+
+  ylab("Number of genes") + xlab("")+
+  theme(axis.text.y=element_text(size=15), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=14), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,80))+
+  facet_grid(.~Genome.x)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=16, angle = 0))+
+  # theme(axis.line = element_line(size = 1, colour = "grey80"),
+  #       panel.border = element_blank())+
+guides(fill = FALSE)
+
+print(p_cazy1)
+```
+
+```{r CAZy-3, warning = FALSE, fig.width = 9, fig.height = 7, dpi = 500, dev = c("png","pdf")}
+# Make plot of GH alone
+# Customize factor levels
+within_GH_order <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycoside hydrolases") %>%
+  group_by(Subject) %>% 
+  summarise(Subject_Freq = n()) %>% 
+  arrange(desc(Subject_Freq))
+
+merged_gc_cog_psg_cazy_GH <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycoside hydrolases") %>% 
+  droplevels()
+merged_gc_cog_psg_cazy_GH$Subject <- factor(merged_gc_cog_psg_cazy_GH$Subject,
+                                            levels = within_GH_order$Subject)
+p_cazy2 <- merged_gc_cog_psg_cazy_GH %>% 
+  dplyr::filter(cazy_class == "Glycoside hydrolases") %>%
+  droplevels() %>% 
+  ggplot(aes(x = Subject, fill = Genome.x))+
+  geom_bar(stat="count", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, col_bac1, col_bac2))+
+  ylab("Number of genes") + xlab("Glycoside hydrolase family")+
+  theme(axis.text.y=element_text(size=13), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=14), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,20,5))+
+  facet_grid(.~Genome.x)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=16, angle = 0))+
+  # theme(axis.line = element_line(size = 1, colour = "grey80"),
+  #       panel.border = element_blank())+
+guides(fill = FALSE)
+
+print(p_cazy2)
+
+# Make plot of GT alone
+# Customize factor levels
+within_GT_order <- merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycosyltransferases") %>%
+  group_by(Subject) %>% 
+  summarise(Subject_Freq = n()) %>% 
+  arrange(desc(Subject_Freq))
+
+merged_gc_cog_psg_cazy_GT <-  merged_gc_cog_psg_cazy %>% 
+  dplyr::filter(cazy_class == "Glycosyltransferases") %>% 
+  droplevels()
+merged_gc_cog_psg_cazy_GT$Subject <- factor(merged_gc_cog_psg_cazy_GT$Subject,
+                                            levels = within_GT_order$Subject)
+p_cazy3 <- merged_gc_cog_psg_cazy_GT %>% 
+  dplyr::filter(cazy_class == "Glycosyltransferases") %>%
+  droplevels() %>% 
+  ggplot(aes(x = Subject, fill = Genome.x))+
+  geom_bar(stat="count", color = "black")+
+  theme_bw()+
+  scale_fill_manual(values=c(col_RAMLI, col_bac1, col_bac2))+
+  ylab("Number of genes") + xlab("Glycosyltransferases")+
+  theme(axis.text.y=element_text(size=13), axis.title=element_text(size = 20),
+        legend.text=element_text(size=18),
+        legend.background = element_rect(fill="transparent"),
+        strip.text=element_text(size=14), legend.title = element_blank()
+        ,legend.position = c(0.87, 0.9)
+        )+
+  scale_y_continuous(breaks = seq(0,20,5))+
+  facet_grid(.~Genome.x)+
+  coord_flip()+
+  theme(axis.text.x = element_text(size=16, angle = 0))+
+  # theme(axis.line = element_line(size = 1, colour = "grey80"),
+  #       panel.border = element_blank())+
+guides(fill = FALSE)
+
+print(p_cazy3)
+```
+
+### Heatmap  
+
+```{r Cazy-4, warning = FALSE, fig.width = 12, fig.height = 3.5, dpi = 500, dev = c("png", "pdf")}
+# make heatmap of GH
+hm_GH <- merged_gc_cog_psg_cazy_GH %>%
+  group_by(Subject, Genome.x) %>% 
+  dplyr::summarise(Counts = n()) %>% 
+  complete(., Genome.x, Subject, fill = list(Counts=0)) %>% 
+  ggplot(aes(y = Genome.x, x = Subject)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = Counts), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(Counts, 0)), size = 3) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+print(hm_GH)
+```
+
+# DOC-transporters  
+
+### Exploration
+
+```{r Transp-1, warning = FALSE, fig.width = 9, fig.height = 6, dpi = 500}
+# Import DOM usage table
+DOM_usage_df <- read.csv("./IMG_annotation/DOM_usage.csv", stringsAsFactors = FALSE,
+                         check.names =FALSE)
+DOM_usage_df$DOM_type <- gsub("\\n","\n", DOM_usage_df$DOM_type, fixed = TRUE)
+
+# Import IMG exported COG-annotation of all genomes in phylogenomic tree
+COG_profiles <- read.table("./IMG_annotation/STAMP_profiles/abundance_cog_37895.tab.xls", header = TRUE, sep = "\t", quote = "")
+
+# Retain COG_ids that are found in DOM_usage_df list
+COG_profiles_sub <- COG_profiles %>% dplyr::filter(Func_id %in% DOM_usage_df$COG_ID)
+
+COG_profiles_sub <- dplyr::left_join(COG_profiles_sub, DOM_usage_df, 
+                                     by = c("Func_id" = "COG_ID")) %>% 
+  dplyr::select(contains("Func"),"DOM_type", contains("Ramli"),contains("Bacteroidetes"))
+rownames(COG_profiles_sub) <- COG_profiles_sub$Func_id
+
+# Remove zero rows
+COG_profiles_sub <- COG_profiles_sub[rowSums(COG_profiles_sub[, - c(1:3)])>0, ]
+
+# Wide to long format
+COG_profiles_sub_long <- tidyr::gather(COG_profiles_sub, Genome, 
+                                       Counts, 
+                          Ramlibacter_sp._MAG:Bacteroidetes_sp._MAG1,
+                          factor_key = TRUE)
+COG_profiles_sub_long$Genome <- gsub("_", " ", COG_profiles_sub_long$Genome)
+COG_profiles_sub_long$Genome <- gsub("5.10", "5-10", COG_profiles_sub_long$Genome)
+
+```
+
+
+```{r Transp-2, warning = FALSE, fig.width = 7, fig.height = 8.5, dpi = 500, dev = c("png", "pdf")}
+# Identify genes that are under positive selection & that have DOM_usage annotation
+merged_gc_cog_psg <- merged_gc_cog %>% 
+  dplyr::filter(Genome == "121950.assembled.gff") %>% 
+  dplyr::mutate(PSG = gene_oid %in% data_posi$Gene) 
+
+# Label DOM-usage genes
+merged_gc_cog_psg <- merged_gc_cog_psg %>% 
+  dplyr::left_join(., DOM_usage_df, by = c("cog_id" = "COG_ID"))
+
+# Overview of DOM-genes
+merged_gc_cog_psg_POS <- 
+  merged_gc_cog_psg %>% dplyr::filter(PSG  == TRUE & !is.na(DOM_type))
+
+# Order according to COG counts
+merged_gc_cog_psg_POS$cog_id <- factor(merged_gc_cog_psg_POS$cog_id,
+                                       levels = names(table(merged_gc_cog_psg_POS$cog_id))[rev(order(table(merged_gc_cog_psg_POS$cog_id)))])
+
+
+p_DOM_psg <- ggplot2::ggplot(merged_gc_cog_psg_POS, aes(x = DOM_type, fill = cog_name))+
+  geom_bar(alpha = 0.4, stat = "count", color = "black", width = 0.5)+
+  scale_fill_brewer("", palette = "Paired")+
+  theme_bw()+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=10),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="top",
+        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=guide_legend(ncol=1))+
+  ylab("Number of PSGs")
+
+print(p_DOM_psg)
+
+# Negative for PSG DOM-uptake genes
+merged_gc_cog_psg_NEG <-
+  merged_gc_cog_psg %>% dplyr::filter(PSG  == FALSE & !is.na(DOM_type))
+
+# Order according to COG counts
+merged_gc_cog_psg_NEG$cog_id <- factor(merged_gc_cog_psg_NEG$cog_id,
+                                       levels = names(table(merged_gc_cog_psg_NEG$cog_id))[rev(order(table(merged_gc_cog_psg_NEG$cog_id)))])
+
+# p_DOM_no_psg <- ggplot2::ggplot(merged_gc_cog_psg_NEG, aes(x = cog_id, fill = DOM_type))+
+#   geom_bar(alpha = 0.4, stat = "count", color = "black",
+#            position = position_dodge(width = 1), width = 0.7)+
+#   scale_fill_brewer("", palette = "Paired")+
+#   theme_bw()+
+#   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+#         title=element_text(size=20), legend.text=element_text(size=12),
+#         legend.background = element_rect(fill="transparent"),
+#         # axis.text.x = element_text(angle = 65, hjust = 1),
+#         strip.text.x=element_text(size = 18),
+#         legend.position="top",
+#         axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+#         axis.title.x=element_blank(),
+#         plot.title = element_text(hjust = 0, size=18))+
+#   guides(fill=guide_legend(ncol=1))+
+#   ylab("Number of PSGs")
+# 
+# print(p_DOM_no_psg)
+
+```
+
+### Heatmap
+```{r Transp-3, warning = FALSE, fig.width = 12, fig.height = 3.5, dpi = 500, dev = c("png", "pdf")}
+# Select subset of genomes for phosphate scavenging
+selected_genomes <- c("Ramlibacter sp. TTB310",
+                      "Ramlibacter sp. Leaf400",
+                      "Ramlibacter sp. 5-10",
+                      "Ramlibacter sp. MAG",
+                      "Bacteroidetes sp. MAG1", 
+                      "Bacteroidetes sp. MAG2")
+# Order fators
+COG_profiles_sub_long$Genome <- factor(as.character(COG_profiles_sub_long$Genome),
+                                 levels = selected_genomes)
+
+COG_order <- DOM_usage_df %>% dplyr::filter(COG_ID %in% unique(COG_profiles_sub_long$Func_id))
+COG_profiles_sub_long$Func_id <- factor(COG_profiles_sub_long$Func_id,
+                                        levels = COG_order$COG_ID)
+# make heatmap
+hm_DOC1 <- COG_profiles_sub_long %>% 
+  # dplyr::filter(Genome %in% selected_genomes) %>% 
+  ggplot(aes(y= Genome, x= Func_id)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = Counts), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(Counts, 0)), size = 3) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1, size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+print(hm_DOC1)
+```
+
+
+# Phosphate scavenging genes  
+
+### All genomes 
+
+
+```{r Pho-1, warning = FALSE, fig.width = 9.5, fig.height = 6, dpi = 500, dev = c("png", "pdf")}
+df_pho <- read.csv("./IMG_annotation/custom_tables/Annotation_P.csv", header = TRUE,
+                        stringsAsFactors = FALSE)
+# df_pho[, -1] <- scale(df_pho[, -1])
+df_pho_long <- df_pho %>% melt()
+df_pho_long$variable <- gsub("_", " - ", df_pho_long$variable)
+colnames(df_pho) <- gsub("_", " - ", colnames(df_pho))
+
+
+# Order fators
+df_pho_long$Genome <- factor(as.character(df_pho_long$Genome),
+                                 levels = df_pho$Genome)
+
+df_pho_long$variable <- factor(as.character(df_pho_long$variable),
+                                 levels = colnames(df_pho)[-1])
+
+# make heatmap
+hm_pho1 <- df_pho_long %>% 
+  ggplot(aes(y= Genome, x= variable)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = value), col = "lightgrey") + # background colours are mapped according to the value column
+  geom_text(aes(label = round(df_pho_long$value, 0))) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1, vjust=1,size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+print(hm_pho1)
+# changed again
+
+```
+
+### Subset of genomes  
+
+```{r Pho-2, warning = FALSE, fig.width = 9, fig.height = 3.5, dpi = 500, dev = c("png", "pdf")}
+df_pho_long_sel <- df_pho %>% melt()
+df_pho_long_sel$variable <- gsub("_", " - ", df_pho_long_sel$variable)
+
+# Select subset of genomes for phosphate scavenging
+selected_genomes <- c("Ramlibacter sp. TTB310",
+                      "Ramlibacter sp. Leaf400",
+                      "Ramlibacter sp. 5-10",
+                      "Ramlibacter sp. MAG",
+                      "Unclassified Bacteroidetes sp. MAG1", 
+                      "Unclassified Bacteroidetes sp. MAG2")
+df_pho_long_sel <- df_pho_long %>% 
+  dplyr::filter(Genome %in% selected_genomes)
+
+# Order fators
+df_pho_long_sel$Genome <- factor(as.character(df_pho_long_sel$Genome),
+                                 levels = selected_genomes)
+
+df_pho_long_sel$variable <- factor(as.character(df_pho_long_sel$variable),
+                                 levels = colnames(df_pho)[-1])
+
+# make heatmap
+hm_pho2 <- df_pho_long_sel %>% 
+  dplyr::filter(Genome %in% selected_genomes) %>% 
+  ggplot(aes(y= Genome, x= variable)) + # x and y axes => Var1 and Var2
+  geom_tile(aes(fill = value), col = "lightgrey") +
+  geom_text(aes(label = round(value, 0))) + # write the values
+  # scale_fill_gradientn(colours = terrain.colors(10), trans = "log1p")+
+  # scale_fill_gradient(low = "lightblue", high = "darkslategray", na.value="white",
+                      # trans = "log1p", limits=c(1, 40)) +
+  scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
+                       direction = 1) +
+  theme(panel.grid.major.x=element_blank(), #no gridlines
+        panel.grid.minor.x=element_blank(), 
+        panel.grid.major.y=element_blank(), 
+        panel.grid.minor.y=element_blank(),
+        panel.background=element_rect(fill="white"), # background=white
+        axis.text.x = element_text(angle=45, hjust = 1,vjust=1,size = 12,face = "bold"),
+        plot.title = element_text(size=20,face="bold"),
+        axis.text.y = element_text(size = 12,face = "bold"))+
+  theme(legend.title=element_text(face="bold", size=14)) + 
+  scale_x_discrete(name="") +
+  scale_y_discrete(name="") +
+  labs(fill="Gene\ncount")
+
+print(hm_pho2)
+# changed again
+```
+
+
+### Check for PSGss
+```{r Pho-3, warning = FALSE, fig.width = 9, fig.height = 3.5, dpi = 500, dev = c("png", "pdf")}
+# Get list of COGs/KO
+p_cog_ko_list <- do.call(rbind, base::strsplit(split = " - ", colnames(df_pho)[-1]))[,2]
+
+# Get P COGs that are PSG
+print(data_posi_COG %>% dplyr::filter(cog_id %in% p_cog_ko_list) %>% distinct())
+
+# Get P KOs that are PSG
+print(data_posi_KO %>% dplyr::filter(ko_id %in% p_cog_ko_list))
+```
+
+# Sigma factors  
+
+```{r sigma-1, warning = FALSE, fig.width = 9, fig.height = 4, dpi = 500, dev = c("png", "pdf")}
+# We use KEGG annotation because of its more defined sigma factor annotations
+df_sigma <- read.table("./IMG_annotation/STAMP_profiles/abundance_ko_38065.tab.xls",
+                       header = TRUE, sep = "\t", quote = "") %>% 
+  dplyr::filter(grepl("sigma", Func_name))
+
+vegan::specnumber(df_sigma[, 3: ncol(df_sigma)])
+# From wide to long
+# df_sigma <- gather(df_sigma, Genome, Counts, Curvibacter_sp._ATCC:Variovorax_sp._EPS)
+df_sigma <- data.frame(Genome = colnames(df_sigma)[-c(1,2)], 
+                       Counts = colSums(df_sigma[,-c(1,2)]))
+
+# Order genome_ids according to the phylogenetic clustering
+df_sigma$Genome <- gsub("_", " ", df_sigma$Genome)
+ord_full_list_bin_sigma <- c("Limnohabitans sp. Rim47", "Limnohabitans sp. Rim28",
+                  "Limnohabitans sp. 63ED37", 
+                  "Rhodoferax sp. ED16","Rhodoferax sp. T118",
+                  "Curvibacter sp. ATCC", "Curvibacter sp. PAE",
+                  "Variovorax sp. 110B", "Variovorax sp. EPS",
+                  "Ramlibacter sp. Leaf400", "Ramlibacter sp. TTB310",
+                  "Ramlibacter sp. MAG", 
+                  "Ramlibacter sp. 5.10",
+                  "Bacteroidetes sp. MAG1",
+                  "Bacteroidetes sp. MAG2"
+                  )
+df_sigma$Genome <- factor(df_sigma$Genome, levels = ord_full_list_bin_sigma)
+
+# Make plot
+p_sigma_1 <- df_sigma %>% dplyr::filter(Genome != "Bacteroidetes sp. MAG1" &
+                                        Genome != "Bacteroidetes sp. MAG2") %>% 
+  ggplot(aes(x = Genome, y = Counts, fill = Genome))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),3), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4), col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=FALSE)+
+  ylab("")+
+  xlab("")+
+  ggtitle(expression("Number of"~sigma~"factor homologs"))+
+  ylim(c(0,30))
+
+p_sigma_2 <- df_sigma %>% dplyr::filter(Genome == "Bacteroidetes sp. MAG1" |
+                                        Genome == "Bacteroidetes sp. MAG2") %>% 
+  ggplot(aes(x = Genome, y = Counts, fill = Genome))+
+  theme_bw()+
+  geom_bar(alpha = 0.4, stat = "identity", color = "black",
+           position = position_dodge(width = 1), width = 0.7)+
+  scale_fill_manual(values = c(col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        axis.text.x=element_text(size = 9, angle =55, hjust= 1),
+        axis.title.x=element_blank(),
+        plot.title = element_text(hjust = 0, size=18))+
+  guides(fill=FALSE)+
+  ylab("")+
+  xlab("")+
+  ggtitle("")+
+  ylim(c(0,30))
+
+cowplot::plot_grid(p_sigma_1, p_sigma_2, align = "hv", rel_widths = c(4,1))
+```
+
+# Ordination
+
+```{r ord-1, warning = FALSE, fig.width = 7, fig.height = 5, dpi = 500, dev = c("png", "pdf")}
+# We use KEGG annotation because of its more defined sigma factor annotations
+df_ord <- read.table("./IMG_annotation/STAMP_profiles/abundance_ko_38065.tab.xls",
+                       header = TRUE, sep = "\t", quote = "")
+# perform tsne
+set.seed(777)
+dist_tsne <- dist(t(df_ord[, -c(1,2)]))
+df_tsne <- Rtsne::Rtsne(dist_tsne, perplexity = 1)
+
+# From wide to long
+# df_sigma <- gather(df_sigma, Genome, Counts, Curvibacter_sp._ATCC:Variovorax_sp._EPS)
+df_tsne <- data.frame(Genome = colnames(df_ord)[-c(1,2)], 
+                       X = df_tsne$Y[,1],
+                       Y = df_tsne$Y[,2])
+
+# Order genome_ids according to the phylogenetic clustering
+df_tsne$Genome <- gsub("_", " ", df_tsne$Genome)
+df_tsne$Genome <- factor(df_tsne$Genome, levels = ord_full_list_bin_sigma)
+
+p_ord <- ggplot(df_tsne, aes(x = X, y = Y, fill = Genome))+
+  geom_point(size = 4, alpha = 0.7, shape = 21)+
+  scale_fill_manual(values = c(rep(adjustcolor("#c8c8ff",0.8),3), rep("#f8cf94",2), 
+                               rep("#adf7ad",2), rep(adjustcolor("#000000",0.21),2),
+                               rep("#e2a2fd",4), col_bac1, col_bac2))+
+  theme_bw()+
+  labs(x = "Axis 1", y = "Axis 2")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        plot.title = element_text(hjust = 0, size=18))
+
+print(p_ord)
+```
+
+# Size distribution R. aquaticus
+
+```{r size-1, warning = FALSE, fig.width = 5, fig.height = 3, dpi = 500, dev = c("png", "pdf")}
+size_files <- list.files(".", pattern = "RP_",
+                       recursive = TRUE)
+Raquat_size <- data.frame()
+for(size_file in size_files){
+  tmp <- read.delim(size_file, fill = TRUE)
+  tmp <- data.frame(tmp, sample = do.call(rbind, strsplit(size_file, "_"))[,2])
+  if(size_file == size_files[1]) Raquat_size <- tmp else{
+    Raquat_size <- rbind(Raquat_size, tmp)
+  }
+}
+
+# Make ggplot plot
+
+p_size <- ggplot(Raquat_size, aes(x= "R. aquaticus", y = Length))+
+  # geom_jitter(shape = 21, width = 0.025, size = 2.5, fill = col_RAMLI, alpha = 0.5)+
+  geom_violin(width = 0.5, alpha = 0.2, fill = col_RAMLI, bw = 0.1, 
+              adjust = 1, draw_quantiles = TRUE,
+              trim = TRUE, scale = "count")+
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult = 1), 
+                 geom="pointrange", color="black", size = 1.5, alpha = 0.75)+
+  xlab("")+ ylab("")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  scale_y_sqrt(breaks = c(0.25,0.5,1,2,4,6,8), labels = c(0.25,0.5,1,2,4,6,8), 
+               lim = c(0.25,8.1),
+               position = "right")+
+  labs(title = "Length (µm)")
+
+# Calculate mean & st dev
+Raquat_size %>% dplyr::filter(Length<=1) %>% summarize(mean(Length)) %>% round(.,1)
+Raquat_size %>% dplyr::filter(Length>1) %>% summarize(mean(Length))%>% round(.,1)
+
+Raquat_size %>% dplyr::filter(Length<=1) %>% summarize(sd(Length))%>% round(.,1)
+Raquat_size %>% dplyr::filter(Length>1) %>% summarize(sd(Length))%>% round(.,1)
+
+# Partition around medoids clustering
+Raquat_size$cluster_alloc <- factor(cluster::pam(Raquat_size$Length, 3)$cluster)
+tmp.si <- c()
+for(i in 2:10){
+    tmp.si[i] <- cluster::pam(Raquat_size$Length, k = i)$silinfo$avg.width
+}
+nr_clusters_bacteria <- which(tmp.si == max(tmp.si, na.rm = TRUE))
+Raquat_size$cluster_alloc <- factor(cluster::pam(Raquat_size$Length,
+                                        nr_clusters_bacteria)$cluster)
+
+p_size2 <- ggplot(Raquat_size, aes(x= "R. aquaticus", y = Length))+
+  geom_jitter(shape = 21, width = 0.1, size = 4, aes(fill = cluster_alloc)
+              , alpha = 0.7)+
+  scale_fill_brewer(palette = "Paired")+
+  xlab("")+ 
+  ylab("")+
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.y = element_text(size = 16),
+        axis.text.y = element_text(size = 14),
+        plot.title = element_text(size = 20, hjust = 0.5))+
+  scale_y_sqrt(breaks = c(0.25,0.5,1,2,4,6,8), labels = c(0.25,0.5,1,2,4,6,8), 
+               lim = c(0.25,8.1),
+               position = "right")+
+  labs(title = "Length (µm)")+
+  guides(fill = FALSE)
+
+cowplot::plot_grid(p_size, p_size2, ncol =2, align = "h")
 ```

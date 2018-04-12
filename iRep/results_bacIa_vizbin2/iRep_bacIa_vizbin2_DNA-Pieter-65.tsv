@@ -1,0 +1,36 @@
+## index of replication (iRep) - thresholds: min cov. = 5, min wins. = 0.98, min r^2 = 0.9, max fragments/Mbp = 175, GC correction min r^2 = 0.0
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	n/a
+#
+## un-filtered index of replication (iRep)
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	4.39956731818
+#
+## raw index of replication (no GC bias correction)
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	4.52045853894
+#
+## r^2
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	0.980806686106
+#
+## coverage
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	0.322882603891
+#
+## % windows passing filter
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	98.75
+#
+## fragments/Mbp
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	8
+#
+## GC bias
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	0.000537698383925
+#
+## GC r^2
+# genome	./splitBam/bacIa_vizbin2/DNA-Pieter-65.sam
+./bins/bacIa_vizbin2-contigs.fa	0.0016262136618
+#

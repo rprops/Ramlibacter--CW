@@ -1,0 +1,2003 @@
+Func_id	Func_name	Curvibacter_lanceolatus_ATCC_14669	Curvibacter_sp_PAE_UM	Limnohabitans_sp_63ED37_2_Limnohabitans_	Limnohabitans_sp_Rim28_Limnohabitans_sp_Rim28_73_Contigs_	Limnohabitans_sp_Rim47_finished	Ramlibacter_sp_MAG	Ramlibacter_sp_Leaf400	Ramlibacter_tataouinensis_5_10	Ramlibacter_tataouinensis_TTB310	Rhodoferax_ferrireducens_T118	Rhodoferax_saidenbachensis_ED16	Unclassified_Bacteroidetes_bin_1	Unclassified_Bacteroidetes_bin_2	Variovorax_paradoxus_110B	Variovorax_paradoxus_EPS
+TIGR00216	(E)-4-hydroxy-3-methyl-but-2-enyl pyrophosphate reductase (IPP and DMAPP forming)	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00691	(p)ppGpp synthetase, RelA/SpoT family	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR00124	[citrate (pro-3S)-lyase] ligase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03993	[NiFe] hydrogenase assembly chaperone, HybE family	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00143	[NiFe] hydrogenase maturation protein HypF	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01693	[Protein-PII] uridylyltransferase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00530	1-acyl-sn-glycerol-3-phosphate acyltransferases	3	4	4	3	3	4	3	5	3	3	5	4	2	5	4
+TIGR01274	1-aminocyclopropane-1-carboxylate deaminase	1	0	0	0	0	0	0	0	1	0	0	0	0	1	1
+TIGR00204	1-deoxy-D-xylulose-5-phosphate synthase	1	1	1	1	2	1	1	1	1	1	1	1	1	1	1
+TIGR00243	1-deoxy-D-xylulose 5-phosphate reductoisomerase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00612	1-hydroxy-2-methyl-2-(E)-butenyl 4-diphosphate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03374	1-pyrroline dehydrogenase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR00751	1,4-dihydroxy-2-naphthoate octaprenyltransferase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00096	16S rRNA (cytidine(1402)-2'-O)-methyltransferase	1	1	1	1	1	1	1	1	1	2	1	2	2	2	2
+TIGR00006	16S rRNA (cytosine(1402)-N(4))-methyltransferase	1	1	1	1	1	1	1	1	1	1	2	1	1	1	1
+TIGR00563	16S rRNA (cytosine(967)-C(5))-methyltransferase	2	2	2	2	2	2	2	2	2	2	2	0	0	2	2
+TIGR00138	16S rRNA (guanine(527)-N(7))-methyltransferase RsmG	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00095	16S rRNA (guanine(966)-N(2))-methyltransferase RsmD	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02273	16S rRNA processing protein RimM	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02258	2'-5' RNA ligase	0	1	0	0	0	1	1	1	1	1	0	0	0	2	2
+TIGR01390	2',3'-cyclic-nucleotide 2'-phosphodiesterase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01498	2-amino-4-hydroxy-6-hydroxymethyldihydropteridine diphosphokinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02326	2-aminoethylphosphonate--pyruvate transaminase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1
+TIGR03301	2-aminoethylphosphonate aminotransferase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1
+TIGR00151	2-C-methyl-D-erythritol 2,4-cyclodiphosphate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00453	2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03239	2-dehydro-3-deoxyglucarate aldolase	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR00745	2-dehydropantoate 2-reductase	2	1	1	3	1	4	1	3	1	0	2	0	0	9	5
+TIGR01832	2-deoxy-D-gluconate 3-dehydrogenase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01202	2-desacetyl-2-hydroxyethyl bacteriochlorophyllide A dehydrogenase	2	0	2	1	1	0	1	0	1	0	1	1	1	2	2
+TIGR01428	2-haloalkanoic acid dehalogenase, type II	3	2	1	1	0	3	3	1	1	1	0	0	0	3	4
+TIGR01505	2-hydroxy-3-oxopropionate reductase	1	1	1	0	2	0	2	2	0	0	1	0	0	1	1
+TIGR03206	2-hydroxycyclohexanecarboxyl-CoA dehydrogenase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03216	2-hydroxymuconic semialdehyde dehydrogenase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00973	2-isopropylmalate synthase, bacterial type	1	1	1	1	1	1	0	1	1	1	1	0	0	1	1
+TIGR00970	2-isopropylmalate synthase, yeast type	1	0	0	0	0	0	1	1	1	0	1	0	0	1	1
+TIGR00793	2-keto-3-deoxygluconate transporter	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03210	2-ketocyclohexanecarboxyl-CoA hydrolase	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01800	2-methylcitrate synthase/citrate synthase II	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02333	2-methylisocitrate dehydratase, Fe/S-dependent	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02312	2-oxo-hepta-3-ene-1,7-dioic acid hydratase	2	1	1	1	1	1	1	1	1	0	0	0	0	2	1
+TIGR03710	2-oxoacid:acceptor oxidoreductase, alpha subunit	0	0	0	0	0	0	1	2	0	1	0	1	1	1	1
+TIGR02177	2-oxoacid:acceptor oxidoreductase, beta subunit, pyruvate/2-ketoisovalerate family	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR02179	2-oxoacid:acceptor oxidoreductase, delta subunit, pyruvate/2-ketoisovalerate family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02175	2-oxoacid:acceptor oxidoreductase, gamma subunit, pyruvate/2-ketoisovalerate family	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR01347	2-oxoglutarate dehydrogenase complex dihydrolipoamide succinyltransferase (E2 component)	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00239	2-oxoglutarate dehydrogenase, E1 component	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03220	2-oxopent-4-enoate hydratase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01449	2-phosphoglycolate phosphatase, prokaryotic	2	2	3	2	3	2	2	2	2	3	1	0	0	2	2
+TIGR00298	2-phosphosulfolactate phosphatase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01982	2-polyprenylphenol 6-hydroxylase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02020	2-vinyl bacteriochlorophyllide hydratase	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR02275	2,3-dihydroxybenzoate-AMP ligase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR00965	2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02311	2,4-dihydroxyhept-2-ene-1,7-dioic acid aldolase	3	0	1	1	1	0	1	0	1	0	0	0	0	1	1
+TIGR00048	23S rRNA (adenine(2503)-C(2))-methyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00479	23S rRNA (uracil-5-)-methyltransferase RumA	1	1	1	1	0	1	1	1	0	1	1	1	1	1	1
+TIGR04074	3' terminal RNA ribose 2'-O-methyltransferase Hen1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01331	3'(2'),5'-bisphosphate nucleotidase, bacterial	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0
+TIGR02426	3-carboxy-cis,cis-muconate cycloisomerase	0	0	0	0	0	0	0	0	0	2	0	0	0	1	1
+TIGR01093	3-dehydroquinate dehydratase, type I	0	0	0	0	0	0	1	1	1	1	0	0	0	0	0
+TIGR01088	3-dehydroquinate dehydratase, type II	1	2	1	1	1	1	1	1	0	0	2	1	1	4	2
+TIGR01357	3-dehydroquinate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01361	3-deoxy-7-phosphoheptulonate synthase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01358	3-deoxy-7-phosphoheptulonate synthase, class II	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR01362	3-deoxy-8-phosphooctulonate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01670	3-deoxy-D-manno-octulosonate 8-phosphate phosphatase, YrbI family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00466	3-deoxy-D-manno-octulosonate cytidylyltransferase	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR03037	3-hydroxyanthranilate 3,4-dioxygenase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01963	3-hydroxybutyrate dehydrogenase	1	1	2	1	1	1	1	1	1	2	2	0	0	2	2
+TIGR01692	3-hydroxyisobutyrate dehydrogenase	1	0	0	0	0	0	1	0	0	0	0	0	0	1	1
+TIGR00170	3-isopropylmalate dehydratase, large subunit	1	2	2	3	2	1	3	1	4	1	1	1	1	3	3
+TIGR00171	3-isopropylmalate dehydratase, small subunit	2	2	2	3	2	1	3	2	5	1	1	1	1	3	3
+TIGR00169	3-isopropylmalate dehydrogenase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2
+TIGR00222	3-methyl-2-oxobutanoate hydroxymethyltransferase	1	1	0	1	0	1	0	2	0	1	1	1	1	1	1
+TIGR02429	3-oxoacid CoA-transferase, A subunit	6	2	2	2	1	2	1	2	2	2	1	1	1	2	2
+TIGR02428	3-oxoacid CoA-transferase, B subunit	4	2	2	2	1	2	1	2	2	2	1	1	1	2	2
+TIGR01830	3-oxoacyl-(acyl-carrier-protein) reductase	1	1	1	1	1	1	1	2	1	2	1	1	1	1	1
+TIGR01831	3-oxoacyl-(acyl-carrier-protein) reductase, putative	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR00747	3-oxoacyl-(acyl-carrier-protein) synthase III	1	1	1	1	1	1	1	1	2	1	1	3	2	1	1
+TIGR02427	3-oxoadipate enol-lactonase	2	1	0	0	0	0	1	1	0	0	0	0	0	2	1
+TIGR02430	3-oxoadipyl-CoA thiolase	3	1	1	1	1	1	1	2	1	2	1	1	1	1	1
+TIGR01356	3-phosphoshikimate 1-carboxyvinyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00506	3,4-dihydroxy-2-butanone 4-phosphate synthase	1	1	1	1	1	1	2	2	2	1	1	1	1	1	1
+TIGR02298	3,4-dihydroxyphenylacetate 2,3-dioxygenase	2	1	1	1	1	1	1	1	1	0	0	0	0	0	0
+TIGR00217	4-alpha-glucanotransferase	1	0	0	0	0	0	1	0	0	2	0	1	1	1	1
+TIGR00700	4-aminobutyrate aminotransferase, prokaryotic type	1	0	0	0	0	0	0	1	0	1	1	0	0	0	0
+TIGR00346	4-azaleucine resistance probable transporter AzlC	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+TIGR02798	4-carboxy-4-hydroxy-2-oxoadipate aldolase/oxaloacetate decarboxylase	1	1	1	1	1	1	1	1	1	1	1	0	0	0	1
+TIGR02425	4-carboxymuconolactone decarboxylase	1	1	1	1	1	1	1	1	1	0	1	0	0	1	0
+TIGR00154	4-diphosphocytidyl-2C-methyl-D-erythritol kinase	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1
+TIGR03217	4-hydroxy-2-oxovalerate aldolase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00036	4-hydroxy-tetrahydrodipicolinate reductase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00674	4-hydroxy-tetrahydrodipicolinate synthase	2	1	1	1	1	1	2	2	2	1	2	1	1	4	2
+TIGR02360	4-hydroxybenzoate 3-monooxygenase	1	1	1	2	1	1	1	1	1	1	1	0	0	2	1
+TIGR01474	4-hydroxybenzoate polyprenyl transferase, proteobacterial	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03194	4-hydroxybenzoyl-CoA reductase, alpha subunit	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR03195	4-hydroxybenzoyl-CoA reductase, beta subunit	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR03193	4-hydroxybenzoyl-CoA reductase, gamma subunit	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR02303	4-hydroxyphenylacetate degradation bifunctional isomerase/decarboxylase, C-terminal subunit	2	1	1	1	1	0	1	1	1	0	0	0	0	1	1
+TIGR02305	4-hydroxyphenylacetate degradation bifunctional isomerase/decarboxylase, N-terminal subunit	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01263	4-hydroxyphenylpyruvate dioxygenase	2	1	1	1	1	1	2	1	1	0	1	1	1	2	2
+TIGR00557	4-hydroxythreonine-4-phosphate dehydrogenase	1	2	1	1	1	1	2	1	1	2	1	1	1	2	2
+TIGR00013	4-oxalocrotonate tautomerase family enzyme	0	1	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR02276	40-residue YVTN family beta-propeller repeat	3	1	2	0	1	4	0	3	1	0	1	2	3	2	2
+TIGR01694	5'-deoxy-5'-methylthioadenosine phosphorylase	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0
+TIGR01704	5'-methylthioadenosine/S-adenosylhomocysteine nucleosidase	2	1	1	1	1	1	1	2	1	0	1	0	0	1	2
+TIGR00087	5'/3'-nucleotidase SurE	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02299	5-carboxymethyl-2-hydroxymuconate semialdehyde dehydrogenase	4	1	1	1	1	1	1	1	1	0	0	0	0	1	1
+TIGR03249	5-dehydro-4-deoxyglucarate dehydratase	1	1	0	0	0	0	1	0	1	0	0	0	0	1	1
+TIGR02082	5-methyltetrahydrofolate--homocysteine methyltransferase	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR01371	5-methyltetrahydropteroyltriglutamate--homocysteine S-methyltransferase	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02727	5,10-methenyltetrahydrofolate synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00676	5,10-methylenetetrahydrofolate reductase, prokaryotic form	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1
+TIGR02476	5,6-dimethylbenzimidazole synthase	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+TIGR03953	50S ribosomal protein L4, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01632	50S ribosomal protein uL11, bacterial form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03625	50S ribosomal protein uL3, bacterial form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03201	6-hydroxycyclohex-1-ene-1-carbonyl-CoA dehydrogenase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR03200	6-oxocyclohex-1-ene-1-carbonyl-CoA hydrolase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR02482	6-phosphofructokinase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01196	6-phosphogluconate dehydratase	1	1	1	1	1	2	1	1	1	1	1	0	0	1	1
+TIGR00872	6-phosphogluconate dehydrogenase (decarboxylating)	1	0	1	0	1	0	0	0	0	1	0	0	1	1	1
+TIGR01198	6-phosphogluconolactonase	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR00039	6-pyruvoyl tetrahydropterin synthase/QueD family protein	1	1	0	0	0	1	0	0	0	1	0	2	2	1	1
+TIGR00114	6,7-dimethyl-8-ribityllumazine synthase	3	1	1	1	1	1	1	1	1	1	2	1	1	2	2
+TIGR04508	7-carboxy-7-deazaguanine synthase, Cx14CxxC type	1	1	0	0	0	1	0	0	0	1	0	0	0	1	1
+TIGR03138	7-cyano-7-deazaguanine reductase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00858	8-amino-7-oxononanoate synthase	1	1	0	0	0	0	0	0	0	0	0	2	2	1	1
+TIGR01084	A/G-specific adenine glycosylase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01291	ABC-2 type transporter, NodJ family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00056	ABC transport permease subunit	3	2	1	1	1	2	2	2	2	2	3	1	1	2	2
+TIGR00025	ABC transporter efflux protein, DrrB family	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR01254	ABC transporter periplasmic binding protein, thiB subfamily	0	0	1	0	0	0	0	0	0	1	1	0	0	0	0
+TIGR03864	ABC transporter, ATP-binding subunit, PQQ-dependent alcohol dehydrogenase system	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02204	ABC transporter, permease/ATP-binding protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01728	ABC transporter, substrate-binding protein, aliphatic sulfonates family	6	0	0	0	0	0	0	0	0	2	2	0	0	4	3
+TIGR03863	ABC transporter, substrate binding protein, PQQ-dependent alcohol dehydrogenase system	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR04498	abortive infection protein, AbiV family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03215	acetaldehyde dehydrogenase (acetylating)	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02188	acetate--CoA ligase	1	2	1	2	2	1	1	1	1	2	1	1	1	2	1
+TIGR00016	acetate kinase	1	0	0	0	0	0	0	1	0	1	0	0	0	1	1
+TIGR01829	acetoacetyl-CoA reductase	1	1	1	1	1	1	1	1	1	1	1	0	0	2	2
+TIGR01217	acetoacetyl-CoA synthase	2	1	1	1	1	1	1	1	1	1	0	0	0	2	1
+TIGR00118	acetolactate synthase, large subunit, biosynthetic type	1	1	1	1	1	1	2	1	1	1	1	1	1	2	2
+TIGR00119	acetolactate synthase, small subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01930	acetyl-CoA acetyltransferases	12	5	7	7	6	7	7	9	5	12	9	3	3	9	10
+TIGR00531	acetyl-CoA carboxylase, biotin carboxyl carrier protein	1	1	1	1	1	1	1	2	1	1	1	1	1	1	1
+TIGR00514	acetyl-CoA carboxylase, biotin carboxylase subunit	4	3	3	3	3	3	4	3	3	4	3	1	1	3	4
+TIGR00513	acetyl-CoA carboxylase, carboxyl transferase, alpha subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00515	acetyl-CoA carboxylase, carboxyl transferase, beta subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02717	acetyl coenzyme A synthetase (ADP forming), alpha domain	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0
+TIGR00761	acetylglutamate kinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01892	acetylornithine deacetylase (ArgE)	1	0	1	1	0	1	1	1	1	0	0	0	0	3	1
+TIGR01910	acetylornithine deacetylase or succinyl-diaminopimelate desuccinylase	2	0	0	0	2	0	1	1	0	1	1	0	0	1	1
+TIGR03397	acid phosphatase, Burkholderia-type	2	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR03434	Acidobacterial duplicated orphan permease	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR01341	aconitate hydratase 1	1	0	0	0	1	1	2	1	1	1	1	0	0	2	2
+TIGR00117	aconitate hydratase 2	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01340	aconitate hydratase, mitochondrial	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01852	acyl-[acyl-carrier-protein]--UDP-N-acetylglucosamine O-acyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03098	acyl-CoA ligase (AMP-forming), exosortase A-associated	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00051	acyl-CoA thioester hydrolase, YbgC/YbaW family	4	4	4	4	4	3	5	7	4	4	4	1	2	5	5
+TIGR00189	acyl-CoA thioesterase II	0	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+TIGR00023	acyl-phosphate glycerol 3-phosphate acyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00517	acyl carrier protein	4	2	1	1	1	1	1	1	1	4	2	1	2	3	3
+TIGR02946	acyltransferase, WS/DGAT/MGAT	1	0	0	0	0	1	1	1	0	3	3	0	0	1	1
+TIGR02607	addiction module antidote protein, HigA family	1	1	1	3	0	0	1	0	1	1	0	0	0	0	1
+TIGR02384	addiction module antitoxin, RelB/DinJ family	1	0	0	0	0	1	0	0	0	1	0	0	0	0	0
+TIGR00053	addiction module toxin component, YafQ family	1	0	0	0	0	1	0	0	0	1	0	0	0	0	0
+TIGR02385	addiction module toxin, RelE/StbE family	3	0	0	0	1	1	0	0	0	1	1	0	2	0	0
+TIGR01178	adenine deaminase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01090	adenine phosphoribosyltransferase	1	1	1	1	0	0	0	0	0	1	1	0	0	0	0
+TIGR01430	adenosine deaminase	1	1	1	1	1	1	2	1	1	1	1	0	0	3	2
+TIGR00936	adenosylhomocysteinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00508	adenosylmethionine-8-amino-7-oxononanoate transaminase	1	1	0	0	0	0	0	0	0	0	0	1	1	1	1
+TIGR01351	adenylate kinase	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1
+TIGR00928	adenylosuccinate lyase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00184	adenylosuccinate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	2	2
+TIGR00455	adenylyl-sulfate kinase	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR00318	adenylyl cyclase CyaB, putative	0	0	0	0	0	0	0	0	0	0	0	1	1	1	0
+TIGR01731	adhesin HecA family 20-residue repeat (two copies)	0	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR02197	ADP-L-glycero-D-manno-heptose-6-epimerase	0	1	0	0	0	1	1	1	1	1	1	1	1	0	0
+TIGR01230	agmatinase	1	0	0	0	0	0	0	0	0	2	1	0	0	0	0
+TIGR04049	AIR synthase-related protein, sll0787 family	1	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR00344	alanine--tRNA ligase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00518	alanine dehydrogenase	0	1	0	0	0	0	0	0	0	1	0	1	1	0	0
+TIGR00492	alanine racemase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03861	alcohol ABC transporter, permease protein	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03565	alkanesulfonate monooxygenase, FMNH(2)-dependent	2	0	0	0	0	0	0	0	0	1	1	0	0	2	2
+TIGR03140	alkyl hydroperoxide reductase subunit F	1	1	1	1	1	1	1	1	1	0	1	0	0	1	1
+TIGR00778	alkylhydroperoxidase AhpD family core domain	7	2	2	1	2	2	3	1	2	5	2	3	2	7	5
+TIGR04030	alkylhydroperoxidase domain protein, Avi_7169 family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR04169	alkylhydroperoxidase/carboxymuconolactone decarboxylase family protein	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR00686	alkylphosphonate utilization operon protein PhnA	1	1	1	0	1	0	0	0	0	1	0	0	0	0	0
+TIGR02713	allophanate hydrolase	1	1	0	0	0	1	0	0	0	0	1	0	0	1	1
+TIGR01180	alpha-1,2-mannosidase, putative	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR01515	alpha-1,4-glucan:alpha-1,4-glucan 6-glycosyltransferase	1	0	0	0	0	0	1	0	0	1	0	1	1	2	2
+TIGR02094	alpha-glucan phosphorylases	0	0	0	0	0	0	1	0	0	1	0	1	1	0	0
+TIGR03186	alpha-ketoglutarate dehydrogenase	1	0	1	1	0	1	1	1	1	1	0	0	0	1	1
+TIGR03162	alpha-ribazole phosphatase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02400	alpha,alpha-trehalose-phosphate synthase [UDP-forming]	1	0	0	0	0	1	1	1	1	0	0	0	0	1	1
+TIGR03306	alternate F1F0 ATPase, F0 subunit A	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03321	alternate F1F0 ATPase, F0 subunit B	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03322	alternate F1F0 ATPase, F0 subunit C	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03324	alternate F1F0 ATPase, F1 subunit alpha	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03305	alternate F1F0 ATPase, F1 subunit beta	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03166	alternate F1F0 ATPase, F1 subunit epsilon	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03323	alternate F1F0 ATPase, F1 subunit gamma	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02392	alternative sigma factor RpoH	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01879	amidase, hydantoinase/carbamoylase family	3	2	1	2	1	1	1	1	1	2	2	0	1	3	3
+TIGR01891	amidohydrolase	6	1	6	4	3	4	5	2	4	1	1	3	4	6	5
+TIGR02715	amidohydrolase, AtzE family	1	1	0	0	0	1	0	0	0	0	1	0	0	0	0
+TIGR00199	amidohydrolase, PncC family	1	1	1	1	1	1	1	1	1	1	1	1	1	2	3
+TIGR01134	amidophosphoribosyltransferase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01726	amine acid ABC transporter, permease protein, 3-TM region, His/Glu/Gln/Arg/opine family	13	2	2	2	6	5	8	4	4	16	11	0	0	19	12
+TIGR01890	amino-acid N-acetyltransferase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01733	amino acid adenylation domain	0	0	0	0	0	0	0	0	0	1	0	0	0	7	6
+TIGR00835	amino acid carrier protein	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00447	aminoacyl-tRNA hydrolase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03461	aminodeoxychorismate lyase	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR00553	aminodeoxychorismate synthase, component I, bacterial clade	0	0	0	0	0	0	0	0	0	0	0	0	0	2	1
+TIGR03339	aminoethylphosphonate catabolism associated LysR family transcriptional regulator	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR04431	aminoglycoside N(6')-acetyltransferase, AacA4 family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR02414	aminopeptidase N, Escherichia coli type	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR04335	AmmeMemoRadiSam system protein A	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR04336	AmmeMemoRadiSam system protein B	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR04337	AmmeMemoRadiSam system radical SAM enzyme	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR00836	ammonium transporter	3	2	2	2	2	2	2	2	1	2	2	1	2	3	3
+TIGR01717	AMP nucleosidase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01721	AMP nucleosidase, putative	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00901	AmpG-like permease	1	1	1	1	1	1	0	1	1	1	1	0	0	1	1
+TIGR00770	anaerobic c4-dicarboxylate membrane transporter family protein	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0
+TIGR02487	anaerobic ribonucleoside-triphosphate reductase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02495	anaerobic ribonucleoside-triphosphate reductase activating protein	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00785	anion transporter	0	1	0	0	0	0	0	0	0	4	0	0	0	0	0
+TIGR03228	anthranilate 1,2-dioxygenase, large subunit	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03231	anthranilate 1,2-dioxygenase, small subunit	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01245	anthranilate phosphoribosyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00564	anthranilate synthase component I, non-proteobacterial lineages	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00377	anti-anti-sigma factor	1	1	1	1	0	0	1	3	1	1	1	1	0	1	0
+TIGR02451	anti-sigma factor, putative, ChrR family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00546	apolipoprotein N-acyltransferase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01229	arginase	1	1	0	0	0	1	1	1	1	1	2	0	1	1	1
+TIGR03810	arginine-ornithine antiporter	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR01078	arginine deiminase	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR00838	argininosuccinate lyase	1	1	1	1	1	2	1	1	1	1	1	1	1	1	1
+TIGR00032	argininosuccinate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00456	arginyl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00014	arsenate reductase (glutaredoxin)	1	0	0	1	0	0	2	1	0	0	2	0	0	1	2
+TIGR02691	arsenate reductase (thioredoxin)	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR00832	arsenical-resistance protein	1	1	1	0	0	0	0	0	0	1	0	0	0	1	0
+TIGR04291	arsenical pump-driving ATPase	1	0	0	0	0	0	0	0	0	1	2	0	0	0	0
+TIGR02690	arsenical resistance protein ArsH	0	0	0	1	0	0	0	0	0	0	2	0	0	0	1
+TIGR02693	arsenite oxidase, large subunit	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02694	arsenite oxidase, small subunit	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00935	arsenite/antimonite efflux pump membrane protein	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR03035	arylformamidase	1	0	1	0	1	1	1	1	1	0	0	0	0	1	1
+TIGR01536	asparagine synthase (glutamine-hydrolyzing)	3	0	1	0	0	1	1	0	1	4	0	0	4	0	0
+TIGR03104	asparagine synthase family amidotransferase	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+TIGR00457	asparaginyl-tRNA synthetase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03802	aspartate-alanine antiporter	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01296	aspartate-semialdehyde dehydrogenase (peptidoglycan organisms)	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01745	aspartate-semialdehyde dehydrogenase, gamma-proteobacterial	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00839	aspartate ammonia-lyase	0	0	0	0	0	0	1	0	1	1	0	0	0	1	1
+TIGR00670	aspartate carbamoyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	2	3
+TIGR00657	aspartate kinase	1	1	1	1	1	1	1	1	1	1	1	3	3	1	1
+TIGR00656	aspartate kinase, monofunctional class	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00035	aspartate racemase	1	0	1	1	1	1	0	1	2	2	1	1	0	4	2
+TIGR00459	aspartyl-tRNA synthetase, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00132	aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase, A subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00133	aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase, B subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00135	aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase, C subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01625	AspT/YidE/YbjL antiporter duplication domain	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0
+TIGR01288	ATP-binding ABC transporter family nodulation protein NodI	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03719	ATP-binding cassette protein, ChvD family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03346	ATP-dependent chaperone ClpB	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00493	ATP-dependent Clp endopeptidase, proteolytic subunit ClpP	1	1	1	1	1	2	2	2	2	1	1	3	2	2	2
+TIGR02639	ATP-dependent Clp protease ATP-binding subunit clpA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00643	ATP-dependent DNA helicase RecG	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01389	ATP-dependent DNA helicase RecQ	1	1	1	1	1	1	1	1	1	1	1	2	1	1	1
+TIGR01074	ATP-dependent DNA helicase Rep	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR00614	ATP-dependent DNA helicase, RecQ family	1	1	2	2	2	2	2	1	2	2	1	3	2	2	2
+TIGR01241	ATP-dependent metalloprotease FtsH	1	1	1	1	1	1	2	1	2	2	1	1	1	1	1
+TIGR00390	ATP-dependent protease HslVU, ATPase subunit	1	1	0	0	0	1	1	1	1	1	0	0	0	1	1
+TIGR03692	ATP-dependent protease HslVU, peptidase subunit	1	1	0	0	0	1	1	1	1	1	0	0	0	1	1
+TIGR00070	ATP phosphoribosyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03455	ATP phosphoribosyltransferase, C-terminal domain	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00443	ATP phosphoribosyltransferase, regulatory subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01131	ATP synthase subunit 6 (eukaryotes),also subunit A (prokaryotes)	2	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR01144	ATP synthase, F0 subunit b	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01260	ATP synthase, F0 subunit c	2	1	1	1	1	2	2	2	2	1	1	1	1	2	2
+TIGR01039	ATP synthase, F1 beta subunit	2	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR01145	ATP synthase, F1 delta subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01216	ATP synthase, F1 epsilon subunit (delta in mitochondria)	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01146	ATP synthase, F1 gamma subunit	2	1	1	1	1	1	1	1	1	2	1	2	1	1	1
+TIGR00636	ATP:cob(I)alamin adenosyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01026	ATPase, FliI/YscN family	1	1	1	1	1	1	0	1	1	1	1	0	0	1	1
+TIGR01494	ATPase, P-type (transporting), HAD superfamily, subfamily IC	15	6	3	2	4	7	4	4	1	8	7	5	4	5	4
+TIGR02601	autotransporter-associated beta strand repeat	1	0	0	0	1	0	0	0	0	0	0	0	0	5	3
+TIGR04052	AZL_007920/MXAN_0976 family protein	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03998	bacillithiol biosynthesis cysteine-adding enzyme BshC	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR04001	bacillithiol biosynthesis deacetylase BshB1	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR04019	bacillithiol system protein YtxJ	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00696	bacterial polymer biosynthesis proteins, WecB/TagA/CpsF family	1	0	0	0	0	1	2	1	1	0	0	1	0	0	0
+TIGR01476	bacteriochlorophyll/chlorophyll synthetase	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR03882	bacteriocin biosynthesis cyclodehydratase domain	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00754	bacterioferritin	1	1	0	0	0	0	1	1	1	0	1	0	0	1	1
+TIGR03783	Bacteroides conjugation system ATPase, TraG family	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR03782	Bacteroides conjugative transposon TraJ protein	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR03781	Bacteroides conjugative transposon TraK protein	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR03779	Bacteroides conjugative transposon TraM protein	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR03780	Bacteroides conjugative transposon TraN protein	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR02262	benzoate-CoA ligase family	1	0	1	1	1	1	1	1	2	1	1	0	0	1	2
+TIGR00895	benzoate transport	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00843	benzoate transporter	0	0	1	1	0	0	0	0	0	0	1	0	0	0	0
+TIGR03222	benzoyl-CoA-dihydrodiol lyase	1	0	1	1	1	1	1	1	1	1	0	0	0	1	1
+TIGR03225	benzoyl-CoA oxygenase, B subunit	1	0	1	1	1	2	1	2	1	2	0	0	0	1	1
+TIGR03224	benzoyl-CoA oxygenase/reductase, BoxA protein	1	0	1	1	1	1	0	1	0	1	0	0	0	1	1
+TIGR02259	benzoyl-CoA reductase, bcr type, subunit A	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR02260	benzoyl-CoA reductase, bcr type, subunit B	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR02261	benzoyl-CoA reductase, bcr type, subunit D	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR02263	benzoyl-CoA reductase, subunit C	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR03356	beta-galactosidase	0	0	1	0	0	0	0	0	0	2	0	1	1	0	0
+TIGR01749	beta-hydroxyacyl-[acyl carrier protein] dehydratase FabA	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01750	beta-hydroxyacyl-[acyl carrier protein] dehydratase FabZ	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03150	beta-ketoacyl-acyl-carrier-protein synthase II	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR02431	beta-ketoadipate pathway transcriptional regulators, PcaR/PcaU/PobR family	5	3	1	1	2	1	3	1	2	0	1	0	0	4	3
+TIGR02009	beta-phosphoglucomutase family hydrolase	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0
+TIGR00841	bile acid transporter	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR00724	biotin-dependent carboxylase uncharacterized domain	1	0	0	0	0	1	0	0	0	2	0	1	1	3	2
+TIGR03133	biotin-independent malonate decarboxylase, beta subunit	1	0	0	0	0	1	1	0	0	1	0	0	0	0	0
+TIGR03134	biotin-independent malonate decarboxylase, gamma subunit	1	0	0	0	0	1	1	0	0	1	0	0	0	0	0
+TIGR00433	biotin synthase	1	1	0	0	0	1	0	0	0	1	0	1	1	1	1
+TIGR00121	birA, biotin-[acetyl-CoA-carboxylase] ligase region	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00668	bis(5'-nucleosyl)-tetraphosphatase (symmetrical)	1	1	1	1	1	1	1	1	0	1	1	0	0	1	1
+TIGR01122	branched-chain amino acid aminotransferase, group I	1	1	1	1	1	1	1	2	1	1	1	1	0	1	1
+TIGR01123	branched-chain amino acid aminotransferase, group II	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03948	butyryl-CoA:acetate CoA-transferase	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00225	C-terminal peptidase (prc)	1	1	1	1	1	1	1	1	1	1	1	2	3	1	1
+TIGR00353	c-type cytochrome biogenesis protein CcmF	0	0	1	1	1	0	0	1	0	1	0	1	0	0	0
+TIGR00816	C4-dicarboxylate transporter/malic acid transport protein	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02229	caa(3)-type oxidase, subunit IV	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR00846	calcium/proton exchanger	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0
+TIGR00378	calcium/proton exchanger (cax)	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0
+TIGR01007	capsular exopolysaccharide family	2	0	0	0	0	1	2	2	1	1	0	0	1	2	3
+TIGR01689	capsule biosynthesis phosphatase	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR00746	carbamate kinase	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR01369	carbamoyl-phosphate synthase, large subunit	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR01368	carbamoyl-phosphate synthase, small subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01313	carbohydrate kinase, thermoresistant glucokinase family	1	1	1	1	1	1	1	0	1	1	1	0	0	0	0
+TIGR02416	carbon-monoxide dehydrogenase, large subunit	1	1	0	0	1	1	1	2	1	0	0	0	0	1	1
+TIGR02050	carboxylate-amine ligase, YbdK family	0	1	0	0	0	1	1	1	1	0	1	1	1	1	1
+TIGR00950	Carboxylate/Amino Acid/Amine Transporter	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR04265	cardiolipin synthase	0	0	0	0	0	2	1	1	1	1	0	0	0	1	1
+TIGR00198	catalase/peroxidase HPI	1	1	0	1	0	0	0	0	1	0	1	1	1	1	1
+TIGR02439	catechol 1,2-dioxygenase, proteobacterial	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01297	cation diffusion facilitator family transporter	2	2	1	1	1	4	1	1	1	3	1	1	1	4	3
+TIGR04391	CcmD family protein	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR02047	Cd(II)/Pb(II)-responsive transcriptional regulator	5	1	0	1	0	1	0	1	0	1	2	0	0	1	1
+TIGR00560	CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00473	CDP-diacylglycerol--serine O-phosphatidyltransferase	1	1	1	1	1	2	2	2	2	2	1	1	1	2	2
+TIGR02622	CDP-glucose 4,6-dehydratase	1	1	0	1	0	0	0	0	0	1	0	1	1	0	0
+TIGR01174	cell division protein FtsA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00438	cell division protein FtsJ	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02209	cell division protein FtsL	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02223	cell division protein FtsN	0	1	1	0	0	0	0	1	0	0	1	0	0	0	0
+TIGR02614	cell division protein FtsW	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00065	cell division protein FtsZ	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01215	cell division topological specificity factor MinE	1	0	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00904	cell shape determining protein, MreB/Mrl family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04189	cell surface protein SprA	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03030	cellulose synthase catalytic subunit (UDP-forming)	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR03371	cellulose synthase operon protein YhjQ	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR03017	chain length determinant protein EpsF	0	0	0	0	0	1	1	2	1	0	0	0	0	0	0
+TIGR03029	chain length determinant protein tyrosine kinase EpsG	1	0	0	0	0	1	1	1	1	0	0	0	0	0	0
+TIGR01065	channel protein, hemolysin III family	1	1	0	0	0	0	0	0	0	1	0	0	0	2	2
+TIGR02349	chaperone protein DnaJ	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR02350	chaperone protein DnaK	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR02348	chaperonin GroL	1	1	1	1	1	1	1	1	1	2	1	1	1	2	1
+TIGR02016	chlorophyllide reductase iron protein subunit X	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR02015	chlorophyllide reductase subunit Y	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR02014	chlorophyllide reductase subunit Z	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR04215	choice-of-anchor A domain	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR01807	chorismate mutase domain of proteobacterial P-protein, clade 2	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01803	chorismate mutase related enzymes	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00033	chorismate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00937	chromate transporter, chromate ion transporter (CHR) family	3	1	1	2	1	2	1	1	1	2	1	2	1	2	1
+TIGR00362	chromosomal replication initiator protein DnaA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02168	chromosome segregation protein SMC, common bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02484	CitB domain protein	1	1	1	1	1	1	1	1	1	2	0	0	0	1	0
+TIGR01793	citrate (Si)-synthase, eukaryotic	0	0	0	0	0	0	0	0	0	0	0	1	2	0	0
+TIGR01608	citrate lyase acyl carrier protein	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01584	citrate lyase, alpha subunit	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01588	citrate lyase, beta subunit	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01798	citrate synthase I (hexameric type)	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03698	clan AA aspartic protease, AF_0612 family	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0
+TIGR02281	clan AA aspartic protease, TIGR02281 family	1	1	1	1	0	0	1	1	1	1	1	0	0	1	1
+TIGR04029	CMD domain protein, Avi_7170 family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00241	CoA-substrate-specific enzyme activase, putative	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0
+TIGR00708	cob(I)alamin adenosyltransferase	1	1	0	1	0	0	0	0	1	1	1	0	0	1	1
+TIGR00317	cobalamin 5'-phosphate synthase/cobalamin synthase	1	0	0	0	0	0	1	1	1	1	1	0	0	1	1
+TIGR00312	cobalamin biosynthesis protein CbiD	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00123	cobalamin biosynthesis protein CbiM	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00380	cobalamin biosynthesis protein CobD	1	0	0	1	0	0	0	0	1	1	1	0	0	1	1
+TIGR02475	cobalamin biosynthesis protein CobW	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1
+TIGR02454	cobalt ECF transporter T component CbiQ	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01165	cobalt transport protein	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01166	cobalt transport protein ATP-binding subunit	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02458	cobalt transporter subunit CbtA (proposed)	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02459	cobalt transporter subunit CbtB (proposed)	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02257	cobaltochelatase, CobN subunit	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1
+TIGR01650	cobaltochelatase, CobS subunit	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR01651	cobaltochelatase, CobT subunit	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR00313	cobyric acid synthase CobQ	1	1	0	1	1	0	1	1	1	1	1	0	0	1	1
+TIGR00379	cobyrinic acid a,c-diamide synthase	1	1	0	1	0	0	0	0	1	1	0	0	0	1	1
+TIGR02109	coenzyme PQQ biosynthesis enzyme PqqE	0	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR02108	coenzyme PQQ biosynthesis protein B	0	0	0	0	0	1	0	0	0	0	0	0	1	1	1
+TIGR02111	coenzyme PQQ biosynthesis protein C	0	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR03859	coenzyme PQQ biosynthesis protein PqqD	0	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR02107	coenzyme PQQ precursor peptide PqqA	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR00360	ComEC/Rec2-related protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00201	comF family protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00426	competence protein ComEA helix-hairpin-helix repeat region	1	1	1	1	1	1	1	1	1	1	1	2	1	1	1
+TIGR00200	competence/damage-inducible protein CinA N-terminal domain	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03743	conjugative coupling factor TraD, SXT/TOL subfamily	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02271	conserved domain	0	0	0	0	0	1	0	0	3	0	0	0	0	0	0
+TIGR00697	conserved hypothetical integral membrane protein	1	0	2	0	0	3	1	2	1	0	0	1	2	1	1
+TIGR00374	conserved hypothetical protein	2	1	1	1	1	3	2	3	1	2	3	4	4	10	6
+TIGR01784	conserved hypothetical protein (putative transposase or invertase)	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03806	conserved hypothetical protein, HNE_0200 family	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR03837	conserved hypothetical protein, PP_1857 family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02001	conserved hypothetical protein, proteobacterial	2	1	1	1	1	2	1	2	1	0	0	0	0	2	2
+TIGR02464	conserved hypothetical protein, ribA/ribD-fused	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR02096	conserved hypothetical protein, steroid delta-isomerase-related	1	0	0	0	0	0	0	1	0	0	0	0	1	1	1
+TIGR00247	conserved hypothetical protein, YceG family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01451	conserved repeat domain	4	0	0	0	0	0	5	1	0	0	0	0	0	1	4
+TIGR01511	copper-(or silver)-translocating P-type ATPase	7	5	2	1	1	5	3	2	1	4	3	1	1	3	2
+TIGR00003	copper ion binding protein	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR00287	CRISPR-associated endonuclease Cas1	1	0	0	1	0	0	0	0	1	2	0	0	0	0	0
+TIGR03640	CRISPR-associated endonuclease Cas1, subtype I-C/DVULG	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR03638	CRISPR-associated endonuclease Cas1, subtype I-E/ECOLI	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01573	CRISPR-associated endonuclease Cas2	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR01596	CRISPR-associated endonuclease Cas3-HD	1	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR01873	CRISPR-associated endoribonuclease Cas2, subtype I-E/ECOLI	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01587	CRISPR-associated helicase Cas3	1	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR00372	CRISPR-associated protein Cas4	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR02593	CRISPR-associated protein Cas5, N-terminal domain	1	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR01876	CRISPR-associated protein Cas5, subtype I-C/DVULG	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR01868	CRISPR-associated protein Cas5/CasD, subtype I-E/ECOLI	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02807	CRISPR-associated protein Cas6, subtype MYXAN	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01907	CRISPR-associated protein Cas6/Cse3/CasE, subtype I-E/ECOLI	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02589	CRISPR-associated protein Cas7/Csd2, subtype I-C/DVULG	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR01869	CRISPR-associated protein Cas7/Cse4/CasC, subtype I-E/ECOLI	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01863	CRISPR-associated protein Cas8c/Csd1, subtype I-C/DVULG	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR01595	CRISPR-associated protein, CT1132 family	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR03117	CRISPR type AFERR-associated DEAD/DEAH-box helicase Csf4	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03114	CRISPR type AFERR-associated protein Csf1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02547	CRISPR type I-E/ECOLI-associated protein CasA/Cse1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02548	CRISPR type I-E/ECOLI-associated protein CasB/Cse2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03115	CRISPR type IV/AFERR-associated protein Csf2	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03116	CRISPR type IV/AFERR-associated protein Csf3	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00228	crossover junction endodeoxyribonuclease RuvC	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02765	cryptochrome, DASH family	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR00337	CTP synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02044	Cu(I)-responsive transcriptional regulator	1	1	0	0	0	1	3	2	1	1	1	0	0	1	1
+TIGR00673	cyanase	1	1	0	1	0	1	1	0	0	1	0	0	0	1	1
+TIGR00896	cyanate transporter	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02068	cyanophycin synthetase	2	2	2	2	2	0	0	0	0	2	2	0	0	2	2
+TIGR01194	cyclic peptide transporter	0	0	0	0	0	0	0	0	0	0	0	0	0	2	1
+TIGR03548	cyclically-permuted mutarotase family protein	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR03189	cyclohexa-1,5-dienecarbonyl-CoA hydratase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR03207	cyclohexanecarboxyl-CoA dehydrogenase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03208	cyclohexanecarboxylate-CoA ligase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02106	cyd operon protein YbgT	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+TIGR00011	Cys-tRNA(Pro) deacylase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01324	cystathionine beta-lyase, bacterial	3	1	1	1	1	1	1	1	2	1	1	0	0	2	2
+TIGR01137	cystathionine beta-synthase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01976	cysteine desulfurase family protein, VC1184 subfamily	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02006	cysteine desulfurase IscS	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03402	cysteine desulfurase NifS	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01979	cysteine desulfurases, SufSfamily	1	0	0	0	0	0	0	1	0	1	0	0	1	1	1
+TIGR01136	cysteine synthase	2	1	2	2	2	1	1	2	1	2	2	0	0	2	2
+TIGR01139	cysteine synthase A	1	0	1	1	1	0	0	1	0	1	1	0	0	1	1
+TIGR01138	cysteine synthase B	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00435	cysteinyl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01354	cytidine deaminase, homotetrameric	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00017	cytidylate kinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00125	cytidyltransferase-like domain	3	3	2	2	1	3	2	2	2	4	4	5	4	3	3
+TIGR04494	cytochrome c-550 PedF	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03142	cytochrome c-type biogenesis protein CcmI	0	0	1	1	1	0	0	1	0	1	0	0	0	0	0
+TIGR03144	cytochrome c-type biogenesis protein CcsB	1	1	1	1	1	1	1	1	1	0	1	0	0	1	1
+TIGR02745	cytochrome c oxidase accessory protein FixG	4	2	1	1	1	1	1	1	0	1	1	1	1	1	0
+TIGR00780	cytochrome c oxidase, cbb3-type, subunit I	1	1	1	1	1	1	1	1	0	2	1	1	1	1	0
+TIGR00781	cytochrome c oxidase, cbb3-type, subunit II	1	1	1	1	1	1	1	1	0	2	1	1	1	1	0
+TIGR00782	cytochrome c oxidase, cbb3-type, subunit III	1	1	1	1	1	2	1	1	0	1	1	1	1	1	0
+TIGR02891	cytochrome c oxidase, subunit I	1	1	1	1	1	2	3	2	2	1	1	0	0	1	3
+TIGR02866	cytochrome c oxidase, subunit II	1	1	1	1	1	2	1	1	2	1	1	0	0	1	2
+TIGR00203	cytochrome d oxidase, subunit II (cydB)	0	0	0	0	0	0	0	1	1	1	1	0	0	1	1
+TIGR01433	cytochrome o ubiquinol oxidase subunit II	1	0	0	0	0	1	0	1	0	0	0	0	0	1	1
+TIGR02847	cytochrome o ubiquinol oxidase subunit IV	1	0	0	0	0	1	0	1	0	0	0	0	0	1	1
+TIGR02843	cytochrome o ubiquinol oxidase, subunit I	1	0	0	0	0	1	0	1	0	0	0	0	0	1	1
+TIGR02842	cytochrome o ubiquinol oxidase, subunit III	1	0	0	0	0	1	0	1	0	0	0	0	0	1	1
+TIGR00847	cytochrome oxidase maturation protein, cbb3-type	1	1	1	1	1	1	1	1	0	1	1	1	1	1	0
+TIGR01327	D-3-phosphoglycerate dehydrogenase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01205	D-alanine--D-alanine ligase	1	1	1	1	1	1	1	1	1	1	1	1	2	1	1
+TIGR00666	D-alanyl-D-alanine carboxypeptidase, serine-type, PBP4 family	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR01121	D-amino acid aminotransferase	1	1	0	0	0	1	1	1	1	2	0	0	0	1	1
+TIGR00893	D-galactonate transporter	1	0	0	0	0	0	0	1	0	0	0	0	0	2	1
+TIGR02033	D-hydantoinase	1	0	0	0	0	0	1	0	0	0	2	1	1	2	0
+TIGR02035	D-serine ammonia-lyase	2	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00256	D-tyrosyl-tRNA(Tyr) deacylase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02634	D-xylose ABC transporter, substrate-binding protein	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1
+TIGR01312	D-xylulose kinase	0	0	0	0	1	0	0	0	0	0	1	0	0	1	1
+TIGR00213	D,D-heptose 1,7-bisphosphate phosphatase	0	0	1	1	2	1	1	1	0	0	1	0	0	1	1
+TIGR01550	death-on-curing family protein	1	1	0	0	0	1	0	0	1	1	0	0	0	0	1
+TIGR03509	decaheme-associated outer membrane protein, MtrB/PioB family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03508	decaheme c-type cytochrome, DmsE family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03507	decaheme c-type cytochrome, OmcA/MtrC family	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0
+TIGR03699	dehypoxanthine futalosine cyclase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01238	delta-1-pyrroline-5-carboxylate dehydrogenase (PutA C-terminal domain)	1	0	0	0	1	1	1	1	1	1	1	0	0	1	1
+TIGR01236	delta-1-pyrroline-5-carboxylate dehydrogenase, group 1	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02608	delta-60 repeat domain	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR02274	deoxycytidine triphosphate deaminase	1	1	1	1	1	1	1	1	1	1	0	1	1	1	1
+TIGR01353	deoxyguanosinetriphosphate triphosphohydrolase, putative	1	2	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00321	deoxyhypusine synthase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00126	deoxyribose-phosphate aldolase	0	0	0	0	0	0	0	0	0	0	0	1	1	1	1
+TIGR00576	deoxyuridine 5'-triphosphate nucleotidohydrolase (dut)	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00152	dephospho-CoA kinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00347	dethiobiotin synthase	1	1	0	0	0	0	0	0	0	0	0	1	1	1	1
+TIGR04121	DEXH box helicase, DNA ligase-associated	0	0	0	0	0	1	1	0	1	0	0	1	1	1	1
+TIGR04039	di-heme enzyme, MXAN_0977 family	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01048	diaminopimelate decarboxylase	2	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR01921	diaminopimelate dehydrogenase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00652	diaminopimelate epimerase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01747	diaminopropionate ammonia-lyase family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+TIGR03205	dicarboxylate--CoA ligase PimA	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00254	diguanylate cyclase (GGDEF) domain	85	46	0	1	1	2	5	4	2	55	55	0	0	16	4
+TIGR01350	dihydrolipoamide dehydrogenase	2	2	2	2	2	2	3	4	3	2	2	1	1	2	2
+TIGR00525	dihydroneopterin aldolase	1	1	2	2	3	1	1	1	1	1	1	1	1	1	1
+TIGR00856	dihydroorotase, homodimeric type	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00857	dihydroorotase, multifunctional complex type	1	1	1	1	1	1	1	1	1	1	2	3	3	2	1
+TIGR01037	dihydroorotate dehydrogenase (subfamily 1) family protein	1	0	0	0	0	0	0	0	0	0	1	1	1	0	0
+TIGR01036	dihydroorotate dehydrogenase, subfamily 2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01496	dihydropteroate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00110	dihydroxy-acid dehydratase	2	2	2	2	2	3	5	2	4	2	2	2	2	7	5
+TIGR04021	dimethyl sulfone monooxygenase SfnG	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR03438	dimethylhistidine N-methyltransferase	1	1	1	1	1	1	1	1	1	1	0	0	0	1	1
+TIGR00486	dinuclear metal center protein, YbgI/SA1388 family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01887	dipeptidase, putative	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2
+TIGR00242	division/cell wall cluster transcriptional repressor MraZ	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00567	DNA-3-methyladenine glycosylase	0	0	0	0	0	1	1	1	1	0	0	1	1	0	0
+TIGR00624	DNA-3-methyladenine glycosylase I	1	0	0	0	1	0	0	1	0	0	1	1	1	1	1
+TIGR00103	DNA-binding protein, YbaB/EbfC family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01033	DNA-binding regulatory protein, YebC/PmpR family	2	2	2	2	2	1	1	1	1	1	2	1	1	2	2
+TIGR00594	DNA-directed DNA polymerase III (polc)	2	1	1	1	1	2	2	2	2	2	2	1	1	2	2
+TIGR02027	DNA-directed RNA polymerase, alpha subunit, bacterial and chloroplast-type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02386	DNA-directed RNA polymerase, beta' subunit, predominant form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02013	DNA-directed RNA polymerase, beta subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00690	DNA-directed RNA polymerase, omega subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00577	DNA-formamidopyrimidine glycosylase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00675	DNA-methyltransferase (dcm)	0	0	0	1	0	0	0	2	0	1	1	0	0	0	0
+TIGR00571	DNA adenine methylase (dam)	2	0	0	0	0	0	0	0	0	1	0	0	1	0	1
+TIGR00568	DNA alkylation damage repair protein AlkB	0	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+TIGR01764	DNA binding domain, excisionase family	1	1	3	3	4	1	0	0	0	0	0	0	0	1	0
+TIGR01063	DNA gyrase, A subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01059	DNA gyrase, B subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01075	DNA helicase II	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00376	DNA helicase, putative	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR00361	DNA internalization-related competence protein ComEC/Rec2	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02776	DNA ligase D	0	0	0	0	0	2	2	1	2	0	0	0	0	2	2
+TIGR02777	DNA ligase D, 3'-phosphoesterase domain	0	0	0	0	0	1	1	1	1	0	0	0	0	2	2
+TIGR02779	DNA ligase D, ligase domain	0	0	0	0	0	1	1	1	1	0	0	0	0	2	2
+TIGR02778	DNA ligase D, polymerase domain	0	0	0	0	0	2	2	1	2	0	0	0	0	2	2
+TIGR00574	DNA ligase I, ATP-dependent (dnl1)	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR04120	DNA ligase, ATP-dependent, PP_1105 family	0	0	0	0	0	1	1	0	1	0	0	0	1	1	1
+TIGR00575	DNA ligase, NAD-dependent	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00632	DNA mismatch endonuclease Vsr	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00585	DNA mismatch repair protein MutL	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01070	DNA mismatch repair protein MutS	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00593	DNA polymerase I	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00663	DNA polymerase III, beta subunit	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR00678	DNA polymerase III, delta' subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01128	DNA polymerase III, delta subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01406	DNA polymerase III, epsilon subunit, Proteobacterial	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02397	DNA polymerase III, subunit gamma and tau	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01391	DNA primase, catalytic core	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00732	DNA protecting protein DprA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00416	DNA repair protein RadA	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR00608	DNA repair protein radc	3	1	1	1	1	1	1	1	1	1	1	1	1	2	1
+TIGR00634	DNA repair protein RecN	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00613	DNA repair protein RecO	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01051	DNA topoisomerase I, bacterial	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01056	DNA topoisomerase III, bacteria and conjugative plasmid	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01062	DNA topoisomerase IV, A subunit, proteobacterial	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01055	DNA topoisomerase IV, B subunit, proteobacterial	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03420	DnaA regulatory inactivator Hda	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02784	double-strand break repair helicase AddA, alphaproteobacterial type	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01905	doubled CXXCH domain	0	0	0	0	0	0	0	0	0	7	0	0	0	0	0
+TIGR00710	drug resistance transporter, Bcr/CflA subfamily	3	2	2	2	1	0	2	2	1	2	3	0	1	5	4
+TIGR00711	drug resistance transporter, EmrB/QacA subfamily	5	1	2	2	0	4	2	4	1	3	3	1	1	12	11
+TIGR01221	dTDP-4-dehydrorhamnose 3,5-epimerase	1	2	2	2	1	1	2	2	2	1	1	2	1	1	1
+TIGR01214	dTDP-4-dehydrorhamnose reductase	1	1	1	1	1	1	1	1	2	1	2	1	2	1	1
+TIGR01181	dTDP-glucose 4,6-dehydratase	1	1	2	1	1	0	1	1	1	1	2	1	1	1	1
+TIGR00041	dTMP kinase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01413	Dyp-type peroxidase family	0	0	0	0	0	1	1	1	0	0	0	0	0	1	0
+TIGR03004	ectoine/hydroxyectoine ABC transporter, permease protein EhuC	1	0	0	0	0	0	0	0	0	1	0	0	0	2	1
+TIGR03003	ectoine/hydroxyectoine ABC transporter, permease protein EhuD	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00998	efflux pump membrane protein (multidrug resistance protein A)	1	0	0	0	0	1	0	1	0	1	1	0	0	1	1
+TIGR01845	efflux transporter, outer membrane factor (OMF) lipoprotein, NodT family	20	1	0	0	0	5	5	9	4	4	5	0	0	17	13
+TIGR04373	EgtB-related enzyme signature domain	0	1	1	1	1	1	0	0	1	1	0	0	0	0	0
+TIGR00524	eIF-2B alpha/beta/delta-related uncharacterized proteins	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01944	electron transport complex, RnfABCDGE type, B subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01393	elongation factor 4	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04534	ELWxxDGT repeat	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR01083	endonuclease III	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00382	endopeptidase Clp ATP-binding regulatory subunit (clpX)	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00763	endopeptidase La	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR01182	Entner-Doudoroff aldolase	1	1	2	2	2	2	2	2	2	4	2	1	1	2	2
+TIGR02247	epoxide hydrolase N-terminal domain-like phosphatase	1	0	1	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR00276	epoxyqueuosine reductase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04176	EPS-associated transcriptional regulator, MarR family	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0
+TIGR02914	EpsI family protein	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03440	ergothioneine biosynthesis protein EgtB	2	1	0	0	0	2	2	2	2	1	0	0	0	2	2
+TIGR01532	erythrose-4-phosphate dehydrogenase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01840	esterase, PHB depolymerase family	1	0	0	0	0	1	2	2	1	1	0	0	0	1	1
+TIGR00908	ethanolamine permease	1	0	0	0	0	0	0	0	0	1	1	0	1	1	1
+TIGR00630	excinuclease ABC, A subunit	2	2	2	3	2	3	3	2	2	2	2	2	2	3	4
+TIGR00631	excinuclease ABC, B subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00194	excinuclease ABC, C subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00195	exodeoxyribonuclease III	2	2	2	2	2	3	3	3	3	2	2	1	1	3	3
+TIGR00633	exodeoxyribonuclease III (xth)	2	2	2	2	2	3	3	3	3	2	2	1	1	3	3
+TIGR01447	exodeoxyribonuclease V, alpha subunit	1	0	1	1	1	1	1	1	0	0	0	0	0	0	0
+TIGR00609	exodeoxyribonuclease V, beta subunit	1	0	1	1	1	1	1	1	0	0	0	0	0	0	0
+TIGR01450	exodeoxyribonuclease V, gamma subunit	1	0	1	1	1	1	1	1	0	0	0	0	0	0	0
+TIGR00237	exodeoxyribonuclease VII, large subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01280	exodeoxyribonuclease VII, small subunit	0	1	1	1	1	0	1	1	1	1	1	0	0	1	1
+TIGR00618	exonuclease SbcC	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00619	exonuclease SbcD	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00573	exonuclease, DNA polymerase III, epsilon subunit family	1	2	2	2	1	1	1	1	1	3	1	1	2	1	1
+TIGR03706	exopolyphosphatase	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR03014	exopolysaccharide biosynthesis operon protein EpsL	0	0	0	0	0	1	1	1	1	0	0	0	0	0	0
+TIGR03025	exopolysaccharide biosynthesis polyprenyl glycosylphosphotransferase	1	0	1	1	0	1	1	2	1	1	0	2	0	0	0
+TIGR01005	exopolysaccharide transport protein family	1	0	0	0	0	0	1	0	0	0	0	0	0	2	3
+TIGR03018	exopolysaccharide/PEP-CTERM locus tyrosine autokinase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02602	exosortase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03109	exosortase A	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03108	exosortase A system-associated amidotransferase 1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03100	exosortase A system-associated hydrolase 1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03101	exosortase A system-associated hydrolase 2	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR04177	exosortase H, IPTLxxWG-CTERM-specific	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR04178	exosortase/archaeosortase family protein	1	1	0	0	0	0	0	0	1	1	1	0	1	1	1
+TIGR02222	export-related chaperone protein CsaA	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0
+TIGR01370	extracellular protein	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02230	F0F1-ATPase subunit, putative	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03165	F1/F0 ATPase, Methanosarcina type, subunit 2	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01679	FAD-linked oxidoreductase	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1
+TIGR03364	FAD dependent oxidoreductase TIGR03364	1	0	1	0	0	0	0	0	0	0	2	0	1	1	0
+TIGR00182	fatty acid/phospholipid synthesis protein PlsX	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02437	fatty oxidation complex, alpha subunit FadB	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR01991	Fe-S protein assembly chaperone HscA	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00714	Fe-S protein assembly co-chaperone HscB	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1
+TIGR03019	FemAB-related protein, PEP-CTERM system-associated	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02936	ferredoxin III, nif-specific	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02007	ferredoxin, 2Fe-2S type, ISC system	2	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00109	ferrochelatase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00437	ferrous iron transporter FeoB	1	0	0	0	0	0	0	1	0	1	0	1	1	1	1
+TIGR01978	FeS assembly ATPase SufC	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR03412	FeS assembly protein IscX	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01980	FeS assembly protein SufB	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR01981	FeS assembly protein SufD	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01999	FeS cluster assembly scaffold IscU	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01901	filamentous hemagglutinin family N-terminal domain	0	1	0	1	0	3	1	1	0	0	2	0	0	2	3
+TIGR04226	fimbrial isopeptide formation D2 domain	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0
+TIGR03504	FimV C-terminal domain	1	1	1	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR03505	FimV N-terminal domain	1	1	1	0	1	1	1	1	1	1	1	0	0	1	1
+TIGR01686	FkbH-like domain	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR03170	flagella basal body P-ring formation protein FlgA	1	1	1	1	1	1	0	0	0	1	1	0	0	1	0
+TIGR00206	flagellar basal-body M-ring protein/flagellar hook-basal body protein (fliF)	2	1	1	1	1	1	0	1	0	1	1	0	0	1	0
+TIGR01396	flagellar basal-body rod protein FlgB	5	2	2	2	2	1	0	1	0	1	1	0	0	1	0
+TIGR01395	flagellar basal-body rod protein FlgC	2	1	1	1	1	1	0	1	0	1	1	0	0	1	0
+TIGR02490	flagellar basal-body rod protein FlgF	2	1	1	0	0	2	0	0	0	1	0	0	0	2	0
+TIGR02488	flagellar basal-body rod protein FlgG, Gram-negative bacteria	1	1	1	1	1	1	0	1	0	1	1	0	0	1	0
+TIGR03824	flagellar biosynthesis anti-sigma factor FlgM	1	1	1	1	1	1	0	0	0	1	1	0	0	1	0
+TIGR01398	flagellar biosynthesis protein FlhA	2	1	1	1	1	1	0	1	0	1	1	0	0	1	0
+TIGR00328	flagellar biosynthetic protein FlhB	1	0	1	1	1	0	0	1	0	0	1	0	0	1	0
+TIGR03499	flagellar biosynthetic protein FlhF	1	1	0	0	0	1	0	0	0	1	1	0	0	1	0
+TIGR03500	flagellar biosynthetic protein FliO	0	0	1	1	1	1	0	0	0	0	0	0	0	1	0
+TIGR01103	flagellar biosynthetic protein FliP	2	1	1	1	1	1	0	1	0	1	1	0	0	1	0
+TIGR01402	flagellar biosynthetic protein FliQ	2	1	1	1	1	1	0	1	0	1	1	0	0	1	0
+TIGR01400	flagellar biosynthetic protein FliR	2	1	1	1	1	1	0	1	0	1	1	0	0	1	1
+TIGR00208	flagellar biosynthetic protein FliS	1	1	1	1	1	1	0	0	0	1	1	0	0	1	0
+TIGR02473	flagellar export protein FliJ	1	1	1	1	1	1	0	0	0	1	1	0	0	1	0
+TIGR02550	flagellar hook-associated protein 3	2	1	1	1	1	1	0	0	0	1	1	0	0	1	0
+TIGR02492	flagellar hook-associated protein FlgK	2	1	1	1	1	1	0	0	0	1	1	0	0	1	0
+TIGR00205	flagellar hook-basal body complex protein FliE	2	1	1	1	1	1	0	1	0	1	1	0	0	1	0
+TIGR03506	flagellar hook-basal body protein	4	3	3	2	3	3	0	3	0	3	3	0	0	3	0
+TIGR03818	flagellar motor stator protein MotA	1	1	1	1	1	1	0	0	0	1	2	0	0	1	0
+TIGR00207	flagellar motor switch protein FliG	1	1	1	1	1	1	0	0	0	1	1	0	0	1	0
+TIGR01397	flagellar motor switch protein FliM	1	1	1	1	1	1	0	0	0	1	1	0	0	1	0
+TIGR02480	flagellar motor switch protein FliN	2	1	1	1	1	1	0	1	0	1	1	0	0	1	0
+TIGR03496	flagellar protein export ATPase FliI	1	1	0	0	0	1	0	0	0	1	1	0	0	1	0
+TIGR02541	flagellar rod assembly protein/muramidase FlgJ	1	1	0	0	1	1	0	0	0	1	1	0	0	1	0
+TIGR04046	flavin-dependent oxidoreductase, MSMEG_0569 family	1	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR01813	flavocytochrome c	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0
+TIGR00275	flavoprotein, HI0933 family	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR00789	flhB C-terminus-related protein	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03177	Flp pilus assembly protein CpaB	0	0	0	1	1	1	1	1	0	1	0	0	0	2	3
+TIGR03860	FMN-dependent oxidoreductase, nitrilotriacetate monooxygenase family	8	0	0	0	0	0	0	0	0	1	0	0	0	3	2
+TIGR03566	FMN reductase, MsuE subfamily	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR03567	FMN reductase, SsuE family	1	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+TIGR03317	folate-binding protein YgfZ	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00526	FolB domain	1	1	2	2	2	1	1	1	1	1	1	1	1	1	1
+TIGR01499	folylpolyglutamate synthase/dihydrofolate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01553	formate dehydrogenase-N alpha subunit	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR01562	formate dehydrogenase accessory protein FdhE	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00129	formate dehydrogenase family accessory protein FdhD	1	1	1	1	1	1	1	1	1	1	1	0	0	2	3
+TIGR02811	formate dehydrogenase region TAT target	0	0	1	1	1	1	1	1	1	1	0	0	0	0	1
+TIGR01591	formate dehydrogenase, alpha subunit, archaeal-type	1	1	1	1	1	1	1	2	1	1	0	0	0	1	2
+TIGR01582	formate dehydrogenase, beta subunit, Fe-S containing	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR01583	formate dehydrogenase, gamma subunit	1	1	1	1	1	1	1	1	1	1	0	0	0	1	1
+TIGR00790	formate/nitrite transporter	0	1	0	0	0	1	0	0	0	0	0	0	0	0	1
+TIGR02022	formiminoglutamate deiminase	1	0	0	0	0	0	1	1	0	1	1	0	0	1	1
+TIGR03253	formyl-CoA transferase	0	2	0	0	0	0	0	3	0	0	0	0	0	2	2
+TIGR00655	formyltetrahydrofolate deformylase	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR02436	four helix bundle protein	0	0	0	0	0	0	0	0	0	0	0	11	7	0	0
+TIGR00875	fructose-6-phosphate aldolase, TalC/MipB family	0	0	0	0	0	0	0	0	0	0	0	1	1	1	1
+TIGR01521	fructose-bisphosphate aldolase, class II, Calvin cycle subtype	1	2	2	1	2	1	1	1	1	1	1	0	0	1	1
+TIGR01520	fructose-bisphosphate aldolase, class II, yeast/E. coli subtype	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00145	FTR1 family protein	2	1	0	0	0	2	0	0	0	1	0	0	0	1	0
+TIGR00979	fumarate hydratase, class II	1	1	0	0	0	1	1	1	1	1	1	1	1	1	1
+TIGR01266	fumarylacetoacetase	2	0	0	0	1	2	1	0	0	0	1	0	0	2	3
+TIGR03664	futalosine hydrolase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03248	galactarate dehydratase	2	1	1	1	1	0	1	1	1	0	1	0	0	1	1
+TIGR00131	galactokinase	0	0	0	0	0	1	1	0	1	0	0	1	1	0	0
+TIGR00209	galactose-1-phosphate uridylyltransferase, family 1	0	0	0	0	0	1	0	0	1	0	0	0	1	0	0
+TIGR00407	gamma-glutamyl phosphate reductase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00066	gamma-glutamyltranspeptidase	3	3	2	2	2	2	2	3	4	1	2	2	1	4	3
+TIGR01472	GDP-mannose 4,6-dehydratase	1	0	0	0	0	1	0	1	0	1	0	1	1	1	1
+TIGR02272	gentisate 1,2-dioxygenase	2	1	1	1	1	1	1	1	1	0	0	0	0	1	1
+TIGR02023	geranylgeranyl reductase	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR02032	geranylgeranyl reductase family	0	0	1	1	2	0	0	0	0	0	0	0	1	0	0
+TIGR01768	geranylgeranylglyceryl phosphate synthase family protein	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03521	gliding-associated putative ABC transporter substrate-binding component GldG	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03522	gliding motility-associated ABC transporter ATP-binding subunit GldA	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03518	gliding motility-associated ABC transporter permease protein GldF	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR04131	gliding motility-associated C-terminal domain	0	0	0	0	0	0	0	0	0	0	0	15	13	0	0
+TIGR03512	gliding motility-associated lipoprotein GldD	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03511	gliding motility-associated lipoprotein GldH	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03524	gliding motility-associated lipoprotein GldJ	0	0	0	0	0	0	0	0	0	0	0	2	1	0	0
+TIGR03525	gliding motility-associated lipoprotein GldK	0	0	0	0	0	0	0	0	0	0	0	1	2	0	0
+TIGR03515	gliding motility-associated protein GldC	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03520	gliding motility-associated protein GldE	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03513	gliding motility-associated protein GldL	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03517	gliding motility-associated protein GldM	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03523	gliding motility associated protien GldN	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01200	GLPGLI family protein	0	0	0	0	0	0	0	0	0	0	0	6	3	0	0
+TIGR01192	glucan exporter ATP-binding protein	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR03247	glucarate dehydratase	1	1	1	1	1	0	1	1	1	0	1	0	0	1	1
+TIGR00749	glucokinase, proteobacterial type	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0
+TIGR01314	gluconate kinase, FGGY type	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR00791	gluconate transporter	1	0	0	0	0	0	0	0	0	0	0	1	1	1	1
+TIGR01135	glucosamine--fructose-6-phosphate aminotransferase (isomerizing)	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00502	glucosamine-6-phosphate isomerase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02091	glucose-1-phosphate adenylyltransferase	1	0	0	0	0	0	2	0	0	1	0	1	1	1	1
+TIGR02623	glucose-1-phosphate cytidylyltransferase	1	1	0	1	0	0	2	1	1	1	0	1	1	0	0
+TIGR01208	glucose-1-phosphate thymidylylransferase, long form	0	0	0	0	0	0	0	0	0	1	0	1	1	0	0
+TIGR01207	glucose-1-phosphate thymidylyltransferase, short form	1	1	2	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00871	glucose-6-phosphate 1-dehydrogenase	1	0	1	1	1	1	1	1	1	2	1	0	1	1	1
+TIGR00136	glucose-inhibited division protein A	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01272	glucose/galactose transporter	0	0	0	0	0	0	0	0	0	0	0	1	2	0	0
+TIGR01434	glutamate--cysteine ligase	1	1	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR02049	glutamate--cysteine ligase, T. ferrooxidans family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00713	glutamate-1-semialdehyde-2,1-aminomutase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01027	glutamate 5-kinase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00120	glutamate N-acetyltransferase/amino-acid acetyltransferase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00067	glutamate racemase	1	1	1	1	1	1	1	1	0	1	1	1	1	1	1
+TIGR01316	glutamate synthase (NADPH), homotetrameric	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01317	glutamate synthases, NADH/NADPH, small subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03814	glutaminase A	0	0	0	0	0	1	1	1	1	0	0	0	0	1	1
+TIGR00566	glutamine amidotransferase of anthranilate synthase or aminodeoxychorismate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	2	1
+TIGR00653	glutamine synthetase, type I	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR03105	glutamine synthetase, type III	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0
+TIGR00440	glutaminyl-tRNA synthetase	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03838	glutamyl-queuosine tRNA(Asp) synthetase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01035	glutamyl-tRNA reductase	1	1	1	1	2	1	1	1	1	1	1	1	1	1	1
+TIGR00464	glutamyl-tRNA synthetase, bacterial family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02181	Glutaredoxin, GrxC family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01421	glutathione-disulfide reductase, animal/bacterial	0	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR01424	glutathione-disulfide reductase, plant	0	0	0	0	0	1	1	1	0	0	1	0	0	1	1
+TIGR01380	glutathione synthetase, prokaryotic	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01534	glyceraldehyde-3-phosphate dehydrogenase, type I	1	2	4	2	4	1	1	1	1	2	1	1	1	1	1
+TIGR01311	glycerol kinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01186	glycine betaine/L-proline transport ATP binding subunit	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR01822	glycine C-acetyltransferase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00527	glycine cleavage system H protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00528	glycine cleavage system T protein	1	0	1	1	0	1	1	1	1	1	1	1	1	1	1
+TIGR00461	glycine dehydrogenase (decarboxylating)	1	0	1	1	0	1	1	1	1	1	1	1	1	1	1
+TIGR02352	glycine oxidase ThiO	1	1	0	1	1	1	0	1	1	1	0	0	0	1	1
+TIGR02100	glycogen debranching enzyme GlgX	1	0	0	0	0	0	1	0	0	2	0	0	0	2	2
+TIGR02095	glycogen/starch synthase, ADP-glucose type	1	0	0	0	0	0	1	0	0	1	0	1	1	1	1
+TIGR02093	glycogen/starch/alpha-glucan phosphorylases	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+TIGR00387	glycolate oxidase, subunit GlcD	2	2	2	2	2	2	2	2	2	2	2	0	1	3	3
+TIGR01426	glycosyltransferase, MGT family	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1
+TIGR04047	glycosyltransferase, MSMEG_0565 family	1	0	0	0	0	1	0	0	0	0	0	0	0	1	0
+TIGR00389	glycyl-tRNA synthetase, dimeric type	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00388	glycyl-tRNA synthetase, tetrameric type, alpha subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00211	glycyl-tRNA synthetase, tetrameric type, beta subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01504	glyoxylate carboligase	1	1	0	0	1	0	1	1	0	0	0	0	0	1	1
+TIGR00884	GMP synthase (glutamine-hydrolyzing), C-terminal domain or B subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00888	GMP synthase (glutamine-hydrolyzing), N-terminal domain or A subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03103	GNAT-family acetyltransferase TIGR03103	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR04416	group II intron reverse transcriptase/maturase	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0
+TIGR00436	GTP-binding protein Era	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03156	GTP-binding protein HflX	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01394	GTP-binding protein TypA/BipA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00092	GTP-binding protein YchF	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00063	GTP cyclohydrolase I	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00505	GTP cyclohydrolase II	0	0	0	1	0	0	0	0	0	0	0	1	1	0	0
+TIGR02967	guanine deaminase	1	0	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01306	guanosine monophosphate reductase, bacterial	1	0	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03263	guanylate kinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04256	GxxExxY protein	0	0	0	0	0	0	1	0	0	0	0	2	7	1	1
+TIGR01459	HAD-superfamily class IIA hydrolase, TIGR01459	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR01484	HAD-superfamily hydrolase, subfamily IIB	1	1	1	1	1	2	2	2	2	2	1	0	0	2	2
+TIGR01662	HAD-superfamily hydrolase, subfamily IIIA	1	1	2	1	3	1	2	1	1	1	1	2	3	2	2
+TIGR01681	HAD-superfamily phosphatase, subfamily IIIC	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR01490	HAD-superfamily subfamily IB hydrolase, TIGR01490	1	2	1	1	1	1	1	2	1	1	1	0	0	0	0
+TIGR01460	Haloacid Dehalogenase Superfamily Class (subfamily) IIA	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR01549	haloacid dehalogenase superfamily, subfamily IA, variant 1 with third motif having Dx(3-4)D or Dx(3-4)E	5	4	6	4	5	4	5	4	5	4	3	1	2	6	5
+TIGR01493	Haloacid dehalogenase superfamily, subfamily IA, variant 2 with 3rd motif like haloacid dehalogenase	2	1	1	1	0	3	2	1	1	1	0	0	0	3	4
+TIGR01509	haloacid dehalogenase superfamily, subfamily IA, variant 3 with third motif having DD or ED	9	6	10	5	8	5	6	6	5	6	7	4	3	7	9
+TIGR01488	Haloacid Dehalogenase superfamily, subfamily IB, phosphoserine phosphatase-like	2	3	2	2	2	2	2	3	2	2	3	0	0	1	1
+TIGR00277	HDIG domain	3	2	0	0	0	1	0	1	0	5	2	2	3	0	0
+TIGR00331	heat shock gene repressor HrcA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01512	heavy metal-(Cd/Co/Hg/Pb/Zn)-translocating P-type ATPase	2	0	1	0	0	2	1	1	0	0	2	1	1	0	0
+TIGR00914	heavy metal efflux pump, CzcA family	11	6	2	5	1	4	0	2	0	1	2	3	1	2	2
+TIGR01387	heavy metal response regulator	2	1	0	0	0	0	0	0	0	1	0	0	0	2	2
+TIGR01386	heavy metal sensor kinase	3	1	0	0	0	0	0	0	0	1	0	0	0	2	2
+TIGR01525	heavy metal translocating P-type ATPase	10	5	3	2	2	6	3	2	1	5	4	1	1	3	2
+TIGR01448	helicase, putative, RecD/TraA family	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR01189	heme ABC exporter, ATP-binding protein CcmA	1	0	1	1	1	0	0	1	0	1	0	0	0	0	0
+TIGR00540	heme biosynthesis-associated TPR protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01190	heme exporter protein CcmB	0	0	1	1	1	0	0	1	0	1	0	0	0	0	0
+TIGR01191	heme exporter protein CcmC	0	0	1	1	1	0	0	1	0	1	0	0	0	0	0
+TIGR03141	heme exporter protein CcmD	0	0	1	1	1	0	0	1	0	1	0	0	0	0	0
+TIGR02481	hemerythrin-like metal-binding domain	2	2	1	1	1	1	0	2	0	3	1	0	0	0	0
+TIGR00536	HemK family putative methylases	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR03168	hexose kinase, 1-phosphofructokinase family	2	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR01932	HflC protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01933	HflK protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02051	Hg(II)-responsive transcriptional regulator	0	1	1	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR00802	high-affinity nickel-transporter, HoxN/HupN/NixA family	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR00815	high affinity sulphate transporter 1	3	2	2	2	1	1	1	2	0	0	2	1	0	0	1
+TIGR03071	HipA N-terminal domain	4	0	0	0	0	0	1	0	2	0	1	1	0	0	5
+TIGR01225	histidine ammonia-lyase	1	0	0	0	0	0	1	1	0	0	1	1	0	1	1
+TIGR02018	histidine utilization repressor, proteobacterial	1	0	0	0	0	0	1	1	0	1	1	0	0	1	1
+TIGR01261	histidinol-phosphatase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02067	histidinol-phosphatase, inositol monophosphatase family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR01141	histidinol-phosphate aminotransferase	2	1	1	1	1	1	2	2	1	2	2	2	1	3	3
+TIGR01656	histidinol-phosphate phosphatase family domain	1	1	1	1	2	1	1	1	1	1	1	2	2	1	1
+TIGR00069	histidinol dehydrogenase	1	1	2	1	1	1	2	2	2	1	1	1	1	1	1
+TIGR00442	histidyl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00084	Holliday junction DNA helicase, RuvA subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00635	Holliday junction DNA helicase, RuvB subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00516	holo-[acyl-carrier-protein] synthase	1	1	1	1	1	2	2	1	1	1	1	0	0	1	1
+TIGR03124	holo-ACP synthase CitX	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01343	homoaconitate hydratase family protein	0	0	1	1	1	0	1	0	2	0	0	0	0	1	1
+TIGR02660	homocitrate synthase NifV	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01015	homogentisate 1,2-dioxygenase	0	0	0	0	0	0	0	0	0	0	0	0	1	1	2
+TIGR02337	homoprotocatechuate degradation operon regulator, HpaR	2	1	1	1	1	1	1	1	1	1	0	0	0	1	1
+TIGR00191	homoserine kinase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00938	homoserine kinase, Neisseria type	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01392	homoserine O-acetyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00679	Hpr(Ser) kinase/phosphatase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR04352	HprK-related kinase A	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00722	hydro-lyases, Fe-S type, tartrate/fumarate subfamily, alpha region	1	1	1	1	1	1	2	1	1	1	1	0	0	1	1
+TIGR00723	hydro-lyases, Fe-S type, tartrate/fumarate subfamily, beta region	1	1	1	1	1	1	2	1	1	1	1	0	0	1	1
+TIGR00391	hydrogenase (NiFe) small subunit (hydA)	2	0	0	0	0	0	0	0	0	2	0	0	0	0	0
+TIGR00073	hydrogenase accessory protein HypB	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00074	hydrogenase assembly chaperone HypC/HupF	2	0	0	0	0	0	0	0	0	2	0	0	0	0	0
+TIGR00140	hydrogenase expression/formation protein	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00075	hydrogenase expression/formation protein HypD	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02124	hydrogenase expression/formation protein HypE	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00072	hydrogenase maturation protease	1	0	0	0	0	0	0	0	0	2	0	0	0	0	0
+TIGR00100	hydrogenase nickel insertion protein HypA	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03106	hydrolase, peptidase M42 family	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR00010	hydrolase, TatD family	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR03413	hydroxyacylglutathione hydrolase	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR00694	hydroxyethylthiazole kinase	0	0	0	0	0	0	0	1	0	1	1	0	0	0	0
+TIGR02962	hydroxyisourate hydrolase	1	1	1	1	1	1	1	1	1	0	1	0	0	1	1
+TIGR00212	hydroxymethylbilane synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00532	hydroxymethylglutaryl-CoA reductase, degradative	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR00097	hydroxymethylpyrimidine kinase/phosphomethylpyrimidine kinase	1	1	0	1	1	2	1	3	2	1	2	0	0	1	1
+TIGR03234	hydroxypyruvate isomerase	1	1	0	0	1	0	1	1	0	0	0	0	0	1	1
+TIGR04274	hypoxanthine-DNA glycosylase	1	1	0	0	0	0	0	0	0	1	1	0	0	1	1
+TIGR01203	hypoxanthine phosphoribosyltransferase	0	1	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01855	imidazole glycerol phosphate synthase, glutamine amidotransferase subunit	1	2	1	1	1	1	1	1	1	1	1	1	2	1	1
+TIGR00735	imidazoleglycerol phosphate synthase, cyclase subunit	1	2	1	1	1	1	1	1	1	1	1	1	2	1	1
+TIGR01224	imidazolonepropionase	1	0	0	0	0	0	1	1	0	0	1	1	0	1	1
+TIGR03334	indolepyruvate ferredoxin oxidoreductase, beta subunit	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR03394	indolepyruvate/phenylpyruvate decarboxylase, Azospirillum family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00766	inner membrane protein YhjD	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01302	inosine-5'-monophosphate dehydrogenase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01697	inosine/guanosine/xanthosine phosphorylase family	0	0	0	0	0	0	0	0	0	0	0	2	1	0	0
+TIGR03718	integral membrane protein, TerC family	1	0	1	1	1	1	0	1	2	0	1	1	1	0	0
+TIGR01667	integral membrane protein, YccS/YhfK family	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR03717	integral membrane protein, YjbE family	2	2	1	1	2	2	2	3	1	2	2	0	0	2	2
+TIGR00987	integration host factor, alpha subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00988	integration host factor, beta subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02256	integrative and conjugative element protein, VC0181 family	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0
+TIGR02249	integron integrase	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01443	intein C-terminal splicing region	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR01445	intein N-terminal splicing region	0	0	0	0	0	1	0	0	0	0	0	1	1	0	0
+TIGR01382	intracellular protease, PfpI family	1	0	0	0	0	1	0	0	1	1	1	0	0	2	1
+TIGR00997	intracellular septation protein A	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR04174	IPTL-CTERM protein sorting domain	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00273	iron-sulfur cluster-binding protein	0	0	0	0	0	0	0	0	0	1	0	1	1	0	0
+TIGR00049	Iron-sulfur cluster assembly accessory protein	5	2	2	2	2	2	2	2	2	3	2	2	2	2	2
+TIGR02011	iron-sulfur cluster assembly protein IscA	2	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02010	iron-sulfur cluster assembly transcription factor IscR	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03652	iron-sulfur cluster repair di-iron protein	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR03421	iron donor protein CyaY	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02924	isocitrate dehydrogenase	0	0	0	0	0	0	0	0	0	0	0	2	2	0	0
+TIGR00175	isocitrate dehydrogenase, NAD-dependent, mitochondrial type	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR00127	isocitrate dehydrogenase, NADP-dependent, eukaryotic type	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00178	isocitrate dehydrogenase, NADP-dependent, monomeric type	1	1	1	1	1	1	0	0	0	0	1	0	0	1	1
+TIGR00183	isocitrate dehydrogenase, NADP-dependent, prokaryotic type	1	1	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR01346	isocitrate lyase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00392	isoleucyl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	2	1
+TIGR02150	isopentenyl-diphosphate delta-isomerase, type 1	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01497	K+-transporting ATPase, B subunit	1	0	0	0	0	0	0	1	0	0	1	1	1	1	1
+TIGR00681	K+-transporting ATPase, C subunit	1	0	0	0	0	0	0	1	0	0	1	1	1	1	1
+TIGR00680	K+-transporting ATPase, KdpA	1	0	0	0	0	0	0	1	0	0	1	1	1	1	1
+TIGR02115	K+-transporting ATPase, KdpF subunit	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR00238	KamA family protein	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00465	ketol-acid reductoisomerase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00167	ketose-bisphosphate aldolase	1	2	2	1	2	1	1	1	1	1	1	1	1	1	1
+TIGR00393	KpsF/GutQ family protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02772	Ku protein, prokaryotic	0	0	0	0	0	1	2	1	1	0	0	0	0	2	3
+TIGR01814	kynureninase	0	0	1	1	1	1	1	1	1	0	1	1	1	1	1
+TIGR00520	L-asparaginase, type II	2	1	1	1	1	1	2	1	2	1	1	0	0	2	2
+TIGR00223	L-aspartate-alpha-decarboxylase	0	1	0	0	0	0	0	2	0	1	0	2	0	0	0
+TIGR00551	L-aspartate oxidase	1	1	0	0	0	1	1	1	1	1	1	1	1	1	1
+TIGR00885	L-fucose:H+ symporter permease	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00795	L-lactate transport	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR00948	L-lysine exporter	0	0	0	0	1	0	0	0	0	0	1	0	0	1	0
+TIGR02629	L-rhamnose catabolism isomerase, Pseudomonas stutzeri subtype	0	0	0	0	0	0	0	0	0	0	1	1	1	0	0
+TIGR02625	L-rhamnose mutarotase	0	0	0	0	0	0	0	0	0	0	1	1	1	0	0
+TIGR00760	L-ribulose-5-phosphate 4-epimerase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	1
+TIGR00719	L-serine dehydratase, iron-sulfur-dependent, beta subunit	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00720	L-serine dehydratase, iron-sulfur-dependent, single chain form	0	0	0	0	0	0	0	0	0	1	1	1	1	1	0
+TIGR00474	L-seryl-tRNA(Sec) selenium transferase	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00068	lactoylglutathione lyase	1	1	1	1	1	2	2	1	1	1	1	0	0	1	1
+TIGR01600	lambda-like phage minor tail protein L	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR00750	LAO/AO transport system ATPase	1	1	1	1	1	1	2	1	1	1	1	1	1	1	1
+TIGR00220	large conductance mechanosensitive channel protein	1	0	1	1	1	1	1	1	0	2	1	1	1	2	1
+TIGR00396	leucyl-tRNA synthetase, eubacterial and mitochondrial family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00667	leucyl/phenylalanyl-tRNA--protein transferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01278	light-independent protochlorophyllide reductase, B subunit	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR01281	light-independent protochlorophyllide reductase, iron-sulfur ATP-binding protein	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR01279	light-independent protochlorophyllide reductase, N subunit	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR00215	lipid-A-disaccharide synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02203	lipid A export permease/ATP-binding protein MsbA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00147	lipid kinase, YegS/Rv2252/BmrU family	0	0	0	0	0	0	0	0	0	0	0	2	1	0	0
+TIGR00214	lipoate-protein ligase B	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00510	lipoate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02193	lipopolysaccharide heptosyltransferase I	0	1	0	0	0	1	1	1	1	1	1	0	0	0	0
+TIGR02195	lipopolysaccharide heptosyltransferase II	0	1	0	0	0	1	1	1	1	1	1	0	0	0	0
+TIGR02201	lipopolysaccharide heptosyltransferase III, putative	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR03002	lipopolysaccharide transport periplasmic protein LptA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02211	lipoprotein releasing system, ATP-binding protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02212	lipoprotein releasing system, transmembrane protein, LolC/E family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00077	lipoprotein signal peptidase	2	1	1	1	1	1	1	1	1	1	3	1	0	1	1
+TIGR00363	lipoprotein, YaeC family	6	0	0	0	0	0	0	0	0	1	1	0	0	3	2
+TIGR00764	lon-related putative ATP-dependent protease	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR01439	looped-hinge helix DNA binding domain, AbrB family	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR04406	LPS export ABC transporter ATP-binding protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04409	LPS export ABC transporter periplasmic protein LptC	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04407	LPS export ABC transporter permease LptF	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR04408	LPS export ABC transporter permease LptG	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01167	LPXTG-motif cell wall anchor domain	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR03558	luciferase family oxidoreductase, group 1	1	1	1	1	1	1	1	1	2	1	1	0	0	2	1
+TIGR01789	lycopene cyclase	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR01790	lycopene cyclase family protein	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0
+TIGR01096	lysine-arginine-ornithine-binding periplasmic protein	0	0	0	0	1	0	0	0	0	1	1	0	0	1	0
+TIGR00499	lysyl-tRNA synthetase, eukaryotic and non-spirochete bacterial	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02283	lytic murein transglycosylase	1	0	1	1	0	0	0	0	0	2	1	0	0	0	0
+TIGR02282	lytic murein transglycosylase B	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00172	MAF protein	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR02029	magnesium-protoporphyrin IX monomethyl ester aerobic oxidative cyclase	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR01524	magnesium-translocating P-type ATPase	3	0	0	0	1	0	0	0	0	1	1	1	1	1	1
+TIGR02030	magnesium chelatase ATPase subunit I	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0
+TIGR02025	magnesium chelatase, H subunit	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR00383	magnesium Mg(2+) and cobalt Co(2+) transport protein (corA)	1	1	1	1	1	1	1	1	1	1	1	2	1	2	2
+TIGR02021	magnesium protoporphyrin O-methyltransferase	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR04387	major capsid protein, N4-gp56 family	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR01759	malate dehydrogenase	1	1	1	1	1	1	1	1	1	2	1	0	0	1	1
+TIGR01763	malate dehydrogenase, NAD-dependent	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01345	malate synthase G	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01262	maleylacetoacetate isomerase	2	1	1	1	1	1	2	1	2	0	1	0	0	1	1
+TIGR03130	malonate decarboxylase acyl carrier protein	1	0	0	0	0	1	1	0	0	1	0	0	0	0	0
+TIGR03135	malonate decarboxylase holo-[acyl-carrier-protein] synthase	1	0	0	0	0	1	1	0	0	1	0	0	0	0	0
+TIGR01110	malonate decarboxylase, alpha subunit	1	0	0	0	0	1	1	0	0	1	0	0	0	0	0
+TIGR03131	malonate decarboxylase, epsilon subunit	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0
+TIGR00807	malonate transporter, MadL subunit	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00808	malonate transporter, MadM subunit	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00128	malonyl CoA-acyl carrier protein transacylase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02401	malto-oligosyltrehalose synthase	0	0	0	0	0	0	1	0	0	1	0	0	0	1	1
+TIGR02402	malto-oligosyltrehalose trehalohydrolase	0	0	0	0	0	0	1	0	0	1	0	0	0	1	1
+TIGR00695	mannonate dehydratase	0	0	0	0	0	0	0	0	0	1	0	1	2	0	0
+TIGR01479	mannose-1-phosphate guanylyltransferase/mannose-6-phosphate isomerase	1	1	0	1	1	1	1	1	0	1	1	1	1	2	1
+TIGR00218	mannose-6-phosphate isomerase, class I	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00444	MazG family protein	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03074	membrane-bound PQQ-dependent dehydrogenase, glucose/quinate/shikimate family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR00999	Membrane Fusion Protein cluster 2 (function with RND porters)	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR03082	membrane protein AbrB duplication	1	1	1	1	1	1	1	1	1	1	0	0	0	1	1
+TIGR03592	membrane protein insertase, YidC/Oxa1 family, C-terminal domain	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03593	membrane protein insertase, YidC/Oxa1 family, N-terminal domain	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00427	membrane protein, MarC family	2	1	1	1	2	2	1	1	0	2	1	0	0	1	2
+TIGR02052	mercuric transport protein periplasmic component	0	1	1	0	0	1	0	1	0	0	0	0	0	0	0
+TIGR00883	metabolite-proton symporter	1	0	0	0	0	0	0	0	0	0	1	1	0	6	5
+TIGR00329	metallohydrolase, glycoprotease/Kae1 family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04123	metallophosphoesterase, DNA ligase-associated	0	0	0	0	0	1	1	0	1	0	0	1	1	1	1
+TIGR00398	methionine--tRNA ligase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00357	methionine-R-sulfoxide reductase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00401	methionine-S-sulfoxide reductase	1	1	1	1	1	1	1	2	1	1	2	1	1	2	2
+TIGR00500	methionine aminopeptidase, type I	2	1	1	1	1	1	1	1	2	2	2	1	1	2	2
+TIGR02081	methionine biosynthesis protein MetW	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01328	methionine gamma-lyase	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0
+TIGR00460	methionyl-tRNA formyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00399	methionyl-tRNA synthetase C-terminal region/beta chain	1	1	1	1	1	1	1	1	1	1	1	2	1	1	1
+TIGR02658	methylamine dehydrogenase (amicyanin) heavy chain	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02659	methylamine dehydrogenase (amicyanin) light chain	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02661	methylamine dehydrogenase accessory protein MauD	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00160	methylglyoxal synthase	1	0	0	0	0	0	0	0	0	1	1	1	1	0	0
+TIGR02317	methylisocitrate lyase	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR01722	methylmalonic acid semialdehyde dehydrogenase	2	1	1	1	1	1	3	1	1	1	1	1	1	2	3
+TIGR03081	methylmalonyl-CoA epimerase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00640	methylmalonyl-CoA mutase C-terminal domain	1	2	2	2	3	2	3	2	2	2	2	2	2	1	1
+TIGR00641	methylmalonyl-CoA mutase N-terminal domain	1	2	2	2	2	2	3	2	2	2	2	2	2	1	1
+TIGR00642	methylmalonyl-CoA mutase, heterodimeric type, beta chain	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR01444	methyltransferase, FkbM family	4	1	0	0	0	1	0	2	2	0	2	4	1	1	1
+TIGR04290	methyltransferase, Rta_06860 family	0	0	0	0	0	0	0	0	2	0	0	0	0	0	1
+TIGR00027	methyltransferase, TIGR00027 family	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1
+TIGR00879	MFS transporter, sugar porter (SP) family	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00368	Mg chelatase-related protein	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00400	Mg2+ transporter (mgtE)	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01579	MiaB-like tRNA modifying enzyme	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00861	MIP family channel proteins	0	0	1	0	0	0	0	0	0	0	0	1	1	1	1
+TIGR02098	MJ0042 family finger-like domain	1	1	1	1	1	0	1	1	2	1	2	0	0	1	1
+TIGR00290	MJ0570-related uncharacterized domain	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR04519	MoCo/4Fe-4S cofactor protein extended Tat translocation domain	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00637	ModE molybdate transport repressor domain	4	2	1	2	1	4	3	3	3	3	1	0	0	3	1
+TIGR02141	molybdate ABC transporter, permease protein	1	1	1	1	1	2	1	1	1	1	1	0	0	1	1
+TIGR00638	molybdenum-pterin binding domain	3	0	0	0	0	2	1	2	2	3	3	0	0	1	1
+TIGR02142	molybdenum ABC transporter, ATP-binding protein	0	0	0	0	0	1	1	1	1	1	1	0	0	0	0
+TIGR01256	molybdenum ABC transporter, periplasmic molybdate-binding protein	1	1	1	1	1	3	2	2	1	1	1	0	0	1	2
+TIGR02666	molybdenum cofactor biosynthesis protein A, bacterial	2	1	1	1	1	1	1	1	1	1	1	1	0	2	1
+TIGR00581	molybdenum cofactor biosynthesis protein MoaC	1	1	1	1	1	1	1	1	1	1	2	1	0	1	1
+TIGR02665	molybdenum cofactor guanylyltransferase, proteobacterial	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00177	molybdenum cofactor synthesis domain	2	3	3	3	3	3	3	3	3	3	2	3	1	3	5
+TIGR00176	molybdopterin-guanine dinucleotide biosynthesis protein MobB	1	1	0	0	0	1	1	1	1	2	0	0	0	1	1
+TIGR01682	molybdopterin converting factor, subunit 1, non-archaeal	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1
+TIGR00509	molybdopterin guanine dinucleotide-containing S/N-oxide reductases	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02070	monofunctional biosynthetic peptidoglycan transglycosylase	1	1	1	1	1	1	0	1	1	0	0	1	1	0	1
+TIGR01795	monofunctional chorismate mutase, alpha proteobacterial type	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR00365	monothiol glutaredoxin, Grx4 family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01300	monovalent cation/proton antiporter, MnhG/PhaG subunit	0	0	0	0	0	0	1	0	1	0	1	0	0	1	1
+TIGR00943	monovalent cation:proton antiporter	0	0	0	0	0	0	1	0	1	0	1	0	0	1	1
+TIGR04042	MSMEG_0570 family protein	1	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR04044	MSMEG_0572 family protein	1	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR02534	muconate and chloromuconate cycloisomerases	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03221	muconolactone delta-isomerase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR00941	Multicomponent Na+:H+ antiporter, MnhC subunit	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1
+TIGR00880	Multidrug resistance protein	1	1	1	1	0	1	2	2	1	1	2	2	3	10	5
+TIGR01695	murein biosynthesis integral membrane protein MurJ	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00586	mutator mutT protein	2	2	2	2	2	2	3	2	2	2	2	0	0	1	1
+TIGR03901	MYXO-CTERM domain	1	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+TIGR03999	N-acetyl-alpha-D-glucosaminyl L-malate synthase BshA	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01850	N-acetyl-gamma-glutamyl-phosphate reductase, common form	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0
+TIGR01851	N-acetyl-gamma-glutamyl-phosphate reductase, uncommon form	2	1	1	1	1	1	1	1	2	1	1	0	0	1	2
+TIGR03573	N-acetyl sugar amidotransferase	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR00221	N-acetylglucosamine-6-phosphate deacetylase	0	0	0	0	0	0	0	0	1	0	0	1	1	0	0
+TIGR00274	N-acetylmuramic acid 6-phosphate etherase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03569	N-acetylneuraminate synthase	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0
+TIGR03694	N-acyl amino acid synthase, PEP-CTERM/exosortase system-associated	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0
+TIGR03381	N-carbamoylputrescine amidase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02017	N-formylglutamate amidohydrolase	1	0	0	0	0	0	1	1	0	1	1	0	0	1	1
+TIGR02226	N-terminal double-transmembrane domain	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR00704	Na/Pi-cotransporter	0	0	0	0	0	0	1	1	1	1	1	0	0	1	1
+TIGR00773	Na+/H+ antiporter NhaA	0	0	0	0	0	0	0	0	0	1	0	1	1	0	0
+TIGR00831	Na+/H+ antiporter, bacterial form	1	0	0	0	0	0	0	1	0	0	0	0	0	1	0
+TIGR04180	NAD dependent epimerase/dehydratase, LLPSF_EDH_00030 family	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR00561	NAD(P) transhydrogenase, alpha subunit	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR01755	NAD(P)H:quinone oxidoreductase, type IV	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0
+TIGR00552	NAD+ synthetase	2	1	1	1	1	2	1	1	1	1	1	1	1	2	2
+TIGR01957	NADH-quinone oxidoreductase, B subunit	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR01973	NADH-quinone oxidoreductase, chain G	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01971	NADH-quinone oxidoreductase, chain I	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01958	NADH-quinone oxidoreductase, E subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01959	NADH-quinone oxidoreductase, F subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01961	NADH (or F420H2) dehydrogenase, subunit C	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1
+TIGR01962	NADH dehydrogenase I, D subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01915	NADPH-dependent F420 reductase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01929	naphthoate synthase (dihydroxynaphthoic acid synthetase)	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR04020	natural product biosynthesis luciferase-like monooxygenase domain	0	0	0	0	0	1	1	1	1	0	0	0	0	0	0
+TIGR00800	NCS1 nucleoside transporter family	1	0	0	0	0	0	0	0	0	0	0	1	1	1	1
+TIGR02125	Ni/Fe-hydrogenase, b-type cytochrome subunit	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02793	nickel-responsive transcriptional regulator NikR	1	0	0	0	0	1	0	0	0	0	0	0	0	0	1
+TIGR01526	nicotinamide-nucleotide adenylyltransferase, NadR type	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR01528	nicotinamide mononucleotide transporter PnuC	1	0	0	0	0	1	1	0	0	0	0	1	1	1	1
+TIGR03160	nicotinate-nucleotide--dimethylbenzimidazole phosphoribosyltransferase	1	0	0	1	0	0	1	1	1	1	1	0	0	1	1
+TIGR00078	nicotinate-nucleotide pyrophosphorylase	1	1	0	0	0	1	1	1	1	1	1	1	1	1	1
+TIGR00482	nicotinate (nicotinamide) nucleotide adenylyltransferase	1	1	1	1	1	1	1	1	1	1	1	2	1	1	1
+TIGR01514	nicotinate phosphoribosyltransferase	2	0	1	1	1	0	0	0	1	0	1	0	0	1	1
+TIGR01817	Nif-specific regulatory protein	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01183	nitrate ABC transporter, permease protein	2	1	0	2	1	1	1	1	1	2	1	0	0	2	1
+TIGR00684	nitrate reductase molybdenum cofactor assembly chaperone	1	1	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR01660	nitrate reductase, beta subunit	1	1	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR01184	nitrate transport ATP-binding subunits C and D	2	1	0	2	1	1	1	1	1	2	1	0	0	2	1
+TIGR03889	nitrile hydratase accessory protein	0	0	1	1	0	0	1	0	0	0	0	0	0	1	1
+TIGR01323	nitrile hydratase, alpha subunit	0	0	1	1	0	0	1	1	0	0	0	0	0	1	1
+TIGR03888	nitrile hydratase, beta subunit	0	0	1	1	0	0	1	1	0	0	0	0	0	1	1
+TIGR00886	nitrite extrusion protein (nitrite facilitator)	1	1	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR02374	nitrite reductase [NAD(P)H], large subunit	2	1	0	1	1	2	1	1	1	1	1	0	0	1	2
+TIGR02378	nitrite reductase [NAD(P)H], small subunit	1	1	0	1	1	2	1	1	1	1	1	0	0	1	2
+TIGR02376	nitrite reductase, copper-containing	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0
+TIGR02663	nitrogen fixation protein NifX	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01818	nitrogen regulation protein NR(I)	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01616	nitrogenase-associated protein	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01290	nitrogenase cofactor biosynthesis protein NifB	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01862	nitrogenase component I, alpha chain	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01287	nitrogenase iron protein	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01283	nitrogenase molybdenum-iron cofactor biosynthesis protein NifE	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01285	nitrogenase molybdenum-iron cofactor biosynthesis protein NifN	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01282	nitrogenase molybdenum-iron protein alpha chain	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01286	nitrogenase molybdenum-iron protein beta chain	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR04244	nitrous-oxide reductase, TAT-dependent	0	0	0	0	0	0	0	2	0	1	0	0	0	0	0
+TIGR04247	nitrous oxide reductase family maturation protein NosD	0	0	0	0	0	0	0	2	0	1	0	0	0	0	0
+TIGR00446	NOL1/NOP2/sun family putative RNA methylase	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR00042	non-canonical purine NTP pyrophosphatase, RdgB/HAM1 family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02254	noncanonical pyrimidine nucleotidase, YjjG family	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01197	NRAMP (natural resistance-associated macrophage protein) metal ion transporters	0	0	0	0	0	3	0	0	0	1	1	1	1	2	1
+TIGR00889	nucleoside transporter	0	0	0	0	0	0	0	0	0	0	0	2	1	0	0
+TIGR03026	nucleotide sugar dehydrogenase	2	3	2	2	0	0	1	1	1	2	0	2	2	1	3
+TIGR01987	nucleotidyltransferase substrate binding protein, HI0074 family	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00052	nudix-type nucleoside diphosphatase, YffH/AdpP family	1	0	0	0	0	0	0	0	0	0	1	1	0	1	1
+TIGR00589	O-6-methylguanine DNA methyltransferase	1	2	1	1	1	2	2	2	2	2	2	2	1	3	2
+TIGR01325	O-succinylhomoserine sulfhydrylase	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01326	OAH/OAS sulfhydrylase	2	1	2	2	1	2	2	2	1	2	1	0	0	2	2
+TIGR02729	Obg family GTPase CgtA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04315	octaheme c-type cytochrome, tetrathionate reductase family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03164	OHCU decarboxylase	1	1	1	1	1	1	1	1	1	1	2	0	0	1	1
+TIGR00181	oligoendopeptidase F	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0
+TIGR02289	oligoendopeptidase, M3 family	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00728	oligopeptide transporter, OPT superfamily	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01727	oligopeptide/dipeptide ABC transporter, ATP-binding protein, C-terminal domain	7	0	5	6	3	7	5	11	3	6	2	0	0	14	15
+TIGR04370	oligosaccharide repeat unit polymerase	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR01885	ornithine aminotransferase	0	0	0	0	0	1	1	1	0	0	0	1	1	0	0
+TIGR00658	ornithine carbamoyltransferase	1	1	1	1	1	1	1	1	1	1	2	0	0	1	1
+TIGR00336	orotate phosphoribosyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02127	orotidine 5'-phosphate decarboxylase, subfamily 2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03300	outer membrane assembly lipoprotein YfgL	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03302	outer membrane assembly lipoprotein YfiO	1	1	1	1	1	1	1	1	0	1	1	1	1	1	1
+TIGR01414	outer membrane autotransporter barrel domain	0	0	0	0	1	0	1	0	0	0	0	0	0	6	4
+TIGR03304	outer membrane insertion C-terminal signal	0	0	0	0	1	0	0	0	0	0	2	0	0	0	0
+TIGR04430	outer membrane lipid asymmetry maintenance protein MlaD	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03303	outer membrane protein assembly complex, YaeT protein	1	1	1	1	1	1	1	1	1	1	1	1	1	2	2
+TIGR04390	outer membrane protein, YaiO family	1	0	0	0	0	0	1	0	1	0	0	1	0	0	0
+TIGR04259	oxalate/formate antiporter	0	0	0	0	0	0	0	1	0	0	0	0	0	1	1
+TIGR03254	oxalyl-CoA decarboxylase	0	1	0	0	0	0	0	2	0	0	0	0	0	1	1
+TIGR01701	oxidoreductase alpha (molybdopterin) subunit	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1
+TIGR00538	oxygen-independent coproporphyrinogen III oxidase	1	1	1	1	1	1	1	1	0	1	1	1	0	1	0
+TIGR02781	P-type conjugative transfer protein VirB9	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+TIGR02788	P-type DNA transfer ATPase VirB11	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR02791	P-type DNA transfer protein VirB5	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR01510	pantetheine-phosphate adenylyltransferase, bacterial	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00018	pantoate--beta-alanine ligase	1	1	0	1	1	1	0	2	0	1	1	1	1	1	1
+TIGR00671	pantothenate kinase, type III	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03805	parallel beta-helix repeat-containing protein	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR03804	parallel beta-helix repeat (two copies)	0	0	0	0	0	0	0	2	0	1	1	1	0	0	0
+TIGR00180	ParB/RepB/Spo0J family partition protein	3	1	1	1	1	2	2	1	1	3	1	1	1	4	2
+TIGR00229	PAS domain S-box	63	30	8	6	7	32	31	24	38	51	36	12	9	12	13
+TIGR02424	pca operon transcription factor PcaQ	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0
+TIGR02474	pectate lyase, PelA/Pel-15E family	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02071	penicillin-binding protein 1B	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02073	penicillin-binding protein 1C	1	1	0	0	0	0	0	1	0	0	1	0	0	2	2
+TIGR03423	penicillin-binding protein 2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02074	penicillin-binding protein, 1A family	2	1	1	1	1	1	1	1	1	2	2	0	0	2	2
+TIGR02953	pentapeptide MXKDX repeat protein	0	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR00756	pentatricopeptide repeat domain (PPR motif)	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0
+TIGR02915	PEP-CTERM-box response regulator transcription factor	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02595	PEP-CTERM protein-sorting domain	0	2	0	0	0	0	1	0	1	15	1	0	0	1	1
+TIGR04063	PEP-CTERM/exosortase A-associated glycosyltransferase, Daro_2409 family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01882	peptidase T	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00019	peptide chain release factor 1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00020	peptide chain release factor 2	1	1	1	1	1	1	1	1	1	0	1	1	1	1	1
+TIGR00503	peptide chain release factor 3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00079	peptide deformylase	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR02802	peptidoglycan-associated lipoprotein	2	1	1	1	1	2	1	1	1	2	2	0	0	2	2
+TIGR00547	periplasmic chaperone LolA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02161	periplasmic nitrate (or nitrite) reductase c-type cytochrome, NapC/NirT family	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01706	periplasmic nitrate reductase, large subunit	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR02973	periplasmic nitrate reductase, NapE protein	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR00385	periplasmic protein thiol:disulfide oxidoreductases, DsbE subfamily	0	0	1	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR02038	periplasmic serine pepetdase DegS	1	1	1	1	1	1	1	0	1	1	1	0	0	1	1
+TIGR02037	periplasmic serine protease, Do/DeqQ family	3	2	2	2	2	3	2	3	3	3	2	1	1	4	3
+TIGR03137	peroxiredoxin	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03561	peroxiredoxin, Ohr subfamily	1	1	0	0	0	1	1	1	1	1	1	0	0	2	2
+TIGR03562	peroxiredoxin, OsmC subfamily	0	0	0	0	0	0	0	1	0	0	0	1	1	1	1
+TIGR01555	phage-related protein, HI1409 family	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02215	phage conserved hypothetical protein, phiE125 gp8 family	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR01563	phage head-tail adaptor, putative, SPP1 family	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR01554	phage major capsid protein, HK97 family	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0
+TIGR01537	phage portal protein, HK97 family	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR01539	phage portal protein, lambda family	3	0	0	0	0	0	1	0	0	0	0	0	0	1	0
+TIGR01540	phage portal protein, PBSX family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR01543	phage prohead protease, HK97 family	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR01725	phage protein, HK97 gp10 family	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR01641	phage putative head morphogenesis protein, SPP1 gp7 family	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR02681	phage regulatory protein, rha family	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01541	phage tail tape measure protein, lambda family	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR01547	phage terminase, large subunit, PBSX family	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR01558	phage terminase, small subunit, putative, P27 family	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR02419	phage/conjugal plasmid C-4 type zinc finger protein, TraR family	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0
+TIGR03299	phage/plasmid-like protein TIGR03299	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01841	phasin family protein	1	1	2	2	2	1	1	1	1	2	1	0	0	2	2
+TIGR00654	phenazine biosynthesis protein PhzF family	1	1	1	1	1	1	1	1	1	1	1	1	1	3	1
+TIGR02155	phenylacetate-CoA ligase	1	0	1	1	1	1	1	2	1	0	0	0	0	1	1
+TIGR02156	phenylacetate-CoA oxygenase, PaaG subunit	1	0	1	1	1	1	1	1	1	0	0	1	1	1	1
+TIGR02157	phenylacetate-CoA oxygenase, PaaH subunit	1	0	1	1	1	1	1	1	1	0	0	1	1	1	1
+TIGR02158	phenylacetate-CoA oxygenase, PaaI subunit	1	0	1	1	1	1	1	1	1	0	0	1	1	1	1
+TIGR02159	phenylacetate-CoA oxygenase, PaaJ subunit	1	0	1	1	1	1	1	1	1	0	0	1	1	1	1
+TIGR02160	phenylacetate-CoA oxygenase/reductase, PaaK subunit	1	0	1	1	1	1	1	1	1	0	0	1	1	1	1
+TIGR02280	phenylacetate degradation probable enoyl-CoA hydratase paaB	1	0	1	1	1	1	1	2	1	0	1	1	1	1	1
+TIGR02286	phenylacetic acid degradation protein PaaD	1	0	1	1	1	1	1	1	1	0	0	1	1	1	1
+TIGR02278	phenylacetic acid degradation protein paaN	3	0	2	2	2	1	1	1	0	1	0	1	1	2	2
+TIGR02287	phenylacetic acid degradation protein PaaY	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR01267	phenylalanine-4-hydroxylase, monomeric form	0	0	0	0	0	0	1	0	1	0	1	0	0	1	1
+TIGR00468	phenylalanyl-tRNA synthetase, alpha subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00472	phenylalanyl-tRNA synthetase, beta subunit, non-spirochete bacterial	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00434	phosophoadenylyl-sulfate reductase (thioredoxin)	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00972	phosphate ABC transporter, ATP-binding protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00974	phosphate ABC transporter, permease protein PstA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02138	phosphate ABC transporter, permease protein PstC	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00975	phosphate ABC transporter, phosphate-binding protein	2	2	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR00651	phosphate acetyltransferase	0	0	0	0	0	0	0	0	0	1	0	1	1	0	0
+TIGR02966	phosphate regulon sensor kinase PhoR	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02154	phosphate regulon transcriptional regulatory protein PhoB	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02135	phosphate transport system regulatory protein PhoU	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01098	phosphate/phosphite/phosphonate ABC transporter, periplasmic binding protein	1	0	2	2	0	1	0	0	2	3	1	0	0	3	4
+TIGR01013	Phosphate:Na+ Symporter (PNaS) Family	0	0	0	0	0	0	1	1	1	0	1	0	0	1	1
+TIGR00163	phosphatidylserine decarboxylase precursor	2	2	2	2	1	1	1	1	1	1	1	0	0	1	1
+TIGR00164	phosphatidylserine decarboxylase precursor-related protein	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00034	phospho-2-dehydro-3-deoxyheptonate aldolase	2	1	1	2	2	2	1	3	1	2	2	0	0	2	2
+TIGR00445	phospho-N-acetylmuramoyl-pentapeptide-transferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01417	phosphoenolpyruvate-protein phosphotransferase	2	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00224	phosphoenolpyruvate carboxykinase (ATP)	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01418	phosphoenolpyruvate synthase	1	1	1	1	1	1	2	1	1	1	1	0	0	1	1
+TIGR00040	phosphoesterase, MJ0936 family	0	0	0	0	0	1	1	1	1	0	1	1	0	1	2
+TIGR02483	phosphofructokinase	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01132	phosphoglucomutase, alpha-D-glucose phosphate-specific	0	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+TIGR01455	phosphoglucosamine mutase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01307	phosphoglycerate mutase (2,3-diphosphoglycerate-independent)	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01258	phosphoglycerate mutase, BPG-dependent, family 1	1	1	1	1	1	1	2	1	1	1	1	0	0	1	1
+TIGR01769	phosphoglycerol geranylgeranyltransferase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00441	phosphoheptose isomerase	0	1	0	0	0	2	1	1	1	1	2	1	1	0	0
+TIGR00249	phosphohistidine phosphatase SixA	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR03396	phospholipase C, phosphocholine-specific, Pseudomonas-type	1	0	0	0	0	0	0	0	0	2	0	0	0	1	4
+TIGR00190	phosphomethylpyrimidine synthase	1	1	0	0	0	1	0	1	0	1	0	0	0	1	1
+TIGR03351	phosphonatase-like hydrolase	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR02315	phosphonate ABC transporter, ATP-binding protein	0	0	1	1	0	0	0	0	1	1	1	0	0	0	1
+TIGR03431	phosphonate ABC transporter, periplasmic phosphonate binding protein	0	0	1	1	0	0	0	0	1	1	1	0	0	0	1
+TIGR01097	phosphonate ABC transporter, permease protein PhnE	2	0	3	3	0	2	0	0	3	3	1	0	0	2	3
+TIGR03293	phosphonate C-P lyase system protein PhnG	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR03292	phosphonate C-P lyase system protein PhnH	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR02323	phosphonate C-P lyase system protein PhnK	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR02324	phosphonate C-P lyase system protein PhnL	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR03276	phosphonate degradation operons associated HDIG domain protein	1	0	1	1	0	0	0	1	1	0	1	0	1	1	1
+TIGR03308	phosphonate metabolim protein, transferase hexapeptide repeat family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03405	phosphonate metabolism-associated iron-containing alcohol dehydrogenase	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR02318	phosphonate metabolism protein PhnM	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR02322	phosphonate metabolism protein/1,5-bisphosphokinase (PRPP-forming) PhnN	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR03340	phosphonate utilization associated putative membrane protein	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0
+TIGR03338	phosphonate utilization associated transcriptional regulator	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1
+TIGR02325	phosphonates metabolism transcriptional regulator PhnF	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0
+TIGR01422	phosphonoacetaldehyde hydrolase	1	0	1	0	0	0	0	0	0	0	1	0	1	1	0
+TIGR02335	phosphonoacetate hydrolase	0	0	0	0	0	0	0	1	0	0	0	0	1	0	2
+TIGR00556	phosphopantetheine--protein transferase domain	1	1	1	1	1	2	2	1	1	1	1	0	0	2	1
+TIGR00521	phosphopantothenoylcysteine decarboxylase / phosphopantothenate--cysteine ligase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01060	phosphopyruvate hydratase	1	1	1	2	1	1	1	2	1	1	1	1	1	1	1
+TIGR03188	phosphoribosyl-ATP pyrophosphohydrolase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00877	phosphoribosylamine--glycine ligase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00081	phosphoribosylaminoimidazole-succinocarboxamide synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01162	phosphoribosylaminoimidazole carboxylase, PurE protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01161	phosphoribosylaminoimidazole carboxylase, PurK protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00878	phosphoribosylaminoimidazole synthetase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00355	phosphoribosylaminoimidazolecarboxamide formyltransferase/IMP cyclohydrolase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00007	phosphoribosylformimino-5-aminoimidazole carboxamide ribotide isomerase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01737	phosphoribosylformylglycinamidine synthase I	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01736	phosphoribosylformylglycinamidine synthase II	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00302	phosphoribosylformylglycinamidine synthase, purS protein	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01735	phosphoribosylformylglycinamidine synthase, single chain form	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01142	phosphoribosylglycinamide formyltransferase 2	1	0	1	1	1	1	0	0	0	1	1	0	0	1	1
+TIGR00639	phosphoribosylglycinamide formyltransferase, formyltetrahydrofolate-dependent	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01364	phosphoserine aminotransferase	1	1	2	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00338	phosphoserine phosphatase SerB	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02137	phosphoserine phosphatase/homoserine phosphotransferase bifunctional protein	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01003	Phosphotransferase System HPr (HPr) Family	2	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01157	photosynthetic reaction center L subunit	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR01115	photosynthetic reaction center M subunit	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR01150	photosynthetic reaction center, subunit H, bacterial	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR02734	phytoene desaturase	0	0	2	2	2	0	0	0	1	0	0	2	2	0	0
+TIGR02519	pilus (MSHA type) biogenesis protein MshL	0	1	0	0	0	1	0	0	0	1	1	0	0	0	0
+TIGR01420	pilus retraction protein PilT	3	3	0	0	0	3	3	3	3	3	4	0	0	3	3
+TIGR03067	Planctomycetes uncharacterized domain TIGR03067	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR01517	plasma-membrane calcium-translocating P-type ATPase	1	1	0	0	0	0	0	1	0	2	1	1	0	0	0
+TIGR03453	plasmid partitioning protein RepA	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03940	poly-beta-1,6-N-acetyl-D-glucosamine biosynthesis protein PgaD	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03938	poly-beta-1,6-N-acetyl-D-glucosamine N-deacetylase PgaB	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03939	poly-beta-1,6 N-acetyl-D-glucosamine export porin PgaA	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03937	poly-beta-1,6 N-acetyl-D-glucosamine synthase	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR01942	poly(A) polymerase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01837	poly(hydroxyalkanoate) granule-associated protein	0	1	1	1	1	1	1	1	1	2	1	0	0	1	1
+TIGR01838	poly(R)-hydroxyalkanoic acid synthase, class I	2	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR01836	poly(R)-hydroxyalkanoic acid synthase, class III, PhaC subunit	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR01849	polyhydroxyalkanoate depolymerase, intracellular	2	1	1	1	1	1	1	1	1	1	2	0	0	2	2
+TIGR01848	polyhydroxyalkanoate synthesis repressor PhaR	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03705	polyphosphate kinase 1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03707	polyphosphate kinase 2, PA0141 family	2	1	1	1	0	0	0	2	0	0	1	0	0	1	1
+TIGR03708	polyphosphate:AMP phosphotransferase	1	0	0	0	0	1	0	0	0	1	0	0	0	0	0
+TIGR03709	polyphosphate:nucleotide phosphotransferase, PPK2 family	1	0	0	1	0	1	1	1	0	1	0	0	0	1	1
+TIGR00421	polyprenyl P-hydroxybenzoate and phenylacrylic acid decarboxylases	0	0	0	0	0	0	0	1	0	1	0	1	1	0	0
+TIGR03591	polyribonucleotide nucleotidyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03007	polysaccharide chain length determinant protein, PEP-CTERM locus subfamily	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03006	polysaccharide deacetylase family protein, PEP-CTERM locus subfamily	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+TIGR03028	polysaccharide export protein EpsE	1	0	0	0	0	2	1	2	1	0	0	0	0	0	0
+TIGR04183	Por secretion system C-terminal sorting domain	0	0	0	0	0	0	0	0	0	0	0	12	10	0	0
+TIGR01523	potassium and/or sodium efflux P-type ATPase, fungal-type	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR00794	potassium uptake protein	1	1	2	1	1	2	2	2	2	2	1	0	0	2	2
+TIGR00933	potassium uptake protein, TrkH family	0	0	1	1	0	0	1	0	1	0	0	0	0	0	0
+TIGR04025	PPOX class probable FMN-dependent enzyme, DR_2398 family	1	0	1	1	1	0	0	0	0	0	0	0	0	1	1
+TIGR03866	PQQ-dependent catabolism-associated beta-propeller protein	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03865	PQQ-dependent catabolism-associated CXXCW motif protein	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03075	PQQ-dependent dehydrogenase, methanol/ethanol family	4	0	0	0	0	3	0	1	0	0	0	0	0	2	2
+TIGR04353	PqqD family protein, HPr-rel-A system	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01467	precorrin-2 C(20)-methyltransferase	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR01466	precorrin-3B C17-methyltransferase	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02435	precorrin-3B synthase	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR01465	precorrin-4 C11-methyltransferase	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02434	precorrin-6A synthase (deacetylating)	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR00715	precorrin-6x reductase	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02467	precorrin-6y C5,15-methyltransferase (decarboxylating), CbiE subunit	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02469	precorrin-6Y C5,15-methyltransferase (decarboxylating), CbiT subunit	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02485	precorrin 3B synthase CobZ	1	1	1	1	1	1	1	1	1	1	0	0	0	1	0
+TIGR02532	prepilin-type N-terminal cleavage/methylation domain	19	9	7	10	3	20	10	9	12	15	8	0	0	17	15
+TIGR00963	preprotein translocase, SecA subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00964	preprotein translocase, SecE subunit, bacterial	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00967	preprotein translocase, SecY subunit	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1
+TIGR00739	preprotein translocase, YajC subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01552	prevent-host-death family protein	5	0	3	1	0	3	1	0	4	1	1	0	0	2	3
+TIGR00595	primosomal protein N'	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04418	primosomal replication protein PriB	1	1	0	0	1	1	1	1	1	1	1	0	0	1	1
+TIGR02334	probable AcnD-accessory protein PrpF	1	0	0	0	0	0	0	0	1	0	0	0	0	1	1
+TIGR02684	probable addiction module antidote protein	2	1	3	1	0	0	2	0	0	0	0	0	0	0	0
+TIGR03915	probable DNA metabolism protein	0	0	0	0	0	2	1	1	1	0	0	0	0	1	1
+TIGR02913	probable extracellular repeat, HAF family	0	0	0	0	0	0	2	2	0	0	0	0	0	0	0
+TIGR03406	probable FeS assembly SUF system protein SufT	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR02935	probable nitrogen fixation protein	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02934	probable nitrogen fixation protein FixT	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03097	probable O-glycosylation ligase, exosortase A-associated	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03858	probable oxidoreductase, LLM family	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR02880	probable Rubsico expression protein CbbX	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03648	probable sodium:solute symporter, VC_2705 subfamily	1	1	2	2	1	1	1	1	1	1	1	0	0	0	0
+TIGR01250	proline-specific peptidase, Bacillus coagulans-type subfamily	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01249	proline iminopeptidase, Neisseria-type subfamily	1	0	0	0	0	1	0	0	0	1	1	0	0	2	1
+TIGR00544	prolipoprotein diacylglyceryl transferase	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1
+TIGR00408	prolyl-tRNA synthetase, family I	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00409	prolyl-tRNA synthetase, family II	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02316	propionate--CoA ligase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02329	propionate catabolism operon regulatory protein PrpR	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR03534	protein-(glutamine-N5) methyltransferase, release factor-specific	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03533	protein-(glutamine-N5) methyltransferase, ribosomal protein L3-specific	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00809	protein-export chaperone SecB	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01129	protein-export membrane protein SecD	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00966	protein-export membrane protein SecF	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00916	protein-export membrane protein, SecD/SecF family	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR00080	protein-L-isoaspartate(D-aspartate) O-methyltransferase	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR00494	protein CrcB	0	1	1	1	1	1	0	1	0	1	1	1	1	1	1
+TIGR02012	protein RecA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00810	protein translocase, SecG subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02423	protocatechuate 3,4-dioxygenase, alpha subunit	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02422	protocatechuate 3,4-dioxygenase, beta subunit	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02792	protocatechuate 4,5-dioxygenase, alpha subunit	2	2	1	1	1	1	1	2	1	2	1	0	0	0	1
+TIGR01473	protoheme IX farnesyltransferase	1	2	1	1	1	1	1	2	1	1	1	1	1	1	1
+TIGR01974	proton-translocating NADH-quinone oxidoreductase, chain L	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR01972	proton-translocating NADH-quinone oxidoreductase, chain M	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR01770	proton-translocating NADH-quinone oxidoreductase, chain N	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR00962	proton translocating ATP synthase, F1 alpha subunit	2	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR03734	PRTRC system ParB family protein	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03735	PRTRC system protein A	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03737	PRTRC system protein B	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03738	PRTRC system protein C	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03739	PRTRC system protein D	0	0	0	0	0	3	0	0	0	1	0	0	0	0	0
+TIGR03741	PRTRC system protein E	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03742	PRTRC system protein F	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03736	PRTRC system ThiF family protein	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03584	pseudaminic acid cytidylyltransferase	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR03586	pseudaminic acid synthase	0	0	0	0	0	0	0	1	0	0	0	0	1	0	0
+TIGR00093	pseudouridine synthase	4	3	4	4	4	3	4	3	4	4	4	2	1	4	4
+TIGR00005	pseudouridine synthase, RluA family	4	4	5	3	3	4	3	4	3	3	3	2	3	3	3
+TIGR01419	PTS IIA-like nitrogen-regulatory protein PtsN	0	1	1	0	1	0	0	0	1	1	0	0	0	1	1
+TIGR00829	PTS system, fructose-specific, IIB component	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01427	PTS system, fructose subfamily, IIC component	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01700	purine nucleoside phosphorylase I, inosine and guanosine-specific	0	0	0	0	0	0	0	0	0	0	0	2	1	0	0
+TIGR03265	putative 2-aminoethylphosphonate ABC transporter, ATP-binding protein	0	0	0	0	0	0	0	1	0	0	0	0	0	1	2
+TIGR03261	putative 2-aminoethylphosphonate ABC transporter, periplasmic 2-aminoethylphosphonate-binding protein	1	0	0	0	0	0	0	1	0	0	0	0	0	1	2
+TIGR03262	putative 2-aminoethylphosphonate ABC transporter, permease protein	1	0	0	0	0	0	0	1	0	0	0	0	0	1	2
+TIGR01475	putative 4-hydroxybenzoate polyprenyltransferase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02609	putative addiction module antidote	1	1	0	0	0	0	1	0	1	1	0	0	0	0	1
+TIGR02606	putative addiction module antidote protein, CC2985 family	1	0	1	0	0	1	0	0	0	0	0	1	0	0	0
+TIGR02574	putative addiction module component, TIGR02574 family	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+TIGR02683	putative addiction module killer protein	0	1	2	1	0	0	1	0	0	0	0	0	0	0	0
+TIGR03329	putative aminophosphonate oxidoreductase	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR04191	putative bacilliredoxin, YphP/YqiW family	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR04018	putative bacillithiol system oxidoreductase, YpdA family	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR03608	putative bacteriocin export ABC transporter, lactococcin 972 group	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR04350	putative C-S lyase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR03916	putative DNA modification/repair radical SAM protein	0	0	0	0	0	1	1	0	1	0	0	0	0	1	1
+TIGR00797	putative efflux protein, MATE family	3	2	2	2	2	1	3	2	2	1	3	2	2	4	4
+TIGR03151	putative enoyl-[acyl-carrier-protein] reductase II	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR04122	putative exonuclease, DNA ligase-associated	0	0	0	0	0	1	1	0	1	0	0	0	1	1	1
+TIGR04027	putative FMN-dependent luciferase-like monooxygenase, KPN_01858 family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR04348	putative glycosyltransferase, TIGR04348 family	0	1	1	1	1	1	0	0	1	1	0	0	0	0	0
+TIGR00976	putative hydrolase, CocE/NonD family	0	0	0	1	0	0	1	1	0	0	0	1	1	3	0
+TIGR02358	putative hydroxymethylpyrimidine transporter CytX	0	0	0	0	1	0	0	1	0	1	1	0	0	1	1
+TIGR02587	putative integral membrane protein TIGR02587	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR03056	putative magnesium chelatase accessory protein	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0
+TIGR00278	putative membrane protein insertion efficiency factor	1	1	1	1	1	1	1	1	1	1	0	0	1	1	1
+TIGR03700	putative menaquinone biosynthesis radical SAM enzyme, SCO4494 family	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR04325	putative methyltransferase, LIC12133 family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR04045	putative N-acetyltransferase, MSMEG_0567 N-terminal domain family	1	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR02824	putative NAD(P)H quinone oxidoreductase, PIG3 family	1	1	1	1	1	1	1	1	1	1	1	0	0	2	1
+TIGR01513	putative nicotinate phosphoribosyltransferase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR04048	putative nitrilase, sll0784 family	1	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR00733	putative oligopeptide transporter, OPT family	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00539	putative oxygen-independent coproporphyrinogen III oxidase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02916	putative PEP-CTERM system histidine kinase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02917	putative PEP-CTERM system TPR-repeat lipoprotein	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03033	putative phage-type endonuclease	3	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03223	putative phosphonate metabolism protein	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+TIGR03250	putative phosphonoacetaldehyde dehydrogenase	0	0	0	0	0	0	0	1	0	0	0	0	0	0	2
+TIGR03054	putative photosynthetic complex assembly protein	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR03055	putative photosynthetic complex assembly protein 2	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR02610	putative polyhydroxyalkanoic acid system protein	1	0	1	1	1	1	1	1	1	1	1	0	1	1	1
+TIGR03027	putative polysaccharide export protein, PEP-CTERM sytem-associated	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02823	putative quinone oxidoreductase, YhdH/YhfP family	1	1	1	1	1	1	1	2	1	2	0	0	0	1	0
+TIGR02605	putative regulatory protein, FmdB family	3	2	1	1	1	1	1	1	1	1	1	0	0	2	2
+TIGR00253	putative RNA-binding protein, YhbY family	1	1	1	1	1	1	1	1	1	1	1	0	0	0	1
+TIGR03015	putative secretion ATPase, PEP-CTERM locus subfamily	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR04553	putative selenate ABC transporter periplasmic binding protein	1	0	1	1	0	1	0	0	1	1	0	0	0	1	1
+TIGR03647	putative solute:sodium symporter small subunit	1	1	2	2	1	1	1	1	2	1	1	0	0	0	0
+TIGR04425	putative sugar phosphate phospholyase (cyclizing)	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02645	putative thymidine phosphorylase	1	1	0	0	1	1	0	1	0	1	0	0	0	0	0
+TIGR00737	putative TIM-barrel protein, nifR3 family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02293	putative toxin-antitoxin system antitoxin component, TIGR02293 family	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0
+TIGR00305	putative toxin-antitoxin system toxin component, PIN family	2	1	0	0	0	1	0	1	2	1	1	0	2	0	1
+TIGR00250	putative transcription antitermination factor YqgF	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04331	putative transferase, LIC12162 family	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR03212	putative urate catabolism protein	1	1	1	1	1	1	1	1	1	0	1	0	0	1	1
+TIGR03169	pyridine nucleotide-disulfide oxidoreductase family protein	0	0	1	1	1	0	0	0	1	2	1	0	0	0	0
+TIGR03099	pyridoxal-dependent decarboxylase, exosortase A system-associated	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01415	pyridoxal-phosphate dependent TrpB-like enzyme	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01275	pyridoxal phosphate-dependent enzymes, D-cysteine desulfhydrase family	0	0	0	0	0	0	1	1	2	0	0	0	0	0	0
+TIGR00044	pyridoxal phosphate enzyme, YggS family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00558	pyridoxamine-phosphate oxidase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00559	pyridoxine 5'-phosphate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03615	pyrimidine utilization flavin reductase protein F	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03612	pyrimidine utilization protein A	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03614	pyrimidine utilization protein B	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0
+TIGR03610	pyrimidine utilization protein C	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0
+TIGR03611	pyrimidine utilization protein D	0	0	0	0	0	0	2	0	0	0	0	0	0	1	0
+TIGR00504	pyroglutamyl-peptidase I	1	0	1	1	0	1	1	1	1	1	0	0	0	2	2
+TIGR00112	pyrroline-5-carboxylate reductase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01348	pyruvate dehydrogenase complex dihydrolipoamide acetyltransferase, long form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03182	pyruvate dehydrogenase E1 component, alpha subunit	0	0	0	0	0	0	0	0	0	1	0	1	1	0	0
+TIGR00759	pyruvate dehydrogenase E1 component, homodimeric type	2	1	2	2	1	2	2	2	2	2	1	0	0	2	2
+TIGR01064	pyruvate kinase	1	1	1	1	1	1	1	2	1	1	1	1	1	2	2
+TIGR01828	pyruvate, phosphate dikinase	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02176	pyruvate:ferredoxin (flavodoxin) oxidoreductase, homodimeric	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR00364	queuosine biosynthesis protein QueC	1	1	1	1	1	1	0	1	1	1	1	0	0	1	1
+TIGR03367	queuosine biosynthesis protein QueD	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00550	quinolinate synthetase complex, A subunit	1	1	0	0	0	1	1	1	1	1	1	1	1	1	1
+TIGR04085	radical SAM additional 4Fe4S-binding SPASM domain	0	0	0	1	0	1	0	1	0	1	0	1	1	1	1
+TIGR00423	radical SAM domain protein, CofH subfamily	0	0	0	0	0	0	0	0	0	0	0	2	2	0	0
+TIGR00089	radical SAM methylthiotransferase, MiaB/RimO family	2	2	2	2	2	2	2	2	2	2	2	3	3	2	2
+TIGR04043	radical SAM protein, MSMEG_0568 family	1	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+TIGR01212	radical SAM protein, TIGR01212 family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR04167	radical SAM/Cys-rich domain protein	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0
+TIGR00481	Raf kinase inhibitor-like protein, YbhB/YbcL family	0	1	0	0	0	2	1	2	1	1	1	0	0	2	2
+TIGR00688	rarD protein	0	1	0	0	0	0	0	1	0	1	1	0	0	0	0
+TIGR00413	rare lipoprotein A	1	1	0	0	0	1	2	2	2	0	0	3	2	2	2
+TIGR00004	reactive intermediate/imine deaminase	1	0	0	0	0	0	2	1	2	2	0	2	2	2	1
+TIGR03491	RecB family nuclease, putative, TM0106 family	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0
+TIGR00611	recF protein	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00616	recombinase, phage RecT family	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00615	recombination protein RecR	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01950	redox-sensitive transcriptional activator SoxR	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR02486	reductive dehalogenase	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00665	replicative DNA helicase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01580	respiratory nitrate reductase, alpha subunit	1	1	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR00351	respiratory nitrate reductase, gamma subunit	1	1	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR04435	restriction system-associated AAA family ATPase	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR02198	rfaE bifunctional protein, domain I	0	1	0	0	0	1	1	1	1	1	2	1	1	0	0
+TIGR02199	rfaE bifunctional protein, domain II	0	1	0	0	0	1	1	1	1	1	1	1	1	0	0
+TIGR02637	rhamnose ABC transporter, rhamnose-binding protein	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02632	rhamnulose-1-phosphate aldolase/alcohol dehydrogenase	0	0	0	0	0	0	0	0	0	0	1	1	1	0	0
+TIGR03902	rhomboid family GlyGly-CTERM serine protease	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR01646	Rhs element Vgr protein	0	0	0	0	0	0	0	0	0	0	1	0	0	13	14
+TIGR03696	RHS repeat-associated core domain	0	0	0	0	0	0	2	0	2	0	0	0	3	5	2
+TIGR00227	riboflavin-specific deaminase C-terminal domain	1	1	1	2	1	1	1	1	1	1	1	1	1	1	1
+TIGR00326	riboflavin biosynthesis protein RibD	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00083	riboflavin kinase/FMN adenylyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00187	riboflavin synthase, alpha subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02152	ribokinase	0	0	0	0	1	0	1	0	0	0	1	0	0	2	3
+TIGR02191	ribonuclease III, bacterial	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00188	ribonuclease P protein component, eubacterial	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01966	ribonuclease PH	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02063	ribonuclease R	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03319	ribonuclease Y	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02651	ribonuclease Z	0	0	0	0	0	0	0	0	0	0	0	1	1	1	0
+TIGR00757	ribonuclease, Rne/Rng family	2	2	2	2	2	2	2	2	2	2	2	1	1	2	2
+TIGR02504	ribonucleoside-diphosphate reductase, adenosylcobalamin-dependent	1	1	0	0	0	0	0	1	0	2	0	1	1	1	0
+TIGR02506	ribonucleoside-diphosphate reductase, alpha subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01251	ribose-phosphate pyrophosphokinase	2	2	1	1	2	2	1	2	1	3	1	1	1	1	1
+TIGR00021	ribose 5-phosphate isomerase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01120	ribose 5-phosphate isomerase B	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0
+TIGR01575	ribosomal-protein-alanine acetyltransferase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03795	ribosomal natural product, two-chain TOMM family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00731	ribosomal protein bL25, Ctc-form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01169	ribosomal protein L1, bacterial/chloroplast	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00406	ribosomal protein L11 methyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01066	ribosomal protein L13, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01067	ribosomal protein L14, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01071	ribosomal protein L15, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01164	ribosomal protein L16, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00059	ribosomal protein L17	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00060	ribosomal protein L18, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01024	ribosomal protein L19, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01171	ribosomal protein L2, bacterial/organellar	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01032	ribosomal protein L20	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00061	ribosomal protein L21	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01044	ribosomal protein L22, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01079	ribosomal protein L24, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00062	ribosomal protein L27	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00009	ribosomal protein L28	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00012	ribosomal protein L29	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01308	ribosomal protein L30, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00105	ribosomal protein L31	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01031	ribosomal protein L32	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01023	ribosomal protein L33, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01030	ribosomal protein L34, bacterial type	1	1	1	1	0	1	1	1	1	1	1	1	1	1	1
+TIGR00001	ribosomal protein L35	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01022	ribosomal protein L36, bacterial type	1	1	0	0	1	1	1	1	1	1	0	0	1	2	2
+TIGR03654	ribosomal protein L6, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00855	ribosomal protein L7/L12	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00158	ribosomal protein L9	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00717	ribosomal protein S1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01049	ribosomal protein S10, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01125	ribosomal protein S12 methylthiotransferase RimO	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00981	ribosomal protein S12, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00952	ribosomal protein S15, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00002	ribosomal protein S16	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00165	ribosomal protein S18	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01050	ribosomal protein S19, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01011	ribosomal protein S2, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00029	ribosomal protein S20	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00030	ribosomal protein S21	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01009	ribosomal protein S3, bacterial type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01017	ribosomal protein S4, bacterial/organelle type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01021	ribosomal protein S5, bacterial/organelle type	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00166	ribosomal protein S6	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01029	ribosomal protein S7, bacterial/organelle	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03632	ribosomal protein uS11, bacterial form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03631	ribosomal protein uS13, bacterial form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03635	ribosomal protein uS17, bacterial form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00755	ribosomal RNA small subunit methyltransferase A	1	1	1	1	1	1	1	0	1	1	1	1	1	1	1
+TIGR04560	ribosomal small subunit protein bTHX	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00741	ribosomal subunit interface protein	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+TIGR03594	ribosome-associated GTPase EngA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00082	ribosome-binding factor A	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03596	ribosome biogenesis GTP-binding protein YlqF	1	1	1	1	1	0	0	0	0	1	1	0	0	1	1
+TIGR03598	ribosome biogenesis GTP-binding protein YsxC/EngB	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00496	ribosome recycling factor	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00090	ribosome silencing factor RsfS/YbeB/iojap	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00157	ribosome small subunit-dependent GTPase A	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01234	ribulokinase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	1
+TIGR01163	ribulose-phosphate 3-epimerase	1	1	2	1	2	1	1	1	1	1	1	1	1	1	1
+TIGR02377	Rieske [2Fe-2S] domain protein, MocE subfamily	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR00054	RIP metalloprotease RseP	1	1	0	0	0	1	1	1	1	1	1	1	1	1	1
+TIGR03399	RNA 3'-phosphate cyclase	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1
+TIGR02383	RNA chaperone Hfq	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01967	RNA helicase HrpA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02306	RNA ligase, DRB0094 family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00046	RNA methyltransferase, RsmE family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00050	RNA methyltransferase, TrmH family, group 1	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02420	RNA polymerase-binding protein DksA	2	2	2	2	2	1	1	2	1	2	2	0	0	2	2
+TIGR02395	RNA polymerase sigma-54 factor	1	1	1	1	1	1	2	2	2	1	1	1	1	1	2
+TIGR02985	RNA polymerase sigma-70 factor, Bacteroides expansion family 1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR02943	RNA polymerase sigma-70 factor, TIGR02943 family	1	1	0	0	0	0	1	0	0	1	1	1	1	0	0
+TIGR02957	RNA polymerase sigma-70 factor, TIGR02957 family	1	0	0	0	0	0	1	0	1	0	1	0	0	1	1
+TIGR02393	RNA polymerase sigma factor RpoD, C-terminal domain	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02939	RNA polymerase sigma factor RpoE	1	1	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR02394	RNA polymerase sigma factor RpoS	1	1	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR02479	RNA polymerase sigma factor, FliA/WhiG family	1	1	1	1	1	1	0	0	0	1	2	0	0	1	0
+TIGR02937	RNA polymerase sigma factor, sigma-70 family	14	11	7	5	4	10	12	16	8	15	11	24	19	19	20
+TIGR02959	RNA polymerase sigma factor, SigZ family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01730	RND family efflux transporter, MFP subunit	28	10	5	7	5	11	10	10	8	10	8	8	6	20	15
+TIGR00219	rod shape-determining protein MreC	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1
+TIGR03426	rod shape-determining protein MreD	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02210	rod shape-determining protein RodA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00744	ROK family protein (putative glucokinase)	0	0	0	0	0	0	0	1	1	0	1	1	1	1	1
+TIGR01935	RraA famliy	2	0	1	1	0	1	2	0	0	1	1	0	0	0	0
+TIGR00738	Rrf2 family protein	2	3	4	3	4	2	1	4	1	4	3	1	1	3	3
+TIGR00246	rRNA large subunit m3Psi methyltransferase RlmH	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00043	rRNA maturation RNase YbeY	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00186	rRNA methylase, putative, group 3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02818	S-(hydroxymethyl)glutathione dehydrogenase/class III alcohol dehydrogenase	1	0	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR03330	S-adenosylmethionine decarboxylase proenzyme, Bacillus form	1	0	0	0	0	0	0	1	0	0	0	0	0	1	1
+TIGR01034	S-adenosylmethionine synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00113	S-adenosylmethionine:tRNA ribosyltransferase-isomerase	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR02821	S-formylglutathione hydrolase	1	1	0	0	0	1	1	0	1	1	1	0	0	1	1
+TIGR00512	S-methyl-5-thioribose-1-phosphate isomerase	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03605	SagB-type dehydrogenase domain	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR01372	sarcosine oxidase, alpha subunit family, heterotetrameric form	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01373	sarcosine oxidase, beta subunit family, heterotetrameric form	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01374	sarcosine oxidase, delta subunit family, heterotetrameric form	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR01377	sarcosine oxidase, monomeric form	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00149	secondary thiamine-phosphate synthase enzyme	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0
+TIGR00281	segregation and condensation protein B	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00476	selenium donor protein	1	1	1	1	1	1	1	1	1	2	1	1	0	1	1
+TIGR00475	selenocysteine-specific elongation factor SelB	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00370	sensor histidine kinase inhibitor, KipI family	0	0	0	0	0	0	0	0	0	1	0	1	1	3	2
+TIGR01222	septum site-determining protein MinC	1	0	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01968	septum site-determining protein MinD	1	0	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01172	serine O-acetyltransferase	3	1	1	1	1	1	1	1	1	1	1	0	0	2	2
+TIGR00414	seryl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00507	shikimate dehydrogenase	3	2	2	1	3	1	2	2	1	1	1	1	1	3	2
+TIGR03951	siderophore-iron reductase FhuF	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02227	signal peptidase I, bacterial type	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00706	signal peptide peptidase SppA, 36K type	1	1	1	2	1	1	2	1	1	1	1	1	0	2	1
+TIGR00705	signal peptide peptidase SppA, 67K type	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR00064	signal recognition particle-docking protein FtsY	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00959	signal recognition particle protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00644	single-stranded-DNA-specific exonuclease RecJ	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00621	single stranded DNA-binding protein (ssb)	1	1	1	1	1	1	1	1	1	2	1	3	3	1	1
+TIGR01470	siroheme synthase, N-terminal domain	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00231	small GTP-binding protein domain	16	14	11	12	11	10	11	13	12	13	12	13	13	12	14
+TIGR00412	small redox-active disulfide protein 2	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0
+TIGR04438	small Trp-rich protein	1	1	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR00210	sodium--glutamate symport carrier (gltS)	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+TIGR00498	SOS regulatory protein LexA	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR04487	SoxY-related AACIE arm protein	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00417	spermidine synthase	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01187	spermidine/putrescine ABC transporter ATP-binding subunit	1	0	0	0	1	0	1	0	0	2	1	0	0	1	1
+TIGR03467	squalene-associated FAD-dependent desaturase	1	1	0	0	0	0	2	0	1	1	1	0	0	1	1
+TIGR03464	squalene synthase HpnC	1	1	0	0	0	0	1	0	1	1	1	0	0	1	1
+TIGR03465	squalene synthase HpnD	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00086	SsrA-binding protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01780	succinate-semialdehyde dehydrogenase	4	1	1	1	1	1	2	3	0	1	1	0	0	2	1
+TIGR03458	succinate CoA transferase	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR02046	succinate dehydrogenase (or fumarate reductase) cytochrome b subunit, b558 family	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00384	succinate dehydrogenase and fumarate reductase iron-sulfur protein	1	1	1	1	1	1	2	1	2	1	1	1	1	1	1
+TIGR01811	succinate dehydrogenase or fumarate reductase, flavoprotein subunit, Bacillus subtilis subgroup	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR01812	succinate dehydrogenase or fumarate reductase, flavoprotein subunitGram-negative/mitochondrial subgroup	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02970	succinate dehydrogenase, cytochrome b556 subunit	1	1	1	1	1	1	2	1	1	1	1	0	0	1	1
+TIGR01816	succinate dehydrogenase, flavoprotein subunit, E. coli/mitochondrial subgroup	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02968	succinate dehydrogenase, hydrophobic membrane anchor protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01019	succinyl-CoA synthetase, alpha subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	2	2
+TIGR01016	succinyl-CoA synthetase, beta subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	2	2
+TIGR01246	succinyl-diaminopimelate desuccinylase, proteobacterial clade	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03538	succinyldiaminopimelate transaminase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03852	sucrose phosphorylase	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01994	SUF system FeS assembly protein, NifU family	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0
+TIGR00689	sugar-phosphate isomerase, RpiB/LacA/LacB family	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0
+TIGR00792	sugar (Glycoside-Pentoside-Hexuronide) transporter	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR03570	sugar O-acyltransferase, sialic acid O-acetyltransferase NeuD family	1	2	0	1	0	0	0	0	0	0	0	0	0	0	3
+TIGR03013	sugar transferase, PEP-CTERM system associated	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03087	sugar transferase, PEP-CTERM/EpsH1 system associated	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0
+TIGR00968	sulfate ABC transporter, ATP-binding protein	1	0	1	1	0	1	1	1	1	1	1	0	0	1	1
+TIGR00969	sulfate ABC transporter, permease protein	2	0	2	2	0	2	2	2	2	2	2	0	0	2	2
+TIGR02139	sulfate ABC transporter, permease protein CysT	1	0	1	1	0	1	1	1	1	1	1	0	0	1	1
+TIGR02140	sulfate ABC transporter, permease protein CysW	1	0	1	1	0	1	1	1	1	1	1	0	0	1	1
+TIGR02034	sulfate adenylyltransferase, large subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02039	sulfate adenylyltransferase, small subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00971	sulfate/thiosulfate-binding protein	2	0	2	2	0	2	2	2	2	2	2	0	0	2	2
+TIGR04555	sulfite dehydrogenase	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0
+TIGR02041	sulfite reductase (NADPH) hemoprotein, beta-component	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR01931	sulfite reductase [NADPH] flavoprotein, alpha-component	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR02064	sulfite reductase, dissimilatory-type alpha subunit	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02066	sulfite reductase, dissimilatory-type beta subunit	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03457	sulfoacetaldehyde acetyltransferase	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR03845	sulfopyruvate decarboxylase, alpha subunit	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR04022	sulfur acquisition oxidoreductase, SfnB family	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR04484	sulfur oxidation c-type cytochrome SoxA	0	3	1	2	1	1	1	1	1	0	0	0	0	0	0
+TIGR04485	sulfur oxidation c-type cytochrome SoxX	0	3	1	2	1	1	1	1	1	0	0	0	0	0	0
+TIGR03011	sulfur relay protein TusB/DsrH	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03010	sulfur relay protein TusC/DsrF	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03012	sulfur relay protein TusD/DsrE	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR03342	sulfur relay protein, TusE/DsrC/DsvC family	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02675	tape measure domain	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR02089	tartrate dehydrogenase	2	1	2	2	2	2	2	2	2	3	0	0	0	4	4
+TIGR01412	Tat-translocated enzyme	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR01409	Tat (twin-arginine translocation) pathway signal sequence	4	2	2	2	2	4	6	4	0	3	1	3	1	2	7
+TIGR01729	taurine ABC transporter, periplasmic binding protein	0	0	0	0	0	0	0	0	0	0	1	0	0	1	1
+TIGR02379	TDP-4-keto-6-deoxy-D-glucose transaminase	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00682	tetraacyldisaccharide 4'-kinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00915	The (Largely Gram-negative Bacterial) Hydrophobe/Amphiphile Efflux-1 (HAE1) Family	8	3	2	2	2	4	5	6	4	3	3	2	2	9	8
+TIGR00949	The Resistance to Homoserine/Threonine (RhtB) Family protein	0	0	0	0	0	0	1	1	1	0	2	0	0	1	1
+TIGR00693	thiamine-phosphate diphosphorylase	1	1	0	1	1	1	0	2	1	2	1	1	1	1	1
+TIGR01379	thiamine-phosphate kinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01683	thiamine biosynthesis protein ThiS	1	1	0	1	1	1	0	1	1	1	0	0	0	1	1
+TIGR03604	thiazole/oxazole-forming peptide maturase, SagD family component	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0
+TIGR01746	thioester reductase domain	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02868	thiol reductant ABC exporter, CydC subunit	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR02857	thiol reductant ABC exporter, CydD subunit	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR03840	thiopurine S-methyltransferase, Se/Te detoxification family	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01068	thioredoxin	3	3	3	3	3	3	3	3	3	3	3	1	1	3	3
+TIGR02055	thioredoxin-dependent adenylylsulfate APS reductase	0	1	1	0	0	1	0	0	0	1	0	1	1	0	0
+TIGR01292	thioredoxin-disulfide reductase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04490	thiosulfate oxidation carrier complex protein SoxZ	0	3	1	2	1	1	1	1	1	0	0	0	0	0	0
+TIGR04488	thiosulfate oxidation carrier protein SoxY	0	2	1	1	1	1	1	1	1	0	0	0	0	0	0
+TIGR04486	thiosulfohydrolase SoxB	0	1	1	1	1	1	1	1	1	0	0	0	0	0	0
+TIGR04474	three-Cys-motif partner protein	0	0	0	0	0	0	0	0	0	2	0	0	1	0	0
+TIGR01124	threonine ammonia-lyase, biosynthetic, long form	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01127	threonine ammonia-lyase, medium form	1	0	0	0	0	1	1	1	1	1	0	0	0	1	1
+TIGR02079	threonine dehydratase	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR00260	threonine synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	2	2
+TIGR00418	threonyl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03284	thymidylate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00153	TIGR00153 family protein	1	1	0	0	1	1	1	1	1	1	1	0	0	1	1
+TIGR00156	TIGR00156 family protein	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR00245	TIGR00245 family protein	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR00251	TIGR00251 family protein	1	1	0	0	0	0	0	0	0	1	1	0	0	0	0
+TIGR00252	TIGR00252 family protein	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1
+TIGR00255	TIGR00255 family protein	1	2	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00266	TIGR00266 family protein	1	0	0	0	0	0	1	0	1	0	0	1	1	0	0
+TIGR00288	TIGR00288 family protein	0	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+TIGR00645	TIGR00645 family protein	1	1	1	4	1	1	1	1	1	0	1	0	0	1	1
+TIGR00659	TIGR00659 family protein	1	1	0	0	0	1	0	0	1	1	1	0	0	1	1
+TIGR00701	TIGR00701 family protein	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00725	TIGR00725 family protein	3	2	1	1	1	2	0	2	2	0	1	2	2	3	2
+TIGR00730	TIGR00730 family protein	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2
+TIGR01244	TIGR01244 family protein	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0
+TIGR01666	TIGR01666 family membrane protein	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR01777	TIGR01777 family protein	0	0	0	0	0	0	0	0	0	0	0	1	1	1	1
+TIGR02099	TIGR02099 family protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02449	TIGR02449 family protein	1	1	1	1	1	1	1	1	1	1	1	0	0	0	0
+TIGR02453	TIGR02453 family protein	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02588	TIGR02588 family protein	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0
+TIGR02594	TIGR02594 family protein	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR02757	TIGR02757 family protein	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03118	TIGR03118 family protein	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+TIGR03643	TIGR03643 family protein	0	0	1	1	2	0	0	0	0	0	0	1	1	0	0
+TIGR04076	TIGR04076 family protein	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0
+TIGR04255	TIGR04255 family protein	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR00478	TlyA family rRNA methyltransferase/putative hemolysin	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02955	TMAO reductase system periplasmic protein TorT	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00940	Tmonovalent cation:proton antiporter	0	0	0	0	0	0	1	0	1	0	1	0	0	1	1
+TIGR02799	tol-pal system-associated acyl-CoA thioesterase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02800	tol-pal system beta propeller repeat protein TolB	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02795	tol-pal system protein YbgF	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02794	TolA protein	1	1	1	1	1	0	1	1	1	2	1	0	0	1	1
+TIGR02796	TolQ protein	1	1	1	1	1	1	1	1	1	2	1	0	0	1	1
+TIGR02801	TolR protein	1	1	1	0	1	0	0	0	0	2	0	0	0	1	1
+TIGR03903	TOMM system kinase/cyclase fusion protein	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0
+TIGR01785	TonB-dependent heme/hemoglobin receptor family protein	1	1	0	0	0	0	0	0	0	0	1	0	0	0	1
+TIGR01786	TonB-dependent hemoglobin/transferrin/lactoferrin receptor family protein	1	1	0	0	0	0	0	0	0	0	1	0	0	0	1
+TIGR04057	TonB-dependent outer membrane receptor, SusC/RagA subfamily, signature region	0	0	0	0	0	0	0	0	0	0	0	17	17	0	0
+TIGR01782	TonB-dependent receptor	0	0	0	0	0	0	0	0	0	2	0	1	2	0	0
+TIGR01783	TonB-dependent siderophore receptor	8	1	3	0	0	1	2	3	3	0	2	1	1	12	17
+TIGR01779	TonB-dependent vitamin B12 receptor	1	1	1	2	0	0	0	0	1	0	1	0	0	1	1
+TIGR04056	TonB-linked outer membrane protein, SusC/RagA family	0	0	0	0	0	0	0	0	0	0	0	15	18	0	0
+TIGR01352	TonB family C-terminal domain	5	3	5	2	4	2	3	6	3	3	3	0	0	1	2
+TIGR00028	toxin-antitoxin system PIN domain toxin	0	0	2	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR02116	toxin-antitoxin system, toxin component, Txe/YoeB family	2	0	1	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR00874	transaldolase	1	1	1	1	1	0	1	0	1	1	1	0	0	1	1
+TIGR00707	transaminase, acetylornithine/succinylornithine family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00580	transcription-repair coupling factor (mfd)	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01951	transcription antitermination factor NusB	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01462	transcription elongation factor GreA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01461	transcription elongation factor GreB	1	1	1	1	1	1	2	2	1	1	1	0	0	1	1
+TIGR01955	transcription elongation factor/antiterminator RfaH	0	0	2	0	1	0	0	0	0	0	0	0	0	0	0
+TIGR01953	transcription termination factor NusA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01954	transcription termination factor NusA, C-terminal duplication	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00767	transcription termination factor Rho	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00922	transcription termination/antitermination factor NusG	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03020	transcriptional regulator EpsA	0	0	0	0	0	1	1	1	1	0	0	0	0	0	0
+TIGR00244	transcriptional regulator NrdR	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR02040	transcriptional regulator PpsR	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR03298	transcriptional regulator, ArgP family	1	0	1	0	1	1	1	0	2	2	1	0	0	1	1
+TIGR01617	transcriptional regulator, Spx/MgsR family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR04282	transferase 1, rSAM/selenodomain-associated	0	0	0	1	0	0	0	0	1	1	0	1	0	0	0
+TIGR04283	transferase 2, rSAM/selenodomain-associated	0	0	0	1	0	0	0	0	1	1	0	1	0	0	0
+TIGR00232	transketolase, bacterial and yeast	1	2	2	1	3	1	1	2	1	1	1	0	0	0	0
+TIGR00484	translation elongation factor EF-G	3	2	2	2	2	3	3	3	2	3	2	1	2	3	3
+TIGR00038	translation elongation factor P	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00116	translation elongation factor Ts	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00485	translation elongation factor TU	4	3	2	1	2	0	1	2	2	2	4	1	1	5	2
+TIGR01158	translation initation factor SUI1, putative, prokaryotic	1	1	0	0	0	0	1	0	0	1	1	1	1	1	1
+TIGR00008	translation initiation factor IF-1	2	2	1	1	1	2	3	3	3	1	1	1	1	2	1
+TIGR00487	translation initiation factor IF-2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00168	translation initiation factor IF-3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00345	transport-energizing ATPase, TRC40/GET3/ArsA family	1	0	0	0	0	0	0	0	0	1	2	0	0	0	0
+TIGR00905	transporter, basic amino acid/polyamine antiporter (APA) family	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR00932	transporter, monovalent cation:proton antiporter-2 (CPA2) family	3	3	1	0	1	2	3	3	3	2	3	0	0	3	4
+TIGR00813	transporter, SSS family	2	1	1	1	0	2	1	1	1	1	0	2	2	2	1
+TIGR02122	TRAP transporter solute receptor, TAXI family	0	0	0	0	0	0	2	2	2	2	1	0	0	1	1
+TIGR02123	TRAP transporter, 4TM/12TM fusion protein	0	0	0	0	0	0	1	1	1	2	0	0	0	0	0
+TIGR00786	TRAP transporter, DctM subunit	8	11	11	13	11	6	17	8	12	8	7	0	0	9	10
+TIGR00685	trehalose-phosphatase	1	0	0	0	0	1	2	1	1	1	0	0	0	1	1
+TIGR02456	trehalose synthase	0	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+TIGR02457	trehalose synthase-fused probable maltokinase	0	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+TIGR00115	trigger factor	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00419	triosephosphate isomerase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00787	tripartite ATP-independent periplasmic transporter solute receptor, DctP family	6	5	6	4	9	4	12	5	5	5	8	0	0	6	9
+TIGR03125	triphosphoribosyl-dephospho-CoA synthase CitG	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03132	triphosphoribosyl-dephospho-CoA synthase MdcB	1	0	0	0	0	1	1	0	0	1	0	0	0	0	0
+TIGR00449	tRNA-guanine family transglycosylase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00430	tRNA-guanine transglycosylase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01574	tRNA-N(6)-(isopentenyl)adenosine-37 thiotransferase enzyme MiaB	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00104	tRNA-Thr(GGU) m(6)t(6)A37 methyltransferase TsaA	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0
+TIGR00420	tRNA (5-methylaminomethyl-2-thiouridylate)-methyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00185	tRNA (cytidine(34)-2'-O)-methyltransferase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00091	tRNA (guanine-N(7)-)-methyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00088	tRNA (guanine-N1)-methyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03167	tRNA 2-selenouridine synthase	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1
+TIGR00742	tRNA dihydrouridine synthase A	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00174	tRNA dimethylallyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00450	tRNA modification GTPase TrmE	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00071	tRNA pseudouridine(38-40) synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00431	tRNA pseudouridine(55) synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03723	tRNA threonylcarbamoyl adenosine modification protein TsaD	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03725	tRNA threonylcarbamoyl adenosine modification protein YeaZ	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00150	tRNA threonylcarbamoyl adenosine modification protein YjeE	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00057	tRNA threonylcarbamoyl adenosine modification protein, Sua5/YciO/YrdC/YwlC family	2	2	2	2	2	2	2	2	2	2	2	3	3	2	2
+TIGR03197	tRNA U-34 5-methylaminomethyl-2-thiouridine biosynthesis protein MnmC, C-terminal domain	1	1	1	1	1	1	0	1	1	0	1	0	0	1	1
+TIGR02433	tRNA(Ile)-lysidine synthetase, C-terminal domain	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR02432	tRNA(Ile)-lysidine synthetase, N-terminal domain	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02450	tryptophan-rich conserved hypothetical protein	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0
+TIGR03036	tryptophan 2,3-dioxygenase	1	0	1	0	1	1	1	1	1	0	1	0	0	1	1
+TIGR00262	tryptophan synthase, alpha subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00263	tryptophan synthase, beta subunit	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00233	tryptophanyl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01410	twin arginine-targeting protein translocase TatB	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01411	twin arginine-targeting protein translocase, TatA/E family	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00945	Twin arginine targeting (Tat) protein translocase TatC	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02746	type-IV secretion system protein TraC	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR00497	type I restriction system adenine methylase (hsdM)	1	0	0	0	1	0	0	0	0	2	1	0	1	0	0
+TIGR03661	type I secretion C-terminal target domain (VC_A0849 subclass)	0	0	0	0	1	0	0	1	0	1	0	0	0	1	0
+TIGR01843	type I secretion membrane fusion protein, HlyD family	0	1	3	2	2	0	2	1	1	2	1	0	0	2	2
+TIGR01844	type I secretion outer membrane protein, TolC family	2	1	2	2	1	1	2	2	1	2	1	0	0	2	2
+TIGR01846	type I secretion system ABC transporter, HlyB family	0	0	0	0	0	0	0	0	1	1	1	0	0	0	0
+TIGR01842	type I secretion system ABC transporter, PrtD family	0	1	1	2	0	0	2	2	0	0	0	0	0	0	0
+TIGR03375	type I secretion system ATPase, LssB family	0	0	2	1	2	0	0	0	0	1	0	0	0	1	1
+TIGR00348	type I site-specific deoxyribonuclease, HsdR family	1	0	0	0	1	0	0	0	0	2	1	0	1	0	0
+TIGR02517	type II secretion system protein D	3	0	1	1	0	1	1	1	1	1	0	0	0	2	2
+TIGR02533	type II secretion system protein E	2	0	0	0	0	1	1	1	1	1	0	0	0	1	0
+TIGR02120	type II secretion system protein F	1	0	1	1	0	1	1	1	1	1	0	0	0	1	1
+TIGR01710	type II secretion system protein G	2	0	1	1	0	1	1	1	3	1	0	0	0	1	1
+TIGR01708	type II secretion system protein H	2	0	1	1	0	1	1	1	1	1	0	0	0	3	1
+TIGR01707	type II secretion system protein I	1	0	1	1	0	1	1	1	1	1	0	0	0	1	1
+TIGR01711	type II secretion system protein J	0	0	1	1	0	0	1	1	0	0	0	0	0	1	0
+TIGR01709	type II secretion system protein L	1	0	1	1	0	1	1	1	1	1	0	0	0	1	1
+TIGR02546	type III secretion apparatus H+-transporting two-sector ATPase	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR02544	type III secretion apparatus lipoprotein, YscJ/HrcJ family	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+TIGR02499	type III secretion apparatus protein, HrpE/YscL family	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR02500	type III secretion apparatus protein, YscD/HrpQ family	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+TIGR01102	type III secretion apparatus protein, YscR/HrcR family	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+TIGR02516	type III secretion outer membrane pore, YscC/HrcC family	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+TIGR01401	type III secretion protein SpaR/YscT/HrcT	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+TIGR01399	type III secretion protein, HrcV family	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+TIGR01403	type III secretion protein, HrpO family	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1
+TIGR01404	type III secretion protein, YscU/HrpY family	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+TIGR02551	type III secretion system apparatus protein YscQ/HrcQ	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1
+TIGR02538	type IV-A pilus assembly ATPase PilB	1	1	0	0	1	1	1	1	1	1	1	0	0	1	1
+TIGR03349	type IV / VI secretion system protein, DotU family	0	0	0	0	0	0	0	1	0	0	1	0	0	4	6
+TIGR02747	type IV conjugative transfer system lipoprotein TraV	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02761	type IV conjugative transfer system protein TraE	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR02762	type IV conjugative transfer system protein TraL	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+TIGR01175	type IV pilus assembly protein PilM	1	1	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR02521	type IV pilus biogenesis/stability protein PilW	1	1	0	0	0	1	1	1	1	1	1	0	0	1	1
+TIGR02523	type IV pilus modification protein PilV	4	2	0	1	1	2	2	1	2	1	1	0	0	4	3
+TIGR02515	type IV pilus secretin (or competence protein) PilQ	1	1	1	1	1	1	1	1	1	1	1	0	0	2	1
+TIGR00929	type IV secretion/conjugal transfer ATPase, VirB4 family	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0
+TIGR02520	type IVB pilus formation outer membrane protein, R64 PilN family	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0
+TIGR03519	type IX secretion system membrane protein, PorP/SprF family	0	0	0	0	0	0	0	0	0	0	0	8	5	0	0
+TIGR03373	type VI secretion-associated protein, BMA_A0400 family	0	0	0	0	0	0	0	1	0	0	0	0	0	1	3
+TIGR03363	type VI secretion-associated protein, ImpA family	0	0	0	0	0	0	0	0	0	0	1	0	0	3	4
+TIGR03345	type VI secretion ATPase, ClpV1 family	0	0	0	0	0	0	0	0	0	0	1	0	0	3	4
+TIGR03352	type VI secretion lipoprotein, VC_A0113 family	0	0	0	0	0	0	0	1	0	0	0	0	0	2	4
+TIGR03348	type VI secretion protein IcmF	0	0	0	0	0	0	0	1	0	0	0	0	0	2	4
+TIGR03355	type VI secretion protein, EvpB/VC_A0108 family	0	0	0	0	0	0	0	0	0	0	1	0	0	3	4
+TIGR03358	type VI secretion protein, VC_A0107 family	0	0	0	0	0	0	0	0	0	0	1	0	0	3	4
+TIGR03359	type VI secretion protein, VC_A0110 family	0	0	0	0	0	0	0	0	0	0	1	0	0	3	4
+TIGR03347	type VI secretion protein, VC_A0111 family	0	0	0	0	0	0	0	0	0	0	1	0	0	3	4
+TIGR03353	type VI secretion protein, VC_A0114 family	0	0	0	0	0	0	0	0	0	0	1	0	0	3	4
+TIGR03344	type VI secretion system effector, Hcp1 family	0	0	0	0	0	0	0	0	0	0	1	0	0	5	4
+TIGR03354	type VI secretion system FHA domain protein	0	0	0	0	0	0	0	2	0	0	0	0	0	2	2
+TIGR03357	type VI secretion system lysozyme-like protein	0	0	0	0	0	0	0	0	0	0	1	0	0	3	4
+TIGR03350	type VI secretion system peptidoglycan-associated domain	0	0	0	0	0	0	0	0	0	0	0	0	0	2	3
+TIGR03361	type VI secretion system Vgr family protein	0	0	0	0	0	0	0	0	0	0	1	0	0	13	14
+TIGR02224	tyrosine recombinase XerC	1	1	1	1	1	0	1	1	1	1	1	0	0	0	1
+TIGR02225	tyrosine recombinase XerD	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00234	tyrosyl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00148	UbiD family decarboxylase	0	1	0	0	0	0	0	1	0	1	0	1	1	0	0
+TIGR01416	ubiquinol-cytochrome c reductase, iron-sulfur subunit	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01988	Ubiquinone biosynthesis hydroxylase, UbiH/UbiF/VisC/COQ6 family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01983	ubiquinone biosynthesis O-methyltransferase	1	1	1	3	1	1	1	1	1	1	1	0	0	1	1
+TIGR01934	ubiquinone/menaquinone biosynthesis methyltransferases	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2
+TIGR01854	UDP-2,3-diacylglucosamine diphosphatase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03590	UDP-2,4-diacetamido-2,4,6-trideoxy-beta-L-altropyranose hydrolase	0	0	0	0	0	0	0	1	0	0	1	0	1	0	0
+TIGR00325	UDP-3-0-acyl N-acetylglucosamine deacetylase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01853	UDP-3-O-[3-hydroxymyristoyl] glucosamine N-acyltransferase LpxD	1	1	1	0	1	1	1	1	1	1	1	2	3	1	1
+TIGR03588	UDP-4-amino-4,6-dideoxy-N-acetyl-beta-L-altrosamine transaminase	0	0	0	0	0	0	0	1	0	0	1	0	1	0	0
+TIGR00031	UDP-galactopyranose mutase	0	0	0	0	0	1	0	1	1	0	0	0	0	0	0
+TIGR01179	UDP-glucose-4-epimerase GalE	2	0	1	1	0	1	2	1	2	1	1	1	1	2	4
+TIGR03568	UDP-N-acetyl-D-glucosamine 2-epimerase, UDP-hydrolysing	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0
+TIGR00179	UDP-N-acetylenolpyruvoylglucosamine reductase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01072	UDP-N-acetylglucosamine 1-carboxyvinyltransferase	2	1	1	1	1	1	2	1	1	1	2	1	1	2	2
+TIGR00236	UDP-N-acetylglucosamine 2-epimerase	2	0	0	0	0	1	3	0	0	1	0	2	1	0	0
+TIGR03589	UDP-N-acetylglucosamine 4,6-dehydratase (inverting)	0	0	0	0	0	0	0	1	0	0	1	1	1	0	0
+TIGR01173	UDP-N-acetylglucosamine diphosphorylase/glucosamine-1-phosphate N-acetyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01082	UDP-N-acetylmuramate--L-alanine ligase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01081	UDP-N-acetylmuramate:L-alanyl-gamma-D-glutamyl-meso-diaminopimelate ligase	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01143	UDP-N-acetylmuramoyl-tripeptide--D-alanyl-D-alanine ligase	1	1	1	1	1	1	1	1	1	1	1	2	2	1	1
+TIGR01087	UDP-N-acetylmuramoylalanine--D-glutamate ligase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01085	UDP-N-acetylmuramyl-tripeptide synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00369	uncharacterized domain 1	9	3	8	8	5	8	8	9	9	7	5	2	1	6	7
+TIGR03862	uncharacterized flavoprotein, PP_4765 family	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR01926	uncharacterized peroxidase-related enzyme	4	1	1	1	1	2	1	2	2	2	1	0	1	3	2
+TIGR00106	uncharacterized protein, MTH1187 family	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+TIGR03016	uncharacterized protein, PEP-CTERM system associated	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00296	uncharacterized protein, PH0010 family	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00257	uncharacterized protein, YigZ family	1	0	1	0	1	1	0	1	0	0	0	1	1	1	1
+TIGR01437	uncharacterized pyridoxal phosphate-dependent enzyme	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03904	uncharacterized radical SAM protein YgiQ	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR00753	undecaprenyl-diphosphatase UppP	1	1	1	1	1	1	1	1	2	1	1	1	1	1	1
+TIGR03022	Undecaprenyl-phosphate galactose phosphotransferase, WbaP	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+TIGR03023	Undecaprenyl-phosphate glucose phosphotransferase	1	0	0	0	0	1	1	2	1	0	0	1	0	0	0
+TIGR00055	undecaprenyl diphosphate synthase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01133	undecaprenyldiphospho-muramoylpentapeptide beta-N-acetylglucosaminyltransferase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR00628	uracil-DNA glycosylase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR03914	uracil-DNA glycosylase family domain	0	0	0	0	0	2	1	0	1	0	0	0	0	2	2
+TIGR00758	uracil-DNA glycosylase, family 4	1	1	1	1	1	3	2	1	2	1	1	0	0	4	3
+TIGR00801	uracil-xanthine permease	2	1	1	0	1	2	1	1	1	1	0	0	0	2	2
+TIGR01091	uracil phosphoribosyltransferase	1	1	0	0	0	1	1	1	1	1	1	1	1	1	1
+TIGR03411	urea ABC transporter, ATP-binding protein UrtD	2	2	1	1	1	1	1	1	1	1	1	0	0	3	2
+TIGR03410	urea ABC transporter, ATP-binding protein UrtE	2	2	1	1	1	1	1	1	1	1	1	0	0	3	2
+TIGR03409	urea ABC transporter, permease protein UrtB	2	2	1	1	1	1	1	1	1	1	1	0	0	4	2
+TIGR03408	urea ABC transporter, permease protein UrtC	2	2	1	1	1	1	1	1	1	1	1	0	0	3	2
+TIGR03407	urea ABC transporter, urea binding protein	2	2	1	1	1	1	1	1	1	1	1	0	0	3	2
+TIGR02712	urea carboxylase	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR03424	urea carboxylase-associated protein 1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR03425	urea carboxylase-associated protein 2	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+TIGR00101	urease accessory protein UreG	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR01792	urease, alpha subunit	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR00192	urease, beta subunit	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR00193	urease, gamma subunit	1	1	1	1	1	1	1	2	1	1	1	0	0	1	1
+TIGR00235	uridine kinase	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+TIGR02075	uridylate kinase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01228	urocanate hydratase	1	0	0	0	0	0	1	1	0	0	1	1	0	1	1
+TIGR01469	uroporphyrin-III C-methyltransferase	1	2	1	2	1	1	1	1	1	1	1	1	1	1	1
+TIGR01464	uroporphyrinogen decarboxylase	1	1	2	2	2	1	1	1	1	1	1	1	1	1	1
+TIGR01099	UTP--glucose-1-phosphate uridylyltransferase	1	1	1	1	1	1	1	1	1	0	0	0	0	1	1
+TIGR00358	VacB and RNase II family 3'-5' exoribonucleases	2	2	1	1	1	1	2	2	1	2	2	1	1	1	1
+TIGR01104	vacuolar-type H(+)-translocating pyrophosphatase	1	1	0	0	0	1	1	1	1	1	1	1	1	1	1
+TIGR00422	valyl-tRNA synthetase	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR01965	VCBS repeat	0	0	1	0	0	0	0	3	1	1	0	0	0	0	0
+TIGR00996	virulence factor Mce family protein	0	0	1	1	1	1	1	0	1	0	0	0	0	0	1
+TIGR01293	voltage-dependent potassium channel beta subunit, animal	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0
+TIGR03370	VPLPA-CTERM protein sorting domain	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR03057	X-X-X-Leu-X-X-Gly heptad repeats	1	0	0	0	1	0	0	0	0	0	1	0	0	1	0
+TIGR02964	xanthine dehydrogenase accessory protein XdhC	1	1	1	1	1	1	1	1	1	0	1	0	0	1	1
+TIGR02965	xanthine dehydrogenase, molybdopterin binding subunit	1	1	2	2	1	1	1	1	1	0	1	0	0	1	1
+TIGR02963	xanthine dehydrogenase, small subunit	1	1	2	2	1	1	1	1	1	0	1	0	0	1	1
+TIGR03510	XapX domain	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+TIGR02630	xylose isomerase	0	0	0	0	0	0	0	0	0	0	1	2	1	0	0
+TIGR00702	YcaO-type kinase domain	1	0	1	1	1	0	0	0	0	1	0	0	0	1	0
+TIGR03549	YcaO domain protein	1	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+TIGR01643	YD repeat (two copies)	1	0	0	0	0	0	4	1	4	0	1	2	4	4	1
+TIGR02292	yecA family protein	1	1	1	1	1	1	0	0	0	1	0	0	0	1	1
+TIGR00726	YfiH family protein	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1
+TIGR03831	YgiT-type zinc finger domain	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+TIGR00022	YhcH/YjgK/YiaL family protein	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0
+TIGR03062	YhgE/Pip C-terminal domain	1	0	0	0	1	0	0	0	0	0	1	0	0	1	0
+TIGR03061	YhgE/Pip N-terminal domain	1	0	0	0	1	0	0	0	0	0	1	0	0	1	0
+TIGR00765	YihY family inner membrane protein	1	1	1	1	1	3	5	4	5	3	1	1	1	4	3
+TIGR00196	yjeF C-terminal region, hydroxyethylthiazole kinase-related	1	1	1	1	1	1	2	1	2	1	1	1	1	1	1
+TIGR00197	yjeF N-terminal region	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+TIGR02817	zinc-binding alcohol dehydrogenase family protein	1	0	0	0	0	1	0	1	0	0	1	0	0	2	1

@@ -1,0 +1,36 @@
+## index of replication (iRep) - thresholds: min cov. = 5, min wins. = 0.98, min r^2 = 0.9, max fragments/Mbp = 175, GC correction min r^2 = 0.0
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	1.55878997349
+#
+## un-filtered index of replication (iRep)
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	1.55878997349
+#
+## raw index of replication (no GC bias correction)
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	1.88666820211
+#
+## r^2
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	0.988366461159
+#
+## coverage
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	7.20420430446
+#
+## % windows passing filter
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	100.00
+#
+## fragments/Mbp
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	28
+#
+## GC bias
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	-23.4053316806
+#
+## GC r^2
+# genome	./splitBam/BetIa_bin/DNA-Pieter-16.sam
+./bins/BetIa_bin-contigs.fa	0.562541669437
+#
