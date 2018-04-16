@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "11 April, 2018"
+date: "13 April, 2018"
 output:
   html_document:
     code_folding: show
@@ -647,9 +647,9 @@ RAMLI_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.g
 ```
 
 ```
-## Thu Mar 29 20:08:54 2018  --- There are 2830 genes with > 0.1 %
-## Thu Mar 29 20:08:54 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:54 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:48 2018  --- There are 2830 genes with > 0.1 %
+## Fri Apr 13 21:03:48 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:48 2018  --- The 10 genes with the highest GC% are:
 ##      function_id                                             function_name
 ## 2821     COG0405                              Gamma-glutamyltranspeptidase
 ## 2822     COG2755                  Lysophospholipase L1 or related esterase
@@ -680,9 +680,9 @@ BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gf
 ```
 
 ```
-## Thu Mar 29 20:08:54 2018  --- There are 1889 genes with > 0.1 %
-## Thu Mar 29 20:08:54 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:54 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:49 2018  --- There are 1889 genes with > 0.1 %
+## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1880     COG0052
 ## 1881     COG0183
@@ -724,9 +724,9 @@ BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gf
 ```
 
 ```
-## Thu Mar 29 20:08:54 2018  --- There are 1797 genes with > 0.1 %
-## Thu Mar 29 20:08:54 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:54 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:49 2018  --- There are 1797 genes with > 0.1 %
+## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
 ##      function_id
 ## 1788     COG4675
 ## 1789     COG0636
@@ -768,9 +768,9 @@ RAMLI_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.
 ```
 
 ```
-## Thu Mar 29 20:08:55 2018  --- There are 4954 genes with > 0.1 %
-## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:49 2018  --- There are 4954 genes with > 0.1 %
+## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 4945   pfam13202     EF-hand_5 79.0
 ## 4946   pfam16537         T2SSB 79.0
@@ -790,9 +790,9 @@ BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.g
 ```
 
 ```
-## Thu Mar 29 20:08:55 2018  --- There are 3929 genes with > 0.1 %
-## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:49 2018  --- There are 3929 genes with > 0.1 %
+## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
 ##      function_id function_name   GC
 ## 3920   pfam02803    Thiolase_C 51.6
 ## 3921   pfam00436           SSB 52.0
@@ -812,9 +812,9 @@ BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.g
 ```
 
 ```
-## Thu Mar 29 20:08:55 2018  --- There are 3573 genes with > 0.1 %
-## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:49 2018  --- There are 3573 genes with > 0.1 %
+## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
 ##      function_id   function_name   GC
 ## 3564   pfam13531      SBP_bac_11 46.6
 ## 3565   pfam13442 Cytochrome_CBB3 46.8
@@ -834,9 +834,9 @@ RAMLI_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gf
 ```
 
 ```
-## Thu Mar 29 20:08:55 2018  --- There are 2164 genes with > 0.1 %
-## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:49 2018  --- There are 2164 genes with > 0.1 %
+## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
 ##                                                                                         function_id
 ## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
 ## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
@@ -867,9 +867,9 @@ BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff
 ```
 
 ```
-## Thu Mar 29 20:08:55 2018  --- There are 1384 genes with > 0.1 %
-## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:49 2018  --- There are 1384 genes with > 0.1 %
+## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1375                  single-strand DNA-binding protein               51.3
 ## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
@@ -889,9 +889,9 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
 ```
 
 ```
-## Thu Mar 29 20:08:55 2018  --- There are 1342 genes with > 0.1 %
-## Thu Mar 29 20:08:55 2018  --- This is 100 % of all genes
-## Thu Mar 29 20:08:55 2018  --- The 10 genes with the highest GC% are:
+## Fri Apr 13 21:03:49 2018  --- There are 1342 genes with > 0.1 %
+## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
+## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
 ##                                             function_id function_name   GC
 ## 1333                            uncharacterized protein               43.9
 ## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
@@ -1771,12 +1771,12 @@ pos <- !data_posi_KO$Gene %in% data_posi_clade_KO$Gene
 pos2 <- !data_posi_clade_KO$Gene %in% data_posi_KO$Gene
 pos3 <- data_posi_clade_KO$Gene %in% data_posi_KO$Gene
 data_posi_KO <- data_posi_KO[pos, ]
-data_posi_clade_KO <- data_posi_clade_KO[pos2, ]
 data_posi_clade_MAG_KO <- data_posi_clade_KO[pos3, ]
+data_posi_clade_KO <- data_posi_clade_KO[pos2, ]
 
 # Merge dataframes to plot
 # Remove levels without "n_level" number of genes
-n_level = 10
+n_level = 15
 
 # make contigency tables for functional level C
 posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)
@@ -1887,7 +1887,7 @@ p_KO_posi <- within_ko_order %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
-  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  scale_y_continuous(breaks = seq(0,80,20), limits = c(0,80))+
   # facet_grid(.~ko_level_B)+
   coord_flip()+
   theme(axis.text.x = element_text(size=18, angle = 0))+
@@ -1921,7 +1921,7 @@ p_KO_posi_relative <- within_ko_order %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
-  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  scale_y_continuous(breaks = seq(0,80,20), limits = c(0,80))+
   # facet_grid(.~ko_level_B)+
   coord_flip()+
   theme(axis.text.x = element_text(size=18, angle = 0))+
@@ -1960,12 +1960,13 @@ p_KO_posi_subset <- within_ko_order_sb %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
-  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  scale_y_continuous(breaks = seq(0,80,20), limits = c(0,80))+
   # facet_grid(.~ko_level_B)+
   coord_flip()+
   theme(axis.text.x = element_text(size=18, angle = 0))+
   theme(axis.line = element_line(size = 1, colour = "grey80"),
         panel.border = element_blank())
+
 
 print(p_KO_posi_subset)
 ```
@@ -1993,7 +1994,7 @@ p_KO_posi_subset_relative <- within_ko_order_sb %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
-  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  scale_y_continuous(breaks = seq(0,80,20), limits = c(0,80))+
   # facet_grid(.~ko_level_B)+
   coord_flip()+
   theme(axis.text.x = element_text(size=18, angle = 0))+
@@ -2004,10 +2005,6 @@ print(p_KO_posi_subset_relative)
 ```
 
 <img src="Figures/cached/posigene-selection-4.png" style="display: block; margin: auto;" />
-
-```r
-# Upset figure
-```
 
 
 
@@ -3595,6 +3592,7 @@ ord_list_bin <- c("Lim. sp. Rim11", "Lim. sp. 103DPR2",
 data.ANI <- data.ANI[, order(match(colnames(data.ANI), ord_list_bin))]
 data.ANI <- data.ANI[order(match(rownames(data.ANI), ord_list_bin)), ]
 
+# Get upper triangle 
 data.ANI <- get_upper_tri(data.ANI)
 
 # melt to dataframe
@@ -4176,7 +4174,43 @@ merged_gc_cog_psg_cazy$Genome.x <- factor(merged_gc_cog_psg_cazy$Genome.x ,
                                             levels = c("Ramlibacter sp. MAG",
                                                        "Bacteroidetes sp. MAG1",
                                                        "Bacteroidetes sp. MAG2"))
+
+# Perform tSNE for the full CAZyme profiles
+tsne_df_cazym <- merged_gc_cog_psg_cazy %>% 
+  group_by(Genome.x, Subject) %>% 
+  summarize(n_gene = n()) %>% 
+  spread(., key = Genome.x, n_gene)
+
+tsne_df_cazym[is.na(tsne_df_cazym)] <- 0
+
+# perform tsne
+set.seed(777)
+dist_tsne <- dist(t(tsne_df_cazym[, -c(1)]))
+df_tsne <- cmdscale(dist_tsne)
+
+# From wide to long
+# df_sigma <- gather(df_sigma, Genome, Counts, Curvibacter_sp._ATCC:Variovorax_sp._EPS)
+df_tsne <- data.frame(Genome = colnames(tsne_df_cazym)[-c(1)], 
+                       X = df_tsne[,1],
+                       Y = df_tsne[,2])
+
+p_ord <- ggplot(df_tsne, aes(x = X, y = Y, fill = Genome))+
+  geom_point(size = 4, alpha = 0.7, shape = 21)+
+  scale_fill_manual(values = c(col_bac1, col_bac2,"#c8c8ff"))+
+  theme_bw()+
+  labs(x = "Axis 1", y = "Axis 2")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        plot.title = element_text(hjust = 0, size=18))
+
+print(p_ord)
 ```
+
+<img src="Figures/cached/CAZy-1-1.png" style="display: block; margin: auto;" />
 
 ### Plots
 

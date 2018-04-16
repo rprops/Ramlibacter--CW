@@ -1225,7 +1225,7 @@ print(hm_posi_c)
 
 ## 9.2. Analysis  
 
-```{r posigene-selection, dpi = 300, fig.width = 13, fig.height = 10, warning = FALSE, dev = c("png","pdf")}
+```{r posigene-selection, dpi = 300, fig.width = 9.5, fig.height = 8, warning = FALSE, dev = c("png","pdf")}
 # Import results file of genome-specific PSGs only
 data_posi <- read.table("./posigene_analysis/result_tables/Ramlibacter_MAG_results.tsv", header = TRUE, fill = TRUE, sep = "\t")[, c("Transcript", "P.Value","FDR", "HA.foreground.omega", "HA.kappa",                                                                            "Number.of.Sites.under.positive.Selection")]
 
@@ -1291,12 +1291,12 @@ pos <- !data_posi_KO$Gene %in% data_posi_clade_KO$Gene
 pos2 <- !data_posi_clade_KO$Gene %in% data_posi_KO$Gene
 pos3 <- data_posi_clade_KO$Gene %in% data_posi_KO$Gene
 data_posi_KO <- data_posi_KO[pos, ]
-data_posi_clade_KO <- data_posi_clade_KO[pos2, ]
 data_posi_clade_MAG_KO <- data_posi_clade_KO[pos3, ]
+data_posi_clade_KO <- data_posi_clade_KO[pos2, ]
 
 # Merge dataframes to plot
 # Remove levels without "n_level" number of genes
-n_level = 10
+n_level = 15
 
 # make contigency tables for functional level C
 posiG_p_df_clade  <- table(data_posi_clade_KO$ko_level_C)
@@ -1407,7 +1407,7 @@ p_KO_posi <- within_ko_order %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
-  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  scale_y_continuous(breaks = seq(0,80,20), limits = c(0,80))+
   # facet_grid(.~ko_level_B)+
   coord_flip()+
   theme(axis.text.x = element_text(size=18, angle = 0))+
@@ -1437,7 +1437,7 @@ p_KO_posi_relative <- within_ko_order %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
-  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  scale_y_continuous(breaks = seq(0,80,20), limits = c(0,80))+
   # facet_grid(.~ko_level_B)+
   coord_flip()+
   theme(axis.text.x = element_text(size=18, angle = 0))+
@@ -1472,12 +1472,13 @@ p_KO_posi_subset <- within_ko_order_sb %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
-  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  scale_y_continuous(breaks = seq(0,80,20), limits = c(0,80))+
   # facet_grid(.~ko_level_B)+
   coord_flip()+
   theme(axis.text.x = element_text(size=18, angle = 0))+
   theme(axis.line = element_line(size = 1, colour = "grey80"),
         panel.border = element_blank())
+
 
 print(p_KO_posi_subset)
 
@@ -1502,7 +1503,7 @@ p_KO_posi_subset_relative <- within_ko_order_sb %>%
         plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
         ,legend.position = c(0.87, 0.9)
         )+
-  scale_y_continuous(breaks = seq(0,100,20), limits = c(0,100))+
+  scale_y_continuous(breaks = seq(0,80,20), limits = c(0,80))+
   # facet_grid(.~ko_level_B)+
   coord_flip()+
   theme(axis.text.x = element_text(size=18, angle = 0))+
@@ -1510,8 +1511,6 @@ p_KO_posi_subset_relative <- within_ko_order_sb %>%
         panel.border = element_blank())
 
 print(p_KO_posi_subset_relative)
-
-# Upset figure
 
 ```
 
@@ -2890,6 +2889,7 @@ ord_list_bin <- c("Lim. sp. Rim11", "Lim. sp. 103DPR2",
 data.ANI <- data.ANI[, order(match(colnames(data.ANI), ord_list_bin))]
 data.ANI <- data.ANI[order(match(rownames(data.ANI), ord_list_bin)), ]
 
+# Get upper triangle 
 data.ANI <- get_upper_tri(data.ANI)
 
 # melt to dataframe
@@ -3421,6 +3421,41 @@ merged_gc_cog_psg_cazy$Genome.x <- factor(merged_gc_cog_psg_cazy$Genome.x ,
                                             levels = c("Ramlibacter sp. MAG",
                                                        "Bacteroidetes sp. MAG1",
                                                        "Bacteroidetes sp. MAG2"))
+
+# Perform tSNE for the full CAZyme profiles
+tsne_df_cazym <- merged_gc_cog_psg_cazy %>% 
+  group_by(Genome.x, Subject) %>% 
+  summarize(n_gene = n()) %>% 
+  spread(., key = Genome.x, n_gene)
+
+tsne_df_cazym[is.na(tsne_df_cazym)] <- 0
+
+# perform tsne
+set.seed(777)
+dist_tsne <- dist(t(tsne_df_cazym[, -c(1)]))
+df_tsne <- cmdscale(dist_tsne)
+
+# From wide to long
+# df_sigma <- gather(df_sigma, Genome, Counts, Curvibacter_sp._ATCC:Variovorax_sp._EPS)
+df_tsne <- data.frame(Genome = colnames(tsne_df_cazym)[-c(1)], 
+                       X = df_tsne[,1],
+                       Y = df_tsne[,2])
+
+p_ord <- ggplot(df_tsne, aes(x = X, y = Y, fill = Genome))+
+  geom_point(size = 4, alpha = 0.7, shape = 21)+
+  scale_fill_manual(values = c(col_bac1, col_bac2,"#c8c8ff"))+
+  theme_bw()+
+  labs(x = "Axis 1", y = "Axis 2")+
+    theme(axis.text=element_text(size=13), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position="bottom",
+        plot.title = element_text(hjust = 0, size=18))
+
+print(p_ord)
+
 ```
 
 ### Plots
