@@ -1,4 +1,4 @@
-# Metagenomic analysis of low-conductivity cooling water
+# Metagenomic analysis of phosphate-limited cooling water
 
 Repository for the analysis of *Ramlibacter sp.* and *Bacteroidetes sp.* metagenome assembled genomes (MAGs) from secondary cooling water of the BR2 nuclear test reactor (Mol, Antwerp, Belgium).
 
