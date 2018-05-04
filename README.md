@@ -1,6 +1,6 @@
 # Metagenomic analysis of phosphate-limited cooling water
 
-Repository for the analysis of *Ramlibacter sp.* and *Bacteroidetes sp.* metagenome assembled genomes (MAGs) from secondary cooling water of the BR2 nuclear test reactor (Mol, Antwerp, Belgium).
+Repository for the manuscript: Props, R., Monsieurs, P., Vandamme, P., Leys, N., Denef V.J. and Boon, N., __**Gene expansion and positive selection rather than streamlining as primary adaptations to phosphate-limited freshwater by a novel Ramlibacter species**__.
 
 ## 1. QC and assembly  
 
