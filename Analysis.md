@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "13 April, 2018"
+date: "24 April, 2018"
 output:
   html_document:
     code_folding: show
@@ -27,102 +27,6 @@ editor_options:
 
 In the first analysis we utilize the raw counts. As such this network will be built using relative abundance data.
 
-```r
-# Set seed
-set.seed(777)
-
-# Import data
-otus <- as.matrix(read.csv2("16S_data/OTU_table_raw.csv", fill = TRUE, header = TRUE,
-                    row.names = 1))
-
-taxa <- tax_table(as.matrix(read.csv2("16S_data/tax_table_raw.csv", fill = TRUE, header = TRUE,row.names = 1))
-)
-
-phy_df <- phyloseq(otu_table(otus, taxa_are_rows = FALSE), taxa)
-
-# filterobj <- filterTaxonMatrix(otus, minocc = 20,
-#                               keepSum = TRUE, return.filtered.indices = TRUE)
-# otus.f <- filterobj$mat
-# taxa.f <- taxa[setdiff(1:nrow(taxa), filterobj$filtered.indices),]
-# dummyTaxonomy <- colnames(tax_df); dummyTaxonomy[1] <- "Kingdom_dummy"
-# taxa.f <- rbind(taxa.f, dummyTaxonomy)
-# rownames(taxa.f)[nrow(taxa.f)] <- "0"
-# rownames(otus.f)[nrow(otus.f)] <- "0"
-# 
-# # Next, we assemble a new phyloseq object with the filtered OTU and taxonomy tables.
-# updatedotus <- otu_table(otus.f, taxa_are_rows = TRUE)
-# updatedtaxa <- tax_table(taxa.f)
-# phyloseqobj.f <- phyloseq(updatedotus, updatedtaxa)
-
-# Prevalence filtering
-phy_df_filtered <- filter_taxa(phy_df, function(x) sum(x > 30) > (0.25*length(x)), TRUE)
-
-sp_easi <- spiec.easi(phy_df_filtered, method='mb', lambda.min.ratio=1e-2,
-                           nlambda=20, icov.select.params=list(rep.num=50))
-```
-
-```
-## Normalizing/clr transformation of data with pseudocount ...
-```
-
-```
-## Inverse Covariance Estimation with mb ...
-```
-
-```
-## Model selection with stars ...
-```
-
-```
-## Done!
-```
-
-```r
-ig.mb <- adj2igraph(sp_easi$refit,  vertex.attr = list(name=taxa_names(phy_df_filtered)))
-vsize <- Biobase::rowMedians(clr(otu_table(phy_df_filtered), 1))+15
-Lineage_rel <- tax_table(phy_df_filtered)[,"Lineage"]
-Lineage_rel <- factor(Lineage_rel, levels = unique(Lineage_rel))
-vweights <- summary(symBeta(getOptBeta(sp_easi), mode='maxabs'))
-MAGs <- c(); MAGs[taxa_names(phy_df_filtered)=="Otu00001"]  <- "Ramlibacter sp. MAG"
-MAGs[taxa_names(phy_df_filtered)=="Otu00002"]  <- "Bacteroidetes sp. MAG1"
-MAGs[taxa_names(phy_df_filtered)=="Otu00003"]  <- "Bacteroidetes sp. MAG2"
-MAGs[is.na(MAGs)] <- ""
-
-# png(file = "./Figures/Figures_network/NETWORK-REL-CX-C30-A25.png", width = 9, height = 9, res = 500, units = "in")
-plot_network_custom(ig.mb, phy_df_filtered, type='taxa',
-             line_weight = 2, hjust = 0.5,
-             point_size = 0.1, alpha = 0.01, label_size = 3.95)+
-  # scale_fill_brewer(palette = "Paired")+
-  # scale_color_brewer(palette = "Paired")+
-  scale_fill_manual(values = c("#e2a2fd", brewer.pal(n = 12, "Paired")[c(3:8,1:2,11,12)]) )+
-  geom_point(aes(size = vsize, fill = Lineage_rel), alpha = 0.5,
-             colour="black", shape=21)+
-  guides(size = FALSE,
-    fill  = guide_legend(title = "Lineage", override.aes = list(size = 5),
-                         nrow = 4),
-    color = FALSE)+
-  theme(legend.position="bottom", legend.text=element_text(size=12),
-        text = element_text(size = 12),
-        plot.margin = unit(c(1,1,1,1), "cm"))+
-  scale_size(range = c(5, 15))+
-  geom_label_repel(aes(label = MAGs), fontface = 'bold', color = 'black',
-                   box.padding = 0.35, point.padding = 0.5,
-                   segment.color = 'black',
-                   size = 4,
-                       # Width of the line segments.
-                   segment.size = 1.5,
-                   # Draw an arrow from the label to the data point.
-                   arrow = arrow(length = unit(0.015, 'npc')),
-                   nudge_x = -0.1,
-                   nudge_y = 0.6
-  )
-```
-
-<img src="Figures/cached/network-analysis-relative-1.png" style="display: block; margin: auto;" />
-
-```r
-# dev.off()
-```
 
 ## Network analysis on absolute abundances  
 
@@ -443,11 +347,11 @@ print(p_rel_box)
 ```r
 # Calculate element-wise N/P ratio assuming 1 µg/L of PO4
 molP <- (1/94.9714)/1000 # in mmol/L of upper detection limit
-mean((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP) # in mmol/L
+min((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP) # in mmol/L
 ```
 
 ```
-## [1] 422.9694
+## [1] 96.49557
 ```
 
 ```r
@@ -470,7 +374,7 @@ sd((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP)
 mean_coverage <- read.table("./SAMPLES-SUMMARY/bins_across_samples/mean_coverage.txt", header = TRUE)
 std_coverage <- read.table("./SAMPLES-SUMMARY/bins_across_samples/std_coverage.txt", header = TRUE)
 bin_size <- read.table("./SAMPLES-SUMMARY/general_bins_summary.txt", header = TRUE)[, c(1, 3, 6, 9)]
-total_reads <- read.table("./sample_reads.tsv", header = TRUE)
+total_reads <- read.table("./Mapping_files/sample_reads.tsv", header = TRUE)
 read_length <- 300
 
 # From wide to long format
@@ -562,7 +466,8 @@ $$Relative\ abundance =100*(\frac{mean\ coverage * bin\ size}{read\ length*total
 Import reference relative abundances from 16S data set in order to directly compare with metagenomic data set.
 
 ```r
-df_16S <- read.delim("relative_abundance_16S.tsv", header = TRUE, sep = "\t")
+df_16S <- read.delim("./Mapping_files/relative_abundance_16S.tsv",
+                     header = TRUE, sep = "\t")
 df_16S_long <- gather(df_16S, Sample_ID, relative_abundance_16S, 
                              SAMPLE_16:SAMPLE_65, factor_key=TRUE)
 ```
@@ -632,282 +537,6 @@ grid_arrange_shared_legend(p_meta, p_meta_mapped, p_16S, ncol = 1, nrow = 3)
 # *3. Investigate sequence characteristics within coding DNA sequences (CDS)*
 
 
-```r
-# First we need the files that map the gene ID to the sequence ID (linux cmd: https://github.com/rprops/MetaG_lakeMI/wiki/11.-Genome-annotation)
-# These are stored in the IMG_annotation data for each genome bin
-
-# Next, extract the %GC of each gene from the gff file
-extract_gc_from_gff("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/121950.assembled.gff", outputFolder = "GC_analysis")
-extract_gc_from_gff("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/121951.assembled.gff", outputFolder = "GC_analysis")
-extract_gc_from_gff("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/121960.assembled.gff", outputFolder = "GC_analysis")
-
-# Use these files to make dataframes mapping function (COGs/Pfams/KO) and %GC
-RAMLI_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:48 2018  --- There are 2830 genes with > 0.1 %
-## Fri Apr 13 21:03:48 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:48 2018  --- The 10 genes with the highest GC% are:
-##      function_id                                             function_name
-## 2821     COG0405                              Gamma-glutamyltranspeptidase
-## 2822     COG2755                  Lysophospholipase L1 or related esterase
-## 2823     COG0642                      Signal transduction histidine kinase
-## 2824     COG1514                                          2'-5' RNA ligase
-## 2825     COG1767                Triphosphoribosyl-dephospho-CoA synthetase
-## 2826     COG1261         Flagella basal body P-ring formation protein FlgA
-## 2827     COG0665                Glycine/D-amino acid oxidase (deaminating)
-## 2828     COG0810 Periplasmic protein TonB, links inner and outer membranes
-## 2829     COG1040                 Predicted amidophosphoribosyltransferases
-## 2830     COG1240                                 Mg-chelatase subunit ChlD
-##        GC
-## 2821 78.5
-## 2822 78.5
-## 2823 78.5
-## 2824 78.5
-## 2825 78.6
-## 2826 78.6
-## 2827 79.1
-## 2828 79.5
-## 2829 79.7
-## 2830 80.6
-```
-
-```r
-BAC1_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:49 2018  --- There are 1889 genes with > 0.1 %
-## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
-##      function_id
-## 1880     COG0052
-## 1881     COG0183
-## 1882     COG0629
-## 1883     COG0509
-## 1884     COG1734
-## 1885     COG0636
-## 1886     COG3502
-## 1887     COG1765
-## 1888     COG0377
-## 1889     COG4104
-##                                                                               function_name
-## 1880                                                                   Ribosomal protein S2
-## 1881                                                           Acetyl-CoA acetyltransferase
-## 1882                                                    Single-stranded DNA-binding protein
-## 1883                                    Glycine cleavage system H protein (lipoate-binding)
-## 1884                                       RNA polymerase-binding transcription factor DksA
-## 1885 FoF1-type ATP synthase, membrane subunit c/Archaeal/vacuolar-type H+-ATPase, subunit K
-## 1886                                       Uncharacterized conserved protein, DUF952 family
-## 1887                                                   Uncharacterized OsmC-related protein
-## 1888 NADH:ubiquinone oxidoreductase 20 kD subunit (chhain B) or related Fe-S oxidoreductase
-## 1889                 Zn-binding Pro-Ala-Ala-Arg (PAAR) domain, incolved in TypeVI secretion
-##        GC
-## 1880 51.6
-## 1881 51.6
-## 1882 52.0
-## 1883 52.6
-## 1884 52.7
-## 1885 52.8
-## 1886 52.9
-## 1887 53.6
-## 1888 53.6
-## 1889 59.3
-```
-
-```r
-BAC2_gc_cog <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.cog.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:49 2018  --- There are 1797 genes with > 0.1 %
-## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
-##      function_id
-## 1788     COG4675
-## 1789     COG0636
-## 1790     COG1501
-## 1791     COG0725
-## 1792     COG5434
-## 1793     COG2115
-## 1794     COG4225
-## 1795     COG3669
-## 1796     COG4588
-## 1797     COG3258
-##                                                                               function_name
-## 1788                                      Microcystin-dependent protein  (function unknown)
-## 1789 FoF1-type ATP synthase, membrane subunit c/Archaeal/vacuolar-type H+-ATPase, subunit K
-## 1790                                      Alpha-glucosidase, glycosyl hydrolase family GH31
-## 1791                             ABC-type molybdate transport system, periplasmic component
-## 1792                                                                      Polygalacturonase
-## 1793                                                                       Xylose isomerase
-## 1794                                                      Rhamnogalacturonyl hydrolase YesR
-## 1795                                                                     Alpha-L-fucosidase
-## 1796               Accessory colonization factor AcfC, contains ABC-type periplasmic domain
-## 1797                                                                           Cytochrome c
-##        GC
-## 1788 44.5
-## 1789 44.6
-## 1790 44.9
-## 1791 45.0
-## 1792 45.1
-## 1793 45.1
-## 1794 45.4
-## 1795 45.5
-## 1796 46.6
-## 1797 46.8
-```
-
-```r
-RAMLI_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:49 2018  --- There are 4954 genes with > 0.1 %
-## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
-##      function_id function_name   GC
-## 4945   pfam13202     EF-hand_5 79.0
-## 4946   pfam16537         T2SSB 79.0
-## 4947   pfam01266           DAO 79.1
-## 4948   pfam03544        TonB_C 79.5
-## 4949   pfam00156  Pribosyltran 79.7
-## 4950   pfam11142       DUF2917 79.8
-## 4951   pfam13318       DUF4089 79.8
-## 4952   pfam13519         VWA_2 80.6
-## 4953   pfam02120      Flg_hook 80.9
-## 4954   pfam03023          MVIN 81.7
-```
-
-```r
-BAC1_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:49 2018  --- There are 3929 genes with > 0.1 %
-## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
-##      function_id function_name   GC
-## 3920   pfam02803    Thiolase_C 51.6
-## 3921   pfam00436           SSB 52.0
-## 3922   pfam00171        Aldedh 52.2
-## 3923   pfam01597         GCV_H 52.6
-## 3924   pfam01258  zf-dskA_traR 52.7
-## 3925   pfam00137    ATP-synt_C 52.8
-## 3926   pfam06108        DUF952 52.9
-## 3927   pfam02566          OsmC 53.6
-## 3928   pfam01058   Oxidored_q6 53.6
-## 3929   pfam05488    PAAR_motif 59.3
-```
-
-```r
-BAC2_gc_pfam <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.pfam.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:49 2018  --- There are 3573 genes with > 0.1 %
-## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
-##      function_id   function_name   GC
-## 3564   pfam13531      SBP_bac_11 46.6
-## 3565   pfam13442 Cytochrome_CBB3 46.8
-## 3566   pfam12779          YXWGXW 50.0
-## 3567   pfam12779          YXWGXW 50.0
-## 3568   pfam01391        Collagen 50.4
-## 3569   pfam01391        Collagen 50.4
-## 3570   pfam01391        Collagen 50.4
-## 3571   pfam01391        Collagen 50.4
-## 3572   pfam01391        Collagen 50.4
-## 3573   pfam01391        Collagen 50.4
-```
-
-```r
-RAMLI_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121950.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679690_Ramlibacter_bin/Annotation/2724679690.ko.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:49 2018  --- There are 2164 genes with > 0.1 %
-## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
-##                                                                                         function_id
-## 2155                  two-component system, OmpR family, sensor histidine kinase QseC [EC:2.7.13.3]
-## 2156                                                                  2'-5' RNA ligase [EC:6.5.1.-]
-## 2157                                         triphosphoribosyl-dephospho-CoA synthase [EC:2.4.2.52]
-## 2158                                              flagella basal body P-ring formation protein FlgA
-## 2159                                                            general secretion pathway protein B
-## 2160 tRNA 5-methylaminomethyl-2-thiouridine biosynthesis bifunctional protein [EC:2.1.1.61 1.5.-.-]
-## 2161 tRNA 5-methylaminomethyl-2-thiouridine biosynthesis bifunctional protein [EC:2.1.1.61 1.5.-.-]
-## 2162                                                4'-phosphopantetheinyl transferase [EC:2.7.8.-]
-## 2163                                                     magnesium chelatase subunit D [EC:6.6.1.1]
-## 2164                                                     flagellar hook-length control protein FliK
-##      function_name   GC
-## 2155   EC:2.7.13.3 78.5
-## 2156    EC:6.5.1.- 78.5
-## 2157   EC:2.4.2.52 78.6
-## 2158               78.6
-## 2159               79.0
-## 2160      EC:1.5.- 79.1
-## 2161   EC:2.1.1.61 79.1
-## 2162    EC:2.7.8.- 79.1
-## 2163    EC:6.6.1.1 80.6
-## 2164               80.9
-```
-
-```r
-BAC1_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121951.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/Annotation/2724679691.ko.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:49 2018  --- There are 1384 genes with > 0.1 %
-## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
-##                                             function_id function_name   GC
-## 1375                  single-strand DNA-binding protein               51.3
-## 1376                    threonine aldolase [EC:4.1.2.5]    EC:4.1.2.5 51.3
-## 1377                large subunit ribosomal protein L32               51.3
-## 1378                            uncharacterized protein               51.5
-## 1379                 translation initiation factor IF-2               51.5
-## 1380                 small subunit ribosomal protein S2               51.6
-## 1381                  single-strand DNA-binding protein               52.0
-## 1382                  glycine cleavage system H protein               52.6
-## 1383            F-type H+-transporting ATPase subunit c               52.8
-## 1384 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 53.6
-```
-
-```r
-BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff.tsv", gene_id_seq_id ="./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698_gene_oid_2_seq_id.txt", 
-                             functions = "./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.ko.tab.txt", gc_thresh = 0.1, output = FALSE)
-```
-
-```
-## Fri Apr 13 21:03:49 2018  --- There are 1342 genes with > 0.1 %
-## Fri Apr 13 21:03:49 2018  --- This is 100 % of all genes
-## Fri Apr 13 21:03:49 2018  --- The 10 genes with the highest GC% are:
-##                                             function_id function_name   GC
-## 1333                            uncharacterized protein               43.9
-## 1334 NADH-quinone oxidoreductase subunit B [EC:1.6.5.3]    EC:1.6.5.3 44.3
-## 1335            F-type H+-transporting ATPase subunit c               44.6
-## 1336      alpha-D-xyloside xylohydrolase [EC:3.2.1.177]  EC:3.2.1.177 44.9
-## 1337                      xylose isomerase [EC:5.3.1.5]    EC:5.3.1.5 45.1
-## 1338                   alpha-L-fucosidase [EC:3.2.1.51]   EC:3.2.1.51 45.4
-## 1339                            uncharacterized protein               45.5
-## 1340                            uncharacterized protein               45.8
-## 1341                 accessory colonization factor AcfC               46.6
-## 1342             thiosulfate dehydrogenase [EC:1.8.2.2]    EC:1.8.2.2 46.8
-```
-
-Motivation: For COGs there exists a hierarchy allowing us to investigate whether there is a conservation of high/low %GC in certain functional gene groups. In order to do this we need to incorporate this hierarchy into the genome dataframes we have now.  
-
-
 
 
 # *4. Analysis of gene length distribution*
@@ -916,38 +545,6 @@ Here we use the dataframe made in the previous section to see if there is a sign
 Observation: They have very small genes: on average < 500bp.
 
 
-```r
-# Ramlibacter sp. MAG gene length distribution 
-p_RAMLI_length <- easyGgplot2::ggplot2.histogram(data = RAMLI_gc_cog, xName = 'gene_length',
-                  groupName = 'Genome', alpha = 0.5,
-                  legendPosition = "top", binwidth = 0.15,
-                  groupColors = col_RAMLI,addMeanLine=TRUE, meanLineColor="black",
-                  meanLineType="dashed")+ theme_bw()+ ylim(0,15)+
-  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
-  ggtitle("Ramlibacter sp. MAG")+ xlim(0,2000)
-
-# Bacteroidetes MAG1 gene length distribution 
-p_BAC1_length <- easyGgplot2::ggplot2.histogram(data = BAC1_gc_cog, xName = 'gene_length',
-                  groupName = 'Genome', alpha = 0.5,
-                  legendPosition = "top", binwidth = 0.15, 
-                  groupColors = col_bac1,addMeanLine=TRUE, meanLineColor="black",
-                  meanLineType="dashed")+ theme_bw()+ ylim(0,15)+
-  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
-  ggtitle("Bacteroidetes MAG1")+ xlim(0,2000)
-
-# Bacteroidetes MAG2 gene length distribution 
-p_BAC2_length <- easyGgplot2::ggplot2.histogram(data = BAC2_gc_cog, xName = 'gene_length',
-                  groupName = 'Genome', alpha = 0.5,
-                  legendPosition = "top", binwidth = 0.15,
-                  groupColors = col_bac2,addMeanLine=TRUE, meanLineColor="black",
-                  meanLineType="dashed")+ theme_bw()+ ylim(0,15)+
-  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
-  ggtitle("Bacteroidetes MAG2")+ xlim(0,2000)
-
-grid.arrange(p_RAMLI_length, p_BAC1_length, p_BAC2_length, ncol = 3)
-```
-
-<img src="Figures/cached/gene-length-analysis_COG-1.png" style="display: block; margin: auto;" />
 
 We can do the same for the Pfams.
 
@@ -986,45 +583,6 @@ grid.arrange(p_RAMLI_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 
 # 5. Identify unique functional genes (COG/Pfams)
 
-```r
-# Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG1
-unique_RAMLI_BAC1 <- dplyr::anti_join(RAMLI_gc_cog, BAC1_gc_cog, by = "cog_id")
-cat("There are", paste(nrow(unique_RAMLI_BAC1)), "unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG1")
-```
-
-```
-## There are 1178 unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG1
-```
-
-```r
-# Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG2
-unique_RAMLI_BAC2 <- dplyr::anti_join(RAMLI_gc_cog, BAC2_gc_cog, by = "cog_id")
-cat("There are", paste(nrow(unique_RAMLI_BAC2)), "unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG2")
-```
-
-```
-## There are 1143 unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG2
-```
-
-```r
-# Find unique functions in Bacteroidetes MAG1 vs Bacteroidetes MAG2
-unique_BAC1_BAC2 <- dplyr::anti_join(BAC1_gc_cog, BAC2_gc_cog, by = "cog_id")
-cat("There are", paste(nrow(unique_BAC1_BAC2)), "unique COGs in Bacteroidetes MAG1 vs Bacteroidetes MAG2")
-```
-
-```
-## There are 153 unique COGs in Bacteroidetes MAG1 vs Bacteroidetes MAG2
-```
-
-```r
-# Find unique functions in Bacteroidetes MAG1 vs Bacteroidetes MAG2
-unique_BAC2_BAC1 <- dplyr::anti_join(BAC2_gc_cog, BAC1_gc_cog, by = "cog_id")
-cat("There are", paste(nrow(unique_BAC2_BAC1)), "unique COGs in Bacteroidetes MAG2 vs Bacteroidetes MAG1")
-```
-
-```
-## There are 143 unique COGs in Bacteroidetes MAG2 vs Bacteroidetes MAG1
-```
 
 
 ```r
@@ -1074,92 +632,12 @@ Get COG ID to COG functional category mapping file here: ftp://ftp.ncbi.nih.gov/
 The exact statistical analysis to compare genomes based on these profiles should be performed in STAMP.
 
 
-```r
-# Import COG mapping file
-cogid_2_cogcat <- read.csv("./Mapping_files/cogid_2_cogcat.csv", sep = ",", header = FALSE, fill = TRUE,col.names = c("COG_ID", "COG_class", "function"))[, 1:2]
-cogid_2_cogcat <- cogid_2_cogcat[(cogid_2_cogcat$COG_class)!="", ]
-cogid_2_cogcat <- droplevels(cogid_2_cogcat)
-
-# Read COG category file
-cog_categories <- read.table("./Mapping_files/cog_categories.tsv", header = TRUE, sep = "\t")
-
-# Merge COG metadata
-cog_meta <- dplyr::left_join(cog_categories, cogid_2_cogcat, by = c("COG_class" = "COG_class"))
-cog_meta <- droplevels(cog_meta)
-
-# Merge genome information of all genome bins
-merged_gc_cog <- rbind(RAMLI_gc_cog, BAC1_gc_cog, BAC2_gc_cog)
-merged_gc_cog <- data.frame(merged_gc_cog, genome_id = c(rep("Ramlibacter sp. MAG", nrow(RAMLI_gc_cog)), 
-                                             rep("Bacteroidetes MAG1", nrow(BAC1_gc_cog)),
-                                             rep("Bacteroidetes MAG2", nrow(BAC2_gc_cog)))
-                            )
-
-# Merge this metadata with the genome data from before
-# COGs with multiple classifications are currently still NA - work on this.
-merged_gc_cog <- dplyr::left_join(merged_gc_cog, cog_meta, by = c("cog_id" = "COG_ID"))
-merged_gc_cog <- merged_gc_cog[!is.na(merged_gc_cog$COG_functional_category),]
-
-# Visualize distribution across major metabolism functional COG groups per genome.
-p_cog_func_group <- ggplot(data = merged_gc_cog, 
-                           aes(x=COG_functional_category, fill = COG_functional_cluster))+
-  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-  theme_bw()+
-  facet_grid(genome_id~.)+
-  scale_fill_brewer(palette = "Accent")+
-  labs(x = "Gene length (bp)", y = "Count")+ 
-  theme(legend.position="bottom", axis.text.x = element_text(angle = 90, hjust = 1),
-                                                   legend.text = element_text(size = 5))+
-  guides(fill=guide_legend(nrow=2,byrow=TRUE))
-
-print(p_cog_func_group)
-```
-
-<img src="Figures/cached/COG functional categories-1.png" style="display: block; margin: auto;" />
-
-```r
-p_cog_func_clust <- ggplot(data = merged_gc_cog, 
-                           aes(x=COG_functional_cluster, fill = COG_functional_cluster))+
-  geom_bar(stat="count", width=0.7, color = "black", size = 0.75)+
-  theme_bw()+
-  facet_grid(genome_id~.)+
-  scale_fill_brewer(palette = "Accent")+
-  labs(x = "Gene length (bp)", y = "Count")+ 
-  theme(legend.position="bottom",axis.text.x = element_text(angle = 90, hjust = 1),
-                                                   legend.text = element_text(size = 5))+
-  guides(fill=guide_legend(nrow=2,byrow=TRUE))
-
-print(p_cog_func_clust)
-```
-
-<img src="Figures/cached/COG functional categories-2.png" style="display: block; margin: auto;" />
 
 # 7. KO pathways
 
-* Get reference file that maps KO ids to pathways here: http://www.genome.jp/kegg-bin/get_htext?ko00001.keg (download htext).
+* Get reference file that maps KO ids to pathways here: http://www.genome.jp/kegg-bin/get_htext?ko0000.keg (download htext).
 
 
-```r
-# Import data
-ko_path_df <- format_ko(path = "./Mapping_files/ko00000.keg")
-
-# Annotate merged ko file
-merged_gc_ko <- rbind(RAMLI_gc_KO, BAC1_gc_KO, BAC2_gc_KO)
-merged_gc_ko <- data.frame(merged_gc_ko, 
-                           genome_id = c(rep("Ramlibacter sp. MAG", nrow(RAMLI_gc_KO)),
-                                         rep("Bacteroidetes MAG1", nrow(BAC1_gc_KO)),
-                                         rep("Bacteroidetes MAG2", nrow(BAC2_gc_KO)))
-                            )
-merged_gc_ko$ko_id <- gsub(merged_gc_ko$ko_id, pattern = "KO:", replacement = "")
-merged_gc_ko <- dplyr::left_join(merged_gc_ko, ko_path_df[, c(1, 4:6)], by = "ko_id")
-
-# Remove EC column because it allows duplicates for same functional classification
-merged_gc_ko <- merged_gc_ko %>% select(-EC) %>% distinct()
-
-# Fill up NA slots with "Unknown" pathway
-merged_gc_ko$ko_level_A[is.na(merged_gc_ko$ko_level_A)] <- "Unknown"
-merged_gc_ko$ko_level_B[is.na(merged_gc_ko$ko_level_B)] <- "Unknown"
-merged_gc_ko$ko_level_C[is.na(merged_gc_ko$ko_level_C)] <- "Unknown"
-```
 
 # 8.  Synonymous Codon Usage Bias analysis using CodonO
 
@@ -1536,153 +1014,7 @@ PosiGene also tries to minimize false positives/negatives through additional fil
 
 **This filtering step can also be seen as an instrument to reduce false negatives. Few badly conserved sequences can force the first mentioned filter to delete large parts of the MSA reducing the power of the test and potentially removing positively selected sites. Third, entire MSAs can be discarded if they are considered unreliable for the following reasons, if: (i) a small absolute number or a small percentage of alignment columns or anchor species codons remain after the first filtering step, (ii) few sequences remain after the second filtering step, (iii) disproportional dN/dS ratios (e.g. ≥100 in foreground branch) were calculated by CODEML or (iv) an implausibly high fraction of positively selected sites was inferred. Additionally, MSAs will only be considered if at least one species from the sister taxon (i.e. the most closely-related species/clade) of the examined branch is represented in it. Without this condition it is not possible to say whether potentially observed selective pressure worked on the branch of interest or before in evolution .**
 
-
-## 9.1. Controles  
-
-In order to put our results into context, we performed PosiGene analysis on the following conditions:  
-
-*  
-*  
-*  
-*  
-
-
-```r
-# Import posigene result files in batch
-posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles")
-```
-
-```
-## [1] "control1_Ramlibacter_MAG_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control1_Ramlibacter_MAG_results.tsv"
-## [1] "control2_Ramlibacter_tataouinensis_5_10_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control2_Ramlibacter_tataouinensis_5_10_results.tsv"
-## [1] "control3_Limnohabitans_planktonicus_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control3_Limnohabitans_planktonicus_results.tsv"
-## [1] "control4_Limnohabitans_planktonicus_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control4_Limnohabitans_planktonicus_results.tsv"
-## [1] "control5_Ramlibacter_tataouinensis_5_10_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5_Ramlibacter_tataouinensis_5_10_results.tsv"
-## [1] "control5fr_Ramlibacter_MAG_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control5fr_Ramlibacter_MAG_results.tsv"
-## [1] "control6fr_Ramlibacter_MAG_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control6fr_Ramlibacter_MAG_results.tsv"
-## [1] "control7_Ramlibacter_sp_Leaf400_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control7_Ramlibacter_sp_Leaf400_results.tsv"
-## [1] "control7fr_Ramlibacter_MAG_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control7fr_Ramlibacter_MAG_results.tsv"
-## [1] "control8_Ramlibacter_tataouinensis_TTB310_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/control8_Ramlibacter_tataouinensis_TTB310_results.tsv"
-## [1] "EXP_Ramlibacter_MAG_results.tsv"
-## [1] "/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles/EXP_Ramlibacter_MAG_results.tsv"
-```
-
-```r
-posi_control_meta <- read.table("./Mapping_files/posiG_controle_mapping.tsv",
-                                header = TRUE)
-
-# Filter out non-PSGs
-posi_controls <- posi_controls %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05)
-
-# merge with metadata
-posi_controls <- left_join(posi_controls, posi_control_meta, 
-                           by = c("sample_file"= "result_filename"))
-
-# Plot dN/dS ratios for controls
-# Make plot
-p_dNdS_control <- posi_controls %>% dplyr::filter(group == "Ramli_only") %>% 
-  ggplot(aes(x = sample_file, y = HA.foreground.omega,
-                            fill = sample_file))+
-  geom_jitter(size = 4, shape = 21, width = 0.2)+
-  geom_boxplot(alpha = 0.4, outlier.shape = NA)+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  # ylab("") + xlab("")+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        # axis.text.x = element_blank(),
-        strip.text=element_text(size=18),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
-        # ,legend.position = c(0.87, 0.85)
-        )+
-  xlab("")+
-  guides(fill=FALSE)
-  # facet_grid(~target_species)
-
-# print(p_dNdS_control)
-
-
-p_N_control <- ggplot(posi_controls, aes(x = sample_file, fill = sample_file))+
-  geom_bar(stat = "count", color = "black")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  # ylab("") + xlab("")+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_blank(),
-        strip.text=element_text(size=18),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
-        # ,legend.position = c(0.87, 0.85)
-        )+
-  ylab("Number of PSGs")+
-  xlab("")+
-  guides(fill=guide_legend(ncol=2))
-
-# print(p_N_control)
-
-# Print both panels
-grid_arrange_shared_legend(p_N_control, p_dNdS_control, position = "bottom")
-```
-
-<img src="Figures/cached/posigene-controls-1.png" style="display: block; margin: auto;" />
-
-```r
-# Check similarity between PSG profiles
-posi_control_wide <- posi_controls[, 1:2]
-posi_control_wide$Presence <- 1
-posi_control_wide <- tidyr::spread(posi_control_wide, Transcript, Presence)
-posi_control_wide[is.na(posi_control_wide)] <- 0
-rownames(posi_control_wide) <- posi_control_wide$sample_file; posi_control_wide <- posi_control_wide[, -1]
-
-# Split dataset according to reference/anchor species because this will affect
-# the gene labelling (anchor species label) and thus result in erronous gene labels.
-
-# Calculate distance between posigene results
-dist_hm <- dist(posi_control_wide, method = "binary")
-row.order <- attr(dist_hm, "Labels")[hclust(dist_hm)$order] # clustering
-col.order <- attr(dist_hm, "Labels")[hclust(t(dist_hm))$order]
-
-# Fix order according to hierarchical clustering
-df_hm <- melt(as.matrix(dist_hm))
-df_hm$Var1 <- factor(as.character(df_hm$Var1), levels = row.order)
-df_hm$Var2 <- factor(as.character(df_hm$Var2), levels = col.order)
-
-hm_posi_c <- ggplot(df_hm, aes(Var1, Var2)) + # x and y axes => Var1 and Var2
-  geom_tile(aes(fill = value)) + # background colours are mapped according to the value column
-  geom_text(aes(fill = df_hm$value, label = round(df_hm$value, 2))) + # write the values
-  scale_fill_gradient(low = "lightblue", high = "darkslategray") + 
-  theme(panel.grid.major.x=element_blank(), #no gridlines
-        panel.grid.minor.x=element_blank(), 
-        panel.grid.major.y=element_blank(), 
-        panel.grid.minor.y=element_blank(),
-        panel.background=element_rect(fill="white"), # background=white
-        axis.text.x = element_text(angle=45, hjust = 1,vjust=1,size = 12,face = "bold"),
-        plot.title = element_text(size=20,face="bold"),
-        axis.text.y = element_text(size = 12,face = "bold"))+
-  theme(legend.title=element_text(face="bold", size=14)) + 
-  scale_x_discrete(name="") +
-  scale_y_discrete(name="") +
-  labs(fill="Dissimilarity\n")
-
-print(hm_posi_c) 
-```
-
-<img src="Figures/cached/posigene-controls-2.png" style="display: block; margin: auto;" />
-
-## 9.2. Analysis  
+## 9.1. Analysis  
 
 
 ```r
@@ -2533,7 +1865,7 @@ print(p_aa_kappa)
 <img src="Figures/cached/posigene-aa-3.png" style="display: block; margin: auto;" />
 
 
-## 9.3. Evaluate nucleotide transitions
+## 9.2. Evaluate nucleotide transitions
 
 
 ```r
@@ -2598,7 +1930,7 @@ panG_MAG$unique_gene_callers_id <- interaction(panG_MAG$genome_name,
 #       )
 # }
 
-# Export Ramlibacter sp. auxillary genome COGF annotation 
+# Export Ramlibacter sp. auxillary genome COG annotation 
 # for visualization in ipath2
 # write.table(paste(panG_MAG$COG_FUNCTION_ACC, "W10", "#e2a2fd", panG_MAG$genome_name,
 #                   sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
@@ -2635,120 +1967,6 @@ panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomona
 # Add column denoting whether it is core/mixed or accessory
 panG_ko_cog$bin_core <- factor(panG_ko_cog$bin_name == "CORE_PC" | panG_ko_cog$bin_name == "Mixed_PCs")
 panG_ko_cog$bin_core <- plyr::revalue(panG_ko_cog$bin_core, replace = c("TRUE" = "CORE/Mixed", "FALSE" = "Accessory"))
-
-# Plot distribution of panG annotation 
-## Expressed as number of genes
-p_panG1 <- panG_ko_cog %>% 
-  select(ko_level_B, genome_name,ko_level_A, bin_core, unique_gene_callers_id) %>% 
-  filter(ko_level_B %in% tmp_names) %>% 
-  distinct() %>% 
-  ggplot(aes(x = genome_name, fill = ko_level_B))+
-  geom_bar(color = "black")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  ggtitle("Number of genes")+
-  ylab("") + xlab("")+
-  facet_grid(bin_core~ko_level_A, scales = "free")+
-  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
-        strip.text=element_text(size=14),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
-        legend.position = "bottom"
-        )+
-  guides(fill = guide_legend(nrow = 4))
-```
-
-```
-## Error in filter_impl(.data, quo): Evaluation error: object 'tmp_names' not found.
-```
-
-```r
-print(p_panG1)
-```
-
-```
-## Error in print(p_panG1): object 'p_panG1' not found
-```
-
-```r
-# Get sizes of each protein cluster bin
-sizes_panG <- data.frame(panG_MAG %>% group_by(bin_name, genome_name) 
-                         %>% count(bin_name)
-                         %>% mutate(merge_bin_genome = 
-                                      interaction(bin_name, genome_name))
-)
-sizes_panG <- sizes_panG[-c(1,2)]
-colnames(sizes_panG)[1] <- "bin_size"
-
-# Format table to include ko_level_A annotation
-# as well as the protein cluster sizes so that we can normalize to 
-# CORE genome as well as each accessory genome
-panG_ko_cog <- panG_ko_cog %>% mutate(merge_bin_genome = 
-                                      interaction(bin_name, genome_name))
-
-# Calculate relative abundance
-panG_ko_cog <- left_join(panG_ko_cog, sizes_panG, by = "merge_bin_genome")
-panG_ko_table <- panG_ko_cog %>% dplyr::filter(ko_level_B %in% tmp_names) %>% 
-  group_by(merge_bin_genome, ko_level_B) %>% 
-  mutate(abund_ko = length(unique(unique_gene_callers_id))/bin_size,
-         number_of_genes = length(unique(ko_id)))
-```
-
-```
-## Error in filter_impl(.data, quo): Evaluation error: object 'tmp_names' not found.
-```
-
-```r
-panG_ko_table <- left_join(panG_ko_table, 
-                           distinct(panG_ko_cog[, c("ko_level_A", "ko_level_B")]),
-                           by = c("ko_level_B"))
-```
-
-```
-## Error in left_join(panG_ko_table, distinct(panG_ko_cog[, c("ko_level_A", : object 'panG_ko_table' not found
-```
-
-```r
-# Plot distribution of panG annotation 
-## Expressed as % of individual unique gene pool
-p_panG3 <- panG_ko_table %>% 
-  select(genome_name, abund_ko, ko_level_B, ko_level_A.x, bin_core) %>% 
-  distinct() %>% 
-  filter(bin_core == "Accessory") %>% 
-  # filter(bin_name %in% c("MAG_PC", 
-  #                        "Ramli_5-10_PC",
-  #                        "Ramli_Leaf400_PC", 
-  #                        "Ramli_TTB310_PC")) %>% 
-  ggplot(aes(x = genome_name, fill = ko_level_B, y = 100*abund_ko))+
-  geom_bar(color = "black", stat = "identity")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  ggtitle("Relative abundance (% - normalized vs. accessory genome sizes)")+
-  ylab("") + xlab("")+
-  facet_grid(.~ko_level_A.x, scales = "free")+
-  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
-        strip.text=element_blank(),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
-        legend.position = "bottom"
-        )+
-  guides(fill = guide_legend(nrow = 4))
-```
-
-```
-## Error in eval(lhs, parent, parent): object 'panG_ko_table' not found
-```
-
-```r
-print(p_panG3)
-```
-
-```
-## Error in print(p_panG3): object 'p_panG3' not found
 ```
 
 
@@ -2961,8 +2179,8 @@ p_panG5 <- results_gseq %>%
   theme(axis.text.y=element_text(size=12.5), axis.title.y =element_text(size = 18),
         legend.background = element_rect(fill="transparent"),
         axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
-        plot.margin = unit(c(1.1,1.1,1.1,1.1), "cm")
-        )+
+        plot.margin = unit(c(1.1,1.1,1.1,1.1), "cm"),
+        strip.text = element_text(size = 12))+
   guides(fill = FALSE)
 
 print(p_panG5)
@@ -3769,7 +2987,7 @@ MGT_df$Genome_ID <- factor(MGT_df$Genome_ID, levels = ord_full_list_bin)
 selected_points <- data.frame(Genome_ID = MGT_df$Genome_ID, 
                               ypos = c(rep(7.5, 3), rep(NA,3)))
 p_MGT_1 <- MGT_df[-c(2:3),] %>% 
-  ggplot(aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+  ggplot(aes(x = Genome_ID, y = log(2)/MGT, fill = Genome_ID))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
            position = position_dodge(width = 1), width = 0.7)+
@@ -3786,15 +3004,16 @@ p_MGT_1 <- MGT_df[-c(2:3),] %>%
         axis.title.x=element_blank(),
         plot.title = element_text(hjust = 0, size=18))+
   guides(fill=FALSE)+
-  geom_errorbar(aes(ymin = MGT - sd.MGT, ymax = MGT + sd.MGT), width = 0.15,
+  geom_errorbar(aes(ymin = log(2)/(MGT - sd.MGT),
+                    ymax = log(2)/(MGT + sd.MGT)), width = 0.15,
                 position = position_dodge(width = 1))+
   ylab("")+
   xlab("")+
-  ggtitle("Minimal Generation Time (h)")+
-  ylim(0,6)
+  ggtitle(expression("Specific growth rate - h"^-1))+
+  ylim(0,0.75)
 
 p_MGT_2 <- MGT_df[c(2:3),] %>% 
-  ggplot(aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+  ggplot(aes(x = Genome_ID, y = log(2)/MGT, fill = Genome_ID))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
            position = position_dodge(width = 1), width = 0.7)+
@@ -3809,12 +3028,13 @@ p_MGT_2 <- MGT_df[c(2:3),] %>%
         axis.title.x=element_blank(),
         plot.title = element_text(hjust = 0, size=18))+
   guides(fill=FALSE)+
-  geom_errorbar(aes(ymin = MGT - sd.MGT, ymax = MGT + sd.MGT), width = 0.15,
+  geom_errorbar(aes(ymin = log(2)/(MGT - sd.MGT),
+                    ymax = log(2)/(MGT + sd.MGT)), width = 0.15,
                 position = position_dodge(width = 1))+
   ylab("")+
   xlab("")+
   ggtitle("")+
-  ylim(0,6)
+  ylim(0,0.75)
 
 cowplot::plot_grid(p_MGT_1, p_MGT_2, align = "hv", rel_widths = c(4,1))
 ```
@@ -4480,7 +3700,8 @@ selected_genomes <- c("Ramlibacter sp. TTB310",
 COG_profiles_sub_long$Genome <- factor(as.character(COG_profiles_sub_long$Genome),
                                  levels = selected_genomes)
 
-COG_order <- DOM_usage_df %>% dplyr::filter(COG_ID %in% unique(COG_profiles_sub_long$Func_id))
+COG_order <- DOM_usage_df %>% 
+  dplyr::filter(COG_ID %in% unique(COG_profiles_sub_long$Func_id))
 COG_profiles_sub_long$Func_id <- factor(COG_profiles_sub_long$Func_id,
                                         levels = COG_order$COG_ID)
 # make heatmap

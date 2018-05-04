@@ -42,7 +42,7 @@ library("janitor")
 library("reshape2")
 library("easyGgplot2")
 library("KEGGREST")
-source("functions.R")
+source("./Functions/functions.R")
 library("phyloseq")
 library("SpiecEasi")
 library("seqtime")
@@ -65,7 +65,7 @@ col_bac2 <- "#D46A6A"
 ## Network analysis on relative abundances  
 
 In the first analysis we utilize the raw counts. As such this network will be built using relative abundance data.
-```{r network-analysis-relative, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8, dev = c("png","pdf")}
+```{r network-analysis-relative, warning = FALSE, dpi = 500, fig.width = 8, fig.height = 8, dev = c("png","pdf"), include = FALSE}
 # Set seed
 set.seed(777)
 
@@ -413,7 +413,7 @@ print(p_rel_box)
 
 # Calculate element-wise N/P ratio assuming 1 µg/L of PO4
 molP <- (1/94.9714)/1000 # in mmol/L of upper detection limit
-mean((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP) # in mmol/L
+min((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP) # in mmol/L
 sd((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP)
 # mean((14*Physico_df_trim_rel_OTU1$Nitrate/62.0049))
 # sd((14*Physico_df_trim_rel_OTU1$Nitrate/62.0049))
@@ -426,7 +426,7 @@ sd((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP)
 mean_coverage <- read.table("./SAMPLES-SUMMARY/bins_across_samples/mean_coverage.txt", header = TRUE)
 std_coverage <- read.table("./SAMPLES-SUMMARY/bins_across_samples/std_coverage.txt", header = TRUE)
 bin_size <- read.table("./SAMPLES-SUMMARY/general_bins_summary.txt", header = TRUE)[, c(1, 3, 6, 9)]
-total_reads <- read.table("./sample_reads.tsv", header = TRUE)
+total_reads <- read.table("./Mapping_files/sample_reads.tsv", header = TRUE)
 read_length <- 300
 
 # From wide to long format
@@ -511,7 +511,8 @@ $$Relative\ abundance =100*(\frac{mean\ coverage * bin\ size}{read\ length*total
 
 Import reference relative abundances from 16S data set in order to directly compare with metagenomic data set.
 ```{r import-reference, warning = FALSE}
-df_16S <- read.delim("relative_abundance_16S.tsv", header = TRUE, sep = "\t")
+df_16S <- read.delim("./Mapping_files/relative_abundance_16S.tsv",
+                     header = TRUE, sep = "\t")
 df_16S_long <- gather(df_16S, Sample_ID, relative_abundance_16S, 
                              SAMPLE_16:SAMPLE_65, factor_key=TRUE)
 ```
@@ -577,7 +578,7 @@ grid_arrange_shared_legend(p_meta, p_meta_mapped, p_16S, ncol = 1, nrow = 3)
 
 # *3. Investigate sequence characteristics within coding DNA sequences (CDS)*
 
-```{r %GC-gene-analysis_v1, warning = FALSE, fig.width = 22.5, fig.height = 7.5,  dpi=500}
+```{r %GC-gene-analysis_v1, warning = FALSE, fig.width = 22.5, fig.height = 7.5,  dpi=500, include = FALSE}
 # First we need the files that map the gene ID to the sequence ID (linux cmd: https://github.com/rprops/MetaG_lakeMI/wiki/11.-Genome-annotation)
 # These are stored in the IMG_annotation data for each genome bin
 
@@ -615,18 +616,13 @@ BAC2_gc_KO <- gc2function(seq_id_gc = "GC_analysis/seqid_GC_121960.assembled.gff
                              functions = "./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/Annotation/2724679698.ko.tab.txt", gc_thresh = 0.1, output = FALSE)
 ```
 
-Motivation: For COGs there exists a hierarchy allowing us to investigate whether there is a conservation of high/low %GC in certain functional gene groups. In order to do this we need to incorporate this hierarchy into the genome dataframes we have now.  
-
-```{r %GC-gene-analysis_2, warning = FALSE, fig.width = 22.5, fig.height = 7.5,  dpi=500}
-```
-
 
 # *4. Analysis of gene length distribution*
 Here we use the dataframe made in the previous section to see if there is a significant difference in the gene length of the COGs within these three consensus genomes.  
 
 Observation: They have very small genes: on average < 500bp.
 
-```{r gene-length-analysis_COG, warning = FALSE, fig.width = 10, fig.height = 3.5,  dpi=500}
+```{r gene-length-analysis_COG, warning = FALSE, fig.width = 10, fig.height = 3.5,  dpi=500, include = FALSE}
 # Ramlibacter sp. MAG gene length distribution 
 p_RAMLI_length <- easyGgplot2::ggplot2.histogram(data = RAMLI_gc_cog, xName = 'gene_length',
                   groupName = 'Genome', alpha = 0.5,
@@ -658,7 +654,7 @@ grid.arrange(p_RAMLI_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 ```
 
 We can do the same for the Pfams.
-```{r gene-length-analysis_Pfam, warning = FALSE, fig.width = 10, fig.height = 3.5,  dpi=500}
+```{r gene-length-analysis_Pfam, warning = FALSE, fig.width = 10, fig.height = 3.5,  dpi=500, include = FALSE}
 # Ramlibacter sp. MAG gene length distribution 
 p_RAMLI_length <- easyGgplot2::ggplot2.histogram(data = RAMLI_gc_pfam, xName = 'gene_length',
                   groupName = 'Genome', alpha = 0.5,
@@ -690,7 +686,7 @@ grid.arrange(p_RAMLI_length, p_BAC1_length, p_BAC2_length, ncol = 3)
 ```
 
 # 5. Identify unique functional genes (COG/Pfams)
-```{r identify-unique-cog}
+```{r identify-unique-cog, include = FALSE}
 # Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG1
 unique_RAMLI_BAC1 <- dplyr::anti_join(RAMLI_gc_cog, BAC1_gc_cog, by = "cog_id")
 cat("There are", paste(nrow(unique_RAMLI_BAC1)), "unique COGs in Ramlibacter sp. MAG vs Bacteroidetes MAG1")
@@ -708,7 +704,7 @@ unique_BAC2_BAC1 <- dplyr::anti_join(BAC2_gc_cog, BAC1_gc_cog, by = "cog_id")
 cat("There are", paste(nrow(unique_BAC2_BAC1)), "unique COGs in Bacteroidetes MAG2 vs Bacteroidetes MAG1")
 ```
 
-```{r identify-unique-pfam}
+```{r identify-unique-pfam, include = FALSE}
 # Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG1
 unique_pfam_RAMLI_BAC1 <- dplyr::anti_join(RAMLI_gc_pfam, BAC1_gc_pfam, by = "pfam_id")
 cat("There are", paste(nrow(unique_pfam_RAMLI_BAC1)), "unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG1")
@@ -732,7 +728,7 @@ Get COG ID to COG functional category mapping file here: ftp://ftp.ncbi.nih.gov/
 
 The exact statistical analysis to compare genomes based on these profiles should be performed in STAMP.
 
-```{r COG functional categories, dpi = 300, warning = FALSE, fig.width = 5, fig.height = 15}
+```{r COG functional categories, dpi = 300, warning = FALSE, fig.width = 5, fig.height = 15, include = FALSE}
 # Import COG mapping file
 cogid_2_cogcat <- read.csv("./Mapping_files/cogid_2_cogcat.csv", sep = ",", header = FALSE, fill = TRUE,col.names = c("COG_ID", "COG_class", "function"))[, 1:2]
 cogid_2_cogcat <- cogid_2_cogcat[(cogid_2_cogcat$COG_class)!="", ]
@@ -787,9 +783,9 @@ print(p_cog_func_clust)
 
 # 7. KO pathways
 
-* Get reference file that maps KO ids to pathways here: http://www.genome.jp/kegg-bin/get_htext?ko00001.keg (download htext).
+* Get reference file that maps KO ids to pathways here: http://www.genome.jp/kegg-bin/get_htext?ko0000.keg (download htext).
 
-```{r KO pathways, dpi = 300, warning = FALSE, fig.width = 12, fig.height = 13}
+```{r KO pathways, dpi = 300, warning = FALSE, fig.width = 12, fig.height = 13, include = FALSE}
 # Import data
 ko_path_df <- format_ko(path = "./Mapping_files/ko00000.keg")
 
@@ -1111,119 +1107,7 @@ PosiGene also tries to minimize false positives/negatives through additional fil
 
 **This filtering step can also be seen as an instrument to reduce false negatives. Few badly conserved sequences can force the first mentioned filter to delete large parts of the MSA reducing the power of the test and potentially removing positively selected sites. Third, entire MSAs can be discarded if they are considered unreliable for the following reasons, if: (i) a small absolute number or a small percentage of alignment columns or anchor species codons remain after the first filtering step, (ii) few sequences remain after the second filtering step, (iii) disproportional dN/dS ratios (e.g. ≥100 in foreground branch) were calculated by CODEML or (iv) an implausibly high fraction of positively selected sites was inferred. Additionally, MSAs will only be considered if at least one species from the sister taxon (i.e. the most closely-related species/clade) of the examined branch is represented in it. Without this condition it is not possible to say whether potentially observed selective pressure worked on the branch of interest or before in evolution .**
 
-
-## 9.1. Controles  
-
-In order to put our results into context, we performed PosiGene analysis on the following conditions:  
-
-*  
-*  
-*  
-*  
-
-```{r posigene-controls, dpi = 300, fig.width = 12, fig.height = 8, warning = FALSE}
-# Import posigene result files in batch
-posi_controls <- read_posi("/Users/rprops/Documents/Ramlibacter--CW/posigene_analysis/controles")
-posi_control_meta <- read.table("./Mapping_files/posiG_controle_mapping.tsv",
-                                header = TRUE)
-
-# Filter out non-PSGs
-posi_controls <- posi_controls %>% filter(P.Value < 0.05 & 
-                                    FDR < 0.05)
-
-# merge with metadata
-posi_controls <- left_join(posi_controls, posi_control_meta, 
-                           by = c("sample_file"= "result_filename"))
-
-# Plot dN/dS ratios for controls
-# Make plot
-p_dNdS_control <- posi_controls %>% dplyr::filter(group == "Ramli_only") %>% 
-  ggplot(aes(x = sample_file, y = HA.foreground.omega,
-                            fill = sample_file))+
-  geom_jitter(size = 4, shape = 21, width = 0.2)+
-  geom_boxplot(alpha = 0.4, outlier.shape = NA)+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  # ylab("") + xlab("")+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        # axis.text.x = element_blank(),
-        strip.text=element_text(size=18),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
-        # ,legend.position = c(0.87, 0.85)
-        )+
-  xlab("")+
-  guides(fill=FALSE)
-  # facet_grid(~target_species)
-
-# print(p_dNdS_control)
-
-
-p_N_control <- ggplot(posi_controls, aes(x = sample_file, fill = sample_file))+
-  geom_bar(stat = "count", color = "black")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  # ylab("") + xlab("")+
-  theme(axis.text=element_text(size=12.5), axis.title=element_text(18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_blank(),
-        strip.text=element_text(size=18),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank()
-        # ,legend.position = c(0.87, 0.85)
-        )+
-  ylab("Number of PSGs")+
-  xlab("")+
-  guides(fill=guide_legend(ncol=2))
-
-# print(p_N_control)
-
-# Print both panels
-grid_arrange_shared_legend(p_N_control, p_dNdS_control, position = "bottom")
-
-# Check similarity between PSG profiles
-posi_control_wide <- posi_controls[, 1:2]
-posi_control_wide$Presence <- 1
-posi_control_wide <- tidyr::spread(posi_control_wide, Transcript, Presence)
-posi_control_wide[is.na(posi_control_wide)] <- 0
-rownames(posi_control_wide) <- posi_control_wide$sample_file; posi_control_wide <- posi_control_wide[, -1]
-
-# Split dataset according to reference/anchor species because this will affect
-# the gene labelling (anchor species label) and thus result in erronous gene labels.
-
-# Calculate distance between posigene results
-dist_hm <- dist(posi_control_wide, method = "binary")
-row.order <- attr(dist_hm, "Labels")[hclust(dist_hm)$order] # clustering
-col.order <- attr(dist_hm, "Labels")[hclust(t(dist_hm))$order]
-
-# Fix order according to hierarchical clustering
-df_hm <- melt(as.matrix(dist_hm))
-df_hm$Var1 <- factor(as.character(df_hm$Var1), levels = row.order)
-df_hm$Var2 <- factor(as.character(df_hm$Var2), levels = col.order)
-
-hm_posi_c <- ggplot(df_hm, aes(Var1, Var2)) + # x and y axes => Var1 and Var2
-  geom_tile(aes(fill = value)) + # background colours are mapped according to the value column
-  geom_text(aes(fill = df_hm$value, label = round(df_hm$value, 2))) + # write the values
-  scale_fill_gradient(low = "lightblue", high = "darkslategray") + 
-  theme(panel.grid.major.x=element_blank(), #no gridlines
-        panel.grid.minor.x=element_blank(), 
-        panel.grid.major.y=element_blank(), 
-        panel.grid.minor.y=element_blank(),
-        panel.background=element_rect(fill="white"), # background=white
-        axis.text.x = element_text(angle=45, hjust = 1,vjust=1,size = 12,face = "bold"),
-        plot.title = element_text(size=20,face="bold"),
-        axis.text.y = element_text(size = 12,face = "bold"))+
-  theme(legend.title=element_text(face="bold", size=14)) + 
-  scale_x_discrete(name="") +
-  scale_y_discrete(name="") +
-  labs(fill="Dissimilarity\n")
-
-print(hm_posi_c) 
-
-```
-
-## 9.2. Analysis  
+## 9.1. Analysis  
 
 ```{r posigene-selection, dpi = 300, fig.width = 9.5, fig.height = 8, warning = FALSE, dev = c("png","pdf")}
 # Import results file of genome-specific PSGs only
@@ -1996,7 +1880,7 @@ print(p_aa_kappa)
 ```
 
 
-## 9.3. Evaluate nucleotide transitions
+## 9.2. Evaluate nucleotide transitions
 
 ```{r posigene-trans, dpi = 500, fig.width = 8, fig.height = 6, warning = FALSE}
 # Read in global nucleotide alignment file
@@ -2060,7 +1944,7 @@ panG_MAG$unique_gene_callers_id <- interaction(panG_MAG$genome_name,
 #       )
 # }
 
-# Export Ramlibacter sp. auxillary genome COGF annotation 
+# Export Ramlibacter sp. auxillary genome COG annotation 
 # for visualization in ipath2
 # write.table(paste(panG_MAG$COG_FUNCTION_ACC, "W10", "#e2a2fd", panG_MAG$genome_name,
 #                   sep=" "), "./panG/cog_id_panG.txt", row.names = FALSE,
@@ -2097,87 +1981,6 @@ panG_ko_cog$ko_level_C[panG_ko_cog$ko_level_C == "Biofilm formation - Pseudomona
 # Add column denoting whether it is core/mixed or accessory
 panG_ko_cog$bin_core <- factor(panG_ko_cog$bin_name == "CORE_PC" | panG_ko_cog$bin_name == "Mixed_PCs")
 panG_ko_cog$bin_core <- plyr::revalue(panG_ko_cog$bin_core, replace = c("TRUE" = "CORE/Mixed", "FALSE" = "Accessory"))
-
-# Plot distribution of panG annotation 
-## Expressed as number of genes
-p_panG1 <- panG_ko_cog %>% 
-  select(ko_level_B, genome_name,ko_level_A, bin_core, unique_gene_callers_id) %>% 
-  filter(ko_level_B %in% tmp_names) %>% 
-  distinct() %>% 
-  ggplot(aes(x = genome_name, fill = ko_level_B))+
-  geom_bar(color = "black")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  ggtitle("Number of genes")+
-  ylab("") + xlab("")+
-  facet_grid(bin_core~ko_level_A, scales = "free")+
-  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
-        strip.text=element_text(size=14),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
-        legend.position = "bottom"
-        )+
-  guides(fill = guide_legend(nrow = 4))
-print(p_panG1)
-
-# Get sizes of each protein cluster bin
-sizes_panG <- data.frame(panG_MAG %>% group_by(bin_name, genome_name) 
-                         %>% count(bin_name)
-                         %>% mutate(merge_bin_genome = 
-                                      interaction(bin_name, genome_name))
-)
-sizes_panG <- sizes_panG[-c(1,2)]
-colnames(sizes_panG)[1] <- "bin_size"
-
-# Format table to include ko_level_A annotation
-# as well as the protein cluster sizes so that we can normalize to 
-# CORE genome as well as each accessory genome
-panG_ko_cog <- panG_ko_cog %>% mutate(merge_bin_genome = 
-                                      interaction(bin_name, genome_name))
-
-# Calculate relative abundance
-panG_ko_cog <- left_join(panG_ko_cog, sizes_panG, by = "merge_bin_genome")
-panG_ko_table <- panG_ko_cog %>% dplyr::filter(ko_level_B %in% tmp_names) %>% 
-  group_by(merge_bin_genome, ko_level_B) %>% 
-  mutate(abund_ko = length(unique(unique_gene_callers_id))/bin_size,
-         number_of_genes = length(unique(ko_id)))
-
-
-panG_ko_table <- left_join(panG_ko_table, 
-                           distinct(panG_ko_cog[, c("ko_level_A", "ko_level_B")]),
-                           by = c("ko_level_B"))
-
-# Plot distribution of panG annotation 
-## Expressed as % of individual unique gene pool
-p_panG3 <- panG_ko_table %>% 
-  select(genome_name, abund_ko, ko_level_B, ko_level_A.x, bin_core) %>% 
-  distinct() %>% 
-  filter(bin_core == "Accessory") %>% 
-  # filter(bin_name %in% c("MAG_PC", 
-  #                        "Ramli_5-10_PC",
-  #                        "Ramli_Leaf400_PC", 
-  #                        "Ramli_TTB310_PC")) %>% 
-  ggplot(aes(x = genome_name, fill = ko_level_B, y = 100*abund_ko))+
-  geom_bar(color = "black", stat = "identity")+
-  theme_bw()+
-  scale_fill_brewer(palette="Paired")+
-  ggtitle("Relative abundance (% - normalized vs. accessory genome sizes)")+
-  ylab("") + xlab("")+
-  facet_grid(.~ko_level_A.x, scales = "free")+
-  theme(axis.text.y=element_text(size=12.5), axis.title=element_text(size = 18),
-        title=element_text(size=18), legend.text=element_text(size=14),
-        legend.background = element_rect(fill="transparent"),
-        axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
-        strip.text=element_blank(),
-        plot.margin = unit(c(1,1,1,1), "cm"), legend.title = element_blank(),
-        legend.position = "bottom"
-        )+
-  guides(fill = guide_legend(nrow = 4))
-
-print(p_panG3)
-
 ```
 
 
@@ -2368,8 +2171,8 @@ p_panG5 <- results_gseq %>%
   theme(axis.text.y=element_text(size=12.5), axis.title.y =element_text(size = 18),
         legend.background = element_rect(fill="transparent"),
         axis.text.x = element_text(size=12.5, angle = 45, hjust = 1),
-        plot.margin = unit(c(1.1,1.1,1.1,1.1), "cm")
-        )+
+        plot.margin = unit(c(1.1,1.1,1.1,1.1), "cm"),
+        strip.text = element_text(size = 12))+
   guides(fill = FALSE)
 
 print(p_panG5)
@@ -3058,7 +2861,7 @@ MGT_df$Genome_ID <- factor(MGT_df$Genome_ID, levels = ord_full_list_bin)
 selected_points <- data.frame(Genome_ID = MGT_df$Genome_ID, 
                               ypos = c(rep(7.5, 3), rep(NA,3)))
 p_MGT_1 <- MGT_df[-c(2:3),] %>% 
-  ggplot(aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+  ggplot(aes(x = Genome_ID, y = log(2)/MGT, fill = Genome_ID))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
            position = position_dodge(width = 1), width = 0.7)+
@@ -3075,15 +2878,16 @@ p_MGT_1 <- MGT_df[-c(2:3),] %>%
         axis.title.x=element_blank(),
         plot.title = element_text(hjust = 0, size=18))+
   guides(fill=FALSE)+
-  geom_errorbar(aes(ymin = MGT - sd.MGT, ymax = MGT + sd.MGT), width = 0.15,
+  geom_errorbar(aes(ymin = log(2)/(MGT - sd.MGT),
+                    ymax = log(2)/(MGT + sd.MGT)), width = 0.15,
                 position = position_dodge(width = 1))+
   ylab("")+
   xlab("")+
-  ggtitle("Minimal Generation Time (h)")+
-  ylim(0,6)
+  ggtitle(expression("Specific growth rate - h"^-1))+
+  ylim(0,0.75)
 
 p_MGT_2 <- MGT_df[c(2:3),] %>% 
-  ggplot(aes(x = Genome_ID, y = MGT, fill = Genome_ID))+
+  ggplot(aes(x = Genome_ID, y = log(2)/MGT, fill = Genome_ID))+
   theme_bw()+
   geom_bar(alpha = 0.4, stat = "identity", color = "black",
            position = position_dodge(width = 1), width = 0.7)+
@@ -3098,12 +2902,13 @@ p_MGT_2 <- MGT_df[c(2:3),] %>%
         axis.title.x=element_blank(),
         plot.title = element_text(hjust = 0, size=18))+
   guides(fill=FALSE)+
-  geom_errorbar(aes(ymin = MGT - sd.MGT, ymax = MGT + sd.MGT), width = 0.15,
+  geom_errorbar(aes(ymin = log(2)/(MGT - sd.MGT),
+                    ymax = log(2)/(MGT + sd.MGT)), width = 0.15,
                 position = position_dodge(width = 1))+
   ylab("")+
   xlab("")+
   ggtitle("")+
-  ylim(0,6)
+  ylim(0,0.75)
 
 cowplot::plot_grid(p_MGT_1, p_MGT_2, align = "hv", rel_widths = c(4,1))
 
@@ -3708,7 +3513,8 @@ selected_genomes <- c("Ramlibacter sp. TTB310",
 COG_profiles_sub_long$Genome <- factor(as.character(COG_profiles_sub_long$Genome),
                                  levels = selected_genomes)
 
-COG_order <- DOM_usage_df %>% dplyr::filter(COG_ID %in% unique(COG_profiles_sub_long$Func_id))
+COG_order <- DOM_usage_df %>% 
+  dplyr::filter(COG_ID %in% unique(COG_profiles_sub_long$Func_id))
 COG_profiles_sub_long$Func_id <- factor(COG_profiles_sub_long$Func_id,
                                         levels = COG_order$COG_ID)
 # make heatmap
