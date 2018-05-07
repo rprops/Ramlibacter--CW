@@ -8,7 +8,7 @@ Props, R., Monsieurs, P., Vandamme, P., Leys, N., Denef V.J. and Boon, N., ***Ge
 ### Quality control and adapter trimming
 `Sickle` was used for removing erroneous  and low-quality reads from the raw data. `Scythe` was used for removing adapter sequences.
 
-### Co-assembly with IDBA-ID with on interleaved fasta with following parameters
+### Co-assembly with IDBA-UD with on interleaved fasta with following parameters
 
 ```
 idba_ud -kmin 41 -kmax 101 -s 10 -i dt_int.fasta
