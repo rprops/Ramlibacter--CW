@@ -1,7 +1,7 @@
 ---
 title: "Metagenomic analysis of secondary cooling water microbial communities"
 author: "Ruben Props"
-date: "24 April, 2018"
+date: "17 June, 2018"
 output:
   html_document:
     code_folding: show
@@ -359,7 +359,7 @@ sd((Physico_df_trim_rel_OTU1$Nitrate/62.0049)/molP)
 ```
 
 ```
-## [1] 340.0476
+## [1] 391.1701
 ```
 
 ```r
@@ -548,82 +548,11 @@ Observation: They have very small genes: on average < 500bp.
 
 We can do the same for the Pfams.
 
-```r
-# Ramlibacter sp. MAG gene length distribution 
-p_RAMLI_length <- easyGgplot2::ggplot2.histogram(data = RAMLI_gc_pfam, xName = 'gene_length',
-                  groupName = 'Genome', alpha = 0.5,
-                  legendPosition = "top", binwidth = 0.15,
-                  groupColors = col_RAMLI,addMeanLine=TRUE, meanLineColor="black",
-                  meanLineType="dashed")+ theme_bw()+ ylim(0,25)+
-  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
-  ggtitle("Ramlibacter sp. MAG")+ xlim(0,3000)
-
-# Bacteroidetes MAG1 gene length distribution 
-p_BAC1_length <- easyGgplot2::ggplot2.histogram(data = BAC1_gc_pfam, xName = 'gene_length',
-                  groupName = 'Genome', alpha = 0.5,
-                  legendPosition = "top", binwidth = 0.15, 
-                  groupColors = col_bac1,addMeanLine=TRUE, meanLineColor="black",
-                  meanLineType="dashed")+ theme_bw()+ ylim(0,25)+
-  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
-  ggtitle("Bacteroidetes MAG1")+ xlim(0,3000)
-
-# Bacteroidetes MAG2 gene length distribution 
-p_BAC2_length <- easyGgplot2::ggplot2.histogram(data = BAC2_gc_pfam, xName = 'gene_length',
-                  groupName = 'Genome', alpha = 0.5,
-                  legendPosition = "top", binwidth = 0.15,
-                  groupColors = col_bac2,addMeanLine=TRUE, meanLineColor="black",
-                  meanLineType="dashed")+ theme_bw()+ ylim(0,25)+
-  labs(x = "Gene length (bp)", y = "Count")+ theme(legend.position="none")+
-  ggtitle("Bacteroidetes MAG2")+ xlim(0,3000)
-
-grid.arrange(p_RAMLI_length, p_BAC1_length, p_BAC2_length, ncol = 3)
-```
-
-<img src="Figures/cached/gene-length-analysis_Pfam-1.png" style="display: block; margin: auto;" />
 
 # 5. Identify unique functional genes (COG/Pfams)
 
 
 
-```r
-# Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG1
-unique_pfam_RAMLI_BAC1 <- dplyr::anti_join(RAMLI_gc_pfam, BAC1_gc_pfam, by = "pfam_id")
-cat("There are", paste(nrow(unique_pfam_RAMLI_BAC1)), "unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG1")
-```
-
-```
-## There are 1474 unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG1
-```
-
-```r
-# Find unique functions in Ramlibacter sp. MAG vs Bacteroidetes MAG2
-unique_pfam_RAMLI_BAC2 <- dplyr::anti_join(RAMLI_gc_pfam, BAC2_gc_pfam, by = "pfam_id")
-cat("There are", paste(nrow(unique_pfam_RAMLI_BAC2)), "unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG2")
-```
-
-```
-## There are 1424 unique Pfams in Ramlibacter sp. MAG vs Bacteroidetes MAG2
-```
-
-```r
-# Find unique functions in Bacteroidetes MAG1 vs Bacteroidetes MAG2
-unique_pfam_BAC1_BAC2 <- dplyr::anti_join(BAC1_gc_pfam, BAC2_gc_pfam, by = "pfam_id")
-cat("There are", paste(nrow(unique_pfam_BAC1_BAC2)), "unique Pfams in Bacteroidetes MAG1 vs Bacteroidetes MAG2")
-```
-
-```
-## There are 285 unique Pfams in Bacteroidetes MAG1 vs Bacteroidetes MAG2
-```
-
-```r
-# Find unique functions in Bacteroidetes MAG1 vs Bacteroidetes MAG2
-unique_pfam_BAC2_BAC1 <- dplyr::anti_join(BAC2_gc_pfam, BAC1_gc_pfam, by = "pfam_id")
-cat("There are", paste(nrow(unique_pfam_BAC2_BAC1)), "unique Pfams in Bacteroidetes MAG2 vs Bacteroidetes MAG1")
-```
-
-```
-## There are 233 unique Pfams in Bacteroidetes MAG2 vs Bacteroidetes MAG1
-```
 
 
 # 6. COG functional categories
@@ -2043,7 +1972,6 @@ panG_ko_chemo$bin_name <- plyr::revalue(panG_ko_chemo$bin_name,
                                               "Ramli_5-10_PC" = 'R.5.10', 
                                               "Ramli_TTB310_PC" = "R.TTB310",
                                               "Mixed_PCs" = "Mixed_PCs"))
-  
 # From long to wide format
 panG_ko_chemo <- panG_ko_chemo %>% 
   group_by(ko_id, bin_name) %>% 
@@ -3197,9 +3125,37 @@ df_irep %>% group_by(Genome_bin) %>% summarize(sd(iRep_value))
   </script>
 </div>
 
+```r
+# For figure
+```
+
 
 ```r
 p_iRep_3 <- df_irep %>% 
+  ggplot(aes(x = X16S_growthrate_future, y = iRep_value, fill = Genome_bin))+
+  geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=12),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.7,0.1),
+        axis.text.x=element_text(size = 14),
+        plot.title = element_text(hjust = 0, size=18))+
+  # ylim(1.2,1.8)+ 
+  labs(y = "iRep", x = expression("Growth rate (cells µL"^-1*"d"^-1*")"))+
+  guides(shape = FALSE,
+    fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
+                         nrow = 4)
+   )+
+  geom_smooth(method="lm", color="black", fill = "lightgray",
+              alpha=0.2)
+
+
+p_iRep_4 <- df_irep %>% 
   ggplot(aes(x = relative_abundance_16S, y = iRep_value, fill = Genome_bin))+
   geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
   scale_shape_manual(values = c(21, 25))+
@@ -3211,7 +3167,7 @@ p_iRep_3 <- df_irep %>%
         # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size = 18),
         legend.position=c(0.7,0.1),
-        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.text.x=element_text(size = 14),
         plot.title = element_text(hjust = 0, size=18))+
   ylim(1.2,1.8)+ xlim(0,100)+
   labs(y = "iRep", x = "Relative abundance (%)")+
@@ -3223,7 +3179,7 @@ p_iRep_3 <- df_irep %>%
               alpha=0.2, formula = y ~ splines::ns(x,df=3))
 
 
-p_iRep_4 <- df_irep %>% 
+p_iRep_5 <- df_irep %>% 
   ggplot(aes(x = absolute_abundance_16S, y = iRep_value, fill = Genome_bin))+
   geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
   scale_shape_manual(values = c(21, 25))+
@@ -3235,17 +3191,23 @@ p_iRep_4 <- df_irep %>%
         # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size = 18),
         legend.position=c(0.7,0.1),
-        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.text.x=element_text(size = 14),
         plot.title = element_text(hjust = 0, size=18))+
   ylim(1.2,1.8)+ xlim(0,800)+
-  labs(y = "iRep", x = "Absolute abundance (cells/mL)")+
+  labs(y = "iRep", x = expression("Absolute abundance (cells µL"^-1*")"))+
   guides(shape = FALSE,
     fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
                          nrow = 4)
    )+
   geom_smooth(method = "lm",color="black", fill ="lightgray", formula=y~x)
   
-cowplot::plot_grid(p_iRep_3, p_iRep_4, ncol = 2, align = "h")
+# cowplot::plot_grid(p_iRep_3, NULL, p_iRep_4, p_iRep_5, 
+                   # nrow = 2, align = "h",  rel_heights=c(2,1), rel_widths=c(1,1))
+
+ggpubr::ggarrange(p_iRep_3,                                                 #
+          ggpubr::ggarrange(p_iRep_4, p_iRep_5, ncol = 2), # Second row with box and dot plots
+          nrow = 2                                       # Labels of the scatter plot
+          ) 
 ```
 
 <img src="Figures/cached/irep-2-1.png" style="display: block; margin: auto;" />

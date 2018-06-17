@@ -1,25 +1,25 @@
-Genome_bin	iRep_value	Sample	iRep_type	Manual_exception	Reactor_cycle	relative_abundance_16S	absolute_abundance_16S
-Bacteroidetes sp. MAG1	1.60283151814	DNA-Pieter-16	iRep	NO	Survey 1	58.9632829	768.26
-Bacteroidetes sp. MAG1	1.60283151814	DNA-Pieter-16	iRep-raw	NO	Survey 1	58.9632829	768.26
-Bacteroidetes sp. MAG1	1.65596496473	DNA-Pieter-17	iRep	YES	Survey 1	58.2524272	779.64
-Bacteroidetes sp. MAG1	1.65596496473	DNA-Pieter-17	iRep-raw	NO	Survey 1	58.2524272	779.64
-Bacteroidetes sp. MAG1	NA	DNA-Pieter-64	iRep	NO	Survey 2	0.0000000	0.2
-Bacteroidetes sp. MAG1	1.99863890315	DNA-Pieter-64	iRep-raw	NO	Survey 2	0.0000000	0.2
-Bacteroidetes sp. MAG1	NA	DNA-Pieter-65	iRep	NO	Survey 2	0.1070664	0.34
-Bacteroidetes sp. MAG1	1.87422819816	DNA-Pieter-65	iRep-raw	NO	Survey 2	0.1070664	0.34
-Bacteroidetes sp. MAG2	1.40614656232	DNA-Pieter-16	iRep	NO	Survey 1	5.2915767	69.44
-Bacteroidetes sp. MAG2	1.40614656232	DNA-Pieter-16	iRep-raw	NO	Survey 1	5.2915767	69.44
-Bacteroidetes sp. MAG2	1.39811292143	DNA-Pieter-17	iRep	NO	Survey 1	7.5512406	101.02
-Bacteroidetes sp. MAG2	1.39811292143	DNA-Pieter-17	iRep-raw	NO	Survey 1	7.5512406	101.02
-Bacteroidetes sp. MAG2	NA	DNA-Pieter-64	iRep	NO	Survey 2	0.7486631	2.9
-Bacteroidetes sp. MAG2	5.03766073122	DNA-Pieter-64	iRep-raw	NO	Survey 2	0.7486631	2.9
-Bacteroidetes sp. MAG2	NA	DNA-Pieter-65	iRep	NO	Survey 2	0.2141328	1.02
-Bacteroidetes sp. MAG2	4.39956731818	DNA-Pieter-65	iRep-raw	NO	Survey 2	0.2141328	1.02
-Ramlibacter sp. MAG	1.55878997349	DNA-Pieter-16	iRep	NO	Survey 1	26.6738661	347.9
-Ramlibacter sp. MAG	1.55878997349	DNA-Pieter-16	iRep-raw	NO	Survey 1	26.6738661	347.9
-Ramlibacter sp. MAG	1.54392741767	DNA-Pieter-17	iRep	NO	Survey 1	27.6159655	369.26
-Ramlibacter sp. MAG	1.54392741767	DNA-Pieter-17	iRep-raw	NO	Survey 1	27.6159655	369.26
-Ramlibacter sp. MAG	1.42525306186	DNA-Pieter-64	iRep	NO	Survey 2	93.7967914	374.36
-Ramlibacter sp. MAG	1.42525306186	DNA-Pieter-64	iRep-raw	NO	Survey 2	93.7967914	374.36
-Ramlibacter sp. MAG	1.40401637934	DNA-Pieter-65	iRep	NO	Survey 2	93.3618844	461.48
-Ramlibacter sp. MAG	1.40401637934	DNA-Pieter-65	iRep-raw	NO	Survey 2	93.3618844	461.48
+Genome_bin	iRep_value	Sample	iRep_type	Manual_exception	Reactor_cycle	relative_abundance_16S	absolute_abundance_16S	16S_growthrate_future	16S_growthrate_past
+Bacteroidetes sp. MAG1	1.60283151814	DNA-Pieter-16	iRep	NO	Survey 1	58.9632829	768.26	27.1	221.3
+Bacteroidetes sp. MAG1	1.60283151814	DNA-Pieter-16	iRep-raw	NO	Survey 1	58.9632829	768.26	27.1	221.3
+Bacteroidetes sp. MAG1	1.65596496473	DNA-Pieter-17	iRep	YES	Survey 1	58.2524272	779.64	-330.2	27.1
+Bacteroidetes sp. MAG1	1.65596496473	DNA-Pieter-17	iRep-raw	NO	Survey 1	58.2524272	779.64	-330.2	27.1
+Bacteroidetes sp. MAG1	NA	DNA-Pieter-64	iRep	NO	Survey 2	0.0000000	0.2	NA	NA
+Bacteroidetes sp. MAG1	1.99863890315	DNA-Pieter-64	iRep-raw	NO	Survey 2	0.0000000	0.2	NA	NA
+Bacteroidetes sp. MAG1	NA	DNA-Pieter-65	iRep	NO	Survey 2	0.1070664	0.34	NA	NA
+Bacteroidetes sp. MAG1	1.87422819816	DNA-Pieter-65	iRep-raw	NO	Survey 2	0.1070664	0.34	NA	NA
+Bacteroidetes sp. MAG2	1.40614656232	DNA-Pieter-16	iRep	NO	Survey 1	5.2915767	69.44	75.2	-75.0
+Bacteroidetes sp. MAG2	1.40614656232	DNA-Pieter-16	iRep-raw	NO	Survey 1	5.2915767	69.44	75.2	-75.0
+Bacteroidetes sp. MAG2	1.39811292143	DNA-Pieter-17	iRep	NO	Survey 1	7.5512406	101.02	-64	75.2
+Bacteroidetes sp. MAG2	1.39811292143	DNA-Pieter-17	iRep-raw	NO	Survey 1	7.5512406	101.02	-64	75.2
+Bacteroidetes sp. MAG2	NA	DNA-Pieter-64	iRep	NO	Survey 2	0.7486631	2.9	-4.5	-1.6
+Bacteroidetes sp. MAG2	5.03766073122	DNA-Pieter-64	iRep-raw	NO	Survey 2	0.7486631	2.9	-4.5	-1.6
+Bacteroidetes sp. MAG2	NA	DNA-Pieter-65	iRep	NO	Survey 2	0.2141328	1.02	2.94	-4.5
+Bacteroidetes sp. MAG2	4.39956731818	DNA-Pieter-65	iRep-raw	NO	Survey 2	0.2141328	1.02	2.94	-4.5
+Ramlibacter sp. MAG	1.55878997349	DNA-Pieter-16	iRep	NO	Survey 1	26.6738661	347.9	50.9	61.4
+Ramlibacter sp. MAG	1.55878997349	DNA-Pieter-16	iRep-raw	NO	Survey 1	26.6738661	347.9	50.9	61.4
+Ramlibacter sp. MAG	1.54392741767	DNA-Pieter-17	iRep	NO	Survey 1	27.6159655	369.26	41.8	50.9
+Ramlibacter sp. MAG	1.54392741767	DNA-Pieter-17	iRep-raw	NO	Survey 1	27.6159655	369.26	41.8	50.9
+Ramlibacter sp. MAG	1.42525306186	DNA-Pieter-64	iRep	NO	Survey 2	93.7967914	374.36	207.4	32.9
+Ramlibacter sp. MAG	1.42525306186	DNA-Pieter-64	iRep-raw	NO	Survey 2	93.7967914	374.36	207.4	32.9
+Ramlibacter sp. MAG	1.40401637934	DNA-Pieter-65	iRep	NO	Survey 2	93.3618844	461.48	53.9	207.4
+Ramlibacter sp. MAG	1.40401637934	DNA-Pieter-65	iRep-raw	NO	Survey 2	93.3618844	461.48	53.9	207.4

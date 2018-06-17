@@ -42,6 +42,7 @@ library("janitor")
 library("reshape2")
 library("easyGgplot2")
 library("KEGGREST")
+library("ggpubr")
 source("./Functions/functions.R")
 library("phyloseq")
 library("SpiecEasi")
@@ -2056,7 +2057,6 @@ panG_ko_chemo$bin_name <- plyr::revalue(panG_ko_chemo$bin_name,
                                               "Ramli_5-10_PC" = 'R.5.10', 
                                               "Ramli_TTB310_PC" = "R.TTB310",
                                               "Mixed_PCs" = "Mixed_PCs"))
-  
 # From long to wide format
 panG_ko_chemo <- panG_ko_chemo %>% 
   group_by(ko_id, bin_name) %>% 
@@ -3042,10 +3042,35 @@ print(p_iRep_2)
 # Print summary irep statistics
 df_irep %>% group_by(Genome_bin) %>% summarize(mean(iRep_value))
 df_irep %>% group_by(Genome_bin) %>% summarize(sd(iRep_value))
+# For figure
 ```
 
-```{r irep-2, warning = FALSE, fig.width = 10, fig.height = 5, dpi = 500, dev = c("png","pdf")}
+```{r irep-2, warning = FALSE, fig.width = 10, fig.height = 9, dpi = 500, dev = c("png","pdf")}
 p_iRep_3 <- df_irep %>% 
+  ggplot(aes(x = X16S_growthrate_future, y = iRep_value, fill = Genome_bin))+
+  geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
+  scale_shape_manual(values = c(21, 25))+
+  theme_bw()+
+  scale_fill_manual(values = c(col_RAMLI, col_bac1, col_bac2))+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=12),
+        legend.background = element_rect(fill="transparent"),
+        # axis.text.x = element_text(angle = 65, hjust = 1),
+        strip.text.x=element_text(size = 18),
+        legend.position=c(0.7,0.1),
+        axis.text.x=element_text(size = 14),
+        plot.title = element_text(hjust = 0, size=18))+
+  # ylim(1.2,1.8)+ 
+  labs(y = "iRep", x = expression("Growth rate (cells µL"^-1*"d"^-1*")"))+
+  guides(shape = FALSE,
+    fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
+                         nrow = 4)
+   )+
+  geom_smooth(method="lm", color="black", fill = "lightgray",
+              alpha=0.2)
+
+
+p_iRep_4 <- df_irep %>% 
   ggplot(aes(x = relative_abundance_16S, y = iRep_value, fill = Genome_bin))+
   geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
   scale_shape_manual(values = c(21, 25))+
@@ -3057,7 +3082,7 @@ p_iRep_3 <- df_irep %>%
         # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size = 18),
         legend.position=c(0.7,0.1),
-        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.text.x=element_text(size = 14),
         plot.title = element_text(hjust = 0, size=18))+
   ylim(1.2,1.8)+ xlim(0,100)+
   labs(y = "iRep", x = "Relative abundance (%)")+
@@ -3069,7 +3094,7 @@ p_iRep_3 <- df_irep %>%
               alpha=0.2, formula = y ~ splines::ns(x,df=3))
 
 
-p_iRep_4 <- df_irep %>% 
+p_iRep_5 <- df_irep %>% 
   ggplot(aes(x = absolute_abundance_16S, y = iRep_value, fill = Genome_bin))+
   geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
   scale_shape_manual(values = c(21, 25))+
@@ -3081,17 +3106,24 @@ p_iRep_4 <- df_irep %>%
         # axis.text.x = element_text(angle = 65, hjust = 1),
         strip.text.x=element_text(size = 18),
         legend.position=c(0.7,0.1),
-        axis.text.x=element_text(size = 14, angle =45, hjust= 1),
+        axis.text.x=element_text(size = 14),
         plot.title = element_text(hjust = 0, size=18))+
   ylim(1.2,1.8)+ xlim(0,800)+
-  labs(y = "iRep", x = "Absolute abundance (cells/mL)")+
+  labs(y = "iRep", x = expression("Absolute abundance (cells µL"^-1*")"))+
   guides(shape = FALSE,
     fill  = guide_legend(title = "", override.aes = list(size = 5, shape = 21),
                          nrow = 4)
    )+
   geom_smooth(method = "lm",color="black", fill ="lightgray", formula=y~x)
   
-cowplot::plot_grid(p_iRep_3, p_iRep_4, ncol = 2, align = "h")
+# cowplot::plot_grid(p_iRep_3, NULL, p_iRep_4, p_iRep_5, 
+                   # nrow = 2, align = "h",  rel_heights=c(2,1), rel_widths=c(1,1))
+
+ggpubr::ggarrange(p_iRep_3,                                                 #
+          ggpubr::ggarrange(p_iRep_4, p_iRep_5, ncol = 2), # Second row with box and dot plots
+          nrow = 2                                       # Labels of the scatter plot
+          ) 
+
 ```
 
 # Trophic strategy markers  
