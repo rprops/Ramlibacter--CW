@@ -37,6 +37,7 @@ library('tidyr')
 library('dplyr')
 library('ggplot2')
 library("grid")
+library("xlsx")
 library("gridExtra")
 library("janitor")
 library("reshape2")
@@ -958,6 +959,24 @@ tmp2 <- cbind(SCUO_merged_sb$ko_id,
 
 write.table(tmp2, file = "All_KO.tsv", quote = FALSE,
             col.names = FALSE, row.names = FALSE)
+
+# merge with annotation
+tmp_SCUO <- dplyr::left_join(SCUO_merged_gen, 
+                             merged_gc_ko, by = c("Gene" = "contig_geneID"))
+
+tmp_result_scuo <- tmp_SCUO %>% dplyr::filter(GCx == "GC_mean") %>% 
+  dplyr::filter(grepl("ribosomal", ko_name) & genome_id == "Ramlibacter sp. MAG") %>% 
+  dplyr::select(SCUO, Gene, ko_name, genome_id) %>% 
+  distinct %>% 
+  ggplot(., aes(x = genome_id, y = SCUO))+
+  geom_boxplot()
+
+
+tmp_SCUO %>% dplyr::filter(GCx == "GC_mean") %>% 
+  dplyr::filter(grepl("ribosomal", ko_name) & genome_id == "Ramlibacter sp. MAG") %>% 
+  dplyr::select(SCUO, Gene, ko_name, genome_id) %>% 
+  distinct %>% 
+  summarise(mean(SCUO), sd(SCUO))
 ```
 
 ```{r compare-ramli-CB, dpi = 500, warning = FALSE, fig.width = 10, fig.height = 4, dev = c("png","pdf")}
@@ -3045,7 +3064,7 @@ df_irep %>% group_by(Genome_bin) %>% summarize(sd(iRep_value))
 # For figure
 ```
 
-```{r irep-2, warning = FALSE, fig.width = 10, fig.height = 9, dpi = 500, dev = c("png","pdf")}
+```{r irep-2, warning = FALSE, fig.width = 10, fig.height = 4, dpi = 500, dev = c("png","pdf")}
 p_iRep_3 <- df_irep %>% 
   ggplot(aes(x = X16S_growthrate_future, y = iRep_value, fill = Genome_bin))+
   geom_point(size = 5, color = "black", alpha = 0.7, aes(shape = Manual_exception))+
@@ -3116,13 +3135,13 @@ p_iRep_5 <- df_irep %>%
    )+
   geom_smooth(method = "lm",color="black", fill ="lightgray", formula=y~x)
   
-# cowplot::plot_grid(p_iRep_3, NULL, p_iRep_4, p_iRep_5, 
-                   # nrow = 2, align = "h",  rel_heights=c(2,1), rel_widths=c(1,1))
+cowplot::plot_grid(p_iRep_4, p_iRep_5,
+                   nrow = 1, align = "hv")
 
-ggpubr::ggarrange(p_iRep_3,                                                 #
-          ggpubr::ggarrange(p_iRep_4, p_iRep_5, ncol = 2), # Second row with box and dot plots
-          nrow = 2                                       # Labels of the scatter plot
-          ) 
+# ggpubr::ggarrange(p_iRep_3,                                                 #
+#           ggpubr::ggarrange(p_iRep_4, p_iRep_5, ncol = 2), # Second row with box and dot plots
+#           nrow = 2,                                       # Labels of the scatter plot
+#           align = "h") 
 
 ```
 
@@ -3879,4 +3898,128 @@ p_size2 <- ggplot(Raquat_size, aes(x= "R. aquaticus", y = Length))+
   guides(fill = FALSE)
 
 cowplot::plot_grid(p_size, p_size2, ncol =2, align = "h")
+```
+
+
+# External metagenomes
+
+```{r SDP_external, warning = FALSE, fig.width = 12, fig.height = 12, dpi = 500, dev = c("png", "pdf")}
+df_BlastExt <- data.table::fread("./ExternalData/merged_blastfiles.tsv", 
+                         header = TRUE)
+# Import metadata
+meta_Ext <- xlsx::read.xlsx("./ExternalData/ismej2017156x1.xlsx", sheetIndex = 1)
+meta_Ext <- meta_Ext[!is.na(meta_Ext$metagenomic.sample),]
+meta_Ext <- meta_Ext[, c(1, 2, 4, 5)]
+
+# Import contig_ids of each bin
+contig_ids <- rbind(
+  cbind(read.table("./IMG_annotation/IMG_2724679690_Ramlibacter_bin/121950.assembled.names_map", stringsAsFactors = FALSE)[,1], "Ramlibacter sp. MAG"),
+  cbind(read.table("./IMG_annotation/IMG_2724679691_Bacteroidetes_bin1/121951.assembled.names_map", stringsAsFactors = FALSE)[,1], "Bacteroidetes sp. MAG1"),
+  cbind(read.table("./IMG_annotation/IMG_2724679698_Bacteroidetes_bin2/121960.assembled.names_map", stringsAsFactors = FALSE)[,1], "Bacteroidetes sp. MAG2")
+)
+contig_ids <- data.frame(contig_ids)
+colnames(contig_ids) <- c("contig_id", "bin")
+
+# Clean up SRA identifier label
+df_BlastExt$SRA <- gsub("_blast.tsv", "", df_BlastExt$SRA)
+
+# Remove contigs not in contig_ids
+df_BlastExt <- df_BlastExt %>% dplyr::filter(contig_id %in% contig_ids$contig_id)
+
+# Add contig labels of MAGs
+df_BlastExt <- dplyr::left_join(df_BlastExt, contig_ids, by = c("contig_id"))
+
+# Bin the %Identity in intervals of 0.5%
+df_BlastExt_sum <- transform(df_BlastExt, bin_group = cut(identity,  breaks=seq(0, 100, 0.5)))
+
+# Add extra column that converts the binning range to a numeric x-coordinate that
+# is positioned in the middle of the binning interval
+df_BlastExt_sum$bin_group <- gsub("\\(|]", "", 
+                               as.character(df_BlastExt_sum$bin_group))
+df_BlastExt_sum$bin_xcoord <- as.numeric(do.call(rbind,
+                                              strsplit(df_BlastExt_sum$bin_group,
+                                                       ","))[,1])+0.25
+
+# Add metadata
+df_BlastExt_sum <- left_join(df_BlastExt_sum, meta_Ext, by = c("SRA" = "accession.number"))
+
+SRA_ranking <- df_BlastExt_sum %>% dplyr::filter(bin == "Ramlibacter sp. MAG" & identity > 95) %>%
+  dplyr::select(SRA) %>% table()
+SRA_ranking <- SRA_ranking[rev(order(SRA_ranking))]
+
+# Plot sequence discrete populations
+p_blast_sdisc <- df_BlastExt_sum %>% 
+     ggplot(aes(x = bin_xcoord, ..scaled.., fill = bin))+
+      theme_bw()+
+      scale_fill_manual("", values = c(col_bac1,col_bac2,col_RAMLI))+
+      facet_grid(bin~Water_type)+
+      geom_density(color = "black")+
+      guides(color = FALSE)+
+      theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        strip.text=element_text(size=14))+
+      ylab("Density")+
+      xlab("Nucleotide identity (%)")+
+    xlim(75,100)
+
+print(p_blast_sdisc)
+
+
+# Plot for all bins density plots
+p_blast_all_dens <- df_BlastExt_sum %>% 
+  ggplot(aes(x = bin_xcoord, shape = SRA))+
+  theme_bw()+
+  geom_density(alpha = 0.4, size = 0.4, color = "#333333",
+               bw = "nrd0")+
+  scale_color_brewer("", palette = "Paired")+
+  guides(fill = FALSE)+
+  facet_grid(Water_type~bin)+
+  theme(axis.text.y=element_text(size=14), axis.title=element_text(size=20),
+        title=element_text(size=20), legend.text=element_text(size=14),
+        legend.background = element_rect(fill="transparent"),
+        axis.text.x = element_text(size = 14),
+        strip.text=element_text(size=14),
+        panel.grid.minor = element_blank(),
+        legend.position = "bottom")+
+  ylab("")+
+  xlab("% Identity")+
+  scale_x_continuous(limits = c(80,100))+
+  guides(shape = FALSE)
+
+p_blast_all_dens
+```
+
+```{r SDP_external-2, warning = FALSE, fig.width = 10, fig.height = 6, dpi = 500, dev = c("png", "pdf")}
+# Plot % reads corrected for genome size over threshold of 0.95
+blast_df_sum_comp <- df_BlastExt_sum %>% group_by(SRA, bin) %>% dplyr::count(bin_xcoord)
+
+id_thresh <- 95-0.25
+map_disc_cum <- blast_df_sum_comp  %>% 
+  dplyr::filter(bin_xcoord > id_thresh) %>% group_by(SRA, bin) %>% 
+  mutate(cum_rel_reads_mapped = cumsum(n))%>% 
+  dplyr::filter(bin_xcoord == 100-0.25)
+
+map_disc_cum <- left_join(map_disc_cum, meta_Ext, by = c("SRA" = "accession.number"))
+
+p_sdisc_cum3 <- ggplot(map_disc_cum, aes(x = bin, 
+                                         y = 100*cum_rel_reads_mapped/1e6, 
+                                        fill = bin))+
+  theme_bw()+
+  scale_fill_manual("", values = c(col_bac1,col_bac2,col_RAMLI))+
+  geom_jitter(size = 4, shape = 21, color = "black", alpha = 0.7, width = 0.15)+
+  geom_boxplot(fill = NA, outlier.shape = NA)+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+      title=element_text(size=20), legend.text=element_text(size=12),
+      legend.background = element_rect(fill="transparent"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
+      strip.text=element_text(size=14), legend.position = "bottom",
+      strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
+  ylab(paste0("Relative abundance\n ( > ", id_thresh-0.25, "% NI)"))+
+  xlab("")+
+  guides(fill=FALSE)+
+  facet_grid(.~Water_type, scales ="free")
+
+print(p_sdisc_cum3)
 ```
