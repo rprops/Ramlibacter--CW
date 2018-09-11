@@ -4328,47 +4328,92 @@ df_BlastExt2 <- dplyr::left_join(df_BlastExt2, contig_ids, by = "contig_id")
 
 # Plot first alignment point
 p_sdp_aln1 <- df_BlastExt2 %>% dplyr::filter(bin == "Ramlibacter sp. MAG") %>% 
-  ggplot(., aes(x = sstart, fill = bin))+
+  ggplot(., aes(x = sstart, y = identity, fill = bin))+
   theme_bw()+
   scale_fill_manual("", values = c(col_RAMLI))+
-  geom_density(alpha = 0.4, size = 0.4, color = "#333333",
-               bw = "nrd0", trim = TRUE)+
-  facet_grid(bin~contig_id, scales = "free")+
+  geom_point(shape = 21, size = 2)+
+  geom_smooth(color = "black", size = 3)+
+ # geom_density(aes(x=sstart, y=..scaled.., fill=bin),
+ #               alpha = 0.4, size = 0.4, color = "#333333",
+ #               bw = "nrd0", trim = TRUE)+
+  facet_grid(bin~contig_id, scales = "free_x")+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
       title=element_text(size=20), legend.text=element_text(size=12),
       legend.background = element_rect(fill="transparent"),
       axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
       strip.text=element_text(size=12), legend.position = "bottom",
       strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
-  ylab(paste0("Density"))+
+  ylab(paste0("% identity"))+
   xlab("Position in alignment")+
-  guides(fill=FALSE)+
-  ylim(0,3.5e-5)
+  guides(fill=FALSE)
 
 p_sdp_aln2 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG1") %>% 
-  ggplot(., aes(x = sstart, fill = bin))+
+  ggplot(., aes(x = sstart, y = identity, fill = bin))+
   theme_bw()+
   scale_fill_manual("", values = c(col_bac1))+
-  geom_density(alpha = 0.4, size = 0.4, color = "#333333",
-               bw = "nrd0", trim = TRUE)+
-  facet_grid(bin~contig_id, scales = "free")+
+  geom_point(shape = 21, size = 2)+
+  geom_smooth(color = "black", size = 3)+
+  # geom_density(aes(x=sstart, y=..scaled.., fill=bin),
+  #              alpha = 0.4, size = 0.4, color = "#333333",
+  #              bw = "nrd0", trim = TRUE)+
+  facet_grid(bin~contig_id, scales = "free_x")+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
       title=element_text(size=20), legend.text=element_text(size=12),
       legend.background = element_rect(fill="transparent"),
       axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
       strip.text=element_text(size=12), legend.position = "bottom",
       strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
-  ylab(paste0("Density"))+
+  ylab(paste0("% identity"))+
   xlab("Position in alignment")+
-  guides(fill=FALSE)+
-  ylim(0,3.5e-5)
+  guides(fill=FALSE)
 
 
 p_sdp_aln3 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG2") %>% 
-  ggplot(., aes(x = sstart, fill = bin))+
+  ggplot(., aes(x = sstart, y = identity, fill = bin))+
   theme_bw()+
   scale_fill_manual("", values = c(col_bac2))+
-  geom_density(alpha = 0.4, size = 0.4, color = "#333333",
+  geom_point(shape = 21, size = 2)+
+  geom_smooth(color = "black", size = 3)+
+  # geom_density(aes(x=sstart, y=..scaled.., fill=bin),
+  #              alpha = 0.4, size = 0.4, color = "#333333",
+  #              bw = "nrd0", trim = TRUE)+
+  facet_grid(bin~contig_id, scales = "free_x")+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+      title=element_text(size=20), legend.text=element_text(size=12),
+      legend.background = element_rect(fill="transparent"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
+      strip.text=element_text(size=12), legend.position = "bottom",
+      strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
+  ylab(paste0("% identity"))+
+  xlab("Position in alignment")+
+  guides(fill=FALSE)
+
+cowplot::plot_grid(p_sdp_aln1, p_sdp_aln2 ,p_sdp_aln3, align = "hv", nrow = 3)
+```
+
+```
+## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+```
+
+```
+## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+```
+
+```
+## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+```
+
+<img src="Figures/cached/SDP_alignment-check-1-1.png" style="display: block; margin: auto;" />
+
+```r
+# Plot first alignment point
+p_sdp_aln1 <- df_BlastExt2 %>% dplyr::filter(bin == "Ramlibacter sp. MAG" &
+                                               identity > 95) %>% 
+  ggplot(., aes(x = sstart, fill = bin))+
+  theme_bw()+
+  scale_fill_manual("", values = c(col_RAMLI))+
+ geom_density(aes(x=sstart, y=..scaled.., fill=bin),
+               alpha = 0.4, size = 0.4, color = "#333333",
                bw = "nrd0", trim = TRUE)+
   facet_grid(bin~contig_id, scales = "free_x")+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
@@ -4379,14 +4424,56 @@ p_sdp_aln3 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG2") %>
       strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
   ylab(paste0("Density"))+
   xlab("Position in alignment")+
-  guides(fill=FALSE)+
-  ylim(0,3.5e-5)
+  guides(fill=FALSE)
+
+p_sdp_aln2 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG1" &
+                                               identity > 95) %>% 
+  ggplot(., aes(x = sstart, fill = bin))+
+  theme_bw()+
+  scale_fill_manual("", values = c(col_bac1))+
+  geom_density(aes(x=sstart, y=..scaled.., fill=bin),
+               alpha = 0.4, size = 0.4, color = "#333333",
+               bw = "nrd0", trim = TRUE)+
+  facet_grid(bin~contig_id, scales = "free_x")+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+      title=element_text(size=20), legend.text=element_text(size=12),
+      legend.background = element_rect(fill="transparent"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
+      strip.text=element_text(size=12), legend.position = "bottom",
+      strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
+  ylab(paste0("Density"))+
+  xlab("Position in alignment")+
+  guides(fill=FALSE)
+
+
+p_sdp_aln3 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG2" &
+                                               identity > 95) %>% 
+  ggplot(., aes(x = sstart, fill = bin))+
+  theme_bw()+
+  scale_fill_manual("", values = c(col_bac2))+
+  geom_density(aes(x=sstart, y=..scaled.., fill=bin),
+               alpha = 0.4, size = 0.4, color = "#333333",
+               bw = "nrd0", trim = TRUE)+
+  facet_grid(bin~contig_id, scales = "free_x")+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+      title=element_text(size=20), legend.text=element_text(size=12),
+      legend.background = element_rect(fill="transparent"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
+      strip.text=element_text(size=12), legend.position = "bottom",
+      strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
+  ylab(paste0("Density"))+
+  xlab("Position in alignment")+
+  guides(fill=FALSE)
 
 cowplot::plot_grid(p_sdp_aln1, p_sdp_aln2 ,p_sdp_aln3, align = "hv", nrow = 3)
 ```
 
-<img src="Figures/cached/SDP_alignment-check-1-1.png" style="display: block; margin: auto;" />
+<img src="Figures/cached/SDP_alignment-check-1-2.png" style="display: block; margin: auto;" />
+
 
 ```r
-# p_sdp_aln1
+# Only Ramlibacter results now
+p_sdp_aln1
 ```
+
+<img src="Figures/cached/SDP_alignment-check-2-1.png" style="display: block; margin: auto;" />
