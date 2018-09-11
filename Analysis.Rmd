@@ -3905,7 +3905,7 @@ cowplot::plot_grid(p_size, p_size2, ncol =2, align = "h")
 
 ```{r SDP_external, warning = FALSE, fig.width = 12, fig.height = 12, dpi = 500, dev = c("png", "pdf")}
 df_BlastExt <- data.table::fread("./ExternalData/merged_blastfiles.tsv", 
-                         header = TRUE)
+                         header = TRUE)[, -4]
 # Import metadata
 meta_Ext <- xlsx::read.xlsx("./ExternalData/ismej2017156x1.xlsx", sheetIndex = 1)
 meta_Ext <- meta_Ext[!is.na(meta_Ext$metagenomic.sample),]
@@ -4022,4 +4022,90 @@ p_sdisc_cum3 <- ggplot(map_disc_cum, aes(x = bin,
   facet_grid(.~Water_type, scales ="free")
 
 print(p_sdisc_cum3)
+```
+
+```{r SDP_alignment-check-1, warning = FALSE, fig.width = 10, fig.height = 10, dpi = 500, dev = c("png", "pdf")}
+df_BlastExt2 <- data.table::fread("./ExternalData/merged_blastfiles.tsv", 
+                         header = TRUE)
+
+# Import contig lengths
+contigs_bac1 <- data.table::fread("./ExternalData/bacI_contig_lengths.txt", 
+                         header = FALSE) %>% 
+  top_n(3, V2) %>% 
+  dplyr::select(V1)
+contigs_bac2 <- data.table::fread("./ExternalData/bacII_contig_lengths.txt", 
+                         header = FALSE) %>% 
+  top_n(3, V2) %>% 
+  dplyr::select(V1)
+contigs_Ramli <- data.table::fread("./ExternalData/Ramli_contig_lengths.txt", 
+                         header = FALSE) %>% 
+  top_n(3, V2) %>% 
+  dplyr::select(V1)
+
+# Filter out largest contigs (top N)
+df_BlastExt2 <- df_BlastExt2 %>% dplyr::filter(contig_id %in% rbind(contigs_Ramli,
+                                                                contigs_bac1,
+                                                                contigs_bac2)$V1)
+# add metadata
+df_BlastExt2 <- dplyr::left_join(df_BlastExt2, contig_ids, by = "contig_id")
+
+# Plot first alignment point
+p_sdp_aln1 <- df_BlastExt2 %>% dplyr::filter(bin == "Ramlibacter sp. MAG") %>% 
+  ggplot(., aes(x = sstart, fill = bin))+
+  theme_bw()+
+  scale_fill_manual("", values = c(col_RAMLI))+
+  geom_density(alpha = 0.4, size = 0.4, color = "#333333",
+               bw = "nrd0", trim = TRUE)+
+  facet_grid(bin~contig_id, scales = "free")+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+      title=element_text(size=20), legend.text=element_text(size=12),
+      legend.background = element_rect(fill="transparent"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
+      strip.text=element_text(size=12), legend.position = "bottom",
+      strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
+  ylab(paste0("Density"))+
+  xlab("Position in alignment")+
+  guides(fill=FALSE)+
+  ylim(0,3.5e-5)
+
+p_sdp_aln2 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG1") %>% 
+  ggplot(., aes(x = sstart, fill = bin))+
+  theme_bw()+
+  scale_fill_manual("", values = c(col_bac1))+
+  geom_density(alpha = 0.4, size = 0.4, color = "#333333",
+               bw = "nrd0", trim = TRUE)+
+  facet_grid(bin~contig_id, scales = "free")+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+      title=element_text(size=20), legend.text=element_text(size=12),
+      legend.background = element_rect(fill="transparent"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
+      strip.text=element_text(size=12), legend.position = "bottom",
+      strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
+  ylab(paste0("Density"))+
+  xlab("Position in alignment")+
+  guides(fill=FALSE)+
+  ylim(0,3.5e-5)
+
+
+p_sdp_aln3 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG2") %>% 
+  ggplot(., aes(x = sstart, fill = bin))+
+  theme_bw()+
+  scale_fill_manual("", values = c(col_bac2))+
+  geom_density(alpha = 0.4, size = 0.4, color = "#333333",
+               bw = "nrd0", trim = TRUE)+
+  facet_grid(bin~contig_id, scales = "free_x")+
+  theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
+      title=element_text(size=20), legend.text=element_text(size=12),
+      legend.background = element_rect(fill="transparent"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
+      strip.text=element_text(size=12), legend.position = "bottom",
+      strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
+  ylab(paste0("Density"))+
+  xlab("Position in alignment")+
+  guides(fill=FALSE)+
+  ylim(0,3.5e-5)
+
+cowplot::plot_grid(p_sdp_aln1, p_sdp_aln2 ,p_sdp_aln3, align = "hv", nrow = 3)
+# p_sdp_aln1
+
 ```
