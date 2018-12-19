@@ -402,15 +402,15 @@ print(p_rel_box)
                      tl.col="black", tl.srt=45,
                      p.mat = p.mat_abs, sig.level = 0.05,
                      diag=FALSE, 
-                     title = paste("Absolute abundances - ", otu))
+                     title = paste("Absolute abundances"))
   
   corrplot::corrplot(cor(Physico_df_trim_rel_merged[, -c(1:3, 12,14,16)],
-                         method = "kendall"),
+                         method = "pearson"),
                      type="upper",
                      tl.col="black", tl.srt=45,
                      p.mat = p.mat_rel, sig.level = 0.05,
                      diag=FALSE, 
-                     title = paste("Relative abundances - ", otu))
+                     title = paste("Relative abundances"))
   
 
 # Calculate element-wise N/P ratio assuming 1 µg/L of PO4
@@ -2031,16 +2031,21 @@ panG_ko_flagel <- panG_ko_flagel %>%
   distinct() %>% 
   droplevels()
 
+panG_ko_flagel$ko_id_function <- paste0(panG_ko_flagel$ko_function_abbrev, 
+                                        " (", 
+                                        panG_ko_flagel$ko_id,
+                                        ")")
+
 # Make heatmap plot of flagel assembly genes
 hm_flagel <- panG_ko_flagel %>%
-  select(ko_id,bin_name,sum_presence) %>% 
-  complete(., bin_name, ko_id, fill = list(sum_presence=0)) %>% 
+  select(ko_id_function,bin_name,sum_presence) %>% 
+  complete(., bin_name, ko_id_function, fill = list(sum_presence=0)) %>% 
   ungroup() %>% 
   mutate(bin_name = factor(bin_name, 
                            levels = c("R.aquaticus","R.5.10",
                                       "R.TTB310","Mixed_PCs"))) %>% 
   distinct() %>% 
-  ggplot(aes(y = bin_name, x = ko_id)) + # x and y axes => Var1 and Var2
+  ggplot(aes(y = bin_name, x = ko_id_function)) + # x and y axes => Var1 and Var2
   geom_tile(aes(fill = sum_presence), col = "lightgrey") + 
   geom_text(aes(label = round(sum_presence, 0)), size = 3) + # write the values
   scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
@@ -2066,6 +2071,12 @@ panG_ko_chemo <- panG_ko_cog %>%
                 ko_function_spec, unique_gene_callers_id) %>%
   distinct()
 
+panG_ko_chemo$ko_id_function <- paste0(panG_ko_chemo$ko_function_abbrev, 
+                                        " (", 
+                                        panG_ko_chemo$ko_id,
+                                        ")")
+
+
 # Make presence column
 panG_ko_chemo$Presence <- 1
 # panG_ko_chemo$bin_name <- gsub("-", "_", panG_ko_chemo$bin_name)
@@ -2078,7 +2089,7 @@ panG_ko_chemo$bin_name <- plyr::revalue(panG_ko_chemo$bin_name,
                                               "Mixed_PCs" = "Mixed_PCs"))
 # From long to wide format
 panG_ko_chemo <- panG_ko_chemo %>% 
-  group_by(ko_id, bin_name) %>% 
+  group_by(ko_function_abbrev, bin_name) %>% 
   mutate(sum_presence = sum(Presence)) %>% 
   select(-unique_gene_callers_id, -Presence) %>%
   distinct() %>% 
@@ -2086,14 +2097,14 @@ panG_ko_chemo <- panG_ko_chemo %>%
 
 # Make heatmap plot of flagel assembly genes
 hm_chemo <- panG_ko_chemo %>%
-  select(ko_id,bin_name,sum_presence) %>% 
-  complete(., bin_name, ko_id, fill = list(sum_presence=0)) %>% 
+  select(ko_id_function,bin_name,sum_presence) %>% 
+  complete(., bin_name, ko_id_function, fill = list(sum_presence=0)) %>% 
   ungroup() %>% 
   mutate(bin_name = factor(bin_name, 
                            levels = c("R.aquaticus","R.5.10",
                                       "R.TTB310","Mixed_PCs"))) %>% 
   distinct() %>% 
-  ggplot(aes(y = bin_name, x = ko_id)) + # x and y axes => Var1 and Var2
+  ggplot(aes(y = bin_name, x = ko_id_function)) + # x and y axes => Var1 and Var2
   geom_tile(aes(fill = sum_presence), col = "lightgrey") + # background colours are mapped according to the value column
   geom_text(aes(label = round(sum_presence, 0)), size = 3) + # write the values
   scale_fill_distiller(palette="YlOrRd", na.value="lightgrey", trans = "sqrt",
@@ -4042,10 +4053,22 @@ contigs_Ramli <- data.table::fread("./ExternalData/Ramli_contig_lengths.txt",
   top_n(3, V2) %>% 
   dplyr::select(V1)
 
+# Filter out metagenomes with at least 1,000 reads
+metaG_5k <- df_BlastExt2 %>% 
+  dplyr::select(SRA) %>% 
+  table() %>% 
+  data.frame() %>% 
+  dplyr::filter(Freq>5e3) %>% 
+  dplyr::select(".")
+colnames(metaG_5k) <- "Filtered_metaG"
+df_BlastExt2 <- df_BlastExt2 %>% dplyr::filter(SRA %in% metaG_5k$Filtered_metaG)
+
 # Filter out largest contigs (top N)
 df_BlastExt2 <- df_BlastExt2 %>% dplyr::filter(contig_id %in% rbind(contigs_Ramli,
                                                                 contigs_bac1,
                                                                 contigs_bac2)$V1)
+
+
 # add metadata
 df_BlastExt2 <- dplyr::left_join(df_BlastExt2, contig_ids, by = "contig_id")
 
@@ -4113,66 +4136,81 @@ p_sdp_aln3 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG2") %>
 
 cowplot::plot_grid(p_sdp_aln1, p_sdp_aln2 ,p_sdp_aln3, align = "hv", nrow = 3)
 
-# Plot first alignment point
-p_sdp_aln1 <- df_BlastExt2 %>% dplyr::filter(bin == "Ramlibacter sp. MAG" &
-                                               identity > 95) %>% 
-  ggplot(., aes(x = sstart, fill = bin))+
+# Plot for each SRA data set seperately
+for(dataset in 1:length(metaG_5k$Filtered_metaG)){
+  # Plot first alignment point
+p_sdp_aln1 <- df_BlastExt2 %>% 
+  dplyr::filter(SRA == metaG_5k$Filtered_metaG[dataset]) %>% 
+  dplyr::filter(bin == "Ramlibacter sp. MAG") %>% 
+  ggplot(., aes(x = sstart, y = identity, fill = bin))+
   theme_bw()+
   scale_fill_manual("", values = c(col_RAMLI))+
- geom_density(aes(x=sstart, y=..scaled.., fill=bin),
-               alpha = 0.4, size = 0.4, color = "#333333",
-               bw = "nrd0", trim = TRUE)+
+  geom_point(shape = 21, size = 2)+
+  geom_smooth(color = "black", size = 3)+
   facet_grid(bin~contig_id, scales = "free_x")+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-      title=element_text(size=20), legend.text=element_text(size=12),
+      title=element_text(size=14), legend.text=element_text(size=12),
       legend.background = element_rect(fill="transparent"),
       axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
       strip.text=element_text(size=12), legend.position = "bottom",
       strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
-  ylab(paste0("Density"))+
+  ylab(paste0("% identity"))+
   xlab("Position in alignment")+
-  guides(fill=FALSE)
+  guides(fill=FALSE)+
+  ggtitle(metaG_5k$Filtered_metaG[dataset])+
+  ylim(75,100)
 
-p_sdp_aln2 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG1" &
-                                               identity > 95) %>% 
-  ggplot(., aes(x = sstart, fill = bin))+
+p_sdp_aln2 <- df_BlastExt2 %>% 
+  dplyr::filter(SRA == metaG_5k$Filtered_metaG[dataset]) %>% 
+  dplyr::filter(bin == "Bacteroidetes sp. MAG1") %>% 
+  ggplot(., aes(x = sstart, y = identity, fill = bin))+
   theme_bw()+
   scale_fill_manual("", values = c(col_bac1))+
-  geom_density(aes(x=sstart, y=..scaled.., fill=bin),
-               alpha = 0.4, size = 0.4, color = "#333333",
-               bw = "nrd0", trim = TRUE)+
+  geom_point(shape = 21, size = 2)+
+  geom_smooth(color = "black", size = 3)+
   facet_grid(bin~contig_id, scales = "free_x")+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-      title=element_text(size=20), legend.text=element_text(size=12),
+      title=element_text(size=14), legend.text=element_text(size=12),
       legend.background = element_rect(fill="transparent"),
       axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
       strip.text=element_text(size=12), legend.position = "bottom",
       strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
-  ylab(paste0("Density"))+
+  ylab(paste0("% identity"))+
   xlab("Position in alignment")+
-  guides(fill=FALSE)
+  guides(fill=FALSE)+
+  ggtitle(metaG_5k$Filtered_metaG[dataset])+
+  ylim(75,100)
 
-
-p_sdp_aln3 <- df_BlastExt2 %>% dplyr::filter(bin == "Bacteroidetes sp. MAG2" &
-                                               identity > 95) %>% 
-  ggplot(., aes(x = sstart, fill = bin))+
+p_sdp_aln3 <- df_BlastExt2 %>% 
+  dplyr::filter(SRA == metaG_5k$Filtered_metaG[dataset]) %>% 
+  dplyr::filter(bin == "Bacteroidetes sp. MAG2") %>% 
+  ggplot(., aes(x = sstart, y = identity, fill = bin))+
   theme_bw()+
   scale_fill_manual("", values = c(col_bac2))+
-  geom_density(aes(x=sstart, y=..scaled.., fill=bin),
-               alpha = 0.4, size = 0.4, color = "#333333",
-               bw = "nrd0", trim = TRUE)+
+  geom_point(shape = 21, size = 2)+
+  geom_smooth(color = "black", size = 3)+
   facet_grid(bin~contig_id, scales = "free_x")+
   theme(axis.text=element_text(size=14), axis.title=element_text(size=20),
-      title=element_text(size=20), legend.text=element_text(size=12),
+      title=element_text(size=14), legend.text=element_text(size=12),
       legend.background = element_rect(fill="transparent"),
       axis.text.x = element_text(size = 12, angle = 45, hjust = 1),
       strip.text=element_text(size=12), legend.position = "bottom",
       strip.background = element_rect(fill = adjustcolor("gray", 0.15)))+
-  ylab(paste0("Density"))+
+  ylab(paste0("% identity"))+
   xlab("Position in alignment")+
-  guides(fill=FALSE)
+  guides(fill=FALSE)+
+  ggtitle(metaG_5k$Filtered_metaG[dataset])+
+  ylim(75,100)
 
-cowplot::plot_grid(p_sdp_aln1, p_sdp_aln2 ,p_sdp_aln3, align = "hv", nrow = 3)
+# now add the title
+# title <- ggdraw() + draw_label(metaG_5k$Filtered_metaG[dataset], fontface='bold')
+# plot_grid(title, p, ncol=1, rel_heights=c(0.1, 1)) 
+png(paste0("./ExternalData/Figures/",gsub(".tsv","",metaG_5k$Filtered_metaG[dataset]),
+           ".png"), height = 5, width = 10, res = 500, units = "in")
+print(p_sdp_aln1)
+# print(cowplot::plot_grid(p_sdp_aln1, p_sdp_aln2, p_sdp_aln3, align = "hv", nrow = 3))
+dev.off()
+}
 
 ```
 
