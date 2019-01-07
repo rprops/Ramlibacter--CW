@@ -1,7 +1,7 @@
 # Metagenomic analysis of phosphate-limited cooling water
 
 Repository for the manuscript: 
-Props, R., Monsieurs, P., Vandamme, P., Leys, N., Denef V.J. and Boon, N., ***Gene expansion and positive selection rather than streamlining as primary adaptations to phosphate-limited freshwater by a novel Ramlibacter species***.
+Props, R., Monsieurs, P., Vandamme, P., Leys, N., Denef V.J. and Boon, N., ***Gene expansion and positive selection as adaptations to extremely oligotrophic freshwater by a novel Ramlibacter population***.
 
 ## 1. QC and assembly  
 
