@@ -1,7 +1,8 @@
-# Metagenomic analysis of phosphate-limited cooling water
+# Metagenomic analysis of nutrient-limited secondary cooling water
 
 Repository for the manuscript: 
-Props, R., Monsieurs, P., Vandamme, P., Leys, N., Denef V.J. and Boon, N., ***Gene expansion and positive selection as adaptations to extremely oligotrophic freshwater by a novel Ramlibacter population***.
+Props, R., Monsieurs, P., Vandamme, P., Leys, N., Denef V.J. and Boon, N., ***Gene Expansion and Positive Selection as Bacterial
+Adaptations to Oligotrophic Conditions***. mSphere 4:e00011-19. https://doi.org/10.1128/mSphereDirect.00011-19.
 
 ## 1. QC and assembly  
 
