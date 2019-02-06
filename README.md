@@ -1,6 +1,7 @@
 # Metagenomic analysis of nutrient-limited secondary cooling water
 
-Repository for the manuscript: 
+Repository for the article: 
+
 Props, R., Monsieurs, P., Vandamme, P., Leys, N., Denef V.J. and Boon, N., ***Gene Expansion and Positive Selection as Bacterial
 Adaptations to Oligotrophic Conditions***. mSphere 4:e00011-19. https://doi.org/10.1128/mSphereDirect.00011-19.
 
